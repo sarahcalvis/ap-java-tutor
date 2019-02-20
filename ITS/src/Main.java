@@ -25,6 +25,7 @@ public class Main /*extends Application*/{
         //launch(args);
 		
 		System.out.println("Hello World!");
+		System.out.println("I hate everything.");
     }
     
     /*@Override
