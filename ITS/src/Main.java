@@ -19,13 +19,15 @@ import javafx.stage.Stage;
 import javafx. *;
 
 
-public class Main extends Application{
+public class Main /*extends Application*/{
 
 	public static void main(String[] args) {
-        launch(args);
+        //launch(args);
+		
+		System.out.println("Hello World!");
     }
     
-    @Override
+    /*@Override
     public void start(Stage primaryStage) {
         primaryStage.setTitle("AP Computer Science Prep");
         
@@ -54,5 +56,5 @@ public class Main extends Application{
         scene.getStylesheets().add
         (Main.class.getResource("StyleForCAI.css").toExternalForm());
         primaryStage.show();
-    }
+    }*/
 }
