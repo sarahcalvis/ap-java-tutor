@@ -95,6 +95,11 @@ public class Main extends Application{
 	        	public void handle(ActionEvent event) {
 	        		System.out.println("Pressed Textbook Button");
 	        		grid.getChildren().clear();
+	        		//add textbook information here
+	        		Text scenetitle = new Text("Textbook");
+	                scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 26));
+	                grid.add(scenetitle, 12, 3, 2, 1);
+	                //add the nav bar back
 	        		buttons(grid, primaryStage);
 	        		System.out.println("finished creating");
 	        	}
@@ -109,6 +114,14 @@ public class Main extends Application{
 	        	@Override
 	        	public void handle(ActionEvent event) {
 	        		System.out.println("Pressed Lessons Button");
+	        		grid.getChildren().clear();
+	        		//add lessons information here
+	        		Text scenetitle = new Text("Lessons");
+	                scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 26));
+	                grid.add(scenetitle, 12, 3, 2, 1);
+	                //add the nav bar back
+	        		buttons(grid, primaryStage);
+	        		System.out.println("finished creating");
 	        	}
 	        });
 	        grid.add(lessons, 5, 18,2,1);
@@ -121,6 +134,14 @@ public class Main extends Application{
 	        	@Override
 	        	public void handle(ActionEvent event) {
 	        		System.out.println("Pressed Exams Button");
+	        		grid.getChildren().clear();
+	        		//add Exams information here
+	        		Text scenetitle = new Text("Tests and Quizzes");
+	                scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 26));
+	                grid.add(scenetitle, 12, 3, 2, 1);
+	                //add the nav bar back
+	        		buttons(grid, primaryStage);
+	        		System.out.println("finished creating");
 	        	}
 	        });
 	        grid.add(exams, 3, 25,5,1);
@@ -133,6 +154,14 @@ public class Main extends Application{
 	        	@Override
 	        	public void handle(ActionEvent event) {
 	        		System.out.println("Pressed Diagnostics Button");
+	        		grid.getChildren().clear();
+	        		//add diagnostics information here
+	        		Text scenetitle = new Text("Diagnostics");
+	                scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 26));
+	                grid.add(scenetitle, 12, 3, 2, 1);
+	                //add the nav bar back
+	        		buttons(grid, primaryStage);
+	        		System.out.println("finished creating");
 	        	}
 	        });
 	        grid.add(diagnostics, 5, 33 ,5,1);
@@ -145,6 +174,14 @@ public class Main extends Application{
 	        	@Override
 	        	public void handle(ActionEvent event) {
 	        		System.out.println("Pressed Settings Button");
+	        		grid.getChildren().clear();
+	        		//add settings information here
+	        		Text scenetitle = new Text("Settings");
+	                scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 26));
+	                grid.add(scenetitle, 12, 3, 2, 1);
+	                //add the nav bar back
+	        		buttons(grid, primaryStage);
+	        		System.out.println("finished creating");
 	        	}
 	        });
 	        grid.add(settings, 5, 40,5,1);
