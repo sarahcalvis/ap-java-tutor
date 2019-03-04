@@ -42,7 +42,8 @@ public class Main extends Application{
         VBox vb = new VBox();
         //vb.setSpacing(10);
         //vb.setPadding(new Insets(10,10,10,10));
-        vb.setAlignment(Pos.CENTER);
+        
+        //vb.setAlignment(Pos.CENTER);
 
         //creates a grid in the center
         //GridPane grid = new GridPane();
@@ -52,7 +53,7 @@ public class Main extends Application{
         grid.setVgap(10);
         
         //controls padding around the edges
-        //grid.setPadding(new Insets(25,25,25,25));
+        //grid.setPadding(new Insets(10,10,10,10));
         
         //makes size of the window
         Scene scene = new Scene(grid, 1080, 720);
@@ -60,7 +61,7 @@ public class Main extends Application{
         //adds preliminary home screen UI
         Text scenetitle = new Text("Welcome Back!");
         scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 26));
-        grid.add(scenetitle, 1,0);
+        grid.add(scenetitle, 2,1);
         buttons(grid, primaryStage);
         scene.getStylesheets().add
         (Main.class.getResource("Buttons.css").toExternalForm());
@@ -88,13 +89,13 @@ public class Main extends Application{
 	        		//add home screen shenanigans
 	                Text scenetitle = new Text("Welcome Back!");
 	                scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 26));
-	                grid.add(scenetitle, 12, 3);
+	                grid.add(scenetitle, 2,1);
 	        		//calls buttons to set up the navbar again
 	        		buttons(grid, primaryStage);
 	                System.out.println("finished creating");
 	        	}
 	        });
-	        grid.add(home, 5, 3,2,1);
+	        grid.add(home, 5, 3);
 	        
 	        //textbook button
 	        Button textbk = new Button();
@@ -109,13 +110,13 @@ public class Main extends Application{
 	        		//add textbook information here
 	        		Text scenetitle = new Text("Textbook");
 	                scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 26));
-	                grid.add(scenetitle, 12, 3, 2, 1);
+	                grid.add(scenetitle, 2, 1);
 	                //add the nav bar back
 	        		buttons(grid, primaryStage);
 	        		System.out.println("finished creating");
 	        	}
 	        });
-	        grid.add(textbk, 4, 10,2,1);
+	        grid.add(textbk, 4, 10);
 	        
 	        //lesson button
 	        Button lessons = new Button();
@@ -130,13 +131,13 @@ public class Main extends Application{
 	        		//add lessons information here
 	        		Text scenetitle = new Text("Lessons");
 	                scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 26));
-	                grid.add(scenetitle, 12, 3, 2, 1);
+	                grid.add(scenetitle, 2,1);
 	                //add the nav bar back
 	        		buttons(grid, primaryStage);
 	        		System.out.println("finished creating");
 	        	}
 	        });
-	        grid.add(lessons, 5, 18,2,1);
+	        grid.add(lessons, 5, 18);
 	        
 	        //Test/quizzes button
 	        Button exams = new Button();
@@ -151,13 +152,13 @@ public class Main extends Application{
 	        		//add Exams information here
 	        		Text scenetitle = new Text("Tests and Quizzes");
 	                scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 26));
-	                grid.add(scenetitle, 12, 3, 2, 1);
+	                grid.add(scenetitle, 2, 1);
 	                //add the nav bar back
 	        		buttons(grid, primaryStage);
 	        		System.out.println("finished creating");
 	        	}
 	        });
-	        grid.add(exams, 3, 25,5,1);
+	        grid.add(exams, 3, 25);
 	        
 	        //diagnostics button
 	        Button diagnostics = new Button();
@@ -172,13 +173,13 @@ public class Main extends Application{
 	        		//add diagnostics information here
 	        		Text scenetitle = new Text("Diagnostics");
 	                scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 26));
-	                grid.add(scenetitle, 12, 3, 2, 1);
+	                grid.add(scenetitle, 2, 1);
 	                //add the nav bar back
 	        		buttons(grid, primaryStage);
 	        		System.out.println("finished creating");
 	        	}
 	        });
-	        grid.add(diagnostics, 5, 33 ,5,1);
+	        grid.add(diagnostics, 5, 33);
 	        
 	        //settings button
 	        Button settings = new Button();
@@ -193,18 +194,18 @@ public class Main extends Application{
 	        		//add settings information here
 	        		Text scenetitle = new Text("Settings");
 	                scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 26));
-	                grid.add(scenetitle, 12, 3, 2, 1);
+	                grid.add(scenetitle, 2, 1);
 	                //add the nav bar back
 	        		buttons(grid, primaryStage);
 	        		System.out.println("finished creating");
 	        	}
 	        });
-	        grid.add(settings, 5, 40,5,1);
+	        grid.add(settings, 5, 40);
 	        
 	        //add buttons to VB
 	        vb.getChildren().addAll(home,lessons,textbk,diagnostics,exams,settings);
 	        //add VB to grid
-	        grid.add(vb,0,1);
+	        grid.add(vb,0,1,1,4);
 	        
 	        //add style sheet
 	        //scene.getStylesheets().add
