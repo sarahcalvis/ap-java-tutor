@@ -12,6 +12,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
@@ -38,6 +39,10 @@ public class Main extends Application{
     public void start(Stage primaryStage) {
         primaryStage.setTitle("AP Computer Science Prep");
         GridPane grid = new GridPane();
+        VBox vb = new VBox();
+        //vb.setSpacing(10);
+        //vb.setPadding(new Insets(10,10,10,10));
+        vb.setAlignment(Pos.CENTER);
 
         //creates a grid in the center
         //GridPane grid = new GridPane();
@@ -47,7 +52,7 @@ public class Main extends Application{
         grid.setVgap(10);
         
         //controls padding around the edges
-        grid.setPadding(new Insets(25,25,25,25));
+        //grid.setPadding(new Insets(25,25,25,25));
         
         //makes size of the window
         Scene scene = new Scene(grid, 1080, 720);
@@ -55,8 +60,10 @@ public class Main extends Application{
         //adds preliminary home screen UI
         Text scenetitle = new Text("Welcome Back!");
         scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 26));
-        grid.add(scenetitle, 12, 3, 2, 1);
+        grid.add(scenetitle, 1,0);
         buttons(grid, primaryStage);
+        scene.getStylesheets().add
+        (Main.class.getResource("Buttons.css").toExternalForm());
     }
         
     
@@ -65,10 +72,13 @@ public class Main extends Application{
 	        //NAVIGATION BAR
 	        //Maybe copy this code for the other pages???
 	        //
+        	//create a VBox to put all the buttons in???
+        	VBox vb = new VBox();
 	        //home button
 	        Button home = new Button();
 	        home.setText("Home");
 	        home.setTextFill(Color.BLUE);
+	        home.setMaxWidth(Double.MAX_VALUE);
 	        home.setOnAction(new EventHandler<ActionEvent>() {
 	        	@Override
 	        	public void handle(ActionEvent event) {
@@ -78,7 +88,7 @@ public class Main extends Application{
 	        		//add home screen shenanigans
 	                Text scenetitle = new Text("Welcome Back!");
 	                scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 26));
-	                grid.add(scenetitle, 12, 3, 2, 1);
+	                grid.add(scenetitle, 12, 3);
 	        		//calls buttons to set up the navbar again
 	        		buttons(grid, primaryStage);
 	                System.out.println("finished creating");
@@ -90,6 +100,7 @@ public class Main extends Application{
 	        Button textbk = new Button();
 	        textbk.setText("Textbook");
 	        textbk.setTextFill(Color.BLUE);
+	        textbk.setMaxWidth(Double.MAX_VALUE);
 	        textbk.setOnAction(new EventHandler<ActionEvent>() {
 	        	@Override
 	        	public void handle(ActionEvent event) {
@@ -110,6 +121,7 @@ public class Main extends Application{
 	        Button lessons = new Button();
 	        lessons.setText("Lessons");
 	        lessons.setTextFill(Color.BLUE);
+	        lessons.setMaxWidth(Double.MAX_VALUE);
 	        lessons.setOnAction(new EventHandler<ActionEvent>() {
 	        	@Override
 	        	public void handle(ActionEvent event) {
@@ -130,6 +142,7 @@ public class Main extends Application{
 	        Button exams = new Button();
 	        exams.setText("Quizzes and Exams");
 	        exams.setTextFill(Color.BLUE);
+	        exams.setMaxWidth(Double.MAX_VALUE);
 	        exams.setOnAction(new EventHandler<ActionEvent>() {
 	        	@Override
 	        	public void handle(ActionEvent event) {
@@ -150,6 +163,7 @@ public class Main extends Application{
 	        Button diagnostics = new Button();
 	        diagnostics.setText("Diagnostics");
 	        diagnostics.setTextFill(Color.BLUE);
+	        diagnostics.setMaxWidth(Double.MAX_VALUE);
 	        diagnostics.setOnAction(new EventHandler<ActionEvent>() {
 	        	@Override
 	        	public void handle(ActionEvent event) {
@@ -170,6 +184,7 @@ public class Main extends Application{
 	        Button settings = new Button();
 	        settings.setText("Settings");
 	        settings.setTextFill(Color.BLUE);
+	        settings.setMaxWidth(Double.MAX_VALUE);
 	        settings.setOnAction(new EventHandler<ActionEvent>() {
 	        	@Override
 	        	public void handle(ActionEvent event) {
@@ -186,9 +201,14 @@ public class Main extends Application{
 	        });
 	        grid.add(settings, 5, 40,5,1);
 	        
+	        //add buttons to VB
+	        vb.getChildren().addAll(home,lessons,textbk,diagnostics,exams,settings);
+	        //add VB to grid
+	        grid.add(vb,0,1);
+	        
 	        //add style sheet
 	        //scene.getStylesheets().add
-	        //(Main.class.getResource("StyleForCAI.css").toExternalForm());
+	        //(Main.class.getResource("Buttons.css").toExternalForm());
 	        primaryStage.show();
         }
     }
