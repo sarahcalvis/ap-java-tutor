@@ -262,7 +262,7 @@ public class Main extends Application{
 	        		}
 			        }
 			        });
-			        grid.add(takeQuizButt, 20, 18);
+			        grid.add(takeQuizButt, 10, 18);
 	        		
 	        	}
 	        });
