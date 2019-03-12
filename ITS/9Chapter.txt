@@ -1,0 +1,607 @@
+Chapter 9
+Strings and things
+In Java and other object-oriented languages, an object is a collection of data
+that provides a set of methods. For example, Scanner, which we saw in
+Section 3.2, is an object that provides methods for parsing input. System.out
+and System.in are also objects.
+Strings are objects, too. They contain characters and provide methods for manipulating character data. We explore some of those methods in this chapter.
+Not everything in Java is an object: int, double, and boolean are so-called
+primitive types. We will explain some of the differences between object types
+and primitive types as we go along.
+
+9.1
+
+Characters
+
+Strings provide a method named charAt, which extracts a character. It returns
+a char, a primitive type that stores an individual character (as opposed to
+strings of them).
+String fruit = "banana";
+char letter = fruit.charAt(0);
+The argument 0 means that we want the letter at position 0. Like array
+indexes, string indexes start at 0, so the character assigned to letter is b.
+
+140
+
+Chapter 9
+
+Strings and things
+
+Characters work like the other primitive types we have seen. You can compare
+them using relational operators:
+if (letter == 'a') {
+System.out.println('?');
+}
+Character literals, like 'a', appear in single quotes. Unlike string literals,
+which appear in double quotes, character literals can only contain a single
+character. Escape sequences, like '\t', are legal because they represent a
+single character.
+The increment and decrement operators work with characters. So this loop
+displays the letters of the alphabet:
+System.out.print("Roman alphabet: ");
+for (char c = 'A'; c <= 'Z'; c++) {
+System.out.print(c);
+}
+System.out.println();
+Java uses Unicode to represent characters, so strings can store text in other
+alphabets like Cyrillic and Greek, and non-alphabetic languages like Chinese.
+You can read more about it at http://unicode.org/.
+In Unicode, each character is represented by a “code unit”, which you can
+think of as an integer. The code units for uppercase Greek letters run from
+913 to 937, so we can display the Greek alphabet like this:
+System.out.print("Greek alphabet: ");
+for (int i = 913; i <= 937; i++) {
+System.out.print((char) i);
+}
+System.out.println();
+This example uses a type cast to convert each integer (in the range) to the
+corresponding character.
+
+9.2
+
+9.2
+
+Strings are immutable
+
+141
+
+Strings are immutable
+
+Strings provide methods, toUpperCase and toLowerCase, that convert from
+uppercase to lowercase and back. These methods are often a source of confusion, because it sounds like they modify strings. But neither these methods
+nor any others can change a string, because strings are immutable.
+When you invoke toUpperCase on a string, you get a new string object as a
+return value. For example:
+String name = "Alan Turing";
+String upperName = name.toUpperCase();
+After these statements run, upperName refers to the string "ALAN TURING".
+But name still refers to "Alan Turing".
+Another useful method is replace, which finds and replaces instances of one
+string within another. This example replaces "Computer Science" with "CS":
+String text = "Computer Science is fun!";
+text = text.replace("Computer Science", "CS");
+This example demonstrates a common way to work with string methods. It invokes text.replace, which returns a reference to a new string, "CS is fun!".
+Then it assigns the new string to text, replacing the old string.
+This assignment is important; if you don’t save the return value, invoking
+text.replace has no effect.
+
+9.3
+
+String traversal
+
+The following loop traverses the characters in fruit and displays them, one
+on each line:
+for (int i = 0; i < fruit.length(); i++) {
+char letter = fruit.charAt(i);
+System.out.println(letter);
+}
+
+142
+
+Chapter 9
+
+Strings and things
+
+Strings provide a method called length that returns the number of characters
+in the string. Because it is a method, you have to invoke it with the empty
+argument list, ().
+The condition is i < fruit.length(), which means that when i is equal to
+the length of the string, the condition is false and the loop terminates.
+Unfortunately, the enhanced for loop does not work with strings. But you
+can convert any string to a character array and iterate that:
+for (char letter : fruit.toCharArray()) {
+System.out.println(letter);
+}
+To find the last letter of a string, you might be tempted to try something like:
+int length = fruit.length();
+char last = fruit.charAt(length);
+
+// wrong!
+
+This code compiles and runs, but invoking the charAt method throws a
+StringIndexOutOfBoundsException. The problem is that there is no sixth
+letter in "banana". Since we started counting at 0, the 6 letters are indexed
+from 0 to 5. To get the last character, you have to subtract 1 from length.
+int length = fruit.length();
+char last = fruit.charAt(length - 1);
+
+// correct
+
+Many string traversals involve reading one string and creating another. For
+example, to reverse a string, we simply add one character at a time:
+public static String reverse(String s) {
+String r = "";
+for (int i = s.length() - 1; i >= 0; i--) {
+r = r + s.charAt(i);
+}
+return r;
+}
+The initial value of r is "", which is the empty string. The loop traverses
+the letters of s in reverse order. Each time through the loop, it creates a new
+string and assigns it to r. When the loop exits, r contains the letters from s
+in reverse order. So the result of reverse("banana") is "ananab".
+
+9.4
+
+Substrings
+
+9.4
+
+143
+
+Substrings
+
+The substring method returns a new string that copies letters from an existing string, starting at the given index.
+? fruit.substring(0) returns "banana"
+? fruit.substring(2) returns "nana"
+? fruit.substring(6) returns ""
+
+The first example returns a copy of the entire string. The second example
+returns all but the first two characters. As the last example shows, substring
+returns the empty string if the argument is the length of the string.
+To visualize how the substring method works, it helps to draw a picture like
+Figure 9.1.
+fruit
+
+b
+
+a
+
+n
+
+a
+
+n
+
+a
+
+0
+
+1
+
+2
+
+3
+
+4
+
+5
+
+Figure 9.1: State diagram for a String of six characters.
+Like most string methods, substring is overloaded. That is, there are other
+versions of substring that have different parameters. If it’s invoked with two
+arguments, they are treated as a start and end index:
+? fruit.substring(0, 3) returns "ban"
+? fruit.substring(2, 5) returns "nan"
+? fruit.substring(6, 6) returns ""
+
+Notice that the character indicated by the end index is not included. Defining substring this way simplifies some common operations. For example,
+to select a substring with length len, starting at index i, you could write
+fruit.substring(i, i + len).
+
+144
+
+9.5
+
+Chapter 9
+
+Strings and things
+
+The indexOf method
+
+The indexOf method searches for a character in a string.
+String fruit = "banana";
+int index = fruit.indexOf('a');
+This example finds the index of 'a' in the string. But the letter appears
+three times, so it’s not obvious what indexOf should do. According to the
+documentation, it returns the index of the first appearance.
+To find subsequent appearances, you can use another version of indexOf, which
+takes a second argument that indicates where in the string to start looking.
+int index = fruit.indexOf('a', 2);
+This code starts at index 2 (the first 'n') and finds the next 'a', which is
+at index 3. If the letter happens to appear at the starting index, the starting
+index is the answer. So fruit.indexOf('a', 5) returns 5.
+If the character does not appear in the string, indexOf returns -1. Since
+indexes cannot be negative, this value indicates the character was not found.
+You can also use indexOf to search for a substring, not just a single character.
+For example, the expression fruit.indexOf("nan") returns 2.
+
+9.6
+
+String comparison
+
+To compare two strings, it may be tempting to use the == and != operators.
+String name1 = "Alan Turing";
+String name2 = "Ada Lovelace";
+if (name1 == name2) {
+// wrong!
+System.out.println("The names are the same.");
+}
+This code compiles and runs, and most of the time it gets the answer right.
+But it is not correct, and sometimes it gets the answer wrong. The problem is
+that the == operator checks whether the two variables refer to the same object
+
+9.7
+
+String formatting
+
+145
+
+(by comparing the references). If you give it two different strings that contain
+the same letters, it yields false.
+The right way to compare strings is with the equals method, like this:
+if (name1.equals(name2)) {
+System.out.println("The names are the same.");
+}
+This example invokes equals on name1 and passes name2 as an argument.
+The equals method returns true if the strings contain the same characters;
+otherwise it returns false.
+If the strings differ, we can use compareTo to see which comes first in alphabetical order:
+int diff = name1.compareTo(name2);
+if (diff == 0) {
+System.out.println("The names are the same.");
+} else if (diff < 0) {
+System.out.println("name1 comes before name2.");
+} else if (diff > 0) {
+System.out.println("name2 comes before name1.");
+}
+The return value from compareTo is the difference between the first characters
+in the strings that differ. If the strings are equal, their difference is zero. If
+the first string (the one on which the method is invoked) comes first in the
+alphabet, the difference is negative. Otherwise, the difference is positive.
+In the preceding code, compareTo returns positive 8, because the second letter
+of "Ada" comes before the second letter of "Alan" by 8 letters.
+Both equals and compareTo are case-sensitive. The uppercase letters come
+before the lowercase letters, so "Ada" comes before "ada".
+
+9.7
+
+String formatting
+
+In Section 3.6, we learned how to use printf to display formatted output.
+Sometimes programs need to create strings that are formatted a certain way,
+
+146
+
+Chapter 9
+
+Strings and things
+
+but not display them immediately, or ever. For example, the following method
+returns a time string in 12-hour format:
+public static String timeString(int hour, int minute) {
+String ampm;
+if (hour < 12) {
+ampm = "AM";
+if (hour == 0) {
+hour = 12; // midnight
+}
+} else {
+ampm = "PM";
+hour = hour - 12;
+}
+return String.format("%02d:%02d %s", hour, minute, ampm);
+}
+String.format takes the same arguments as System.out.printf: a format specifier followed by a sequence of values. The main difference is that
+System.out.printf displays the result on the screen; String.format creates
+a new string, but does not display anything.
+In this example, the format specifier %02d means “two digit integer padded
+with zeros”, so timeString(19, 5) returns the string "07:05 PM".
+
+9.8
+
+Wrapper classes
+
+Primitive values (like ints, doubles, and chars) do not provide methods. For
+example, you can’t call equals on an int:
+int i = 5;
+System.out.println(i.equals(5));
+
+// compiler error
+
+But for each primitive type, there is a corresponding class in the Java library,
+called a wrapper class. The wrapper class for char is called Character; for
+int it’s called Integer. Other wrapper classes include Boolean, Long, and
+Double. They are in the java.lang package, so you can use them without
+importing them.
+
+9.9
+
+Command-line arguments
+
+147
+
+Each wrapper class defines constants MIN_VALUE and MAX_VALUE. For example,
+Integer.MIN_VALUE is -2147483648, and Integer.MAX_VALUE is 2147483647.
+Because these constants are available in wrapper classes, you don’t have to
+remember them, and you don’t have to include them in your programs.
+Wrapper classes provide methods for converting strings to other types. For
+example, Integer.parseInt converts a string to (you guessed it) an integer:
+String str = "12345";
+int num = Integer.parseInt(str);
+In this context, parse means something like “read and translate”.
+The other wrapper classes provide similar methods, like Double.parseDouble
+and Boolean.parseBoolean. They also provide toString, which returns a
+string representation of a value:
+int num = 12345;
+String str = Integer.toString(num);
+The result is the string "12345".
+
+9.9
+
+Command-line arguments
+
+Now that you know about arrays and strings, we can finally explain the args
+parameter for main that we have been ignoring since Chapter 1. If you are unfamiliar with the command-line interface, please read or review Appendix A.3.
+Continuing an earlier example, let’s write a program to find the largest value
+in a sequence of numbers. Rather than read the numbers from System.in,
+we’ll pass them as command-line arguments. Here is a starting point:
+public class Max {
+public static void main(String[] args) {
+System.out.println(Arrays.toString(args));
+}
+}
+You can run this program from the command line by typing:
+
+148
+
+Chapter 9
+
+Strings and things
+
+java Max
+The output indicates that args is an empty array; that is, it has no elements:
+[]
+But if you provide additional values on the command line, they are passed as
+arguments to main. For example, if you run it like this:
+java Max 10 -3 55 0 14
+The output is:
+[10, -3, 55, 0, 14]
+But remember that the elements of args are strings. To find the maximum
+number, we have to convert the arguments to integers.
+The following fragment uses an enhanced for loop to parse the arguments
+(using the Integer wrapper class) and find the largest value:
+int max = Integer.MIN_VALUE;
+for (String arg : args) {
+int value = Integer.parseInt(arg);
+if (value > max) {
+max = value;
+}
+}
+System.out.println("The max is " + max);
+The initial value of max is the smallest (most negative) number an int can represent, so any other value is greater. If args is empty, the result is MIN_VALUE.
+
+9.10
+
+Vocabulary
+
+object: A collection of related data that comes with a set of methods that
+operate on it.
+primitive: A data type that stores a single value and provides no methods.
+
+9.11
+
+Exercises
+
+149
+
+Unicode: A standard for representing characters in most of the world’s languages.
+immutable: An object that, once created, cannot be modified. Strings are
+immutable by design.
+empty string: The string "", which contains no characters and has a length
+of zero.
+wrapper class: Classes in java.lang that provide constants and methods
+for working with primitive types.
+parse: To read a string and interpret or translate it.
+empty array: An array with no elements and a length of zero.
+
+9.11
+
+Exercises
+
+The code for this chapter is in the ch09 directory of ThinkJavaCode. See
+page xv for instructions on how to download the repository. Before you start
+the exercises, we recommend that you compile and run the examples.
+Exercise 9.1 The point of this exercise is to explore Java types and fill in
+some of the details that aren’t covered in the chapter.
+
+1. Create a new program named Test.java and write a main method that
+contains expressions that combine various types using the + operator.
+For example, what happens when you “add” a String and a char?
+Does it perform character addition or string concatenation? What is the
+type of the result? (How can you determine the type of the result?)
+2. Make a bigger copy of the following table and fill it in. At the intersection
+of each pair of types, you should indicate whether it is legal to use the
++ operator with these types, what operation is performed (addition or
+concatenation), and what the type of the result is.
+
+150
+
+Chapter 9
+boolean
+
+char
+
+int
+
+Strings and things
+
+double String
+
+boolean
+char
+int
+double
+String
+
+3. Think about some of the choices the designers of Java made when they
+filled in this table. How many of the entries seem unavoidable, as if there
+was no other choice? How many seem like arbitrary choices from several
+equally reasonable possibilities? Which entries seem most problematic?
+
+4. Here’s a puzzler: normally, the statement x++ is exactly equivalent to
+x = x + 1. But if x is a char, it’s not exactly the same! In that case,
+x++ is legal, but x = x + 1 causes an error. Try it out and see what the
+error message is, then see if you can figure out what is going on.
+
+5. What happens when you add "" (the empty string) to the other types,
+for example, "" + 5?
+
+6. For each data type, what types of values can you assign to it? For
+example, you can assign an int to a double but not vice versa.
+Exercise 9.2 Write a method called letterHist that takes a string as a
+parameter and returns a histogram of the letters in the string. The zeroth
+element of the histogram should contain the number of a’s in the string (upperand lowercase); the 25th element should contain the number of z’s. Your
+solution should only traverse the string once.
+Exercise 9.3 The purpose of this exercise is to review encapsulation and
+generalization (see Section 7.3). The following code fragment traverses a string
+and checks whether it has the same number of open and close parentheses:
+
+9.11
+
+Exercises
+
+151
+
+String s = "((3 + 7) * 2)";
+int count = 0;
+for (int i = 0; i < s.length(); i++) {
+char c = s.charAt(i);
+if (c == '(') {
+count++;
+} else if (c == ')') {
+count--;
+}
+}
+System.out.println(count);
+1. Encapsulate this fragment in a method that takes a string argument and
+returns the final value of count.
+2. Now that you have generalized the code so that it works on any string,
+what could you do to generalize it more?
+3. Test your method with multiple strings, including some that are balanced
+and some that are not.
+Exercise 9.4 Create a program called Recurse.java and type in the following methods:
+/**
+* Returns the first character of the given String.
+*/
+public static char first(String s) {
+return s.charAt(0);
+}
+/**
+* Returns all but the first letter of the given String.
+*/
+public static String rest(String s) {
+return s.substring(1);
+}
+
+152
+
+Chapter 9
+
+Strings and things
+
+/**
+* Returns all but the first and last letter of the String.
+*/
+public static String middle(String s) {
+return s.substring(1, s.length() - 1);
+}
+/**
+* Returns the length of the given String.
+*/
+public static int length(String s) {
+return s.length();
+}
+1. Write some code in main that tests each of these methods. Make sure
+they work, and you understand what they do.
+2. Using these methods, and without using any other String methods,
+write a method called printString that takes a string as a parameter
+and that displays the letters of the string, one on each line. It should be
+a void method.
+3. Again using only these methods, write a method called printBackward
+that does the same thing as printString but that displays the string
+backward (again, one character per line).
+4. Now write a method called reverseString that takes a string as a parameter and that returns a new string as a return value. The new string
+should contain the same letters as the parameter, but in reverse order.
+String backwards = reverseString("coffee");
+System.out.println(backwards);
+The output of this example code should be:
+eeffoc
+5. A palindrome is a word that reads the same both forward and backward,
+like “otto” and “palindromeemordnilap”. Here’s one way to test whether
+a string is a palindrome:
+
+9.11
+
+Exercises
+
+153
+
+A single letter is a palindrome, a two-letter word is a palindrome if the letters are the same, and any other word is a
+palindrome if the first letter is the same as the last and the
+middle is a palindrome.
+Write a recursive method named isPalindrome that takes a String and
+returns a boolean indicating whether the word is a palindrome.
+Exercise 9.5 A word is said to be “abecedarian” if the letters in the word
+appear in alphabetical order. For example, the following are all six-letter
+English abecedarian words:
+abdest, acknow, acorsy, adempt, adipsy, agnosy, befist, behint, beknow, bijoux, biopsy, cestuy, chintz, deflux, dehors, dehort, deinos,
+diluvy, dimpsy
+Write a method called isAbecedarian that takes a String and returns a
+boolean indicating whether the word is abecedarian. Your method can be
+iterative or recursive.
+Exercise 9.6 A word is said to be a “doubloon” if every letter that appears
+in the word appears exactly twice. Here are some example doubloons found
+in the dictionary:
+Abba, Anna, appall, appearer, appeases, arraigning, beriberi, bilabial, boob, Caucasus, coco, Dada, deed, Emmett, Hannah, horseshoer, intestines, Isis, mama, Mimi, murmur, noon, Otto, papa,
+peep, reappear, redder, sees, Shanghaiings, Toto
+Write a method called isDoubloon that takes a string and checks whether it is
+a doubloon. To ignore case, invoke the toLowerCase method before checking.
+Exercise 9.7 Two words are anagrams if they contain the same letters and
+the same number of each letter. For example, “stop” is an anagram of “pots”
+and “allen downey” is an anagram of “well annoyed”.
+Write a method that takes two strings and checks whether they are anagrams
+of each other.
+
+154
+
+Chapter 9
+
+Strings and things
+
+Exercise 9.8 In Scrabble1 each player has a set of tiles with letters on them.
+The object of the game is to use those letters to spell words. The scoring system
+is complex, but longer words are usually worth more than shorter words.
+Imagine you are given your set of tiles as a string, like "quijibo", and you
+are given another string to test, like "jib".
+Write a method called canSpell that takes two strings and checks whether
+the set of tiles can spell the word. You might have more than one tile with
+the same letter, but you can only use each tile once.
+
+1
+
+Scrabble is a registered trademark owned in the USA and Canada by Hasbro Inc., and
+in the rest of the world by J. W. Spear & Sons Limited of Maidenhead, Berkshire, England,
+a subsidiary of Mattel Inc.
+
+

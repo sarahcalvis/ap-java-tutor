@@ -18,6 +18,11 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Scanner;
+
 import javafx. *;
 
 
@@ -108,12 +113,47 @@ public class Main extends Application{
 	        		System.out.println("Pressed Textbook Button");
 	        		grid.getChildren().clear();
 	        		//add textbook information here
-	        		Text scenetitle = new Text("Textbook");
+	        		Text scenetitle = new Text("Think Java");
 	                scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 26));
-	                grid.add(scenetitle, 2, 1);
+	                grid.add(scenetitle, 3, 1);
 	                //add the nav bar back
 	        		buttons(grid, primaryStage);
 	        		System.out.println("finished creating");
+	        		String chapters[] = {"0Preface.txt","1Chapter.txt","2Chapter.txt","3Chapter.txt","4Chapter.txt","5Chapter.txt","6Chapter.txt","7Chapter.txt","8Chapter.txt","9Chapter.txt","10Chapter.txt","11Chapter.txt","12Chapter.txt","13Chapter.txt","14Chapter.txt"};
+	        		grid.setPadding(new Insets(25,25,25,25));
+	        		//Build labels
+	        		ArrayList<Button> btnChapters = new ArrayList<Button>();
+	        		//btnChapters.add(new Button("Preface"));
+	        		for (int i = 0; i < 14; i++) {
+	        			btnChapters.add(new Button("Chapter " + (i /*+ 1*/)));
+	        			int j = i;
+	        			btnChapters.get(i).setOnAction(new EventHandler<ActionEvent>() {
+	        				@Override
+	        				public void handle(ActionEvent event) {
+	        					//myGrid.getChildren().removeIf(node -> GridPane.getColumnIndex(node) == 0);
+	        					grid.getChildren().removeIf(node -> GridPane.getColumnIndex(node) == 5);
+	        					try {
+	        						Scanner s = new Scanner(new File(chapters[j]));
+	        						String r = "";
+	        						int v = 0;
+	        						while (s.hasNextLine()) {
+	        							r = s.nextLine();
+	        							Text text = new Text();
+	        							text.setText(r);
+	        							grid.add(text,5, v);
+	        							v++;
+	        						}
+	        						s.close();
+	        					}
+								//displayBook(j);
+								catch (Exception e) {
+									System.out.println("chapter unavailable");
+								}
+	        				}
+	        			});
+	        			
+	        		grid.add(btnChapters.get(i), 3, i+1);
+	        		}
 	        	}
 	        });
 	        grid.add(textbk, 4, 10);
