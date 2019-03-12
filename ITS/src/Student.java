@@ -13,35 +13,61 @@ public class Student {
 	private String password;
 	
 	//Vars for Bloom's 1-6
-	private Double B1;
-	private Double B2;
-	private Double B3;
-	private Double B4;
-	private Double B5;
-	private Double B6;
+	private Tuple B1;
+	private Tuple B2;
+	private Tuple B3;
+	private Tuple B4;
+	private Tuple B5;
+	private Tuple B6;
 	
 	//AP topics
-	private Map<String,Double> comments;
-	private Map<String,Double> primTypes;
-	private Map<String,Double> operators;
-	private Map<String,Double> objComparison;
-	private Map<String,Double> escSeq;
-	private Map<String,Double> IO;
-	private Map<String,Double> nou;	//exceptions
-	private Map<String,Double> arrays;
-	private Map<String,Double> ctrlStatements;
-	private Map<String,Double> vars;
-	private Map<String,Double> methods;
-	private Map<String,Double> constructors;
-	private Map<String,Double> classes;
-	private Map<String,Double> interfaces;
-	private Map<String,Double> inheritance;
-	private Map<String,Double> packages;
-	private Map<String,Double> miscOOP;
-	private Map<String,Double> standardJavaLibrary;
+	private Map<String,Tuple> comments;
+	private Map<String,Tuple> primTypes;
+	private Map<String,Tuple> operators;
+	private Map<String,Tuple> objComparison;
+	private Map<String,Tuple> escSeq;
+	private Map<String,Tuple> IO;
+	private Map<String,Tuple> nou;	//exceptions
+	private Map<String,Tuple> arrays;
+	private Map<String,Tuple> ctrlStatements;
+	private Map<String,Tuple> vars;
+	private Map<String,Tuple> methods;
+	private Map<String,Tuple> constructors;
+	private Map<String,Tuple> classes;
+	private Map<String,Tuple> interfaces;
+	private Map<String,Tuple> inheritance;
+	private Map<String,Tuple> packages;
+	private Map<String,Tuple> miscOOP;
+	private Map<String,Tuple> standardJavaLibrary;
 	
 	public Student() {
 		ArrayList<Object> order = new ArrayList<>();
+		order.add(username);
+		order.add(password);
+		order.add(B1);
+		order.add(B2);
+		order.add(B3);
+		order.add(B4);
+		order.add(B5);
+		order.add(B6);
+		order.add(comments);
+		order.add(primTypes);
+		order.add(operators);
+		order.add(objComparison);
+		order.add(escSeq);
+		order.add(IO);
+		order.add(nou);
+		order.add(arrays);
+		order.add(ctrlStatements);
+		order.add(vars);
+		order.add(methods);
+		order.add(constructors);
+		order.add(classes);
+		order.add(interfaces);
+		order.add(inheritance);
+		order.add(packages);
+		order.add(miscOOP);
+		order.add(standardJavaLibrary);
 		File f = new File("(default).txt");
 		Scanner scn;
 		if(!f.exists()) {
@@ -57,9 +83,12 @@ public class Student {
 			System.out.println("why the hecc is this triggering. you got problems in your default Student constructor");
 			e.printStackTrace();
 		}
-		while(scn.hasNextLine()) {
+		for(int i = 0; scn.hasNextLine(); i++) {
 			String nextLine = scn.nextLine();
 			Scanner scan = new Scanner(nextLine);
+			if (scan.hasNextInt()) {
+				
+			}
 		}
 	}
 
@@ -79,195 +108,195 @@ public class Student {
 		this.password = password;
 	}
 
-	public Double getB1() {
+	public Tuple getB1() {
 		return B1;
 	}
 
-	public void setB1(Double b1) {
+	public void setB1(Tuple b1) {
 		B1 = b1;
 	}
 
-	public Double getB2() {
+	public Tuple getB2() {
 		return B2;
 	}
 
-	public void setB2(Double b2) {
+	public void setB2(Tuple b2) {
 		B2 = b2;
 	}
 
-	public Double getB3() {
+	public Tuple getB3() {
 		return B3;
 	}
 
-	public void setB3(Double b3) {
+	public void setB3(Tuple b3) {
 		B3 = b3;
 	}
 
-	public Double getB4() {
+	public Tuple getB4() {
 		return B4;
 	}
 
-	public void setB4(Double b4) {
+	public void setB4(Tuple b4) {
 		B4 = b4;
 	}
 
-	public Double getB5() {
+	public Tuple getB5() {
 		return B5;
 	}
 
-	public void setB5(Double b5) {
+	public void setB5(Tuple b5) {
 		B5 = b5;
 	}
 
-	public Double getB6() {
+	public Tuple getB6() {
 		return B6;
 	}
 
-	public void setB6(Double b6) {
+	public void setB6(Tuple b6) {
 		B6 = b6;
 	}
 
-	public Map<String,Double> getComments() {
+	public Map<String,Tuple> getComments() {
 		return comments;
 	}
 
-	public void setComments(Map<String,Double> comments) {
+	public void setComments(Map<String,Tuple> comments) {
 		this.comments = comments;
 	}
 
-	public Map<String,Double> getPrimTypes() {
+	public Map<String,Tuple> getPrimTypes() {
 		return primTypes;
 	}
 
-	public void setPrimTypes(Map<String,Double> primTypes) {
+	public void setPrimTypes(Map<String,Tuple> primTypes) {
 		this.primTypes = primTypes;
 	}
 
-	public Map<String,Double> getOperators() {
+	public Map<String,Tuple> getOperators() {
 		return operators;
 	}
 
-	public void setOperators(Map<String,Double> operators) {
+	public void setOperators(Map<String,Tuple> operators) {
 		this.operators = operators;
 	}
 
-	public Map<String,Double> getObjComparison() {
+	public Map<String,Tuple> getObjComparison() {
 		return objComparison;
 	}
 
-	public void setObjComparison(Map<String,Double> objComparison) {
+	public void setObjComparison(Map<String,Tuple> objComparison) {
 		this.objComparison = objComparison;
 	}
 
-	public Map<String,Double> getEscSeq() {
+	public Map<String,Tuple> getEscSeq() {
 		return escSeq;
 	}
 
-	public void setEscSeq(Map<String,Double> escSeq) {
+	public void setEscSeq(Map<String,Tuple> escSeq) {
 		this.escSeq = escSeq;
 	}
 
-	public Map<String,Double> getIO() {
+	public Map<String,Tuple> getIO() {
 		return IO;
 	}
 
-	public void setIO(Map<String,Double> iO) {
+	public void setIO(Map<String,Tuple> iO) {
 		IO = iO;
 	}
 
-	public Map<String,Double> getNou() {
+	public Map<String,Tuple> getNou() {
 		return nou;
 	}
 
-	public void setNou(Map<String,Double> nou) {
+	public void setNou(Map<String,Tuple> nou) {
 		this.nou = nou;
 	}
 
-	public Map<String,Double> getArrays() {
+	public Map<String,Tuple> getArrays() {
 		return arrays;
 	}
 
-	public void setArrays(Map<String,Double> arrays) {
+	public void setArrays(Map<String,Tuple> arrays) {
 		this.arrays = arrays;
 	}
 
-	public Map<String,Double> getCtrlStatements() {
+	public Map<String,Tuple> getCtrlStatements() {
 		return ctrlStatements;
 	}
 
-	public void setCtrlStatements(Map<String,Double> ctrlStatements) {
+	public void setCtrlStatements(Map<String,Tuple> ctrlStatements) {
 		this.ctrlStatements = ctrlStatements;
 	}
 
-	public Map<String,Double> getVars() {
+	public Map<String,Tuple> getVars() {
 		return vars;
 	}
 
-	public void setVars(Map<String,Double> vars) {
+	public void setVars(Map<String,Tuple> vars) {
 		this.vars = vars;
 	}
 
-	public Map<String,Double> getMethods() {
+	public Map<String,Tuple> getMethods() {
 		return methods;
 	}
 
-	public void setMethods(Map<String,Double> methods) {
+	public void setMethods(Map<String,Tuple> methods) {
 		this.methods = methods;
 	}
 
-	public Map<String,Double> getConstructors() {
+	public Map<String,Tuple> getConstructors() {
 		return constructors;
 	}
 
-	public void setConstructors(Map<String,Double> constructors) {
+	public void setConstructors(Map<String,Tuple> constructors) {
 		this.constructors = constructors;
 	}
 
-	public Map<String,Double> getClasses() {
+	public Map<String,Tuple> getClasses() {
 		return classes;
 	}
 
-	public void setClasses(Map<String,Double> classes) {
+	public void setClasses(Map<String,Tuple> classes) {
 		this.classes = classes;
 	}
 
-	public Map<String,Double> getInterfaces() {
+	public Map<String,Tuple> getInterfaces() {
 		return interfaces;
 	}
 
-	public void setInterfaces(Map<String,Double> interfaces) {
+	public void setInterfaces(Map<String,Tuple> interfaces) {
 		this.interfaces = interfaces;
 	}
 
-	public Map<String,Double> getInheritance() {
+	public Map<String,Tuple> getInheritance() {
 		return inheritance;
 	}
 
-	public void setInheritance(Map<String,Double> inheritance) {
+	public void setInheritance(Map<String,Tuple> inheritance) {
 		this.inheritance = inheritance;
 	}
 
-	public Map<String,Double> getPackages() {
+	public Map<String,Tuple> getPackages() {
 		return packages;
 	}
 
-	public void setPackages(Map<String,Double> packages) {
+	public void setPackages(Map<String,Tuple> packages) {
 		this.packages = packages;
 	}
 
-	public Map<String,Double> getMiscOOP() {
+	public Map<String,Tuple> getMiscOOP() {
 		return miscOOP;
 	}
 
-	public void setMiscOOP(Map<String,Double> miscOOP) {
+	public void setMiscOOP(Map<String,Tuple> miscOOP) {
 		this.miscOOP = miscOOP;
 	}
 
-	public Map<String,Double> getStandardJavaLibrary() {
+	public Map<String,Tuple> getStandardJavaLibrary() {
 		return standardJavaLibrary;
 	}
 
-	public void setStandardJavaLibrary(Map<String,Double> standardJavaLibrary) {
+	public void setStandardJavaLibrary(Map<String,Tuple> standardJavaLibrary) {
 		this.standardJavaLibrary = standardJavaLibrary;
 	}
 }
