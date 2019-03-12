@@ -15,47 +15,28 @@ public class Student {
 		
 	//AP topics
 	private Map<String,Tuple> stats;
-	private Map<String,Tuple> bloom;
-	private Map<String,Tuple> comments;
-	private Map<String,Tuple> primTypes;
-	private Map<String,Tuple> operators;
-	private Map<String,Tuple> objComparison;
-	private Map<String,Tuple> escSeq;
-	private Map<String,Tuple> IO;
-	private Map<String,Tuple> nou;	//exceptions
-	private Map<String,Tuple> arrays;
-	private Map<String,Tuple> ctrlStatements;
-	private Map<String,Tuple> vars;
-	private Map<String,Tuple> methods;
-	private Map<String,Tuple> constructors;
-	private Map<String,Tuple> classes;
-	private Map<String,Tuple> interfaces;
-	private Map<String,Tuple> inheritance;
-	private Map<String,Tuple> packages;
-	private Map<String,Tuple> miscOOP;
-	private Map<String,Tuple> standardJavaLibrary;
+	private Tuple bloom;
+	private Tuple comments;
+	private Tuple primTypes;
+	private Tuple operators;
+	private Tuple objComparison;
+	private Tuple escSeq;
+	private Tuple IO;
+	private Tuple nou;	//exceptions
+	private Tuple arrays;
+	private Tuple ctrlStatements;
+	private Tuple vars;
+	private Tuple methods;
+	private Tuple constructors;
+	private Tuple classes;
+	private Tuple interfaces;
+	private Tuple inheritance;
+	private Tuple packages;
+	private Tuple miscOOP;
+	private Tuple standardJavaLibrary;
 	
 	public Student() {
 		stats = new HashMap<>();
-		/*order.add(bloom);
-		order.add(comments);
-		order.add(primTypes);
-		order.add(operators);
-		order.add(objComparison);
-		order.add(escSeq);
-		order.add(IO);
-		order.add(nou);
-		order.add(arrays);
-		order.add(ctrlStatements);
-		order.add(vars);
-		order.add(methods);
-		order.add(constructors);
-		order.add(classes);
-		order.add(interfaces);
-		order.add(inheritance);
-		order.add(packages);
-		order.add(miscOOP);
-		order.add(standardJavaLibrary);*/
 		File f = new File("(default).txt");
 		Scanner scn;
 		if(!f.exists()) {
@@ -128,8 +109,16 @@ public class Student {
 						break;
 					case 17:
 						name = "Packages";
-					}
-					
+						break;
+					case 18:
+						name = "Miscellaneous Object Oriented Programming";
+						break;
+					case 19:
+						name = "Standard Java Library";
+						break;
+					default:
+						name = "You Broke Everything";
+					}					
 					int x = scan.nextInt();
 					int y = scan.nextInt();
 					Tuple t = new Tuple();
@@ -159,157 +148,5 @@ public class Student {
 
 	public void setPassword(String password) {
 		this.password = password;
-	}
-
-	public Map<String,Tuple> getBloom() {
-		return bloom;
-	}
-
-	public void setBloom(Map<String,Tuple> bloom) {
-		this.bloom = bloom;
-	}
-
-	public Map<String,Tuple> getComments() {
-		return comments;
-	}
-
-	public void setComments(Map<String,Tuple> comments) {
-		this.comments = comments;
-	}
-
-	public Map<String,Tuple> getPrimTypes() {
-		return primTypes;
-	}
-
-	public void setPrimTypes(Map<String,Tuple> primTypes) {
-		this.primTypes = primTypes;
-	}
-
-	public Map<String,Tuple> getOperators() {
-		return operators;
-	}
-
-	public void setOperators(Map<String,Tuple> operators) {
-		this.operators = operators;
-	}
-
-	public Map<String,Tuple> getObjComparison() {
-		return objComparison;
-	}
-
-	public void setObjComparison(Map<String,Tuple> objComparison) {
-		this.objComparison = objComparison;
-	}
-
-	public Map<String,Tuple> getEscSeq() {
-		return escSeq;
-	}
-
-	public void setEscSeq(Map<String,Tuple> escSeq) {
-		this.escSeq = escSeq;
-	}
-
-	public Map<String,Tuple> getIO() {
-		return IO;
-	}
-
-	public void setIO(Map<String,Tuple> iO) {
-		IO = iO;
-	}
-
-	public Map<String,Tuple> getNou() {
-		return nou;
-	}
-
-	public void setNou(Map<String,Tuple> nou) {
-		this.nou = nou;
-	}
-
-	public Map<String,Tuple> getArrays() {
-		return arrays;
-	}
-
-	public void setArrays(Map<String,Tuple> arrays) {
-		this.arrays = arrays;
-	}
-
-	public Map<String,Tuple> getCtrlStatements() {
-		return ctrlStatements;
-	}
-
-	public void setCtrlStatements(Map<String,Tuple> ctrlStatements) {
-		this.ctrlStatements = ctrlStatements;
-	}
-
-	public Map<String,Tuple> getVars() {
-		return vars;
-	}
-
-	public void setVars(Map<String,Tuple> vars) {
-		this.vars = vars;
-	}
-
-	public Map<String,Tuple> getMethods() {
-		return methods;
-	}
-
-	public void setMethods(Map<String,Tuple> methods) {
-		this.methods = methods;
-	}
-
-	public Map<String,Tuple> getConstructors() {
-		return constructors;
-	}
-
-	public void setConstructors(Map<String,Tuple> constructors) {
-		this.constructors = constructors;
-	}
-
-	public Map<String,Tuple> getClasses() {
-		return classes;
-	}
-
-	public void setClasses(Map<String,Tuple> classes) {
-		this.classes = classes;
-	}
-
-	public Map<String,Tuple> getInterfaces() {
-		return interfaces;
-	}
-
-	public void setInterfaces(Map<String,Tuple> interfaces) {
-		this.interfaces = interfaces;
-	}
-
-	public Map<String,Tuple> getInheritance() {
-		return inheritance;
-	}
-
-	public void setInheritance(Map<String,Tuple> inheritance) {
-		this.inheritance = inheritance;
-	}
-
-	public Map<String,Tuple> getPackages() {
-		return packages;
-	}
-
-	public void setPackages(Map<String,Tuple> packages) {
-		this.packages = packages;
-	}
-
-	public Map<String,Tuple> getMiscOOP() {
-		return miscOOP;
-	}
-
-	public void setMiscOOP(Map<String,Tuple> miscOOP) {
-		this.miscOOP = miscOOP;
-	}
-
-	public Map<String,Tuple> getStandardJavaLibrary() {
-		return standardJavaLibrary;
-	}
-
-	public void setStandardJavaLibrary(Map<String,Tuple> standardJavaLibrary) {
-		this.standardJavaLibrary = standardJavaLibrary;
 	}
 }
