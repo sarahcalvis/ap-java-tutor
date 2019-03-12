@@ -1,0 +1,54 @@
+import java.util.ArrayList;
+
+public class Question {
+	int qID;
+	String text;
+	ArrayList<String> answers;		//first answer is right, it will be displayed randomly
+	boolean asked;					//true if asked, false if not asked
+	String topic;
+	String bloom;
+	
+	Question(String text, ArrayList<String> answers, String topic, String bloom){
+		answers = new ArrayList<String>();
+		this.text = text;
+		for(String a : answers){
+			this.answers.add(a);
+			System.out.println(answers.get(0));
+		}
+		asked = false;
+		this.topic = topic;
+		this.bloom = bloom;
+	}
+	
+	void setID(int id){
+		this.qID = id;
+	}
+	
+	int getID(){
+		return qID;
+	}
+	
+	String getAnswer(int ans){
+		return answers.get(ans);
+	}
+	
+	void setAsked(boolean asked){
+		this.asked = asked;
+	}
+	
+	boolean getAsked(){
+		return asked;
+	}
+	
+	String getTopic(){
+		return topic;
+	}
+	
+	String getBloom(){
+		return bloom;
+	}
+	
+	String getText(){
+		return text;
+	}
+}

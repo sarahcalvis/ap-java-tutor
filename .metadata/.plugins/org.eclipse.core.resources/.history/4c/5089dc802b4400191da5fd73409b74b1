@@ -1,0 +1,16 @@
+
+public class TestBank {
+KeyMap<String, ArrayList<Question>> bank;
+	
+	void TestBank(File file){
+		//TODO: populate test bank
+	}
+	
+	Question getQuest(String topic){
+		//TODO: retrive unasked question from the topic
+	}
+	
+	void setQuest(int qID){
+		//TODO: set this question to asked
+	}
+}

@@ -1,0 +1,44 @@
+import java.util.ArrayList;
+
+public class Testing {
+	int type;
+	int qPerT = 10;
+	int numTopics;
+	
+	ArrayList<Question> questions;
+	ArrayList<String> topics;
+	
+	TestBank bank;
+	
+	Testing(int type, ArrayList<String> topics, TestBank bank){
+		this.bank = bank;
+		if(type == 0){
+			int numTopics = 1;
+		}else{
+			//Placeholder numbers
+			int numTopics = 5;
+		}
+		for(String t : topics){
+			this.topics.add(t);
+		}
+		Populate(topics);
+	}
+	
+	void Populate(ArrayList<String> topics){
+		for(String t : topics){
+			for(int i = 0; i < qPerT; i++)
+			questions.add(bank.getQuest(t));
+		}
+	}
+	
+	Question getQ(int numInTest){
+		return questions.get(numInTest);
+	}
+	
+	void setQ(int value){
+		//TODO: update user's scores 
+		//update test score
+		//update question in bank
+		//update question in test
+	}
+}

@@ -1,0 +1,30 @@
+import java.io.File;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
+public class TestBank {
+	Map<String, ArrayList<Question>> bank;
+	
+	TestBank(){
+		//TODO: populate test bank
+		bank = new HashMap<String, ArrayList<Question>>();
+	}
+	
+	void addQuest(Question quest){
+		if(!bank.containsKey(quest.getTopic())){
+			quest.setID(0);
+			bank.put(quest.getTopic(), new ArrayList<Question>(quest));
+			
+		}
+	}
+	
+	Question getQuest(String topic){
+		//TODO: retrieve unasked question from the topic
+	}
+	
+	void setQuest(int qID){
+		//TODO: set this question to asked
+		
+	}
+}

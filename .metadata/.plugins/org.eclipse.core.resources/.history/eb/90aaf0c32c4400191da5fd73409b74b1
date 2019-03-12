@@ -1,0 +1,25 @@
+import java.util.ArrayList;
+
+public class Question {
+	int qID;
+	ArrayList<String> answers;		//first answer is right, it will be displayed randomly
+	boolean asked;
+	String topic;
+	String blooms;
+	
+	void Question(int qID, ArrayList<String> answers){
+		//TODO: fill this in
+	}
+	
+	void setID(int id){
+		this.qID = id;
+	}
+	
+	int getID(){
+		return qID;
+	}
+	
+	String getAnswer(int ans){
+		return answers.get(ans);
+	}
+}

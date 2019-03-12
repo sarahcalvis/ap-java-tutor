@@ -1,0 +1,55 @@
+import java.util.ArrayList;
+
+public class Question {
+	int qID;						//question's ID (position in topic arrayList)
+	String text;					//Text of the question proper
+	ArrayList<String> answers;		//first answer is right, it will be displayed randomly
+	boolean asked;					//true if asked, false if not yet asked
+	String topic;					//topic of the question
+	String bloom;					//which level of Bloom's Taxonomy
+	
+	//Constructor. Creates question object from text, answers, topic, and bloom tag
+	Question(String text, ArrayList<String> answers, String topic, String bloom){
+		this.answers = new ArrayList<String>();
+		this.text = text;
+		for(String a : answers){
+			this.answers.add(a);
+		}
+		asked = false;
+		this.topic = topic;
+		this.bloom = bloom;
+	}
+	
+	
+	void setID(int id){
+		this.qID = id;
+	}
+	
+	int getID(){
+		return qID;
+	}
+	
+	String getAnswer(int ans){
+		return answers.get(ans);
+	}
+	
+	void setAsked(boolean asked){
+		this.asked = asked;
+	}
+	
+	boolean getAsked(){
+		return asked;
+	}
+	
+	String getTopic(){
+		return topic;
+	}
+	
+	String getBloom(){
+		return bloom;
+	}
+	
+	String getText(){
+		return text;
+	}
+}
