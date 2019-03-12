@@ -149,4 +149,13 @@ public class Student {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
+	
+	public Double getBloom() {
+		return bloom.x / bloom.y *100.0;
+	}
+
+	public void setBloom(int numCorrect, int numAsked) {
+		this.bloom = bloom;
+	}
 }
