@@ -23,6 +23,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+
 import javafx. *;
 
 
@@ -30,6 +31,11 @@ public class Main extends Application{
 
 	public static void main(String[] args) {
 		//GridPane grid = new GridPane();
+		//TESTY TESTY
+				
+			
+				
+				
         launch(args);
 		
 		/*
@@ -196,9 +202,72 @@ public class Main extends Application{
 	                //add the nav bar back
 	        		buttons(grid, primaryStage);
 	        		System.out.println("finished creating");
+	        		
+
+	        		//create bank
+	        		TestBank banky = new TestBank();
+					ArrayList<String> answers = new ArrayList<String>();
+					answers.add("x = 4");
+					answers.add("x = 87");
+					answers.add("x = -2");
+					answers.add("x = 34");
+					
+					Question q1 = new Question("What is 2 + 2?", answers, "Arithmetic", "Analyze");
+
+					answers.set(0, "An integer");
+					answers.set(1, "A word");
+					answers.set(2, "A character");
+					answers.set(3, "A data structure");
+
+					Question q2 = new Question("What is an int?", answers, "Data Types", "Remember");
+					
+					answers.set(0, "A thing (right)");
+					answers.set(1, "Something else");
+					answers.set(2, "Some other thing");
+					answers.set(3, "Something else ALTOGETHER");
+					
+					Question q3 = new Question("What does \'static\' mean?", answers, "Arithmetic", "Remember");
+					
+					answers.set(0, "An integer");
+					answers.set(1, "A word");
+					answers.set(2, "A character");
+					answers.set(3, "A data structure");
+
+					Question q4 = new Question("What is a char?", answers, "Data Types", "Remember");
+					
+					banky.addQuest(q1);
+					banky.addQuest(q2);
+					banky.addQuest(q3);
+					banky.addQuest(q4);
+	        		
+					//add button here 
+			        Button takeQuizButt = new Button();
+			        takeQuizButt.setText("Take Quiz");
+			        takeQuizButt.setTextFill(Color.BLUE);
+			        takeQuizButt.setMaxWidth(Double.MAX_VALUE);
+			        takeQuizButt.setOnAction(new EventHandler<ActionEvent>() {
+			        	@Override
+			        	public void handle(ActionEvent event) {
+			        
+	        		ArrayList<String> topics = new ArrayList<String>();
+	        		topics.add("Arithmetic");
+	        		topics.add("Data Types");
+	        		Testing quiz = new Testing(1, topics, banky);
+	        		
+	        		for(int i = 0; i < 4; i++){
+	        			System.out.println(quiz.getQ(i).getText());
+	        			for(int j = 0; j < 4; j++){
+	        				System.out.println("\t"+quiz.getQ(i).getAnswer(j));
+	        			}
+	        		}
+			        }
+			        });
+			        grid.add(takeQuizButt, 20, 18);
+	        		
 	        	}
 	        });
 	        grid.add(exams, 3, 25);
+	        
 	        
 	        //diagnostics button
 	        Button diagnostics = new Button();
