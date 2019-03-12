@@ -3,6 +3,7 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.nio.file.Files;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -11,16 +12,10 @@ public class Student {
 	//Credentials
 	private String username;
 	private String password;
-	
-	//Vars for Bloom's 1-6
-	private Tuple B1;
-	private Tuple B2;
-	private Tuple B3;
-	private Tuple B4;
-	private Tuple B5;
-	private Tuple B6;
-	
+		
 	//AP topics
+	private Map<String,Tuple> stats;
+	private Map<String,Tuple> bloom;
 	private Map<String,Tuple> comments;
 	private Map<String,Tuple> primTypes;
 	private Map<String,Tuple> operators;
@@ -41,15 +36,8 @@ public class Student {
 	private Map<String,Tuple> standardJavaLibrary;
 	
 	public Student() {
-		ArrayList<Object> order = new ArrayList<>();
-		order.add(username);
-		order.add(password);
-		order.add(B1);
-		order.add(B2);
-		order.add(B3);
-		order.add(B4);
-		order.add(B5);
-		order.add(B6);
+		stats = new HashMap<>();
+		/*order.add(bloom);
 		order.add(comments);
 		order.add(primTypes);
 		order.add(operators);
@@ -67,7 +55,7 @@ public class Student {
 		order.add(inheritance);
 		order.add(packages);
 		order.add(miscOOP);
-		order.add(standardJavaLibrary);
+		order.add(standardJavaLibrary);*/
 		File f = new File("(default).txt");
 		Scanner scn;
 		if(!f.exists()) {
@@ -87,7 +75,72 @@ public class Student {
 			String nextLine = scn.nextLine();
 			Scanner scan = new Scanner(nextLine);
 			if (scan.hasNextInt()) {
-				
+				for(int j = 1;scan.hasNextInt();j++) {
+					String name = "";
+					switch(i) {
+					case 1:
+						name = ("Bloom"+j);
+						break;
+					case 2:
+						name = "Comments";
+						break;
+					case 3:
+						name = "Primitive Types";
+						break;
+					case 4:
+						name = "Operators";
+						break;
+					case 5:
+						name = "Object Comparison";
+						break;
+					case 6:
+						name = "Escape Sequences";
+						break;
+					case 7:
+						name = "I/O";
+						break;
+					case 8:
+						name = "Exceptions";
+						break;
+					case 9:
+						name = "Arrays";
+						break;
+					case 10:
+						name = "Control Statements";
+						break;
+					case 11:
+						name = "Variables";
+						break;
+					case 12:
+						name = "Methods";
+						break;
+					case 13:
+						name = "Constructors";
+						break;
+					case 14:
+						name = "Classes";
+						break;
+					case 15:
+						name = "Interfaces";
+						break;
+					case 16:
+						name = "Inheritance";
+						break;
+					case 17:
+						name = "Packages";
+					}
+					
+					int x = scan.nextInt();
+					int y = scan.nextInt();
+					Tuple t = new Tuple();
+					t.x = x;
+					t.y = y;
+					stats.put(name, t);
+				}
+			}
+			else {
+				username = scan.next();
+				password = scan.next();
 			}
 		}
 	}
@@ -108,52 +161,12 @@ public class Student {
 		this.password = password;
 	}
 
-	public Tuple getB1() {
-		return B1;
+	public Map<String,Tuple> getBloom() {
+		return bloom;
 	}
 
-	public void setB1(Tuple b1) {
-		B1 = b1;
-	}
-
-	public Tuple getB2() {
-		return B2;
-	}
-
-	public void setB2(Tuple b2) {
-		B2 = b2;
-	}
-
-	public Tuple getB3() {
-		return B3;
-	}
-
-	public void setB3(Tuple b3) {
-		B3 = b3;
-	}
-
-	public Tuple getB4() {
-		return B4;
-	}
-
-	public void setB4(Tuple b4) {
-		B4 = b4;
-	}
-
-	public Tuple getB5() {
-		return B5;
-	}
-
-	public void setB5(Tuple b5) {
-		B5 = b5;
-	}
-
-	public Tuple getB6() {
-		return B6;
-	}
-
-	public void setB6(Tuple b6) {
-		B6 = b6;
+	public void setBloom(Map<String,Tuple> bloom) {
+		this.bloom = bloom;
 	}
 
 	public Map<String,Tuple> getComments() {
