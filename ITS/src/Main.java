@@ -1,5 +1,3 @@
-
-
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -18,12 +16,9 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Scanner;
-
-
 import javafx. *;
 
 
@@ -121,7 +116,7 @@ public class Main extends Application{
 	        		//add textbook information here
 	        		Text scenetitle = new Text("Think Java");
 	                scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 26));
-	                grid.add(scenetitle, 3, 1);
+	                grid.add(scenetitle, 3, 0);
 	                //add the nav bar back
 	        		buttons(grid, primaryStage);
 	        		System.out.println("finished creating");
