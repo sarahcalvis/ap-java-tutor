@@ -204,9 +204,12 @@ public class Main extends Application{
 	        		
 					//add button here 
 			        Button takeQuizButt = new Button();
-			        takeQuizButt.setText("Quizzes and Exams");
+			        takeQuizButt.setText("Take Quiz");
 			        takeQuizButt.setTextFill(Color.BLUE);
 			        takeQuizButt.setMaxWidth(Double.MAX_VALUE);
+			        takeQuizButt.setOnAction(new EventHandler<ActionEvent>() {
+			        	@Override
+			        	public void handle(ActionEvent event) {
 			        
 	        		ArrayList<String> topics = new ArrayList<String>();
 	        		topics.add("Arithmetic");
@@ -218,11 +221,15 @@ public class Main extends Application{
 	        			for(int j = 0; j < 4; j++){
 	        				System.out.println("\t"+quiz.getQ(i).getAnswer(j));
 	        			}
-	        }
+	        		}
+			        }
+			        });
+			        grid.add(takeQuizButt, 20, 18);
 	        		
 	        	}
 	        });
 	        grid.add(exams, 3, 25);
+	        
 	        
 	        //diagnostics button
 	        Button diagnostics = new Button();
