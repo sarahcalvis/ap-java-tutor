@@ -61,94 +61,111 @@ public class Student {
 			if (scan.hasNextInt()) {
 				for(int j = 1;scan.hasNextInt();j++) {
 					String name = "";
-					Tuple t = new Tuple();
+					Tuple t;	//for bloom only atm
+					int x = scan.nextInt();
+					int y = scan.nextInt();
 					switch(i) {
 					case 1:
 						name = ("Bloom"+j);
-						//t = 
+						t = new Tuple(x,y);
+						t.x = x;
+						t.y = y;
 						break;
 					case 2:
 						name = "Comments";
+						comments = new Tuple(x,y);
 						t = comments;
 						break;
 					case 3:
 						name = "Primitive Types";
+						primTypes = new Tuple(x,y);
 						t = primTypes;
+						
 						break;
 					case 4:
 						name = "Operators";
+						operators = new Tuple(x,y);
 						t = operators;
 						break;
 					case 5:
 						name = "Object Comparison";
+						objComparison = new Tuple(x,y);
 						t = objComparison;
 						break;
 					case 6:
 						name = "Escape Sequences";
+						escSeq = new Tuple(x,y);
 						t = escSeq;
 						break;
 					case 7:
 						name = "I/O";
+						IO = new Tuple(x,y);
 						t = IO;
 						break;
 					case 8:
 						name = "Exceptions";
+						nou = new Tuple(x,y);
 						t = nou;
 						break;
 					case 9:
 						name = "Arrays";
+						arrays = new Tuple(x,y);
 						t = arrays;
 						break;
 					case 10:
 						name = "Control Statements";
+						ctrlStatements = new Tuple(x,y);
 						t = ctrlStatements;
 						break;
 					case 11:
 						name = "Variables";
+						vars = new Tuple(x,y);
 						t = vars;
 						break;
 					case 12:
 						name = "Methods";
+						methods = new Tuple(x,y);
 						t = methods;
 						break;
 					case 13:
 						name = "Constructors";
+						constructors = new Tuple(x,y);
 						t = constructors;
 						break;
 					case 14:
 						name = "Classes";
-						t = classes;
+						classes = new Tuple(x,y);
+						t = classes;						
 						break;
 					case 15:
 						name = "Interfaces";
+						interfaces = new Tuple(x,y);
 						t = interfaces;
 						break;
 					case 16:
 						name = "Inheritance";
+						inheritance = new Tuple(x,y);
 						t = inheritance;
 						break;
 					case 17:
 						name = "Packages";
+						packages = new Tuple(x,y);
 						t = packages;
 						break;
 					case 18:
 						name = "Miscellaneous Object Oriented Programming";
+						miscOOP = new Tuple(x,y);
 						t = miscOOP;
 						break;
 					case 19:
 						name = "Standard Java Library";
+						standardJavaLibrary = new Tuple(x,y);
 						t = standardJavaLibrary;
 						break;
 					default:
 						name = "You Broke Everything";
-						t = new Tuple();
-					}					
-					int x = scan.nextInt();
-					int y = scan.nextInt();
-					System.out.println(name);
-					System.out.println(x + " " + y);
-					t.x = x;
-					t.y = y;
+						t = new Tuple(x,y);
+					}
 					stats.put(name, t);
 				}
 			}
