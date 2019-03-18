@@ -17,13 +17,19 @@ public class Student {
 	//AP topics
 	private Map<String,Tuple> stats;
 	//private Tuple bloom;
+	private Tuple bloom1;
+	private Tuple bloom2;
+	private Tuple bloom3;
+	private Tuple bloom4;
+	private Tuple bloom5;
+	private Tuple bloom6;
 	private Tuple comments;
 	private Tuple primTypes;
 	private Tuple operators;
 	private Tuple objComparison;
 	private Tuple escSeq;
 	private Tuple IO;
-	private Tuple nou;	//exceptions
+	private Tuple exceptions;
 	private Tuple arrays;
 	private Tuple ctrlStatements;
 	private Tuple vars;
@@ -36,26 +42,33 @@ public class Student {
 	private Tuple miscOOP;
 	private Tuple standardJavaLibrary;
 	
-	public Student() throws FileNotFoundException, IOException {
+	public Student(){
 		stats = new HashMap<>();
 		
 		//TODO: file readers and writers (specifically for txt files) maybe look at streams for doing numbers?
-		File f = new File("(default).txt");
-		Scanner scn;
-		if(f.createNewFile()) {
-			PrintWriter pw = new PrintWriter(f);
-			pw.print("guest guest");
-			pw.print("\n0 0 0 0 0 0 0 0 0 0 0 0");
-			for(int i=0;i<18;i++) {
-				pw.print("\n0 0");
-			}
-			pw.flush();
-		}
+		File f = new File("guestguest.txt");
+		Scanner scn = null;
 		try {
+			if(f.createNewFile()) {
+				PrintWriter pw = new PrintWriter(f);
+				pw.print("guest guest");
+				pw.print("\n0 0 0 0 0 0 0 0 0 0 0 0");
+				for(int i=0;i<18;i++) {
+					pw.print("\n0 0");
+				}
+				pw.flush();
+				pw.close();
+			}
 			scn = new Scanner (f);
-		} 
+		}
 		catch (FileNotFoundException e) {
 			scn = new Scanner("(default).txt");
+			// TODO Auto-generated catch block
+			//this should never trigger
+			System.out.println("why the hecc is this triggering. you got problems in your default Student constructor");
+			e.printStackTrace();
+		} catch (IOException e) {
+			scn = new Scanner(System.in);
 			// TODO Auto-generated catch block
 			//this should never trigger
 			System.out.println("why the hecc is this triggering. you got problems in your default Student constructor");
@@ -74,9 +87,35 @@ public class Student {
 					switch(i) {
 					case 1:
 						name = ("Bloom"+j);
-						t = new Tuple(x,y);
-						t.x = x;
-						t.y = y;
+						switch(j) {
+						case 1:
+							bloom1 = new Tuple(x,y);
+							t = bloom1;
+							break;
+						case 2:
+							bloom2 = new Tuple(x,y);
+							t = bloom2;
+							break;
+						case 3:
+							bloom3 = new Tuple(x,y);
+							t = bloom3;
+							break;
+						case 4:
+							bloom4 = new Tuple(x,y);
+							t = bloom4;
+							break;
+						case 5:
+							bloom5 = new Tuple(x,y);
+							t = bloom5;
+							break;
+						case 6:
+							bloom6 = new Tuple(x,y);
+							t = bloom6;
+							break;
+						default:
+							name = "You Broke Everything";
+							t = new Tuple(x,y);
+						}
 						break;
 					case 2:
 						name = "Comments";
@@ -111,8 +150,8 @@ public class Student {
 						break;
 					case 8:
 						name = "Exceptions";
-						nou = new Tuple(x,y);
-						t = nou;
+						exceptions = new Tuple(x,y);
+						t = exceptions;
 						break;
 					case 9:
 						name = "Arrays";
@@ -180,7 +219,7 @@ public class Student {
 				username = scan.next();
 				password = scan.next();
 			}
-		}
+		}		
 	}
 
 	public String getUsername() {
@@ -200,18 +239,60 @@ public class Student {
 	}
 
 	
-	/*public Double getBloom() {
-		return bloom.x / bloom.y *100.0;
+	public Double getBloom1() {
+		return bloom1.x / bloom1.y *100.0;
 	}
 
-	public void setBloom(int numCorrect, int numAsked) {
-		Tuple b = new Tuple();
-		b.x = numCorrect;
-		b.y = numAsked;
-		bloom.x = numCorrect;
-		bloom.y = numAsked;
-	}*/
+	public void setBloom1(int numCorrect, int numAsked) {
+		bloom1.x += numCorrect;
+		bloom1.y += numAsked;
+	}
+	
+	public Double getBloom2() {
+		return bloom2.x / bloom2.y *100.0;
+	}
 
+	public void setBloom2(int numCorrect, int numAsked) {
+		bloom2.x += numCorrect;
+		bloom2.y += numAsked;
+	}
+	
+	public Double getBloom3() {
+		return bloom3.x / bloom3.y *100.0;
+	}
+
+	public void setBloom3(int numCorrect, int numAsked) {
+		bloom3.x += numCorrect;
+		bloom3.y += numAsked;
+	}
+	
+	public Double getBloom4() {
+		return bloom1.x / bloom1.y *100.0;
+	}
+
+	public void setBloom4(int numCorrect, int numAsked) {
+		bloom4.x += numCorrect;
+		bloom4.y += numAsked;
+	}
+
+	public Double getBloom5() {
+		return bloom5.x / bloom5.y *100.0;
+	}
+
+	public void setBloom5(int numCorrect, int numAsked) {
+		bloom5.x += numCorrect;
+		bloom5.y += numAsked;
+	}
+	
+	public Double getBloom6() {
+		return bloom6.x / bloom6.y *100.0;
+	}
+
+	public void setBloom6(int numCorrect, int numAsked) {
+		bloom6.x += numCorrect;
+		bloom6.y += numAsked;
+	}
+	
 	public Double getComments() {
 		return comments.x / comments.y * 100.0;
 	}
@@ -237,5 +318,19 @@ public class Student {
 	public void setOperators(int numCorrect, int numAsked) {
 		operators.x +=numCorrect;
 		operators.y +=numAsked;
+	}
+	
+	public Map<String,Tuple> getStats(){
+		return stats;
+	}
+	
+	public void saveProgress() {
+		try {
+			PrintWriter pw = new PrintWriter(username+password+ ".txt");
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
 }
