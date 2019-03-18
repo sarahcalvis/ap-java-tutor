@@ -10,7 +10,7 @@ public class Testing {
 	//type (0=>quiz, 1=>exam), questions per topic (hardwired for now), and number of
 	//topics, depending on type
 	int type;
-	int qPerT = 2;
+	int qPerT = 5;
 	int numTopics;
 	
 	//questions and topics for the testing object
@@ -36,7 +36,7 @@ public class Testing {
 			int numTopics = 1;
 		}else{
 			//Placeholder numbers
-			int numTopics = 2;
+			int numTopics = 5;
 		}
 		for(String t : topics){
 			this.topics.add(t);
