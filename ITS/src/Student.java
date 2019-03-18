@@ -15,7 +15,7 @@ public class Student {
 		
 	//AP topics
 	private Map<String,Tuple> stats;
-	private Tuple bloom;
+	//private Tuple bloom;
 	private Tuple comments;
 	private Tuple primTypes;
 	private Tuple operators;
@@ -37,6 +37,8 @@ public class Student {
 	
 	public Student() {
 		stats = new HashMap<>();
+		
+		//TODO: file readers and writers (specifically for txt files) maybe look at streams for doing numbers?
 		File f = new File("(default).txt");
 		Scanner scn;
 		if(!f.exists()) {
@@ -54,74 +56,97 @@ public class Student {
 		}
 		for(int i = 0; scn.hasNextLine(); i++) {
 			String nextLine = scn.nextLine();
+			System.out.println(nextLine);
 			Scanner scan = new Scanner(nextLine);
 			if (scan.hasNextInt()) {
 				for(int j = 1;scan.hasNextInt();j++) {
 					String name = "";
+					Tuple t = new Tuple();
 					switch(i) {
 					case 1:
 						name = ("Bloom"+j);
+						//t = 
 						break;
 					case 2:
 						name = "Comments";
+						t = comments;
 						break;
 					case 3:
 						name = "Primitive Types";
+						t = primTypes;
 						break;
 					case 4:
 						name = "Operators";
+						t = operators;
 						break;
 					case 5:
 						name = "Object Comparison";
+						t = objComparison;
 						break;
 					case 6:
 						name = "Escape Sequences";
+						t = escSeq;
 						break;
 					case 7:
 						name = "I/O";
+						t = IO;
 						break;
 					case 8:
 						name = "Exceptions";
+						t = nou;
 						break;
 					case 9:
 						name = "Arrays";
+						t = arrays;
 						break;
 					case 10:
 						name = "Control Statements";
+						t = ctrlStatements;
 						break;
 					case 11:
 						name = "Variables";
+						t = vars;
 						break;
 					case 12:
 						name = "Methods";
+						t = methods;
 						break;
 					case 13:
 						name = "Constructors";
+						t = constructors;
 						break;
 					case 14:
 						name = "Classes";
+						t = classes;
 						break;
 					case 15:
 						name = "Interfaces";
+						t = interfaces;
 						break;
 					case 16:
 						name = "Inheritance";
+						t = inheritance;
 						break;
 					case 17:
 						name = "Packages";
+						t = packages;
 						break;
 					case 18:
 						name = "Miscellaneous Object Oriented Programming";
+						t = miscOOP;
 						break;
 					case 19:
 						name = "Standard Java Library";
+						t = standardJavaLibrary;
 						break;
 					default:
 						name = "You Broke Everything";
+						t = new Tuple();
 					}					
 					int x = scan.nextInt();
 					int y = scan.nextInt();
-					Tuple t = new Tuple();
+					System.out.println(name);
+					System.out.println(x + " " + y);
 					t.x = x;
 					t.y = y;
 					stats.put(name, t);
@@ -151,11 +176,42 @@ public class Student {
 	}
 
 	
-	public Double getBloom() {
+	/*public Double getBloom() {
 		return bloom.x / bloom.y *100.0;
 	}
 
 	public void setBloom(int numCorrect, int numAsked) {
-		this.bloom = bloom;
+		Tuple b = new Tuple();
+		b.x = numCorrect;
+		b.y = numAsked;
+		bloom.x = numCorrect;
+		bloom.y = numAsked;
+	}*/
+
+	public Double getComments() {
+		return comments.x / comments.y * 100.0;
+	}
+
+	public void setComments(int numCorrect, int numAsked) {
+		comments.x +=numCorrect;
+		comments.y +=numAsked;
+	}
+	
+	public Double getPrimTypes() {
+		return primTypes.x / comments.y *100.0;
+	}
+	
+	public void setPrimTypes(int numCorrect, int numAsked) {
+		primTypes.x +=numCorrect;
+		primTypes.y +=numAsked;
+	}
+	
+	public Double getOperators() {
+		return operators.x / operators.y *100.0;
+	}
+	
+	public void setOperators(int numCorrect, int numAsked) {
+		operators.x +=numCorrect;
+		operators.y +=numAsked;
 	}
 }
