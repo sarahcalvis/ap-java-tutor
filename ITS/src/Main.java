@@ -16,12 +16,16 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 import javafx. *;
 
 
 public class Main /*extends Application*/{
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws FileNotFoundException, IOException {
         //launch(args);
 		
 		System.out.println("Hello World!");

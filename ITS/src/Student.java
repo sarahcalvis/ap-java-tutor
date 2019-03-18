@@ -1,5 +1,6 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.nio.file.Files;
 import java.util.ArrayList;
@@ -35,14 +36,20 @@ public class Student {
 	private Tuple miscOOP;
 	private Tuple standardJavaLibrary;
 	
-	public Student() {
+	public Student() throws FileNotFoundException, IOException {
 		stats = new HashMap<>();
 		
 		//TODO: file readers and writers (specifically for txt files) maybe look at streams for doing numbers?
 		File f = new File("(default).txt");
 		Scanner scn;
-		if(!f.exists()) {
-			//TODO: generate file
+		if(f.createNewFile()) {
+			PrintWriter pw = new PrintWriter(f);
+			pw.print("guest guest");
+			pw.print("\n0 0 0 0 0 0 0 0 0 0 0 0");
+			for(int i=0;i<18;i++) {
+				pw.print("\n0 0");
+			}
+			pw.flush();
 		}
 		try {
 			scn = new Scanner (f);
