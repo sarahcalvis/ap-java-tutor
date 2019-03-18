@@ -49,6 +49,7 @@ public class Student {
 		File f = new File("guestguest.txt");
 		Scanner scn = null;
 		try {
+			scn = new Scanner (f);
 			if(f.createNewFile()) {
 				PrintWriter pw = new PrintWriter(f);
 				pw.print("guest guest");
@@ -59,7 +60,6 @@ public class Student {
 				pw.flush();
 				pw.close();
 			}
-			scn = new Scanner (f);
 		}
 		catch (FileNotFoundException e) {
 			scn = new Scanner("(default).txt");
@@ -76,7 +76,6 @@ public class Student {
 		}
 		for(int i = 0; scn.hasNextLine(); i++) {
 			String nextLine = scn.nextLine();
-			System.out.println(nextLine);
 			Scanner scan = new Scanner(nextLine);
 			if (scan.hasNextInt()) {
 				for(int j = 1;scan.hasNextInt();j++) {
@@ -86,7 +85,7 @@ public class Student {
 					int y = scan.nextInt();
 					switch(i) {
 					case 1:
-						name = ("Bloom"+j);
+						name = ("Bloom "+j);
 						switch(j) {
 						case 1:
 							bloom1 = new Tuple(x,y);
@@ -238,95 +237,99 @@ public class Student {
 		this.password = password;
 	}
 
+	public Map<String,Tuple> getStats(){
+		return stats;
+	}
+	
 	
 	public Double getBloom1() {
-		return bloom1.x / bloom1.y *100.0;
+		return bloom1.getTuple();
 	}
 
 	public void setBloom1(int numCorrect, int numAsked) {
-		bloom1.x += numCorrect;
-		bloom1.y += numAsked;
+		bloom1.setTuple(numCorrect, numAsked);
 	}
 	
 	public Double getBloom2() {
-		return bloom2.x / bloom2.y *100.0;
+		return bloom2.getTuple();
 	}
 
 	public void setBloom2(int numCorrect, int numAsked) {
-		bloom2.x += numCorrect;
-		bloom2.y += numAsked;
+		bloom2.setTuple(numCorrect, numAsked);
 	}
 	
 	public Double getBloom3() {
-		return bloom3.x / bloom3.y *100.0;
+		return bloom3.getTuple();			
 	}
 
 	public void setBloom3(int numCorrect, int numAsked) {
-		bloom3.x += numCorrect;
-		bloom3.y += numAsked;
+		bloom3.setTuple(numCorrect, numAsked);
 	}
 	
 	public Double getBloom4() {
-		return bloom1.x / bloom1.y *100.0;
+		return bloom1.getTuple();
 	}
 
 	public void setBloom4(int numCorrect, int numAsked) {
-		bloom4.x += numCorrect;
-		bloom4.y += numAsked;
+		bloom4.setTuple(numCorrect, numAsked);
 	}
 
 	public Double getBloom5() {
-		return bloom5.x / bloom5.y *100.0;
+		return bloom5.getTuple();
 	}
 
 	public void setBloom5(int numCorrect, int numAsked) {
-		bloom5.x += numCorrect;
-		bloom5.y += numAsked;
+		bloom5.setTuple(numCorrect, numAsked);
 	}
 	
 	public Double getBloom6() {
-		return bloom6.x / bloom6.y *100.0;
+		return bloom6.getTuple();
 	}
 
 	public void setBloom6(int numCorrect, int numAsked) {
-		bloom6.x += numCorrect;
-		bloom6.y += numAsked;
+		bloom6.setTuple(numCorrect, numAsked);
 	}
 	
 	public Double getComments() {
-		return comments.x / comments.y * 100.0;
+		return comments.getTuple();
 	}
 
 	public void setComments(int numCorrect, int numAsked) {
-		comments.x +=numCorrect;
-		comments.y +=numAsked;
+		comments.setTuple(numCorrect, numAsked);
 	}
 	
 	public Double getPrimTypes() {
-		return primTypes.x / comments.y *100.0;
+		return primTypes.getTuple();
 	}
 	
 	public void setPrimTypes(int numCorrect, int numAsked) {
-		primTypes.x +=numCorrect;
-		primTypes.y +=numAsked;
+		primTypes.setTuple(numCorrect, numAsked);
 	}
 	
 	public Double getOperators() {
-		return operators.x / operators.y *100.0;
+		return operators.getTuple();
 	}
 	
 	public void setOperators(int numCorrect, int numAsked) {
-		operators.x +=numCorrect;
-		operators.y +=numAsked;
-	}
-	
-	public Map<String,Tuple> getStats(){
-		return stats;
+		operators.setTuple(numCorrect, numAsked);
 	}
 	
 	public void saveProgress() {
 		try {
 			PrintWriter pw = new PrintWriter(username+password+ ".txt");
+			pw.println(username + " "+ password);
+			pw.print(stats.get("Bloom 1").toString() + " ");
+			pw.print(stats.get("Bloom 2").toString() + " ");
+			pw.print(stats.get("Bloom 3").toString() + " ");
+			pw.print(stats.get("Bloom 4").toString() + " ");
+			pw.print(stats.get("Bloom 5").toString() + " ");
+			pw.println(stats.get("Bloom 6").toString());
+			pw.println(stats.get("Comments").toString());
+			pw.println(stats.get("Primitive Types").toString());
+			pw.flush();
+			pw.close();
+
+
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
