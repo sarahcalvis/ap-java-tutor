@@ -49,8 +49,8 @@ public class Student {
 		File f = new File("guestguest.txt");
 		Scanner scn = null;
 		try {
-			scn = new Scanner (f);
 			if(f.createNewFile()) {
+				scn = new Scanner (f);
 				PrintWriter pw = new PrintWriter(f);
 				pw.print("guest guest");
 				pw.print("\n0 0 0 0 0 0 0 0 0 0 0 0");
@@ -326,6 +326,20 @@ public class Student {
 			pw.println(stats.get("Bloom 6").toString());
 			pw.println(stats.get("Comments").toString());
 			pw.println(stats.get("Primitive Types").toString());
+			pw.println(stats.get("Operators").toString());
+			pw.println(stats.get("Object Comparison").toString());
+			pw.println(stats.get("Escape Sequences").toString());
+			pw.println(stats.get("I/O").toString());
+			pw.println(stats.get("Exceptions").toString());
+			pw.println(stats.get("Arrays").toString());
+			pw.println(stats.get("Control Statements").toString());
+			pw.println(stats.get("Variables").toString());
+			pw.println(stats.get("Methods").toString());
+			pw.println(stats.get("Constructors").toString());
+			pw.println(stats.get("Classes").toString());
+			pw.println(stats.get("Interfaces").toString());
+			pw.println(stats.get("Packages").toString());
+			pw.println(stats.get("Miscellaneous Object Oriented Programming").toString());
 			pw.flush();
 			pw.close();
 

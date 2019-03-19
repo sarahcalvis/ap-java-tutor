@@ -34,7 +34,7 @@ public class Main /*extends Application*/{
 		System.out.println("Goodbye World!");
 		
 		Student s = new Student();
-		s.saveProgress();
+		//s.saveProgress();
     }
     
     /*@Override
