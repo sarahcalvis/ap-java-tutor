@@ -33,11 +33,6 @@ public class Main extends Application{
 				
         launch(args);
 		
-		/*
-		System.out.println("Hello World!");
-		System.out.println("I hate everything.");
-		System.out.println("This is way harder than it needs to be.");
-		System.out.println("Goodbye World!"); */
 		
     }
     
@@ -257,7 +252,7 @@ public class Main extends Application{
 	        		}
 			        }
 			        });
-			        grid.add(takeQuizButt, 20, 18);
+			        grid.add(takeQuizButt, 10, 18);
 	        		
 	        	}
 	        });
