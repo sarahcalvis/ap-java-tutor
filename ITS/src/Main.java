@@ -8,6 +8,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
@@ -17,13 +19,14 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 import javafx. *;
 
 
 public class Main extends Application{
-
+	int whatPageWeOn = 1;
 	public static void main(String[] args) {
 		//GridPane grid = new GridPane();
 		//TESTY TESTY
@@ -111,45 +114,114 @@ public class Main extends Application{
 	        		//add textbook information here
 	        		Text scenetitle = new Text("Think Java");
 	                scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 26));
-	                grid.add(scenetitle, 3, 0);
+	                grid.add(scenetitle, 2, 1);
 	                //add the nav bar back
 	        		buttons(grid, primaryStage);
 	        		System.out.println("finished creating");
-	        		String chapters[] = {"0Preface.txt","1Chapter.txt","2Chapter.txt","3Chapter.txt","4Chapter.txt","5Chapter.txt","6Chapter.txt","7Chapter.txt","8Chapter.txt","9Chapter.txt","10Chapter.txt","11Chapter.txt","12Chapter.txt","13Chapter.txt","14Chapter.txt"};
-	        		grid.setPadding(new Insets(25,25,25,25));
-	        		//Build labels
-	        		ArrayList<Button> btnChapters = new ArrayList<Button>();
-	        		//btnChapters.add(new Button("Preface"));
-	        		for (int i = 0; i < 14; i++) {
-	        			btnChapters.add(new Button("Chapter " + (i /*+ 1*/)));
-	        			int j = i;
-	        			btnChapters.get(i).setOnAction(new EventHandler<ActionEvent>() {
-	        				@Override
-	        				public void handle(ActionEvent event) {
-	        					//myGrid.getChildren().removeIf(node -> GridPane.getColumnIndex(node) == 0);
-	        					grid.getChildren().removeIf(node -> GridPane.getColumnIndex(node) == 5);
-	        					try {
-	        						Scanner s = new Scanner(new File(chapters[j]));
-	        						String r = "";
-	        						int v = 0;
-	        						while (s.hasNextLine()) {
-	        							r = s.nextLine();
-	        							Text text = new Text();
-	        							text.setText(r);
-	        							grid.add(text,5, v);
-	        							v++;
-	        						}
-	        						s.close();
-	        					}
-								//displayBook(j);
-								catch (Exception e) {
-									System.out.println("chapter unavailable");
-								}
-	        				}
-	        			});
-	        			
-	        		grid.add(btnChapters.get(i), 3, i+1);
+	        		String pageNumber = Integer.toString(whatPageWeOn);
+	        		if (pageNumber.length() == 1) {
+	        			pageNumber = "00"+pageNumber;
 	        		}
+	        		else if (pageNumber.length() == 2) {
+	        			pageNumber = "0"+pageNumber;
+	        		}
+	        		
+	        		String file = "file:src/thinkjava(1)-page-"+pageNumber+".jpg";
+	        		System.out.println(file);
+	        		Image image = new Image(file);
+	        		ImageView ivText = new ImageView();
+	                ivText.setImage(image);
+	                ivText.setFitHeight(700);
+	                ivText.setFitWidth(400);
+	                grid.add(ivText, 2, 2);
+	        		Button btnNextPage = new Button("Next Page");
+	        		btnNextPage.setOnAction(new EventHandler<ActionEvent>() {
+	        			@Override
+	        			public void handle(ActionEvent event) {
+	        				grid.getChildren().removeIf(node -> GridPane.getRowIndex(node) == 2 &&GridPane.getColumnIndex(node) == 2);
+	        				if (whatPageWeOn < 291) {
+	        					whatPageWeOn++;
+	        					String pageNumber = Integer.toString(whatPageWeOn);
+	        	        		if (pageNumber.length() == 1) {
+	        	        			pageNumber = "00"+pageNumber;
+	        	        		}
+	        	        		else if (pageNumber.length() == 2) {
+	        	        			pageNumber = "0"+pageNumber;
+	        	        		}
+	        					String file = "file:src/thinkjava(1)-page-"+pageNumber+".jpg";
+	        	        		System.out.println(file);
+	        	        		Image image = new Image(file);
+	        	        		ImageView ivText = new ImageView();
+	        	                ivText.setImage(image);
+	        	                ivText.setFitHeight(700);
+	        	                ivText.setFitWidth(400);
+	        	                grid.add(ivText, 2, 2);
+	        				}
+        					
+	        			}
+	        		});
+	        		grid.add(btnNextPage, 4, 1);
+	        		Button btnPrevPage = new Button("Previous Page");
+	        		btnPrevPage.setOnAction(new EventHandler<ActionEvent>() {
+	        			@Override
+	        			public void handle(ActionEvent event) {
+	        				grid.getChildren().removeIf(node -> GridPane.getRowIndex(node) == 2 &&GridPane.getColumnIndex(node) == 2);
+	        				if (whatPageWeOn > 1) {
+	        					whatPageWeOn--;
+	        					String pageNumber = Integer.toString(whatPageWeOn);
+	        	        		if (pageNumber.length() == 1) {
+	        	        			pageNumber = "00"+pageNumber;
+	        	        		}
+	        	        		else if (pageNumber.length() == 2) {
+	        	        			pageNumber = "0"+pageNumber;
+	        	        		}
+	        					String file = "file:src/thinkjava(1)-page-"+pageNumber+".jpg";
+	        	        		System.out.println(file);
+	        	        		Image image = new Image(file);
+	        	        		ImageView ivText = new ImageView();
+	        	                ivText.setImage(image);
+	        	                ivText.setFitHeight(650);
+	        	                ivText.setFitWidth(425);
+	        	                grid.add(ivText, 2, 2);
+	        				}
+	        			}
+	        		});
+	        		grid.add(btnPrevPage, 3, 1);
+//	        		String chapters[] = {"0Preface.txt","1Chapter.txt","2Chapter.txt","3Chapter.txt","4Chapter.txt","5Chapter.txt","6Chapter.txt","7Chapter.txt","8Chapter.txt","9Chapter.txt","10Chapter.txt","11Chapter.txt","12Chapter.txt","13Chapter.txt","14Chapter.txt"};
+//	        		grid.setPadding(new Insets(25,25,25,25));
+//	        		//Build labels
+//	        		ArrayList<Button> btnChapters = new ArrayList<Button>();
+//	        		//btnChapters.add(new Button("Preface"));
+//	        		for (int i = 0; i < 14; i++) {
+//	        			btnChapters.add(new Button("Chapter " + (i /*+ 1*/)));
+//	        			int j = i;
+//	        			btnChapters.get(i).setOnAction(new EventHandler<ActionEvent>() {
+//	        				@Override
+//	        				public void handle(ActionEvent event) {
+//	        					//myGrid.getChildren().removeIf(node -> GridPane.getColumnIndex(node) == 0);
+//	        					grid.getChildren().removeIf(node -> GridPane.getColumnIndex(node) == 5);
+//	        					try {
+//	        						Scanner s = new Scanner(new File(chapters[j]));
+//	        						String r = "";
+//	        						int v = 0;
+//	        						while (s.hasNextLine()) {
+//	        							r = s.nextLine();
+//	        							Text text = new Text();
+//	        							text.setText(r);
+//	        							grid.add(text,5, v);
+//	        							v++;
+//	        						}
+//	        						s.close();
+//	        					}
+//								//displayBook(j);
+//								catch (Exception e) {
+//									System.out.println("chapter unavailable");
+//								}
+//	        				}
+//	        			});
+//	        			
+//	        		grid.add(btnChapters.get(i), 3, i+1);
+//	        		}
 	        	}
 	        });
 	        grid.add(textbk, 4, 10);
