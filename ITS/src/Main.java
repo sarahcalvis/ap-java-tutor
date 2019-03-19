@@ -32,9 +32,6 @@ public class Main /*extends Application*/{
 		System.out.println("I hate everything.");
 		System.out.println("This is way harder than it needs to be.");
 		System.out.println("Goodbye World!");
-		
-		Student s = new Student();
-		//s.saveProgress();
     }
     
     /*@Override
