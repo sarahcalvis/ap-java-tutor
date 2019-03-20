@@ -188,41 +188,6 @@ public class Main extends Application{
 	        			}
 	        		});
 	        		grid.add(btnPrevPage, 3, 1);
-//	        		String chapters[] = {"0Preface.txt","1Chapter.txt","2Chapter.txt","3Chapter.txt","4Chapter.txt","5Chapter.txt","6Chapter.txt","7Chapter.txt","8Chapter.txt","9Chapter.txt","10Chapter.txt","11Chapter.txt","12Chapter.txt","13Chapter.txt","14Chapter.txt"};
-//	        		grid.setPadding(new Insets(25,25,25,25));
-//	        		//Build labels
-//	        		ArrayList<Button> btnChapters = new ArrayList<Button>();
-//	        		//btnChapters.add(new Button("Preface"));
-//	        		for (int i = 0; i < 14; i++) {
-//	        			btnChapters.add(new Button("Chapter " + (i /*+ 1*/)));
-//	        			int j = i;
-//	        			btnChapters.get(i).setOnAction(new EventHandler<ActionEvent>() {
-//	        				@Override
-//	        				public void handle(ActionEvent event) {
-//	        					//myGrid.getChildren().removeIf(node -> GridPane.getColumnIndex(node) == 0);
-//	        					grid.getChildren().removeIf(node -> GridPane.getColumnIndex(node) == 5);
-//	        					try {
-//	        						Scanner s = new Scanner(new File(chapters[j]));
-//	        						String r = "";
-//	        						int v = 0;
-//	        						while (s.hasNextLine()) {
-//	        							r = s.nextLine();
-//	        							Text text = new Text();
-//	        							text.setText(r);
-//	        							grid.add(text,5, v);
-//	        							v++;
-//	        						}
-//	        						s.close();
-//	        					}
-//								//displayBook(j);
-//								catch (Exception e) {
-//									System.out.println("chapter unavailable");
-//								}
-//	        				}
-//	        			});
-//	        			
-//	        		grid.add(btnChapters.get(i), 3, i+1);
-//	        		}
 	        	}
 	        });
 	        grid.add(textbk, 4, 10);
@@ -293,19 +258,46 @@ public class Main extends Application{
 			          
 			                // add label 
 			                quest.getChildren().add(l); 
+			                
+			                //make array for the checkboxes
+			                ArrayList<CheckBox> boxes = new ArrayList<CheckBox>();
 			          
 			                for (int i = 0; i < st.length; i++) { 
 			          
 			                    // create a checkbox 
 			                    CheckBox c = new CheckBox(st[i]); 
-			          
 			                    // add label 
-			                    quest.getChildren().add(c); 
-			          
-			                    // set IndeterMinate 
-			                    c.setIndeterminate(true); 
-			                } 
-			                grid.add(quest, 3, 8);
+			                    quest.getChildren().add(c);
+			                    //add to arraylist
+			                    boxes.add(c);
+
+			                }
+				             // create a event handler for each checkbox
+			                EventHandler<ActionEvent> boxEvent = new EventHandler<ActionEvent>() { 
+			      
+			                    public void handle(ActionEvent e) 
+			                    { 
+			                    	for (int i = 0; i < boxes.size(); i++) {
+			                    		CheckBox c = boxes.get(i);
+				                        if (c.isSelected()) 
+				                            System.out.println(c.toString() + " selected");
+				                        //else
+				                           //System.out.println("not selected");
+				                        
+				                    } 
+			                    }
+			      
+			                }; 
+			                
+			                //add event to all checkboxes
+			                for (int i = 0; i < boxes.size(); i++) {
+	                    		CheckBox c = boxes.get(i);
+	                    		c.setOnAction(boxEvent); 
+			                }
+			      
+			                
+			                //add all this to grid
+			                grid.add(quest, 2, 4);
 			        }
 			        });
 			        grid.add(takeQuizButt, 10, 18);
