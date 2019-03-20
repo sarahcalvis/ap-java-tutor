@@ -16,6 +16,8 @@ public class Student {
 		
 	//AP topics
 	private Map<String,Tuple> stats;
+	private ArrayList<Double> quizzes;
+	private ArrayList<Double> tests;
 	//private Tuple bloom;
 	private Tuple bloom1;
 	private Tuple bloom2;
@@ -44,15 +46,19 @@ public class Student {
 	
 	public Student(){
 		stats = new HashMap<>();
+		quizzes =  new ArrayList<>();
+		tests = new ArrayList<>();
 		
 		//TODO: file readers and writers (specifically for txt files) maybe look at streams for doing numbers?
-		File f = new File("guestguest.txt");
+		File f = new File("guest.txt");
 		Scanner scn = null;
 		try {
 			if(f.createNewFile()) {
 				scn = new Scanner (f);
 				PrintWriter pw = new PrintWriter(f);
 				pw.print("guest guest");
+				pw.print("\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0");//quizzes
+				pw.print("\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0");//tests
 				pw.print("\n0 0 0 0 0 0 0 0 0 0 0 0");
 				for(int i=0;i<18;i++) {
 					pw.print("\n0 0");
@@ -220,6 +226,20 @@ public class Student {
 					stats.put(name, t);
 				}
 			}
+			else if(scan.hasNextDouble()) {
+				for (int j = 0; scan.hasNextDouble(); j++) {
+					System.out.println(j);
+					if(i==1) {
+						quizzes.add(j,scan.nextDouble());
+					}
+					else if(i==2) {
+						tests.add(j,scan.nextDouble());
+					}
+				}
+				if(i==2) {
+					i=0;
+				}
+			}
 			else {
 				username = scan.next();
 				password = scan.next();
@@ -229,14 +249,18 @@ public class Student {
 
 	public Student(String username, String password) {
 		stats = new HashMap<>();
-		File f = new File(username + password+".txt");
+		quizzes = new ArrayList<>();
+		tests = new ArrayList<>();
+		File f = new File(username + ".txt");
 		Scanner scn = null;
 		try {
 			if(f.createNewFile()) {
 				scn = new Scanner (f);
 				PrintWriter pw = new PrintWriter(f);
 				pw.print(username+ " " + password);
-				pw.print("\n0 0 0 0 0 0 0 0 0 0 0 0");
+				pw.print("\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0");//quizzes
+				pw.print("\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0");//tests
+				pw.print("\n0 0 0 0 0 0 0 0 0 0 0 0");//bloom
 				for(int i=0;i<18;i++) {
 					pw.print("\n0 0");
 				}
@@ -395,6 +419,20 @@ public class Student {
 					stats.put(name, t);
 				}
 			}
+			
+			else if(scan.hasNextDouble()) {
+				for (int j = 0; scan.hasNextDouble(); j++) {
+					if(i==1) {
+						quizzes.add(j,scan.nextDouble());
+					}
+					else if(i==2) {
+						tests.add(j,scan.nextDouble());
+					}
+				}
+				if(i==2) {
+					i=0;
+				}
+			}
 			else {
 				this.username = username;
 				this.password = password;
@@ -421,13 +459,28 @@ public class Student {
 		return stats;
 	}
 	
+	public ArrayList<Double> getQuizzes(){
+		return quizzes;
+	}
+	
+	public void updateQuiz(Double score, int quizNumber) {
+		if (quizzes.get(quizNumber)<score) {
+			quizzes.set(quizNumber, score);
+		}
+	}
+	
+	public void addTest(Double score, int testNumber) {
+		if(tests.get(testNumber)<score) {
+			tests.set(testNumber,score);
+		}
+	}
 	
 	public Double getBloom1() {
 		return bloom1.getTuple();
 	}
 
 	public void setBloom1(int numCorrect, int numAsked) {
-		bloom1.setTuple(numCorrect, numAsked);
+		bloom1.updateTuple(numCorrect, numAsked);
 	}
 	
 	public Double getBloom2() {
@@ -435,7 +488,7 @@ public class Student {
 	}
 
 	public void setBloom2(int numCorrect, int numAsked) {
-		bloom2.setTuple(numCorrect, numAsked);
+		bloom2.updateTuple(numCorrect, numAsked);
 	}
 	
 	public Double getBloom3() {
@@ -443,7 +496,7 @@ public class Student {
 	}
 
 	public void setBloom3(int numCorrect, int numAsked) {
-		bloom3.setTuple(numCorrect, numAsked);
+		bloom3.updateTuple(numCorrect, numAsked);
 	}
 	
 	public Double getBloom4() {
@@ -451,7 +504,7 @@ public class Student {
 	}
 
 	public void setBloom4(int numCorrect, int numAsked) {
-		bloom4.setTuple(numCorrect, numAsked);
+		bloom4.updateTuple(numCorrect, numAsked);
 	}
 
 	public Double getBloom5() {
@@ -459,7 +512,7 @@ public class Student {
 	}
 
 	public void setBloom5(int numCorrect, int numAsked) {
-		bloom5.setTuple(numCorrect, numAsked);
+		bloom5.updateTuple(numCorrect, numAsked);
 	}
 	
 	public Double getBloom6() {
@@ -467,7 +520,7 @@ public class Student {
 	}
 
 	public void setBloom6(int numCorrect, int numAsked) {
-		bloom6.setTuple(numCorrect, numAsked);
+		bloom6.updateTuple(numCorrect, numAsked);
 	}
 	
 	public Double getComments() {
@@ -475,7 +528,7 @@ public class Student {
 	}
 
 	public void setComments(int numCorrect, int numAsked) {
-		comments.setTuple(numCorrect, numAsked);
+		comments.updateTuple(numCorrect, numAsked);
 	}
 	
 	public Double getPrimTypes() {
@@ -483,7 +536,7 @@ public class Student {
 	}
 	
 	public void setPrimTypes(int numCorrect, int numAsked) {
-		primTypes.setTuple(numCorrect, numAsked);
+		primTypes.updateTuple(numCorrect, numAsked);
 	}
 	
 	public Double getOperators() {
@@ -491,13 +544,31 @@ public class Student {
 	}
 	
 	public void setOperators(int numCorrect, int numAsked) {
-		operators.setTuple(numCorrect, numAsked);
+		operators.updateTuple(numCorrect, numAsked);
 	}
 	
 	public void saveProgress() {
 		try {
-			PrintWriter pw = new PrintWriter(username+password+ ".txt");
+			PrintWriter pw = new PrintWriter(username+".txt");
 			pw.println(username + " "+ password);
+			for (int i = 0; i<quizzes.size();i++) {
+				if(!(i==quizzes.size()-1)) {
+					pw.print(quizzes.get(i));
+					pw.print("");
+				}
+				else {
+					pw.println(quizzes.get(i));
+				}
+			}
+			for (int i = 0; i<tests.size();i++) {
+				if(!(i==tests.size()-1)) {
+					pw.print(tests.get(i));
+					pw.print("");
+				}
+				else {
+					pw.println(tests.get(i));
+				}
+			}
 			pw.print(stats.get("Bloom 1").toString() + " ");
 			pw.print(stats.get("Bloom 2").toString() + " ");
 			pw.print(stats.get("Bloom 3").toString() + " ");
@@ -519,7 +590,7 @@ public class Student {
 			pw.println(stats.get("Classes").toString());
 			pw.println(stats.get("Interfaces").toString());
 			pw.println(stats.get("Packages").toString());
-			pw.print(stats.get("Miscellaneous Object Oriented Programming").toString());
+			pw.println(stats.get("Miscellaneous Object Oriented Programming").toString());
 			pw.flush();
 			pw.close();
 

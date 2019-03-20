@@ -19,6 +19,7 @@ import javafx.stage.Stage;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javafx. *;
 
@@ -32,6 +33,10 @@ public class Main /*extends Application*/{
 		System.out.println("I hate everything.");
 		System.out.println("This is way harder than it needs to be.");
 		System.out.println("Goodbye World!");
+		
+		Student s = new Student();
+		s.updateQuiz(5.2,0);
+		s.saveProgress();
     }
     
     /*@Override

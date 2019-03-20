@@ -22,7 +22,7 @@ public class Tuple {
 	 * @param numCorrect	keeps percentage accurate
 	 * @param numAsked		keeps percentage accurate
 	 */
-	public void setTuple(int numCorrect, int numAsked) {
+	public void updateTuple(int numCorrect, int numAsked) {
 		x += numCorrect;
 		y += numAsked;
 	}
