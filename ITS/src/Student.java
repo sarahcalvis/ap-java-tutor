@@ -16,8 +16,11 @@ public class Student {
 		
 	//AP topics
 	private Map<String,Tuple> stats;
+	
+	//test/quiz grades stored as %
 	private ArrayList<Double> quizzes;
 	private ArrayList<Double> tests;
+	
 	//private Tuple bloom;
 	private Tuple bloom1;
 	private Tuple bloom2;
@@ -57,8 +60,8 @@ public class Student {
 				scn = new Scanner (f);
 				PrintWriter pw = new PrintWriter(f);
 				pw.print("guest guest");
-				pw.print("\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0");//quizzes
-				pw.print("\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0");//tests
+				pw.print("\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0");//quizzes
+				pw.print("\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0");//tests
 				pw.print("\n0 0 0 0 0 0 0 0 0 0 0 0");
 				for(int i=0;i<18;i++) {
 					pw.print("\n0 0");
@@ -258,8 +261,8 @@ public class Student {
 				scn = new Scanner (f);
 				PrintWriter pw = new PrintWriter(f);
 				pw.print(username+ " " + password);
-				pw.print("\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0");//quizzes
-				pw.print("\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0");//tests
+				pw.print("\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0");//quizzes
+				pw.print("\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0");//tests
 				pw.print("\n0 0 0 0 0 0 0 0 0 0 0 0");//bloom
 				for(int i=0;i<18;i++) {
 					pw.print("\n0 0");
@@ -554,7 +557,7 @@ public class Student {
 			for (int i = 0; i<quizzes.size();i++) {
 				if(!(i==quizzes.size()-1)) {
 					pw.print(quizzes.get(i));
-					pw.print("");
+					pw.print(" ");
 				}
 				else {
 					pw.println(quizzes.get(i));
@@ -563,7 +566,7 @@ public class Student {
 			for (int i = 0; i<tests.size();i++) {
 				if(!(i==tests.size()-1)) {
 					pw.print(tests.get(i));
-					pw.print("");
+					pw.print(" ");
 				}
 				else {
 					pw.println(tests.get(i));
@@ -590,7 +593,7 @@ public class Student {
 			pw.println(stats.get("Classes").toString());
 			pw.println(stats.get("Interfaces").toString());
 			pw.println(stats.get("Packages").toString());
-			pw.println(stats.get("Miscellaneous Object Oriented Programming").toString());
+			pw.print(stats.get("Miscellaneous Object Oriented Programming").toString());
 			pw.flush();
 			pw.close();
 
