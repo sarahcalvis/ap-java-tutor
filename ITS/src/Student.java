@@ -47,6 +47,12 @@ public class Student {
 	private Tuple miscOOP;
 	private Tuple standardJavaLibrary;
 	
+	
+	/**
+	 * default Student Object Constructor
+	 * sets username and password to guest by default
+	 * (used mostly for file generation)
+	 */
 	public Student(){
 		stats = new HashMap<>();
 		quizzes =  new ArrayList<>();
@@ -72,21 +78,17 @@ public class Student {
 		}
 		catch (FileNotFoundException e) {
 			scn = new Scanner("(default).txt");
-			// TODO Auto-generated catch block
 			//this should never trigger
-			System.out.println("why the hecc is this triggering. you got problems in your default Student constructor");
 			e.printStackTrace();
 		} catch (IOException e) {
 			scn = new Scanner(System.in);
-			// TODO Auto-generated catch block
 			//this should never trigger
-			System.out.println("why the hecc is this triggering. you got problems in your default Student constructor");
 			e.printStackTrace();
 		}
 		try {
 			scn = new Scanner (f);
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
+		} 
+		catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
 		for(int i = 0; scn.hasNextLine(); i++) {
@@ -250,6 +252,14 @@ public class Student {
 		}		
 	}
 
+	
+	/**
+	 * enhanced Student Constructor
+	 * allows for multiple accounts
+	 * (still only used for file generation)
+	 * @param username
+	 * @param password
+	 */
 	public Student(String username, String password) {
 		stats = new HashMap<>();
 		quizzes = new ArrayList<>();
@@ -280,6 +290,12 @@ public class Student {
 			scn = new Scanner(System.in);
 			//this should never trigger
 			System.out.println("why the hecc is this triggering. you got problems in your default Student constructor");
+			e.printStackTrace();
+		}
+		try {
+			scn = new Scanner (f);
+		} 
+		catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
 		for(int i = 0; scn.hasNextLine(); i++) {
