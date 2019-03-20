@@ -34,7 +34,10 @@ public class Tuple {
 	 * can be used as a grade or percentage
 	 */
 	public Double getTuple() {
-		return x / y * 100.0;
+		if (y != 0) {
+			return x / y * 100.0;
+		}
+		return 0.0;
 	}
 	
 }

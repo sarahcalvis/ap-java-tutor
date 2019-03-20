@@ -23,12 +23,15 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 import javafx. *;
 
 
 public class Main extends Application{
 	int whatPageWeOn = 1;
+	Student studentObj = new Student();
 	public static void main(String[] args) {
 		//GridPane grid = new GridPane();
 		//TESTY TESTY
@@ -324,6 +327,12 @@ public class Main extends Application{
 	                //add the nav bar back
 	        		buttons(grid, primaryStage);
 	        		System.out.println("finished creating");
+	        		Map<String,Tuple> stats = studentObj.getStats();
+	        		String s = "";
+	        		for (int i = 1; i < 7; i++) {
+	        			s += "Bloom " + i + ": " + stats.get("Bloom " + i).getTuple() + "\n";
+	        		}
+	        		grid.add(new Text(s), 2, 2);
 	        	}
 	        });
 	        grid.add(diagnostics, 5, 33);
