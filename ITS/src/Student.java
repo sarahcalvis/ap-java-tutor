@@ -7,7 +7,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
-
+/**
+ * Responsible for recording Student progress, and maintaining user infor between sessions
+ * @author MUMAWBM1
+ *
+ */
 public class Student {
 	
 	//Credentials
@@ -47,7 +51,6 @@ public class Student {
 	private Tuple miscOOP;
 	private Tuple standardJavaLibrary;
 	
-	
 	/**
 	 * default Student Object Constructor
 	 * sets username and password to guest by default
@@ -64,16 +67,7 @@ public class Student {
 		try {
 			if(f.createNewFile()) {
 				scn = new Scanner (f);
-				PrintWriter pw = new PrintWriter(f);
-				pw.print("guest guest");
-				pw.print("\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0");//quizzes
-				pw.print("\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0");//tests
-				pw.print("\n0 0 0 0 0 0 0 0 0 0 0 0");
-				for(int i=0;i<18;i++) {
-					pw.print("\n0 0");
-				}
-				pw.flush();
-				pw.close();
+				generateFile(f);
 			}
 		}
 		catch (FileNotFoundException e) {
@@ -269,16 +263,7 @@ public class Student {
 		try {
 			if(f.createNewFile()) {
 				scn = new Scanner (f);
-				PrintWriter pw = new PrintWriter(f);
-				pw.print(username+ " " + password);
-				pw.print("\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0");//quizzes
-				pw.print("\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0");//tests
-				pw.print("\n0 0 0 0 0 0 0 0 0 0 0 0");//bloom
-				for(int i=0;i<18;i++) {
-					pw.print("\n0 0");
-				}
-				pw.flush();
-				pw.close();
+				generateFile(f);
 			}
 		}
 		catch (FileNotFoundException e) {
@@ -458,6 +443,8 @@ public class Student {
 			}
 		}		
 	}
+	
+
 	public String getUsername() {
 		return username;
 	}
@@ -550,7 +537,23 @@ public class Student {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
+
+
 	}
+
+	public void generateFile(File f) throws FileNotFoundException {
+		PrintWriter pw = new PrintWriter(f);
+		pw.print("guest guest");
+		pw.print("\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0");//quizzes
+		pw.print("\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0");//tests
+		pw.print("\n0 0 0 0 0 0 0 0 0 0 0 0");
+		for(int i=0;i<18;i++) {
+			pw.print("\n0 0");
+		}
+		pw.flush();
+		pw.close();
+
+		return;
+	}
+
 }
