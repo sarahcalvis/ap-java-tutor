@@ -1,5 +1,5 @@
 
-public class Tuple {
+public class Tuple extends Student{
 	private int x;	//num correct
 	private int y;	//num asked
 	
@@ -25,6 +25,7 @@ public class Tuple {
 	public void updateTuple(int numCorrect, int numAsked) {
 		x += numCorrect;
 		y += numAsked;
+		saveProgress();
 	}
 	
 	
