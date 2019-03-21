@@ -34,7 +34,7 @@ public class Main extends Application{
 	int whatPageWeOn = 1;
 	static TestBank banky = new TestBank();
 	static ArrayList<String> topics;
-	Student studentObj = new Student("guest","guest");
+	Student studentObj = new Student();
 	
 	Testing quiz;
 	//array for the checkboxes and responses to questions
@@ -358,7 +358,11 @@ public class Main extends Application{
 	        		
 	        		String s = "";
 	        		for (int i = 0; i < keys.size(); i++) {
-	        			s += keys.get(i) + ": " + stats.get(keys.get(i)).getTuple() + "\n";
+	        			String txt = "" + stats.get(keys.get(i)).getTuple();
+	        			if(txt.equals("-1.0")) {
+	        				txt = "N/A";
+	        			}
+	        			s += keys.get(i) + ": " + txt + "\n";
 	        		}
 	        		Text diagnosticInfo = new Text(s);
 	        		diagnosticInfo.setFont(Font.font("Tahoma", FontWeight.NORMAL, 18));
