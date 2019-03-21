@@ -31,11 +31,63 @@ import javafx. *;
 
 public class Main extends Application{
 	int whatPageWeOn = 1;
-	Student studentObj = new Student();
+	static TestBank banky = new TestBank();
+	static ArrayList<String> topics;
+	Student studentObj = new Student("guest","guest");
+	
+	Testing quiz;
+	//array for the checkboxes and responses to questions
+    ArrayList<CheckBox> boxes = new ArrayList<CheckBox>();
+    ArrayList<String> questions = new ArrayList<String>();
+    //tile pane for displaying questions
+    TilePane quest = new TilePane(); 
+    //big important grid
+    GridPane grid = new GridPane();
+    int questCount;
+    
 	public static void main(String[] args) {
 		//GridPane grid = new GridPane();
-		//TESTY TESTY
-		//create bank
+		
+		ArrayList<String> answers = new ArrayList<String>();
+		answers.add("x = 4");
+		answers.add("x = 87");
+		answers.add("x = -2");
+		answers.add("x = 34");
+		
+		Question q1 = new Question("What is 2 + 2?", answers, "Arithmetic", "Analyze");
+
+		answers.set(0, "An integer");
+		answers.set(1, "A word");
+		answers.set(2, "A character");
+		answers.set(3, "A data structure");
+
+		Question q2 = new Question("What is an int?", answers, "Data Types", "Remember");
+		
+		answers.set(0, "A thing (right)");
+		answers.set(1, "Something else");
+		answers.set(2, "Some other thing");
+		answers.set(3, "Something else ALTOGETHER");
+		
+		Question q3 = new Question("What does \'static\' mean?", answers, "Arithmetic", "Remember");
+		
+		answers.set(0, "An integer");
+		answers.set(1, "A word");
+		answers.set(2, "A character");
+		answers.set(3, "A data structure");
+
+		Question q4 = new Question("What is a char?", answers, "Data Types", "Remember");
+		
+		
+		banky.addQuest(q1);
+		banky.addQuest(q2);
+		banky.addQuest(q3);
+		banky.addQuest(q4);
+		
+		topics = new ArrayList<String>();
+		topics.add("Arithmetic");
+		topics.add("Data Types");
+		
+		
 		
 				
         launch(args);
@@ -46,7 +98,7 @@ public class Main extends Application{
     @Override
     public void start(Stage primaryStage) {
         primaryStage.setTitle("AP Computer Science Prep");
-        GridPane grid = new GridPane();
+
         VBox vb = new VBox();
         //vb.setSpacing(10);
         //vb.setPadding(new Insets(10,10,10,10));
@@ -233,11 +285,9 @@ public class Main extends Application{
 	                //add the nav bar back
 	        		buttons(grid, primaryStage);
 	        		System.out.println("finished creating");
+	        	
 	        		
-
-	        		
-	        		
-					//add button here 
+					//add take quiz button here 
 			        Button takeQuizButt = new Button();
 			        takeQuizButt.setText("Take Quiz");
 			        takeQuizButt.setTextFill(Color.BLUE);
@@ -245,62 +295,18 @@ public class Main extends Application{
 			        takeQuizButt.setOnAction(new EventHandler<ActionEvent>() {
 			        	@Override
 			        	public void handle(ActionEvent event) {
+			        		//TODO add buttons for different chapters
 			        		
 			        		grid.getChildren().remove(takeQuizButt);
 			        		//add questions
-			                // create a tile pane 
-			                TilePane quest = new TilePane(); 
-			          
-			                // create a label 
-			                //this will become the question
-			                Label l = new Label("An object is an instance of a ________. "); 
-			          
-			                // string array
-			                //this will become the possible answers
-			                String st[] = { "method", "object", "class", "interface" }; 
-			          
-			                // add label 
-			                quest.getChildren().add(l); 
-			                
-			                //make array for the checkboxes
-			                ArrayList<CheckBox> boxes = new ArrayList<CheckBox>();
-			          
-			                for (int i = 0; i < st.length; i++) { 
-			          
-			                    // create a checkbox 
-			                    CheckBox c = new CheckBox(st[i]); 
-			                    // add label 
-			                    quest.getChildren().add(c);
-			                    //add to arraylist
-			                    boxes.add(c);
 
-			                }
-				             // create a event handler for each checkbox
-			                EventHandler<ActionEvent> boxEvent = new EventHandler<ActionEvent>() { 
-			      
-			                    public void handle(ActionEvent e) 
-			                    { 
-			                    	for (int i = 0; i < boxes.size(); i++) {
-			                    		CheckBox c = boxes.get(i);
-				                        if (c.isSelected()) 
-				                            System.out.println(c.toString() + " selected");
-				                        //else
-				                           //System.out.println("not selected");
-				                        
-				                    } 
-			                    }
-			      
-			                }; 
-			                
-			                //add event to all checkboxes
-			                for (int i = 0; i < boxes.size(); i++) {
-	                    		CheckBox c = boxes.get(i);
-	                    		c.setOnAction(boxEvent); 
-			                }
-			      
-			                
-			                //add all this to grid
-			                grid.add(quest, 2, 4);
+			                quest.setPrefColumns(3);
+			                quest.setPrefRows(0);
+			                quiz = new Testing(1, topics, banky);
+			                //make counter for quiz equal to qPerT
+			                questCount = quiz.qPerT;
+			                fillQuest();
+			               
 			        }
 			        });
 			        grid.add(takeQuizButt, 10, 18);
@@ -351,12 +357,7 @@ public class Main extends Application{
 	        		
 	        		String s = "";
 	        		for (int i = 0; i < keys.size(); i++) {
-	        			Double score = stats.get(keys.get(i)).getTuple();
-	        			String txt = "" + score;
-	        			if(score<0) {
-	        				txt = "N/A";
-	        			}
-	        			s += keys.get(i) + ": " + txt + "\n";
+	        			s += keys.get(i) + ": " + stats.get(keys.get(i)).getTuple() + "\n";
 	        		}
 	        		Text diagnosticInfo = new Text(s);
 	        		diagnosticInfo.setFont(Font.font("Tahoma", FontWeight.NORMAL, 18));
@@ -396,4 +397,80 @@ public class Main extends Application{
 	        //(Main.class.getResource("Buttons.css").toExternalForm());
 	        primaryStage.show();
         }
+        
+        
+        
+        
+        
+        public void fillQuest() {
+        	//get question text
+        	Label l = new Label(quiz.getQ(questCount).getText());
+            quest.getChildren().add(l);  
+        	 //fill questions with the question's possible responses
+            //TODO randomize the order of the answers
+		/*
+		 * for (int i = 0; i < 4; i++) { questions.add(quiz.getQ(0).getAnswer(i));
+		 * System.out.println(quiz.getQ(0).getAnswer(i)); }
+		 */
+      
+            for (int i = 0; i < 4; i++) { 
+                // create a checkbox 
+                CheckBox c = new CheckBox(quiz.getQ(questCount).getAnswer(i)); 
+                quest.getChildren().add(c);
+                boxes.add(c);
+            }
+             // create a event handler for each checkbox
+            //it can print what has been selected
+            EventHandler<ActionEvent> boxEvent = new EventHandler<ActionEvent>() { 
+                public void handle(ActionEvent e) 
+                { 
+                	for (int i = 0; i < boxes.size(); i++) {
+                		CheckBox c = boxes.get(i);
+                        if (c.isSelected()) 
+                            System.out.println(c.toString() + " selected");
+                        //else
+                           //System.out.println("not selected");
+                    } 
+                }
+            }; 
+            
+            //add event to all checkboxes
+            for (int i = 0; i < boxes.size(); i++) {
+        		CheckBox c = boxes.get(i);
+        		c.setOnAction(boxEvent); 
+            }   
+            //add all this to grid
+            grid.add(quest, 2, 4);
+            
+            //add submit button
+            Button submit = new Button();
+	        submit.setText("Submit Question");
+	        submit.setTextFill(Color.BLUE);
+	        submit.setMaxWidth(Double.MAX_VALUE);
+	        grid.add(submit,2,14);
+	        EventHandler<ActionEvent> submitted = new EventHandler<ActionEvent>() { 
+                public void handle(ActionEvent next) 
+                {
+                	//remove question from arraylist
+                	//questions.remove(0);
+                	//TODO add this score to Ben's code
+                	//call action again to form new question in the UI only if there are more questions
+                	if(questCount > 1) {
+                		//remove
+                		for (int i =0; i <4; i++) {
+                			quest.getChildren().remove(boxes.get(i));
+                		}
+                		quest.getChildren().remove(l);
+                		grid.getChildren().remove(quest);
+                		//subtract from questCount to go to next question
+                		questCount --;
+                		fillQuest();
+                	}
+                }
+	        };
+	        submit.setOnAction(submitted);
+        }
     }
+
+
+

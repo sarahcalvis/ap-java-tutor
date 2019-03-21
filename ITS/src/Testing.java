@@ -10,7 +10,7 @@ public class Testing {
 	//type (0=>quiz, 1=>exam), questions per topic (hardwired for now), and number of
 	//topics, depending on type
 	int type;
-	int qPerT = 5;
+	int qPerT = 2;
 	int numTopics;
 	
 	//questions and topics for the testing object
