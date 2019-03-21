@@ -351,7 +351,12 @@ public class Main extends Application{
 	        		
 	        		String s = "";
 	        		for (int i = 0; i < keys.size(); i++) {
-	        			s += keys.get(i) + ": " + stats.get(keys.get(i)).getTuple() + "\n";
+	        			Double score = stats.get(keys.get(i)).getTuple();
+	        			String txt = "" + score;
+	        			if(score<0) {
+	        				txt = "N/A";
+	        			}
+	        			s += keys.get(i) + ": " + txt + "\n";
 	        		}
 	        		Text diagnosticInfo = new Text(s);
 	        		diagnosticInfo.setFont(Font.font("Tahoma", FontWeight.NORMAL, 18));
