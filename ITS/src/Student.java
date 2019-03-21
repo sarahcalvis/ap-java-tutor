@@ -488,84 +488,16 @@ public class Student {
 		}
 	}
 	
+	public ArrayList<Double> getTests() {
+		return tests;
+	}
+	
 	public void addTest(Double score, int testNumber) {
 		if(tests.get(testNumber)<score) {
 			tests.set(testNumber,score);
 		}
 	}
-	
-	public Double getBloom1() {
-		return bloom1.getTuple();
-	}
 
-	public void setBloom1(int numCorrect, int numAsked) {
-		bloom1.updateTuple(numCorrect, numAsked);
-	}
-	
-	public Double getBloom2() {
-		return bloom2.getTuple();
-	}
-
-	public void setBloom2(int numCorrect, int numAsked) {
-		bloom2.updateTuple(numCorrect, numAsked);
-	}
-	
-	public Double getBloom3() {
-		return bloom3.getTuple();			
-	}
-
-	public void setBloom3(int numCorrect, int numAsked) {
-		bloom3.updateTuple(numCorrect, numAsked);
-	}
-	
-	public Double getBloom4() {
-		return bloom1.getTuple();
-	}
-
-	public void setBloom4(int numCorrect, int numAsked) {
-		bloom4.updateTuple(numCorrect, numAsked);
-	}
-
-	public Double getBloom5() {
-		return bloom5.getTuple();
-	}
-
-	public void setBloom5(int numCorrect, int numAsked) {
-		bloom5.updateTuple(numCorrect, numAsked);
-	}
-	
-	public Double getBloom6() {
-		return bloom6.getTuple();
-	}
-
-	public void setBloom6(int numCorrect, int numAsked) {
-		bloom6.updateTuple(numCorrect, numAsked);
-	}
-	
-	public Double getComments() {
-		return comments.getTuple();
-	}
-
-	public void setComments(int numCorrect, int numAsked) {
-		comments.updateTuple(numCorrect, numAsked);
-	}
-	
-	public Double getPrimTypes() {
-		return primTypes.getTuple();
-	}
-	
-	public void setPrimTypes(int numCorrect, int numAsked) {
-		primTypes.updateTuple(numCorrect, numAsked);
-	}
-	
-	public Double getOperators() {
-		return operators.getTuple();
-	}
-	
-	public void setOperators(int numCorrect, int numAsked) {
-		operators.updateTuple(numCorrect, numAsked);
-	}
-	
 	public void saveProgress() {
 		try {
 			PrintWriter pw = new PrintWriter(username+".txt");
