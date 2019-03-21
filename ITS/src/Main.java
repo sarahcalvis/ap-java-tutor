@@ -328,11 +328,34 @@ public class Main extends Application{
 	        		buttons(grid, primaryStage);
 	        		System.out.println("finished creating");
 	        		Map<String,Tuple> stats = studentObj.getStats();
-	        		String s = "";
+	        		ArrayList<String> keys = new ArrayList<String>();
 	        		for (int i = 1; i < 7; i++) {
-	        			s += "Bloom " + i + ": " + stats.get("Bloom " + i).getTuple() + "\n";
+	        			keys.add("Bloom " + i);
 	        		}
-	        		grid.add(new Text(s), 2, 2);
+	        		keys.add("Comments");
+	        		keys.add("Primitive Types");
+	        		keys.add("Operators");
+	    			keys.add("Object Comparison");
+	    			keys.add("Escape Sequences");
+	    			keys.add("I/O");
+	    			keys.add("Exceptions");
+	    			keys.add("Arrays");
+	    			keys.add("Control Statements");
+	    			keys.add("Variables");
+	    			keys.add("Methods");
+	    			keys.add("Constructors");
+	    			keys.add("Classes");
+	    			keys.add("Interfaces");
+	    			keys.add("Packages");
+	    			keys.add("Miscellaneous Object Oriented Programming");
+	        		
+	        		String s = "";
+	        		for (int i = 0; i < keys.size(); i++) {
+	        			s += keys.get(i) + ": " + stats.get(keys.get(i)).getTuple() + "\n";
+	        		}
+	        		Text diagnosticInfo = new Text(s);
+	        		diagnosticInfo.setFont(Font.font("Tahoma", FontWeight.NORMAL, 18));
+	        		grid.add(diagnosticInfo, 2, 2);
 	        	}
 	        });
 	        grid.add(diagnostics, 5, 33);
