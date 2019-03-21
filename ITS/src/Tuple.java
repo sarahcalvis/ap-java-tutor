@@ -37,7 +37,7 @@ public class Tuple {
 		if (y != 0) {
 			return x / y * 100.0;
 		}
-		return 0.0;
+		return -1.0;
 	}
 	
 }
