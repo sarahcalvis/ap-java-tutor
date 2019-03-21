@@ -23,6 +23,7 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -408,6 +409,12 @@ public class Main extends Application{
             quest.getChildren().add(l);  
         	 //fill questions with the question's possible responses
             //TODO randomize the order of the answers
+            ArrayList<String> answ = new ArrayList<String>();
+            for (int i = 0; i < 4; i++) {
+            	String a = quiz.getQ(questCount).getAnswer(i);
+            	answ.add(a);
+            }
+            Collections.shuffle(answ);
 		/*
 		 * for (int i = 0; i < 4; i++) { questions.add(quiz.getQ(0).getAnswer(i));
 		 * System.out.println(quiz.getQ(0).getAnswer(i)); }
@@ -415,7 +422,7 @@ public class Main extends Application{
       
             for (int i = 0; i < 4; i++) { 
                 // create a checkbox 
-                CheckBox c = new CheckBox(quiz.getQ(questCount).getAnswer(i)); 
+                CheckBox c = new CheckBox(answ.get(i)); 
                 quest.getChildren().add(c);
                 boxes.add(c);
             }
