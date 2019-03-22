@@ -480,6 +480,7 @@ public class Main extends Application{
                 		questCount --;
                 		//check if the submitted question is correct
                 		//checkAnswer();
+                		//TODO send num correct to Ben's code???
                 		System.out.println("selected is: " + selected);
                 		System.out.println("correctA is: " + correctA);
                 		if (selected.equals(correctA)) {
@@ -495,6 +496,7 @@ public class Main extends Application{
                 	}
                 	//else the quiz is finished
                 	else {
+                		//TODO send info to Ben's code here???
                 		grid.getChildren().remove(quest);
                 		grid.getChildren().remove(submit);
                 		System.out.println("Completed Exam");
