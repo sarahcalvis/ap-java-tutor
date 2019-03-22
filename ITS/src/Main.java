@@ -35,6 +35,8 @@ public class Main extends Application{
 	static TestBank banky = new TestBank();
 	static ArrayList<String> topics;
 	Student studentObj = new Student();
+    String selected = "";
+    Boolean notCompleted = true;
 	
 	Testing quiz;
 	//array for the checkboxes and responses to questions
@@ -297,6 +299,7 @@ public class Main extends Application{
 			        	@Override
 			        	public void handle(ActionEvent event) {
 			        		//TODO add buttons for different chapters
+			        		notCompleted = true;
 			        		
 			        		grid.getChildren().remove(takeQuizButt);
 			        		//add questions
@@ -418,6 +421,7 @@ public class Main extends Application{
             	String a = quiz.getQ(questCount).getAnswer(i);
             	answ.add(a);
             }
+            String correctA = answ.get(0);
             Collections.shuffle(answ);
 		/*
 		 * for (int i = 0; i < 4; i++) { questions.add(quiz.getQ(0).getAnswer(i));
@@ -437,13 +441,16 @@ public class Main extends Application{
                 { 
                 	for (int i = 0; i < boxes.size(); i++) {
                 		CheckBox c = boxes.get(i);
-                        if (c.isSelected()) 
-                            System.out.println(c.toString() + " selected");
+                        if (c.isSelected()) { 
+                            System.out.println(c.getText() + " selected");
+                        	selected = c.getText();
+                        }
                         //else
                            //System.out.println("not selected");
                     } 
                 }
             }; 
+            
             
             //add event to all checkboxes
             for (int i = 0; i < boxes.size(); i++) {
@@ -462,12 +469,8 @@ public class Main extends Application{
 	        EventHandler<ActionEvent> submitted = new EventHandler<ActionEvent>() { 
                 public void handle(ActionEvent next) 
                 {
-                	//remove question from arraylist
-                	//questions.remove(0);
-                	//TODO add this score to Ben's code
                 	//call action again to form new question in the UI only if there are more questions
                 	if(questCount > 1) {
-                		//remove
                 		for (int i =0; i <4; i++) {
                 			quest.getChildren().remove(boxes.get(i));
                 		}
@@ -475,12 +478,44 @@ public class Main extends Application{
                 		grid.getChildren().remove(quest);
                 		//subtract from questCount to go to next question
                 		questCount --;
+                		//check if the submitted question is correct
+                		//checkAnswer();
+                		System.out.println("selected is: " + selected);
+                		System.out.println("correctA is: " + correctA);
+                		if (selected.equals(correctA)) {
+                			//mark as correct
+                			System.out.println("correct answer");
+                			quiz.nCorrect ++;
+                		}
+                		else {
+                			System.out.println("wrong answer");
+                			quiz.nWrong --;
+                		}
                 		fillQuest();
+                	}
+                	//else the quiz is finished
+                	else {
+                		grid.getChildren().remove(quest);
+                		grid.getChildren().remove(submit);
+                		System.out.println("Completed Exam");
+                		//calc grade
+                		double grade = quiz.calcGrade();
+                		//TODO figure out why calcGrade isn't working
+                		Text gradeL = new Text("Your grade on this assignment is "+grade+"%");
+                		gradeL.setFont(Font.font("Tahoma", FontWeight.NORMAL, 26));
+                        grid.add(gradeL,3,4); 
+                        notCompleted = false;
+                        //grid.getChildren().remove(submit);
+                        
                 	}
                 }
 	        };
-	        submit.setOnAction(submitted);
+	        if (notCompleted == true) {
+	        	submit.setOnAction(submitted);
+	        }
         }
+        
+        
     }
 
 
