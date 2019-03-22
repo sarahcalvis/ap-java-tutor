@@ -21,9 +21,11 @@ public class Tuple{
 	 * @param numCorrect	keeps percentage accurate
 	 * @param numAsked		keeps percentage accurate
 	 */
-	public void updateTuple(int numCorrect, int numAsked) {
+	public void updateTuple(int numCorrect, int numAsked, Student s) {
 		x += numCorrect;
 		y += numAsked;
+		s.saveProgress();
+		
 	}
 	
 	
@@ -38,5 +40,7 @@ public class Tuple{
 		}
 		return -1.0;
 	}
+	
+	
 	
 }

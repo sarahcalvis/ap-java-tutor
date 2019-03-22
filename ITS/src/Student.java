@@ -472,6 +472,7 @@ public class Student {
 	public void updateQuiz(Double score, int quizNumber) {
 		if (quizzes.get(quizNumber)<score) {
 			quizzes.set(quizNumber, score);
+			saveProgress();
 		}
 	}
 	
@@ -482,6 +483,7 @@ public class Student {
 	public void addTest(Double score, int testNumber) {
 		if(tests.get(testNumber)<score) {
 			tests.set(testNumber,score);
+			saveProgress();
 		}
 	}
 
