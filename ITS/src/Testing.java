@@ -68,7 +68,13 @@ public class Testing {
 	
 	//calculates and returns final grade, based on number correct and incorrect
 	double calcGrade(){
-		grade = nCorrect/(nCorrect+nWrong) * 100;
-		return grade;
-	}
+		double newCorrect = (double)nCorrect;
+		double newWrong = (double)nWrong;
+		
+		System.out.println("nCorrect: " + nCorrect);
+		System.out.println("nWrong: " + nWrong);
+	    grade = (newCorrect/(newCorrect+newWrong)) * 100;
+	    System.out.println("grade: " + grade);
+	    return grade;
+	  }
 }

@@ -35,6 +35,8 @@ public class Main extends Application{
 	static TestBank banky = new TestBank();
 	static ArrayList<String> topics;
 	Student studentObj = new Student();
+    String selected = "";
+    Boolean notCompleted = true;
 	
 	Testing quiz;
 	//array for the checkboxes and responses to questions
@@ -55,28 +57,28 @@ public class Main extends Application{
 		answers.add("x = -2");
 		answers.add("x = 34");
 		
-		Question q1 = new Question("What is 2 + 2?", answers, "Arithmetic", "Analyze");
+		Question q1 = new Question("What is 2 + 2?", answers, "Operators", "Bloom 1");
 
 		answers.set(0, "An integer");
 		answers.set(1, "A word");
 		answers.set(2, "A character");
 		answers.set(3, "A data structure");
 
-		Question q2 = new Question("What is an int?", answers, "Data Types", "Remember");
+		Question q2 = new Question("What is an int?", answers, "Methods", "Bloom 1");
 		
 		answers.set(0, "A thing (right)");
 		answers.set(1, "Something else");
 		answers.set(2, "Some other thing");
 		answers.set(3, "Something else ALTOGETHER");
 		
-		Question q3 = new Question("What does \'static\' mean?", answers, "Arithmetic", "Remember");
+		Question q3 = new Question("What does \'static\' mean?", answers, "Operators", "Bloom 2");
 		
 		answers.set(0, "An integer");
 		answers.set(1, "A word");
 		answers.set(2, "A character");
 		answers.set(3, "A data structure");
 
-		Question q4 = new Question("What is a char?", answers, "Data Types", "Remember");
+		Question q4 = new Question("What is a char?", answers, "Methods", "Bloom 1");
 		
 		
 		banky.addQuest(q1);
@@ -85,8 +87,8 @@ public class Main extends Application{
 		banky.addQuest(q4);
 		
 		topics = new ArrayList<String>();
-		topics.add("Arithmetic");
-		topics.add("Data Types");
+		topics.add("Methods");
+		topics.add("Operators");
 		
 		
 		
@@ -297,6 +299,7 @@ public class Main extends Application{
 			        	@Override
 			        	public void handle(ActionEvent event) {
 			        		//TODO add buttons for different chapters
+			        		notCompleted = true;
 			        		
 			        		grid.getChildren().remove(takeQuizButt);
 			        		//add questions
@@ -410,81 +413,122 @@ public class Main extends Application{
         public void fillQuest() {
         	//get question text
         	Label l = new Label(quiz.getQ(questCount).getText());
-        	quest.getChildren().add(l);  
-        	//fill questions with the question's possible responses
-        	//TODO randomize the order of the answers
-        	ArrayList<String> answ = new ArrayList<String>();
-        	for (int i = 0; i < 4; i++) {
-        		String a = quiz.getQ(questCount).getAnswer(i);
-        		answ.add(a);
-        	}
-        	Collections.shuffle(answ);
-        	
-        	for (int i = 0; i < 4; i++) { 
-        		questions.add(quiz.getQ(i).getAnswer(i));
-        		System.out.println(quiz.getQ(i).getAnswer(i));
-        	}
-        	 
-
-        	for (int i = 0; i < 4; i++) { 
-        		// create a checkbox 
-        		CheckBox c = new CheckBox(answ.get(i)); 
-        		quest.getChildren().add(c);
-        		boxes.add(c);
-        	}
-        	// create a event handler for each checkbox
-        	//it can print what has been selected
-        	EventHandler<ActionEvent> boxEvent = new EventHandler<ActionEvent>() { 
-        		public void handle(ActionEvent e) 
-        		{ 
-        			for (int i = 0; i < boxes.size(); i++) {
-        				CheckBox c = boxes.get(i);
-        				if (c.isSelected()) { 
-        					System.out.println(c.toString() + " selected");
-        				}
-        				//else
-        				//System.out.println("not selected");
-        			} 
-        		}
-        	}; 
-
-        	//add event to all checkboxes
-        	for (int i = 0; i < boxes.size(); i++) {
+            quest.getChildren().add(l);  
+        	 //fill questions with the question's possible responses
+            //TODO randomize the order of the answers
+            ArrayList<String> answ = new ArrayList<String>();
+            for (int i = 0; i < 4; i++) {
+            	String a = quiz.getQ(questCount).getAnswer(i);
+            	answ.add(a);
+            }
+            String correctA = answ.get(0);
+            Collections.shuffle(answ);
+		/*
+		 * for (int i = 0; i < 4; i++) { questions.add(quiz.getQ(0).getAnswer(i));
+		 * System.out.println(quiz.getQ(0).getAnswer(i)); }
+		 */
+      
+            for (int i = 0; i < 4; i++) { 
+                // create a checkbox 
+                CheckBox c = new CheckBox(answ.get(i)); 
+                quest.getChildren().add(c);
+                boxes.add(c);
+            }
+             // create a event handler for each checkbox
+            //it can print what has been selected
+            EventHandler<ActionEvent> boxEvent = new EventHandler<ActionEvent>() { 
+                public void handle(ActionEvent e) 
+                { 
+                	for (int i = 0; i < boxes.size(); i++) {
+                		CheckBox c = boxes.get(i);
+                        if (c.isSelected()) { 
+                            System.out.println(c.getText() + " selected");
+                        	selected = c.getText();
+                        }
+                        //else
+                           //System.out.println("not selected");
+                    } 
+                }
+            }; 
+            
+            
+            //add event to all checkboxes
+            for (int i = 0; i < boxes.size(); i++) {
         		CheckBox c = boxes.get(i);
         		c.setOnAction(boxEvent); 
-        	}   
-        	//add all this to grid
-        	grid.add(quest, 2, 4);
-
-        	//add submit button
-        	Button submit = new Button();
-        	submit.setText("Submit Question");
-        	submit.setTextFill(Color.BLUE);
-        	submit.setMaxWidth(Double.MAX_VALUE);
-        	grid.add(submit,2,14);
-        	EventHandler<ActionEvent> submitted = new EventHandler<ActionEvent>() { 
-        		public void handle(ActionEvent next) 
-        		{
-        			//remove question from arraylist
-        			//questions.remove(0);
-        			//TODO add this score to Ben's code
-        			//call action again to form new question in the UI only if there are more questions
-        			if(questCount > 1) {
-        				//remove
-        				for (int i =0; i <4; i++) {
-        					quest.getChildren().remove(boxes.get(i));
-        				}
-        				quest.getChildren().remove(l);
-        				grid.getChildren().remove(quest);
-        				//subtract from questCount to go to next question
-        				questCount --;
-        				fillQuest();
-        			}
-        		}
-        	};
-        	submit.setOnAction(submitted);
+            }   
+            //add all this to grid
+            grid.add(quest, 2, 4);
+            
+            //add submit button
+            Button submit = new Button();
+	        submit.setText("Submit Question");
+	        submit.setTextFill(Color.BLUE);
+	        submit.setMaxWidth(Double.MAX_VALUE);
+	        grid.add(submit,2,14);
+	        EventHandler<ActionEvent> submitted = new EventHandler<ActionEvent>() { 
+                public void handle(ActionEvent next) 
+                {
+                	//call action again to form new question in the UI only if there are more questions
+                	if(questCount > 1) {
+                		for (int i =0; i <4; i++) {
+                			quest.getChildren().remove(boxes.get(i));
+                		}
+                		quest.getChildren().remove(l);
+                		grid.getChildren().remove(quest);
+                		//subtract from questCount to go to next question
+                		questCount --;
+                		//check if the submitted question is correct
+                		//checkAnswer();
+                		//TODO send num correct to Ben's code???
+                		System.out.println("selected is: " + selected);
+                		System.out.println("correctA is: " + correctA);
+                		if (selected.equals(correctA)) {
+                			//mark as correct
+                			System.out.println("correct answer");
+                			quiz.nCorrect ++;
+                		}
+                		else {
+                			System.out.println("wrong answer");
+                			quiz.nWrong ++;
+                		}
+                		fillQuest();
+                	}
+                	//else the quiz is finished
+                	else {
+                		//check for wrong or right one last time
+                		if (selected.equals(correctA)) {
+                			//mark as correct
+                			System.out.println("correct answer");
+                			quiz.nCorrect ++;
+                		}
+                		else {
+                			System.out.println("wrong answer");
+                			quiz.nWrong ++;
+                		}
+                		//TODO send info to Ben's code here???
+                		grid.getChildren().remove(quest);
+                		grid.getChildren().remove(submit);
+                		System.out.println("Completed Exam");
+                		//calc grade
+                		double grade = quiz.calcGrade();
+                		//TODO figure out why calcGrade isn't working
+                		Text gradeL = new Text("Your grade on this assignment is "+grade+"%");
+                		gradeL.setFont(Font.font("Tahoma", FontWeight.NORMAL, 26));
+                        grid.add(gradeL,3,4); 
+                        notCompleted = false;
+                        //grid.getChildren().remove(submit);
+                        
+                	}
+                }
+	        };
+	        if (notCompleted == true) {
+	        	submit.setOnAction(submitted);
+	        }
         }
-}
+        
+        
+    }
 
 
 
