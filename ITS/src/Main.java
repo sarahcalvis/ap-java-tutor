@@ -57,28 +57,28 @@ public class Main extends Application{
 		answers.add("x = -2");
 		answers.add("x = 34");
 		
-		Question q1 = new Question("What is 2 + 2?", answers, "Arithmetic", "Analyze");
+		Question q1 = new Question("What is 2 + 2?", answers, "Operators", "Bloom 1");
 
 		answers.set(0, "An integer");
 		answers.set(1, "A word");
 		answers.set(2, "A character");
 		answers.set(3, "A data structure");
 
-		Question q2 = new Question("What is an int?", answers, "Data Types", "Remember");
+		Question q2 = new Question("What is an int?", answers, "Methods", "Bloom 1");
 		
 		answers.set(0, "A thing (right)");
 		answers.set(1, "Something else");
 		answers.set(2, "Some other thing");
 		answers.set(3, "Something else ALTOGETHER");
 		
-		Question q3 = new Question("What does \'static\' mean?", answers, "Arithmetic", "Remember");
+		Question q3 = new Question("What does \'static\' mean?", answers, "Operators", "Bloom 2");
 		
 		answers.set(0, "An integer");
 		answers.set(1, "A word");
 		answers.set(2, "A character");
 		answers.set(3, "A data structure");
 
-		Question q4 = new Question("What is a char?", answers, "Data Types", "Remember");
+		Question q4 = new Question("What is a char?", answers, "Methods", "Bloom 1");
 		
 		
 		banky.addQuest(q1);
@@ -87,8 +87,8 @@ public class Main extends Application{
 		banky.addQuest(q4);
 		
 		topics = new ArrayList<String>();
-		topics.add("Arithmetic");
-		topics.add("Data Types");
+		topics.add("Methods");
+		topics.add("Operators");
 		
 		
 		
@@ -490,12 +490,22 @@ public class Main extends Application{
                 		}
                 		else {
                 			System.out.println("wrong answer");
-                			quiz.nWrong --;
+                			quiz.nWrong ++;
                 		}
                 		fillQuest();
                 	}
                 	//else the quiz is finished
                 	else {
+                		//check for wrong or right one last time
+                		if (selected.equals(correctA)) {
+                			//mark as correct
+                			System.out.println("correct answer");
+                			quiz.nCorrect ++;
+                		}
+                		else {
+                			System.out.println("wrong answer");
+                			quiz.nWrong ++;
+                		}
                 		//TODO send info to Ben's code here???
                 		grid.getChildren().remove(quest);
                 		grid.getChildren().remove(submit);
