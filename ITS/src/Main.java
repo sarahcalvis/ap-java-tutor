@@ -410,78 +410,81 @@ public class Main extends Application{
         public void fillQuest() {
         	//get question text
         	Label l = new Label(quiz.getQ(questCount).getText());
-            quest.getChildren().add(l);  
-        	 //fill questions with the question's possible responses
-            //TODO randomize the order of the answers
-            ArrayList<String> answ = new ArrayList<String>();
-            for (int i = 0; i < 4; i++) {
-            	String a = quiz.getQ(questCount).getAnswer(i);
-            	answ.add(a);
-            }
-            Collections.shuffle(answ);
-		/*
-		 * for (int i = 0; i < 4; i++) { questions.add(quiz.getQ(0).getAnswer(i));
-		 * System.out.println(quiz.getQ(0).getAnswer(i)); }
-		 */
-      
-            for (int i = 0; i < 4; i++) { 
-                // create a checkbox 
-                CheckBox c = new CheckBox(answ.get(i)); 
-                quest.getChildren().add(c);
-                boxes.add(c);
-            }
-             // create a event handler for each checkbox
-            //it can print what has been selected
-            EventHandler<ActionEvent> boxEvent = new EventHandler<ActionEvent>() { 
-                public void handle(ActionEvent e) 
-                { 
-                	for (int i = 0; i < boxes.size(); i++) {
-                		CheckBox c = boxes.get(i);
-                        if (c.isSelected()) 
-                            System.out.println(c.toString() + " selected");
-                        //else
-                           //System.out.println("not selected");
-                    } 
-                }
-            }; 
-            
-            //add event to all checkboxes
-            for (int i = 0; i < boxes.size(); i++) {
+        	quest.getChildren().add(l);  
+        	//fill questions with the question's possible responses
+        	//TODO randomize the order of the answers
+        	ArrayList<String> answ = new ArrayList<String>();
+        	for (int i = 0; i < 4; i++) {
+        		String a = quiz.getQ(questCount).getAnswer(i);
+        		answ.add(a);
+        	}
+        	Collections.shuffle(answ);
+        	
+        	for (int i = 0; i < 4; i++) { 
+        		questions.add(quiz.getQ(i).getAnswer(i));
+        		System.out.println(quiz.getQ(i).getAnswer(i));
+        	}
+        	 
+
+        	for (int i = 0; i < 4; i++) { 
+        		// create a checkbox 
+        		CheckBox c = new CheckBox(answ.get(i)); 
+        		quest.getChildren().add(c);
+        		boxes.add(c);
+        	}
+        	// create a event handler for each checkbox
+        	//it can print what has been selected
+        	EventHandler<ActionEvent> boxEvent = new EventHandler<ActionEvent>() { 
+        		public void handle(ActionEvent e) 
+        		{ 
+        			for (int i = 0; i < boxes.size(); i++) {
+        				CheckBox c = boxes.get(i);
+        				if (c.isSelected()) { 
+        					System.out.println(c.toString() + " selected");
+        				}
+        				//else
+        				//System.out.println("not selected");
+        			} 
+        		}
+        	}; 
+
+        	//add event to all checkboxes
+        	for (int i = 0; i < boxes.size(); i++) {
         		CheckBox c = boxes.get(i);
         		c.setOnAction(boxEvent); 
-            }   
-            //add all this to grid
-            grid.add(quest, 2, 4);
-            
-            //add submit button
-            Button submit = new Button();
-	        submit.setText("Submit Question");
-	        submit.setTextFill(Color.BLUE);
-	        submit.setMaxWidth(Double.MAX_VALUE);
-	        grid.add(submit,2,14);
-	        EventHandler<ActionEvent> submitted = new EventHandler<ActionEvent>() { 
-                public void handle(ActionEvent next) 
-                {
-                	//remove question from arraylist
-                	//questions.remove(0);
-                	//TODO add this score to Ben's code
-                	//call action again to form new question in the UI only if there are more questions
-                	if(questCount > 1) {
-                		//remove
-                		for (int i =0; i <4; i++) {
-                			quest.getChildren().remove(boxes.get(i));
-                		}
-                		quest.getChildren().remove(l);
-                		grid.getChildren().remove(quest);
-                		//subtract from questCount to go to next question
-                		questCount --;
-                		fillQuest();
-                	}
-                }
-	        };
-	        submit.setOnAction(submitted);
+        	}   
+        	//add all this to grid
+        	grid.add(quest, 2, 4);
+
+        	//add submit button
+        	Button submit = new Button();
+        	submit.setText("Submit Question");
+        	submit.setTextFill(Color.BLUE);
+        	submit.setMaxWidth(Double.MAX_VALUE);
+        	grid.add(submit,2,14);
+        	EventHandler<ActionEvent> submitted = new EventHandler<ActionEvent>() { 
+        		public void handle(ActionEvent next) 
+        		{
+        			//remove question from arraylist
+        			//questions.remove(0);
+        			//TODO add this score to Ben's code
+        			//call action again to form new question in the UI only if there are more questions
+        			if(questCount > 1) {
+        				//remove
+        				for (int i =0; i <4; i++) {
+        					quest.getChildren().remove(boxes.get(i));
+        				}
+        				quest.getChildren().remove(l);
+        				grid.getChildren().remove(quest);
+        				//subtract from questCount to go to next question
+        				questCount --;
+        				fillQuest();
+        			}
+        		}
+        	};
+        	submit.setOnAction(submitted);
         }
-    }
+}
 
 
 

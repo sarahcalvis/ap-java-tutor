@@ -1,4 +1,3 @@
-
 public class Tuple{
 	private int x;	//num correct
 	private int y;	//num asked
