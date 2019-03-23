@@ -47,6 +47,8 @@ public class Main extends Application{
 	//big important grid
 	GridPane grid = new GridPane();
 	int questCount;
+	//vars for student
+	Map<String,Tuple> stats = studentObj.getStats();
 
 	public static void main(String[] args) {
 		//GridPane grid = new GridPane();
@@ -64,7 +66,7 @@ public class Main extends Application{
 		answers.set(2, "A character");
 		answers.set(3, "A data structure");
 
-		Question q2 = new Question("What is an int?", answers, "Methods", "Bloom 1");
+		Question q2 = new Question("What is an int?", answers, "Methods", "Bloom 2");
 
 		answers.set(0, "A thing (right)");
 		answers.set(1, "Something else");
@@ -337,7 +339,7 @@ public class Main extends Application{
 				//add the nav bar back
 				buttons(grid, primaryStage);
 				System.out.println("finished creating");
-				Map<String,Tuple> stats = studentObj.getStats();
+				//Map<String,Tuple> stats = studentObj.getStats();
 				ArrayList<String> keys = new ArrayList<String>();
 				for (int i = 1; i < 7; i++) {
 					keys.add("Bloom " + i);
@@ -479,40 +481,79 @@ public class Main extends Application{
 					//subtract from questCount to go to next question
 					questCount --;
 					//check if the submitted question is correct
-					//checkAnswer();
-					//TODO send num correct to Ben's code???
+					
+					//Update Student code by dealing with the tuples
+					String qTopic = quiz.getQ(questCount).getTopic();
+					System.out.println("qTopic is " + qTopic);
+					String qBloom = quiz.getQ(questCount).getBloom();
+					System.out.println("qBloom is " + qBloom);
+					
+					//get tuples
+					Tuple tupleTopic = stats.get(qTopic);
+					Tuple tupleBloom = stats.get(qBloom);
+					System.out.println("tupleTopic is " + tupleTopic);
+					System.out.println("tupleBloom is " + tupleBloom);
+				
+					
 					System.out.println("selected is: " + selected);
 					System.out.println("correctA is: " + correctA);
 					if (selected.equals(correctA)) {
 						//mark as correct
 						System.out.println("correct answer");
+						System.out.println("");
 						quiz.nCorrect ++;
+						//update Tuples
+						tupleTopic.updateTuple(1,1,studentObj);
+						tupleBloom.updateTuple(1,1,studentObj);
 					}
 					else {
 						System.out.println("wrong answer");
+						System.out.println("");
 						quiz.nWrong ++;
+						//update Tuples
+						tupleTopic.updateTuple(0,1,studentObj);
+						tupleBloom.updateTuple(0,1,studentObj);
 					}
 					fillQuest();
 				}
 				//else the quiz is finished
 				else {
+					//check for topic and bloom then send to Ben's code
+					String qTopic = quiz.getQ(questCount+1).getTopic();
+					System.out.println("qTopic is " + qTopic);
+					String qBloom = quiz.getQ(questCount+1).getBloom();
+					System.out.println("qBloom is " + qBloom);
+					
+					//get tuples
+					Tuple tupleTopic = stats.get(qTopic);
+					Tuple tupleBloom = stats.get(qBloom);
+					System.out.println("tupleTopic is " + tupleTopic);
+					System.out.println("tupleBloom is " + tupleBloom);
+					
 					//check for wrong or right one last time
 					if (selected.equals(correctA)) {
 						//mark as correct
 						System.out.println("correct answer");
+						System.out.println("");
 						quiz.nCorrect ++;
+						//updateTuples
+						tupleTopic.updateTuple(1,1,studentObj);
+						tupleBloom.updateTuple(1,1,studentObj);
 					}
 					else {
 						System.out.println("wrong answer");
+						System.out.println("");
 						quiz.nWrong ++;
+						//update Tuples
+						tupleTopic.updateTuple(0,1,studentObj);
+						tupleBloom.updateTuple(0,1,studentObj);
 					}
-					//TODO send info to Ben's code here???
+					
 					grid.getChildren().remove(quest);
 					grid.getChildren().remove(submit);
 					System.out.println("Completed Exam");
 					//calc grade
 					double grade = quiz.calcGrade();
-					//TODO figure out why calcGrade isn't working
 					Text gradeL = new Text("Your grade on this assignment is "+grade+"%");
 					gradeL.setFont(Font.font("Tahoma", FontWeight.NORMAL, 26));
 					grid.add(gradeL,3,4); 
