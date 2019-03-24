@@ -221,13 +221,13 @@ public class Main extends Application{
 
 					}
 				});
-				grid.add(btnNextPage, 4, 1);
+				
 				Button btnPrevPage = new Button("Previous Page");
 				btnPrevPage.setOnAction(new EventHandler<ActionEvent>() {
 					@Override
 					public void handle(ActionEvent event) {
 						grid.getChildren().removeIf(node -> GridPane.getRowIndex(node) == 2 &&GridPane.getColumnIndex(node) == 2);
-						if (whatPageWeOn > 1) {
+						if (whatPageWeOn >= 1) {
 							whatPageWeOn--;
 							String pageNumber = Integer.toString(whatPageWeOn);
 							if (pageNumber.length() == 1) {
@@ -241,13 +241,15 @@ public class Main extends Application{
 							Image image = new Image(file);
 							ImageView ivText = new ImageView();
 							ivText.setImage(image);
-							ivText.setFitHeight(650);
-							ivText.setFitWidth(425);
+							ivText.setFitHeight(700);
+							ivText.setFitWidth(500);
 							grid.add(ivText, 2, 2);
 						}
 					}
 				});
-				grid.add(btnPrevPage, 3, 1);
+				VBox bookV = new VBox();
+				bookV.getChildren().addAll(btnNextPage, btnPrevPage);
+				grid.add(bookV, 3, 2);
 			}
 		});
 		grid.add(textbk, 4, 10);
@@ -291,32 +293,34 @@ public class Main extends Application{
 				buttons(grid, primaryStage);
 				System.out.println("finished creating");
 
-
-				//add take quiz button here 
-				Button takeQuizButt = new Button();
-				takeQuizButt.setText("Take Quiz");
-				takeQuizButt.setTextFill(Color.BLUE);
-				takeQuizButt.setMaxWidth(Double.MAX_VALUE);
-				takeQuizButt.setOnAction(new EventHandler<ActionEvent>() {
-					@Override
-					public void handle(ActionEvent event) {
-						//TODO add buttons for different chapters
-						notCompleted = true;
-
-						grid.getChildren().remove(takeQuizButt);
-						//add questions
-
-						quest.setPrefColumns(3);
-						quest.setPrefRows(0);
-						quiz = new Testing(1, topics, banky);
-						//make counter for quiz equal to qPerT
-						questCount = quiz.qPerT;
-						fillQuest();
-
-					}
-				});
-				grid.add(takeQuizButt, 10, 18);
-
+				VBox quizV = new VBox();
+				for (int i = 0; i < 4; i++) {
+					//add take quiz button here 
+					Button takeQuizButt = new Button();
+					takeQuizButt.setText("Take Quiz " + (i+1));
+					takeQuizButt.setTextFill(Color.BLUE);
+					takeQuizButt.setMaxWidth(Double.MAX_VALUE);
+					takeQuizButt.setOnAction(new EventHandler<ActionEvent>() {
+						@Override
+						public void handle(ActionEvent event) {
+							//TODO add buttons for different chapters
+							notCompleted = true;
+	
+							grid.getChildren().remove(takeQuizButt);
+							//add questions
+	
+							quest.setPrefColumns(3);
+							quest.setPrefRows(0);
+							quiz = new Testing(1, topics, banky);
+							//make counter for quiz equal to qPerT
+							questCount = quiz.qPerT;
+							fillQuest();
+	
+						}
+					});
+					quizV.getChildren().add(takeQuizButt);
+				}
+				grid.add(quizV, 2, 2);
 			}
 		});
 		grid.add(exams, 3, 25);
