@@ -11,10 +11,10 @@ public class Question {
 	ArrayList<String> answers;		//first answer is right, it will be displayed randomly
 	boolean asked;					//true if asked, false if not yet asked
 	String topic;					//topic of the question
-	String bloom;					//which level of Bloom's Taxonomy
+	int bloom;					//which level of Bloom's Taxonomy
 	
 	//Constructor. Creates question object from text, answers, topic, and bloom tag
-	Question(String text, ArrayList<String> answers, String topic, String bloom){
+	Question(String text, ArrayList<String> answers, String topic, int bloom){
 		this.answers = new ArrayList<String>();
 		this.text = text;
 		for(String a : answers){
@@ -56,7 +56,7 @@ public class Question {
 	}
 	
 	//returns bloom tag
-	String getBloom(){
+	int getBloom(){
 		return bloom;
 	}
 	
