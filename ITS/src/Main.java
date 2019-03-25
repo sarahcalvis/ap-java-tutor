@@ -53,7 +53,7 @@ public class Main extends Application{
 
 	public static void main(String[] args) {
 		//GridPane grid = new GridPane();
-		fillTestBank();
+		
 		for (int i = 1; i < 7; i++) {
 			keys.add("Bloom " + i);
 		}
@@ -73,13 +73,10 @@ public class Main extends Application{
 		keys.add("Interfaces");
 		keys.add("Packages");
 		keys.add("Miscellaneous Object Oriented Programming");
+		
+		fillTestBank();
 
 		topics = new ArrayList<String>();
-		topics.add("Methods");
-		topics.add("Operators");
-
-
-
 
 		launch(args);
 
@@ -233,8 +230,34 @@ public class Main extends Application{
 						}
 					}
 				});
+				TextField tfPage = new TextField();
+				tfPage.setOnAction(new EventHandler<ActionEvent>() {
+					@Override
+					public void handle(ActionEvent event) {
+						whatPageWeOn = Integer.parseInt(tfPage.getText());
+						grid.getChildren().removeIf(node -> GridPane.getRowIndex(node) == 2 &&GridPane.getColumnIndex(node) == 2);
+						if (whatPageWeOn >= 1) {
+							whatPageWeOn--;
+							String pageNumber = Integer.toString(whatPageWeOn);
+							if (pageNumber.length() == 1) {
+								pageNumber = "00"+pageNumber;
+							}
+							else if (pageNumber.length() == 2) {
+								pageNumber = "0"+pageNumber;
+							}
+							String file = "file:src/thinkjava(1)-page-"+pageNumber+".jpg";
+							System.out.println(file);
+							Image image = new Image(file);
+							ImageView ivText = new ImageView();
+							ivText.setImage(image);
+							ivText.setFitHeight(700);
+							ivText.setFitWidth(500);
+							grid.add(ivText, 2, 2);
+						}
+					}
+				});
 				VBox bookV = new VBox();
-				bookV.getChildren().addAll(btnNextPage, btnPrevPage);
+				bookV.getChildren().addAll(tfPage, btnNextPage, btnPrevPage);
 				grid.add(bookV, 3, 2);
 			}
 		});
@@ -368,6 +391,7 @@ public class Main extends Application{
 
 				String s = "";
 				for (int i = 0; i < keys.size(); i++) {
+					System.out.println(stats.size());
 					String txt = "" + stats.get(keys.get(i)).getTuple();
 					if(txt.equals("-1.0")) {
 						txt = "N/A";
