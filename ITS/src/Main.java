@@ -361,7 +361,7 @@ public class Main extends Application{
 							
 							quiz = new Testing(1, topics, banky);
 							//make counter for quiz equal to qPerT
-							questCount = quiz.qPerT;
+							questCount = 11; //quiz.qPerT;
 							fillQuest();
 	
 						}
@@ -454,7 +454,6 @@ public class Main extends Application{
 		Label l = new Label(quiz.getQ(questCount).getText());
 		quest.getChildren().add(l);  
 		//fill questions with the question's possible responses
-		//TODO randomize the order of the answers
 		ArrayList<String> answ = new ArrayList<String>();
 		for (int i = 0; i < 4; i++) {
 			String a = quiz.getQ(questCount).getAnswer(i);
@@ -551,7 +550,9 @@ public class Main extends Application{
 						tupleTopic.updateTuple(0,1,studentObj);
 						tupleBloom.updateTuple(0,1,studentObj);
 					}
+					grid.getChildren().remove(quest);
 					fillQuest();
+					
 				}
 				//else the quiz is finished
 				else {
