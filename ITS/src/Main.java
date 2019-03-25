@@ -505,7 +505,7 @@ public class Main extends Application{
 			public void handle(ActionEvent next) 
 			{
 				//call action again to form new question in the UI only if there are more questions
-				if(questCount > 1) {
+				if(questCount > 0) {
 					for (int i =0; i <4; i++) {
 						quest.getChildren().remove(boxes.get(i));
 					}
