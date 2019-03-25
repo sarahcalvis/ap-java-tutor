@@ -550,6 +550,7 @@ public class Main extends Application{
 						tupleTopic.updateTuple(0,1,studentObj);
 						tupleBloom.updateTuple(0,1,studentObj);
 					}
+					quest.getChildren().clear();
 					grid.getChildren().remove(quest);
 					fillQuest();
 					
