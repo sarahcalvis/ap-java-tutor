@@ -74,7 +74,7 @@ public class Main extends Application{
 		keys.add("Inheritance");
 		keys.add("Packages");
 		keys.add("Miscellaneous Object Oriented Programming");
-		//keys.add("Java Standard Library");
+		keys.add("Standard Java Library");
 		
 		fillTestBank();
 
