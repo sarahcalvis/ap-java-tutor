@@ -80,7 +80,6 @@ public class Main extends Application{
 
 		topics = new ArrayList<String>();
 		
-		System.out.println(studentObj.getStats().keySet());
 
 		launch(args);
 
@@ -394,9 +393,7 @@ public class Main extends Application{
 				//Map<String,Tuple> stats = studentObj.getStats();
 				String s = "";
 				for (int i = 0; i < keys.size(); i++) {
-					System.out.println(keys.get(i));
 					Double score = stats.get(keys.get(i)).getTuple();
-					System.out.println(score);
 					String txt = "";
 					if(score<0) {
 						txt = "N/A";
@@ -704,7 +701,7 @@ public class Main extends Application{
 		banky.addQuest(q1);
 
 		//11
-		text = "int x = 0;\nfor (int i = 0; i < 9; i*=2) {\n/tx++;\n}\n\nWhat is the value of x after the above code finishes executing?";
+		text = "int x = 0;\nfor (int i = 0; i < 9; i*=2) {\n\tx++;\n}\n\nWhat is the value of x after the above code finishes executing?";
 		answers.set(0, "0");
 		answers.set(1, "4");
 		answers.set(2, "8");
@@ -857,7 +854,7 @@ public class Main extends Application{
 		banky.addQuest(q1);
 
 		//28
-		text = "Consider the following class:/n/nclass Node{/n/tint numStuff;/n/tdouble thing;/n/n/tNode(int numStuff, double thing){/n/t/tnumStuff = numStuff;/n/t/tthing = thing;/n/t}/n}/n/nWhat needs to be changed to produce the desired results?";
+		text = "Consider the following class:\n\nclass Node{\n\tint numStuff;\n\tdouble thing;\n\n\tNode(int numStuff, double thing){\n\t\tnumStuff = numStuff;\n\t\tthing = thing;\n\t}\n}\n\nWhat needs to be changed to produce the desired results?";
 		answers.set(0, "'this.' needs to be inserted before the left hand variables in the constructor");
 		answers.set(1, "'this.' needs to be inserted before the right hand variables in the constructor");
 		answers.set(2, "The code will work as is");
