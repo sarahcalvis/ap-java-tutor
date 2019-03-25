@@ -1040,6 +1040,8 @@ public class Main extends Application{
 		answers.set(1, "//");
 		answers.set(2, "Only /n");
 		answers.set(3, "Terrence");
+		q1 = new Question(text, answers, "I/O",4);
+		banky.addQuest(q1);
 	}
 
 
