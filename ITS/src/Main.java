@@ -997,7 +997,7 @@ public class Main extends Application{
 		q1 = new Question(text, answers, "Packages",1);
 		banky.addQuest(q1);
 
-		//43
+		//44
 		text = "What do packages do?";
 		answers.set(0, "prevent naming conflicts");
 		answers.set(1, "control access to classes");
@@ -1006,7 +1006,7 @@ public class Main extends Application{
 		q1 = new Question(text, answers, "Packages",3);
 		banky.addQuest(q1);
 
-		//44
+		//45
 		text = "Which of these is not a principle of object oriented programmming?";
 		answers.set(0, "iteration");
 		answers.set(1, "abstraction");
@@ -1015,7 +1015,7 @@ public class Main extends Application{
 		q1 = new Question(text, answers, "Miscellaneous Object Oriented Programming",5);
 		banky.addQuest(q1);
 
-		//45
+		//46
 		text = "An object...";
 		answers.set(0, "Is an instance of a class");
 		answers.set(1, "Is a variable");
@@ -1024,13 +1024,31 @@ public class Main extends Application{
 		q1 = new Question(text, answers, "Miscellaneous Object Oriented Programming",5);
 		banky.addQuest(q1);
 
-		//45
+		//47
 		text = "What is encapsulation?";
 		answers.set(0, "Keeping data hidden from methods that don't explicitly need that data");
 		answers.set(1, "An instace of a class");
 		answers.set(2, "A working product");
 		answers.set(3, "A new form of packaging");
 		q1 = new Question(text, answers, "Miscellaneous Object Oriented Programming",4);
+		banky.addQuest(q1);
+		
+		//48
+		text = "Which of these will correctly compare objects obj1 and obj2?";
+		answers.set(0, "none of these");
+		answers.set(1, "obj1 = obj2");
+		answers.set(2, "obj1 == obj2");
+		answers.set(3, "obj1.equals(obj2)");
+		q1 = new Question(text, answers, "Object Comparison",4);
+		banky.addQuest(q1);
+		
+		//49
+		text = "What is the default delimiter for Scanner.next()?";
+		answers.set(0, "Whitespace");
+		answers.set(1, "//");
+		answers.set(2, "Only /n");
+		answers.set(3, "Terrence");
+		q1 = new Question(text, answers, "I/O",4);
 		banky.addQuest(q1);
 	}
 
