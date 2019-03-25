@@ -43,7 +43,7 @@ public class Main extends Application{
 	ArrayList<CheckBox> boxes = new ArrayList<CheckBox>();
 	ArrayList<String> questions = new ArrayList<String>();
 	//tile pane for displaying questions
-	TilePane quest = new TilePane(); 
+	VBox quest = new VBox(); 
 	//big important grid
 	GridPane grid = new GridPane();
 	int questCount;
@@ -290,19 +290,47 @@ public class Main extends Application{
 					takeQuizButt.setOnAction(new EventHandler<ActionEvent>() {
 						@Override
 						public void handle(ActionEvent event) {
-							//TODO add buttons for different chapters
 							notCompleted = true;
 	
 							grid.getChildren().remove(quizV);
 							//add questions
 	
-							quest.setPrefColumns(3);
-							quest.setPrefRows(0);
+							//quest.setPrefColumns(3);
+							//quest.setPrefRows(0);
 							ArrayList<String> topics = new ArrayList<String>();
 							
-							for(int j = 6 + 4*(k); j < 10+4*(k); j++) {
-								topics.add(keys.get(j));
+							if (k == 0) {
+								topics.clear();
+								topics.add("Comments");
+								topics.add("Primitive Types");
+								topics.add("Operators");
+								topics.add("Object Comparison");
+								
 							}
+							if (k == 1) {
+								topics.clear();
+								topics.add("Escape Sequences");
+								topics.add("I/O");
+								topics.add("Exceptions");
+								topics.add("Arrays");
+								
+							}
+							if (k == 2) {
+								topics.clear();
+								topics.add("Control Statements");
+								topics.add("Variables");
+								topics.add("Methods");
+								topics.add("Constructors");
+								
+							}
+							if (k == 3) {
+								topics.clear();
+								topics.add("Classes");
+								topics.add("Interfaces");
+								topics.add("Packages");
+								topics.add("Miscellaneous Object Oriented Programming");
+							}
+							
 							quiz = new Testing(1, topics, banky);
 							//make counter for quiz equal to qPerT
 							questCount = quiz.qPerT;
@@ -462,7 +490,7 @@ public class Main extends Application{
 					//Update Student code by dealing with the tuples
 					String qTopic = quiz.getQ(questCount).getTopic();
 					System.out.println("qTopic is " + qTopic);
-					String qBloom = quiz.getQ(questCount).getBloom();
+					int qBloom = quiz.getQ(questCount).getBloom();
 					System.out.println("qBloom is " + qBloom);
 					
 					//get tuples
@@ -498,7 +526,7 @@ public class Main extends Application{
 					//check for topic and bloom then send to Ben's code
 					String qTopic = quiz.getQ(questCount+1).getTopic();
 					System.out.println("qTopic is " + qTopic);
-					String qBloom = quiz.getQ(questCount+1).getBloom();
+					int qBloom = quiz.getQ(questCount+1).getBloom();
 					System.out.println("qBloom is " + qBloom);
 					
 					//get tuples
@@ -976,6 +1004,3 @@ public class Main extends Application{
 
 
 }
-
-
-
