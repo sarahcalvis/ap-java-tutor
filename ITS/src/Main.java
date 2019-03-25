@@ -552,6 +552,7 @@ public class Main extends Application{
 					}
 					quest.getChildren().clear();
 					grid.getChildren().remove(quest);
+					grid.getChildren().remove(submit);
 					fillQuest();
 					
 				}
@@ -597,7 +598,7 @@ public class Main extends Application{
 					gradeL.setFont(Font.font("Tahoma", FontWeight.NORMAL, 26));
 					grid.add(gradeL,3,4); 
 					notCompleted = false;
-					//grid.getChildren().remove(submit);
+					grid.getChildren().remove(submit);
 
 				}
 			}
