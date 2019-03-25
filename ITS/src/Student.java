@@ -531,7 +531,7 @@ public class Student {
 			pw.println(stats.get("Interfaces").toString());
 			pw.println(stats.get("Inheritance").toString());
 			pw.println(stats.get("Packages").toString());
-			pw.print(stats.get("Miscellaneous Object Oriented Programming").toString());
+			pw.println(stats.get("Miscellaneous Object Oriented Programming").toString());
 			pw.print(stats.get("Standard Java Library").toString());
 			pw.flush();
 			pw.close();
