@@ -520,9 +520,9 @@ public class Main extends Application{
 					//check if the submitted question is correct
 					
 					//Update Student code by dealing with the tuples
-					String qTopic = quiz.getQ(questCount).getTopic();
+					String qTopic = quiz.getQ(questCount+1).getTopic();
 					System.out.println("qTopic is " + qTopic);
-					int qBloom = quiz.getQ(questCount).getBloom();
+					int qBloom = quiz.getQ(questCount+1).getBloom();
 					System.out.println("qBloom is " + qBloom);
 					
 					//get tuples
