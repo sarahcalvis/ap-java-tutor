@@ -36,7 +36,7 @@ public class Tuple{
 	 */
 	public Double getTuple() {
 		if (y != 0) {
-			return x / y * 100.0;
+			return x * 100.0 / y;
 		}
 		return -1.0;
 	}

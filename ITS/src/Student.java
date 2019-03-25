@@ -87,6 +87,7 @@ public class Student {
 		}
 		for(int i = 0; scn.hasNextLine(); i++) {
 			String nextLine = scn.nextLine();
+			System.out.println(nextLine);
 			Scanner scan = new Scanner(nextLine);
 			if (scan.hasNextInt()) {
 				for(int j = 1;scan.hasNextInt();j++) {
@@ -222,7 +223,7 @@ public class Student {
 						name = "You Broke Everything";
 						t = new Tuple(x,y);
 					}
-					stats.put(name, t);
+					stats.put(name,t);
 				}
 			}
 			else if(scan.hasNextDouble()) {
@@ -243,7 +244,7 @@ public class Student {
 				username = scan.next();
 				password = scan.next();
 			}
-		}		
+		}
 	}
 
 	
@@ -333,8 +334,7 @@ public class Student {
 					case 3:
 						name = "Primitive Types";
 						primTypes = new Tuple(x,y);
-						t = primTypes;
-						
+						t = primTypes;					
 						break;
 					case 4:
 						name = "Operators";
@@ -490,7 +490,7 @@ public class Student {
 	public void saveProgress() {
 		try {
 			PrintWriter pw = new PrintWriter(username+".txt");
-			pw.println(username + " "+ password);
+			pw.println(username + " " + password);
 			for (int i = 0; i<quizzes.size();i++) {
 				if(!(i==quizzes.size()-1)) {
 					pw.print(quizzes.get(i));
@@ -529,8 +529,10 @@ public class Student {
 			pw.println(stats.get("Constructors").toString());
 			pw.println(stats.get("Classes").toString());
 			pw.println(stats.get("Interfaces").toString());
+			pw.println(stats.get("Inheritance").toString());
 			pw.println(stats.get("Packages").toString());
 			pw.print(stats.get("Miscellaneous Object Oriented Programming").toString());
+			//pw.print(stats.get("Java Standard Library").toString());
 			pw.flush();
 			pw.close();
 
@@ -545,8 +547,8 @@ public class Student {
 
 	public void generateFile(File f) throws FileNotFoundException {
 		PrintWriter pw = new PrintWriter(f);
-		pw.print("guest guest");
-		pw.print("\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0");//quizzes
+		pw.println("guest guest");
+		pw.print("0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0");//quizzes
 		pw.print("\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0");//tests
 		pw.print("\n0 0 0 0 0 0 0 0 0 0 0 0");
 		for(int i=0;i<18;i++) {

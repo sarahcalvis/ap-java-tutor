@@ -34,7 +34,7 @@ public class Main extends Application{
 	int whatPageWeOn = 1;
 	static TestBank banky = new TestBank();
 	static ArrayList<String> topics;
-	Student studentObj = new Student();
+	static Student studentObj = new Student();
 	String selected = "";
 	Boolean notCompleted = true;
 
@@ -48,7 +48,7 @@ public class Main extends Application{
 	GridPane grid = new GridPane();
 	int questCount;
 	//vars for student
-	Map<String,Tuple> stats = studentObj.getStats();
+	static Map<String,Tuple> stats = studentObj.getStats();
 	static ArrayList<String> keys = new ArrayList<String>();
 
 	public static void main(String[] args) {
@@ -71,12 +71,16 @@ public class Main extends Application{
 		keys.add("Constructors");
 		keys.add("Classes");
 		keys.add("Interfaces");
+		keys.add("Inheritance");
 		keys.add("Packages");
 		keys.add("Miscellaneous Object Oriented Programming");
+		//keys.add("Java Standard Library");
 		
 		fillTestBank();
 
 		topics = new ArrayList<String>();
+		
+		System.out.println(studentObj.getStats().keySet());
 
 		launch(args);
 
@@ -350,6 +354,7 @@ public class Main extends Application{
 								topics.clear();
 								topics.add("Classes");
 								topics.add("Interfaces");
+								//topics.add("Inheritance");
 								topics.add("Packages");
 								topics.add("Miscellaneous Object Oriented Programming");
 							}
@@ -387,14 +392,17 @@ public class Main extends Application{
 				buttons(grid, primaryStage);
 				System.out.println("finished creating");
 				//Map<String,Tuple> stats = studentObj.getStats();
-				
-
 				String s = "";
 				for (int i = 0; i < keys.size(); i++) {
-					System.out.println(stats.size());
-					String txt = "" + stats.get(keys.get(i)).getTuple();
-					if(txt.equals("-1.0")) {
+					System.out.println(keys.get(i));
+					Double score = stats.get(keys.get(i)).getTuple();
+					System.out.println(score);
+					String txt = "";
+					if(score<0) {
 						txt = "N/A";
+					}
+					else {
+						txt = "" + score + "%";
 					}
 					s += keys.get(i) + ": " + txt + "\n";
 				}
@@ -519,7 +527,7 @@ public class Main extends Application{
 					
 					//get tuples
 					Tuple tupleTopic = stats.get(qTopic);
-					Tuple tupleBloom = stats.get(qBloom);
+					Tuple tupleBloom = stats.get("Bloom "+qBloom);
 					System.out.println("tupleTopic is " + tupleTopic);
 					System.out.println("tupleBloom is " + tupleBloom);
 				
@@ -555,7 +563,7 @@ public class Main extends Application{
 					
 					//get tuples
 					Tuple tupleTopic = stats.get(qTopic);
-					Tuple tupleBloom = stats.get(qBloom);
+					Tuple tupleBloom = stats.get("Bloom " + qBloom);
 					System.out.println("tupleTopic is " + tupleTopic);
 					System.out.println("tupleBloom is " + tupleBloom);
 					
@@ -693,7 +701,7 @@ public class Main extends Application{
 		banky.addQuest(q1);
 
 		//11
-		text = "int x = 0;/nfor (int i = 0; i < 9; i*=2) {/n/tx++;/n}/n/nWhat is the value of x after the above code finishes executing?";
+		text = "int x = 0;\nfor (int i = 0; i < 9; i*=2) {\n/tx++;\n}\n\nWhat is the value of x after the above code finishes executing?";
 		answers.set(0, "0");
 		answers.set(1, "4");
 		answers.set(2, "8");
@@ -882,7 +890,7 @@ public class Main extends Application{
 		banky.addQuest(q1);
 
 		//32
-		text = "Object obj1;/nObject obj2;/nWhich one of these check whether obj1 and obj2 hold the same attributes?";
+		text = "Object obj1;\nObject obj2;\nWhich one of these check whether obj1 and obj2 hold the same attributes?";
 		answers.set(0, "none of these");
 		answers.set(1, "obj1 = obj2;");
 		answers.set(2, "obj1 == obj2;");
@@ -963,7 +971,7 @@ public class Main extends Application{
 		banky.addQuest(q1);
 
 		//41
-		text = "Which of these is NOT a key way in which interfaces defer from classes?";
+		text = "Which of these is NOT a key way in which interfaces differ from classes?";
 		answers.set(0, "An interface cannot have methods");
 		answers.set(1, "An interface cannot be instantiated");
 		answers.set(2, "Everything in an interface is abstract");
