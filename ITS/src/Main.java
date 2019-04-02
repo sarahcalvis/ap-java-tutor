@@ -6,6 +6,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -30,7 +31,10 @@ import java.util.Scanner;
 import javafx. *;
 
 
-public class Main extends Application{
+public class Main extends Application {
+	//this one tells whether the button should show right now or not
+	boolean buttonsExpanded = true;
+	//what page of the text book we are on
 	int whatPageWeOn = 1;
 	static TestBank banky = new TestBank();
 	static ArrayList<String> topics;
@@ -120,326 +124,362 @@ public class Main extends Application{
 
 
 	public void buttons(GridPane grid, Stage primaryStage){
-		//
-		//NAVIGATION BAR
-		//Maybe copy this code for the other pages???
-		//
-		//create a VBox to put all the buttons in???
-		VBox vb = new VBox();
-		//home button
-		Button home = new Button();
-		home.setText("Home");
-		home.setTextFill(Color.BLUE);
-		home.setMaxWidth(Double.MAX_VALUE);
-		home.setOnAction(new EventHandler<ActionEvent>() {
-			@Override
-			public void handle(ActionEvent event) {
-				System.out.println("Pressed Home Button");
-				// clear current screen
-				grid.getChildren().clear(); 
-				//add home screen shenanigans
-				Text scenetitle = new Text("Welcome Back!");
-				scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 26));
-				grid.add(scenetitle, 2,1);
-				//calls buttons to set up the navbar again
-				buttons(grid, primaryStage);
-				System.out.println("finished creating");
-			}
-		});
-		grid.add(home, 5, 3);
-
-		//textbook button
-		Button textbk = new Button();
-		textbk.setText("Textbook");
-		textbk.setTextFill(Color.BLUE);
-		textbk.setMaxWidth(Double.MAX_VALUE);
-		textbk.setOnAction(new EventHandler<ActionEvent>() {
-			@Override
-			public void handle(ActionEvent event) {
-				System.out.println("Pressed Textbook Button");
-				grid.getChildren().clear();
-				//add textbook information here
-				Text scenetitle = new Text("Think Java");
-				scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 26));
-				grid.add(scenetitle, 2, 1);
-				//add the nav bar back
-				buttons(grid, primaryStage);
-				System.out.println("finished creating");
-				String pageNumber = Integer.toString(whatPageWeOn);
-				if (pageNumber.length() == 1) {
-					pageNumber = "00"+pageNumber;
+		if (buttonsExpanded) {
+			//
+			//NAVIGATION BAR
+			//Maybe copy this code for the other pages???
+			//
+			//create a VBox to put all the buttons in???
+			VBox vb = new VBox();
+			
+			//this link, when clicked, hides the buttons
+			Hyperlink hide = new Hyperlink();
+			hide.setText("v");
+			hide.setOnAction(new EventHandler<ActionEvent>() {
+				@Override
+				public void handle(ActionEvent event) {
+					buttonsExpanded = false;
+					buttons(grid, primaryStage);
 				}
-				else if (pageNumber.length() == 2) {
-					pageNumber = "0"+pageNumber;
+			});
+			//add this link to the grid
+			grid.add(hide, 0, 0);
+			//home button
+			Button home = new Button();
+			home.setText("Home");
+			home.setTextFill(Color.BLUE);
+			home.setMaxWidth(Double.MAX_VALUE);
+			home.setOnAction(new EventHandler<ActionEvent>() {
+				@Override
+				public void handle(ActionEvent event) {
+					System.out.println("Pressed Home Button");
+					// clear current screen
+					grid.getChildren().clear(); 
+					//add home screen shenanigans
+					Text scenetitle = new Text("Welcome Back!");
+					scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 26));
+					grid.add(scenetitle, 2,1);
+					//calls buttons to set up the navbar again
+					buttons(grid, primaryStage);
+					System.out.println("finished creating");
 				}
-
-				String file = "file:src/thinkjava(1)-page-"+pageNumber+".jpg";
-				System.out.println(file);
-				Image image = new Image(file);
-				ImageView ivText = new ImageView();
-				ivText.setImage(image);
-				ivText.setFitHeight(700);
-				ivText.setFitWidth(400);
-				grid.add(ivText, 2, 2);
-				Button btnNextPage = new Button("Next Page");
-				btnNextPage.setOnAction(new EventHandler<ActionEvent>() {
-					@Override
-					public void handle(ActionEvent event) {
-						grid.getChildren().removeIf(node -> GridPane.getRowIndex(node) == 2 &&GridPane.getColumnIndex(node) == 2);
-						if (whatPageWeOn < 291) {
-							whatPageWeOn++;
-							String pageNumber = Integer.toString(whatPageWeOn);
-							if (pageNumber.length() == 1) {
-								pageNumber = "00"+pageNumber;
-							}
-							else if (pageNumber.length() == 2) {
-								pageNumber = "0"+pageNumber;
-							}
-							String file = "file:src/thinkjava(1)-page-"+pageNumber+".jpg";
-							System.out.println(file);
-							Image image = new Image(file);
-							ImageView ivText = new ImageView();
-							ivText.setImage(image);
-							ivText.setFitHeight(700);
-							ivText.setFitWidth(400);
-							grid.add(ivText, 2, 2);
-						}
-
+			});
+			grid.add(home, 5, 3);
+	
+			//textbook button
+			Button textbk = new Button();
+			textbk.setText("Textbook");
+			textbk.setTextFill(Color.BLUE);
+			textbk.setMaxWidth(Double.MAX_VALUE);
+			textbk.setOnAction(new EventHandler<ActionEvent>() {
+				@Override
+				public void handle(ActionEvent event) {
+					System.out.println("Pressed Textbook Button");
+					grid.getChildren().clear();
+					//add textbook information here
+					Text scenetitle = new Text("Think Java");
+					scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 26));
+					grid.add(scenetitle, 2, 1);
+					//add the nav bar back
+					buttons(grid, primaryStage);
+					System.out.println("finished creating");
+					String pageNumber = Integer.toString(whatPageWeOn);
+					if (pageNumber.length() == 1) {
+						pageNumber = "00"+pageNumber;
 					}
-				});
-				
-				Button btnPrevPage = new Button("Previous Page");
-				btnPrevPage.setOnAction(new EventHandler<ActionEvent>() {
-					@Override
-					public void handle(ActionEvent event) {
-						grid.getChildren().removeIf(node -> GridPane.getRowIndex(node) == 2 &&GridPane.getColumnIndex(node) == 2);
-						if (whatPageWeOn >= 1) {
-							whatPageWeOn--;
-							String pageNumber = Integer.toString(whatPageWeOn);
-							if (pageNumber.length() == 1) {
-								pageNumber = "00"+pageNumber;
-							}
-							else if (pageNumber.length() == 2) {
-								pageNumber = "0"+pageNumber;
-							}
-							String file = "file:src/thinkjava(1)-page-"+pageNumber+".jpg";
-							System.out.println(file);
-							Image image = new Image(file);
-							ImageView ivText = new ImageView();
-							ivText.setImage(image);
-							ivText.setFitHeight(700);
-							ivText.setFitWidth(500);
-							grid.add(ivText, 2, 2);
-						}
+					else if (pageNumber.length() == 2) {
+						pageNumber = "0"+pageNumber;
 					}
-				});
-				TextField tfPage = new TextField();
-				tfPage.setOnAction(new EventHandler<ActionEvent>() {
-					@Override
-					public void handle(ActionEvent event) {
-						whatPageWeOn = Integer.parseInt(tfPage.getText());
-						grid.getChildren().removeIf(node -> GridPane.getRowIndex(node) == 2 &&GridPane.getColumnIndex(node) == 2);
-						if (whatPageWeOn >= 1) {
-							whatPageWeOn--;
-							String pageNumber = Integer.toString(whatPageWeOn);
-							if (pageNumber.length() == 1) {
-								pageNumber = "00"+pageNumber;
-							}
-							else if (pageNumber.length() == 2) {
-								pageNumber = "0"+pageNumber;
-							}
-							String file = "file:src/thinkjava(1)-page-"+pageNumber+".jpg";
-							System.out.println(file);
-							Image image = new Image(file);
-							ImageView ivText = new ImageView();
-							ivText.setImage(image);
-							ivText.setFitHeight(700);
-							ivText.setFitWidth(500);
-							grid.add(ivText, 2, 2);
-						}
-					}
-				});
-				VBox bookV = new VBox();
-				bookV.getChildren().addAll(tfPage, btnNextPage, btnPrevPage);
-				grid.add(bookV, 3, 2);
-			}
-		});
-		grid.add(textbk, 4, 10);
-
-		//lesson button
-		Button lessons = new Button();
-		lessons.setText("Lessons");
-		lessons.setTextFill(Color.BLUE);
-		lessons.setMaxWidth(Double.MAX_VALUE);
-		lessons.setOnAction(new EventHandler<ActionEvent>() {
-			@Override
-			public void handle(ActionEvent event) {
-				System.out.println("Pressed Lessons Button");
-				grid.getChildren().clear();
-				//add lessons information here
-				Text scenetitle = new Text("Lessons");
-				scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 26));
-				grid.add(scenetitle, 2,1);
-				//add the nav bar back
-				buttons(grid, primaryStage);
-				System.out.println("finished creating");
-			}
-		});
-		grid.add(lessons, 5, 18);
-
-		//Test/quizzes button
-		Button exams = new Button();
-		exams.setText("Quizzes and Exams");
-		exams.setTextFill(Color.BLUE);
-		exams.setMaxWidth(Double.MAX_VALUE);
-		exams.setOnAction(new EventHandler<ActionEvent>() {
-			@Override
-			public void handle(ActionEvent event) {
-				System.out.println("Pressed Exams Button");
-				grid.getChildren().clear();
-				//add Exams information here
-				Text scenetitle = new Text("Tests and Quizzes");
-				scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 26));
-				grid.add(scenetitle, 2, 1);
-				//add the nav bar back
-				buttons(grid, primaryStage);
-				System.out.println("finished creating");
-
-				VBox quizV = new VBox();
-				for (int i = 0; i < 4; i++) {
-					//add take quiz button here 
-					Button takeQuizButt = new Button();
-					takeQuizButt.setText("Take Test " + (i+1));
-					takeQuizButt.setTextFill(Color.BLUE);
-					takeQuizButt.setMaxWidth(Double.MAX_VALUE);
-					final int k = i;
-					takeQuizButt.setOnAction(new EventHandler<ActionEvent>() {
+	
+					String file = "file:src/thinkjava(1)-page-"+pageNumber+".jpg";
+					System.out.println(file);
+					Image image = new Image(file);
+					ImageView ivText = new ImageView();
+					ivText.setImage(image);
+					ivText.setFitHeight(700);
+					ivText.setFitWidth(400);
+					grid.add(ivText, 2, 2);
+					Button btnNextPage = new Button("Next Page");
+					btnNextPage.setOnAction(new EventHandler<ActionEvent>() {
 						@Override
 						public void handle(ActionEvent event) {
-							notCompleted = true;
-	
-							grid.getChildren().remove(quizV);
-							//add questions
-	
-							//quest.setPrefColumns(3);
-							//quest.setPrefRows(0);
-							ArrayList<String> topics = new ArrayList<String>();
-							
-							if (k == 0) {
-								topics.clear();
-								topics.add("Comments");
-								topics.add("Primitive Types");
-								topics.add("Operators");
-								topics.add("Object Comparison");
-								
+							grid.getChildren().removeIf(node -> GridPane.getRowIndex(node) == 2 &&GridPane.getColumnIndex(node) == 2);
+							if (whatPageWeOn < 291) {
+								whatPageWeOn++;
+								String pageNumber = Integer.toString(whatPageWeOn);
+								if (pageNumber.length() == 1) {
+									pageNumber = "00"+pageNumber;
+								}
+								else if (pageNumber.length() == 2) {
+									pageNumber = "0"+pageNumber;
+								}
+								String file = "file:src/thinkjava(1)-page-"+pageNumber+".jpg";
+								System.out.println(file);
+								Image image = new Image(file);
+								ImageView ivText = new ImageView();
+								ivText.setImage(image);
+								ivText.setFitHeight(700);
+								ivText.setFitWidth(400);
+								grid.add(ivText, 2, 2);
 							}
-							if (k == 1) {
-								topics.clear();
-								topics.add("Escape Sequences");
-								topics.add("I/O");
-								topics.add("Exceptions");
-								topics.add("Arrays");
-								
-							}
-							if (k == 2) {
-								topics.clear();
-								topics.add("Control Statements");
-								topics.add("Variables");
-								topics.add("Methods");
-								topics.add("Constructors");
-								
-							}
-							if (k == 3) {
-								topics.clear();
-								topics.add("Classes");
-								topics.add("Interfaces");
-								//topics.add("Inheritance");
-								topics.add("Packages");
-								topics.add("Miscellaneous Object Oriented Programming");
-							}
-							
-							quiz = new Testing(1, topics, banky);
-							//make counter for quiz equal to qPerT
-							questCount = 11; //quiz.qPerT;
-							fillQuest();
 	
 						}
 					});
-					quizV.getChildren().add(takeQuizButt);
+					
+					Button btnPrevPage = new Button("Previous Page");
+					btnPrevPage.setOnAction(new EventHandler<ActionEvent>() {
+						@Override
+						public void handle(ActionEvent event) {
+							grid.getChildren().removeIf(node -> GridPane.getRowIndex(node) == 2 &&GridPane.getColumnIndex(node) == 2);
+							if (whatPageWeOn >= 1) {
+								whatPageWeOn--;
+								String pageNumber = Integer.toString(whatPageWeOn);
+								if (pageNumber.length() == 1) {
+									pageNumber = "00"+pageNumber;
+								}
+								else if (pageNumber.length() == 2) {
+									pageNumber = "0"+pageNumber;
+								}
+								String file = "file:src/thinkjava(1)-page-"+pageNumber+".jpg";
+								System.out.println(file);
+								Image image = new Image(file);
+								ImageView ivText = new ImageView();
+								ivText.setImage(image);
+								ivText.setFitHeight(700);
+								ivText.setFitWidth(500);
+								grid.add(ivText, 2, 2);
+							}
+						}
+					});
+					TextField tfPage = new TextField();
+					tfPage.setOnAction(new EventHandler<ActionEvent>() {
+						@Override
+						public void handle(ActionEvent event) {
+							whatPageWeOn = Integer.parseInt(tfPage.getText());
+							grid.getChildren().removeIf(node -> GridPane.getRowIndex(node) == 2 &&GridPane.getColumnIndex(node) == 2);
+							if (whatPageWeOn >= 1) {
+								whatPageWeOn--;
+								String pageNumber = Integer.toString(whatPageWeOn);
+								if (pageNumber.length() == 1) {
+									pageNumber = "00"+pageNumber;
+								}
+								else if (pageNumber.length() == 2) {
+									pageNumber = "0"+pageNumber;
+								}
+								String file = "file:src/thinkjava(1)-page-"+pageNumber+".jpg";
+								System.out.println(file);
+								Image image = new Image(file);
+								ImageView ivText = new ImageView();
+								ivText.setImage(image);
+								ivText.setFitHeight(700);
+								ivText.setFitWidth(500);
+								grid.add(ivText, 2, 2);
+							}
+						}
+					});
+					VBox bookV = new VBox();
+					bookV.getChildren().addAll(tfPage, btnNextPage, btnPrevPage);
+					grid.add(bookV, 3, 2);
 				}
-				grid.add(quizV, 2, 2);
-			}
-		});
-		grid.add(exams, 3, 25);
-
-
-		//diagnostics button
-		Button diagnostics = new Button();
-		diagnostics.setText("Diagnostics");
-		diagnostics.setTextFill(Color.BLUE);
-		diagnostics.setMaxWidth(Double.MAX_VALUE);
-		diagnostics.setOnAction(new EventHandler<ActionEvent>() {
-			@Override
-			public void handle(ActionEvent event) {
-				System.out.println("Pressed Diagnostics Button");
-				grid.getChildren().clear();
-				//add diagnostics information here
-				Text scenetitle = new Text("Diagnostics");
-				scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 26));
-				grid.add(scenetitle, 2, 1);
-				//add the nav bar back
-				buttons(grid, primaryStage);
-				System.out.println("finished creating");
-				//Map<String,Tuple> stats = studentObj.getStats();
-				String s = "";
-				for (int i = 0; i < keys.size(); i++) {
-					Double score = stats.get(keys.get(i)).getTuple();
-					String txt = "";
-					if(score<0) {
-						txt = "N/A";
-					}
-					else {
-						txt = "" + score + "%";
-					}
-					s += keys.get(i) + ": " + txt + "\n";
+			});
+			grid.add(textbk, 4, 10);
+	
+			//lesson button
+			Button lessons = new Button();
+			lessons.setText("Lessons");
+			lessons.setTextFill(Color.BLUE);
+			lessons.setMaxWidth(Double.MAX_VALUE);
+			lessons.setOnAction(new EventHandler<ActionEvent>() {
+				@Override
+				public void handle(ActionEvent event) {
+					System.out.println("Pressed Lessons Button");
+					grid.getChildren().clear();
+					//add lessons information here
+					Text scenetitle = new Text("Lessons");
+					scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 26));
+					grid.add(scenetitle, 2,1);
+					//add the nav bar back
+					buttons(grid, primaryStage);
+					System.out.println("finished creating");
 				}
-				Text diagnosticInfo = new Text(s);
-				diagnosticInfo.setFont(Font.font("Tahoma", FontWeight.NORMAL, 18));
-				grid.add(diagnosticInfo, 2, 2);
-			}
-		});
-		grid.add(diagnostics, 5, 33);
-
-		//settings button
-		Button settings = new Button();
-		settings.setText("Settings");
-		settings.setTextFill(Color.BLUE);
-		settings.setMaxWidth(Double.MAX_VALUE);
-		settings.setOnAction(new EventHandler<ActionEvent>() {
-			@Override
-			public void handle(ActionEvent event) {
-				System.out.println("Pressed Settings Button");
-				grid.getChildren().clear();
-				//add settings information here
-				Text scenetitle = new Text("Settings");
-				scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 26));
-				grid.add(scenetitle, 2, 1);
-				//add the nav bar back
-				buttons(grid, primaryStage);
-				System.out.println("finished creating");
-			}
-		});
-		grid.add(settings, 5, 40);
-
-		//add buttons to VB
-		vb.getChildren().addAll(home,lessons,textbk,diagnostics,exams,settings);
-		//add VB to grid
-		grid.add(vb,0,1,1,4);
-
-		//add style sheet
-		//scene.getStylesheets().add
-		//(Main.class.getResource("Buttons.css").toExternalForm());
-		primaryStage.show();
+			});
+			grid.add(lessons, 5, 18);
+	
+			//Test/quizzes button
+			Button exams = new Button();
+			exams.setText("Quizzes and Exams");
+			exams.setTextFill(Color.BLUE);
+			exams.setMaxWidth(Double.MAX_VALUE);
+			exams.setOnAction(new EventHandler<ActionEvent>() {
+				@Override
+				public void handle(ActionEvent event) {
+					System.out.println("Pressed Exams Button");
+					grid.getChildren().clear();
+					//add Exams information here
+					Text scenetitle = new Text("Tests and Quizzes");
+					scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 26));
+					grid.add(scenetitle, 2, 1);
+					//add the nav bar back
+					buttons(grid, primaryStage);
+					System.out.println("finished creating");
+	
+					VBox quizV = new VBox();
+					for (int i = 0; i < 4; i++) {
+						//add take quiz button here 
+						Button takeQuizButt = new Button();
+						takeQuizButt.setText("Take Test " + (i+1));
+						takeQuizButt.setTextFill(Color.BLUE);
+						takeQuizButt.setMaxWidth(Double.MAX_VALUE);
+						final int k = i;
+						takeQuizButt.setOnAction(new EventHandler<ActionEvent>() {
+							@Override
+							public void handle(ActionEvent event) {
+								notCompleted = true;
+		
+								grid.getChildren().remove(quizV);
+								//add questions
+		
+								//quest.setPrefColumns(3);
+								//quest.setPrefRows(0);
+								ArrayList<String> topics = new ArrayList<String>();
+								
+								if (k == 0) {
+									topics.clear();
+									topics.add("Comments");
+									topics.add("Primitive Types");
+									topics.add("Operators");
+									topics.add("Object Comparison");
+									
+								}
+								if (k == 1) {
+									topics.clear();
+									topics.add("Escape Sequences");
+									topics.add("I/O");
+									topics.add("Exceptions");
+									topics.add("Arrays");
+									
+								}
+								if (k == 2) {
+									topics.clear();
+									topics.add("Control Statements");
+									topics.add("Variables");
+									topics.add("Methods");
+									topics.add("Constructors");
+									
+								}
+								if (k == 3) {
+									topics.clear();
+									topics.add("Classes");
+									topics.add("Interfaces");
+									//topics.add("Inheritance");
+									topics.add("Packages");
+									topics.add("Miscellaneous Object Oriented Programming");
+								}
+								
+								quiz = new Testing(1, topics, banky);
+								//make counter for quiz equal to qPerT
+								questCount = 11; //quiz.qPerT;
+								fillQuest();
+		
+							}
+						});
+						quizV.getChildren().add(takeQuizButt);
+					}
+					grid.add(quizV, 2, 2);
+				}
+			});
+			grid.add(exams, 3, 25);
+	
+	
+			//diagnostics button
+			Button diagnostics = new Button();
+			diagnostics.setText("Diagnostics");
+			diagnostics.setTextFill(Color.BLUE);
+			diagnostics.setMaxWidth(Double.MAX_VALUE);
+			diagnostics.setOnAction(new EventHandler<ActionEvent>() {
+				@Override
+				public void handle(ActionEvent event) {
+					System.out.println("Pressed Diagnostics Button");
+					grid.getChildren().clear();
+					//add diagnostics information here
+					Text scenetitle = new Text("Diagnostics");
+					scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 26));
+					grid.add(scenetitle, 2, 1);
+					//add the nav bar back
+					buttons(grid, primaryStage);
+					System.out.println("finished creating");
+					//Map<String,Tuple> stats = studentObj.getStats();
+					String s = "";
+					for (int i = 0; i < keys.size(); i++) {
+						Double score = stats.get(keys.get(i)).getTuple();
+						String txt = "";
+						if(score<0) {
+							txt = "N/A";
+						}
+						else {
+							txt = "" + score + "%";
+						}
+						s += keys.get(i) + ": " + txt + "\n";
+					}
+					Text diagnosticInfo = new Text(s);
+					diagnosticInfo.setFont(Font.font("Tahoma", FontWeight.NORMAL, 18));
+					grid.add(diagnosticInfo, 2, 2);
+				}
+			});
+			grid.add(diagnostics, 5, 33);
+	
+			//settings button
+			Button settings = new Button();
+			settings.setText("Settings");
+			settings.setTextFill(Color.BLUE);
+			settings.setMaxWidth(Double.MAX_VALUE);
+			settings.setOnAction(new EventHandler<ActionEvent>() {
+				@Override
+				public void handle(ActionEvent event) {
+					System.out.println("Pressed Settings Button");
+					grid.getChildren().clear();
+					//add settings information here
+					Text scenetitle = new Text("Settings");
+					scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 26));
+					grid.add(scenetitle, 2, 1);
+					//add the nav bar back
+					buttons(grid, primaryStage);
+					System.out.println("finished creating");
+				}
+			});
+			grid.add(settings, 5, 40);
+	
+			//add buttons to VB
+			vb.getChildren().addAll(home,lessons,textbk,diagnostics,exams,settings);
+			//add VB to grid
+			grid.add(vb,0,1,1,4);
+	
+			//add style sheet
+			//scene.getStylesheets().add
+			//(Main.class.getResource("Buttons.css").toExternalForm());
+			primaryStage.show();
+		}
+		
+		//if the buttons are not supposed to show
+		else {
+			//firstly, clear the buttons
+			grid.getChildren().removeIf(node -> GridPane.getColumnIndex(node) == 0);
+			//make a little link if you want to show the buttons
+			Hyperlink show = new Hyperlink();
+			show.setText(">");
+			show.setOnAction(new EventHandler<ActionEvent>() {
+				@Override
+				//if someone clicks the link, recall this method with buttons expanded changed
+				public void handle(ActionEvent event) {
+					buttonsExpanded = true;
+					buttons(grid, primaryStage);
+				}
+			});
+			//add the little link
+			grid.add(show, 0, 0);
+			//show the stage
+			primaryStage.show();
+		}
 	}
 
 
