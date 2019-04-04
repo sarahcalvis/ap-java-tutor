@@ -3,6 +3,8 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.web.WebView;
+import javafx.scene.web.WebEngine;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
@@ -10,6 +12,7 @@ import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.application.HostServices;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
@@ -171,115 +174,16 @@ public class Main extends Application {
 			textbk.setText("Textbook");
 			textbk.setTextFill(Color.BLUE);
 			textbk.setMaxWidth(Double.MAX_VALUE);
+			
 			textbk.setOnAction(new EventHandler<ActionEvent>() {
 				@Override
 				public void handle(ActionEvent event) {
-					System.out.println("Pressed Textbook Button");
-					grid.getChildren().clear();
-					//add textbook information here
-					Text scenetitle = new Text("Think Java");
-					scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 26));
-					grid.add(scenetitle, 2, 1);
-					//add the nav bar back
-					buttons(grid, primaryStage);
-					System.out.println("finished creating");
-					String pageNumber = Integer.toString(whatPageWeOn);
-					if (pageNumber.length() == 1) {
-						pageNumber = "00"+pageNumber;
-					}
-					else if (pageNumber.length() == 2) {
-						pageNumber = "0"+pageNumber;
-					}
-	
-					String file = "file:src/thinkjava(1)-page-"+pageNumber+".jpg";
-					System.out.println(file);
-					Image image = new Image(file);
-					ImageView ivText = new ImageView();
-					ivText.setImage(image);
-					ivText.setFitHeight(700);
-					ivText.setFitWidth(400);
-					grid.add(ivText, 2, 2);
-					Button btnNextPage = new Button("Next Page");
-					btnNextPage.setOnAction(new EventHandler<ActionEvent>() {
-						@Override
-						public void handle(ActionEvent event) {
-							grid.getChildren().removeIf(node -> GridPane.getRowIndex(node) == 2 &&GridPane.getColumnIndex(node) == 2);
-							if (whatPageWeOn < 291) {
-								whatPageWeOn++;
-								String pageNumber = Integer.toString(whatPageWeOn);
-								if (pageNumber.length() == 1) {
-									pageNumber = "00"+pageNumber;
-								}
-								else if (pageNumber.length() == 2) {
-									pageNumber = "0"+pageNumber;
-								}
-								String file = "file:src/thinkjava(1)-page-"+pageNumber+".jpg";
-								System.out.println(file);
-								Image image = new Image(file);
-								ImageView ivText = new ImageView();
-								ivText.setImage(image);
-								ivText.setFitHeight(700);
-								ivText.setFitWidth(400);
-								grid.add(ivText, 2, 2);
-							}
-	
-						}
-					});
-					
-					Button btnPrevPage = new Button("Previous Page");
-					btnPrevPage.setOnAction(new EventHandler<ActionEvent>() {
-						@Override
-						public void handle(ActionEvent event) {
-							grid.getChildren().removeIf(node -> GridPane.getRowIndex(node) == 2 &&GridPane.getColumnIndex(node) == 2);
-							if (whatPageWeOn >= 1) {
-								whatPageWeOn--;
-								String pageNumber = Integer.toString(whatPageWeOn);
-								if (pageNumber.length() == 1) {
-									pageNumber = "00"+pageNumber;
-								}
-								else if (pageNumber.length() == 2) {
-									pageNumber = "0"+pageNumber;
-								}
-								String file = "file:src/thinkjava(1)-page-"+pageNumber+".jpg";
-								System.out.println(file);
-								Image image = new Image(file);
-								ImageView ivText = new ImageView();
-								ivText.setImage(image);
-								ivText.setFitHeight(700);
-								ivText.setFitWidth(500);
-								grid.add(ivText, 2, 2);
-							}
-						}
-					});
-					TextField tfPage = new TextField();
-					tfPage.setOnAction(new EventHandler<ActionEvent>() {
-						@Override
-						public void handle(ActionEvent event) {
-							whatPageWeOn = Integer.parseInt(tfPage.getText());
-							grid.getChildren().removeIf(node -> GridPane.getRowIndex(node) == 2 &&GridPane.getColumnIndex(node) == 2);
-							if (whatPageWeOn >= 1) {
-								whatPageWeOn--;
-								String pageNumber = Integer.toString(whatPageWeOn);
-								if (pageNumber.length() == 1) {
-									pageNumber = "00"+pageNumber;
-								}
-								else if (pageNumber.length() == 2) {
-									pageNumber = "0"+pageNumber;
-								}
-								String file = "file:src/thinkjava(1)-page-"+pageNumber+".jpg";
-								System.out.println(file);
-								Image image = new Image(file);
-								ImageView ivText = new ImageView();
-								ivText.setImage(image);
-								ivText.setFitHeight(700);
-								ivText.setFitWidth(500);
-								grid.add(ivText, 2, 2);
-							}
-						}
-					});
-					VBox bookV = new VBox();
-					bookV.getChildren().addAll(tfPage, btnNextPage, btnPrevPage);
-					grid.add(bookV, 3, 2);
+					WebView browser = new WebView();
+					WebEngine webEngine = browser.getEngine();
+					File f = new File("file:///src/ThinkJava.html");
+					webEngine.load(f.toURI().toString());
+					browser.setPrefSize(800, 800);
+					grid.add(browser, 2, 2);
 				}
 			});
 			grid.add(textbk, 4, 10);
