@@ -1,0 +1,458 @@
+{
+	{
+		"text": "Consider the following output.\n\t1  1  1  1  12  2  2  23  3  34  45\n\nWhich of the following code segments will produce this output?",
+		"answers": {
+			"0": "for (int j = 1; j <= 5; j++){\n\tfor (int k = 5; k >= j; k--){\n\t\tSystem.out.print(j + \"  \");\n\t}\n\tSystem.out.println();\n}",
+			"1": "for (int j = 1; j <= 5; j++){\n\tfor (int k = 1; k <= 5; k++){\n\t\tSystem.out.print(j + \"  \");\n\t}\n\tSystem.out.println();\n}",
+			"2": "for (int j = 1; j <= 5; j++){\n\tfor (int k = 1; k <= j; k++){\n\t\tSystem.out.print(j + \"  \");\n\t}\n\tSystem.out.println();\n}",
+			"3": "for (int j = 1; j <= 5; j++){\n\tfor (int k = j; k <= 5; k++){\n\t\tSystem.out.print(k + \"  \");\n\t}\n\tSystem.out.println();\n}"
+		}
+		"topic": "Control Statements",
+		"Bloom": 5
+	},
+	{
+		"text": "Which of the following lines represents a primitive data type?",
+		"answers": {
+			"0": "char",
+			"1": "ArrayList<String>",
+			"2": "String",
+			"3": "Integer"
+		}
+		"topic": "Primitive Types",
+		"Bloom": 2
+	},
+	{
+		"text": "What\'s wrong with the following code?\n\n\tvoid printsometext(){\n\t\tSystem.println(\"Printing text\n\");\n\t\tfor(int i=0; i<3; i++){\n\t\t\tSystem.println(i + \"\n\");\n\t\t}\n\t\treturn 5;\n\t}",
+		"answers": {
+			"0": "Void functions can't return ints.",
+			"1": "The loop is formatted incorrectly.",
+			"2": "There should be a semicolon after the function declaration.",
+			"3": "The character '\n' does not exist."
+		}
+		"topic": "Methods",
+		"Bloom": 5
+	},
+	{		
+		"text": "Which of the following operations allow you to define the function func1() outside of the class definition?",
+		"answers": {
+			"0": "public",
+			"1": "class school",
+			"2": "{",
+			"3": "school();"
+		}
+		"topic": "Methods"
+		"Bloom": 1
+	},
+	{
+		"text": "Consider the following code segment.\n\n\tfor (int k = 0; k < 20; k = k + 2){\n\t\tif (k % 3 == 1){\n\t\t\tSystem.out.print(k + \"  \");\n\t\t  }\n\t}\n\nWhat is printed as a result of executing the code segment?",
+		"answers": {
+			"0": "4  10  16",
+			"1": "4  16",
+			"2": "0  6  12  18",
+			"3": "0  2  4  6  8  10  12  14  16  18"
+		}
+		"topic": "Control Statements"
+		"Bloom": 3
+	},
+	{
+		"text": "Consider the following code segment.\n\n\tList<String> animals = new ArrayList<String>();\n\tanimals.add(\"dog\");\n\tanimals.add(\"cat\");\n\tanimals.add(\"snake\");\n\tanimals.set(2, \"lizard\");\n\tanimals.add(1, \"fish\");\n\tanimals.remove(3);\n\tSystem.out.println(animals);\n\n\tWhat is printed as a result of executing the code segment?",
+		"answers": {
+			"0": "[dog, fish, cat]",
+			"1": "[dog, fish, lizard]",
+			"2": "[dog, lizard, fish]",
+			"3": "The code throws anArrayIndexOutOfBoundsExceptionexception."
+		}
+		"topic": "Arrays",
+		"Bloom": 1
+	},
+	{
+		"text": "Consider two strings, stringA and stringB. How would we test these strings for equivalence?",
+		"answers": {
+			"0": "stringA.equals(stringB)",
+			"1": "stringA = stringB",
+			"2": "stringA == stringB",
+			"3": "stringA.isEqual(stringB)"
+		}
+		"topic": "Arrays", 
+		"Bloom": 1
+	},
+	{
+		"text": "What must be true immediately after the following code snippet has run?\n\n\tdouble square(double n){\n\t\treturn n*n;\n\t}",
+		"answers": {
+			"0": "The result will be positive.",
+			"1": "It is impossible to tell.",
+			"2": "The result will be stored in a new variable.",
+			"3": "The result will be a negative number."
+		}
+		"topic": "Operators", 
+		"Bloom": 3
+	},
+
+		//9
+		text = "Which one of these is not a primitive type?";
+		answers.set(0, "String");
+		answers.set(1, "int");
+		answers.set(2, "boolean");
+		answers.set(3, "double");
+		q1 = new Question(text, answers, "Primitive Types",1);
+		banky.addQuest(q1);
+
+		//10
+		text = "What does JVM stand for?";
+		answers.set(0, "Java Virtual Machine");
+		answers.set(1, "Jumpsuits Via Mail Order");
+		answers.set(2, "Jesuits Visiting Maryland");
+		answers.set(3, "Jamaican Vertebral Mechanism");
+		q1 = new Question(text, answers, "Primitive Types",1);
+		banky.addQuest(q1);
+
+		//11
+		text = "int x = 0;\nfor (int i = 0; i < 9; i*=2) {\n\tx++;\n}\n\nWhat is the value of x after the above code finishes executing?";
+		answers.set(0, "0");
+		answers.set(1, "4");
+		answers.set(2, "8");
+		answers.set(3, "9");
+		q1 = new Question(text, answers, "Control Statements",4);
+		banky.addQuest(q1);
+
+		//12
+		text = "A _____ is a special method that initializes an object.";
+		answers.set(0, "constructor");
+		answers.set(1, "class");
+		answers.set(2, "string literal");
+		answers.set(3, "working product");
+		q1 = new Question(text, answers, "Constructors",1);
+		banky.addQuest(q1);
+
+		//13
+		text = "An object is an instance of a _____.";
+		answers.set(0, "class");
+		answers.set(1, "variable");
+		answers.set(2, "JUnit test");
+		answers.set(3, "program");
+		q1 = new Question(text, answers, "Classes",2);
+		banky.addQuest(q1);
+
+		//14
+		text = "File file = new File(\"words.txt\");\nScanner scan = new Scanner(file);\n\nWhat exception needs to be handled in a program containing these lines?";
+		answers.set(0, "FileNotFoundException");
+		answers.set(1, "ScannerNotFoundException");
+		answers.set(2, "No exceptions could be thrown by this code.");
+		answers.set(3, "NullPointerException");
+		q1 = new Question(text, answers, "Exceptions",1);
+		banky.addQuest(q1);
+
+		//15
+		text = "Implicit if not defined, every class has a ______.";
+		answers.set(0, "constructor");
+		answers.set(1, "variable");
+		answers.set(2, "JUnit test");
+		answers.set(3, "IDE");
+		q1 = new Question(text, answers, "Classes",3);
+		banky.addQuest(q1);
+
+		//16
+		text = "Which one of the following is a legal comment?";
+		answers.set(0, "// your comment, my good sir");
+		answers.set(1, "/**/yo dawg here is a comment");
+		answers.set(2, "\\my brethren I give you this comment");
+		answers.set(3, "/consider yourself commented, my guy");
+		q1 = new Question(text, answers, "Comments",2);
+		banky.addQuest(q1);
+
+		//17
+		text = "How is a JavaDoc block begun?";
+		answers.set(0, "/**");
+		answers.set(1, "/JD/");
+		answers.set(2, "//");
+		answers.set(3, "*/*");
+		q1 = new Question(text, answers, "Comments",1);
+		banky.addQuest(q1);
+
+		//18
+		text = "What is the escape sequence that denotes a newline?";
+		answers.set(0, "\n");
+		answers.set(1, "|n");
+		answers.set(2, "/n");
+		answers.set(3, "\\n");
+		q1 = new Question(text, answers, "Escape Sequences",1);
+		banky.addQuest(q1);
+
+		//19
+		text = "What does '\t' denote?";
+		answers.set(0, "tab");
+		answers.set(1, "space");
+		answers.set(2, "title");
+		answers.set(3, "Terrence");
+		q1 = new Question(text, answers, "Escape Sequences",1);
+		banky.addQuest(q1);
+
+		//20
+		text = "Which of the following is the best equals() method for class 'car?'\n\nclass car{\n\tint numWheels;\n\tint miles;\n\tString name;\n\tString model;\n\n\tcar(String name, String model){\n\t\tthis.name = name;\n\t\tthis.model = model;\n\t}\n}";
+		answers.set(0, "boolean equals(car a, car b){\n\treturn (a.numWheels == b.numWheels\n\t&& a.miles == b.miles\n\t&& a.name.equals(b.name)\n\t&& a.model.equals(b.model));\n}");
+		answers.set(1, "boolean equals(car a, car b){\n\treturn (a.miles == b.miles\n\t&& a.name.equals(b.name)\n\t&& a.model.equals(b.model));\n}");
+		answers.set(2, "boolean equals(car a, car b){\n\treturn (a.numWheels == b.numWheels\n\t&& a.name.equals(b.name)\n\t&& a.model.equals(b.model));\n}");
+		answers.set(3, "boolean equals(car a, car b){\n\treturn (a.numWheels == b.numWheels\n\t&& a.miles == b.miles\n\t&& a.name.equals(b.name));\n}");
+		q1 = new Question(text, answers, "Object Comparison",5);
+		banky.addQuest(q1);
+
+		//21
+		text = "To initialize a scanner:\n\nScanner scnr = new Scanner(_________);";
+		answers.set(0, "System.in");
+		answers.set(1, "Input.sys");
+		answers.set(2, "iostream");
+		answers.set(3, "Terrence");
+		q1 = new Question(text, answers, "I/O",1);
+		banky.addQuest(q1);
+
+		//22
+		text = "A class name is usually...";
+		answers.set(0, "a noun");
+		answers.set(1, "a verb");
+		answers.set(2, "a preposition");
+		answers.set(3, "private to that class");
+		q1 = new Question(text, answers, "Classes",3);
+		banky.addQuest(q1);
+
+		//23
+		text = "Which of these will give the number of elements in an array a?";
+		answers.set(0, "a.length");
+		answers.set(1, "a.length()");
+		answers.set(2, "a.size");
+		answers.set(3, "a.size()");
+		q1 = new Question(text, answers, "Arrays",2);
+		banky.addQuest(q1);
+
+		//24
+		text = "Which one of these is a proper array declaration?";
+		answers.set(0, "int[] a = new int[7];");
+		answers.set(1, "int[] a = new int[];");
+		answers.set(2, "char c[] = new char[];");
+		answers.set(3, "char c [7];");
+		q1 = new Question(text, answers, "Arrays",2);
+		banky.addQuest(q1);
+
+		//25
+		text = "Which package needs to be imported to use System.out.println?";
+		answers.set(0, "No packages needed");
+		answers.set(1, "java.io");
+		answers.set(2, "ioStream");
+		answers.set(3, "stdio");
+		q1 = new Question(text, answers, "I/O",2);
+		banky.addQuest(q1);
+
+		//26
+		text = "What will the following code return? Assume a is true, b is false, and c is true.\n\t((a && (b || c)) || b)";
+		answers.set(0, "true");
+		answers.set(1, "false");
+		answers.set(2, "5");
+		answers.set(3, "c");
+		q1 = new Question(text, answers, "Operators",4);
+		banky.addQuest(q1);
+
+		//27
+		text = "What will be the result of the following code?\n\na[4] = {2, 3, 5, 8};\n\nfor(int i = 0; i == a.length; i++){\n\tc += a[i];\n}\n\nSystem.out.println(c);";
+		answers.set(0, "OutOfBoundsException");
+		answers.set(1, "IllegalArgumentException");
+		answers.set(2, "18");
+		answers.set(3, "10");
+		q1 = new Question(text, answers, "Exceptions",3);
+		banky.addQuest(q1);
+
+		//28
+		text = "Consider the following class:\n\nclass Node{\n\tint numStuff;\n\tdouble thing;\n\n\tNode(int numStuff, double thing){\n\t\tnumStuff = numStuff;\n\t\tthing = thing;\n\t}\n}\n\nWhat needs to be changed to produce the desired results?";
+		answers.set(0, "'this.' needs to be inserted before the left hand variables in the constructor");
+		answers.set(1, "'this.' needs to be inserted before the right hand variables in the constructor");
+		answers.set(2, "The code will work as is");
+		answers.set(3, "Terrence");
+		q1 = new Question(text, answers, "Constructors",5);
+		banky.addQuest(q1);
+
+		//29
+		text = "What is a block comment?";
+		answers.set(0, "Multiple lines enclosed by /**/");
+		answers.set(1, "Multiple lines enclosed by // //");
+		answers.set(2, "Block comments are just an urban legend");
+		answers.set(3, "String");
+		q1 = new Question(text, answers, "Comments",1);
+		banky.addQuest(q1);
+
+		//30
+		text = "What is the value of an uninitialized int variable?";
+		answers.set(0, "null");
+		answers.set(1, "0");
+		answers.set(2, "int");
+		answers.set(3, "");
+		q1 = new Question(text, answers, "Variables",2);
+		banky.addQuest(q1);
+
+		//31
+		text = "To which of these types can operators NOT be applied?";
+		answers.set(0, "String");
+		answers.set(1, "int");
+		answers.set(2, "char");
+		answers.set(3, "double");
+		q1 = new Question(text, answers, "Operators",2);
+		banky.addQuest(q1);
+
+		//32
+		text = "Object obj1;\nObject obj2;\nWhich one of these check whether obj1 and obj2 hold the same attributes?";
+		answers.set(0, "none of these");
+		answers.set(1, "obj1 = obj2;");
+		answers.set(2, "obj1 == obj2;");
+		answers.set(3, "obj1.equals(obj2);");
+		q1 = new Question(text, answers, "Object Comparison",3);
+		banky.addQuest(q1);
+
+		//33
+		text = "What will this print?\n\tSystem.out.print(\"\tJava is hot.\");";
+		answers.set(0, "\tJava is hot.");
+		answers.set(1, "\tJava is \\n hot.");
+		answers.set(2, "\tJava is hot.");
+		answers.set(3, "\t\"Java is hot.\"");
+		q1 = new Question(text, answers, "Escape Sequences",2);
+		banky.addQuest(q1);
+
+		//34
+		text = "How do you resolve an uncaught exception?";
+		answers.set(0, "Any of these");
+		answers.set(1, "Add a throws declaration");
+		answers.set(2, "Surround it with a try/catch block");
+		answers.set(3, "None of these");
+		q1 = new Question(text, answers, "Exceptions",5);
+		banky.addQuest(q1);
+
+		//35
+		text = "Which of these is a legal variable name in Java?";
+		answers.set(0, "var");
+		answers.set(1, "this");
+		answers.set(2, "new");
+		answers.set(3, "string");
+		q1 = new Question(text, answers, "Variables",1);
+		banky.addQuest(q1);
+
+		//36
+		text = "Which of these types would you use for a variable to hold someone's bank balance?";
+		answers.set(0, "double");
+		answers.set(1, "long");
+		answers.set(2, "int");
+		answers.set(3, "char");
+		q1 = new Question(text, answers, "Variables",4);
+		banky.addQuest(q1);
+
+		//37
+		text = "A _ 's name is usually a verb";
+		answers.set(0, "method");
+		answers.set(1, "object");
+		answers.set(2, "class");
+		answers.set(3, "main");
+		q1 = new Question(text, answers, "Methods",4);
+		banky.addQuest(q1);
+
+		//38
+		text = "Which one of these allows you to initialize an object?";
+		answers.set(0, "constructor");
+		answers.set(1, "method header");
+		answers.set(2, "main");
+		answers.set(3, "class");
+		q1 = new Question(text, answers, "Constructors",1);
+		banky.addQuest(q1);
+
+		//39
+		text = "An interface is...?";
+		answers.set(0, "A collection of abstract methods");
+		answers.set(1, "An environment for developing Java code");
+		answers.set(2, "An instance of a class");
+		answers.set(3, "Essential for the working product");
+		q1 = new Question(text, answers, "Interfaces",3);
+		banky.addQuest(q1);
+
+		//40
+		text = "All methods in an interface are by default _______.";
+		answers.set(0, "abstract");
+		answers.set(1, "private");
+		answers.set(2, "void");
+		answers.set(3, "overloaded");
+		q1 = new Question(text, answers, "Interfaces",2);
+		banky.addQuest(q1);
+
+		//41
+		text = "Which of these is NOT a key way in which interfaces differ from classes?";
+		answers.set(0, "An interface cannot have methods");
+		answers.set(1, "An interface cannot be instantiated");
+		answers.set(2, "Everything in an interface is abstract");
+		answers.set(3, "A class does not extend an interface but implements it");
+		q1 = new Question(text, answers, "Interfaces",4);
+		banky.addQuest(q1);
+
+		//42
+		text = "What package contains the necessary imports to read and write to files?";
+		answers.set(0, "java.io");
+		answers.set(1, "java.file");
+		answers.set(2, "java.util");
+		answers.set(3, "java.lang");
+		q1 = new Question(text, answers, "Packages",1);
+		banky.addQuest(q1);
+
+		//43
+		text = "What keyword would you use to add a package to your project?";
+		answers.set(0, "import");
+		answers.set(1, "add");
+		answers.set(2, "include");
+		answers.set(3, "package");
+		q1 = new Question(text, answers, "Packages",1);
+		banky.addQuest(q1);
+
+		//44
+		text = "What do packages do?";
+		answers.set(0, "prevent naming conflicts");
+		answers.set(1, "control access to classes");
+		answers.set(2, "make searching classes easier");
+		answers.set(3, "all of the above");
+		q1 = new Question(text, answers, "Packages",3);
+		banky.addQuest(q1);
+
+		//45
+		text = "Which of these is not a principle of object oriented programmming?";
+		answers.set(0, "iteration");
+		answers.set(1, "abstraction");
+		answers.set(2, "polymorphism");
+		answers.set(3, "inheritance");
+		q1 = new Question(text, answers, "Miscellaneous Object Oriented Programming",5);
+		banky.addQuest(q1);
+
+		//46
+		text = "An object...";
+		answers.set(0, "Is an instance of a class");
+		answers.set(1, "Is a variable");
+		answers.set(2, "Belongs to a package");
+		answers.set(3, "Is always private");
+		q1 = new Question(text, answers, "Miscellaneous Object Oriented Programming",5);
+		banky.addQuest(q1);
+
+		//47
+		text = "What is encapsulation?";
+		answers.set(0, "Keeping data hidden from methods that don't explicitly need that data");
+		answers.set(1, "An instace of a class");
+		answers.set(2, "A working product");
+		answers.set(3, "A new form of packaging");
+		q1 = new Question(text, answers, "Miscellaneous Object Oriented Programming",4);
+		banky.addQuest(q1);
+		
+		//48
+		text = "Which of these will correctly compare objects obj1 and obj2?";
+		answers.set(0, "none of these");
+		answers.set(1, "obj1 = obj2");
+		answers.set(2, "obj1 == obj2");
+		answers.set(3, "obj1.equals(obj2)");
+		q1 = new Question(text, answers, "Object Comparison",4);
+		banky.addQuest(q1);
+		
+		//49
+		text = "What is the default delimiter for Scanner.next()?";
+		answers.set(0, "Whitespace");
+		answers.set(1, "//");
+		answers.set(2, "Only /n");
+		answers.set(3, "Terrence");
+		q1 = new Question(text, answers, "I/O",4);
+		banky.addQuest(q1);
