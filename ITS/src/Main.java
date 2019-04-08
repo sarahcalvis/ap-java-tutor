@@ -198,8 +198,9 @@ public class Main extends Application {
 				public void handle(ActionEvent event) {
 					WebView browser = new WebView();
 					WebEngine webEngine = browser.getEngine();
-					File f = new File("file:///src/ThinkJava.html");
+					File f = new File("ThinkJava.html");
 					webEngine.load(f.toURI().toString());
+					//webEngine.load("https://twitter.com/irkedindeed");
 					browser.setPrefSize(800, 800);
 					grid.add(browser, 2, 2);
 				}
