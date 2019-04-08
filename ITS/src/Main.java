@@ -568,40 +568,54 @@ public class Main extends Application {
 		}
 	}
 
+	/**
+	 * @throws JSONException
+	 * @throws IOException
+	 * @throws ParseException
+	 * This method opens a JSON file holding an array of all the questions
+	 * It parses the file
+	 * It creates question objects which are added to the question bank
+	 */
 	public static void fillTestBank() throws JSONException, IOException, ParseException {
-		Question q1;
+		//create the textbook variables
+		Question question;
 		String text;
 		String topic;
 		int bloom;
-//		String str = "";
-//		File f = new File("q.json");
-//		Scanner s = new Scanner(f);
-//		while (s.hasNextLine()) {
-//			str+=f;
-//		}
-		//JSONArray arr = (JSONArray) parser.parse(str);
-		JSONParser parser = new JSONParser();
-
-        //Object obj = parser.parse(new FileReader("q.json"));
+		ArrayList<String> answers;
 		
-		System.out.println("hiiii");
+		//parse the JSON file into an array
+		JSONParser parser = new JSONParser();
 		JSONArray arr = (JSONArray) parser.parse(new FileReader("q.json"));
 		
+		//iterate through the array
 		for (Object r: arr) {
-			System.out.println("hi");
-			ArrayList<String> answers = new ArrayList<String>();
+			
+			//convert each question into a JSON object
 			JSONObject q = (JSONObject) r;
-			System.out.println(q);
+			
+			//get the question
 			text = (String) q.get("text");
+			
+			//get the answers to the questions
 			JSONObject a = (JSONObject) q.get("answers");
+			answers = new ArrayList<String>();
 			answers.add((String)a.get("0"));
 			answers.add((String)a.get("1"));
 			answers.add((String)a.get("2"));
 			answers.add((String)a.get("3"));
+			
+			//get the topic
 			topic = (String)q.get("topic");
+			
+			//get the Bloom portion
 			bloom = Integer.parseInt((String)q.get("Bloom"));
-			q1 = new Question(text, answers, topic, bloom);
-			banky.addQuest(q1);
+			
+			//create a new question
+			question = new Question(text, answers, topic, bloom);
+			
+			//add the question to the question bank
+			banky.addQuest(question);
 		}
 	}
 }
