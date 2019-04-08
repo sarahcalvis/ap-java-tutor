@@ -201,8 +201,8 @@ public class Main extends Application {
 					File f = new File("ThinkJava.html");
 					webEngine.load(f.toURI().toString());
 					//webEngine.load("https://twitter.com/irkedindeed");
-					browser.setPrefSize(800, 800);
-					grid.add(browser, 2, 2);
+					browser.setPrefSize(640, 850);
+					grid.add(browser, 2, 1);
 				}
 			});
 			grid.add(textbk, 4, 10);
