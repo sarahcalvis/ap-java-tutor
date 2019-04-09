@@ -16,6 +16,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -57,7 +58,7 @@ public class Main extends Application {
 
 	Testing quiz;
 	//array for the checkboxes and responses to questions
-	ArrayList<CheckBox> boxes = new ArrayList<CheckBox>();
+	ArrayList<RadioButton> boxes = new ArrayList<RadioButton>();
 	ArrayList<String> questions = new ArrayList<String>();
 	//tile pane for displaying questions
 	VBox quest = new VBox(); 
@@ -539,7 +540,7 @@ public class Main extends Application {
 
 		for (int i = 0; i < 4; i++) { 
 			// create a checkbox 
-			CheckBox c = new CheckBox(answ.get(i)); 
+			RadioButton c = new RadioButton(answ.get(i)); 
 			quest.getChildren().add(c);
 			boxes.add(c);
 		}
@@ -549,7 +550,7 @@ public class Main extends Application {
 			public void handle(ActionEvent e) 
 			{ 
 				for (int i = 0; i < boxes.size(); i++) {
-					CheckBox c = boxes.get(i);
+					RadioButton c = boxes.get(i);
 					if (c.isSelected()) { 
 						System.out.println(c.getText() + " selected");
 						selected = c.getText();
@@ -563,7 +564,7 @@ public class Main extends Application {
 
 		//add event to all checkboxes
 		for (int i = 0; i < boxes.size(); i++) {
-			CheckBox c = boxes.get(i);
+			RadioButton c = boxes.get(i);
 			c.setOnAction(boxEvent); 
 		}   
 		//add all this to grid
