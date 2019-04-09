@@ -1,0 +1,384 @@
+<html>
+<head><meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<style type="text/css">
+<!--
+span.cls_002{font-family:Arial,serif;font-size:24.8px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_002{font-family:Arial,serif;font-size:24.8px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_003{font-family:Arial,serif;font-size:12.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_003{font-family:Arial,serif;font-size:12.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_004{font-family:Arial,serif;font-size:17.3px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_004{font-family:Arial,serif;font-size:17.3px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_005{font-family:Arial,serif;font-size:12.0px;color:rgb(0,0,255);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_005{font-family:Arial,serif;font-size:12.0px;color:rgb(0,0,255);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_006{font-family:Arial,serif;font-size:10.9px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_006{font-family:Arial,serif;font-size:10.9px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_007{font-family:Arial,serif;font-size:12.0px;color:rgb(0,123,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_007{font-family:Arial,serif;font-size:12.0px;color:rgb(0,123,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_008{font-family:Arial,serif;font-size:8.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_008{font-family:Arial,serif;font-size:8.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+-->
+</style>
+<script type="text/javascript" src="70845706-5adb-11e9-9d71-0cc47a792c0a_id_70845706-5adb-11e9-9d71-0cc47a792c0a_files/wz_jsgraphics.js"></script>
+</head>
+<body>
+<div style="position:absolute;left:50%;margin-left:-306px;top:0px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="70845706-5adb-11e9-9d71-0cc47a792c0a_id_70845706-5adb-11e9-9d71-0cc47a792c0a_files/background01.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:204.76px" class="cls_002"><span class="cls_002">Chapter 13</span></div>
+<div style="position:absolute;left:129.60px;top:267.71px" class="cls_002"><span class="cls_002">Objects of arrays</span></div>
+<div style="position:absolute;left:129.60px;top:347.21px" class="cls_003"><span class="cls_003">In the previous chapter, we defined a class to represent cards and used an</span></div>
+<div style="position:absolute;left:129.60px;top:362.38px" class="cls_003"><span class="cls_003">array of Card objects to represent a deck.</span></div>
+<div style="position:absolute;left:129.60px;top:389.20px" class="cls_003"><span class="cls_003">In this chapter, we take another step toward object-oriented programming by</span></div>
+<div style="position:absolute;left:129.60px;top:404.37px" class="cls_003"><span class="cls_003">defining a class to represent a deck of cards.  And we present algorithms for</span></div>
+<div style="position:absolute;left:129.60px;top:419.53px" class="cls_003"><span class="cls_003">shuffling and sorting arrays.</span></div>
+<div style="position:absolute;left:129.60px;top:446.35px" class="cls_003"><span class="cls_003">The code for this chapter is in Card.java and Deck.java, which are in the</span></div>
+<div style="position:absolute;left:129.60px;top:461.52px" class="cls_003"><span class="cls_003">directory ch13 in the repository for this book.  Instructions for downloading</span></div>
+<div style="position:absolute;left:129.60px;top:476.69px" class="cls_003"><span class="cls_003">this code are on page xv.</span></div>
+<div style="position:absolute;left:129.60px;top:524.03px" class="cls_004"><span class="cls_004">13.1</span></div>
+<div style="position:absolute;left:183.40px;top:524.03px" class="cls_004"><span class="cls_004">The Deck class</span></div>
+<div style="position:absolute;left:129.60px;top:559.71px" class="cls_003"><span class="cls_003">The main idea of this chapter is to create a Deck class that encapsulates an</span></div>
+<div style="position:absolute;left:129.60px;top:574.88px" class="cls_003"><span class="cls_003">array of Cards. The initial class definition looks like this:</span></div>
+<div style="position:absolute;left:144.54px;top:600.46px" class="cls_005"><span class="cls_005">public class</span><span class="cls_003"> Deck {</span></div>
+<div style="position:absolute;left:169.15px;top:615.63px" class="cls_005"><span class="cls_005">private</span><span class="cls_003"> Card[] cards;</span></div>
+<div style="position:absolute;left:169.15px;top:645.97px" class="cls_005"><span class="cls_005">public</span><span class="cls_003"> Deck(</span><span class="cls_005">int</span><span class="cls_003"> n) {</span></div>
+<div style="position:absolute;left:193.76px;top:661.14px" class="cls_005"><span class="cls_005">this</span><span class="cls_003">.cards =</span><span class="cls_005"> new</span><span class="cls_003"> Card[n];</span></div>
+<div style="position:absolute;left:169.15px;top:676.30px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:144.54px;top:691.47px" class="cls_003"><span class="cls_003">}</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:802px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="70845706-5adb-11e9-9d71-0cc47a792c0a_id_70845706-5adb-11e9-9d71-0cc47a792c0a_files/background02.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">206</span></div>
+<div style="position:absolute;left:301.99px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 13</span></div>
+<div style="position:absolute;left:381.43px;top:88.65px" class="cls_003"><span class="cls_003">Objects of arrays</span></div>
+<div style="position:absolute;left:86.40px;top:124.74px" class="cls_003"><span class="cls_003">The constructor initializes the instance variable with an array of n cards, but</span></div>
+<div style="position:absolute;left:86.40px;top:139.91px" class="cls_003"><span class="cls_003">it doesn’t create any card objects. Figure 13.1 shows what a Deck looks like</span></div>
+<div style="position:absolute;left:86.40px;top:155.08px" class="cls_003"><span class="cls_003">with no cards.</span></div>
+<div style="position:absolute;left:169.20px;top:178.88px" class="cls_006"><span class="cls_006">Deck</span></div>
+<div style="position:absolute;left:105.89px;top:205.88px" class="cls_006"><span class="cls_006">deck</span></div>
+<div style="position:absolute;left:174.30px;top:205.88px" class="cls_006"><span class="cls_006">cards</span></div>
+<div style="position:absolute;left:132.85px;top:243.33px" class="cls_003"><span class="cls_003">Figure 13.1: State diagram of an unpopulated Deck object.</span></div>
+<div style="position:absolute;left:86.40px;top:271.67px" class="cls_003"><span class="cls_003">We’ll add a second constructor that makes a standard 52-card deck and pop-</span></div>
+<div style="position:absolute;left:86.40px;top:286.84px" class="cls_003"><span class="cls_003">ulates it with Card objects:</span></div>
+<div style="position:absolute;left:101.34px;top:310.63px" class="cls_005"><span class="cls_005">public</span><span class="cls_003"> Deck() {</span></div>
+<div style="position:absolute;left:125.95px;top:325.80px" class="cls_005"><span class="cls_005">this</span><span class="cls_003">.cards =</span><span class="cls_005"> new</span><span class="cls_003"> Card[52];</span></div>
+<div style="position:absolute;left:125.95px;top:340.96px" class="cls_005"><span class="cls_005">int</span><span class="cls_003"> index = 0;</span></div>
+<div style="position:absolute;left:125.95px;top:356.13px" class="cls_005"><span class="cls_005">for</span><span class="cls_003"> (</span><span class="cls_005">int</span><span class="cls_003"> suit = 0; suit &lt;= 3; suit++) {</span></div>
+<div style="position:absolute;left:150.56px;top:371.30px" class="cls_005"><span class="cls_005">for</span><span class="cls_003"> (</span><span class="cls_005">int</span><span class="cls_003"> rank = 1; rank &lt;= 13; rank++) {</span></div>
+<div style="position:absolute;left:175.17px;top:386.47px" class="cls_005"><span class="cls_005">this</span><span class="cls_003">.cards[index] =</span><span class="cls_005"> new</span><span class="cls_003"> Card(rank, suit);</span></div>
+<div style="position:absolute;left:175.17px;top:401.64px" class="cls_003"><span class="cls_003">index++;</span></div>
+<div style="position:absolute;left:150.56px;top:416.81px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:125.95px;top:431.97px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:101.34px;top:447.14px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:470.84px" class="cls_003"><span class="cls_003">This method is similar to the example in Section 12.6; we just turned it into</span></div>
+<div style="position:absolute;left:86.40px;top:486.01px" class="cls_003"><span class="cls_003">a constructor. We can now create a standard Deck like this:</span></div>
+<div style="position:absolute;left:101.34px;top:511.07px" class="cls_003"><span class="cls_003">Deck deck =</span><span class="cls_005"> new</span><span class="cls_003"> Deck();</span></div>
+<div style="position:absolute;left:86.40px;top:536.05px" class="cls_003"><span class="cls_003">Now that we have a Deck class, we have a logical place to put methods that</span></div>
+<div style="position:absolute;left:86.40px;top:551.21px" class="cls_003"><span class="cls_003">pertain to decks. Looking at the methods we have written so far, one obvious</span></div>
+<div style="position:absolute;left:86.40px;top:566.38px" class="cls_003"><span class="cls_003">candidate is printDeck from Section 12.6.</span></div>
+<div style="position:absolute;left:101.34px;top:590.50px" class="cls_005"><span class="cls_005">public void</span><span class="cls_003"> print() {</span></div>
+<div style="position:absolute;left:125.95px;top:605.67px" class="cls_005"><span class="cls_005">for</span><span class="cls_003"> (</span><span class="cls_005">int</span><span class="cls_003"> i = 0; i &lt;</span><span class="cls_005"> this</span><span class="cls_003">.cards.length; i++) {</span></div>
+<div style="position:absolute;left:150.56px;top:620.84px" class="cls_003"><span class="cls_003">System.out.println(</span><span class="cls_005">this</span><span class="cls_003">.cards[i]);</span></div>
+<div style="position:absolute;left:125.95px;top:636.01px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:101.34px;top:651.18px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:674.88px" class="cls_003"><span class="cls_003">When you transform a static method into an instance method, it usually gets</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_003"><span class="cls_003">shorter. We can simply type deck.print() to invoke the instance method.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:1604px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="70845706-5adb-11e9-9d71-0cc47a792c0a_id_70845706-5adb-11e9-9d71-0cc47a792c0a_files/background03.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">13.2</span></div>
+<div style="position:absolute;left:166.96px;top:88.65px" class="cls_003"><span class="cls_003">Shuffling decks</span></div>
+<div style="position:absolute;left:505.43px;top:88.65px" class="cls_003"><span class="cls_003">207</span></div>
+<div style="position:absolute;left:129.60px;top:119.48px" class="cls_004"><span class="cls_004">13.2</span></div>
+<div style="position:absolute;left:183.40px;top:119.48px" class="cls_004"><span class="cls_004">Shuffling decks</span></div>
+<div style="position:absolute;left:129.60px;top:159.85px" class="cls_003"><span class="cls_003">For most card games you need to be able to shuffle the deck; that is, put</span></div>
+<div style="position:absolute;left:129.60px;top:175.02px" class="cls_003"><span class="cls_003">the cards in a random order. In Section 8.7 we saw how to generate random</span></div>
+<div style="position:absolute;left:129.60px;top:190.18px" class="cls_003"><span class="cls_003">numbers, but it is not obvious how to use them to shuffle a deck.</span></div>
+<div style="position:absolute;left:129.60px;top:220.79px" class="cls_003"><span class="cls_003">One possibility is to model the way humans shuffle, which is usually dividing</span></div>
+<div style="position:absolute;left:129.60px;top:235.95px" class="cls_003"><span class="cls_003">the deck in two halves and then choosing alternately from each one.  Since</span></div>
+<div style="position:absolute;left:129.60px;top:251.12px" class="cls_003"><span class="cls_003">humans usually don’t shuffle perfectly, after about seven iterations the order</span></div>
+<div style="position:absolute;left:129.60px;top:266.29px" class="cls_003"><span class="cls_003">of the deck is pretty well randomized.</span></div>
+<div style="position:absolute;left:129.60px;top:296.89px" class="cls_003"><span class="cls_003">But a computer program would have the annoying property of doing a perfect</span></div>
+<div style="position:absolute;left:129.60px;top:312.06px" class="cls_003"><span class="cls_003">shuffle every time, which is not very random.  In fact, after eight perfect</span></div>
+<div style="position:absolute;left:129.60px;top:327.23px" class="cls_003"><span class="cls_003">shuffles, you would find the deck back in the order you started in! (For more</span></div>
+<div style="position:absolute;left:129.60px;top:342.40px" class="cls_003"><span class="cls_003">information, see</span><span class="cls_005"> <A HREF="https://en.wikipedia.org/wiki/Faro_shuffle">https://en.wikipedia.org/wiki/Faro_shuffle</A> </span><span class="cls_003">.)</span></div>
+<div style="position:absolute;left:129.60px;top:373.00px" class="cls_003"><span class="cls_003">A better shuffling algorithm is to traverse the deck one card at a time, and at</span></div>
+<div style="position:absolute;left:129.60px;top:388.17px" class="cls_003"><span class="cls_003">each iteration choose two cards and swap them. Here is an outline of how this</span></div>
+<div style="position:absolute;left:129.60px;top:403.34px" class="cls_003"><span class="cls_003">algorithm works.  To sketch the program, we will use a combination of Java</span></div>
+<div style="position:absolute;left:129.60px;top:418.50px" class="cls_003"><span class="cls_003">statements and English. This technique is sometimes called pseudocode.</span></div>
+<div style="position:absolute;left:144.54px;top:447.88px" class="cls_005"><span class="cls_005">for</span><span class="cls_003"> each index i {</span></div>
+<div style="position:absolute;left:169.15px;top:463.04px" class="cls_007"><span class="cls_007">// choose a random number between i and length - 1</span></div>
+<div style="position:absolute;left:169.15px;top:478.21px" class="cls_007"><span class="cls_007">// swap the ith card and the randomly-chosen card</span></div>
+<div style="position:absolute;left:144.54px;top:493.38px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:522.66px" class="cls_003"><span class="cls_003">The nice thing about pseudocode is that it often makes clear what methods</span></div>
+<div style="position:absolute;left:129.60px;top:537.83px" class="cls_003"><span class="cls_003">you are going to need. In this case, we need a method that chooses a random</span></div>
+<div style="position:absolute;left:129.60px;top:553.00px" class="cls_003"><span class="cls_003">integer between low and high, and a method that takes two indexes and swaps</span></div>
+<div style="position:absolute;left:129.60px;top:568.17px" class="cls_003"><span class="cls_003">the cards at those positions. Methods like these are called helper methods,</span></div>
+<div style="position:absolute;left:129.60px;top:583.34px" class="cls_003"><span class="cls_003">because they help you implement more complex algorithms.</span></div>
+<div style="position:absolute;left:129.60px;top:613.94px" class="cls_003"><span class="cls_003">And this process - writing pseudocode first and then writing methods to make</span></div>
+<div style="position:absolute;left:129.60px;top:629.11px" class="cls_003"><span class="cls_003">it work - is called top-down development (see</span><span class="cls_005"> <A HREF="https://en.wikipedia.org/wiki/Top-down_and_bottom-up_design">https://en.wikipedia.</A> </span></div>
+<div style="position:absolute;left:129.60px;top:644.27px" class="cls_005"><span class="cls_005"> </span><A HREF="https://en.wikipedia.org/wiki/Top-down_and_bottom-up_design">org/wiki/Top-down_and_bottom-up_design</A> <span class="cls_003">).</span></div>
+<div style="position:absolute;left:129.60px;top:674.88px" class="cls_003"><span class="cls_003">One of the exercises at the end of the chapter asks you to write the helper</span></div>
+<div style="position:absolute;left:129.60px;top:690.04px" class="cls_003"><span class="cls_003">methods randomInt and swapCards and use them to implement shuffle.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:2406px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="70845706-5adb-11e9-9d71-0cc47a792c0a_id_70845706-5adb-11e9-9d71-0cc47a792c0a_files/background04.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">208</span></div>
+<div style="position:absolute;left:301.99px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 13</span></div>
+<div style="position:absolute;left:381.43px;top:88.65px" class="cls_003"><span class="cls_003">Objects of arrays</span></div>
+<div style="position:absolute;left:86.40px;top:119.48px" class="cls_004"><span class="cls_004">13.3</span></div>
+<div style="position:absolute;left:140.20px;top:119.48px" class="cls_004"><span class="cls_004">Selection sort</span></div>
+<div style="position:absolute;left:86.40px;top:154.10px" class="cls_003"><span class="cls_003">Now that we have messed up the deck, we need a way to put it back in order.</span></div>
+<div style="position:absolute;left:86.40px;top:169.27px" class="cls_003"><span class="cls_003">There is an algorithm for sorting that is ironically similar to the algorithm for</span></div>
+<div style="position:absolute;left:86.40px;top:184.44px" class="cls_003"><span class="cls_003">shuffling. It’s called selection sort, because it works by traversing the array</span></div>
+<div style="position:absolute;left:86.40px;top:199.60px" class="cls_003"><span class="cls_003">repeatedly and selecting the lowest (or highest) remaining card each time.</span></div>
+<div style="position:absolute;left:86.40px;top:225.36px" class="cls_003"><span class="cls_003">During the first iteration, we find the lowest card and swap it with the card</span></div>
+<div style="position:absolute;left:86.40px;top:240.52px" class="cls_003"><span class="cls_003">in the 0th position.  During the ith iteration, we find the lowest card to the</span></div>
+<div style="position:absolute;left:86.40px;top:255.69px" class="cls_003"><span class="cls_003">right of i and swap it with the ith card. Here is pseudocode for selection sort:</span></div>
+<div style="position:absolute;left:101.34px;top:280.22px" class="cls_005"><span class="cls_005">public void</span><span class="cls_003"> selectionSort() {</span></div>
+<div style="position:absolute;left:125.95px;top:295.38px" class="cls_005"><span class="cls_005">for</span><span class="cls_003"> each index i {</span></div>
+<div style="position:absolute;left:150.56px;top:310.55px" class="cls_007"><span class="cls_007">// find the lowest card at or to the right of i</span></div>
+<div style="position:absolute;left:150.56px;top:325.72px" class="cls_007"><span class="cls_007">// swap the ith card and the lowest card found</span></div>
+<div style="position:absolute;left:125.95px;top:340.89px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:101.34px;top:356.06px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:380.49px" class="cls_003"><span class="cls_003">Again, the pseudocode helps with the design of the helper methods.  In this</span></div>
+<div style="position:absolute;left:86.40px;top:395.66px" class="cls_003"><span class="cls_003">algorithm we can use swapCards again, so we only need a method to find the</span></div>
+<div style="position:absolute;left:86.40px;top:410.83px" class="cls_003"><span class="cls_003">lowest card; we’ll call it indexLowest.</span></div>
+<div style="position:absolute;left:86.40px;top:436.58px" class="cls_003"><span class="cls_003">One of the exercises at the end of the chapter asks you to write the helper</span></div>
+<div style="position:absolute;left:86.40px;top:451.75px" class="cls_003"><span class="cls_003">method indexLowest and use it to implement selectionSort.</span></div>
+<div style="position:absolute;left:86.40px;top:497.75px" class="cls_004"><span class="cls_004">13.4</span></div>
+<div style="position:absolute;left:140.20px;top:497.75px" class="cls_004"><span class="cls_004">Merge sort</span></div>
+<div style="position:absolute;left:86.40px;top:532.36px" class="cls_003"><span class="cls_003">Selection sort is a simple algorithm, but it is not very efficient.  To sort n</span></div>
+<div style="position:absolute;left:86.40px;top:547.53px" class="cls_003"><span class="cls_003">items, it has to traverse the array n − 1 times. Each traversal takes an amount</span></div>
+<div style="position:absolute;left:86.40px;top:562.35px" class="cls_003"><span class="cls_003">of time proportional to n. The total time, therefore, is proportional to n</span><span class="cls_008"><sup>2</sup></span><span class="cls_003">.</span></div>
+<div style="position:absolute;left:86.40px;top:588.45px" class="cls_003"><span class="cls_003">In the next two sections, we’ll develop a more efficient algorithm called merge</span></div>
+<div style="position:absolute;left:86.40px;top:603.62px" class="cls_003"><span class="cls_003">sort.  To sort n items, merge sort takes time proportional to n log</span><span class="cls_008"><sub>2</sub></span><span class="cls_003"> n.  That</span></div>
+<div style="position:absolute;left:86.40px;top:618.43px" class="cls_003"><span class="cls_003">may not seem impressive, but as n gets big, the difference between n</span><span class="cls_008"><sup>2</sup></span><span class="cls_003">  and</span></div>
+<div style="position:absolute;left:86.40px;top:633.96px" class="cls_003"><span class="cls_003">n log</span><span class="cls_008"><sub>2</sub></span><span class="cls_003"> n can be enormous.</span></div>
+<div style="position:absolute;left:86.40px;top:659.71px" class="cls_003"><span class="cls_003">For example, log</span><span class="cls_008"><sub>2</sub></span><span class="cls_003">  of one million is around 20. So if you had to sort a million</span></div>
+<div style="position:absolute;left:86.40px;top:674.88px" class="cls_003"><span class="cls_003">numbers, selection sort would require one trillion steps;  merge sort would</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_003"><span class="cls_003">require only 20 million.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:3208px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="70845706-5adb-11e9-9d71-0cc47a792c0a_id_70845706-5adb-11e9-9d71-0cc47a792c0a_files/background05.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">13.5</span></div>
+<div style="position:absolute;left:166.96px;top:88.65px" class="cls_003"><span class="cls_003">Subdecks</span></div>
+<div style="position:absolute;left:505.42px;top:88.65px" class="cls_003"><span class="cls_003">209</span></div>
+<div style="position:absolute;left:129.60px;top:124.74px" class="cls_003"><span class="cls_003">The idea behind merge sort is this: if you have two subdecks, each of which</span></div>
+<div style="position:absolute;left:129.60px;top:139.91px" class="cls_003"><span class="cls_003">has already been sorted, it is easy and fast to merge them into a single, sorted</span></div>
+<div style="position:absolute;left:129.60px;top:155.08px" class="cls_003"><span class="cls_003">deck. Try this out with a deck of cards:</span></div>
+<div style="position:absolute;left:143.91px;top:183.56px" class="cls_003"><span class="cls_003">1. Form two subdecks with about 10 cards each, and sort them so that</span></div>
+<div style="position:absolute;left:158.87px;top:198.73px" class="cls_003"><span class="cls_003">when they are face up the lowest cards are on top. Place both decks face</span></div>
+<div style="position:absolute;left:158.87px;top:213.89px" class="cls_003"><span class="cls_003">up in front of you.</span></div>
+<div style="position:absolute;left:143.91px;top:238.59px" class="cls_003"><span class="cls_003">2. Compare the top card from each deck and choose the lower one. Flip it</span></div>
+<div style="position:absolute;left:158.87px;top:253.75px" class="cls_003"><span class="cls_003">over and add it to the merged deck.</span></div>
+<div style="position:absolute;left:143.91px;top:278.45px" class="cls_003"><span class="cls_003">3. Repeat step 2 until one of the decks is empty. Then take the remaining</span></div>
+<div style="position:absolute;left:158.87px;top:293.62px" class="cls_003"><span class="cls_003">cards and add them to the merged deck.</span></div>
+<div style="position:absolute;left:129.60px;top:322.09px" class="cls_003"><span class="cls_003">The result should be a single sorted deck.  In the next few sections, we’ll</span></div>
+<div style="position:absolute;left:129.60px;top:337.26px" class="cls_003"><span class="cls_003">explain how to implement this algorithm in Java.</span></div>
+<div style="position:absolute;left:129.60px;top:383.88px" class="cls_004"><span class="cls_004">13.5</span></div>
+<div style="position:absolute;left:183.40px;top:383.88px" class="cls_004"><span class="cls_004">Subdecks</span></div>
+<div style="position:absolute;left:129.60px;top:418.99px" class="cls_003"><span class="cls_003">The first step of merge sort is to split the deck into two subdecks, each with</span></div>
+<div style="position:absolute;left:129.60px;top:434.16px" class="cls_003"><span class="cls_003">about half the cards. So we might want a method, subdeck, that takes a deck</span></div>
+<div style="position:absolute;left:129.60px;top:449.33px" class="cls_003"><span class="cls_003">and a range of indexes. It returns a new deck that contains the specified subset</span></div>
+<div style="position:absolute;left:129.60px;top:464.50px" class="cls_003"><span class="cls_003">of the cards:</span></div>
+<div style="position:absolute;left:144.54px;top:487.19px" class="cls_005"><span class="cls_005">public</span><span class="cls_003"> Deck subdeck(</span><span class="cls_005">int</span><span class="cls_003"> low,</span><span class="cls_005"> int</span><span class="cls_003"> high) {</span></div>
+<div style="position:absolute;left:169.15px;top:502.36px" class="cls_003"><span class="cls_003">Deck sub =</span><span class="cls_005"> new</span><span class="cls_003"> Deck(high - low + 1);</span></div>
+<div style="position:absolute;left:169.15px;top:517.53px" class="cls_005"><span class="cls_005">for</span><span class="cls_003"> (</span><span class="cls_005">int</span><span class="cls_003"> i = 0; i &lt; sub.cards.length; i++) {</span></div>
+<div style="position:absolute;left:193.76px;top:532.69px" class="cls_003"><span class="cls_003">sub.cards[i] =</span><span class="cls_005"> this</span><span class="cls_003">.cards[low + i];</span></div>
+<div style="position:absolute;left:169.15px;top:547.86px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:169.15px;top:563.03px" class="cls_005"><span class="cls_005">return</span><span class="cls_003"> sub;</span></div>
+<div style="position:absolute;left:144.54px;top:578.20px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:603.13px" class="cls_003"><span class="cls_003">The first line creates an unpopulated subdeck. Inside the</span><span class="cls_005"> for</span><span class="cls_003"> loop, the subdeck</span></div>
+<div style="position:absolute;left:129.60px;top:618.29px" class="cls_003"><span class="cls_003">gets populated with copies of references from the deck.</span></div>
+<div style="position:absolute;left:129.60px;top:644.54px" class="cls_003"><span class="cls_003">The length of the subdeck is high - low + 1, because both the low card and</span></div>
+<div style="position:absolute;left:129.60px;top:659.71px" class="cls_003"><span class="cls_003">the high card are included.  This sort of computation can be confusing, and</span></div>
+<div style="position:absolute;left:129.60px;top:674.88px" class="cls_003"><span class="cls_003">forgetting the + 1 often leads to “off-by-one” errors.  Drawing a picture is</span></div>
+<div style="position:absolute;left:129.60px;top:690.04px" class="cls_003"><span class="cls_003">usually the best way to avoid them.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:4010px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="70845706-5adb-11e9-9d71-0cc47a792c0a_id_70845706-5adb-11e9-9d71-0cc47a792c0a_files/background06.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">210</span></div>
+<div style="position:absolute;left:301.99px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 13</span></div>
+<div style="position:absolute;left:381.43px;top:88.65px" class="cls_003"><span class="cls_003">Objects of arrays</span></div>
+<div style="position:absolute;left:86.40px;top:124.74px" class="cls_003"><span class="cls_003">Figure 13.2 is a state diagram of a subdeck with low = 0 and high = 4. The</span></div>
+<div style="position:absolute;left:86.40px;top:139.91px" class="cls_003"><span class="cls_003">result is a hand with five cards that are shared with the original deck; that is,</span></div>
+<div style="position:absolute;left:86.40px;top:155.08px" class="cls_003"><span class="cls_003">they are aliased.</span></div>
+<div style="position:absolute;left:169.20px;top:189.79px" class="cls_006"><span class="cls_006">Deck</span></div>
+<div style="position:absolute;left:105.89px;top:216.79px" class="cls_006"><span class="cls_006">deck</span></div>
+<div style="position:absolute;left:174.30px;top:216.79px" class="cls_006"><span class="cls_006">cards</span></div>
+<div style="position:absolute;left:169.20px;top:288.79px" class="cls_006"><span class="cls_006">Deck</span></div>
+<div style="position:absolute;left:111.29px;top:315.79px" class="cls_006"><span class="cls_006">sub</span></div>
+<div style="position:absolute;left:174.30px;top:315.79px" class="cls_006"><span class="cls_006">cards</span></div>
+<div style="position:absolute;left:135.62px;top:353.24px" class="cls_003"><span class="cls_003">Figure 13.2: State diagram showing the effect of subdeck.</span></div>
+<div style="position:absolute;left:86.40px;top:387.85px" class="cls_003"><span class="cls_003">Aliasing might not be a good idea, because changes to shared cards would be</span></div>
+<div style="position:absolute;left:86.40px;top:403.01px" class="cls_003"><span class="cls_003">reflected in multiple decks.  But since Card objects are immutable, this kind</span></div>
+<div style="position:absolute;left:86.40px;top:418.18px" class="cls_003"><span class="cls_003">of aliasing is not a problem at all.</span></div>
+<div style="position:absolute;left:86.40px;top:480.76px" class="cls_004"><span class="cls_004">13.6</span></div>
+<div style="position:absolute;left:140.20px;top:480.76px" class="cls_004"><span class="cls_004">Merging decks</span></div>
+<div style="position:absolute;left:86.40px;top:524.91px" class="cls_003"><span class="cls_003">The next helper method we need is merge, which takes two sorted subdecks</span></div>
+<div style="position:absolute;left:86.40px;top:540.07px" class="cls_003"><span class="cls_003">and returns a new deck containing all cards from both decks, in order. Here’s</span></div>
+<div style="position:absolute;left:86.40px;top:555.24px" class="cls_003"><span class="cls_003">what the algorithm looks like in pseudocode, assuming the subdecks are named</span></div>
+<div style="position:absolute;left:86.40px;top:570.41px" class="cls_003"><span class="cls_003">d1 and d2:</span></div>
+<div style="position:absolute;left:101.34px;top:600.46px" class="cls_005"><span class="cls_005">public static</span><span class="cls_003"> Deck merge(Deck d1, Deck d2) {</span></div>
+<div style="position:absolute;left:125.95px;top:615.63px" class="cls_007"><span class="cls_007">// create a new deck big enough for all the cards</span></div>
+<div style="position:absolute;left:125.95px;top:645.97px" class="cls_007"><span class="cls_007">// use the index i to keep track of where we are at in</span></div>
+<div style="position:absolute;left:125.95px;top:661.14px" class="cls_007"><span class="cls_007">// the first deck, and the index j for the second deck</span></div>
+<div style="position:absolute;left:125.95px;top:676.30px" class="cls_005"><span class="cls_005">int</span><span class="cls_003"> i = 0;</span></div>
+<div style="position:absolute;left:125.95px;top:691.47px" class="cls_005"><span class="cls_005">int</span><span class="cls_003"> j = 0;</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:4812px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="70845706-5adb-11e9-9d71-0cc47a792c0a_id_70845706-5adb-11e9-9d71-0cc47a792c0a_files/background07.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">13.7</span></div>
+<div style="position:absolute;left:166.96px;top:88.65px" class="cls_003"><span class="cls_003">Adding recursion</span></div>
+<div style="position:absolute;left:505.43px;top:88.65px" class="cls_003"><span class="cls_003">211</span></div>
+<div style="position:absolute;left:169.15px;top:123.41px" class="cls_007"><span class="cls_007">// the index k traverses the result deck</span></div>
+<div style="position:absolute;left:169.15px;top:138.57px" class="cls_005"><span class="cls_005">for</span><span class="cls_003"> (</span><span class="cls_005">int</span><span class="cls_003"> k = 0; k &lt; result.cards.length; k++) {</span></div>
+<div style="position:absolute;left:193.76px;top:168.91px" class="cls_007"><span class="cls_007">// if d1 is empty, d2 wins</span></div>
+<div style="position:absolute;left:193.76px;top:184.08px" class="cls_007"><span class="cls_007">// if d2 is empty, d1 wins</span></div>
+<div style="position:absolute;left:193.76px;top:199.25px" class="cls_007"><span class="cls_007">// otherwise, compare the two cards</span></div>
+<div style="position:absolute;left:193.76px;top:229.58px" class="cls_007"><span class="cls_007">// add the winner to the new deck at position k</span></div>
+<div style="position:absolute;left:193.76px;top:244.75px" class="cls_007"><span class="cls_007">// increment either i or j</span></div>
+<div style="position:absolute;left:169.15px;top:259.92px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:169.15px;top:275.09px" class="cls_007"><span class="cls_007">// return the new deck</span></div>
+<div style="position:absolute;left:144.54px;top:290.26px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:314.29px" class="cls_003"><span class="cls_003">One of the exercises at the end of the chapter asks you to implement merge.</span></div>
+<div style="position:absolute;left:129.60px;top:359.78px" class="cls_004"><span class="cls_004">13.7</span></div>
+<div style="position:absolute;left:183.40px;top:359.78px" class="cls_004"><span class="cls_004">Adding recursion</span></div>
+<div style="position:absolute;left:129.60px;top:394.00px" class="cls_003"><span class="cls_003">Once your merge method is working correctly, you can try out a simple version</span></div>
+<div style="position:absolute;left:129.60px;top:409.17px" class="cls_003"><span class="cls_003">of merge sort:</span></div>
+<div style="position:absolute;left:144.54px;top:433.29px" class="cls_005"><span class="cls_005">public</span><span class="cls_003"> Deck almostMergeSort() {</span></div>
+<div style="position:absolute;left:169.15px;top:448.46px" class="cls_007"><span class="cls_007">// divide the deck into two subdecks</span></div>
+<div style="position:absolute;left:169.15px;top:463.63px" class="cls_007"><span class="cls_007">// sort the subdecks using selectionSort</span></div>
+<div style="position:absolute;left:169.15px;top:478.79px" class="cls_007"><span class="cls_007">// merge the two halves and return the result</span></div>
+<div style="position:absolute;left:144.54px;top:493.96px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:518.00px" class="cls_003"><span class="cls_003">An exercise at the end of the chapter asks you to implement this algorithm.</span></div>
+<div style="position:absolute;left:129.60px;top:533.16px" class="cls_003"><span class="cls_003">Once you get it working, the real fun begins! The magical thing about merge</span></div>
+<div style="position:absolute;left:129.60px;top:548.33px" class="cls_003"><span class="cls_003">sort is that it is inherently recursive.</span></div>
+<div style="position:absolute;left:129.60px;top:573.68px" class="cls_003"><span class="cls_003">At the point where you sort the subdecks, why should you invoke the slower</span></div>
+<div style="position:absolute;left:129.60px;top:588.85px" class="cls_003"><span class="cls_003">algorithm, selectionSort?  Why not invoke the spiffy new mergeSort you</span></div>
+<div style="position:absolute;left:129.60px;top:604.02px" class="cls_003"><span class="cls_003">are in the process of writing? Not only is that a good idea, it is necessary to</span></div>
+<div style="position:absolute;left:129.60px;top:619.19px" class="cls_003"><span class="cls_003">achieve the log</span><span class="cls_008"><sub>2</sub></span><span class="cls_003"> performance advantage.</span></div>
+<div style="position:absolute;left:129.60px;top:644.54px" class="cls_003"><span class="cls_003">To make mergeSort work recursively, you have to add a base case; otherwise</span></div>
+<div style="position:absolute;left:129.60px;top:659.71px" class="cls_003"><span class="cls_003">it repeats forever.  A simple base case is a subdeck with 0 or 1 cards.  If</span></div>
+<div style="position:absolute;left:129.60px;top:674.88px" class="cls_003"><span class="cls_003">mergeSort receives such a small subdeck, it can return it unmodified since it</span></div>
+<div style="position:absolute;left:129.60px;top:690.04px" class="cls_003"><span class="cls_003">would already be sorted.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:5614px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="70845706-5adb-11e9-9d71-0cc47a792c0a_id_70845706-5adb-11e9-9d71-0cc47a792c0a_files/background08.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">212</span></div>
+<div style="position:absolute;left:301.99px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 13</span></div>
+<div style="position:absolute;left:381.43px;top:88.65px" class="cls_003"><span class="cls_003">Objects of arrays</span></div>
+<div style="position:absolute;left:86.40px;top:124.74px" class="cls_003"><span class="cls_003">The recursive version of mergeSort should look something like this:</span></div>
+<div style="position:absolute;left:101.34px;top:151.16px" class="cls_005"><span class="cls_005">public</span><span class="cls_003"> Deck mergeSort() {</span></div>
+<div style="position:absolute;left:125.95px;top:166.33px" class="cls_007"><span class="cls_007">// if the deck is 0 or 1 cards, return it</span></div>
+<div style="position:absolute;left:125.95px;top:181.50px" class="cls_007"><span class="cls_007">// divide the deck into two subdecks</span></div>
+<div style="position:absolute;left:125.95px;top:196.67px" class="cls_007"><span class="cls_007">// sort the subdecks using mergeSort</span></div>
+<div style="position:absolute;left:125.95px;top:211.84px" class="cls_007"><span class="cls_007">// merge the two halves and return the result</span></div>
+<div style="position:absolute;left:101.34px;top:227.00px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:253.00px" class="cls_003"><span class="cls_003">As usual, there are two ways to think about recursive programs: you can think</span></div>
+<div style="position:absolute;left:86.40px;top:268.17px" class="cls_003"><span class="cls_003">through the entire flow of execution, or you can make the “leap of faith” (see</span></div>
+<div style="position:absolute;left:86.40px;top:283.34px" class="cls_003"><span class="cls_003">Section 6.8). This example should encourage you to make the leap of faith.</span></div>
+<div style="position:absolute;left:86.40px;top:310.65px" class="cls_003"><span class="cls_003">When you used selectionSort to sort the subdecks, you didn’t feel compelled</span></div>
+<div style="position:absolute;left:86.40px;top:325.82px" class="cls_003"><span class="cls_003">to follow the flow of execution.  You just assumed it works because you had</span></div>
+<div style="position:absolute;left:86.40px;top:340.99px" class="cls_003"><span class="cls_003">already debugged it. And all you did to make mergeSort recursive was replace</span></div>
+<div style="position:absolute;left:86.40px;top:356.16px" class="cls_003"><span class="cls_003">one sorting algorithm with another. There is no reason to read the program</span></div>
+<div style="position:absolute;left:86.40px;top:371.33px" class="cls_003"><span class="cls_003">any differently.</span></div>
+<div style="position:absolute;left:86.40px;top:398.64px" class="cls_003"><span class="cls_003">Well, almost. You might have to give some thought to getting the base case</span></div>
+<div style="position:absolute;left:86.40px;top:413.81px" class="cls_003"><span class="cls_003">right and making sure that you reach it eventually.  But other than that,</span></div>
+<div style="position:absolute;left:86.40px;top:428.98px" class="cls_003"><span class="cls_003">writing the recursive version should be no problem.</span></div>
+<div style="position:absolute;left:86.40px;top:477.15px" class="cls_004"><span class="cls_004">13.8</span></div>
+<div style="position:absolute;left:140.20px;top:477.15px" class="cls_004"><span class="cls_004">Vocabulary</span></div>
+<div style="position:absolute;left:86.40px;top:509.72px" class="cls_003"><span class="cls_003">pseudocode: A way of designing programs by writing rough drafts in a com-</span></div>
+<div style="position:absolute;left:115.67px;top:524.89px" class="cls_003"><span class="cls_003">bination of English and Java.</span></div>
+<div style="position:absolute;left:86.40px;top:550.27px" class="cls_003"><span class="cls_003">helper method: Often a small method that does not do anything enormously</span></div>
+<div style="position:absolute;left:115.67px;top:565.43px" class="cls_003"><span class="cls_003">useful by itself, but which helps another, more complex method.</span></div>
+<div style="position:absolute;left:86.40px;top:590.81px" class="cls_003"><span class="cls_003">top-down development: Breaking down a problem into sub-problems, and</span></div>
+<div style="position:absolute;left:115.67px;top:605.97px" class="cls_003"><span class="cls_003">solving each sub-problem one at a time.</span></div>
+<div style="position:absolute;left:86.40px;top:631.35px" class="cls_003"><span class="cls_003">selection sort: A simple sorting algorithm that searches for the smallest or</span></div>
+<div style="position:absolute;left:115.67px;top:646.52px" class="cls_003"><span class="cls_003">largest element n times.</span></div>
+<div style="position:absolute;left:86.40px;top:671.89px" class="cls_003"><span class="cls_003">merge sort: A recursive sorting algorithm that divides an array into two</span></div>
+<div style="position:absolute;left:115.67px;top:687.06px" class="cls_003"><span class="cls_003">parts, sorts each part (using merge sort), and merges the results.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:6416px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="70845706-5adb-11e9-9d71-0cc47a792c0a_id_70845706-5adb-11e9-9d71-0cc47a792c0a_files/background09.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">13.9</span></div>
+<div style="position:absolute;left:166.96px;top:88.65px" class="cls_003"><span class="cls_003">Exercises</span></div>
+<div style="position:absolute;left:505.43px;top:88.65px" class="cls_003"><span class="cls_003">213</span></div>
+<div style="position:absolute;left:129.60px;top:119.48px" class="cls_004"><span class="cls_004">13.9</span></div>
+<div style="position:absolute;left:183.40px;top:119.48px" class="cls_004"><span class="cls_004">Exercises</span></div>
+<div style="position:absolute;left:129.60px;top:157.42px" class="cls_003"><span class="cls_003">The code for this chapter is in the ch13 directory of ThinkJavaCode.  See</span></div>
+<div style="position:absolute;left:129.60px;top:172.59px" class="cls_003"><span class="cls_003">page xv for instructions on how to download the repository. Before you start</span></div>
+<div style="position:absolute;left:129.60px;top:187.75px" class="cls_003"><span class="cls_003">the exercises, we recommend that you compile and run the examples.</span></div>
+<div style="position:absolute;left:129.60px;top:214.88px" class="cls_003"><span class="cls_003">Exercise 13.1</span></div>
+<div style="position:absolute;left:220.88px;top:214.88px" class="cls_003"><span class="cls_003">You can learn more about the sorting algorithms in this</span></div>
+<div style="position:absolute;left:129.60px;top:230.05px" class="cls_003"><span class="cls_003">chapter, and others, at</span><span class="cls_005"> <A HREF="http://www.sorting-algorithms.com/">http://www.sorting-algorithms.com/</A> </span><span class="cls_003">.  This site</span></div>
+<div style="position:absolute;left:129.60px;top:245.21px" class="cls_003"><span class="cls_003">includes explanations of the algorithms, animations that show how they work,</span></div>
+<div style="position:absolute;left:129.60px;top:260.38px" class="cls_003"><span class="cls_003">and analysis of their efficiency.</span></div>
+<div style="position:absolute;left:129.60px;top:287.51px" class="cls_003"><span class="cls_003">Exercise 13.2</span></div>
+<div style="position:absolute;left:219.03px;top:287.51px" class="cls_003"><span class="cls_003">The goal of this exercise is to implement the shuffling algo-</span></div>
+<div style="position:absolute;left:129.60px;top:302.67px" class="cls_003"><span class="cls_003">rithm from this chapter.</span></div>
+<div style="position:absolute;left:143.91px;top:337.65px" class="cls_003"><span class="cls_003">1. In the repository for this book, you should find a file called Deck.java</span></div>
+<div style="position:absolute;left:158.87px;top:352.82px" class="cls_003"><span class="cls_003">that contains the code in this chapter. Check that you can compile it in</span></div>
+<div style="position:absolute;left:158.87px;top:367.99px" class="cls_003"><span class="cls_003">your environment.</span></div>
+<div style="position:absolute;left:143.91px;top:395.06px" class="cls_003"><span class="cls_003">2. Add a Deck method called randomInt that takes two integers, low and</span></div>
+<div style="position:absolute;left:158.87px;top:410.23px" class="cls_003"><span class="cls_003">high, and returns a random integer between low and high, including</span></div>
+<div style="position:absolute;left:158.87px;top:425.39px" class="cls_003"><span class="cls_003">both. You can use the nextInt provided by java.util.Random, which</span></div>
+<div style="position:absolute;left:158.87px;top:440.56px" class="cls_003"><span class="cls_003">we saw in Section 8.7.  But you should avoid creating a Random object</span></div>
+<div style="position:absolute;left:158.87px;top:455.73px" class="cls_003"><span class="cls_003">every time randomInt is invoked.</span></div>
+<div style="position:absolute;left:143.91px;top:482.80px" class="cls_003"><span class="cls_003">3. Write a method called swapCards that takes two indexes and swaps the</span></div>
+<div style="position:absolute;left:158.87px;top:497.97px" class="cls_003"><span class="cls_003">cards at the given locations.</span></div>
+<div style="position:absolute;left:143.91px;top:525.03px" class="cls_003"><span class="cls_003">4. Write a method called shuffle that uses the algorithm in Section 13.2.</span></div>
+<div style="position:absolute;left:129.60px;top:552.16px" class="cls_003"><span class="cls_003">Exercise 13.3</span></div>
+<div style="position:absolute;left:219.80px;top:552.16px" class="cls_003"><span class="cls_003">The goal of this exercise is to implement the sorting algo-</span></div>
+<div style="position:absolute;left:129.60px;top:567.32px" class="cls_003"><span class="cls_003">rithms from this chapter.  Use the Deck.java file from the previous exercise</span></div>
+<div style="position:absolute;left:129.60px;top:582.49px" class="cls_003"><span class="cls_003">(or create a new one from scratch).</span></div>
+<div style="position:absolute;left:143.91px;top:617.47px" class="cls_003"><span class="cls_003">1. Write a method called indexLowest that uses the compareCard method</span></div>
+<div style="position:absolute;left:158.87px;top:632.64px" class="cls_003"><span class="cls_003">to find the lowest card in a given range of the deck (from lowIndex to</span></div>
+<div style="position:absolute;left:158.87px;top:647.81px" class="cls_003"><span class="cls_003">highIndex, including both).</span></div>
+<div style="position:absolute;left:143.91px;top:674.88px" class="cls_003"><span class="cls_003">2. Write a method called selectionSort that implements the selection sort</span></div>
+<div style="position:absolute;left:158.87px;top:690.04px" class="cls_003"><span class="cls_003">algorithm in Section 13.3.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:7218px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="70845706-5adb-11e9-9d71-0cc47a792c0a_id_70845706-5adb-11e9-9d71-0cc47a792c0a_files/background10.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">214</span></div>
+<div style="position:absolute;left:301.99px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 13</span></div>
+<div style="position:absolute;left:381.43px;top:88.65px" class="cls_003"><span class="cls_003">Objects of arrays</span></div>
+<div style="position:absolute;left:100.71px;top:124.74px" class="cls_003"><span class="cls_003">3. Using the pseudocode in Section 13.4, write the method called merge.</span></div>
+<div style="position:absolute;left:115.67px;top:139.91px" class="cls_003"><span class="cls_003">The best way to test it is to build and shuffle a deck. Then use subdeck</span></div>
+<div style="position:absolute;left:115.67px;top:155.08px" class="cls_003"><span class="cls_003">to form two small subdecks, and use selection sort to sort them. Then</span></div>
+<div style="position:absolute;left:115.67px;top:170.25px" class="cls_003"><span class="cls_003">you can pass the two halves to merge to see if it works.</span></div>
+<div style="position:absolute;left:100.71px;top:195.38px" class="cls_003"><span class="cls_003">4. Write the simple version of mergeSort, the one that divides the deck</span></div>
+<div style="position:absolute;left:115.67px;top:210.55px" class="cls_003"><span class="cls_003">in half, uses selectionSort to sort the two halves, and uses merge to</span></div>
+<div style="position:absolute;left:115.67px;top:225.71px" class="cls_003"><span class="cls_003">create a new, sorted deck.</span></div>
+<div style="position:absolute;left:100.71px;top:250.85px" class="cls_003"><span class="cls_003">5. Write a recursive version of mergeSort. Remember that selectionSort</span></div>
+<div style="position:absolute;left:115.67px;top:266.01px" class="cls_003"><span class="cls_003">is a modifier and mergeSort is a pure method, which means that they</span></div>
+<div style="position:absolute;left:115.67px;top:281.18px" class="cls_003"><span class="cls_003">get invoked differently:</span></div>
+<div style="position:absolute;left:130.61px;top:300.10px" class="cls_003"><span class="cls_003">deck.selectionSort();</span></div>
+<div style="position:absolute;left:296.71px;top:300.10px" class="cls_007"><span class="cls_007">// modifies an existing deck</span></div>
+<div style="position:absolute;left:130.61px;top:315.27px" class="cls_003"><span class="cls_003">deck = deck.mergeSort();</span></div>
+<div style="position:absolute;left:296.72px;top:315.27px" class="cls_007"><span class="cls_007">// replaces old deck with new</span></div>
+<div style="position:absolute;left:86.40px;top:341.07px" class="cls_003"><span class="cls_003">Exercise 13.4</span></div>
+<div style="position:absolute;left:176.58px;top:341.07px" class="cls_003"><span class="cls_003">The goal of this exercise is to practice top-down program-</span></div>
+<div style="position:absolute;left:86.40px;top:356.24px" class="cls_003"><span class="cls_003">ming by implementing “insertion sort”.  Read about insertion sort at</span><span class="cls_005"> <A HREF="http://www.sorting-algorithms.com/insertion-sort">http:</A> </span></div>
+<div style="position:absolute;left:86.40px;top:371.41px" class="cls_005"><span class="cls_005"> </span><A HREF="http://www.sorting-algorithms.com/insertion-sort">//www.sorting-algorithms.com/insertion-sort</A> <span class="cls_003">.  Write a method named</span></div>
+<div style="position:absolute;left:86.40px;top:386.58px" class="cls_003"><span class="cls_003">insertionSort that implements this algorithm.</span></div>
+<div style="position:absolute;left:86.40px;top:413.70px" class="cls_003"><span class="cls_003">Exercise 13.5</span></div>
+<div style="position:absolute;left:174.23px;top:413.70px" class="cls_003"><span class="cls_003">Write a toString method for the Deck class. It should return</span></div>
+<div style="position:absolute;left:86.40px;top:428.87px" class="cls_003"><span class="cls_003">a single string that represents the cards in the deck. When it’s printed, this</span></div>
+<div style="position:absolute;left:86.40px;top:444.04px" class="cls_003"><span class="cls_003">string should display the same results as the print method in Section 13.1.</span></div>
+<div style="position:absolute;left:86.40px;top:471.16px" class="cls_003"><span class="cls_003">Hint:  You can use the + operator to concatenate strings, but it is not very</span></div>
+<div style="position:absolute;left:86.40px;top:486.33px" class="cls_003"><span class="cls_003">efficient. Consider using java.lang.StringBuilder; you can find the docu-</span></div>
+<div style="position:absolute;left:86.40px;top:501.50px" class="cls_003"><span class="cls_003">mentation by doing a web search for “Java StringBuilder”.</span></div>
+</div>
+
+</body>
+</html>

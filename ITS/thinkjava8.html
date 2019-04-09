@@ -1,0 +1,616 @@
+<html>
+<head><meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<style type="text/css">
+<!--
+span.cls_002{font-family:Arial,serif;font-size:24.8px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_002{font-family:Arial,serif;font-size:24.8px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_003{font-family:Arial,serif;font-size:12.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_003{font-family:Arial,serif;font-size:12.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_004{font-family:Arial,serif;font-size:17.3px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_004{font-family:Arial,serif;font-size:17.3px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_005{font-family:Arial,serif;font-size:12.0px;color:rgb(0,0,255);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_005{font-family:Arial,serif;font-size:12.0px;color:rgb(0,0,255);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_006{font-family:Arial,serif;font-size:10.9px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_006{font-family:Arial,serif;font-size:10.9px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_007{font-family:Arial,serif;font-size:10.9px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: none}
+div.cls_007{font-family:Arial,serif;font-size:10.9px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: none}
+span.cls_008{font-family:Arial,serif;font-size:9.9px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_008{font-family:Arial,serif;font-size:9.9px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_009{font-family:Arial,serif;font-size:12.0px;color:rgb(178,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_009{font-family:Arial,serif;font-size:12.0px;color:rgb(178,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_010{font-family:Arial,serif;font-size:12.0px;color:rgb(0,123,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_010{font-family:Arial,serif;font-size:12.0px;color:rgb(0,123,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_011{font-family:Times,serif;font-size:8.1px;color:rgb(0,123,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_011{font-family:Times,serif;font-size:8.1px;color:rgb(0,123,0);font-weight:normal;font-style:normal;text-decoration: none}
+-->
+</style>
+<script type="text/javascript" src="de3a4d3e-5ad9-11e9-9d71-0cc47a792c0a_id_de3a4d3e-5ad9-11e9-9d71-0cc47a792c0a_files/wz_jsgraphics.js"></script>
+</head>
+<body>
+<div style="position:absolute;left:50%;margin-left:-306px;top:0px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="de3a4d3e-5ad9-11e9-9d71-0cc47a792c0a_id_de3a4d3e-5ad9-11e9-9d71-0cc47a792c0a_files/background01.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:204.02px" class="cls_002"><span class="cls_002">Chapter 8</span></div>
+<div style="position:absolute;left:129.60px;top:266.25px" class="cls_002"><span class="cls_002">Arrays</span></div>
+<div style="position:absolute;left:129.60px;top:345.02px" class="cls_003"><span class="cls_003">Up to this point, the only variables we have used were for individual values</span></div>
+<div style="position:absolute;left:129.60px;top:360.18px" class="cls_003"><span class="cls_003">such as numbers or strings. In this chapter, we’ll learn how to store multiple</span></div>
+<div style="position:absolute;left:129.60px;top:375.35px" class="cls_003"><span class="cls_003">values of the same type using a single variable.  This language feature will</span></div>
+<div style="position:absolute;left:129.60px;top:390.52px" class="cls_003"><span class="cls_003">enable you to write programs that manipulate larger amounts of data.</span></div>
+<div style="position:absolute;left:129.60px;top:436.94px" class="cls_004"><span class="cls_004">8.1</span></div>
+<div style="position:absolute;left:173.71px;top:436.94px" class="cls_004"><span class="cls_004">Creating arrays</span></div>
+<div style="position:absolute;left:129.60px;top:471.89px" class="cls_003"><span class="cls_003">An array is a sequence of values; the values in the array are called elements.</span></div>
+<div style="position:absolute;left:129.60px;top:487.06px" class="cls_003"><span class="cls_003">You can make an array of</span><span class="cls_005"> int</span><span class="cls_003">s,</span><span class="cls_005"> double</span><span class="cls_003">s, or any other type, but all the values</span></div>
+<div style="position:absolute;left:129.60px;top:502.22px" class="cls_003"><span class="cls_003">in an array must have the same type.</span></div>
+<div style="position:absolute;left:129.60px;top:528.31px" class="cls_003"><span class="cls_003">To create an array, you have to declare a variable with an array type and then</span></div>
+<div style="position:absolute;left:129.60px;top:543.48px" class="cls_003"><span class="cls_003">create the array itself. Array types look like other Java types, except they are</span></div>
+<div style="position:absolute;left:129.60px;top:558.65px" class="cls_003"><span class="cls_003">followed by square brackets ([]). For example, the following lines declare that</span></div>
+<div style="position:absolute;left:129.60px;top:573.81px" class="cls_003"><span class="cls_003">counts is an “integer array” and values is a “double array”:</span></div>
+<div style="position:absolute;left:144.54px;top:598.67px" class="cls_005"><span class="cls_005">int</span><span class="cls_003">[] counts;</span></div>
+<div style="position:absolute;left:144.54px;top:613.84px" class="cls_005"><span class="cls_005">double</span><span class="cls_003">[] values;</span></div>
+<div style="position:absolute;left:129.60px;top:638.60px" class="cls_003"><span class="cls_003">To create the array itself, you have to use the</span><span class="cls_005"> new</span><span class="cls_003"> operator, which we first saw</span></div>
+<div style="position:absolute;left:129.60px;top:653.77px" class="cls_003"><span class="cls_003">in Section 3.2:</span></div>
+<div style="position:absolute;left:144.54px;top:676.30px" class="cls_003"><span class="cls_003">counts =</span><span class="cls_005"> new int</span><span class="cls_003">[4];</span></div>
+<div style="position:absolute;left:144.54px;top:691.47px" class="cls_003"><span class="cls_003">values =</span><span class="cls_005"> new double</span><span class="cls_003">[size];</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:802px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="de3a4d3e-5ad9-11e9-9d71-0cc47a792c0a_id_de3a4d3e-5ad9-11e9-9d71-0cc47a792c0a_files/background02.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">124</span></div>
+<div style="position:absolute;left:369.97px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 8</span></div>
+<div style="position:absolute;left:442.69px;top:88.65px" class="cls_003"><span class="cls_003">Arrays</span></div>
+<div style="position:absolute;left:86.40px;top:124.74px" class="cls_003"><span class="cls_003">The first assignment makes count refer to an array of four integers. The second</span></div>
+<div style="position:absolute;left:86.40px;top:139.91px" class="cls_003"><span class="cls_003">makes values refer to an array of</span><span class="cls_005"> double</span><span class="cls_003">, where the number of elements in</span></div>
+<div style="position:absolute;left:86.40px;top:155.08px" class="cls_003"><span class="cls_003">values depends on the value of size.</span></div>
+<div style="position:absolute;left:86.40px;top:182.94px" class="cls_003"><span class="cls_003">Of course, you can also declare the variable and create the array in a single</span></div>
+<div style="position:absolute;left:86.40px;top:198.11px" class="cls_003"><span class="cls_003">line of code:</span></div>
+<div style="position:absolute;left:101.34px;top:222.42px" class="cls_005"><span class="cls_005">int</span><span class="cls_003">[] counts =</span><span class="cls_005"> new int</span><span class="cls_003">[4];</span></div>
+<div style="position:absolute;left:101.34px;top:237.59px" class="cls_005"><span class="cls_005">double</span><span class="cls_003">[] values =</span><span class="cls_005"> new double</span><span class="cls_003">[size];</span></div>
+<div style="position:absolute;left:86.40px;top:264.14px" class="cls_003"><span class="cls_003">You can use any integer expression for the size of an array, as long as the value</span></div>
+<div style="position:absolute;left:86.40px;top:279.31px" class="cls_003"><span class="cls_003">is nonnegative. If you try to create an array with −4 elements, for example,</span></div>
+<div style="position:absolute;left:86.40px;top:294.47px" class="cls_003"><span class="cls_003">you will get a NegativeArraySizeException. An array with zero elements is</span></div>
+<div style="position:absolute;left:86.40px;top:309.64px" class="cls_003"><span class="cls_003">allowed, and there are special uses for such arrays that we’ll see later on.</span></div>
+<div style="position:absolute;left:86.40px;top:359.07px" class="cls_004"><span class="cls_004">8.2</span></div>
+<div style="position:absolute;left:130.51px;top:359.07px" class="cls_004"><span class="cls_004">Accessing elements</span></div>
+<div style="position:absolute;left:86.40px;top:395.99px" class="cls_003"><span class="cls_003">When you create an array of</span><span class="cls_005"> int</span><span class="cls_003">s, the elements are initialized to zero.  Fig-</span></div>
+<div style="position:absolute;left:86.40px;top:411.16px" class="cls_003"><span class="cls_003">ure 8.1 shows a state diagram of the counts array so far.</span></div>
+<div style="position:absolute;left:190.18px;top:444.43px" class="cls_006"><span class="cls_006">counts</span></div>
+<div style="position:absolute;left:284.99px;top:444.43px" class="cls_007"><span class="cls_007">0</span></div>
+<div style="position:absolute;left:311.99px;top:444.43px" class="cls_007"><span class="cls_007">0</span></div>
+<div style="position:absolute;left:338.99px;top:444.43px" class="cls_007"><span class="cls_007">0</span></div>
+<div style="position:absolute;left:365.99px;top:444.43px" class="cls_007"><span class="cls_007">0</span></div>
+<div style="position:absolute;left:284.00px;top:463.33px" class="cls_008"><span class="cls_008">0</span></div>
+<div style="position:absolute;left:311.00px;top:463.33px" class="cls_008"><span class="cls_008">1</span></div>
+<div style="position:absolute;left:338.00px;top:463.33px" class="cls_008"><span class="cls_008">2</span></div>
+<div style="position:absolute;left:365.00px;top:463.33px" class="cls_008"><span class="cls_008">3</span></div>
+<div style="position:absolute;left:175.75px;top:486.58px" class="cls_003"><span class="cls_003">Figure 8.1: State diagram of an</span><span class="cls_005"> int</span><span class="cls_003"> array.</span></div>
+<div style="position:absolute;left:86.40px;top:515.44px" class="cls_003"><span class="cls_003">The arrow indicates that the value of counts is a reference to the array.</span></div>
+<div style="position:absolute;left:86.40px;top:530.61px" class="cls_003"><span class="cls_003">You should think of the array and the variable that refers to it as two different</span></div>
+<div style="position:absolute;left:86.40px;top:545.78px" class="cls_003"><span class="cls_003">things. As we’ll soon see, we can assign a different variable to refer to the same</span></div>
+<div style="position:absolute;left:86.40px;top:560.94px" class="cls_003"><span class="cls_003">array, and we can change the value of counts to refer to a different array.</span></div>
+<div style="position:absolute;left:86.40px;top:588.81px" class="cls_003"><span class="cls_003">The large numbers inside the boxes are the elements of the array. The small</span></div>
+<div style="position:absolute;left:86.40px;top:603.98px" class="cls_003"><span class="cls_003">numbers outside the boxes are the indexes (or indices) used to identify each</span></div>
+<div style="position:absolute;left:86.40px;top:619.15px" class="cls_003"><span class="cls_003">location in the array. Notice that the index of the first element is 0, not 1, as</span></div>
+<div style="position:absolute;left:86.40px;top:634.31px" class="cls_003"><span class="cls_003">you might have expected.</span></div>
+<div style="position:absolute;left:86.40px;top:662.18px" class="cls_003"><span class="cls_003">The [] operator selects elements from an array:</span></div>
+<div style="position:absolute;left:101.34px;top:690.09px" class="cls_003"><span class="cls_003">System.out.println(</span><span class="cls_009">"The zeroth element is "</span><span class="cls_003"> + counts[0]);</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:1604px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="de3a4d3e-5ad9-11e9-9d71-0cc47a792c0a_id_de3a4d3e-5ad9-11e9-9d71-0cc47a792c0a_files/background03.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">8.3</span></div>
+<div style="position:absolute;left:160.24px;top:88.65px" class="cls_003"><span class="cls_003">Displaying arrays</span></div>
+<div style="position:absolute;left:505.43px;top:88.65px" class="cls_003"><span class="cls_003">125</span></div>
+<div style="position:absolute;left:129.60px;top:124.74px" class="cls_003"><span class="cls_003">You can use the [] operator anywhere in an expression:</span></div>
+<div style="position:absolute;left:144.54px;top:147.89px" class="cls_003"><span class="cls_003">counts[0] = 7;</span></div>
+<div style="position:absolute;left:144.54px;top:163.06px" class="cls_003"><span class="cls_003">counts[1] = counts[0] * 2;</span></div>
+<div style="position:absolute;left:144.54px;top:178.22px" class="cls_003"><span class="cls_003">counts[2]++;</span></div>
+<div style="position:absolute;left:144.54px;top:193.39px" class="cls_003"><span class="cls_003">counts[3] -= 60;</span></div>
+<div style="position:absolute;left:129.60px;top:216.45px" class="cls_003"><span class="cls_003">Figure 8.2 shows the result of these statements.</span></div>
+<div style="position:absolute;left:233.38px;top:246.23px" class="cls_006"><span class="cls_006">counts</span></div>
+<div style="position:absolute;left:328.19px;top:246.23px" class="cls_007"><span class="cls_007">7</span></div>
+<div style="position:absolute;left:352.19px;top:246.23px" class="cls_007"><span class="cls_007">14</span></div>
+<div style="position:absolute;left:382.19px;top:246.23px" class="cls_007"><span class="cls_007">1</span></div>
+<div style="position:absolute;left:399.88px;top:246.23px" class="cls_007"><span class="cls_007">−60</span></div>
+<div style="position:absolute;left:327.20px;top:265.13px" class="cls_008"><span class="cls_008">0</span></div>
+<div style="position:absolute;left:354.20px;top:265.13px" class="cls_008"><span class="cls_008">1</span></div>
+<div style="position:absolute;left:381.20px;top:265.13px" class="cls_008"><span class="cls_008">2</span></div>
+<div style="position:absolute;left:408.20px;top:265.13px" class="cls_008"><span class="cls_008">3</span></div>
+<div style="position:absolute;left:167.05px;top:288.38px" class="cls_003"><span class="cls_003">Figure 8.2: State diagram after several assignment statements.</span></div>
+<div style="position:absolute;left:129.60px;top:313.75px" class="cls_003"><span class="cls_003">You can use any expression as an index, as long as it has type</span><span class="cls_005"> int</span><span class="cls_003">. One of the</span></div>
+<div style="position:absolute;left:129.60px;top:328.92px" class="cls_003"><span class="cls_003">most common ways to index an array is with a loop variable. For example:</span></div>
+<div style="position:absolute;left:144.54px;top:352.06px" class="cls_005"><span class="cls_005">int</span><span class="cls_003"> i = 0;</span></div>
+<div style="position:absolute;left:144.54px;top:367.23px" class="cls_005"><span class="cls_005">while</span><span class="cls_003"> (i &lt; 4) {</span></div>
+<div style="position:absolute;left:169.15px;top:382.40px" class="cls_003"><span class="cls_003">System.out.println(counts[i]);</span></div>
+<div style="position:absolute;left:169.15px;top:397.57px" class="cls_003"><span class="cls_003">i++;</span></div>
+<div style="position:absolute;left:144.54px;top:412.74px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:435.79px" class="cls_003"><span class="cls_003">This</span><span class="cls_005"> while</span><span class="cls_003"> loop counts from 0 up to 4. When i is 4, the condition fails and</span></div>
+<div style="position:absolute;left:129.60px;top:450.96px" class="cls_003"><span class="cls_003">the loop terminates. So the body of the loop is only executed when i is 0, 1,</span></div>
+<div style="position:absolute;left:129.60px;top:466.13px" class="cls_003"><span class="cls_003">2, and 3.</span></div>
+<div style="position:absolute;left:129.60px;top:490.50px" class="cls_003"><span class="cls_003">Each time through the loop we use i as an index into the array, displaying the</span></div>
+<div style="position:absolute;left:129.60px;top:505.67px" class="cls_003"><span class="cls_003">ith element. This type of array processing is often written using a</span><span class="cls_005"> for</span><span class="cls_003"> loop.</span></div>
+<div style="position:absolute;left:144.54px;top:528.81px" class="cls_005"><span class="cls_005">for</span><span class="cls_003"> (</span><span class="cls_005">int</span><span class="cls_003"> i = 0; i &lt; 4; i++) {</span></div>
+<div style="position:absolute;left:169.15px;top:543.98px" class="cls_003"><span class="cls_003">System.out.println(counts[i]);</span></div>
+<div style="position:absolute;left:144.54px;top:559.15px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:582.21px" class="cls_003"><span class="cls_003">For the counts array, the only legal indexes are 0, 1, 2, and 3. If the index is</span></div>
+<div style="position:absolute;left:129.60px;top:597.37px" class="cls_003"><span class="cls_003">negative or greater than 3, the result is an ArrayIndexOutOfBoundsException.</span></div>
+<div style="position:absolute;left:129.60px;top:641.64px" class="cls_004"><span class="cls_004">8.3</span></div>
+<div style="position:absolute;left:173.71px;top:641.64px" class="cls_004"><span class="cls_004">Displaying arrays</span></div>
+<div style="position:absolute;left:129.60px;top:674.88px" class="cls_003"><span class="cls_003">You can use println to display an array, but it probably doesn’t do what you</span></div>
+<div style="position:absolute;left:129.60px;top:690.04px" class="cls_003"><span class="cls_003">would like. For example, the following fragment (1) declares an array variable,</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:2406px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="de3a4d3e-5ad9-11e9-9d71-0cc47a792c0a_id_de3a4d3e-5ad9-11e9-9d71-0cc47a792c0a_files/background04.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">126</span></div>
+<div style="position:absolute;left:369.97px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 8</span></div>
+<div style="position:absolute;left:442.69px;top:88.65px" class="cls_003"><span class="cls_003">Arrays</span></div>
+<div style="position:absolute;left:86.40px;top:124.74px" class="cls_003"><span class="cls_003">(2) makes it refer to an array of four elements, and (3) attempts to display the</span></div>
+<div style="position:absolute;left:86.40px;top:139.91px" class="cls_003"><span class="cls_003">contents of the array using println:</span></div>
+<div style="position:absolute;left:101.34px;top:168.82px" class="cls_005"><span class="cls_005">int</span><span class="cls_003">[] a = {1, 2, 3, 4};</span></div>
+<div style="position:absolute;left:101.34px;top:183.99px" class="cls_003"><span class="cls_003">System.out.println(a);</span></div>
+<div style="position:absolute;left:86.40px;top:212.48px" class="cls_003"><span class="cls_003">Unfortunately, the output is something like:</span></div>
+<div style="position:absolute;left:101.34px;top:242.34px" class="cls_003"><span class="cls_003">[I@bf3f7e0</span></div>
+<div style="position:absolute;left:86.40px;top:272.10px" class="cls_003"><span class="cls_003">The bracket indicates that the value is an array, I stands for “integer”, and</span></div>
+<div style="position:absolute;left:86.40px;top:287.27px" class="cls_003"><span class="cls_003">the rest represents the address of the array. If we want to display the elements</span></div>
+<div style="position:absolute;left:86.40px;top:302.44px" class="cls_003"><span class="cls_003">of the array, we can do it ourselves:</span></div>
+<div style="position:absolute;left:101.34px;top:331.02px" class="cls_005"><span class="cls_005">public static void</span><span class="cls_003"> printArray(</span><span class="cls_005">int</span><span class="cls_003">[] a) {</span></div>
+<div style="position:absolute;left:125.95px;top:346.18px" class="cls_003"><span class="cls_003">System.out.print(</span><span class="cls_009">"{"</span><span class="cls_003"> + a[0]);</span></div>
+<div style="position:absolute;left:125.95px;top:361.35px" class="cls_005"><span class="cls_005">for</span><span class="cls_003"> (</span><span class="cls_005">int</span><span class="cls_003"> i = 1; i &lt; a.length; i++) {</span></div>
+<div style="position:absolute;left:150.56px;top:376.52px" class="cls_003"><span class="cls_003">System.out.print(</span><span class="cls_009">", "</span><span class="cls_003"> + a[i]);</span></div>
+<div style="position:absolute;left:125.95px;top:391.69px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:125.95px;top:406.86px" class="cls_003"><span class="cls_003">System.out.println(</span><span class="cls_009">"}"</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:101.34px;top:422.03px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:450.52px" class="cls_003"><span class="cls_003">Given the previous array, the output of this method is:</span></div>
+<div style="position:absolute;left:101.34px;top:480.37px" class="cls_003"><span class="cls_003">{1, 2, 3, 4}</span></div>
+<div style="position:absolute;left:86.40px;top:510.13px" class="cls_003"><span class="cls_003">The Java library provides a utility class java.util.Arrays that</span></div>
+<div style="position:absolute;left:440.06px;top:510.13px" class="cls_003"><span class="cls_003">provides</span></div>
+<div style="position:absolute;left:86.40px;top:525.30px" class="cls_003"><span class="cls_003">methods for working with arrays.  One of them, toString, returns a string</span></div>
+<div style="position:absolute;left:86.40px;top:540.47px" class="cls_003"><span class="cls_003">representation of an array. We can invoke it like this:</span></div>
+<div style="position:absolute;left:101.34px;top:570.32px" class="cls_003"><span class="cls_003">System.out.println(Arrays.toString(a));</span></div>
+<div style="position:absolute;left:86.40px;top:600.09px" class="cls_003"><span class="cls_003">And the output is:</span></div>
+<div style="position:absolute;left:101.34px;top:629.94px" class="cls_003"><span class="cls_003">[1, 2, 3, 4]</span></div>
+<div style="position:absolute;left:86.40px;top:659.71px" class="cls_003"><span class="cls_003">As usual, we have to import java.util.Arrays before we can use it. Notice</span></div>
+<div style="position:absolute;left:86.40px;top:674.88px" class="cls_003"><span class="cls_003">that the string format is slightly different: it uses square brackets instead of</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_003"><span class="cls_003">curly braces. But it beats having to write the printArray method.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:3208px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="de3a4d3e-5ad9-11e9-9d71-0cc47a792c0a_id_de3a4d3e-5ad9-11e9-9d71-0cc47a792c0a_files/background05.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">8.4</span></div>
+<div style="position:absolute;left:160.24px;top:88.65px" class="cls_003"><span class="cls_003">Copying arrays</span></div>
+<div style="position:absolute;left:505.43px;top:88.65px" class="cls_003"><span class="cls_003">127</span></div>
+<div style="position:absolute;left:129.60px;top:119.48px" class="cls_004"><span class="cls_004">8.4</span></div>
+<div style="position:absolute;left:173.71px;top:119.48px" class="cls_004"><span class="cls_004">Copying arrays</span></div>
+<div style="position:absolute;left:129.60px;top:160.48px" class="cls_003"><span class="cls_003">As explained in Section 8.2, array variables contain references to arrays. When</span></div>
+<div style="position:absolute;left:129.60px;top:175.65px" class="cls_003"><span class="cls_003">you make an assignment to an array variable, it simply copies the reference.</span></div>
+<div style="position:absolute;left:129.60px;top:190.81px" class="cls_003"><span class="cls_003">But it doesn’t copy the array itself! For example:</span></div>
+<div style="position:absolute;left:144.54px;top:220.69px" class="cls_005"><span class="cls_005">double</span><span class="cls_003">[] a =</span><span class="cls_005"> new double</span><span class="cls_003">[3];</span></div>
+<div style="position:absolute;left:144.54px;top:235.85px" class="cls_005"><span class="cls_005">double</span><span class="cls_003">[] b = a;</span></div>
+<div style="position:absolute;left:129.60px;top:265.64px" class="cls_003"><span class="cls_003">These statements create an array of three</span><span class="cls_005"> double</span><span class="cls_003">s and make two different</span></div>
+<div style="position:absolute;left:129.60px;top:280.81px" class="cls_003"><span class="cls_003">variables refer to it, as shown in Figure 8.3.</span></div>
+<div style="position:absolute;left:259.50px;top:312.81px" class="cls_006"><span class="cls_006">a</span></div>
+<div style="position:absolute;left:322.49px;top:326.31px" class="cls_007"><span class="cls_007">0.0</span></div>
+<div style="position:absolute;left:349.49px;top:326.31px" class="cls_007"><span class="cls_007">0.0</span></div>
+<div style="position:absolute;left:376.49px;top:326.31px" class="cls_007"><span class="cls_007">0.0</span></div>
+<div style="position:absolute;left:259.50px;top:339.81px" class="cls_006"><span class="cls_006">b</span></div>
+<div style="position:absolute;left:327.50px;top:345.21px" class="cls_008"><span class="cls_008">0</span></div>
+<div style="position:absolute;left:354.50px;top:345.21px" class="cls_008"><span class="cls_008">1</span></div>
+<div style="position:absolute;left:381.50px;top:345.21px" class="cls_008"><span class="cls_008">2</span></div>
+<div style="position:absolute;left:129.60px;top:368.47px" class="cls_003"><span class="cls_003">Figure 8.3: State diagram showing two variables that refer to the same array.</span></div>
+<div style="position:absolute;left:129.60px;top:400.57px" class="cls_003"><span class="cls_003">Any changes made through either variable will be seen by the other.  For</span></div>
+<div style="position:absolute;left:129.60px;top:415.73px" class="cls_003"><span class="cls_003">example, if we set a[0] = 17.0, and then display b[0], the result is 17.0.</span></div>
+<div style="position:absolute;left:129.60px;top:430.90px" class="cls_003"><span class="cls_003">Because a and b are different names for the same thing, they are sometimes</span></div>
+<div style="position:absolute;left:129.60px;top:446.07px" class="cls_003"><span class="cls_003">called aliases.</span></div>
+<div style="position:absolute;left:129.60px;top:477.17px" class="cls_003"><span class="cls_003">If you actually want to copy the array, not just a reference, you have to create</span></div>
+<div style="position:absolute;left:129.60px;top:492.34px" class="cls_003"><span class="cls_003">a new array and copy the elements from the old to the new, like this:</span></div>
+<div style="position:absolute;left:144.54px;top:522.21px" class="cls_005"><span class="cls_005">double</span><span class="cls_003">[] b =</span><span class="cls_005"> new double</span><span class="cls_003">[3];</span></div>
+<div style="position:absolute;left:144.54px;top:537.38px" class="cls_005"><span class="cls_005">for</span><span class="cls_003"> (</span><span class="cls_005">int</span><span class="cls_003"> i = 0; i &lt; 3; i++) {</span></div>
+<div style="position:absolute;left:169.15px;top:552.55px" class="cls_003"><span class="cls_003">b[i] = a[i];</span></div>
+<div style="position:absolute;left:144.54px;top:567.72px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:597.50px" class="cls_003"><span class="cls_003">Another option is to use java.util.Arrays, which provides a method named</span></div>
+<div style="position:absolute;left:129.60px;top:612.67px" class="cls_003"><span class="cls_003">copyOf that copies an array. You can invoke it like this:</span></div>
+<div style="position:absolute;left:144.54px;top:643.82px" class="cls_005"><span class="cls_005">double</span><span class="cls_003">[] b = Arrays.copyOf(a, 3);</span></div>
+<div style="position:absolute;left:129.60px;top:674.88px" class="cls_003"><span class="cls_003">The second parameter is the number of elements you want to copy, so you can</span></div>
+<div style="position:absolute;left:129.60px;top:690.04px" class="cls_003"><span class="cls_003">also use copyOf to copy just part of an array.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:4010px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="de3a4d3e-5ad9-11e9-9d71-0cc47a792c0a_id_de3a4d3e-5ad9-11e9-9d71-0cc47a792c0a_files/background06.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">128</span></div>
+<div style="position:absolute;left:369.97px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 8</span></div>
+<div style="position:absolute;left:442.69px;top:88.65px" class="cls_003"><span class="cls_003">Arrays</span></div>
+<div style="position:absolute;left:86.40px;top:119.48px" class="cls_004"><span class="cls_004">8.5</span></div>
+<div style="position:absolute;left:130.51px;top:119.48px" class="cls_004"><span class="cls_004">Array length</span></div>
+<div style="position:absolute;left:86.40px;top:156.31px" class="cls_003"><span class="cls_003">The examples in the previous section only work if the array has three elements.</span></div>
+<div style="position:absolute;left:86.40px;top:171.48px" class="cls_003"><span class="cls_003">It would be better to generalize the code to work with arrays of any size. We</span></div>
+<div style="position:absolute;left:86.40px;top:186.65px" class="cls_003"><span class="cls_003">can do that by replacing the magic number, 3, with a.length:</span></div>
+<div style="position:absolute;left:101.34px;top:213.54px" class="cls_005"><span class="cls_005">double</span><span class="cls_003">[] b =</span><span class="cls_005"> new double</span><span class="cls_003">[a.length];</span></div>
+<div style="position:absolute;left:101.34px;top:228.71px" class="cls_005"><span class="cls_005">for</span><span class="cls_003"> (</span><span class="cls_005">int</span><span class="cls_003"> i = 0; i &lt; a.length; i++) {</span></div>
+<div style="position:absolute;left:125.95px;top:243.88px" class="cls_003"><span class="cls_003">b[i] = a[i];</span></div>
+<div style="position:absolute;left:101.34px;top:259.05px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:285.52px" class="cls_003"><span class="cls_003">All arrays have a built-in constant, length, that stores the number of elements.</span></div>
+<div style="position:absolute;left:86.40px;top:300.69px" class="cls_003"><span class="cls_003">The expression a.length may look like a method invocation, but there are no</span></div>
+<div style="position:absolute;left:86.40px;top:315.86px" class="cls_003"><span class="cls_003">parentheses and no arguments.</span></div>
+<div style="position:absolute;left:86.40px;top:343.65px" class="cls_003"><span class="cls_003">The last time this loop gets executed, i is a.length - 1, which is the index</span></div>
+<div style="position:absolute;left:86.40px;top:358.82px" class="cls_003"><span class="cls_003">of the last element.  When i is equal to a.length, the condition fails and</span></div>
+<div style="position:absolute;left:86.40px;top:373.99px" class="cls_003"><span class="cls_003">the body is not executed - which is a good thing, because trying to access</span></div>
+<div style="position:absolute;left:86.40px;top:389.16px" class="cls_003"><span class="cls_003">a[a.length] would throw an exception.</span></div>
+<div style="position:absolute;left:86.40px;top:416.95px" class="cls_003"><span class="cls_003">You can also use a.length with Arrays.copyOf:</span></div>
+<div style="position:absolute;left:101.34px;top:444.79px" class="cls_005"><span class="cls_005">double</span><span class="cls_003">[] b = Arrays.copyOf(a, a.length);</span></div>
+<div style="position:absolute;left:86.40px;top:494.00px" class="cls_004"><span class="cls_004">8.6</span></div>
+<div style="position:absolute;left:130.51px;top:494.00px" class="cls_004"><span class="cls_004">Array traversal</span></div>
+<div style="position:absolute;left:86.40px;top:530.83px" class="cls_003"><span class="cls_003">Many computations can be implemented by looping through the elements of</span></div>
+<div style="position:absolute;left:86.40px;top:546.00px" class="cls_003"><span class="cls_003">an array and performing an operation on each element.  For example, the</span></div>
+<div style="position:absolute;left:86.40px;top:561.17px" class="cls_003"><span class="cls_003">following loop squares the elements of a</span><span class="cls_005"> double</span><span class="cls_003"> array:</span></div>
+<div style="position:absolute;left:101.34px;top:587.73px" class="cls_005"><span class="cls_005">for</span><span class="cls_003"> (</span><span class="cls_005">int</span><span class="cls_003"> i = 0; i &lt; a.length; i++) {</span></div>
+<div style="position:absolute;left:125.95px;top:602.90px" class="cls_003"><span class="cls_003">a[i] = Math.pow(a[i], 2.0);</span></div>
+<div style="position:absolute;left:101.34px;top:618.07px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:644.54px" class="cls_003"><span class="cls_003">Looping through the elements of an array is called a traversal.  Another</span></div>
+<div style="position:absolute;left:86.40px;top:659.71px" class="cls_003"><span class="cls_003">common pattern is a search, which involves traversing an array looking for</span></div>
+<div style="position:absolute;left:86.40px;top:674.88px" class="cls_003"><span class="cls_003">a particular element.  For example, the following method takes an</span><span class="cls_005"> int</span><span class="cls_003"> array</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_003"><span class="cls_003">and an integer value, and it returns the index where the value appears:</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:4812px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="de3a4d3e-5ad9-11e9-9d71-0cc47a792c0a_id_de3a4d3e-5ad9-11e9-9d71-0cc47a792c0a_files/background07.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">8.7</span></div>
+<div style="position:absolute;left:160.24px;top:88.65px" class="cls_003"><span class="cls_003">Random numbers</span></div>
+<div style="position:absolute;left:505.43px;top:88.65px" class="cls_003"><span class="cls_003">129</span></div>
+<div style="position:absolute;left:144.54px;top:123.41px" class="cls_005"><span class="cls_005">public static int</span><span class="cls_003"> search(</span><span class="cls_005">double</span><span class="cls_003">[] a,</span><span class="cls_005"> double</span><span class="cls_003"> target) {</span></div>
+<div style="position:absolute;left:169.15px;top:138.57px" class="cls_005"><span class="cls_005">for</span><span class="cls_003"> (</span><span class="cls_005">int</span><span class="cls_003"> i = 0; i &lt; a.length; i++) {</span></div>
+<div style="position:absolute;left:193.76px;top:153.74px" class="cls_005"><span class="cls_005">if</span><span class="cls_003"> (a[i] == target) {</span></div>
+<div style="position:absolute;left:218.37px;top:168.91px" class="cls_005"><span class="cls_005">return</span><span class="cls_003"> i;</span></div>
+<div style="position:absolute;left:193.76px;top:184.08px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:169.15px;top:199.25px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:169.15px;top:214.41px" class="cls_005"><span class="cls_005">return</span><span class="cls_003"> -1;</span></div>
+<div style="position:absolute;left:144.54px;top:229.58px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:255.24px" class="cls_003"><span class="cls_003">If we find the target value in the array, we return its index immediately. If the</span></div>
+<div style="position:absolute;left:129.60px;top:270.41px" class="cls_003"><span class="cls_003">loop exits without finding the target, it returns -1, a special value chosen to</span></div>
+<div style="position:absolute;left:129.60px;top:285.58px" class="cls_003"><span class="cls_003">indicate a failed search.</span></div>
+<div style="position:absolute;left:129.60px;top:312.56px" class="cls_003"><span class="cls_003">Another common traversal is a reduce operation, which “reduces” an array</span></div>
+<div style="position:absolute;left:129.60px;top:327.73px" class="cls_003"><span class="cls_003">of values down to a single value. Examples include the sum or product of the</span></div>
+<div style="position:absolute;left:129.60px;top:342.89px" class="cls_003"><span class="cls_003">elements, the minimum, and the maximum.  The following method takes a</span></div>
+<div style="position:absolute;left:129.60px;top:358.06px" class="cls_005"><span class="cls_005">double</span><span class="cls_003"> array and returns the sum of the elements:</span></div>
+<div style="position:absolute;left:144.54px;top:383.81px" class="cls_005"><span class="cls_005">public static double</span><span class="cls_003"> sum(</span><span class="cls_005">double</span><span class="cls_003">[] a) {</span></div>
+<div style="position:absolute;left:169.15px;top:398.98px" class="cls_005"><span class="cls_005">double</span><span class="cls_003"> total = 0.0;</span></div>
+<div style="position:absolute;left:169.15px;top:414.15px" class="cls_005"><span class="cls_005">for</span><span class="cls_003"> (</span><span class="cls_005">int</span><span class="cls_003"> i = 0; i &lt; a.length; i++) {</span></div>
+<div style="position:absolute;left:193.76px;top:429.32px" class="cls_003"><span class="cls_003">total += a[i];</span></div>
+<div style="position:absolute;left:169.15px;top:444.49px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:169.15px;top:459.65px" class="cls_005"><span class="cls_005">return</span><span class="cls_003"> total;</span></div>
+<div style="position:absolute;left:144.54px;top:474.82px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:500.48px" class="cls_003"><span class="cls_003">Before the loop, we initialize total to zero. Each time through the loop, we</span></div>
+<div style="position:absolute;left:129.60px;top:515.65px" class="cls_003"><span class="cls_003">update total by adding one element from the array. At the end of the loop,</span></div>
+<div style="position:absolute;left:129.60px;top:530.82px" class="cls_003"><span class="cls_003">total contains the sum of the elements. A variable used this way is sometimes</span></div>
+<div style="position:absolute;left:129.60px;top:545.99px" class="cls_003"><span class="cls_003">called an accumulator.</span></div>
+<div style="position:absolute;left:129.60px;top:593.53px" class="cls_004"><span class="cls_004">8.7</span></div>
+<div style="position:absolute;left:173.71px;top:593.53px" class="cls_004"><span class="cls_004">Random numbers</span></div>
+<div style="position:absolute;left:129.60px;top:629.37px" class="cls_003"><span class="cls_003">Most computer programs do the same thing every time they run; programs like</span></div>
+<div style="position:absolute;left:129.60px;top:644.54px" class="cls_003"><span class="cls_003">that are deterministic. Usually determinism is a good thing, since we expect</span></div>
+<div style="position:absolute;left:129.60px;top:659.71px" class="cls_003"><span class="cls_003">the same calculation to yield the same result. But for some applications, we</span></div>
+<div style="position:absolute;left:129.60px;top:674.88px" class="cls_003"><span class="cls_003">want the computer to be unpredictable. Games are an obvious example, but</span></div>
+<div style="position:absolute;left:129.60px;top:690.04px" class="cls_003"><span class="cls_003">there are many others.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:5614px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="de3a4d3e-5ad9-11e9-9d71-0cc47a792c0a_id_de3a4d3e-5ad9-11e9-9d71-0cc47a792c0a_files/background08.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">130</span></div>
+<div style="position:absolute;left:369.97px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 8</span></div>
+<div style="position:absolute;left:442.69px;top:88.65px" class="cls_003"><span class="cls_003">Arrays</span></div>
+<div style="position:absolute;left:86.40px;top:124.74px" class="cls_003"><span class="cls_003">Making a program nondeterministic turns out to be hard, because it’s hard</span></div>
+<div style="position:absolute;left:86.40px;top:139.91px" class="cls_003"><span class="cls_003">for a computer to generate truly random numbers. But there are algorithms</span></div>
+<div style="position:absolute;left:86.40px;top:155.08px" class="cls_003"><span class="cls_003">that generate unpredictable sequences called pseudorandom numbers.  For</span></div>
+<div style="position:absolute;left:86.40px;top:170.25px" class="cls_003"><span class="cls_003">most applications, they are as good as random.</span></div>
+<div style="position:absolute;left:86.40px;top:200.18px" class="cls_003"><span class="cls_003">If you did Exercise 3.4, you have already seen java.util.Random, which gener-</span></div>
+<div style="position:absolute;left:86.40px;top:215.34px" class="cls_003"><span class="cls_003">ates pseudorandom numbers. The method nextInt takes an integer argument,</span></div>
+<div style="position:absolute;left:86.40px;top:230.51px" class="cls_003"><span class="cls_003">n, and returns a random integer between 0 and n - 1 (inclusive).</span></div>
+<div style="position:absolute;left:86.40px;top:260.44px" class="cls_003"><span class="cls_003">If you generate a long series of random numbers, every value should appear, at</span></div>
+<div style="position:absolute;left:86.40px;top:275.61px" class="cls_003"><span class="cls_003">least approximately, the same number of times. One way to test this behavior</span></div>
+<div style="position:absolute;left:86.40px;top:290.78px" class="cls_003"><span class="cls_003">of nextInt is to generate a large number of values, store them in an array,</span></div>
+<div style="position:absolute;left:86.40px;top:305.95px" class="cls_003"><span class="cls_003">and count the number of times each value occurs.</span></div>
+<div style="position:absolute;left:86.40px;top:335.88px" class="cls_003"><span class="cls_003">The following method creates an</span><span class="cls_005"> int</span><span class="cls_003"> array and fills it with random numbers</span></div>
+<div style="position:absolute;left:86.40px;top:351.04px" class="cls_003"><span class="cls_003">between 0 and 99. The argument specifies the size of the array, and the return</span></div>
+<div style="position:absolute;left:86.40px;top:366.21px" class="cls_003"><span class="cls_003">value is a reference to the new array.</span></div>
+<div style="position:absolute;left:101.34px;top:394.91px" class="cls_005"><span class="cls_005">public static int</span><span class="cls_003">[] randomArray(</span><span class="cls_005">int</span><span class="cls_003"> size) {</span></div>
+<div style="position:absolute;left:125.95px;top:410.08px" class="cls_003"><span class="cls_003">Random random =</span><span class="cls_005"> new</span><span class="cls_003"> Random();</span></div>
+<div style="position:absolute;left:125.95px;top:425.25px" class="cls_005"><span class="cls_005">int</span><span class="cls_003">[] a =</span><span class="cls_005"> new int</span><span class="cls_003">[size];</span></div>
+<div style="position:absolute;left:125.95px;top:440.42px" class="cls_005"><span class="cls_005">for</span><span class="cls_003"> (</span><span class="cls_005">int</span><span class="cls_003"> i = 0; i &lt; a.length; i++) {</span></div>
+<div style="position:absolute;left:150.56px;top:455.58px" class="cls_003"><span class="cls_003">a[i] = random.nextInt(100);</span></div>
+<div style="position:absolute;left:125.95px;top:470.75px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:125.95px;top:485.92px" class="cls_005"><span class="cls_005">return</span><span class="cls_003"> a;</span></div>
+<div style="position:absolute;left:101.34px;top:501.09px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:529.70px" class="cls_003"><span class="cls_003">The following fragment generates an array and displays it using printArray</span></div>
+<div style="position:absolute;left:86.40px;top:544.87px" class="cls_003"><span class="cls_003">from Section 8.3:</span></div>
+<div style="position:absolute;left:101.34px;top:571.24px" class="cls_005"><span class="cls_005">int</span><span class="cls_003"> numValues = 8;</span></div>
+<div style="position:absolute;left:101.34px;top:586.41px" class="cls_005"><span class="cls_005">int</span><span class="cls_003">[] array = randomArray(numValues);</span></div>
+<div style="position:absolute;left:101.34px;top:601.58px" class="cls_003"><span class="cls_003">printArray(array);</span></div>
+<div style="position:absolute;left:86.40px;top:630.19px" class="cls_003"><span class="cls_003">The output looks like this:</span></div>
+<div style="position:absolute;left:101.34px;top:660.16px" class="cls_003"><span class="cls_003">{15, 62, 46, 74, 67, 52, 51, 10}</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_003"><span class="cls_003">If you run it, you will probably get different values.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:6416px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="de3a4d3e-5ad9-11e9-9d71-0cc47a792c0a_id_de3a4d3e-5ad9-11e9-9d71-0cc47a792c0a_files/background09.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">8.8</span></div>
+<div style="position:absolute;left:160.24px;top:88.65px" class="cls_003"><span class="cls_003">Traverse and count</span></div>
+<div style="position:absolute;left:505.42px;top:88.65px" class="cls_003"><span class="cls_003">131</span></div>
+<div style="position:absolute;left:129.60px;top:119.48px" class="cls_004"><span class="cls_004">8.8</span></div>
+<div style="position:absolute;left:173.71px;top:119.48px" class="cls_004"><span class="cls_004">Traverse and count</span></div>
+<div style="position:absolute;left:129.60px;top:151.51px" class="cls_003"><span class="cls_003">If these values were exam scores - and they would be pretty bad exam scores</span></div>
+<div style="position:absolute;left:129.60px;top:166.68px" class="cls_003"><span class="cls_003">- the teacher might present them to the class in the form of a histogram. In</span></div>
+<div style="position:absolute;left:129.60px;top:181.85px" class="cls_003"><span class="cls_003">statistics, a histogram is a set of counters that keeps track of the number of</span></div>
+<div style="position:absolute;left:129.60px;top:197.02px" class="cls_003"><span class="cls_003">times each value appears.</span></div>
+<div style="position:absolute;left:129.60px;top:220.19px" class="cls_003"><span class="cls_003">For exam scores, we might have ten counters to keep track of how many</span></div>
+<div style="position:absolute;left:129.60px;top:235.36px" class="cls_003"><span class="cls_003">students scored in the 90s, the 80s, etc.  To do that, we can traverse the</span></div>
+<div style="position:absolute;left:129.60px;top:250.52px" class="cls_003"><span class="cls_003">array and count the number of elements that fall in a given range.</span></div>
+<div style="position:absolute;left:129.60px;top:273.69px" class="cls_003"><span class="cls_003">The following method takes an array and two integers, low and high.  It</span></div>
+<div style="position:absolute;left:129.60px;top:288.86px" class="cls_003"><span class="cls_003">returns the number of elements that fall in the range from low to high.</span></div>
+<div style="position:absolute;left:144.54px;top:311.13px" class="cls_005"><span class="cls_005">public static int</span><span class="cls_003"> inRange(</span><span class="cls_005">int</span><span class="cls_003">[] a,</span><span class="cls_005"> int</span><span class="cls_003"> low,</span><span class="cls_005"> int</span><span class="cls_003"> high) {</span></div>
+<div style="position:absolute;left:169.15px;top:326.30px" class="cls_005"><span class="cls_005">int</span><span class="cls_003"> count = 0;</span></div>
+<div style="position:absolute;left:169.15px;top:341.47px" class="cls_005"><span class="cls_005">for</span><span class="cls_003"> (</span><span class="cls_005">int</span><span class="cls_003"> i = 0; i &lt; a.length; i++) {</span></div>
+<div style="position:absolute;left:193.76px;top:356.64px" class="cls_005"><span class="cls_005">if</span><span class="cls_003"> (a[i] >= low && a[i] &lt; high) {</span></div>
+<div style="position:absolute;left:218.37px;top:371.80px" class="cls_003"><span class="cls_003">count++;</span></div>
+<div style="position:absolute;left:193.76px;top:386.97px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:169.15px;top:402.14px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:169.15px;top:417.31px" class="cls_005"><span class="cls_005">return</span><span class="cls_003"> count;</span></div>
+<div style="position:absolute;left:144.54px;top:432.48px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:454.32px" class="cls_003"><span class="cls_003">This pattern should look familiar: it is another reduce operation. Notice that</span></div>
+<div style="position:absolute;left:129.60px;top:469.49px" class="cls_003"><span class="cls_003">low is included in the range (>=), but high is excluded (&lt;). This detail keeps</span></div>
+<div style="position:absolute;left:129.60px;top:484.66px" class="cls_003"><span class="cls_003">us from counting any scores twice.</span></div>
+<div style="position:absolute;left:129.60px;top:507.83px" class="cls_003"><span class="cls_003">Now we can count the number of scores in each grade range:</span></div>
+<div style="position:absolute;left:144.54px;top:529.77px" class="cls_005"><span class="cls_005">int</span><span class="cls_003">[] scores = randomArray(30);</span></div>
+<div style="position:absolute;left:144.54px;top:544.94px" class="cls_005"><span class="cls_005">int</span><span class="cls_003"> a = inRange(scores, 90, 100);</span></div>
+<div style="position:absolute;left:144.54px;top:560.10px" class="cls_005"><span class="cls_005">int</span><span class="cls_003"> b = inRange(scores, 80, 90);</span></div>
+<div style="position:absolute;left:144.54px;top:575.27px" class="cls_005"><span class="cls_005">int</span><span class="cls_003"> c = inRange(scores, 70, 80);</span></div>
+<div style="position:absolute;left:144.54px;top:590.44px" class="cls_005"><span class="cls_005">int</span><span class="cls_003"> d = inRange(scores, 60, 70);</span></div>
+<div style="position:absolute;left:144.54px;top:605.61px" class="cls_005"><span class="cls_005">int</span><span class="cls_003"> f = inRange(scores, 0, 60);</span></div>
+<div style="position:absolute;left:129.60px;top:642.84px" class="cls_004"><span class="cls_004">8.9</span></div>
+<div style="position:absolute;left:173.71px;top:642.84px" class="cls_004"><span class="cls_004">Building a histogram</span></div>
+<div style="position:absolute;left:129.60px;top:674.88px" class="cls_003"><span class="cls_003">The previous code is repetitious, but it is acceptable as long as the number of</span></div>
+<div style="position:absolute;left:129.60px;top:690.04px" class="cls_003"><span class="cls_003">ranges is small. But suppose we wanted to keep track of the number of times</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:7218px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="de3a4d3e-5ad9-11e9-9d71-0cc47a792c0a_id_de3a4d3e-5ad9-11e9-9d71-0cc47a792c0a_files/background10.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">132</span></div>
+<div style="position:absolute;left:369.97px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 8</span></div>
+<div style="position:absolute;left:442.69px;top:88.65px" class="cls_003"><span class="cls_003">Arrays</span></div>
+<div style="position:absolute;left:86.40px;top:124.74px" class="cls_003"><span class="cls_003">each score appears. We would have to write 100 lines of code:</span></div>
+<div style="position:absolute;left:101.34px;top:155.32px" class="cls_005"><span class="cls_005">int</span><span class="cls_003"> count0 = inRange(scores, 0, 1);</span></div>
+<div style="position:absolute;left:101.34px;top:170.48px" class="cls_005"><span class="cls_005">int</span><span class="cls_003"> count1 = inRange(scores, 1, 2);</span></div>
+<div style="position:absolute;left:101.34px;top:185.65px" class="cls_005"><span class="cls_005">int</span><span class="cls_003"> count2 = inRange(scores, 2, 3);</span></div>
+<div style="position:absolute;left:101.34px;top:215.99px" class="cls_005"><span class="cls_005">int</span><span class="cls_003"> count99 = inRange(scores, 99, 100);</span></div>
+<div style="position:absolute;left:86.40px;top:246.47px" class="cls_003"><span class="cls_003">What we need is a way to store 100 counters, preferably so we can use an</span></div>
+<div style="position:absolute;left:86.40px;top:261.64px" class="cls_003"><span class="cls_003">index to access them. In other words, we need another array!</span></div>
+<div style="position:absolute;left:86.40px;top:293.44px" class="cls_003"><span class="cls_003">The following fragment creates an array of 100 counters, one for each possible</span></div>
+<div style="position:absolute;left:86.40px;top:308.61px" class="cls_003"><span class="cls_003">score. It loops through the scores and uses inRange to count how many times</span></div>
+<div style="position:absolute;left:86.40px;top:323.78px" class="cls_003"><span class="cls_003">each score appears. Then it stores the results in the array:</span></div>
+<div style="position:absolute;left:101.34px;top:354.35px" class="cls_005"><span class="cls_005">int</span><span class="cls_003">[] counts =</span><span class="cls_005"> new int</span><span class="cls_003">[100];</span></div>
+<div style="position:absolute;left:101.34px;top:369.52px" class="cls_005"><span class="cls_005">for</span><span class="cls_003"> (</span><span class="cls_005">int</span><span class="cls_003"> i = 0; i &lt; counts.length; i++) {</span></div>
+<div style="position:absolute;left:125.95px;top:384.69px" class="cls_003"><span class="cls_003">counts[i] = inRange(scores, i, i + 1);</span></div>
+<div style="position:absolute;left:101.34px;top:399.85px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:430.34px" class="cls_003"><span class="cls_003">Notice that we are using the loop variable i three times:  as an index into</span></div>
+<div style="position:absolute;left:86.40px;top:445.51px" class="cls_003"><span class="cls_003">the counts array, and as two arguments for inRange.  The code works, but</span></div>
+<div style="position:absolute;left:86.40px;top:460.67px" class="cls_003"><span class="cls_003">it is not as efficient as it could be.  Every time the loop invokes inRange, it</span></div>
+<div style="position:absolute;left:86.40px;top:475.84px" class="cls_003"><span class="cls_003">traverses the entire array.</span></div>
+<div style="position:absolute;left:86.40px;top:507.64px" class="cls_003"><span class="cls_003">It would be better to make a single pass through the array, and for each score,</span></div>
+<div style="position:absolute;left:86.40px;top:522.81px" class="cls_003"><span class="cls_003">compute which range it falls in and increment the corresponding counter. This</span></div>
+<div style="position:absolute;left:86.40px;top:537.98px" class="cls_003"><span class="cls_003">code traverses the array of scores only once to generate the histogram:</span></div>
+<div style="position:absolute;left:101.34px;top:568.55px" class="cls_005"><span class="cls_005">int</span><span class="cls_003">[] counts =</span><span class="cls_005"> new int</span><span class="cls_003">[100];</span></div>
+<div style="position:absolute;left:101.34px;top:583.72px" class="cls_005"><span class="cls_005">for</span><span class="cls_003"> (</span><span class="cls_005">int</span><span class="cls_003"> i = 0; i &lt; scores.length; i++) {</span></div>
+<div style="position:absolute;left:125.95px;top:598.89px" class="cls_005"><span class="cls_005">int</span><span class="cls_003"> index = scores[i];</span></div>
+<div style="position:absolute;left:125.95px;top:614.06px" class="cls_003"><span class="cls_003">counts[index]++;</span></div>
+<div style="position:absolute;left:101.34px;top:629.23px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:659.71px" class="cls_003"><span class="cls_003">Each time through the loop, it selects one element from scores and uses it</span></div>
+<div style="position:absolute;left:86.40px;top:674.88px" class="cls_003"><span class="cls_003">as an index to increment the corresponding element of counts. Because this</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_003"><span class="cls_003">code only traverses the array of scores once, it is much more efficient.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:8020px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="de3a4d3e-5ad9-11e9-9d71-0cc47a792c0a_id_de3a4d3e-5ad9-11e9-9d71-0cc47a792c0a_files/background11.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">8.10</span></div>
+<div style="position:absolute;left:166.96px;top:88.65px" class="cls_003"><span class="cls_003">The enhanced for loop</span></div>
+<div style="position:absolute;left:505.43px;top:88.65px" class="cls_003"><span class="cls_003">133</span></div>
+<div style="position:absolute;left:129.60px;top:119.48px" class="cls_004"><span class="cls_004">8.10</span></div>
+<div style="position:absolute;left:183.40px;top:119.48px" class="cls_004"><span class="cls_004">The enhanced for loop</span></div>
+<div style="position:absolute;left:129.60px;top:153.69px" class="cls_003"><span class="cls_003">Since traversing arrays is so common, Java provides an alternative syntax that</span></div>
+<div style="position:absolute;left:129.60px;top:168.86px" class="cls_003"><span class="cls_003">makes the code more compact. For example, consider a</span><span class="cls_005"> for</span><span class="cls_003"> loop that displays</span></div>
+<div style="position:absolute;left:129.60px;top:184.03px" class="cls_003"><span class="cls_003">the elements of an array on separate lines:</span></div>
+<div style="position:absolute;left:144.54px;top:208.15px" class="cls_005"><span class="cls_005">for</span><span class="cls_003"> (</span><span class="cls_005">int</span><span class="cls_003"> i = 0; i &lt; values.length; i++) {</span></div>
+<div style="position:absolute;left:169.15px;top:223.32px" class="cls_005"><span class="cls_005">int</span><span class="cls_003"> value = values[i];</span></div>
+<div style="position:absolute;left:169.15px;top:238.48px" class="cls_003"><span class="cls_003">System.out.println(value);</span></div>
+<div style="position:absolute;left:144.54px;top:253.65px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:277.68px" class="cls_003"><span class="cls_003">We could rewrite the loop like this:</span></div>
+<div style="position:absolute;left:144.54px;top:301.80px" class="cls_005"><span class="cls_005">for</span><span class="cls_003"> (</span><span class="cls_005">int</span><span class="cls_003"> value : values) {</span></div>
+<div style="position:absolute;left:169.15px;top:316.96px" class="cls_003"><span class="cls_003">System.out.println(value);</span></div>
+<div style="position:absolute;left:144.54px;top:332.13px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:356.16px" class="cls_003"><span class="cls_003">This statement is called an enhanced for loop. You can read it as, “for each</span></div>
+<div style="position:absolute;left:129.60px;top:371.33px" class="cls_003"><span class="cls_003">value in values”.  It’s conventional to use plural nouns for array variables</span></div>
+<div style="position:absolute;left:129.60px;top:386.50px" class="cls_003"><span class="cls_003">and singular nouns for element variables.</span></div>
+<div style="position:absolute;left:129.60px;top:411.84px" class="cls_003"><span class="cls_003">Notice how the single line</span><span class="cls_005"> for</span><span class="cls_003"> (</span><span class="cls_005">int</span><span class="cls_003"> value : values) replaces the first two</span></div>
+<div style="position:absolute;left:129.60px;top:427.01px" class="cls_003"><span class="cls_003">lines of the standard</span><span class="cls_005"> for</span><span class="cls_003"> loop. It hides the details of iterating each index of</span></div>
+<div style="position:absolute;left:129.60px;top:442.18px" class="cls_003"><span class="cls_003">the array, and instead, focuses on the values themselves.</span></div>
+<div style="position:absolute;left:129.60px;top:467.53px" class="cls_003"><span class="cls_003">Using the enhanced</span><span class="cls_005"> for</span><span class="cls_003"> loop, and removing the temporary variable, we can</span></div>
+<div style="position:absolute;left:129.60px;top:482.70px" class="cls_003"><span class="cls_003">write the histogram code from the previous section more concisely:</span></div>
+<div style="position:absolute;left:144.54px;top:506.81px" class="cls_005"><span class="cls_005">int</span><span class="cls_003">[] counts =</span><span class="cls_005"> new int</span><span class="cls_003">[100];</span></div>
+<div style="position:absolute;left:144.54px;top:521.98px" class="cls_005"><span class="cls_005">for</span><span class="cls_003"> (</span><span class="cls_005">int</span><span class="cls_003"> score : scores) {</span></div>
+<div style="position:absolute;left:169.15px;top:537.15px" class="cls_003"><span class="cls_003">counts[score]++;</span></div>
+<div style="position:absolute;left:144.54px;top:552.32px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:576.35px" class="cls_003"><span class="cls_003">Enhanced</span><span class="cls_005"> for</span><span class="cls_003"> loops often make the code more readable, especially for accu-</span></div>
+<div style="position:absolute;left:129.60px;top:591.51px" class="cls_003"><span class="cls_003">mulating values. But they are not helpful when you need to refer to the index,</span></div>
+<div style="position:absolute;left:129.60px;top:606.68px" class="cls_003"><span class="cls_003">as in search operations.</span></div>
+<div style="position:absolute;left:144.54px;top:630.80px" class="cls_005"><span class="cls_005">for</span><span class="cls_003"> (</span><span class="cls_005">double</span><span class="cls_003"> d : array) {</span></div>
+<div style="position:absolute;left:169.15px;top:645.97px" class="cls_005"><span class="cls_005">if</span><span class="cls_003"> (d == target) {</span></div>
+<div style="position:absolute;left:193.76px;top:661.14px" class="cls_010"><span class="cls_010">// array contains d, but we don</span><span class="cls_011">'</span><span class="cls_010">t know the index</span></div>
+<div style="position:absolute;left:169.15px;top:676.30px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:144.54px;top:691.47px" class="cls_003"><span class="cls_003">}</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:8822px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="de3a4d3e-5ad9-11e9-9d71-0cc47a792c0a_id_de3a4d3e-5ad9-11e9-9d71-0cc47a792c0a_files/background12.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">134</span></div>
+<div style="position:absolute;left:369.97px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 8</span></div>
+<div style="position:absolute;left:442.69px;top:88.65px" class="cls_003"><span class="cls_003">Arrays</span></div>
+<div style="position:absolute;left:86.40px;top:119.48px" class="cls_004"><span class="cls_004">8.11</span></div>
+<div style="position:absolute;left:140.20px;top:119.48px" class="cls_004"><span class="cls_004">Vocabulary</span></div>
+<div style="position:absolute;left:86.40px;top:150.97px" class="cls_003"><span class="cls_003">array: A collection of values, where all the values have the same type, and</span></div>
+<div style="position:absolute;left:115.67px;top:166.14px" class="cls_003"><span class="cls_003">each value is identified by an index.</span></div>
+<div style="position:absolute;left:86.40px;top:190.82px" class="cls_003"><span class="cls_003">element: One of the values in an array. The [] operator selects elements.</span></div>
+<div style="position:absolute;left:86.40px;top:215.50px" class="cls_003"><span class="cls_003">index: An integer variable or value used to indicate an element of an array.</span></div>
+<div style="position:absolute;left:86.40px;top:240.19px" class="cls_003"><span class="cls_003">reference: A value that indicates another value, like an array.  In a state</span></div>
+<div style="position:absolute;left:115.67px;top:255.35px" class="cls_003"><span class="cls_003">diagram, a reference appears as an arrow.</span></div>
+<div style="position:absolute;left:86.40px;top:280.04px" class="cls_003"><span class="cls_003">alias: A variable that refers to the same object as another variable.</span></div>
+<div style="position:absolute;left:86.40px;top:304.72px" class="cls_003"><span class="cls_003">traversal: Looping through the elements of an array (or other collection).</span></div>
+<div style="position:absolute;left:86.40px;top:329.40px" class="cls_003"><span class="cls_003">search: A traversal pattern used to find a particular element of an array.</span></div>
+<div style="position:absolute;left:86.40px;top:354.08px" class="cls_003"><span class="cls_003">reduce: A traversal pattern that combines the elements of an array into a</span></div>
+<div style="position:absolute;left:115.67px;top:369.25px" class="cls_003"><span class="cls_003">single value.</span></div>
+<div style="position:absolute;left:86.40px;top:393.94px" class="cls_003"><span class="cls_003">accumulator: A variable used to accumulate results during a traversal.</span></div>
+<div style="position:absolute;left:86.40px;top:418.62px" class="cls_003"><span class="cls_003">deterministic: A program that does the same thing every time it is invoked.</span></div>
+<div style="position:absolute;left:86.40px;top:443.30px" class="cls_003"><span class="cls_003">nondeterministic: A program that always behaves differently, even when</span></div>
+<div style="position:absolute;left:115.67px;top:458.47px" class="cls_003"><span class="cls_003">run multiple times with the same input.</span></div>
+<div style="position:absolute;left:86.40px;top:483.15px" class="cls_003"><span class="cls_003">pseudorandom: A sequence of numbers that appear to be random, but which</span></div>
+<div style="position:absolute;left:115.67px;top:498.32px" class="cls_003"><span class="cls_003">are actually the product of a deterministic computation.</span></div>
+<div style="position:absolute;left:86.40px;top:523.00px" class="cls_003"><span class="cls_003">histogram: An array of integers where each integer counts the number of</span></div>
+<div style="position:absolute;left:115.67px;top:538.17px" class="cls_003"><span class="cls_003">values that fall into a certain range.</span></div>
+<div style="position:absolute;left:86.40px;top:562.85px" class="cls_003"><span class="cls_003">enhanced for loop: An alternative syntax for traversing the elements (val-</span></div>
+<div style="position:absolute;left:115.67px;top:578.02px" class="cls_003"><span class="cls_003">ues) of an array.</span></div>
+<div style="position:absolute;left:86.40px;top:624.62px" class="cls_004"><span class="cls_004">8.12</span></div>
+<div style="position:absolute;left:140.20px;top:624.62px" class="cls_004"><span class="cls_004">Exercises</span></div>
+<div style="position:absolute;left:86.40px;top:659.71px" class="cls_003"><span class="cls_003">The code for this chapter is in the ch08 directory of ThinkJavaCode.  See</span></div>
+<div style="position:absolute;left:86.40px;top:674.88px" class="cls_003"><span class="cls_003">page xv for instructions on how to download the repository. Before you start</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_003"><span class="cls_003">the exercises, we recommend that you compile and run the examples.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:9624px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="de3a4d3e-5ad9-11e9-9d71-0cc47a792c0a_id_de3a4d3e-5ad9-11e9-9d71-0cc47a792c0a_files/background13.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">8.12</span></div>
+<div style="position:absolute;left:166.96px;top:88.65px" class="cls_003"><span class="cls_003">Exercises</span></div>
+<div style="position:absolute;left:505.43px;top:88.65px" class="cls_003"><span class="cls_003">135</span></div>
+<div style="position:absolute;left:129.60px;top:124.74px" class="cls_003"><span class="cls_003">Exercise 8.1</span></div>
+<div style="position:absolute;left:210.85px;top:124.74px" class="cls_003"><span class="cls_003">The goal of this exercise is to practice encapsulation with some</span></div>
+<div style="position:absolute;left:129.60px;top:139.91px" class="cls_003"><span class="cls_003">of the examples in this chapter.</span></div>
+<div style="position:absolute;left:143.91px;top:167.65px" class="cls_003"><span class="cls_003">1. Starting with the code in Section 8.6, write a method called powArray</span></div>
+<div style="position:absolute;left:158.87px;top:182.81px" class="cls_003"><span class="cls_003">that takes a</span><span class="cls_005"> double</span><span class="cls_003"> array, a, and returns a new array that contains the</span></div>
+<div style="position:absolute;left:158.87px;top:197.98px" class="cls_003"><span class="cls_003">elements of a squared. Generalize it to take a second argument and raise</span></div>
+<div style="position:absolute;left:158.87px;top:213.15px" class="cls_003"><span class="cls_003">the elements of a to the given power.</span></div>
+<div style="position:absolute;left:143.91px;top:237.72px" class="cls_003"><span class="cls_003">2. Starting with the code in Section 8.10, write a method called histogram</span></div>
+<div style="position:absolute;left:158.87px;top:252.89px" class="cls_003"><span class="cls_003">that takes an</span><span class="cls_005"> int</span><span class="cls_003"> array of scores from 0 to (but not including) 100, and</span></div>
+<div style="position:absolute;left:158.87px;top:268.05px" class="cls_003"><span class="cls_003">returns a histogram of 100 counters. Generalize it to take the number of</span></div>
+<div style="position:absolute;left:158.87px;top:283.22px" class="cls_003"><span class="cls_003">counters as an argument.</span></div>
+<div style="position:absolute;left:129.60px;top:310.35px" class="cls_003"><span class="cls_003">Exercise 8.2</span></div>
+<div style="position:absolute;left:212.80px;top:310.35px" class="cls_003"><span class="cls_003">The purpose of this exercise is to practice reading code and</span></div>
+<div style="position:absolute;left:129.60px;top:325.51px" class="cls_003"><span class="cls_003">recognizing the traversal patterns in this chapter. The following methods are</span></div>
+<div style="position:absolute;left:129.60px;top:340.68px" class="cls_003"><span class="cls_003">hard to read, because instead of using meaningful names for the variables and</span></div>
+<div style="position:absolute;left:129.60px;top:355.85px" class="cls_003"><span class="cls_003">methods, they use names of fruit.</span></div>
+<div style="position:absolute;left:129.60px;top:381.85px" class="cls_003"><span class="cls_003">For each method, write one sentence that describes what the method does,</span></div>
+<div style="position:absolute;left:129.60px;top:397.02px" class="cls_003"><span class="cls_003">without getting into the details of how it works.  For each variable, identify</span></div>
+<div style="position:absolute;left:129.60px;top:412.19px" class="cls_003"><span class="cls_003">the role it plays.</span></div>
+<div style="position:absolute;left:144.54px;top:436.95px" class="cls_005"><span class="cls_005">public static int</span><span class="cls_003"> banana(</span><span class="cls_005">int</span><span class="cls_003">[] a) {</span></div>
+<div style="position:absolute;left:169.15px;top:452.12px" class="cls_005"><span class="cls_005">int</span><span class="cls_003"> kiwi = 1;</span></div>
+<div style="position:absolute;left:169.15px;top:467.29px" class="cls_005"><span class="cls_005">int</span><span class="cls_003"> i = 0;</span></div>
+<div style="position:absolute;left:169.15px;top:482.46px" class="cls_005"><span class="cls_005">while</span><span class="cls_003"> (i &lt; a.length) {</span></div>
+<div style="position:absolute;left:193.76px;top:497.63px" class="cls_003"><span class="cls_003">kiwi = kiwi * a[i];</span></div>
+<div style="position:absolute;left:193.76px;top:512.80px" class="cls_003"><span class="cls_003">i++;</span></div>
+<div style="position:absolute;left:169.15px;top:527.96px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:169.15px;top:543.13px" class="cls_005"><span class="cls_005">return</span><span class="cls_003"> kiwi;</span></div>
+<div style="position:absolute;left:144.54px;top:558.30px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:144.54px;top:585.29px" class="cls_005"><span class="cls_005">public static int</span><span class="cls_003"> grapefruit(</span><span class="cls_005">int</span><span class="cls_003">[] a,</span><span class="cls_005"> int</span><span class="cls_003"> grape) {</span></div>
+<div style="position:absolute;left:169.15px;top:600.46px" class="cls_005"><span class="cls_005">for</span><span class="cls_003"> (</span><span class="cls_005">int</span><span class="cls_003"> i = 0; i &lt; a.length; i++) {</span></div>
+<div style="position:absolute;left:193.76px;top:615.63px" class="cls_005"><span class="cls_005">if</span><span class="cls_003"> (a[i] == grape) {</span></div>
+<div style="position:absolute;left:218.37px;top:630.80px" class="cls_005"><span class="cls_005">return</span><span class="cls_003"> i;</span></div>
+<div style="position:absolute;left:193.76px;top:645.97px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:169.15px;top:661.14px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:169.15px;top:676.30px" class="cls_005"><span class="cls_005">return</span><span class="cls_003"> -1;</span></div>
+<div style="position:absolute;left:144.54px;top:691.47px" class="cls_003"><span class="cls_003">}</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:10426px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="de3a4d3e-5ad9-11e9-9d71-0cc47a792c0a_id_de3a4d3e-5ad9-11e9-9d71-0cc47a792c0a_files/background14.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">136</span></div>
+<div style="position:absolute;left:369.97px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 8</span></div>
+<div style="position:absolute;left:442.69px;top:88.65px" class="cls_003"><span class="cls_003">Arrays</span></div>
+<div style="position:absolute;left:101.34px;top:123.41px" class="cls_005"><span class="cls_005">public static int</span><span class="cls_003"> pineapple(</span><span class="cls_005">int</span><span class="cls_003">[] a,</span><span class="cls_005"> int</span><span class="cls_003"> apple) {</span></div>
+<div style="position:absolute;left:125.95px;top:138.57px" class="cls_005"><span class="cls_005">int</span><span class="cls_003"> pear = 0;</span></div>
+<div style="position:absolute;left:125.95px;top:153.74px" class="cls_005"><span class="cls_005">for</span><span class="cls_003"> (</span><span class="cls_005">int</span><span class="cls_003"> pine: a) {</span></div>
+<div style="position:absolute;left:150.56px;top:168.91px" class="cls_005"><span class="cls_005">if</span><span class="cls_003"> (pine == apple) {</span></div>
+<div style="position:absolute;left:175.17px;top:184.08px" class="cls_003"><span class="cls_003">pear++;</span></div>
+<div style="position:absolute;left:150.56px;top:199.25px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:125.95px;top:214.41px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:125.95px;top:229.58px" class="cls_005"><span class="cls_005">return</span><span class="cls_003"> pear;</span></div>
+<div style="position:absolute;left:101.34px;top:244.75px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:270.56px" class="cls_003"><span class="cls_003">Exercise 8.3</span></div>
+<div style="position:absolute;left:169.32px;top:270.56px" class="cls_003"><span class="cls_003">What is the output of the following program?  Describe in a</span></div>
+<div style="position:absolute;left:86.40px;top:285.72px" class="cls_003"><span class="cls_003">few words what mus does. Draw a stack diagram just before mus returns.</span></div>
+<div style="position:absolute;left:101.34px;top:309.65px" class="cls_005"><span class="cls_005">public static int</span><span class="cls_003">[] make(</span><span class="cls_005">int</span><span class="cls_003"> n) {</span></div>
+<div style="position:absolute;left:125.95px;top:324.82px" class="cls_005"><span class="cls_005">int</span><span class="cls_003">[] a =</span><span class="cls_005"> new int</span><span class="cls_003">[n];</span></div>
+<div style="position:absolute;left:125.95px;top:339.99px" class="cls_005"><span class="cls_005">for</span><span class="cls_003"> (</span><span class="cls_005">int</span><span class="cls_003"> i = 0; i &lt; n; i++) {</span></div>
+<div style="position:absolute;left:150.56px;top:355.15px" class="cls_003"><span class="cls_003">a[i] = i + 1;</span></div>
+<div style="position:absolute;left:125.95px;top:370.32px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:125.95px;top:385.49px" class="cls_005"><span class="cls_005">return</span><span class="cls_003"> a;</span></div>
+<div style="position:absolute;left:101.34px;top:400.66px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:101.34px;top:426.81px" class="cls_005"><span class="cls_005">public static void</span><span class="cls_003"> dub(</span><span class="cls_005">int</span><span class="cls_003">[] jub) {</span></div>
+<div style="position:absolute;left:125.95px;top:441.98px" class="cls_005"><span class="cls_005">for</span><span class="cls_003"> (</span><span class="cls_005">int</span><span class="cls_003"> i = 0; i &lt; jub.length; i++)</span></div>
+<div style="position:absolute;left:353.58px;top:441.98px" class="cls_003"><span class="cls_003">{</span></div>
+<div style="position:absolute;left:150.56px;top:457.15px" class="cls_003"><span class="cls_003">jub[i] *= 2;</span></div>
+<div style="position:absolute;left:125.95px;top:472.32px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:101.34px;top:487.48px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:101.34px;top:513.64px" class="cls_005"><span class="cls_005">public static int</span><span class="cls_003"> mus(</span><span class="cls_005">int</span><span class="cls_003">[] zoo) {</span></div>
+<div style="position:absolute;left:125.95px;top:528.81px" class="cls_005"><span class="cls_005">int</span><span class="cls_003"> fus = 0;</span></div>
+<div style="position:absolute;left:125.95px;top:543.97px" class="cls_005"><span class="cls_005">for</span><span class="cls_003"> (</span><span class="cls_005">int</span><span class="cls_003"> i = 0; i &lt; zoo.length; i++)</span></div>
+<div style="position:absolute;left:353.58px;top:543.97px" class="cls_003"><span class="cls_003">{</span></div>
+<div style="position:absolute;left:150.56px;top:559.14px" class="cls_003"><span class="cls_003">fus += zoo[i];</span></div>
+<div style="position:absolute;left:125.95px;top:574.31px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:125.95px;top:589.48px" class="cls_005"><span class="cls_005">return</span><span class="cls_003"> fus;</span></div>
+<div style="position:absolute;left:101.34px;top:604.65px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:101.34px;top:630.80px" class="cls_005"><span class="cls_005">public static void</span><span class="cls_003"> main(String[] args) {</span></div>
+<div style="position:absolute;left:125.95px;top:645.97px" class="cls_005"><span class="cls_005">int</span><span class="cls_003">[] bob = make(5);</span></div>
+<div style="position:absolute;left:125.95px;top:661.14px" class="cls_003"><span class="cls_003">dub(bob);</span></div>
+<div style="position:absolute;left:125.95px;top:676.30px" class="cls_003"><span class="cls_003">System.out.println(mus(bob));</span></div>
+<div style="position:absolute;left:101.34px;top:691.47px" class="cls_003"><span class="cls_003">}</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:11228px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="de3a4d3e-5ad9-11e9-9d71-0cc47a792c0a_id_de3a4d3e-5ad9-11e9-9d71-0cc47a792c0a_files/background15.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">8.12</span></div>
+<div style="position:absolute;left:166.96px;top:88.65px" class="cls_003"><span class="cls_003">Exercises</span></div>
+<div style="position:absolute;left:505.43px;top:88.65px" class="cls_003"><span class="cls_003">137</span></div>
+<div style="position:absolute;left:129.60px;top:124.74px" class="cls_003"><span class="cls_003">Exercise 8.4</span></div>
+<div style="position:absolute;left:214.04px;top:124.74px" class="cls_003"><span class="cls_003">Write a method called indexOfMax that takes an array of</span></div>
+<div style="position:absolute;left:129.60px;top:139.91px" class="cls_003"><span class="cls_003">integers and returns the index of the largest element.  Can you write this</span></div>
+<div style="position:absolute;left:129.60px;top:155.08px" class="cls_003"><span class="cls_003">method using an enhanced</span><span class="cls_005"> for</span><span class="cls_003"> loop? Why or why not?</span></div>
+<div style="position:absolute;left:129.60px;top:182.20px" class="cls_003"><span class="cls_003">Exercise 8.5</span></div>
+<div style="position:absolute;left:212.09px;top:182.20px" class="cls_003"><span class="cls_003">The Sieve of Eratosthenes is “a simple, ancient algorithm for</span></div>
+<div style="position:absolute;left:129.60px;top:197.37px" class="cls_003"><span class="cls_003">finding all prime numbers up to any given limit,” which you can read about</span></div>
+<div style="position:absolute;left:129.60px;top:212.54px" class="cls_003"><span class="cls_003">at</span><span class="cls_005"> <A HREF="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes">https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes</A> </span><span class="cls_003">.</span></div>
+<div style="position:absolute;left:129.60px;top:237.75px" class="cls_003"><span class="cls_003">Write a method called sieve that takes an integer parameter, n, and returns</span></div>
+<div style="position:absolute;left:129.60px;top:252.92px" class="cls_003"><span class="cls_003">a</span><span class="cls_005"> boolean</span><span class="cls_003"> array that indicates, for each number from 0 to n - 1, whether the</span></div>
+<div style="position:absolute;left:129.60px;top:268.09px" class="cls_003"><span class="cls_003">number is prime.</span></div>
+<div style="position:absolute;left:129.60px;top:295.21px" class="cls_003"><span class="cls_003">Exercise 8.6</span></div>
+<div style="position:absolute;left:212.98px;top:295.21px" class="cls_003"><span class="cls_003">Write a method named areFactors that takes an integer n</span></div>
+<div style="position:absolute;left:129.60px;top:310.38px" class="cls_003"><span class="cls_003">and an array of integers, and that returns</span><span class="cls_005"> true</span><span class="cls_003"> if the numbers in the array</span></div>
+<div style="position:absolute;left:129.60px;top:325.55px" class="cls_003"><span class="cls_003">are all factors of n (which is to say that n is divisible by all of them).</span></div>
+<div style="position:absolute;left:129.60px;top:352.67px" class="cls_003"><span class="cls_003">Exercise 8.7</span></div>
+<div style="position:absolute;left:210.49px;top:352.67px" class="cls_003"><span class="cls_003">Write a method named arePrimeFactors that takes an integer</span></div>
+<div style="position:absolute;left:129.60px;top:367.84px" class="cls_003"><span class="cls_003">n and an array of integers, and that returns</span><span class="cls_005"> true</span><span class="cls_003"> if the numbers in the array</span></div>
+<div style="position:absolute;left:129.60px;top:383.01px" class="cls_003"><span class="cls_003">are all prime and their product is n.</span></div>
+<div style="position:absolute;left:129.60px;top:410.13px" class="cls_003"><span class="cls_003">Exercise 8.8</span></div>
+<div style="position:absolute;left:212.60px;top:410.13px" class="cls_003"><span class="cls_003">Many of the patterns we have seen for traversing arrays can</span></div>
+<div style="position:absolute;left:129.60px;top:425.30px" class="cls_003"><span class="cls_003">also be written recursively. It is not common, but it is a useful exercise.</span></div>
+<div style="position:absolute;left:143.91px;top:450.67px" class="cls_003"><span class="cls_003">1. Write a method called maxInRange that takes an array of integers and</span></div>
+<div style="position:absolute;left:158.87px;top:465.84px" class="cls_003"><span class="cls_003">two indexes, lowIndex and highIndex, and finds the maximum value</span></div>
+<div style="position:absolute;left:158.87px;top:481.01px" class="cls_003"><span class="cls_003">in the array, but only considering the elements between lowIndex and</span></div>
+<div style="position:absolute;left:158.87px;top:496.17px" class="cls_003"><span class="cls_003">highIndex, including both.</span></div>
+<div style="position:absolute;left:158.87px;top:515.85px" class="cls_003"><span class="cls_003">This method should be recursive. If the length of the range is 1, that is,</span></div>
+<div style="position:absolute;left:158.87px;top:531.01px" class="cls_003"><span class="cls_003">if lowIndex == highIndex, we know immediately that the sole element</span></div>
+<div style="position:absolute;left:158.87px;top:546.18px" class="cls_003"><span class="cls_003">in the range must be the maximum. So that’s the base case.</span></div>
+<div style="position:absolute;left:158.87px;top:565.85px" class="cls_003"><span class="cls_003">If there is more than one element in the range, we can break the array</span></div>
+<div style="position:absolute;left:158.87px;top:581.02px" class="cls_003"><span class="cls_003">into two pieces, find the maximum in each of the pieces, and then find</span></div>
+<div style="position:absolute;left:158.87px;top:596.19px" class="cls_003"><span class="cls_003">the maximum of the maxima.</span></div>
+<div style="position:absolute;left:143.91px;top:620.37px" class="cls_003"><span class="cls_003">2. Methods like maxInRange can be awkward to use.  To find the largest</span></div>
+<div style="position:absolute;left:158.87px;top:635.53px" class="cls_003"><span class="cls_003">element in an array, we have to provide the range for the entire array.</span></div>
+<div style="position:absolute;left:173.81px;top:655.25px" class="cls_005"><span class="cls_005">double</span><span class="cls_003"> max = maxInRange(a, 0, a.length - 1);</span></div>
+<div style="position:absolute;left:158.87px;top:674.88px" class="cls_003"><span class="cls_003">Write a method called max that takes an array and uses maxInRange to</span></div>
+<div style="position:absolute;left:158.87px;top:690.04px" class="cls_003"><span class="cls_003">find and return the largest element.</span></div>
+</div>
+
+</body>
+</html>

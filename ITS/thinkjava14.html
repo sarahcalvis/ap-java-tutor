@@ -1,0 +1,690 @@
+<html>
+<head><meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<style type="text/css">
+<!--
+span.cls_002{font-family:Arial,serif;font-size:24.8px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_002{font-family:Arial,serif;font-size:24.8px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_003{font-family:Arial,serif;font-size:12.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_003{font-family:Arial,serif;font-size:12.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_004{font-family:Times,serif;font-size:8.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_004{font-family:Times,serif;font-size:8.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_005{font-family:Arial,serif;font-size:12.0px;color:rgb(0,0,255);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_005{font-family:Arial,serif;font-size:12.0px;color:rgb(0,0,255);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_006{font-family:Arial,serif;font-size:17.3px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_006{font-family:Arial,serif;font-size:17.3px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_007{font-family:Arial,serif;font-size:12.0px;color:rgb(178,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_007{font-family:Arial,serif;font-size:12.0px;color:rgb(178,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_008{font-family:Arial,serif;font-size:12.0px;color:rgb(0,123,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_008{font-family:Arial,serif;font-size:12.0px;color:rgb(0,123,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_009{font-family:Times,serif;font-size:8.1px;color:rgb(0,123,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_009{font-family:Times,serif;font-size:8.1px;color:rgb(0,123,0);font-weight:normal;font-style:normal;text-decoration: none}
+-->
+</style>
+<script type="text/javascript" src="956ca3b6-5adb-11e9-9d71-0cc47a792c0a_id_956ca3b6-5adb-11e9-9d71-0cc47a792c0a_files/wz_jsgraphics.js"></script>
+</head>
+<body>
+<div style="position:absolute;left:50%;margin-left:-306px;top:0px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="956ca3b6-5adb-11e9-9d71-0cc47a792c0a_id_956ca3b6-5adb-11e9-9d71-0cc47a792c0a_files/background01.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:201.30px" class="cls_002"><span class="cls_002">Chapter 14</span></div>
+<div style="position:absolute;left:129.60px;top:260.80px" class="cls_002"><span class="cls_002">Objects of objects</span></div>
+<div style="position:absolute;left:129.60px;top:336.85px" class="cls_003"><span class="cls_003">Now that we have classes that represent cards and decks, let’s use them to</span></div>
+<div style="position:absolute;left:129.60px;top:352.01px" class="cls_003"><span class="cls_003">make a game!  Crazy Eights is a classic card game for two or more players.</span></div>
+<div style="position:absolute;left:129.60px;top:367.18px" class="cls_003"><span class="cls_003">The main objective is to be the first player to get rid of all your cards. Here’s</span></div>
+<div style="position:absolute;left:129.60px;top:382.35px" class="cls_003"><span class="cls_003">how to play:</span></div>
+<div style="position:absolute;left:147.16px;top:402.18px" class="cls_004"><span class="cls_004"></span><span class="cls_003"> Deal five or more cards to each player, and then deal one card face up to</span></div>
+<div style="position:absolute;left:158.87px;top:417.34px" class="cls_003"><span class="cls_003">create the “discard pile”. Place the remaining cards face down to create</span></div>
+<div style="position:absolute;left:158.87px;top:432.51px" class="cls_003"><span class="cls_003">the “draw pile”.</span></div>
+<div style="position:absolute;left:147.16px;top:455.76px" class="cls_004"><span class="cls_004"></span><span class="cls_003"> Each player takes turns placing a single card on the discard pile.  The</span></div>
+<div style="position:absolute;left:158.87px;top:470.93px" class="cls_003"><span class="cls_003">card must match the rank or suit of the previously played card, or be an</span></div>
+<div style="position:absolute;left:158.87px;top:486.10px" class="cls_003"><span class="cls_003">eight, which is a “wild card”.</span></div>
+<div style="position:absolute;left:147.16px;top:509.35px" class="cls_004"><span class="cls_004"></span><span class="cls_003"> When players don’t have a matching card or an eight, they must draw</span></div>
+<div style="position:absolute;left:158.87px;top:524.52px" class="cls_003"><span class="cls_003">new cards until they get one.</span></div>
+<div style="position:absolute;left:147.16px;top:547.77px" class="cls_004"><span class="cls_004"></span><span class="cls_003"> If the draw pile ever runs out, the discard pile is shuffled (except the top</span></div>
+<div style="position:absolute;left:158.87px;top:562.94px" class="cls_003"><span class="cls_003">card) and becomes the new draw pile.</span></div>
+<div style="position:absolute;left:147.16px;top:586.19px" class="cls_004"><span class="cls_004"></span><span class="cls_003"> As soon as a player has no cards, the game ends and all other players</span></div>
+<div style="position:absolute;left:158.87px;top:601.35px" class="cls_003"><span class="cls_003">score penalty points for their remaining cards. Eights are worth 20, face</span></div>
+<div style="position:absolute;left:158.87px;top:616.52px" class="cls_003"><span class="cls_003">cards are worth 10, and all others are worth their rank.</span></div>
+<div style="position:absolute;left:129.60px;top:636.35px" class="cls_003"><span class="cls_003">You can read</span><span class="cls_005"> <A HREF="https://en.wikipedia.org/wiki/Crazy_Eights">https://en.wikipedia.org/wiki/Crazy_Eights</A> </span><span class="cls_003"> for more de-</span></div>
+<div style="position:absolute;left:129.60px;top:651.51px" class="cls_003"><span class="cls_003">tails, but we have enough to get started.</span></div>
+<div style="position:absolute;left:129.60px;top:674.88px" class="cls_003"><span class="cls_003">The code for this chapter is in the directory ch14 in the repository for this</span></div>
+<div style="position:absolute;left:129.60px;top:690.04px" class="cls_003"><span class="cls_003">book. Instructions for downloading this code are on page xv.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:802px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="956ca3b6-5adb-11e9-9d71-0cc47a792c0a_id_956ca3b6-5adb-11e9-9d71-0cc47a792c0a_files/background02.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">216</span></div>
+<div style="position:absolute;left:296.38px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 14</span></div>
+<div style="position:absolute;left:375.81px;top:88.65px" class="cls_003"><span class="cls_003">Objects of objects</span></div>
+<div style="position:absolute;left:86.40px;top:119.48px" class="cls_006"><span class="cls_006">14.1</span></div>
+<div style="position:absolute;left:140.20px;top:119.48px" class="cls_006"><span class="cls_006">Decks and hands</span></div>
+<div style="position:absolute;left:86.40px;top:157.77px" class="cls_003"><span class="cls_003">To implement this game, we need to represent a deck of cards, a discard pile,</span></div>
+<div style="position:absolute;left:86.40px;top:172.94px" class="cls_003"><span class="cls_003">a draw pile, and a hand for each player. And we need to be able to deal, draw,</span></div>
+<div style="position:absolute;left:86.40px;top:188.10px" class="cls_003"><span class="cls_003">and discard cards.</span></div>
+<div style="position:absolute;left:86.40px;top:217.05px" class="cls_003"><span class="cls_003">The Deck class from the previous chapter meets some of these requirements,</span></div>
+<div style="position:absolute;left:86.40px;top:232.22px" class="cls_003"><span class="cls_003">but there are two problems:</span></div>
+<div style="position:absolute;left:103.96px;top:267.90px" class="cls_004"><span class="cls_004"></span><span class="cls_003"> Hands and piles have different sizes, and their sizes change as the game</span></div>
+<div style="position:absolute;left:115.67px;top:283.06px" class="cls_003"><span class="cls_003">progresses. Our implementation of Deck uses a Card array, and the size</span></div>
+<div style="position:absolute;left:115.67px;top:298.23px" class="cls_003"><span class="cls_003">of an array can’t change.</span></div>
+<div style="position:absolute;left:103.96px;top:325.65px" class="cls_004"><span class="cls_004"></span><span class="cls_003"> It’s not clear that a Deck object is the right way to represent hands and</span></div>
+<div style="position:absolute;left:115.67px;top:340.81px" class="cls_003"><span class="cls_003">piles. We might want new classes for other collections of cards.</span></div>
+<div style="position:absolute;left:86.40px;top:376.49px" class="cls_003"><span class="cls_003">We can solve the first problem by replacing the Card array with an ArrayList,</span></div>
+<div style="position:absolute;left:86.40px;top:391.66px" class="cls_003"><span class="cls_003">which is in the java.util package. An ArrayList is a collection, which is</span></div>
+<div style="position:absolute;left:86.40px;top:406.82px" class="cls_003"><span class="cls_003">an object that contains other objects.</span></div>
+<div style="position:absolute;left:86.40px;top:435.77px" class="cls_003"><span class="cls_003">The Java library provides a variety of collections. For our purposes, ArrayList</span></div>
+<div style="position:absolute;left:86.40px;top:450.94px" class="cls_003"><span class="cls_003">is a good choice because it provides methods to add and remove elements, and</span></div>
+<div style="position:absolute;left:86.40px;top:466.11px" class="cls_003"><span class="cls_003">it grows and shrinks automatically.</span></div>
+<div style="position:absolute;left:86.40px;top:495.06px" class="cls_003"><span class="cls_003">To solve the second problem, we can use a language feature called inheritance.</span></div>
+<div style="position:absolute;left:86.40px;top:510.23px" class="cls_003"><span class="cls_003">We’ll define a new class, CardCollection, to represent a collection of cards.</span></div>
+<div style="position:absolute;left:86.40px;top:525.40px" class="cls_003"><span class="cls_003">Then we’ll define Deck and Hand as subclasses of CardCollection.</span></div>
+<div style="position:absolute;left:86.40px;top:554.35px" class="cls_003"><span class="cls_003">A subclass is a new class that “extends” an existing class; that is, it has the</span></div>
+<div style="position:absolute;left:86.40px;top:569.51px" class="cls_003"><span class="cls_003">attributes and methods of the existing class, plus more. We’ll see the details</span></div>
+<div style="position:absolute;left:86.40px;top:584.68px" class="cls_003"><span class="cls_003">soon, but let’s start with CardCollection:</span></div>
+<div style="position:absolute;left:86.40px;top:636.59px" class="cls_006"><span class="cls_006">14.2</span></div>
+<div style="position:absolute;left:140.20px;top:636.59px" class="cls_006"><span class="cls_006">CardCollection</span></div>
+<div style="position:absolute;left:86.40px;top:674.88px" class="cls_003"><span class="cls_003">Here’s the beginning of a CardCollection class that uses ArrayList instead</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_003"><span class="cls_003">of a primitive array:</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:1604px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="956ca3b6-5adb-11e9-9d71-0cc47a792c0a_id_956ca3b6-5adb-11e9-9d71-0cc47a792c0a_files/background03.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">14.2</span></div>
+<div style="position:absolute;left:166.96px;top:88.65px" class="cls_003"><span class="cls_003">CardCollection</span></div>
+<div style="position:absolute;left:505.42px;top:88.65px" class="cls_003"><span class="cls_003">217</span></div>
+<div style="position:absolute;left:144.54px;top:123.41px" class="cls_005"><span class="cls_005">public class</span><span class="cls_003"> CardCollection {</span></div>
+<div style="position:absolute;left:169.15px;top:153.74px" class="cls_005"><span class="cls_005">private</span><span class="cls_003"> String label;</span></div>
+<div style="position:absolute;left:169.15px;top:168.91px" class="cls_005"><span class="cls_005">private</span><span class="cls_003"> ArrayList&lt;Card> cards;</span></div>
+<div style="position:absolute;left:169.15px;top:199.25px" class="cls_005"><span class="cls_005">public</span><span class="cls_003"> CardCollection(String label) {</span></div>
+<div style="position:absolute;left:193.76px;top:214.41px" class="cls_005"><span class="cls_005">this</span><span class="cls_003">.label = label;</span></div>
+<div style="position:absolute;left:193.76px;top:229.58px" class="cls_005"><span class="cls_005">this</span><span class="cls_003">.cards =</span><span class="cls_005"> new</span><span class="cls_003"> ArrayList&lt;Card>();</span></div>
+<div style="position:absolute;left:169.15px;top:244.75px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:144.54px;top:259.92px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:286.96px" class="cls_003"><span class="cls_003">When you declare an ArrayList, you specify the type it contains in angle</span></div>
+<div style="position:absolute;left:129.60px;top:302.12px" class="cls_003"><span class="cls_003">brackets (&lt;>). This declaration says that cards is not just an ArrayList, it’s</span></div>
+<div style="position:absolute;left:129.60px;top:317.29px" class="cls_003"><span class="cls_003">an ArrayList of Card objects.</span></div>
+<div style="position:absolute;left:129.60px;top:345.65px" class="cls_003"><span class="cls_003">The constructor takes a string as an argument and assigns it to an instance</span></div>
+<div style="position:absolute;left:129.60px;top:360.82px" class="cls_003"><span class="cls_003">variable, label. It also initializes cards with an empty ArrayList.</span></div>
+<div style="position:absolute;left:129.60px;top:389.17px" class="cls_003"><span class="cls_003">ArrayList provides a method, add, that adds an element to the collection.</span></div>
+<div style="position:absolute;left:129.60px;top:404.34px" class="cls_003"><span class="cls_003">We will write a CardCollection method that does the same thing:</span></div>
+<div style="position:absolute;left:144.54px;top:431.47px" class="cls_005"><span class="cls_005">public void</span><span class="cls_003"> addCard(Card card) {</span></div>
+<div style="position:absolute;left:169.15px;top:446.63px" class="cls_005"><span class="cls_005">this</span><span class="cls_003">.cards.add(card);</span></div>
+<div style="position:absolute;left:144.54px;top:461.80px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:488.84px" class="cls_003"><span class="cls_003">Until now, we have used</span><span class="cls_005"> this</span><span class="cls_003"> explicitly to make it easy to identify attributes.</span></div>
+<div style="position:absolute;left:129.60px;top:504.01px" class="cls_003"><span class="cls_003">Inside addCard and other instance methods, you can access instance variables</span></div>
+<div style="position:absolute;left:129.60px;top:519.17px" class="cls_003"><span class="cls_003">without using the keyword</span><span class="cls_005"> this</span><span class="cls_003">. So from here on, we will drop it:</span></div>
+<div style="position:absolute;left:144.54px;top:546.30px" class="cls_005"><span class="cls_005">public void</span><span class="cls_003"> addCard(Card card) {</span></div>
+<div style="position:absolute;left:169.15px;top:561.47px" class="cls_003"><span class="cls_003">cards.add(card);</span></div>
+<div style="position:absolute;left:144.54px;top:576.64px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:603.67px" class="cls_003"><span class="cls_003">We also need to be able to remove cards from a collection.  The following</span></div>
+<div style="position:absolute;left:129.60px;top:618.84px" class="cls_003"><span class="cls_003">method takes an index, removes the card at that location, and shifts the</span></div>
+<div style="position:absolute;left:129.60px;top:634.01px" class="cls_003"><span class="cls_003">following cards left to fill the gap:</span></div>
+<div style="position:absolute;left:144.54px;top:661.14px" class="cls_005"><span class="cls_005">public</span><span class="cls_003"> Card popCard(</span><span class="cls_005">int</span><span class="cls_003"> i) {</span></div>
+<div style="position:absolute;left:169.15px;top:676.30px" class="cls_005"><span class="cls_005">return</span><span class="cls_003"> cards.remove(i);</span></div>
+<div style="position:absolute;left:144.54px;top:691.47px" class="cls_003"><span class="cls_003">}</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:2406px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="956ca3b6-5adb-11e9-9d71-0cc47a792c0a_id_956ca3b6-5adb-11e9-9d71-0cc47a792c0a_files/background04.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">218</span></div>
+<div style="position:absolute;left:296.38px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 14</span></div>
+<div style="position:absolute;left:375.81px;top:88.65px" class="cls_003"><span class="cls_003">Objects of objects</span></div>
+<div style="position:absolute;left:86.40px;top:124.74px" class="cls_003"><span class="cls_003">If we are dealing cards from a shuffled deck, we don’t care which card gets</span></div>
+<div style="position:absolute;left:86.40px;top:139.91px" class="cls_003"><span class="cls_003">removed. It is most efficient to choose the last one, so we don’t have to shift</span></div>
+<div style="position:absolute;left:86.40px;top:155.08px" class="cls_003"><span class="cls_003">any following cards.  Here is an overloaded version of popCard that removes</span></div>
+<div style="position:absolute;left:86.40px;top:170.25px" class="cls_003"><span class="cls_003">and returns the last card:</span></div>
+<div style="position:absolute;left:101.34px;top:194.04px" class="cls_005"><span class="cls_005">public</span><span class="cls_003"> Card popCard() {</span></div>
+<div style="position:absolute;left:125.95px;top:209.21px" class="cls_005"><span class="cls_005">int</span><span class="cls_003"> i = size() - 1;</span></div>
+<div style="position:absolute;left:125.95px;top:224.38px" class="cls_005"><span class="cls_005">return</span><span class="cls_003"> popCard(i);</span></div>
+<div style="position:absolute;left:101.34px;top:239.54px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:265.57px" class="cls_003"><span class="cls_003">Notice that popCard uses CardCollection’s own size method, which in turn</span></div>
+<div style="position:absolute;left:86.40px;top:280.74px" class="cls_003"><span class="cls_003">calls the ArrayList’s size method:</span></div>
+<div style="position:absolute;left:101.34px;top:307.19px" class="cls_005"><span class="cls_005">public int</span><span class="cls_003"> size() {</span></div>
+<div style="position:absolute;left:125.95px;top:322.36px" class="cls_005"><span class="cls_005">return</span><span class="cls_003"> cards.size();</span></div>
+<div style="position:absolute;left:101.34px;top:337.52px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:363.55px" class="cls_003"><span class="cls_003">For convenience, CardCollection also provides an empty method that returns</span></div>
+<div style="position:absolute;left:86.40px;top:378.72px" class="cls_005"><span class="cls_005">true</span><span class="cls_003"> when size is zero:</span></div>
+<div style="position:absolute;left:101.34px;top:402.51px" class="cls_005"><span class="cls_005">public boolean</span><span class="cls_003"> empty() {</span></div>
+<div style="position:absolute;left:125.95px;top:417.68px" class="cls_005"><span class="cls_005">return</span><span class="cls_003"> cards.size() == 0;</span></div>
+<div style="position:absolute;left:101.34px;top:432.85px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:458.87px" class="cls_003"><span class="cls_003">Methods like addCard, popCard, and size, which invoke another method with-</span></div>
+<div style="position:absolute;left:86.40px;top:474.04px" class="cls_003"><span class="cls_003">out doing much additional work, are called wrapper methods. We will use</span></div>
+<div style="position:absolute;left:86.40px;top:489.21px" class="cls_003"><span class="cls_003">these wrapper methods to implement less trivial methods, like deal:</span></div>
+<div style="position:absolute;left:101.34px;top:515.33px" class="cls_005"><span class="cls_005">public void</span><span class="cls_003"> deal(CardCollection that,</span><span class="cls_005"> int</span><span class="cls_003"> n) {</span></div>
+<div style="position:absolute;left:125.95px;top:530.49px" class="cls_005"><span class="cls_005">for</span><span class="cls_003"> (</span><span class="cls_005">int</span><span class="cls_003"> i = 0; i &lt; n; i++) {</span></div>
+<div style="position:absolute;left:150.56px;top:545.66px" class="cls_003"><span class="cls_003">Card card = popCard();</span></div>
+<div style="position:absolute;left:150.56px;top:560.83px" class="cls_003"><span class="cls_003">that.addCard(card);</span></div>
+<div style="position:absolute;left:125.95px;top:576.00px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:101.34px;top:591.17px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:617.19px" class="cls_003"><span class="cls_003">The deal method removes cards from the collection it is invoked on,</span><span class="cls_005"> this</span><span class="cls_003">,</span></div>
+<div style="position:absolute;left:86.40px;top:632.36px" class="cls_003"><span class="cls_003">and adds them to the collection it gets as a parameter, that.  The second</span></div>
+<div style="position:absolute;left:86.40px;top:647.53px" class="cls_003"><span class="cls_003">parameter, n, is the number of cards to deal.</span></div>
+<div style="position:absolute;left:86.40px;top:674.88px" class="cls_003"><span class="cls_003">To access the elements of an ArrayList, you can’t use the array [] operator.</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_003"><span class="cls_003">Instead, you have to use the methods get and set. Here is a wrapper for get:</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:3208px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="956ca3b6-5adb-11e9-9d71-0cc47a792c0a_id_956ca3b6-5adb-11e9-9d71-0cc47a792c0a_files/background05.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">14.3</span></div>
+<div style="position:absolute;left:166.96px;top:88.65px" class="cls_003"><span class="cls_003">Inheritance</span></div>
+<div style="position:absolute;left:505.42px;top:88.65px" class="cls_003"><span class="cls_003">219</span></div>
+<div style="position:absolute;left:144.54px;top:123.41px" class="cls_005"><span class="cls_005">public</span><span class="cls_003"> Card getCard(</span><span class="cls_005">int</span><span class="cls_003"> i) {</span></div>
+<div style="position:absolute;left:169.15px;top:138.57px" class="cls_005"><span class="cls_005">return</span><span class="cls_003"> cards.get(i);</span></div>
+<div style="position:absolute;left:144.54px;top:153.74px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:179.85px" class="cls_003"><span class="cls_003">The last method gets the last card (but doesn’t remove it):</span></div>
+<div style="position:absolute;left:144.54px;top:206.05px" class="cls_005"><span class="cls_005">public</span><span class="cls_003"> Card last() {</span></div>
+<div style="position:absolute;left:169.15px;top:221.22px" class="cls_005"><span class="cls_005">int</span><span class="cls_003"> i = size() - 1;</span></div>
+<div style="position:absolute;left:169.15px;top:236.39px" class="cls_005"><span class="cls_005">return</span><span class="cls_003"> cards.get(i);</span></div>
+<div style="position:absolute;left:144.54px;top:251.55px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:277.00px" class="cls_003"><span class="cls_003">In order to control the ways card collections are modified, we don’t provide</span></div>
+<div style="position:absolute;left:129.60px;top:292.17px" class="cls_003"><span class="cls_003">a wrapper for set.  The only modifiers we provide are the two versions of</span></div>
+<div style="position:absolute;left:129.60px;top:307.34px" class="cls_003"><span class="cls_003">popCard and the following version of swapCards:</span></div>
+<div style="position:absolute;left:144.54px;top:333.20px" class="cls_005"><span class="cls_005">public void</span><span class="cls_003"> swapCards(</span><span class="cls_005">int</span><span class="cls_003"> i,</span><span class="cls_005"> int</span><span class="cls_003"> j) {</span></div>
+<div style="position:absolute;left:169.15px;top:348.37px" class="cls_003"><span class="cls_003">Card temp = cards.get(i);</span></div>
+<div style="position:absolute;left:169.15px;top:363.54px" class="cls_003"><span class="cls_003">cards.set(i, cards.get(j));</span></div>
+<div style="position:absolute;left:169.15px;top:378.71px" class="cls_003"><span class="cls_003">cards.set(j, temp);</span></div>
+<div style="position:absolute;left:144.54px;top:393.87px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:419.32px" class="cls_003"><span class="cls_003">We use swapCards to implement shuffle, which we described in Section 13.2:</span></div>
+<div style="position:absolute;left:144.54px;top:445.19px" class="cls_005"><span class="cls_005">public void</span><span class="cls_003"> shuffle() {</span></div>
+<div style="position:absolute;left:169.15px;top:460.35px" class="cls_003"><span class="cls_003">Random random =</span><span class="cls_005"> new</span><span class="cls_003"> Random();</span></div>
+<div style="position:absolute;left:169.15px;top:475.52px" class="cls_005"><span class="cls_005">for</span><span class="cls_003"> (</span><span class="cls_005">int</span><span class="cls_003"> i = size() - 1; i > 0; i--) {</span></div>
+<div style="position:absolute;left:193.76px;top:490.69px" class="cls_005"><span class="cls_005">int</span><span class="cls_003"> j = random.nextInt(i);</span></div>
+<div style="position:absolute;left:193.76px;top:505.86px" class="cls_003"><span class="cls_003">swapCards(i, j);</span></div>
+<div style="position:absolute;left:169.15px;top:521.03px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:144.54px;top:536.20px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:561.64px" class="cls_003"><span class="cls_003">ArrayList provides additional methods we aren’t using here.  You can read</span></div>
+<div style="position:absolute;left:129.60px;top:576.81px" class="cls_003"><span class="cls_003">about them in the documentation, which you can find by doing a web search</span></div>
+<div style="position:absolute;left:129.60px;top:591.98px" class="cls_003"><span class="cls_003">for “Java ArrayList”.</span></div>
+<div style="position:absolute;left:129.60px;top:639.25px" class="cls_006"><span class="cls_006">14.3</span></div>
+<div style="position:absolute;left:183.40px;top:639.25px" class="cls_006"><span class="cls_006">Inheritance</span></div>
+<div style="position:absolute;left:129.60px;top:674.88px" class="cls_003"><span class="cls_003">At this point we have a class that represents a collection of cards. Next we’ll</span></div>
+<div style="position:absolute;left:129.60px;top:690.04px" class="cls_003"><span class="cls_003">use it to define Deck and Hand. Here is the complete definition of Deck:</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:4010px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="956ca3b6-5adb-11e9-9d71-0cc47a792c0a_id_956ca3b6-5adb-11e9-9d71-0cc47a792c0a_files/background06.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">220</span></div>
+<div style="position:absolute;left:296.38px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 14</span></div>
+<div style="position:absolute;left:375.81px;top:88.65px" class="cls_003"><span class="cls_003">Objects of objects</span></div>
+<div style="position:absolute;left:101.34px;top:123.41px" class="cls_005"><span class="cls_005">public class</span><span class="cls_003"> Deck</span><span class="cls_005"> extends</span><span class="cls_003"> CardCollection {</span></div>
+<div style="position:absolute;left:125.95px;top:153.74px" class="cls_005"><span class="cls_005">public</span><span class="cls_003"> Deck(String label) {</span></div>
+<div style="position:absolute;left:150.56px;top:168.91px" class="cls_005"><span class="cls_005">super</span><span class="cls_003">(label);</span></div>
+<div style="position:absolute;left:150.56px;top:199.25px" class="cls_005"><span class="cls_005">for</span><span class="cls_003"> (</span><span class="cls_005">int</span><span class="cls_003"> suit = 0; suit &lt;= 3; suit++) {</span></div>
+<div style="position:absolute;left:175.17px;top:214.41px" class="cls_005"><span class="cls_005">for</span><span class="cls_003"> (</span><span class="cls_005">int</span><span class="cls_003"> rank = 1; rank &lt;= 13; rank++) {</span></div>
+<div style="position:absolute;left:199.77px;top:229.58px" class="cls_003"><span class="cls_003">cards.add(</span><span class="cls_005">new</span><span class="cls_003"> Card(rank, suit));</span></div>
+<div style="position:absolute;left:175.17px;top:244.75px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:150.56px;top:259.92px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:125.95px;top:275.09px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:101.34px;top:290.26px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:313.73px" class="cls_003"><span class="cls_003">The first line uses the keyword</span><span class="cls_005"> extends</span><span class="cls_003"> to indicate that Deck extends the</span></div>
+<div style="position:absolute;left:86.40px;top:328.90px" class="cls_003"><span class="cls_003">class CardCollection.  That means a Deck object has the same instance</span></div>
+<div style="position:absolute;left:86.40px;top:344.07px" class="cls_003"><span class="cls_003">variables and methods as a CardCollection.  Another way to say the same</span></div>
+<div style="position:absolute;left:86.40px;top:359.24px" class="cls_003"><span class="cls_003">thing is that Deck “inherits from” CardCollection.  We could also say that</span></div>
+<div style="position:absolute;left:86.40px;top:374.41px" class="cls_003"><span class="cls_003">CardCollection is a superclass, and Deck is one of its subclasses.</span></div>
+<div style="position:absolute;left:86.40px;top:399.20px" class="cls_003"><span class="cls_003">In Java, classes may only extend one superclass. Classes that do not specify a</span></div>
+<div style="position:absolute;left:86.40px;top:414.37px" class="cls_003"><span class="cls_003">superclass with</span><span class="cls_005"> extends</span><span class="cls_003"> automatically inherit from java.lang.Object. So in</span></div>
+<div style="position:absolute;left:86.40px;top:429.54px" class="cls_003"><span class="cls_003">this example, Deck extends CardCollection, which in turn extends Object.</span></div>
+<div style="position:absolute;left:86.40px;top:444.71px" class="cls_003"><span class="cls_003">The Object class provides the default equals and toString methods, among</span></div>
+<div style="position:absolute;left:86.40px;top:459.88px" class="cls_003"><span class="cls_003">other things.</span></div>
+<div style="position:absolute;left:86.40px;top:484.68px" class="cls_003"><span class="cls_003">Constructors are not inherited, but all other</span><span class="cls_005"> public</span><span class="cls_003"> attributes and methods</span></div>
+<div style="position:absolute;left:86.40px;top:499.84px" class="cls_003"><span class="cls_003">are.  The only additional method in Deck, at least for now, is a constructor.</span></div>
+<div style="position:absolute;left:86.40px;top:515.01px" class="cls_003"><span class="cls_003">So you can create a Deck object like this:</span></div>
+<div style="position:absolute;left:101.34px;top:539.85px" class="cls_003"><span class="cls_003">Deck deck =</span><span class="cls_005"> new</span><span class="cls_003"> Deck(</span><span class="cls_007">"Deck"</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:86.40px;top:564.61px" class="cls_003"><span class="cls_003">The first line of the constructor uses something new,</span><span class="cls_005"> super</span><span class="cls_003">, which is a keyword</span></div>
+<div style="position:absolute;left:86.40px;top:579.78px" class="cls_003"><span class="cls_003">that refers to the superclass of the current class.  When</span><span class="cls_005"> super</span><span class="cls_003"> is used like a</span></div>
+<div style="position:absolute;left:86.40px;top:594.94px" class="cls_003"><span class="cls_003">method, as in this example, it invokes the constructor of the superclass.</span></div>
+<div style="position:absolute;left:86.40px;top:619.74px" class="cls_003"><span class="cls_003">So in this case,</span><span class="cls_005"> super</span><span class="cls_003"> invokes the CardCollection constructor, which initial-</span></div>
+<div style="position:absolute;left:86.40px;top:634.91px" class="cls_003"><span class="cls_003">izes the attributes label and cards.  When it returns, the Deck constructor</span></div>
+<div style="position:absolute;left:86.40px;top:650.08px" class="cls_003"><span class="cls_003">resumes and populates the (empty) ArrayList with Card objects.</span></div>
+<div style="position:absolute;left:86.40px;top:674.88px" class="cls_003"><span class="cls_003">That’s it for the Deck class. Next we need a way to represent a hand, which</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_003"><span class="cls_003">is the collection of cards held by a player, and a pile, which is a collection of</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:4812px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="956ca3b6-5adb-11e9-9d71-0cc47a792c0a_id_956ca3b6-5adb-11e9-9d71-0cc47a792c0a_files/background07.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">14.4</span></div>
+<div style="position:absolute;left:166.96px;top:88.65px" class="cls_003"><span class="cls_003">Dealing cards</span></div>
+<div style="position:absolute;left:505.43px;top:88.65px" class="cls_003"><span class="cls_003">221</span></div>
+<div style="position:absolute;left:129.60px;top:124.74px" class="cls_003"><span class="cls_003">cards on the table.  We could define two classes, one for hands and one for</span></div>
+<div style="position:absolute;left:129.60px;top:139.91px" class="cls_003"><span class="cls_003">piles, but there is not much difference between them. So we’ll use one class,</span></div>
+<div style="position:absolute;left:129.60px;top:155.08px" class="cls_003"><span class="cls_003">called Hand, for both hands and piles. Here’s what the definition looks like:</span></div>
+<div style="position:absolute;left:144.54px;top:180.83px" class="cls_005"><span class="cls_005">public class</span><span class="cls_003"> Hand</span><span class="cls_005"> extends</span><span class="cls_003"> CardCollection {</span></div>
+<div style="position:absolute;left:169.15px;top:211.17px" class="cls_005"><span class="cls_005">public</span><span class="cls_003"> Hand(String label) {</span></div>
+<div style="position:absolute;left:193.76px;top:226.33px" class="cls_005"><span class="cls_005">super</span><span class="cls_003">(label);</span></div>
+<div style="position:absolute;left:169.15px;top:241.50px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:169.15px;top:271.84px" class="cls_005"><span class="cls_005">public void</span><span class="cls_003"> display() {</span></div>
+<div style="position:absolute;left:193.76px;top:287.01px" class="cls_003"><span class="cls_003">System.out.println(getLabel() +</span><span class="cls_007"> ": "</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:193.76px;top:302.17px" class="cls_005"><span class="cls_005">for</span><span class="cls_003"> (</span><span class="cls_005">int</span><span class="cls_003"> i = 0; i &lt; size(); i++) {</span></div>
+<div style="position:absolute;left:218.37px;top:317.34px" class="cls_003"><span class="cls_003">System.out.println(getCard(i));</span></div>
+<div style="position:absolute;left:193.76px;top:332.51px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:193.76px;top:347.68px" class="cls_003"><span class="cls_003">System.out.println();</span></div>
+<div style="position:absolute;left:169.15px;top:362.85px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:144.54px;top:378.02px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:403.68px" class="cls_003"><span class="cls_003">Like Deck, Hand extends CardCollection, so it inherits methods like getLabel,</span></div>
+<div style="position:absolute;left:129.60px;top:418.84px" class="cls_003"><span class="cls_003">size, and getCard, which are used in display. Hand also provides a construc-</span></div>
+<div style="position:absolute;left:129.60px;top:434.01px" class="cls_003"><span class="cls_003">tor, which invokes the constructor of CardCollection (and nothing else).</span></div>
+<div style="position:absolute;left:129.60px;top:460.99px" class="cls_003"><span class="cls_003">In summary, a Deck is just like a CardCollection, but it provides a different</span></div>
+<div style="position:absolute;left:129.60px;top:476.16px" class="cls_003"><span class="cls_003">constructor.  And a Hand is just like a CardCollection, but it provides an</span></div>
+<div style="position:absolute;left:129.60px;top:491.33px" class="cls_003"><span class="cls_003">additional method, display.</span></div>
+<div style="position:absolute;left:129.60px;top:538.87px" class="cls_006"><span class="cls_006">14.4</span></div>
+<div style="position:absolute;left:183.40px;top:538.87px" class="cls_006"><span class="cls_006">Dealing cards</span></div>
+<div style="position:absolute;left:129.60px;top:574.71px" class="cls_003"><span class="cls_003">At this point we can create a Deck and start dealing cards.  Here’s a simple</span></div>
+<div style="position:absolute;left:129.60px;top:589.88px" class="cls_003"><span class="cls_003">example that deals five cards to a hand, and deals the rest into a draw pile:</span></div>
+<div style="position:absolute;left:144.54px;top:615.63px" class="cls_003"><span class="cls_003">Deck deck =</span><span class="cls_005"> new</span><span class="cls_003"> Deck(</span><span class="cls_007">"Deck"</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:144.54px;top:630.80px" class="cls_003"><span class="cls_003">deck.shuffle();</span></div>
+<div style="position:absolute;left:144.54px;top:661.14px" class="cls_003"><span class="cls_003">Hand hand =</span><span class="cls_005"> new</span><span class="cls_003"> Hand(</span><span class="cls_007">"Hand"</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:144.54px;top:676.30px" class="cls_003"><span class="cls_003">deck.deal(hand, 5);</span></div>
+<div style="position:absolute;left:144.54px;top:691.47px" class="cls_003"><span class="cls_003">hand.display();</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:5614px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="956ca3b6-5adb-11e9-9d71-0cc47a792c0a_id_956ca3b6-5adb-11e9-9d71-0cc47a792c0a_files/background08.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">222</span></div>
+<div style="position:absolute;left:296.38px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 14</span></div>
+<div style="position:absolute;left:375.81px;top:88.65px" class="cls_003"><span class="cls_003">Objects of objects</span></div>
+<div style="position:absolute;left:101.34px;top:123.41px" class="cls_003"><span class="cls_003">Hand drawPile =</span><span class="cls_005"> new</span><span class="cls_003"> Hand(</span><span class="cls_007">"Draw Pile"</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:101.34px;top:138.57px" class="cls_003"><span class="cls_003">deck.dealAll(drawPile);</span></div>
+<div style="position:absolute;left:101.34px;top:153.74px" class="cls_003"><span class="cls_003">System.out.printf(</span><span class="cls_007">"Draw Pile has %d cards.\n"</span><span class="cls_003">,</span></div>
+<div style="position:absolute;left:212.08px;top:168.91px" class="cls_003"><span class="cls_003">drawPile.size());</span></div>
+<div style="position:absolute;left:86.40px;top:196.22px" class="cls_003"><span class="cls_003">CardCollection provides dealAll, which deals all of the remaining cards.</span></div>
+<div style="position:absolute;left:86.40px;top:211.39px" class="cls_003"><span class="cls_003">Here’s the output of the previous example:</span></div>
+<div style="position:absolute;left:101.34px;top:238.79px" class="cls_003"><span class="cls_003">Hand:</span></div>
+<div style="position:absolute;left:101.34px;top:253.96px" class="cls_003"><span class="cls_003">5 of Diamonds</span></div>
+<div style="position:absolute;left:101.34px;top:269.13px" class="cls_003"><span class="cls_003">Ace of Hearts</span></div>
+<div style="position:absolute;left:101.34px;top:284.30px" class="cls_003"><span class="cls_003">6 of Clubs</span></div>
+<div style="position:absolute;left:101.34px;top:299.47px" class="cls_003"><span class="cls_003">6 of Diamonds</span></div>
+<div style="position:absolute;left:101.34px;top:314.64px" class="cls_003"><span class="cls_003">2 of Clubs</span></div>
+<div style="position:absolute;left:101.34px;top:344.97px" class="cls_003"><span class="cls_003">Draw Pile has 47 cards.</span></div>
+<div style="position:absolute;left:86.40px;top:372.29px" class="cls_003"><span class="cls_003">Of course, if you run this example you will probably get a different hand,</span></div>
+<div style="position:absolute;left:86.40px;top:387.45px" class="cls_003"><span class="cls_003">because the deck is shuffled randomly.</span></div>
+<div style="position:absolute;left:86.40px;top:416.09px" class="cls_003"><span class="cls_003">If you are a careful reader, you might notice something strange about this</span></div>
+<div style="position:absolute;left:86.40px;top:431.25px" class="cls_003"><span class="cls_003">example. Take another look at the definition of deal:</span></div>
+<div style="position:absolute;left:101.34px;top:458.66px" class="cls_005"><span class="cls_005">public void</span><span class="cls_003"> deal(CardCollection that,</span><span class="cls_005"> int</span><span class="cls_003"> n) {</span></div>
+<div style="position:absolute;left:125.95px;top:473.83px" class="cls_005"><span class="cls_005">for</span><span class="cls_003"> (</span><span class="cls_005">int</span><span class="cls_003"> i = 0; i &lt; n; i++) {</span></div>
+<div style="position:absolute;left:150.56px;top:488.99px" class="cls_003"><span class="cls_003">Card card = popCard();</span></div>
+<div style="position:absolute;left:150.56px;top:504.16px" class="cls_003"><span class="cls_003">that.addCard(card);</span></div>
+<div style="position:absolute;left:125.95px;top:519.33px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:101.34px;top:534.50px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:561.81px" class="cls_003"><span class="cls_003">Notice that the first parameter is supposed to be a CardCollection. But we</span></div>
+<div style="position:absolute;left:86.40px;top:576.98px" class="cls_003"><span class="cls_003">invoked it like this:</span></div>
+<div style="position:absolute;left:101.34px;top:602.06px" class="cls_003"><span class="cls_003">Hand hand =</span><span class="cls_005"> new</span><span class="cls_003"> Hand(</span><span class="cls_007">"Hand"</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:101.34px;top:617.23px" class="cls_003"><span class="cls_003">deck.deal(hand, 5);</span></div>
+<div style="position:absolute;left:86.40px;top:644.54px" class="cls_003"><span class="cls_003">The argument is a Hand, not a CardCollection.  So why is this example</span></div>
+<div style="position:absolute;left:86.40px;top:659.71px" class="cls_003"><span class="cls_003">legal?  It’s because Hand is a subclass of CardCollection, so a Hand object</span></div>
+<div style="position:absolute;left:86.40px;top:674.88px" class="cls_003"><span class="cls_003">is also considered to be a CardCollection object.  If a method expects a</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_003"><span class="cls_003">CardCollection, you can give it a Hand, a Deck, or a CardCollection.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:6416px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="956ca3b6-5adb-11e9-9d71-0cc47a792c0a_id_956ca3b6-5adb-11e9-9d71-0cc47a792c0a_files/background09.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">14.5</span></div>
+<div style="position:absolute;left:166.96px;top:88.65px" class="cls_003"><span class="cls_003">The Player class</span></div>
+<div style="position:absolute;left:505.42px;top:88.65px" class="cls_003"><span class="cls_003">223</span></div>
+<div style="position:absolute;left:129.60px;top:124.74px" class="cls_003"><span class="cls_003">But it doesn’t work the other way around:  not every CardCollection is</span></div>
+<div style="position:absolute;left:129.60px;top:139.91px" class="cls_003"><span class="cls_003">a Hand, so if a method expects a Hand, you have to give it a Hand, not a</span></div>
+<div style="position:absolute;left:129.60px;top:155.08px" class="cls_003"><span class="cls_003">CardCollection.</span></div>
+<div style="position:absolute;left:129.60px;top:183.90px" class="cls_003"><span class="cls_003">If it seems strange that an object can belong to more than one type, remember</span></div>
+<div style="position:absolute;left:129.60px;top:199.07px" class="cls_003"><span class="cls_003">that this happens in real life, too.  Every cat is also a mammal, and every</span></div>
+<div style="position:absolute;left:129.60px;top:214.23px" class="cls_003"><span class="cls_003">mammal is also an animal. But not every animal is a mammal, and not every</span></div>
+<div style="position:absolute;left:129.60px;top:229.40px" class="cls_003"><span class="cls_003">mammal is a cat.</span></div>
+<div style="position:absolute;left:129.60px;top:281.01px" class="cls_006"><span class="cls_006">14.5</span></div>
+<div style="position:absolute;left:183.40px;top:281.01px" class="cls_006"><span class="cls_006">The Player class</span></div>
+<div style="position:absolute;left:129.60px;top:319.13px" class="cls_003"><span class="cls_003">The classes we have defined so far could be used for any card game; we have</span></div>
+<div style="position:absolute;left:129.60px;top:334.30px" class="cls_003"><span class="cls_003">not yet implemented any of the rules specific to Crazy Eights.  And that’s</span></div>
+<div style="position:absolute;left:129.60px;top:349.47px" class="cls_003"><span class="cls_003">probably a good thing, since it makes it easy to reuse these classes if we want</span></div>
+<div style="position:absolute;left:129.60px;top:364.63px" class="cls_003"><span class="cls_003">to make another game in the future.</span></div>
+<div style="position:absolute;left:129.60px;top:393.45px" class="cls_003"><span class="cls_003">But now it’s time to implement the rules.  We’ll use two classes:  Player,</span></div>
+<div style="position:absolute;left:129.60px;top:408.62px" class="cls_003"><span class="cls_003">which encapsulates player strategy, and Eights, which creates and maintains</span></div>
+<div style="position:absolute;left:129.60px;top:423.79px" class="cls_003"><span class="cls_003">the state of the game. Here is the beginning of the Player definition:</span></div>
+<div style="position:absolute;left:144.54px;top:451.71px" class="cls_005"><span class="cls_005">public class</span><span class="cls_003"> Player {</span></div>
+<div style="position:absolute;left:169.15px;top:482.05px" class="cls_005"><span class="cls_005">private</span><span class="cls_003"> String name;</span></div>
+<div style="position:absolute;left:169.15px;top:497.21px" class="cls_005"><span class="cls_005">private</span><span class="cls_003"> Hand hand;</span></div>
+<div style="position:absolute;left:169.15px;top:527.55px" class="cls_005"><span class="cls_005">public</span><span class="cls_003"> Player(String name) {</span></div>
+<div style="position:absolute;left:193.76px;top:542.72px" class="cls_005"><span class="cls_005">this</span><span class="cls_003">.name = name;</span></div>
+<div style="position:absolute;left:193.76px;top:557.89px" class="cls_005"><span class="cls_005">this</span><span class="cls_003">.hand =</span><span class="cls_005"> new</span><span class="cls_003"> Hand(name);</span></div>
+<div style="position:absolute;left:169.15px;top:573.05px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:600.55px" class="cls_003"><span class="cls_003">A Player has two</span><span class="cls_005"> private</span><span class="cls_003"> attributes: a name and a hand. The constructor</span></div>
+<div style="position:absolute;left:129.60px;top:615.72px" class="cls_003"><span class="cls_003">takes the player’s name as a string and saves it in an instance variable. In this</span></div>
+<div style="position:absolute;left:129.60px;top:630.89px" class="cls_003"><span class="cls_003">example, we have to use</span><span class="cls_005"> this</span><span class="cls_003"> to distinguish between the instance variable and</span></div>
+<div style="position:absolute;left:129.60px;top:646.06px" class="cls_003"><span class="cls_003">the parameter with the same name.</span></div>
+<div style="position:absolute;left:129.60px;top:674.88px" class="cls_003"><span class="cls_003">The primary method that Player provides is play, which decides which card</span></div>
+<div style="position:absolute;left:129.60px;top:690.04px" class="cls_003"><span class="cls_003">to discard during each turn:</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:7218px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="956ca3b6-5adb-11e9-9d71-0cc47a792c0a_id_956ca3b6-5adb-11e9-9d71-0cc47a792c0a_files/background10.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">224</span></div>
+<div style="position:absolute;left:296.38px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 14</span></div>
+<div style="position:absolute;left:375.81px;top:88.65px" class="cls_003"><span class="cls_003">Objects of objects</span></div>
+<div style="position:absolute;left:101.34px;top:123.41px" class="cls_005"><span class="cls_005">public</span><span class="cls_003"> Card play(Eights eights, Card prev) {</span></div>
+<div style="position:absolute;left:125.95px;top:138.57px" class="cls_003"><span class="cls_003">Card card = searchForMatch(prev);</span></div>
+<div style="position:absolute;left:125.95px;top:153.74px" class="cls_005"><span class="cls_005">if</span><span class="cls_003"> (card ==</span><span class="cls_005"> null</span><span class="cls_003">) {</span></div>
+<div style="position:absolute;left:150.56px;top:168.91px" class="cls_003"><span class="cls_003">card = drawForMatch(eights, prev);</span></div>
+<div style="position:absolute;left:125.95px;top:184.08px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:125.95px;top:199.25px" class="cls_005"><span class="cls_005">return</span><span class="cls_003"> card;</span></div>
+<div style="position:absolute;left:101.34px;top:214.41px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:239.75px" class="cls_003"><span class="cls_003">The first parameter is a reference to the Eights object that encapsulates the</span></div>
+<div style="position:absolute;left:86.40px;top:254.92px" class="cls_003"><span class="cls_003">state of the game. We’ll need it if we have to draw a new card. The second</span></div>
+<div style="position:absolute;left:86.40px;top:270.09px" class="cls_003"><span class="cls_003">parameter, prev, is the card on top of the discard pile.</span></div>
+<div style="position:absolute;left:86.40px;top:296.75px" class="cls_003"><span class="cls_003">Using top-down development, we’ll have play invoke two helper methods,</span></div>
+<div style="position:absolute;left:86.40px;top:311.91px" class="cls_003"><span class="cls_003">searchForMatch and drawForMatch.  searchForMatch looks in the player’s</span></div>
+<div style="position:absolute;left:86.40px;top:327.08px" class="cls_003"><span class="cls_003">hand for a card that matches the previously played card:</span></div>
+<div style="position:absolute;left:101.34px;top:352.51px" class="cls_005"><span class="cls_005">public</span><span class="cls_003"> Card searchForMatch(Card prev) {</span></div>
+<div style="position:absolute;left:125.95px;top:367.68px" class="cls_005"><span class="cls_005">for</span><span class="cls_003"> (</span><span class="cls_005">int</span><span class="cls_003"> i = 0; i &lt; hand.size(); i++) {</span></div>
+<div style="position:absolute;left:150.56px;top:382.85px" class="cls_003"><span class="cls_003">Card card = hand.getCard(i);</span></div>
+<div style="position:absolute;left:150.56px;top:398.02px" class="cls_005"><span class="cls_005">if</span><span class="cls_003"> (cardMatches(card, prev)) {</span></div>
+<div style="position:absolute;left:175.17px;top:413.18px" class="cls_005"><span class="cls_005">return</span><span class="cls_003"> hand.popCard(i);</span></div>
+<div style="position:absolute;left:150.56px;top:428.35px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:125.95px;top:443.52px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:125.95px;top:458.69px" class="cls_005"><span class="cls_005">return null</span><span class="cls_003">;</span></div>
+<div style="position:absolute;left:101.34px;top:473.86px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:499.19px" class="cls_003"><span class="cls_003">The strategy is pretty simple: the</span><span class="cls_005"> for</span><span class="cls_003"> loop searches for the first card that’s</span></div>
+<div style="position:absolute;left:86.40px;top:514.36px" class="cls_003"><span class="cls_003">legal to play and returns it. If there are no cards that match, it returns</span><span class="cls_005"> null</span><span class="cls_003">.</span></div>
+<div style="position:absolute;left:86.40px;top:529.53px" class="cls_003"><span class="cls_003">And in that case, we have to draw cards until we get a match:</span></div>
+<div style="position:absolute;left:101.34px;top:554.96px" class="cls_005"><span class="cls_005">public</span><span class="cls_003"> Card drawForMatch(Eights eights, Card prev) {</span></div>
+<div style="position:absolute;left:125.95px;top:570.13px" class="cls_005"><span class="cls_005">while</span><span class="cls_003"> (</span><span class="cls_005">true</span><span class="cls_003">) {</span></div>
+<div style="position:absolute;left:150.56px;top:585.29px" class="cls_003"><span class="cls_003">Card card = eights.draw();</span></div>
+<div style="position:absolute;left:150.56px;top:600.46px" class="cls_003"><span class="cls_003">System.out.println(name +</span><span class="cls_007"> " draws "</span><span class="cls_003"> + card);</span></div>
+<div style="position:absolute;left:150.56px;top:615.63px" class="cls_005"><span class="cls_005">if</span><span class="cls_003"> (cardMatches(card, prev)) {</span></div>
+<div style="position:absolute;left:175.17px;top:630.80px" class="cls_005"><span class="cls_005">return</span><span class="cls_003"> card;</span></div>
+<div style="position:absolute;left:150.56px;top:645.97px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:150.56px;top:661.14px" class="cls_003"><span class="cls_003">hand.addCard(card);</span></div>
+<div style="position:absolute;left:125.95px;top:676.30px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:101.34px;top:691.47px" class="cls_003"><span class="cls_003">}</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:8020px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="956ca3b6-5adb-11e9-9d71-0cc47a792c0a_id_956ca3b6-5adb-11e9-9d71-0cc47a792c0a_files/background11.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">14.5</span></div>
+<div style="position:absolute;left:166.96px;top:88.65px" class="cls_003"><span class="cls_003">The Player class</span></div>
+<div style="position:absolute;left:505.42px;top:88.65px" class="cls_003"><span class="cls_003">225</span></div>
+<div style="position:absolute;left:129.60px;top:124.74px" class="cls_003"><span class="cls_003">The</span><span class="cls_005"> while</span><span class="cls_003"> loop runs until it finds a match (we’ll assume for now that it always</span></div>
+<div style="position:absolute;left:129.60px;top:139.91px" class="cls_003"><span class="cls_003">does). It uses the Eights object to draw a card. If it matches, it returns the</span></div>
+<div style="position:absolute;left:129.60px;top:155.08px" class="cls_003"><span class="cls_003">card. Otherwise it adds the card to the player’s hand and continues.</span></div>
+<div style="position:absolute;left:129.60px;top:183.95px" class="cls_003"><span class="cls_003">Both searchForMatch and drawForMatch use cardMatches, which is a static</span></div>
+<div style="position:absolute;left:129.60px;top:199.11px" class="cls_003"><span class="cls_003">method, also defined in Player. cardMatches is a straightforward translation</span></div>
+<div style="position:absolute;left:129.60px;top:214.28px" class="cls_003"><span class="cls_003">of the rules of the game:</span></div>
+<div style="position:absolute;left:144.54px;top:241.92px" class="cls_005"><span class="cls_005">public static boolean</span><span class="cls_003"> cardMatches(Card card1, Card card2) {</span></div>
+<div style="position:absolute;left:169.15px;top:257.09px" class="cls_005"><span class="cls_005">if</span><span class="cls_003"> (card1.getSuit() == card2.getSuit()) {</span></div>
+<div style="position:absolute;left:193.76px;top:272.25px" class="cls_005"><span class="cls_005">return true</span><span class="cls_003">;</span></div>
+<div style="position:absolute;left:169.15px;top:287.42px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:169.15px;top:302.59px" class="cls_005"><span class="cls_005">if</span><span class="cls_003"> (card1.getRank() == card2.getRank()) {</span></div>
+<div style="position:absolute;left:193.76px;top:317.76px" class="cls_005"><span class="cls_005">return true</span><span class="cls_003">;</span></div>
+<div style="position:absolute;left:169.15px;top:332.93px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:169.15px;top:348.09px" class="cls_005"><span class="cls_005">if</span><span class="cls_003"> (card1.getRank() == 8) {</span></div>
+<div style="position:absolute;left:193.76px;top:363.26px" class="cls_005"><span class="cls_005">return true</span><span class="cls_003">;</span></div>
+<div style="position:absolute;left:169.15px;top:378.43px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:169.15px;top:393.60px" class="cls_005"><span class="cls_005">return false</span><span class="cls_003">;</span></div>
+<div style="position:absolute;left:144.54px;top:408.77px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:436.31px" class="cls_003"><span class="cls_003">Finally, Player provides score, which computes penalty points for cards left</span></div>
+<div style="position:absolute;left:129.60px;top:451.48px" class="cls_003"><span class="cls_003">in a player’s hand at the end of the game:</span></div>
+<div style="position:absolute;left:144.54px;top:479.12px" class="cls_005"><span class="cls_005">public int</span><span class="cls_003"> score() {</span></div>
+<div style="position:absolute;left:169.15px;top:494.29px" class="cls_005"><span class="cls_005">int</span><span class="cls_003"> sum = 0;</span></div>
+<div style="position:absolute;left:169.15px;top:509.45px" class="cls_005"><span class="cls_005">for</span><span class="cls_003"> (</span><span class="cls_005">int</span><span class="cls_003"> i = 0; i &lt; hand.size(); i++) {</span></div>
+<div style="position:absolute;left:193.76px;top:524.62px" class="cls_003"><span class="cls_003">Card card = hand.getCard(i);</span></div>
+<div style="position:absolute;left:193.76px;top:539.79px" class="cls_005"><span class="cls_005">int</span><span class="cls_003"> rank = card.getRank();</span></div>
+<div style="position:absolute;left:193.76px;top:554.96px" class="cls_005"><span class="cls_005">if</span><span class="cls_003"> (rank == 8) {</span></div>
+<div style="position:absolute;left:218.37px;top:570.13px" class="cls_003"><span class="cls_003">sum -= 20;</span></div>
+<div style="position:absolute;left:193.76px;top:585.29px" class="cls_003"><span class="cls_003">}</span><span class="cls_005"> else if</span><span class="cls_003"> (rank > 10) {</span></div>
+<div style="position:absolute;left:218.37px;top:600.46px" class="cls_003"><span class="cls_003">sum -= 10;</span></div>
+<div style="position:absolute;left:193.76px;top:615.63px" class="cls_003"><span class="cls_003">}</span><span class="cls_005"> else</span><span class="cls_003"> {</span></div>
+<div style="position:absolute;left:218.37px;top:630.80px" class="cls_003"><span class="cls_003">sum -= rank;</span></div>
+<div style="position:absolute;left:193.76px;top:645.97px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:169.15px;top:661.14px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:169.15px;top:676.30px" class="cls_005"><span class="cls_005">return</span><span class="cls_003"> sum;</span></div>
+<div style="position:absolute;left:144.54px;top:691.47px" class="cls_003"><span class="cls_003">}</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:8822px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="956ca3b6-5adb-11e9-9d71-0cc47a792c0a_id_956ca3b6-5adb-11e9-9d71-0cc47a792c0a_files/background12.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">226</span></div>
+<div style="position:absolute;left:296.38px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 14</span></div>
+<div style="position:absolute;left:375.81px;top:88.65px" class="cls_003"><span class="cls_003">Objects of objects</span></div>
+<div style="position:absolute;left:86.40px;top:119.48px" class="cls_006"><span class="cls_006">14.6</span></div>
+<div style="position:absolute;left:140.20px;top:119.48px" class="cls_006"><span class="cls_006">The Eights class</span></div>
+<div style="position:absolute;left:86.40px;top:156.88px" class="cls_003"><span class="cls_003">In Section 13.2 we introduced top-down development, which is a way of de-</span></div>
+<div style="position:absolute;left:86.40px;top:172.05px" class="cls_003"><span class="cls_003">veloping programs by identifying high-level goals, like shuffling a deck, and</span></div>
+<div style="position:absolute;left:86.40px;top:187.22px" class="cls_003"><span class="cls_003">breaking them into smaller problems, like finding the lowest element in an</span></div>
+<div style="position:absolute;left:86.40px;top:202.39px" class="cls_003"><span class="cls_003">array or swapping two elements.</span></div>
+<div style="position:absolute;left:86.40px;top:230.63px" class="cls_003"><span class="cls_003">In this section we present bottom-up development, which goes the other</span></div>
+<div style="position:absolute;left:86.40px;top:245.80px" class="cls_003"><span class="cls_003">way around: first we identify simple pieces we need, then we assemble them</span></div>
+<div style="position:absolute;left:86.40px;top:260.97px" class="cls_003"><span class="cls_003">into more complex algorithms.</span></div>
+<div style="position:absolute;left:86.40px;top:289.21px" class="cls_003"><span class="cls_003">Looking at the rules of Crazy Eights, we can identify some methods we’ll need:</span></div>
+<div style="position:absolute;left:103.96px;top:323.13px" class="cls_004"><span class="cls_004"></span><span class="cls_003"> Create the deck, the discard and draw piles, and the player objects.</span></div>
+<div style="position:absolute;left:103.96px;top:349.66px" class="cls_004"><span class="cls_004"></span><span class="cls_003"> Deal the cards.</span></div>
+<div style="position:absolute;left:103.96px;top:376.20px" class="cls_004"><span class="cls_004"></span><span class="cls_003"> Check whether the game is over.</span></div>
+<div style="position:absolute;left:103.96px;top:402.73px" class="cls_004"><span class="cls_004"></span><span class="cls_003"> If the draw pile is empty, shuffle the discard pile and move the cards into</span></div>
+<div style="position:absolute;left:115.67px;top:417.90px" class="cls_003"><span class="cls_003">the draw pile.</span></div>
+<div style="position:absolute;left:103.96px;top:444.43px" class="cls_004"><span class="cls_004"></span><span class="cls_003"> Draw a card.</span></div>
+<div style="position:absolute;left:103.96px;top:470.96px" class="cls_004"><span class="cls_004"></span><span class="cls_003"> Keep track of whose turn it is and switch from one player to the next.</span></div>
+<div style="position:absolute;left:103.96px;top:497.50px" class="cls_004"><span class="cls_004"></span><span class="cls_003"> Display the state of the game.</span></div>
+<div style="position:absolute;left:103.96px;top:524.03px" class="cls_004"><span class="cls_004"></span><span class="cls_003"> Wait for the user before running the next turn.</span></div>
+<div style="position:absolute;left:86.40px;top:557.95px" class="cls_003"><span class="cls_003">Now we can start implementing the pieces. Here is the beginning of the class</span></div>
+<div style="position:absolute;left:86.40px;top:573.11px" class="cls_003"><span class="cls_003">definition for Eights, which encapsulates the state of the game:</span></div>
+<div style="position:absolute;left:101.34px;top:600.46px" class="cls_005"><span class="cls_005">public class</span><span class="cls_003"> Eights {</span></div>
+<div style="position:absolute;left:125.95px;top:630.80px" class="cls_005"><span class="cls_005">private</span><span class="cls_003"> Player one;</span></div>
+<div style="position:absolute;left:125.95px;top:645.97px" class="cls_005"><span class="cls_005">private</span><span class="cls_003"> Player two;</span></div>
+<div style="position:absolute;left:125.95px;top:661.14px" class="cls_005"><span class="cls_005">private</span><span class="cls_003"> Hand drawPile;</span></div>
+<div style="position:absolute;left:125.95px;top:676.30px" class="cls_005"><span class="cls_005">private</span><span class="cls_003"> Hand discardPile;</span></div>
+<div style="position:absolute;left:125.95px;top:691.47px" class="cls_005"><span class="cls_005">private</span><span class="cls_003"> Scanner in;</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:9624px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="956ca3b6-5adb-11e9-9d71-0cc47a792c0a_id_956ca3b6-5adb-11e9-9d71-0cc47a792c0a_files/background13.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">14.6</span></div>
+<div style="position:absolute;left:166.96px;top:88.65px" class="cls_003"><span class="cls_003">The Eights class</span></div>
+<div style="position:absolute;left:505.43px;top:88.65px" class="cls_003"><span class="cls_003">227</span></div>
+<div style="position:absolute;left:129.60px;top:124.74px" class="cls_003"><span class="cls_003">In this version, there are always two players. One of the exercises at the end</span></div>
+<div style="position:absolute;left:129.60px;top:139.91px" class="cls_003"><span class="cls_003">of the chapter asks you to modify this code to handle more players.</span></div>
+<div style="position:absolute;left:129.60px;top:178.62px" class="cls_003"><span class="cls_003">The last instance variable is a Scanner that we’ll use to prompt the user after</span></div>
+<div style="position:absolute;left:129.60px;top:193.78px" class="cls_003"><span class="cls_003">each move.  Here’s a constructor that initializes</span></div>
+<div style="position:absolute;left:388.18px;top:193.78px" class="cls_003"><span class="cls_003">the instance</span></div>
+<div style="position:absolute;left:456.79px;top:193.78px" class="cls_003"><span class="cls_003">variables</span></div>
+<div style="position:absolute;left:506.74px;top:193.78px" class="cls_003"><span class="cls_003">and</span></div>
+<div style="position:absolute;left:129.60px;top:208.95px" class="cls_003"><span class="cls_003">deals the cards:</span></div>
+<div style="position:absolute;left:144.54px;top:244.10px" class="cls_005"><span class="cls_005">public</span><span class="cls_003"> Eights() {</span></div>
+<div style="position:absolute;left:169.15px;top:259.27px" class="cls_003"><span class="cls_003">Deck deck =</span><span class="cls_005"> new</span><span class="cls_003"> Deck(</span><span class="cls_007">"Deck"</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:169.15px;top:274.44px" class="cls_003"><span class="cls_003">deck.shuffle();</span></div>
+<div style="position:absolute;left:169.15px;top:304.77px" class="cls_005"><span class="cls_005">int</span><span class="cls_003"> handSize = 5;</span></div>
+<div style="position:absolute;left:169.15px;top:319.94px" class="cls_003"><span class="cls_003">one =</span><span class="cls_005"> new</span><span class="cls_003"> Player(</span><span class="cls_007">"Allen"</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:169.15px;top:335.11px" class="cls_003"><span class="cls_003">deck.deal(one.getHand(), handSize);</span></div>
+<div style="position:absolute;left:169.15px;top:365.45px" class="cls_003"><span class="cls_003">two =</span><span class="cls_005"> new</span><span class="cls_003"> Player(</span><span class="cls_007">"Chris"</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:169.15px;top:380.61px" class="cls_003"><span class="cls_003">deck.deal(two.getHand(), handSize);</span></div>
+<div style="position:absolute;left:169.15px;top:410.95px" class="cls_003"><span class="cls_003">discardPile =</span><span class="cls_005"> new</span><span class="cls_003"> Hand(</span><span class="cls_007">"Discards"</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:169.15px;top:426.12px" class="cls_003"><span class="cls_003">deck.deal(discardPile, 1);</span></div>
+<div style="position:absolute;left:169.15px;top:456.46px" class="cls_003"><span class="cls_003">drawPile =</span><span class="cls_005"> new</span><span class="cls_003"> Hand(</span><span class="cls_007">"Draw pile"</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:169.15px;top:471.62px" class="cls_003"><span class="cls_003">deck.dealAll(drawPile);</span></div>
+<div style="position:absolute;left:169.15px;top:501.96px" class="cls_003"><span class="cls_003">in =</span><span class="cls_005"> new</span><span class="cls_003"> Scanner(System.in);</span></div>
+<div style="position:absolute;left:144.54px;top:517.13px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:554.51px" class="cls_003"><span class="cls_003">The next piece we’ll need is a method that checks whether the game is over.</span></div>
+<div style="position:absolute;left:129.60px;top:569.68px" class="cls_003"><span class="cls_003">If either hand is empty, we’re done:</span></div>
+<div style="position:absolute;left:144.54px;top:607.16px" class="cls_005"><span class="cls_005">public boolean</span><span class="cls_003"> isDone() {</span></div>
+<div style="position:absolute;left:169.15px;top:622.32px" class="cls_005"><span class="cls_005">return</span><span class="cls_003"> one.getHand().empty() || two.getHand().empty();</span></div>
+<div style="position:absolute;left:144.54px;top:637.49px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:674.88px" class="cls_003"><span class="cls_003">When the draw pile is empty, we have to shuffle the discard pile.  Here is a</span></div>
+<div style="position:absolute;left:129.60px;top:690.04px" class="cls_003"><span class="cls_003">method for that:</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:10426px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="956ca3b6-5adb-11e9-9d71-0cc47a792c0a_id_956ca3b6-5adb-11e9-9d71-0cc47a792c0a_files/background14.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">228</span></div>
+<div style="position:absolute;left:296.38px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 14</span></div>
+<div style="position:absolute;left:375.81px;top:88.65px" class="cls_003"><span class="cls_003">Objects of objects</span></div>
+<div style="position:absolute;left:101.34px;top:123.41px" class="cls_005"><span class="cls_005">public void</span><span class="cls_003"> reshuffle() {</span></div>
+<div style="position:absolute;left:125.95px;top:138.57px" class="cls_003"><span class="cls_003">Card prev = discardPile.popCard();</span></div>
+<div style="position:absolute;left:125.95px;top:153.74px" class="cls_003"><span class="cls_003">discardPile.dealAll(drawPile);</span></div>
+<div style="position:absolute;left:125.95px;top:168.91px" class="cls_003"><span class="cls_003">discardPile.addCard(prev);</span></div>
+<div style="position:absolute;left:125.95px;top:184.08px" class="cls_003"><span class="cls_003">drawPile.shuffle();</span></div>
+<div style="position:absolute;left:101.34px;top:199.25px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:222.45px" class="cls_003"><span class="cls_003">The first line saves the top card from discardPile.  The next line transfers</span></div>
+<div style="position:absolute;left:86.40px;top:237.62px" class="cls_003"><span class="cls_003">the rest of the cards to drawPile.  Then we put the saved card back into</span></div>
+<div style="position:absolute;left:86.40px;top:252.79px" class="cls_003"><span class="cls_003">discardPile and shuffle drawPile.</span></div>
+<div style="position:absolute;left:86.40px;top:277.31px" class="cls_003"><span class="cls_003">Now we can use reshuffle as part of draw:</span></div>
+<div style="position:absolute;left:101.34px;top:300.60px" class="cls_005"><span class="cls_005">public</span><span class="cls_003"> Card draw() {</span></div>
+<div style="position:absolute;left:125.95px;top:315.77px" class="cls_005"><span class="cls_005">if</span><span class="cls_003"> (drawPile.empty()) {</span></div>
+<div style="position:absolute;left:150.56px;top:330.94px" class="cls_003"><span class="cls_003">reshuffle();</span></div>
+<div style="position:absolute;left:125.95px;top:346.10px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:125.95px;top:361.27px" class="cls_005"><span class="cls_005">return</span><span class="cls_003"> drawPile.popCard();</span></div>
+<div style="position:absolute;left:101.34px;top:376.44px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:399.64px" class="cls_003"><span class="cls_003">We can switch from one player to the next like this:</span></div>
+<div style="position:absolute;left:101.34px;top:422.94px" class="cls_005"><span class="cls_005">public</span><span class="cls_003"> Player nextPlayer(Player current) {</span></div>
+<div style="position:absolute;left:125.95px;top:438.10px" class="cls_005"><span class="cls_005">if</span><span class="cls_003"> (current == one) {</span></div>
+<div style="position:absolute;left:150.56px;top:453.27px" class="cls_005"><span class="cls_005">return</span><span class="cls_003"> two;</span></div>
+<div style="position:absolute;left:125.95px;top:468.44px" class="cls_003"><span class="cls_003">}</span><span class="cls_005"> else</span><span class="cls_003"> {</span></div>
+<div style="position:absolute;left:150.56px;top:483.61px" class="cls_005"><span class="cls_005">return</span><span class="cls_003"> one;</span></div>
+<div style="position:absolute;left:125.95px;top:498.78px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:101.34px;top:513.95px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:537.15px" class="cls_003"><span class="cls_003">The nextPlayer method takes the current player as a parameter and returns</span></div>
+<div style="position:absolute;left:86.40px;top:552.32px" class="cls_003"><span class="cls_003">the player who should go next.</span></div>
+<div style="position:absolute;left:86.40px;top:576.84px" class="cls_003"><span class="cls_003">The last two pieces are displayState and waitForUser:</span></div>
+<div style="position:absolute;left:101.34px;top:600.46px" class="cls_005"><span class="cls_005">public void</span><span class="cls_003"> displayState() {</span></div>
+<div style="position:absolute;left:125.95px;top:615.63px" class="cls_003"><span class="cls_003">one.display();</span></div>
+<div style="position:absolute;left:125.95px;top:630.80px" class="cls_003"><span class="cls_003">two.display();</span></div>
+<div style="position:absolute;left:125.95px;top:645.97px" class="cls_003"><span class="cls_003">discardPile.display();</span></div>
+<div style="position:absolute;left:125.95px;top:661.14px" class="cls_003"><span class="cls_003">System.out.println(</span><span class="cls_007">"Draw pile:"</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:125.95px;top:676.30px" class="cls_003"><span class="cls_003">System.out.println(drawPile.size() +</span><span class="cls_007"> " cards"</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:101.34px;top:691.47px" class="cls_003"><span class="cls_003">}</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:11228px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="956ca3b6-5adb-11e9-9d71-0cc47a792c0a_id_956ca3b6-5adb-11e9-9d71-0cc47a792c0a_files/background15.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">14.6</span></div>
+<div style="position:absolute;left:166.96px;top:88.65px" class="cls_003"><span class="cls_003">The Eights class</span></div>
+<div style="position:absolute;left:505.43px;top:88.65px" class="cls_003"><span class="cls_003">229</span></div>
+<div style="position:absolute;left:144.54px;top:123.41px" class="cls_005"><span class="cls_005">public void</span><span class="cls_003"> waitForUser() {</span></div>
+<div style="position:absolute;left:169.15px;top:138.57px" class="cls_003"><span class="cls_003">in.nextLine();</span></div>
+<div style="position:absolute;left:144.54px;top:153.74px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:179.62px" class="cls_003"><span class="cls_003">Using these pieces, we can write takeTurn, which executes one player’s turn:</span></div>
+<div style="position:absolute;left:144.54px;top:205.59px" class="cls_005"><span class="cls_005">public void</span><span class="cls_003"> takeTurn(Player player) {</span></div>
+<div style="position:absolute;left:169.15px;top:220.76px" class="cls_003"><span class="cls_003">Card prev = discardPile.last();</span></div>
+<div style="position:absolute;left:169.15px;top:235.92px" class="cls_003"><span class="cls_003">Card next = player.play(</span><span class="cls_005">this</span><span class="cls_003">, prev);</span></div>
+<div style="position:absolute;left:169.15px;top:251.09px" class="cls_003"><span class="cls_003">discardPile.addCard(next);</span></div>
+<div style="position:absolute;left:169.15px;top:281.43px" class="cls_003"><span class="cls_003">System.out.println(player.getName() +</span><span class="cls_007"> " plays "</span><span class="cls_003"> + next);</span></div>
+<div style="position:absolute;left:169.15px;top:296.60px" class="cls_003"><span class="cls_003">System.out.println();</span></div>
+<div style="position:absolute;left:144.54px;top:311.76px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:337.64px" class="cls_003"><span class="cls_003">takeTurn reads the top card off the discard pile and passes it to player.play,</span></div>
+<div style="position:absolute;left:129.60px;top:352.81px" class="cls_003"><span class="cls_003">which we saw in the previous section. The result is the card the player chose,</span></div>
+<div style="position:absolute;left:129.60px;top:367.98px" class="cls_003"><span class="cls_003">which is added to the discard pile.</span></div>
+<div style="position:absolute;left:129.60px;top:395.18px" class="cls_003"><span class="cls_003">Finally, we use takeTurn and the other methods to write playGame:</span></div>
+<div style="position:absolute;left:144.54px;top:421.48px" class="cls_005"><span class="cls_005">public void</span><span class="cls_003"> playGame() {</span></div>
+<div style="position:absolute;left:169.15px;top:436.64px" class="cls_003"><span class="cls_003">Player player = one;</span></div>
+<div style="position:absolute;left:169.15px;top:466.98px" class="cls_008"><span class="cls_008">// keep playing until there</span><span class="cls_009">'</span><span class="cls_008">s a winner</span></div>
+<div style="position:absolute;left:169.15px;top:482.15px" class="cls_005"><span class="cls_005">while</span><span class="cls_003"> (!isDone()) {</span></div>
+<div style="position:absolute;left:193.76px;top:497.32px" class="cls_003"><span class="cls_003">displayState();</span></div>
+<div style="position:absolute;left:193.76px;top:512.48px" class="cls_003"><span class="cls_003">waitForUser();</span></div>
+<div style="position:absolute;left:193.76px;top:527.65px" class="cls_003"><span class="cls_003">takeTurn(player);</span></div>
+<div style="position:absolute;left:193.76px;top:542.82px" class="cls_003"><span class="cls_003">player = nextPlayer(player);</span></div>
+<div style="position:absolute;left:169.15px;top:557.99px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:169.15px;top:588.33px" class="cls_008"><span class="cls_008">// display the final score</span></div>
+<div style="position:absolute;left:169.15px;top:603.49px" class="cls_003"><span class="cls_003">one.displayScore();</span></div>
+<div style="position:absolute;left:169.15px;top:618.66px" class="cls_003"><span class="cls_003">two.displayScore();</span></div>
+<div style="position:absolute;left:144.54px;top:633.83px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:659.71px" class="cls_003"><span class="cls_003">Done! Notice the result of bottom-up development is similar to top-down: we</span></div>
+<div style="position:absolute;left:129.60px;top:674.88px" class="cls_003"><span class="cls_003">have a high-level method that calls helper methods.  The main difference is</span></div>
+<div style="position:absolute;left:129.60px;top:690.04px" class="cls_003"><span class="cls_003">the order we used to arrive at this solution.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:12030px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="956ca3b6-5adb-11e9-9d71-0cc47a792c0a_id_956ca3b6-5adb-11e9-9d71-0cc47a792c0a_files/background16.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">230</span></div>
+<div style="position:absolute;left:296.38px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 14</span></div>
+<div style="position:absolute;left:375.81px;top:88.65px" class="cls_003"><span class="cls_003">Objects of objects</span></div>
+<div style="position:absolute;left:86.40px;top:119.48px" class="cls_006"><span class="cls_006">14.7</span></div>
+<div style="position:absolute;left:140.20px;top:119.48px" class="cls_006"><span class="cls_006">Class relationships</span></div>
+<div style="position:absolute;left:86.40px;top:151.82px" class="cls_003"><span class="cls_003">This chapter demonstrates two common relationships between classes:</span></div>
+<div style="position:absolute;left:86.40px;top:171.96px" class="cls_003"><span class="cls_003">composition: Instances of one class contain references to instances of another</span></div>
+<div style="position:absolute;left:115.67px;top:187.13px" class="cls_003"><span class="cls_003">class.  For example, an instance of Eights contains references to two</span></div>
+<div style="position:absolute;left:115.67px;top:202.30px" class="cls_003"><span class="cls_003">Player objects, two Hand objects, and a Scanner.</span></div>
+<div style="position:absolute;left:86.40px;top:225.60px" class="cls_003"><span class="cls_003">inheritance: One class extends another class.  For example, Hand extends</span></div>
+<div style="position:absolute;left:115.67px;top:240.77px" class="cls_003"><span class="cls_003">CardCollection, so every instance of Hand is also a CardCollection.</span></div>
+<div style="position:absolute;left:86.40px;top:260.91px" class="cls_003"><span class="cls_003">Composition is also known as a HAS-A relationship, as in “Eights HAS-A</span></div>
+<div style="position:absolute;left:86.40px;top:276.08px" class="cls_003"><span class="cls_003">Scanner”.  Inheritance is also known as an IS-A relationship, as in “a Hand</span></div>
+<div style="position:absolute;left:86.40px;top:291.25px" class="cls_003"><span class="cls_003">IS-A CardCollection”. This vocabulary provides a concise way to talk about</span></div>
+<div style="position:absolute;left:86.40px;top:306.42px" class="cls_003"><span class="cls_003">an object-oriented design.</span></div>
+<div style="position:absolute;left:86.40px;top:329.89px" class="cls_003"><span class="cls_003">There is also a standard way to represent these relationships graphically in</span></div>
+<div style="position:absolute;left:86.40px;top:345.05px" class="cls_003"><span class="cls_003">UML class diagrams. As we saw in Section 10.9, the UML representation of</span></div>
+<div style="position:absolute;left:86.40px;top:360.22px" class="cls_003"><span class="cls_003">a class is a box with three sections: the class name, the attributes, and the</span></div>
+<div style="position:absolute;left:86.40px;top:375.39px" class="cls_003"><span class="cls_003">methods. The latter two sections are optional when showing relationships.</span></div>
+<div style="position:absolute;left:86.40px;top:398.86px" class="cls_003"><span class="cls_003">Relationships between classes are represented by arrows: composition arrows</span></div>
+<div style="position:absolute;left:86.40px;top:414.03px" class="cls_003"><span class="cls_003">have a standard arrow head, and inheritance arrows have a hollow triangle head</span></div>
+<div style="position:absolute;left:86.40px;top:429.20px" class="cls_003"><span class="cls_003">(usually pointing up).  Figure 14.1 shows the classes defined in this chapter</span></div>
+<div style="position:absolute;left:86.40px;top:444.36px" class="cls_003"><span class="cls_003">and the relationships among them.</span></div>
+<div style="position:absolute;left:136.65px;top:581.44px" class="cls_003"><span class="cls_003">Figure 14.1: UML diagram for the classes in this chapter.</span></div>
+<div style="position:absolute;left:86.40px;top:605.90px" class="cls_003"><span class="cls_003">UML is an international standard, so almost any software engineer in the world</span></div>
+<div style="position:absolute;left:86.40px;top:621.07px" class="cls_003"><span class="cls_003">could look at this diagram and understand our design.  And class diagrams</span></div>
+<div style="position:absolute;left:86.40px;top:636.24px" class="cls_003"><span class="cls_003">are only one of many graphical representations defined in the UML standard.</span></div>
+<div style="position:absolute;left:86.40px;top:659.71px" class="cls_003"><span class="cls_003">We hope this final chapter has been a useful summary of all the techniques pre-</span></div>
+<div style="position:absolute;left:86.40px;top:674.88px" class="cls_003"><span class="cls_003">sented in the book, including variables, methods, conditionals, loops, arrays,</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_003"><span class="cls_003">objects, and algorithms. Congratulations on making it to the end!</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:12832px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="956ca3b6-5adb-11e9-9d71-0cc47a792c0a_id_956ca3b6-5adb-11e9-9d71-0cc47a792c0a_files/background17.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">14.8</span></div>
+<div style="position:absolute;left:166.96px;top:88.65px" class="cls_003"><span class="cls_003">Vocabulary</span></div>
+<div style="position:absolute;left:505.43px;top:88.65px" class="cls_003"><span class="cls_003">231</span></div>
+<div style="position:absolute;left:129.60px;top:119.48px" class="cls_006"><span class="cls_006">14.8</span></div>
+<div style="position:absolute;left:183.40px;top:119.48px" class="cls_006"><span class="cls_006">Vocabulary</span></div>
+<div style="position:absolute;left:129.60px;top:153.58px" class="cls_003"><span class="cls_003">collection: An object that contains other objects, or more specifically, one of</span></div>
+<div style="position:absolute;left:158.87px;top:168.75px" class="cls_003"><span class="cls_003">the objects in the Java library, like ArrayList, that contains objects.</span></div>
+<div style="position:absolute;left:129.60px;top:196.01px" class="cls_003"><span class="cls_003">inheritance: The ability to define a new class that has the same instance</span></div>
+<div style="position:absolute;left:158.87px;top:211.18px" class="cls_003"><span class="cls_003">variables and methods of an existing class.</span></div>
+<div style="position:absolute;left:129.60px;top:238.45px" class="cls_003"><span class="cls_003">subclass: A class that inherits from, or extends, an existing class.</span></div>
+<div style="position:absolute;left:129.60px;top:265.72px" class="cls_003"><span class="cls_003">superclass: An existing class that is extended by another class.</span></div>
+<div style="position:absolute;left:129.60px;top:292.99px" class="cls_003"><span class="cls_003">wrapper method: A method that calls another method without doing much</span></div>
+<div style="position:absolute;left:158.87px;top:308.16px" class="cls_003"><span class="cls_003">additional work.</span></div>
+<div style="position:absolute;left:129.60px;top:335.43px" class="cls_003"><span class="cls_003">bottom-up development: A way of developing programs by identifying sim-</span></div>
+<div style="position:absolute;left:158.87px;top:350.60px" class="cls_003"><span class="cls_003">ple pieces, implementing them, and then assembling them into more</span></div>
+<div style="position:absolute;left:158.87px;top:365.76px" class="cls_003"><span class="cls_003">complex algorithms.</span></div>
+<div style="position:absolute;left:129.60px;top:393.03px" class="cls_003"><span class="cls_003">HAS-A: A relationship between two classes where one class “has” an instance</span></div>
+<div style="position:absolute;left:158.87px;top:408.20px" class="cls_003"><span class="cls_003">of another class as one of its attributes.</span></div>
+<div style="position:absolute;left:129.60px;top:435.47px" class="cls_003"><span class="cls_003">IS-A: A relationship between two classes where one class extends another</span></div>
+<div style="position:absolute;left:158.87px;top:450.64px" class="cls_003"><span class="cls_003">class; the subclass “is” an instance of the superclass.</span></div>
+<div style="position:absolute;left:129.60px;top:502.28px" class="cls_006"><span class="cls_006">14.9</span></div>
+<div style="position:absolute;left:183.40px;top:502.28px" class="cls_006"><span class="cls_006">Exercises</span></div>
+<div style="position:absolute;left:129.60px;top:540.42px" class="cls_003"><span class="cls_003">The code for this chapter is in the ch14 directory of ThinkJavaCode.  See</span></div>
+<div style="position:absolute;left:129.60px;top:555.59px" class="cls_003"><span class="cls_003">page xv for instructions on how to download the repository. Before you start</span></div>
+<div style="position:absolute;left:129.60px;top:570.76px" class="cls_003"><span class="cls_003">the exercises, we recommend that you compile and run the examples.</span></div>
+<div style="position:absolute;left:129.60px;top:597.88px" class="cls_003"><span class="cls_003">Exercise 14.1</span></div>
+<div style="position:absolute;left:219.18px;top:597.88px" class="cls_003"><span class="cls_003">Design a better strategy for the Player.play method. For</span></div>
+<div style="position:absolute;left:129.60px;top:613.05px" class="cls_003"><span class="cls_003">example, if there are multiple cards you can play, and one of them is an eight,</span></div>
+<div style="position:absolute;left:129.60px;top:628.22px" class="cls_003"><span class="cls_003">you might want to play the eight.</span></div>
+<div style="position:absolute;left:129.60px;top:657.05px" class="cls_003"><span class="cls_003">Think of other ways you can minimize penalty points, such as playing the high-</span></div>
+<div style="position:absolute;left:129.60px;top:672.22px" class="cls_003"><span class="cls_003">est ranking cards first. Write a new class that extends Player and overrides</span></div>
+<div style="position:absolute;left:129.60px;top:687.39px" class="cls_003"><span class="cls_003">play to implement your strategy.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:13634px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="956ca3b6-5adb-11e9-9d71-0cc47a792c0a_id_956ca3b6-5adb-11e9-9d71-0cc47a792c0a_files/background18.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">232</span></div>
+<div style="position:absolute;left:296.38px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 14</span></div>
+<div style="position:absolute;left:375.81px;top:88.65px" class="cls_003"><span class="cls_003">Objects of objects</span></div>
+<div style="position:absolute;left:86.40px;top:124.74px" class="cls_003"><span class="cls_003">Exercise 14.2</span></div>
+<div style="position:absolute;left:175.47px;top:124.74px" class="cls_003"><span class="cls_003">Write a loop that plays the game 100 times and keeps track</span></div>
+<div style="position:absolute;left:86.40px;top:139.91px" class="cls_003"><span class="cls_003">of how many times each player wins. If you implemented multiple strategies in</span></div>
+<div style="position:absolute;left:86.40px;top:155.08px" class="cls_003"><span class="cls_003">the previous exercise, you can play them against each other to evaluate which</span></div>
+<div style="position:absolute;left:86.40px;top:170.25px" class="cls_003"><span class="cls_003">one works best.</span></div>
+<div style="position:absolute;left:86.40px;top:197.37px" class="cls_003"><span class="cls_003">Hint:  Design a Genius class that extends Player and overrides the play</span></div>
+<div style="position:absolute;left:86.40px;top:212.54px" class="cls_003"><span class="cls_003">method, and then replace one of the players with a Genius object.</span></div>
+<div style="position:absolute;left:86.40px;top:239.66px" class="cls_003"><span class="cls_003">Exercise 14.3</span></div>
+<div style="position:absolute;left:174.19px;top:239.66px" class="cls_003"><span class="cls_003">One limitation of the program we wrote in this chapter is that</span></div>
+<div style="position:absolute;left:86.40px;top:254.83px" class="cls_003"><span class="cls_003">it only handles two players. Modify the Eights class to create an ArrayList</span></div>
+<div style="position:absolute;left:86.40px;top:270.00px" class="cls_003"><span class="cls_003">of players, and modify nextPlayer to select the next player.</span></div>
+<div style="position:absolute;left:86.40px;top:297.12px" class="cls_003"><span class="cls_003">Exercise 14.4</span></div>
+<div style="position:absolute;left:175.41px;top:297.12px" class="cls_003"><span class="cls_003">When we designed the program for this chapter, we tried to</span></div>
+<div style="position:absolute;left:86.40px;top:312.29px" class="cls_003"><span class="cls_003">minimize the number of classes. As a result, we ended up with a few awkward</span></div>
+<div style="position:absolute;left:86.40px;top:327.46px" class="cls_003"><span class="cls_003">methods.  For example, cardMatches is a static method in Player, but it</span></div>
+<div style="position:absolute;left:86.40px;top:342.63px" class="cls_003"><span class="cls_003">would be more natural if it were an instance method in Card.</span></div>
+<div style="position:absolute;left:86.40px;top:369.75px" class="cls_003"><span class="cls_003">The problem is that Card is supposed to be useful for any card game, not just</span></div>
+<div style="position:absolute;left:86.40px;top:384.92px" class="cls_003"><span class="cls_003">Crazy Eights. You can solve this problem by adding a new class, EightsCard,</span></div>
+<div style="position:absolute;left:86.40px;top:400.09px" class="cls_003"><span class="cls_003">that extends Card and provides a method, match, that checks whether two</span></div>
+<div style="position:absolute;left:86.40px;top:415.25px" class="cls_003"><span class="cls_003">cards match according to the rules of Crazy Eights.</span></div>
+<div style="position:absolute;left:86.40px;top:442.38px" class="cls_003"><span class="cls_003">At the same time, you could create a new class, EightsHand, that extends</span></div>
+<div style="position:absolute;left:86.40px;top:457.55px" class="cls_003"><span class="cls_003">Hand and provides a method, scoreHand, that adds up the scores of the cards</span></div>
+<div style="position:absolute;left:86.40px;top:472.71px" class="cls_003"><span class="cls_003">in the hand. And while you’re at it, you could add a method named scoreCard</span></div>
+<div style="position:absolute;left:86.40px;top:487.88px" class="cls_003"><span class="cls_003">to EightsCard.</span></div>
+<div style="position:absolute;left:86.40px;top:515.01px" class="cls_003"><span class="cls_003">Whether or not you actually make these changes, draw a UML class diagram</span></div>
+<div style="position:absolute;left:86.40px;top:530.17px" class="cls_003"><span class="cls_003">that shows this alternative object hierarchy.</span></div>
+</div>
+
+</body>
+</html>

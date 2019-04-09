@@ -1,0 +1,828 @@
+<html>
+<head><meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<style type="text/css">
+<!--
+span.cls_002{font-family:Arial,serif;font-size:24.8px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_002{font-family:Arial,serif;font-size:24.8px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_003{font-family:Arial,serif;font-size:12.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_003{font-family:Arial,serif;font-size:12.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_004{font-family:Arial,serif;font-size:12.0px;color:rgb(0,0,255);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_004{font-family:Arial,serif;font-size:12.0px;color:rgb(0,0,255);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_005{font-family:Arial,serif;font-size:17.3px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_005{font-family:Arial,serif;font-size:17.3px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_006{font-family:Arial,serif;font-size:12.0px;color:rgb(178,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_006{font-family:Arial,serif;font-size:12.0px;color:rgb(178,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_007{font-family:Arial,serif;font-size:12.0px;color:rgb(0,123,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_007{font-family:Arial,serif;font-size:12.0px;color:rgb(0,123,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_008{font-family:Arial,serif;font-size:8.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_008{font-family:Arial,serif;font-size:8.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+-->
+</style>
+<script type="text/javascript" src="6e4ba8e2-5ad9-11e9-9d71-0cc47a792c0a_id_6e4ba8e2-5ad9-11e9-9d71-0cc47a792c0a_files/wz_jsgraphics.js"></script>
+</head>
+<body>
+<div style="position:absolute;left:50%;margin-left:-306px;top:0px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="6e4ba8e2-5ad9-11e9-9d71-0cc47a792c0a_id_6e4ba8e2-5ad9-11e9-9d71-0cc47a792c0a_files/background01.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:202.91px" class="cls_002"><span class="cls_002">Chapter 7</span></div>
+<div style="position:absolute;left:129.60px;top:264.01px" class="cls_002"><span class="cls_002">Loops</span></div>
+<div style="position:absolute;left:129.60px;top:341.66px" class="cls_003"><span class="cls_003">Computers are often used to automate repetitive tasks. Repeating tasks with-</span></div>
+<div style="position:absolute;left:129.60px;top:356.83px" class="cls_003"><span class="cls_003">out making errors is something that computers do well and people do poorly.</span></div>
+<div style="position:absolute;left:129.60px;top:381.80px" class="cls_003"><span class="cls_003">Running the same code multiple times is called iteration. We have seen meth-</span></div>
+<div style="position:absolute;left:129.60px;top:396.97px" class="cls_003"><span class="cls_003">ods, like countdown and factorial, that use recursion to iterate. Although</span></div>
+<div style="position:absolute;left:129.60px;top:412.13px" class="cls_003"><span class="cls_003">recursion is elegant and powerful, it takes some getting used to.  Java pro-</span></div>
+<div style="position:absolute;left:129.60px;top:427.30px" class="cls_003"><span class="cls_003">vides language features that make iteration much easier: the</span><span class="cls_004"> while</span><span class="cls_003"> and</span><span class="cls_004"> for</span></div>
+<div style="position:absolute;left:129.60px;top:442.47px" class="cls_003"><span class="cls_003">statements.</span></div>
+<div style="position:absolute;left:129.60px;top:487.48px" class="cls_005"><span class="cls_005">7.1</span></div>
+<div style="position:absolute;left:173.71px;top:487.48px" class="cls_005"><span class="cls_005">The while statement</span></div>
+<div style="position:absolute;left:129.60px;top:521.31px" class="cls_003"><span class="cls_003">Using a</span><span class="cls_004"> while</span><span class="cls_003"> statement, we can rewrite countdown like this:</span></div>
+<div style="position:absolute;left:144.54px;top:545.05px" class="cls_004"><span class="cls_004">public static void</span><span class="cls_003"> countdown(</span><span class="cls_004">int</span><span class="cls_003"> n) {</span></div>
+<div style="position:absolute;left:169.15px;top:560.22px" class="cls_004"><span class="cls_004">while</span><span class="cls_003"> (n > 0) {</span></div>
+<div style="position:absolute;left:193.76px;top:575.39px" class="cls_003"><span class="cls_003">System.out.println(n);</span></div>
+<div style="position:absolute;left:193.76px;top:590.56px" class="cls_003"><span class="cls_003">n = n - 1;</span></div>
+<div style="position:absolute;left:169.15px;top:605.72px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:169.15px;top:620.89px" class="cls_003"><span class="cls_003">System.out.println(</span><span class="cls_006">"Blastoff!"</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:144.54px;top:636.06px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:659.71px" class="cls_003"><span class="cls_003">You can almost read the</span><span class="cls_004"> while</span><span class="cls_003"> statement like English:  “While n is greater</span></div>
+<div style="position:absolute;left:129.60px;top:674.88px" class="cls_003"><span class="cls_003">than zero, print the value of n and then reduce the value of n by 1. When you</span></div>
+<div style="position:absolute;left:129.60px;top:690.04px" class="cls_003"><span class="cls_003">get to zero, print Blastoff!”</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:802px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="6e4ba8e2-5ad9-11e9-9d71-0cc47a792c0a_id_6e4ba8e2-5ad9-11e9-9d71-0cc47a792c0a_files/background02.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">106</span></div>
+<div style="position:absolute;left:375.00px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 7</span></div>
+<div style="position:absolute;left:447.72px;top:88.65px" class="cls_003"><span class="cls_003">Loops</span></div>
+<div style="position:absolute;left:86.40px;top:124.74px" class="cls_003"><span class="cls_003">The expression in parentheses is called the condition. The statements in braces</span></div>
+<div style="position:absolute;left:86.40px;top:139.91px" class="cls_003"><span class="cls_003">are called the body. The flow of execution for a</span><span class="cls_004"> while</span><span class="cls_003"> statement is:</span></div>
+<div style="position:absolute;left:100.71px;top:167.37px" class="cls_003"><span class="cls_003">1. Evaluate the condition, yielding</span><span class="cls_004"> true</span><span class="cls_003"> or</span><span class="cls_004"> false</span><span class="cls_003">.</span></div>
+<div style="position:absolute;left:100.71px;top:191.89px" class="cls_003"><span class="cls_003">2. If the condition is</span><span class="cls_004"> false</span><span class="cls_003">, skip the body and go to the next statement.</span></div>
+<div style="position:absolute;left:100.71px;top:216.41px" class="cls_003"><span class="cls_003">3. If the condition is</span><span class="cls_004"> true</span><span class="cls_003">, execute the body and go back to step 1.</span></div>
+<div style="position:absolute;left:86.40px;top:243.87px" class="cls_003"><span class="cls_003">This type of flow is called a loop, because the last step loops back around to</span></div>
+<div style="position:absolute;left:86.40px;top:259.04px" class="cls_003"><span class="cls_003">the first.</span></div>
+<div style="position:absolute;left:86.40px;top:284.94px" class="cls_003"><span class="cls_003">The body of the loop should change the value of one or more variables so that,</span></div>
+<div style="position:absolute;left:86.40px;top:300.11px" class="cls_003"><span class="cls_003">eventually, the condition becomes</span><span class="cls_004"> false</span><span class="cls_003"> and the loop terminates. Otherwise</span></div>
+<div style="position:absolute;left:86.40px;top:315.28px" class="cls_003"><span class="cls_003">the loop will repeat forever, which is called an infinite loop. An endless source</span></div>
+<div style="position:absolute;left:86.40px;top:330.45px" class="cls_003"><span class="cls_003">of amusement for computer scientists is the observation that the directions on</span></div>
+<div style="position:absolute;left:86.40px;top:345.61px" class="cls_003"><span class="cls_003">shampoo, “Lather, rinse, repeat,” are an infinite loop.</span></div>
+<div style="position:absolute;left:86.40px;top:371.52px" class="cls_003"><span class="cls_003">In the case of countdown, we can prove that the loop terminates when n is</span></div>
+<div style="position:absolute;left:86.40px;top:386.69px" class="cls_003"><span class="cls_003">positive. But in general, it is not so easy to tell whether a loop terminates. For</span></div>
+<div style="position:absolute;left:86.40px;top:401.86px" class="cls_003"><span class="cls_003">example, this loop continues until n is 1 (which makes the condition</span><span class="cls_004"> false</span><span class="cls_003">):</span></div>
+<div style="position:absolute;left:101.34px;top:427.20px" class="cls_004"><span class="cls_004">public static void</span><span class="cls_003"> sequence(</span><span class="cls_004">int</span><span class="cls_003"> n) {</span></div>
+<div style="position:absolute;left:125.95px;top:442.37px" class="cls_004"><span class="cls_004">while</span><span class="cls_003"> (n != 1) {</span></div>
+<div style="position:absolute;left:150.56px;top:457.53px" class="cls_003"><span class="cls_003">System.out.println(n);</span></div>
+<div style="position:absolute;left:150.56px;top:472.70px" class="cls_004"><span class="cls_004">if</span><span class="cls_003"> (n % 2 == 0) {</span></div>
+<div style="position:absolute;left:310.51px;top:472.70px" class="cls_007"><span class="cls_007">// n is even</span></div>
+<div style="position:absolute;left:175.17px;top:487.87px" class="cls_003"><span class="cls_003">n = n / 2;</span></div>
+<div style="position:absolute;left:150.56px;top:503.04px" class="cls_003"><span class="cls_003">}</span><span class="cls_004"> else</span><span class="cls_003"> {</span></div>
+<div style="position:absolute;left:310.51px;top:503.04px" class="cls_007"><span class="cls_007">// n is odd</span></div>
+<div style="position:absolute;left:175.17px;top:518.21px" class="cls_003"><span class="cls_003">n = n * 3 + 1;</span></div>
+<div style="position:absolute;left:150.56px;top:533.37px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:125.95px;top:548.54px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:101.34px;top:563.71px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:588.30px" class="cls_003"><span class="cls_003">Each time through the loop, the program displays the value of n and then</span></div>
+<div style="position:absolute;left:86.40px;top:603.47px" class="cls_003"><span class="cls_003">checks whether it is even or odd. If it is even, the value of n is divided by two.</span></div>
+<div style="position:absolute;left:86.40px;top:618.63px" class="cls_003"><span class="cls_003">If it is odd, the value is replaced by 3n + 1. For example, if the starting value</span></div>
+<div style="position:absolute;left:86.40px;top:633.80px" class="cls_003"><span class="cls_003">(the argument passed to sequence) is 3, the resulting sequence is 3, 10, 5, 16,</span></div>
+<div style="position:absolute;left:86.40px;top:648.97px" class="cls_003"><span class="cls_003">8, 4, 2, 1.</span></div>
+<div style="position:absolute;left:86.40px;top:674.88px" class="cls_003"><span class="cls_003">Since n sometimes increases and sometimes decreases, there is no obvious proof</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_003"><span class="cls_003">that n will ever reach 1 and that the program will ever terminate. For some</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:1604px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="6e4ba8e2-5ad9-11e9-9d71-0cc47a792c0a_id_6e4ba8e2-5ad9-11e9-9d71-0cc47a792c0a_files/background03.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">7.2</span></div>
+<div style="position:absolute;left:160.24px;top:88.65px" class="cls_003"><span class="cls_003">Generating tables</span></div>
+<div style="position:absolute;left:505.43px;top:88.65px" class="cls_003"><span class="cls_003">107</span></div>
+<div style="position:absolute;left:129.60px;top:124.74px" class="cls_003"><span class="cls_003">values of n, we can prove that it terminates. For example, if the starting value</span></div>
+<div style="position:absolute;left:129.60px;top:139.91px" class="cls_003"><span class="cls_003">is a power of two, then the value of n will be even every time through the loop</span></div>
+<div style="position:absolute;left:129.60px;top:155.08px" class="cls_003"><span class="cls_003">until we get to 1. The previous example ends with such a sequence, starting</span></div>
+<div style="position:absolute;left:129.60px;top:170.25px" class="cls_003"><span class="cls_003">when n is 16.</span></div>
+<div style="position:absolute;left:129.60px;top:195.25px" class="cls_003"><span class="cls_003">The hard question is whether this program terminates for all values of n. So</span></div>
+<div style="position:absolute;left:129.60px;top:210.42px" class="cls_003"><span class="cls_003">far, no one has been able to prove it or disprove it! For more information, see</span></div>
+<div style="position:absolute;left:129.60px;top:225.58px" class="cls_004"><span class="cls_004"> </span><A HREF="https://en.wikipedia.org/wiki/Collatz_conjecture">https://en.wikipedia.org/wiki/Collatz_conjecture</A> <span class="cls_003">.</span></div>
+<div style="position:absolute;left:129.60px;top:270.64px" class="cls_005"><span class="cls_005">7.2</span></div>
+<div style="position:absolute;left:173.71px;top:270.64px" class="cls_005"><span class="cls_005">Generating tables</span></div>
+<div style="position:absolute;left:129.60px;top:304.50px" class="cls_003"><span class="cls_003">Loops are good for generating and displaying tabular data. Before computers</span></div>
+<div style="position:absolute;left:129.60px;top:319.67px" class="cls_003"><span class="cls_003">were readily available, people had to calculate logarithms, sines and cosines,</span></div>
+<div style="position:absolute;left:129.60px;top:334.84px" class="cls_003"><span class="cls_003">and other common mathematical functions by hand.  To make that easier,</span></div>
+<div style="position:absolute;left:129.60px;top:350.01px" class="cls_003"><span class="cls_003">there were books of tables where you could look up values of various functions.</span></div>
+<div style="position:absolute;left:129.60px;top:365.18px" class="cls_003"><span class="cls_003">Creating these tables by hand was slow and boring, and the results were often</span></div>
+<div style="position:absolute;left:129.60px;top:380.34px" class="cls_003"><span class="cls_003">full of errors.</span></div>
+<div style="position:absolute;left:129.60px;top:405.34px" class="cls_003"><span class="cls_003">When computers appeared on the scene, one of the initial reactions was: “This</span></div>
+<div style="position:absolute;left:129.60px;top:420.51px" class="cls_003"><span class="cls_003">is great!  We can use a computer to generate the tables, so there will be no</span></div>
+<div style="position:absolute;left:129.60px;top:435.68px" class="cls_003"><span class="cls_003">errors.”  That turned out to be true (mostly), but shortsighted.  Not much</span></div>
+<div style="position:absolute;left:129.60px;top:450.85px" class="cls_003"><span class="cls_003">later, computers were so pervasive that printed tables became obsolete.</span></div>
+<div style="position:absolute;left:129.60px;top:475.85px" class="cls_003"><span class="cls_003">Even so, for some operations, computers use tables of values to get an approx-</span></div>
+<div style="position:absolute;left:129.60px;top:491.02px" class="cls_003"><span class="cls_003">imate answer, and then perform computations to improve the approximation.</span></div>
+<div style="position:absolute;left:129.60px;top:506.19px" class="cls_003"><span class="cls_003">In some cases, there have been errors in the underlying tables, most famously</span></div>
+<div style="position:absolute;left:129.60px;top:521.35px" class="cls_003"><span class="cls_003">in the table the original Intel Pentium used to perform floating-point division</span></div>
+<div style="position:absolute;left:129.60px;top:536.52px" class="cls_003"><span class="cls_003">(see</span><span class="cls_004"> <A HREF="https://en.wikipedia.org/wiki/Pentium_FDIV_bug">https://en.wikipedia.org/wiki/Pentium_FDIV_bug</A> </span><span class="cls_003">).</span></div>
+<div style="position:absolute;left:129.60px;top:561.52px" class="cls_003"><span class="cls_003">Although a “log table” is not as useful as it once was, it still makes a good</span></div>
+<div style="position:absolute;left:129.60px;top:576.69px" class="cls_003"><span class="cls_003">example of iteration.  The following loop displays a table with a sequence of</span></div>
+<div style="position:absolute;left:129.60px;top:591.86px" class="cls_003"><span class="cls_003">values in the left column and their logarithms in the right column:</span></div>
+<div style="position:absolute;left:144.54px;top:615.63px" class="cls_004"><span class="cls_004">int</span><span class="cls_003"> i = 1;</span></div>
+<div style="position:absolute;left:144.54px;top:630.80px" class="cls_004"><span class="cls_004">while</span><span class="cls_003"> (i &lt; 10) {</span></div>
+<div style="position:absolute;left:169.15px;top:645.97px" class="cls_004"><span class="cls_004">double</span><span class="cls_003"> x = i;</span></div>
+<div style="position:absolute;left:169.15px;top:661.14px" class="cls_003"><span class="cls_003">System.out.println(x +</span><span class="cls_006"> "    "</span><span class="cls_003"> + Math.log(x));</span></div>
+<div style="position:absolute;left:169.15px;top:676.30px" class="cls_003"><span class="cls_003">i = i + 1;</span></div>
+<div style="position:absolute;left:144.54px;top:691.47px" class="cls_003"><span class="cls_003">}</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:2406px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="6e4ba8e2-5ad9-11e9-9d71-0cc47a792c0a_id_6e4ba8e2-5ad9-11e9-9d71-0cc47a792c0a_files/background04.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">108</span></div>
+<div style="position:absolute;left:375.00px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 7</span></div>
+<div style="position:absolute;left:447.72px;top:88.65px" class="cls_003"><span class="cls_003">Loops</span></div>
+<div style="position:absolute;left:86.40px;top:124.74px" class="cls_003"><span class="cls_003">The output of this program is:</span></div>
+<div style="position:absolute;left:101.34px;top:147.95px" class="cls_003"><span class="cls_003">1.0</span></div>
+<div style="position:absolute;left:138.26px;top:147.95px" class="cls_003"><span class="cls_003">0.0</span></div>
+<div style="position:absolute;left:101.34px;top:163.11px" class="cls_003"><span class="cls_003">2.0</span></div>
+<div style="position:absolute;left:138.26px;top:163.11px" class="cls_003"><span class="cls_003">0.6931471805599453</span></div>
+<div style="position:absolute;left:101.34px;top:178.28px" class="cls_003"><span class="cls_003">3.0</span></div>
+<div style="position:absolute;left:138.26px;top:178.28px" class="cls_003"><span class="cls_003">1.0986122886681098</span></div>
+<div style="position:absolute;left:101.34px;top:193.45px" class="cls_003"><span class="cls_003">4.0</span></div>
+<div style="position:absolute;left:138.26px;top:193.45px" class="cls_003"><span class="cls_003">1.3862943611198906</span></div>
+<div style="position:absolute;left:101.34px;top:208.62px" class="cls_003"><span class="cls_003">5.0</span></div>
+<div style="position:absolute;left:138.26px;top:208.62px" class="cls_003"><span class="cls_003">1.6094379124341003</span></div>
+<div style="position:absolute;left:101.34px;top:223.79px" class="cls_003"><span class="cls_003">6.0</span></div>
+<div style="position:absolute;left:138.26px;top:223.79px" class="cls_003"><span class="cls_003">1.791759469228055</span></div>
+<div style="position:absolute;left:101.34px;top:238.96px" class="cls_003"><span class="cls_003">7.0</span></div>
+<div style="position:absolute;left:138.26px;top:238.96px" class="cls_003"><span class="cls_003">1.9459101490553132</span></div>
+<div style="position:absolute;left:101.34px;top:254.12px" class="cls_003"><span class="cls_003">8.0</span></div>
+<div style="position:absolute;left:138.26px;top:254.12px" class="cls_003"><span class="cls_003">2.0794415416798357</span></div>
+<div style="position:absolute;left:101.34px;top:269.29px" class="cls_003"><span class="cls_003">9.0</span></div>
+<div style="position:absolute;left:138.26px;top:269.29px" class="cls_003"><span class="cls_003">2.1972245773362196</span></div>
+<div style="position:absolute;left:86.40px;top:292.41px" class="cls_003"><span class="cls_003">Math.log computes natural logarithms, that is, logarithms base e. For com-</span></div>
+<div style="position:absolute;left:86.40px;top:307.57px" class="cls_003"><span class="cls_003">puter science applications, we often want logarithms with respect to base 2.</span></div>
+<div style="position:absolute;left:86.40px;top:322.74px" class="cls_003"><span class="cls_003">To compute them, we can apply this equation:</span></div>
+<div style="position:absolute;left:293.49px;top:346.92px" class="cls_003"><span class="cls_003">log</span><span class="cls_008"><sub>e</sub></span><span class="cls_003">x</span></div>
+<div style="position:absolute;left:248.05px;top:355.01px" class="cls_003"><span class="cls_003">log</span><span class="cls_008"><sub>2</sub></span><span class="cls_003"> x =</span></div>
+<div style="position:absolute;left:293.89px;top:363.21px" class="cls_003"><span class="cls_003">log</span><span class="cls_008"><sub>e</sub></span><span class="cls_003">2</span></div>
+<div style="position:absolute;left:86.40px;top:387.38px" class="cls_003"><span class="cls_003">We can modify the loop as follows:</span></div>
+<div style="position:absolute;left:101.34px;top:410.58px" class="cls_004"><span class="cls_004">int</span><span class="cls_003"> i = 1;</span></div>
+<div style="position:absolute;left:101.34px;top:425.75px" class="cls_004"><span class="cls_004">while</span><span class="cls_003"> (i &lt; 10) {</span></div>
+<div style="position:absolute;left:125.95px;top:440.92px" class="cls_004"><span class="cls_004">double</span><span class="cls_003"> x = i;</span></div>
+<div style="position:absolute;left:125.95px;top:456.09px" class="cls_003"><span class="cls_003">System.out.println(x +</span><span class="cls_006"> "</span></div>
+<div style="position:absolute;left:292.06px;top:456.09px" class="cls_006"><span class="cls_006">"</span><span class="cls_003"> +</span></div>
+<div style="position:absolute;left:316.67px;top:456.09px" class="cls_003"><span class="cls_003">Math.log(x)</span></div>
+<div style="position:absolute;left:390.48px;top:456.09px" class="cls_003"><span class="cls_003">/</span></div>
+<div style="position:absolute;left:402.79px;top:456.09px" class="cls_003"><span class="cls_003">Math.log(2));</span></div>
+<div style="position:absolute;left:125.95px;top:471.26px" class="cls_003"><span class="cls_003">i = i + 1;</span></div>
+<div style="position:absolute;left:101.34px;top:486.43px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:509.54px" class="cls_003"><span class="cls_003">And here are the results:</span></div>
+<div style="position:absolute;left:101.34px;top:530.42px" class="cls_003"><span class="cls_003">1.0</span></div>
+<div style="position:absolute;left:138.26px;top:530.42px" class="cls_003"><span class="cls_003">0.0</span></div>
+<div style="position:absolute;left:101.34px;top:545.59px" class="cls_003"><span class="cls_003">2.0</span></div>
+<div style="position:absolute;left:138.26px;top:545.59px" class="cls_003"><span class="cls_003">1.0</span></div>
+<div style="position:absolute;left:101.34px;top:560.75px" class="cls_003"><span class="cls_003">3.0</span></div>
+<div style="position:absolute;left:138.26px;top:560.75px" class="cls_003"><span class="cls_003">1.5849625007211563</span></div>
+<div style="position:absolute;left:101.34px;top:575.92px" class="cls_003"><span class="cls_003">4.0</span></div>
+<div style="position:absolute;left:138.26px;top:575.92px" class="cls_003"><span class="cls_003">2.0</span></div>
+<div style="position:absolute;left:101.34px;top:591.09px" class="cls_003"><span class="cls_003">5.0</span></div>
+<div style="position:absolute;left:138.26px;top:591.09px" class="cls_003"><span class="cls_003">2.321928094887362</span></div>
+<div style="position:absolute;left:101.34px;top:606.26px" class="cls_003"><span class="cls_003">6.0</span></div>
+<div style="position:absolute;left:138.26px;top:606.26px" class="cls_003"><span class="cls_003">2.584962500721156</span></div>
+<div style="position:absolute;left:101.34px;top:621.43px" class="cls_003"><span class="cls_003">7.0</span></div>
+<div style="position:absolute;left:138.26px;top:621.43px" class="cls_003"><span class="cls_003">2.807354922057604</span></div>
+<div style="position:absolute;left:101.34px;top:636.59px" class="cls_003"><span class="cls_003">8.0</span></div>
+<div style="position:absolute;left:138.26px;top:636.59px" class="cls_003"><span class="cls_003">3.0</span></div>
+<div style="position:absolute;left:101.34px;top:651.76px" class="cls_003"><span class="cls_003">9.0</span></div>
+<div style="position:absolute;left:138.26px;top:651.76px" class="cls_003"><span class="cls_003">3.1699250014423126</span></div>
+<div style="position:absolute;left:86.40px;top:674.88px" class="cls_003"><span class="cls_003">Each time through the loop, we add one to x, so the result is an arithmetic</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_003"><span class="cls_003">sequence. If we multiply x by something instead, we get a geometric sequence:</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:3208px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="6e4ba8e2-5ad9-11e9-9d71-0cc47a792c0a_id_6e4ba8e2-5ad9-11e9-9d71-0cc47a792c0a_files/background05.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">7.3</span></div>
+<div style="position:absolute;left:160.24px;top:88.65px" class="cls_003"><span class="cls_003">Encapsulation and generalization</span></div>
+<div style="position:absolute;left:505.43px;top:88.65px" class="cls_003"><span class="cls_003">109</span></div>
+<div style="position:absolute;left:144.54px;top:123.41px" class="cls_004"><span class="cls_004">final double</span><span class="cls_003"> LOG2 = Math.log(2);</span></div>
+<div style="position:absolute;left:144.54px;top:138.57px" class="cls_004"><span class="cls_004">int</span><span class="cls_003"> i = 1;</span></div>
+<div style="position:absolute;left:144.54px;top:153.74px" class="cls_004"><span class="cls_004">while</span><span class="cls_003"> (i &lt; 100) {</span></div>
+<div style="position:absolute;left:169.15px;top:168.91px" class="cls_004"><span class="cls_004">double</span><span class="cls_003"> x = i;</span></div>
+<div style="position:absolute;left:169.15px;top:184.08px" class="cls_003"><span class="cls_003">System.out.println(x +</span><span class="cls_006"> "    "</span><span class="cls_003"> + Math.log(x) / LOG2);</span></div>
+<div style="position:absolute;left:169.15px;top:199.25px" class="cls_003"><span class="cls_003">i = i * 2;</span></div>
+<div style="position:absolute;left:144.54px;top:214.41px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:239.68px" class="cls_003"><span class="cls_003">The first line stores Math.log(2) in a</span><span class="cls_004"> final</span><span class="cls_003"> variable to avoid computing that</span></div>
+<div style="position:absolute;left:129.60px;top:254.84px" class="cls_003"><span class="cls_003">value over and over again. The last line multiplies x by 2. The result is:</span></div>
+<div style="position:absolute;left:144.54px;top:280.19px" class="cls_003"><span class="cls_003">1.0</span></div>
+<div style="position:absolute;left:181.46px;top:280.19px" class="cls_003"><span class="cls_003">0.0</span></div>
+<div style="position:absolute;left:144.54px;top:295.36px" class="cls_003"><span class="cls_003">2.0</span></div>
+<div style="position:absolute;left:181.46px;top:295.36px" class="cls_003"><span class="cls_003">1.0</span></div>
+<div style="position:absolute;left:144.54px;top:310.53px" class="cls_003"><span class="cls_003">4.0</span></div>
+<div style="position:absolute;left:181.46px;top:310.53px" class="cls_003"><span class="cls_003">2.0</span></div>
+<div style="position:absolute;left:144.54px;top:325.70px" class="cls_003"><span class="cls_003">8.0</span></div>
+<div style="position:absolute;left:181.46px;top:325.70px" class="cls_003"><span class="cls_003">3.0</span></div>
+<div style="position:absolute;left:144.54px;top:340.87px" class="cls_003"><span class="cls_003">16.0</span></div>
+<div style="position:absolute;left:187.61px;top:340.87px" class="cls_003"><span class="cls_003">4.0</span></div>
+<div style="position:absolute;left:144.54px;top:356.03px" class="cls_003"><span class="cls_003">32.0</span></div>
+<div style="position:absolute;left:187.61px;top:356.03px" class="cls_003"><span class="cls_003">5.0</span></div>
+<div style="position:absolute;left:144.54px;top:371.20px" class="cls_003"><span class="cls_003">64.0</span></div>
+<div style="position:absolute;left:187.61px;top:371.20px" class="cls_003"><span class="cls_003">6.0</span></div>
+<div style="position:absolute;left:129.60px;top:396.46px" class="cls_003"><span class="cls_003">This table shows the powers of two and their logarithms, base 2. Log tables</span></div>
+<div style="position:absolute;left:129.60px;top:411.63px" class="cls_003"><span class="cls_003">may not be useful anymore, but for computer scientists, knowing the powers</span></div>
+<div style="position:absolute;left:129.60px;top:426.80px" class="cls_003"><span class="cls_003">of two helps a lot!</span></div>
+<div style="position:absolute;left:129.60px;top:473.84px" class="cls_005"><span class="cls_005">7.3</span></div>
+<div style="position:absolute;left:173.71px;top:473.84px" class="cls_005"><span class="cls_005">Encapsulation and generalization</span></div>
+<div style="position:absolute;left:129.60px;top:509.28px" class="cls_003"><span class="cls_003">In Section 6.2, we presented a way of writing programs called incremental</span></div>
+<div style="position:absolute;left:129.60px;top:524.45px" class="cls_003"><span class="cls_003">development.  In this section we present another program development</span></div>
+<div style="position:absolute;left:129.60px;top:539.62px" class="cls_003"><span class="cls_003">process called “encapsulation and generalization”. The steps are:</span></div>
+<div style="position:absolute;left:143.91px;top:569.10px" class="cls_003"><span class="cls_003">1. Write a few lines of code in main or another method, and test them.</span></div>
+<div style="position:absolute;left:143.91px;top:593.96px" class="cls_003"><span class="cls_003">2. When they are working, wrap them in a new method, and test again.</span></div>
+<div style="position:absolute;left:143.91px;top:618.82px" class="cls_003"><span class="cls_003">3. If it’s appropriate, replace literal values with variables and parameters.</span></div>
+<div style="position:absolute;left:129.60px;top:648.30px" class="cls_003"><span class="cls_003">The second step is called encapsulation; the third step is generalization.</span></div>
+<div style="position:absolute;left:129.60px;top:674.88px" class="cls_003"><span class="cls_003">To demonstrate this process, we’ll develop methods that display multiplication</span></div>
+<div style="position:absolute;left:129.60px;top:690.04px" class="cls_003"><span class="cls_003">tables. Here is a loop that displays the multiples of two, all on one line:</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:4010px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="6e4ba8e2-5ad9-11e9-9d71-0cc47a792c0a_id_6e4ba8e2-5ad9-11e9-9d71-0cc47a792c0a_files/background06.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">110</span></div>
+<div style="position:absolute;left:375.00px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 7</span></div>
+<div style="position:absolute;left:447.72px;top:88.65px" class="cls_003"><span class="cls_003">Loops</span></div>
+<div style="position:absolute;left:101.34px;top:123.41px" class="cls_004"><span class="cls_004">int</span><span class="cls_003"> i = 1;</span></div>
+<div style="position:absolute;left:101.34px;top:138.57px" class="cls_004"><span class="cls_004">while</span><span class="cls_003"> (i &lt;= 6) {</span></div>
+<div style="position:absolute;left:125.95px;top:153.74px" class="cls_003"><span class="cls_003">System.out.printf(</span><span class="cls_006">"%4d"</span><span class="cls_003">, 2 * i);</span></div>
+<div style="position:absolute;left:125.95px;top:168.91px" class="cls_003"><span class="cls_003">i = i + 1;</span></div>
+<div style="position:absolute;left:101.34px;top:184.08px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:101.34px;top:199.25px" class="cls_003"><span class="cls_003">System.out.println();</span></div>
+<div style="position:absolute;left:86.40px;top:231.61px" class="cls_003"><span class="cls_003">The first line initializes a variable named i, which is going to act as a loop</span></div>
+<div style="position:absolute;left:86.40px;top:246.78px" class="cls_003"><span class="cls_003">variable: as the loop executes, the value of i increases from 1 to 6; when i is</span></div>
+<div style="position:absolute;left:86.40px;top:261.95px" class="cls_003"><span class="cls_003">7, the loop terminates.</span></div>
+<div style="position:absolute;left:86.40px;top:295.63px" class="cls_003"><span class="cls_003">Each time through the loop, we display the value 2 * i padded with spaces</span></div>
+<div style="position:absolute;left:86.40px;top:310.80px" class="cls_003"><span class="cls_003">so it’s four characters wide.  Since we use System.out.printf, the output</span></div>
+<div style="position:absolute;left:86.40px;top:325.97px" class="cls_003"><span class="cls_003">appears on a single line.</span></div>
+<div style="position:absolute;left:86.40px;top:359.65px" class="cls_003"><span class="cls_003">After the loop, we call println to print a newline and complete the line.</span></div>
+<div style="position:absolute;left:86.40px;top:374.82px" class="cls_003"><span class="cls_003">Remember that in some environments, none of the output is displayed until</span></div>
+<div style="position:absolute;left:86.40px;top:389.99px" class="cls_003"><span class="cls_003">the line is complete.</span></div>
+<div style="position:absolute;left:86.40px;top:423.67px" class="cls_003"><span class="cls_003">The output of the code so far is:</span></div>
+<div style="position:absolute;left:119.80px;top:457.40px" class="cls_003"><span class="cls_003">2</span></div>
+<div style="position:absolute;left:144.41px;top:457.40px" class="cls_003"><span class="cls_003">4</span></div>
+<div style="position:absolute;left:169.01px;top:457.40px" class="cls_003"><span class="cls_003">6</span></div>
+<div style="position:absolute;left:193.62px;top:457.40px" class="cls_003"><span class="cls_003">8</span></div>
+<div style="position:absolute;left:212.08px;top:457.40px" class="cls_003"><span class="cls_003">10</span></div>
+<div style="position:absolute;left:236.68px;top:457.40px" class="cls_003"><span class="cls_003">12</span></div>
+<div style="position:absolute;left:86.40px;top:491.04px" class="cls_003"><span class="cls_003">The next step is to “encapsulate” this code in a new method. Here’s what it</span></div>
+<div style="position:absolute;left:86.40px;top:506.21px" class="cls_003"><span class="cls_003">looks like:</span></div>
+<div style="position:absolute;left:101.34px;top:536.33px" class="cls_004"><span class="cls_004">public static void</span><span class="cls_003"> printRow() {</span></div>
+<div style="position:absolute;left:125.95px;top:551.50px" class="cls_004"><span class="cls_004">int</span><span class="cls_003"> i = 1;</span></div>
+<div style="position:absolute;left:125.95px;top:566.67px" class="cls_004"><span class="cls_004">while</span><span class="cls_003"> (i &lt;= 6) {</span></div>
+<div style="position:absolute;left:150.56px;top:581.84px" class="cls_003"><span class="cls_003">System.out.printf(</span><span class="cls_006">"%4d"</span><span class="cls_003">, 2 * i);</span></div>
+<div style="position:absolute;left:150.56px;top:597.01px" class="cls_003"><span class="cls_003">i = i + 1;</span></div>
+<div style="position:absolute;left:125.95px;top:612.18px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:125.95px;top:627.34px" class="cls_003"><span class="cls_003">System.out.println();</span></div>
+<div style="position:absolute;left:101.34px;top:642.51px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:674.88px" class="cls_003"><span class="cls_003">Next we replace the constant value, 2, with a parameter, n. This step is called</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_003"><span class="cls_003">“generalization” because it makes the method more general (less specific).</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:4812px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="6e4ba8e2-5ad9-11e9-9d71-0cc47a792c0a_id_6e4ba8e2-5ad9-11e9-9d71-0cc47a792c0a_files/background07.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">7.3</span></div>
+<div style="position:absolute;left:160.24px;top:88.65px" class="cls_003"><span class="cls_003">Encapsulation and generalization</span></div>
+<div style="position:absolute;left:505.43px;top:88.65px" class="cls_003"><span class="cls_003">111</span></div>
+<div style="position:absolute;left:144.54px;top:123.41px" class="cls_004"><span class="cls_004">public static void</span><span class="cls_003"> printRow(</span><span class="cls_004">int</span><span class="cls_003"> n) {</span></div>
+<div style="position:absolute;left:169.15px;top:138.57px" class="cls_004"><span class="cls_004">int</span><span class="cls_003"> i = 1;</span></div>
+<div style="position:absolute;left:169.15px;top:153.74px" class="cls_004"><span class="cls_004">while</span><span class="cls_003"> (i &lt;= 6) {</span></div>
+<div style="position:absolute;left:193.76px;top:168.91px" class="cls_003"><span class="cls_003">System.out.printf(</span><span class="cls_006">"%4d"</span><span class="cls_003">, n * i);</span></div>
+<div style="position:absolute;left:193.76px;top:184.08px" class="cls_003"><span class="cls_003">i = i + 1;</span></div>
+<div style="position:absolute;left:169.15px;top:199.25px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:169.15px;top:214.41px" class="cls_003"><span class="cls_003">System.out.println();</span></div>
+<div style="position:absolute;left:144.54px;top:229.58px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:255.23px" class="cls_003"><span class="cls_003">Invoking this method with the argument 2 yields the same output as before.</span></div>
+<div style="position:absolute;left:129.60px;top:270.40px" class="cls_003"><span class="cls_003">With the argument 3, the output is:</span></div>
+<div style="position:absolute;left:163.00px;top:297.42px" class="cls_003"><span class="cls_003">3</span></div>
+<div style="position:absolute;left:187.61px;top:297.42px" class="cls_003"><span class="cls_003">6</span></div>
+<div style="position:absolute;left:212.21px;top:297.42px" class="cls_003"><span class="cls_003">9</span></div>
+<div style="position:absolute;left:230.68px;top:297.42px" class="cls_003"><span class="cls_003">12</span></div>
+<div style="position:absolute;left:255.28px;top:297.42px" class="cls_003"><span class="cls_003">15</span></div>
+<div style="position:absolute;left:279.89px;top:297.42px" class="cls_003"><span class="cls_003">18</span></div>
+<div style="position:absolute;left:129.60px;top:324.34px" class="cls_003"><span class="cls_003">And with argument 4, the output is:</span></div>
+<div style="position:absolute;left:163.00px;top:351.35px" class="cls_003"><span class="cls_003">4</span></div>
+<div style="position:absolute;left:187.61px;top:351.35px" class="cls_003"><span class="cls_003">8</span></div>
+<div style="position:absolute;left:206.07px;top:351.35px" class="cls_003"><span class="cls_003">12</span></div>
+<div style="position:absolute;left:230.67px;top:351.35px" class="cls_003"><span class="cls_003">16</span></div>
+<div style="position:absolute;left:255.28px;top:351.35px" class="cls_003"><span class="cls_003">20</span></div>
+<div style="position:absolute;left:279.88px;top:351.35px" class="cls_003"><span class="cls_003">24</span></div>
+<div style="position:absolute;left:129.60px;top:378.28px" class="cls_003"><span class="cls_003">By now you can probably guess how we are going to display a multiplication</span></div>
+<div style="position:absolute;left:129.60px;top:393.45px" class="cls_003"><span class="cls_003">table:  we’ll invoke printRow repeatedly with different arguments.  In fact,</span></div>
+<div style="position:absolute;left:129.60px;top:408.61px" class="cls_003"><span class="cls_003">we’ll use another loop to iterate through the rows.</span></div>
+<div style="position:absolute;left:144.54px;top:434.35px" class="cls_004"><span class="cls_004">int</span><span class="cls_003"> i = 1;</span></div>
+<div style="position:absolute;left:144.54px;top:449.52px" class="cls_004"><span class="cls_004">while</span><span class="cls_003"> (i &lt;= 6) {</span></div>
+<div style="position:absolute;left:169.15px;top:464.69px" class="cls_003"><span class="cls_003">printRow(i);</span></div>
+<div style="position:absolute;left:169.15px;top:479.86px" class="cls_003"><span class="cls_003">i = i + 1;</span></div>
+<div style="position:absolute;left:144.54px;top:495.03px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:520.68px" class="cls_003"><span class="cls_003">And the output looks like this:</span></div>
+<div style="position:absolute;left:163.00px;top:546.42px" class="cls_003"><span class="cls_003">1</span></div>
+<div style="position:absolute;left:187.61px;top:546.42px" class="cls_003"><span class="cls_003">2</span></div>
+<div style="position:absolute;left:212.21px;top:546.42px" class="cls_003"><span class="cls_003">3</span></div>
+<div style="position:absolute;left:236.82px;top:546.42px" class="cls_003"><span class="cls_003">4</span></div>
+<div style="position:absolute;left:261.43px;top:546.42px" class="cls_003"><span class="cls_003">5</span></div>
+<div style="position:absolute;left:286.04px;top:546.42px" class="cls_003"><span class="cls_003">6</span></div>
+<div style="position:absolute;left:163.00px;top:561.58px" class="cls_003"><span class="cls_003">2</span></div>
+<div style="position:absolute;left:187.61px;top:561.58px" class="cls_003"><span class="cls_003">4</span></div>
+<div style="position:absolute;left:212.21px;top:561.58px" class="cls_003"><span class="cls_003">6</span></div>
+<div style="position:absolute;left:236.82px;top:561.58px" class="cls_003"><span class="cls_003">8</span></div>
+<div style="position:absolute;left:255.28px;top:561.58px" class="cls_003"><span class="cls_003">10</span></div>
+<div style="position:absolute;left:279.88px;top:561.58px" class="cls_003"><span class="cls_003">12</span></div>
+<div style="position:absolute;left:163.00px;top:576.75px" class="cls_003"><span class="cls_003">3</span></div>
+<div style="position:absolute;left:187.61px;top:576.75px" class="cls_003"><span class="cls_003">6</span></div>
+<div style="position:absolute;left:212.21px;top:576.75px" class="cls_003"><span class="cls_003">9</span></div>
+<div style="position:absolute;left:230.68px;top:576.75px" class="cls_003"><span class="cls_003">12</span></div>
+<div style="position:absolute;left:255.28px;top:576.75px" class="cls_003"><span class="cls_003">15</span></div>
+<div style="position:absolute;left:279.89px;top:576.75px" class="cls_003"><span class="cls_003">18</span></div>
+<div style="position:absolute;left:163.00px;top:591.92px" class="cls_003"><span class="cls_003">4</span></div>
+<div style="position:absolute;left:187.61px;top:591.92px" class="cls_003"><span class="cls_003">8</span></div>
+<div style="position:absolute;left:206.07px;top:591.92px" class="cls_003"><span class="cls_003">12</span></div>
+<div style="position:absolute;left:230.67px;top:591.92px" class="cls_003"><span class="cls_003">16</span></div>
+<div style="position:absolute;left:255.28px;top:591.92px" class="cls_003"><span class="cls_003">20</span></div>
+<div style="position:absolute;left:279.88px;top:591.92px" class="cls_003"><span class="cls_003">24</span></div>
+<div style="position:absolute;left:163.00px;top:607.09px" class="cls_003"><span class="cls_003">5</span></div>
+<div style="position:absolute;left:181.45px;top:607.09px" class="cls_003"><span class="cls_003">10</span></div>
+<div style="position:absolute;left:206.06px;top:607.09px" class="cls_003"><span class="cls_003">15</span></div>
+<div style="position:absolute;left:230.67px;top:607.09px" class="cls_003"><span class="cls_003">20</span></div>
+<div style="position:absolute;left:255.28px;top:607.09px" class="cls_003"><span class="cls_003">25</span></div>
+<div style="position:absolute;left:279.89px;top:607.09px" class="cls_003"><span class="cls_003">30</span></div>
+<div style="position:absolute;left:163.00px;top:622.26px" class="cls_003"><span class="cls_003">6</span></div>
+<div style="position:absolute;left:181.45px;top:622.26px" class="cls_003"><span class="cls_003">12</span></div>
+<div style="position:absolute;left:206.06px;top:622.26px" class="cls_003"><span class="cls_003">18</span></div>
+<div style="position:absolute;left:230.67px;top:622.26px" class="cls_003"><span class="cls_003">24</span></div>
+<div style="position:absolute;left:255.28px;top:622.26px" class="cls_003"><span class="cls_003">30</span></div>
+<div style="position:absolute;left:279.89px;top:622.26px" class="cls_003"><span class="cls_003">36</span></div>
+<div style="position:absolute;left:129.60px;top:647.91px" class="cls_003"><span class="cls_003">The format specifier %4d in printRow causes the output to align vertically,</span></div>
+<div style="position:absolute;left:129.60px;top:663.08px" class="cls_003"><span class="cls_003">regardless of whether the numbers are one or two digits.</span></div>
+<div style="position:absolute;left:129.60px;top:690.04px" class="cls_003"><span class="cls_003">Finally, we encapsulate the second loop in a method:</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:5614px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="6e4ba8e2-5ad9-11e9-9d71-0cc47a792c0a_id_6e4ba8e2-5ad9-11e9-9d71-0cc47a792c0a_files/background08.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">112</span></div>
+<div style="position:absolute;left:375.00px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 7</span></div>
+<div style="position:absolute;left:447.72px;top:88.65px" class="cls_003"><span class="cls_003">Loops</span></div>
+<div style="position:absolute;left:101.34px;top:123.41px" class="cls_004"><span class="cls_004">public static void</span><span class="cls_003"> printTable() {</span></div>
+<div style="position:absolute;left:125.95px;top:138.57px" class="cls_004"><span class="cls_004">int</span><span class="cls_003"> i = 1;</span></div>
+<div style="position:absolute;left:125.95px;top:153.74px" class="cls_004"><span class="cls_004">while</span><span class="cls_003"> (i &lt;= 6) {</span></div>
+<div style="position:absolute;left:150.56px;top:168.91px" class="cls_003"><span class="cls_003">printRow(i);</span></div>
+<div style="position:absolute;left:150.56px;top:184.08px" class="cls_003"><span class="cls_003">i = i + 1;</span></div>
+<div style="position:absolute;left:125.95px;top:199.25px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:101.34px;top:214.41px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:242.56px" class="cls_003"><span class="cls_003">One of the challenges of programming, especially for beginners, is figuring out</span></div>
+<div style="position:absolute;left:86.40px;top:257.73px" class="cls_003"><span class="cls_003">how to divide up a program into methods. The process of encapsulation and</span></div>
+<div style="position:absolute;left:86.40px;top:272.90px" class="cls_003"><span class="cls_003">generalization allows you to design as you go along.</span></div>
+<div style="position:absolute;left:86.40px;top:325.99px" class="cls_005"><span class="cls_005">7.4</span></div>
+<div style="position:absolute;left:130.51px;top:325.99px" class="cls_005"><span class="cls_005">More generalization</span></div>
+<div style="position:absolute;left:86.40px;top:364.92px" class="cls_003"><span class="cls_003">The previous version of printTable always displays six rows.</span></div>
+<div style="position:absolute;left:409.15px;top:364.92px" class="cls_003"><span class="cls_003">We can gener-</span></div>
+<div style="position:absolute;left:86.40px;top:380.09px" class="cls_003"><span class="cls_003">alize it by replacing the literal 6 with a parameter:</span></div>
+<div style="position:absolute;left:101.34px;top:408.33px" class="cls_004"><span class="cls_004">public static void</span><span class="cls_003"> printTable(</span><span class="cls_004">int</span><span class="cls_003"> rows) {</span></div>
+<div style="position:absolute;left:125.95px;top:423.50px" class="cls_004"><span class="cls_004">int</span><span class="cls_003"> i = 1;</span></div>
+<div style="position:absolute;left:125.95px;top:438.67px" class="cls_004"><span class="cls_004">while</span><span class="cls_003"> (i &lt;= rows) {</span></div>
+<div style="position:absolute;left:150.56px;top:453.83px" class="cls_003"><span class="cls_003">printRow(i);</span></div>
+<div style="position:absolute;left:150.56px;top:469.00px" class="cls_003"><span class="cls_003">i = i + 1;</span></div>
+<div style="position:absolute;left:125.95px;top:484.17px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:101.34px;top:499.34px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:527.48px" class="cls_003"><span class="cls_003">Here is the output with the argument 7:</span></div>
+<div style="position:absolute;left:119.80px;top:555.72px" class="cls_003"><span class="cls_003">1</span></div>
+<div style="position:absolute;left:144.41px;top:555.72px" class="cls_003"><span class="cls_003">2</span></div>
+<div style="position:absolute;left:169.01px;top:555.72px" class="cls_003"><span class="cls_003">3</span></div>
+<div style="position:absolute;left:193.62px;top:555.72px" class="cls_003"><span class="cls_003">4</span></div>
+<div style="position:absolute;left:218.23px;top:555.72px" class="cls_003"><span class="cls_003">5</span></div>
+<div style="position:absolute;left:242.84px;top:555.72px" class="cls_003"><span class="cls_003">6</span></div>
+<div style="position:absolute;left:119.80px;top:570.89px" class="cls_003"><span class="cls_003">2</span></div>
+<div style="position:absolute;left:144.41px;top:570.89px" class="cls_003"><span class="cls_003">4</span></div>
+<div style="position:absolute;left:169.01px;top:570.89px" class="cls_003"><span class="cls_003">6</span></div>
+<div style="position:absolute;left:193.62px;top:570.89px" class="cls_003"><span class="cls_003">8</span></div>
+<div style="position:absolute;left:212.08px;top:570.89px" class="cls_003"><span class="cls_003">10</span></div>
+<div style="position:absolute;left:236.68px;top:570.89px" class="cls_003"><span class="cls_003">12</span></div>
+<div style="position:absolute;left:119.80px;top:586.06px" class="cls_003"><span class="cls_003">3</span></div>
+<div style="position:absolute;left:144.41px;top:586.06px" class="cls_003"><span class="cls_003">6</span></div>
+<div style="position:absolute;left:169.01px;top:586.06px" class="cls_003"><span class="cls_003">9</span></div>
+<div style="position:absolute;left:187.48px;top:586.06px" class="cls_003"><span class="cls_003">12</span></div>
+<div style="position:absolute;left:212.08px;top:586.06px" class="cls_003"><span class="cls_003">15</span></div>
+<div style="position:absolute;left:236.69px;top:586.06px" class="cls_003"><span class="cls_003">18</span></div>
+<div style="position:absolute;left:119.80px;top:601.23px" class="cls_003"><span class="cls_003">4</span></div>
+<div style="position:absolute;left:144.41px;top:601.23px" class="cls_003"><span class="cls_003">8</span></div>
+<div style="position:absolute;left:162.87px;top:601.23px" class="cls_003"><span class="cls_003">12</span></div>
+<div style="position:absolute;left:187.47px;top:601.23px" class="cls_003"><span class="cls_003">16</span></div>
+<div style="position:absolute;left:212.08px;top:601.23px" class="cls_003"><span class="cls_003">20</span></div>
+<div style="position:absolute;left:236.68px;top:601.23px" class="cls_003"><span class="cls_003">24</span></div>
+<div style="position:absolute;left:119.80px;top:616.39px" class="cls_003"><span class="cls_003">5</span></div>
+<div style="position:absolute;left:138.25px;top:616.39px" class="cls_003"><span class="cls_003">10</span></div>
+<div style="position:absolute;left:162.86px;top:616.39px" class="cls_003"><span class="cls_003">15</span></div>
+<div style="position:absolute;left:187.47px;top:616.39px" class="cls_003"><span class="cls_003">20</span></div>
+<div style="position:absolute;left:212.08px;top:616.39px" class="cls_003"><span class="cls_003">25</span></div>
+<div style="position:absolute;left:236.69px;top:616.39px" class="cls_003"><span class="cls_003">30</span></div>
+<div style="position:absolute;left:119.80px;top:631.56px" class="cls_003"><span class="cls_003">6</span></div>
+<div style="position:absolute;left:138.25px;top:631.56px" class="cls_003"><span class="cls_003">12</span></div>
+<div style="position:absolute;left:162.86px;top:631.56px" class="cls_003"><span class="cls_003">18</span></div>
+<div style="position:absolute;left:187.47px;top:631.56px" class="cls_003"><span class="cls_003">24</span></div>
+<div style="position:absolute;left:212.08px;top:631.56px" class="cls_003"><span class="cls_003">30</span></div>
+<div style="position:absolute;left:236.69px;top:631.56px" class="cls_003"><span class="cls_003">36</span></div>
+<div style="position:absolute;left:119.80px;top:646.73px" class="cls_003"><span class="cls_003">7</span></div>
+<div style="position:absolute;left:138.25px;top:646.73px" class="cls_003"><span class="cls_003">14</span></div>
+<div style="position:absolute;left:162.86px;top:646.73px" class="cls_003"><span class="cls_003">21</span></div>
+<div style="position:absolute;left:187.47px;top:646.73px" class="cls_003"><span class="cls_003">28</span></div>
+<div style="position:absolute;left:212.08px;top:646.73px" class="cls_003"><span class="cls_003">35</span></div>
+<div style="position:absolute;left:236.69px;top:646.73px" class="cls_003"><span class="cls_003">42</span></div>
+<div style="position:absolute;left:86.40px;top:674.88px" class="cls_003"><span class="cls_003">That’s better, but it still has a problem: it always displays the same number</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_003"><span class="cls_003">of columns. We can generalize more by adding a parameter to printRow:</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:6416px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="6e4ba8e2-5ad9-11e9-9d71-0cc47a792c0a_id_6e4ba8e2-5ad9-11e9-9d71-0cc47a792c0a_files/background09.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">7.4</span></div>
+<div style="position:absolute;left:160.24px;top:88.65px" class="cls_003"><span class="cls_003">More generalization</span></div>
+<div style="position:absolute;left:505.42px;top:88.65px" class="cls_003"><span class="cls_003">113</span></div>
+<div style="position:absolute;left:144.54px;top:123.41px" class="cls_004"><span class="cls_004">public static void</span><span class="cls_003"> printRow(</span><span class="cls_004">int</span><span class="cls_003"> n,</span><span class="cls_004"> int</span><span class="cls_003"> cols) {</span></div>
+<div style="position:absolute;left:169.15px;top:138.57px" class="cls_004"><span class="cls_004">int</span><span class="cls_003"> i = 1;</span></div>
+<div style="position:absolute;left:169.15px;top:153.74px" class="cls_004"><span class="cls_004">while</span><span class="cls_003"> (i &lt;= cols) {</span></div>
+<div style="position:absolute;left:193.76px;top:168.91px" class="cls_003"><span class="cls_003">System.out.printf(</span><span class="cls_006">"%4d"</span><span class="cls_003">, n * i);</span></div>
+<div style="position:absolute;left:193.76px;top:184.08px" class="cls_003"><span class="cls_003">i = i + 1;</span></div>
+<div style="position:absolute;left:169.15px;top:199.25px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:169.15px;top:214.41px" class="cls_003"><span class="cls_003">System.out.println();</span></div>
+<div style="position:absolute;left:144.54px;top:229.58px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:253.32px" class="cls_003"><span class="cls_003">Now printRow takes two parameters: n is the value whose multiples should be</span></div>
+<div style="position:absolute;left:129.60px;top:268.49px" class="cls_003"><span class="cls_003">displayed, and cols is the number of columns. Since we added a parameter to</span></div>
+<div style="position:absolute;left:129.60px;top:283.66px" class="cls_003"><span class="cls_003">printRow, we also have to change the line in printTable where it is invoked:</span></div>
+<div style="position:absolute;left:144.54px;top:307.82px" class="cls_004"><span class="cls_004">public static void</span><span class="cls_003"> printTable(</span><span class="cls_004">int</span><span class="cls_003"> rows) {</span></div>
+<div style="position:absolute;left:169.15px;top:322.98px" class="cls_004"><span class="cls_004">int</span><span class="cls_003"> i = 1;</span></div>
+<div style="position:absolute;left:169.15px;top:338.15px" class="cls_004"><span class="cls_004">while</span><span class="cls_003"> (i &lt;= rows) {</span></div>
+<div style="position:absolute;left:193.76px;top:353.32px" class="cls_003"><span class="cls_003">printRow(i, rows);</span></div>
+<div style="position:absolute;left:193.76px;top:368.49px" class="cls_003"><span class="cls_003">i = i + 1;</span></div>
+<div style="position:absolute;left:169.15px;top:383.66px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:144.54px;top:398.82px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:422.56px" class="cls_003"><span class="cls_003">When this line executes, it evaluates rows and passes the value, which is 7 in</span></div>
+<div style="position:absolute;left:129.60px;top:437.73px" class="cls_003"><span class="cls_003">this example, as an argument. In printRow, this value is assigned to cols. As</span></div>
+<div style="position:absolute;left:129.60px;top:452.90px" class="cls_003"><span class="cls_003">a result, the number of columns equals the number of rows, so we get a square</span></div>
+<div style="position:absolute;left:129.60px;top:468.07px" class="cls_003"><span class="cls_003">7x7 table:</span></div>
+<div style="position:absolute;left:163.00px;top:489.57px" class="cls_003"><span class="cls_003">1</span></div>
+<div style="position:absolute;left:187.61px;top:489.57px" class="cls_003"><span class="cls_003">2</span></div>
+<div style="position:absolute;left:212.21px;top:489.57px" class="cls_003"><span class="cls_003">3</span></div>
+<div style="position:absolute;left:236.82px;top:489.57px" class="cls_003"><span class="cls_003">4</span></div>
+<div style="position:absolute;left:261.43px;top:489.57px" class="cls_003"><span class="cls_003">5</span></div>
+<div style="position:absolute;left:286.04px;top:489.57px" class="cls_003"><span class="cls_003">6</span></div>
+<div style="position:absolute;left:310.64px;top:489.57px" class="cls_003"><span class="cls_003">7</span></div>
+<div style="position:absolute;left:163.00px;top:504.74px" class="cls_003"><span class="cls_003">2</span></div>
+<div style="position:absolute;left:187.61px;top:504.74px" class="cls_003"><span class="cls_003">4</span></div>
+<div style="position:absolute;left:212.21px;top:504.74px" class="cls_003"><span class="cls_003">6</span></div>
+<div style="position:absolute;left:236.82px;top:504.74px" class="cls_003"><span class="cls_003">8</span></div>
+<div style="position:absolute;left:255.28px;top:504.74px" class="cls_003"><span class="cls_003">10</span></div>
+<div style="position:absolute;left:279.88px;top:504.74px" class="cls_003"><span class="cls_003">12</span></div>
+<div style="position:absolute;left:304.50px;top:504.74px" class="cls_003"><span class="cls_003">14</span></div>
+<div style="position:absolute;left:163.00px;top:519.91px" class="cls_003"><span class="cls_003">3</span></div>
+<div style="position:absolute;left:187.61px;top:519.91px" class="cls_003"><span class="cls_003">6</span></div>
+<div style="position:absolute;left:212.21px;top:519.91px" class="cls_003"><span class="cls_003">9</span></div>
+<div style="position:absolute;left:230.68px;top:519.91px" class="cls_003"><span class="cls_003">12</span></div>
+<div style="position:absolute;left:255.28px;top:519.91px" class="cls_003"><span class="cls_003">15</span></div>
+<div style="position:absolute;left:279.89px;top:519.91px" class="cls_003"><span class="cls_003">18</span></div>
+<div style="position:absolute;left:304.49px;top:519.91px" class="cls_003"><span class="cls_003">21</span></div>
+<div style="position:absolute;left:163.00px;top:535.07px" class="cls_003"><span class="cls_003">4</span></div>
+<div style="position:absolute;left:187.61px;top:535.07px" class="cls_003"><span class="cls_003">8</span></div>
+<div style="position:absolute;left:206.07px;top:535.07px" class="cls_003"><span class="cls_003">12</span></div>
+<div style="position:absolute;left:230.67px;top:535.07px" class="cls_003"><span class="cls_003">16</span></div>
+<div style="position:absolute;left:255.28px;top:535.07px" class="cls_003"><span class="cls_003">20</span></div>
+<div style="position:absolute;left:279.88px;top:535.07px" class="cls_003"><span class="cls_003">24</span></div>
+<div style="position:absolute;left:304.49px;top:535.07px" class="cls_003"><span class="cls_003">28</span></div>
+<div style="position:absolute;left:163.00px;top:550.24px" class="cls_003"><span class="cls_003">5</span></div>
+<div style="position:absolute;left:181.45px;top:550.24px" class="cls_003"><span class="cls_003">10</span></div>
+<div style="position:absolute;left:206.06px;top:550.24px" class="cls_003"><span class="cls_003">15</span></div>
+<div style="position:absolute;left:230.67px;top:550.24px" class="cls_003"><span class="cls_003">20</span></div>
+<div style="position:absolute;left:255.28px;top:550.24px" class="cls_003"><span class="cls_003">25</span></div>
+<div style="position:absolute;left:279.89px;top:550.24px" class="cls_003"><span class="cls_003">30</span></div>
+<div style="position:absolute;left:304.50px;top:550.24px" class="cls_003"><span class="cls_003">35</span></div>
+<div style="position:absolute;left:163.00px;top:565.41px" class="cls_003"><span class="cls_003">6</span></div>
+<div style="position:absolute;left:181.45px;top:565.41px" class="cls_003"><span class="cls_003">12</span></div>
+<div style="position:absolute;left:206.06px;top:565.41px" class="cls_003"><span class="cls_003">18</span></div>
+<div style="position:absolute;left:230.67px;top:565.41px" class="cls_003"><span class="cls_003">24</span></div>
+<div style="position:absolute;left:255.28px;top:565.41px" class="cls_003"><span class="cls_003">30</span></div>
+<div style="position:absolute;left:279.89px;top:565.41px" class="cls_003"><span class="cls_003">36</span></div>
+<div style="position:absolute;left:304.50px;top:565.41px" class="cls_003"><span class="cls_003">42</span></div>
+<div style="position:absolute;left:163.00px;top:580.58px" class="cls_003"><span class="cls_003">7</span></div>
+<div style="position:absolute;left:181.45px;top:580.58px" class="cls_003"><span class="cls_003">14</span></div>
+<div style="position:absolute;left:206.06px;top:580.58px" class="cls_003"><span class="cls_003">21</span></div>
+<div style="position:absolute;left:230.67px;top:580.58px" class="cls_003"><span class="cls_003">28</span></div>
+<div style="position:absolute;left:255.28px;top:580.58px" class="cls_003"><span class="cls_003">35</span></div>
+<div style="position:absolute;left:279.89px;top:580.58px" class="cls_003"><span class="cls_003">42</span></div>
+<div style="position:absolute;left:304.50px;top:580.58px" class="cls_003"><span class="cls_003">49</span></div>
+<div style="position:absolute;left:129.60px;top:604.32px" class="cls_003"><span class="cls_003">When you generalize a method appropriately, you often find that it has capa-</span></div>
+<div style="position:absolute;left:129.60px;top:619.48px" class="cls_003"><span class="cls_003">bilities you did not plan. For example, you might notice that the multiplication</span></div>
+<div style="position:absolute;left:129.60px;top:634.65px" class="cls_003"><span class="cls_003">table is symmetric; since ab = ba, all the entries in the table appear twice.</span></div>
+<div style="position:absolute;left:129.60px;top:649.82px" class="cls_003"><span class="cls_003">You could save ink by printing half of the table, and you would only have to</span></div>
+<div style="position:absolute;left:129.60px;top:664.99px" class="cls_003"><span class="cls_003">change one line of printTable:</span></div>
+<div style="position:absolute;left:144.54px;top:690.09px" class="cls_003"><span class="cls_003">printRow(i, i);</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:7218px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="6e4ba8e2-5ad9-11e9-9d71-0cc47a792c0a_id_6e4ba8e2-5ad9-11e9-9d71-0cc47a792c0a_files/background10.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">114</span></div>
+<div style="position:absolute;left:375.00px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 7</span></div>
+<div style="position:absolute;left:447.72px;top:88.65px" class="cls_003"><span class="cls_003">Loops</span></div>
+<div style="position:absolute;left:86.40px;top:124.74px" class="cls_003"><span class="cls_003">In words, the length of each row is the same as its row number. The result is</span></div>
+<div style="position:absolute;left:86.40px;top:139.91px" class="cls_003"><span class="cls_003">a triangular multiplication table.</span></div>
+<div style="position:absolute;left:119.80px;top:165.48px" class="cls_003"><span class="cls_003">1</span></div>
+<div style="position:absolute;left:119.80px;top:180.65px" class="cls_003"><span class="cls_003">2</span></div>
+<div style="position:absolute;left:144.41px;top:180.65px" class="cls_003"><span class="cls_003">4</span></div>
+<div style="position:absolute;left:119.80px;top:195.82px" class="cls_003"><span class="cls_003">3</span></div>
+<div style="position:absolute;left:144.41px;top:195.82px" class="cls_003"><span class="cls_003">6</span></div>
+<div style="position:absolute;left:169.01px;top:195.82px" class="cls_003"><span class="cls_003">9</span></div>
+<div style="position:absolute;left:119.80px;top:210.98px" class="cls_003"><span class="cls_003">4</span></div>
+<div style="position:absolute;left:144.41px;top:210.98px" class="cls_003"><span class="cls_003">8</span></div>
+<div style="position:absolute;left:162.87px;top:210.98px" class="cls_003"><span class="cls_003">12</span></div>
+<div style="position:absolute;left:187.47px;top:210.98px" class="cls_003"><span class="cls_003">16</span></div>
+<div style="position:absolute;left:119.80px;top:226.15px" class="cls_003"><span class="cls_003">5</span></div>
+<div style="position:absolute;left:138.25px;top:226.15px" class="cls_003"><span class="cls_003">10</span></div>
+<div style="position:absolute;left:162.86px;top:226.15px" class="cls_003"><span class="cls_003">15</span></div>
+<div style="position:absolute;left:187.47px;top:226.15px" class="cls_003"><span class="cls_003">20</span></div>
+<div style="position:absolute;left:212.08px;top:226.15px" class="cls_003"><span class="cls_003">25</span></div>
+<div style="position:absolute;left:119.80px;top:241.32px" class="cls_003"><span class="cls_003">6</span></div>
+<div style="position:absolute;left:138.25px;top:241.32px" class="cls_003"><span class="cls_003">12</span></div>
+<div style="position:absolute;left:162.86px;top:241.32px" class="cls_003"><span class="cls_003">18</span></div>
+<div style="position:absolute;left:187.47px;top:241.32px" class="cls_003"><span class="cls_003">24</span></div>
+<div style="position:absolute;left:212.08px;top:241.32px" class="cls_003"><span class="cls_003">30</span></div>
+<div style="position:absolute;left:236.69px;top:241.32px" class="cls_003"><span class="cls_003">36</span></div>
+<div style="position:absolute;left:119.80px;top:256.49px" class="cls_003"><span class="cls_003">7</span></div>
+<div style="position:absolute;left:138.25px;top:256.49px" class="cls_003"><span class="cls_003">14</span></div>
+<div style="position:absolute;left:162.86px;top:256.49px" class="cls_003"><span class="cls_003">21</span></div>
+<div style="position:absolute;left:187.47px;top:256.49px" class="cls_003"><span class="cls_003">28</span></div>
+<div style="position:absolute;left:212.08px;top:256.49px" class="cls_003"><span class="cls_003">35</span></div>
+<div style="position:absolute;left:236.69px;top:256.49px" class="cls_003"><span class="cls_003">42</span></div>
+<div style="position:absolute;left:261.30px;top:256.49px" class="cls_003"><span class="cls_003">49</span></div>
+<div style="position:absolute;left:86.40px;top:281.97px" class="cls_003"><span class="cls_003">Generalization makes code more versatile, more likely to be reused, and some-</span></div>
+<div style="position:absolute;left:86.40px;top:297.14px" class="cls_003"><span class="cls_003">times easier to write.</span></div>
+<div style="position:absolute;left:86.40px;top:344.45px" class="cls_005"><span class="cls_005">7.5</span></div>
+<div style="position:absolute;left:130.51px;top:344.45px" class="cls_005"><span class="cls_005">The for statement</span></div>
+<div style="position:absolute;left:86.40px;top:380.11px" class="cls_003"><span class="cls_003">The loops we have written so far have several elements in common.  They</span></div>
+<div style="position:absolute;left:86.40px;top:395.28px" class="cls_003"><span class="cls_003">start by initializing a variable, they have a condition that depends on that</span></div>
+<div style="position:absolute;left:86.40px;top:410.45px" class="cls_003"><span class="cls_003">variable, and inside the loop they do something to update that variable. This</span></div>
+<div style="position:absolute;left:86.40px;top:425.62px" class="cls_003"><span class="cls_003">type of loop is so common that there is another statement, the</span><span class="cls_004"> for</span><span class="cls_003"> loop, that</span></div>
+<div style="position:absolute;left:86.40px;top:440.79px" class="cls_003"><span class="cls_003">expresses it more concisely.</span></div>
+<div style="position:absolute;left:86.40px;top:467.59px" class="cls_003"><span class="cls_003">For example, we could rewrite printTable like this:</span></div>
+<div style="position:absolute;left:101.34px;top:493.49px" class="cls_004"><span class="cls_004">public static void</span><span class="cls_003"> printTable(</span><span class="cls_004">int</span><span class="cls_003"> rows) {</span></div>
+<div style="position:absolute;left:125.95px;top:508.65px" class="cls_004"><span class="cls_004">for</span><span class="cls_003"> (</span><span class="cls_004">int</span><span class="cls_003"> i = 1; i &lt;= rows; i = i + 1) {</span></div>
+<div style="position:absolute;left:150.56px;top:523.82px" class="cls_003"><span class="cls_003">printRow(i, rows);</span></div>
+<div style="position:absolute;left:125.95px;top:538.99px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:101.34px;top:554.16px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:579.64px" class="cls_004"><span class="cls_004">for</span><span class="cls_003"> loops have three components in parentheses, separated by semicolons: the</span></div>
+<div style="position:absolute;left:86.40px;top:594.81px" class="cls_003"><span class="cls_003">initializer, the condition, and the update.</span></div>
+<div style="position:absolute;left:100.71px;top:624.94px" class="cls_003"><span class="cls_003">1. The initializer runs once at the very beginning of the loop.</span></div>
+<div style="position:absolute;left:100.71px;top:649.91px" class="cls_003"><span class="cls_003">2. The condition is checked each time through the loop. If it is</span><span class="cls_004"> false</span><span class="cls_003">, the</span></div>
+<div style="position:absolute;left:115.67px;top:665.08px" class="cls_003"><span class="cls_003">loop ends. Otherwise, the body of the loop is executed (again).</span></div>
+<div style="position:absolute;left:100.71px;top:690.04px" class="cls_003"><span class="cls_003">3. At the end of each iteration, the update runs, and we go back to step 2.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:8020px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="6e4ba8e2-5ad9-11e9-9d71-0cc47a792c0a_id_6e4ba8e2-5ad9-11e9-9d71-0cc47a792c0a_files/background11.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">7.6</span></div>
+<div style="position:absolute;left:160.24px;top:88.65px" class="cls_003"><span class="cls_003">The do-while loop</span></div>
+<div style="position:absolute;left:505.42px;top:88.65px" class="cls_003"><span class="cls_003">115</span></div>
+<div style="position:absolute;left:129.60px;top:124.74px" class="cls_003"><span class="cls_003">The</span><span class="cls_004"> for</span><span class="cls_003"> loop is often easier to read because it puts all the loop-related state-</span></div>
+<div style="position:absolute;left:129.60px;top:139.91px" class="cls_003"><span class="cls_003">ments at the top of the loop.</span></div>
+<div style="position:absolute;left:129.60px;top:167.50px" class="cls_003"><span class="cls_003">There is one difference between</span><span class="cls_004"> for</span><span class="cls_003"> loops and</span><span class="cls_004"> while</span><span class="cls_003"> loops: if you declare a</span></div>
+<div style="position:absolute;left:129.60px;top:182.67px" class="cls_003"><span class="cls_003">variable in the initializer, it only exists inside the</span><span class="cls_004"> for</span><span class="cls_003"> loop. For example, here</span></div>
+<div style="position:absolute;left:129.60px;top:197.83px" class="cls_003"><span class="cls_003">is a version of printRow that uses a</span><span class="cls_004"> for</span><span class="cls_003"> loop:</span></div>
+<div style="position:absolute;left:144.54px;top:224.52px" class="cls_004"><span class="cls_004">public static void</span><span class="cls_003"> printRow(</span><span class="cls_004">int</span><span class="cls_003"> n,</span><span class="cls_004"> int</span><span class="cls_003"> cols) {</span></div>
+<div style="position:absolute;left:169.15px;top:239.69px" class="cls_004"><span class="cls_004">for</span><span class="cls_003"> (</span><span class="cls_004">int</span><span class="cls_003"> i = 1; i &lt;= cols; i = i + 1) {</span></div>
+<div style="position:absolute;left:193.76px;top:254.86px" class="cls_003"><span class="cls_003">System.out.printf(</span><span class="cls_006">"%4d"</span><span class="cls_003">, n * i);</span></div>
+<div style="position:absolute;left:169.15px;top:270.03px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:169.15px;top:285.20px" class="cls_003"><span class="cls_003">System.out.println(i);</span></div>
+<div style="position:absolute;left:316.80px;top:285.20px" class="cls_007"><span class="cls_007">// compiler error</span></div>
+<div style="position:absolute;left:144.54px;top:300.36px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:327.29px" class="cls_003"><span class="cls_003">The last line tries to display i (for no reason other than demonstration) but</span></div>
+<div style="position:absolute;left:129.60px;top:342.46px" class="cls_003"><span class="cls_003">it won’t work. If you need to use a loop variable outside the loop, you have to</span></div>
+<div style="position:absolute;left:129.60px;top:357.63px" class="cls_003"><span class="cls_003">declare it outside the loop, like this:</span></div>
+<div style="position:absolute;left:144.54px;top:383.99px" class="cls_004"><span class="cls_004">public static void</span><span class="cls_003"> printRow(</span><span class="cls_004">int</span><span class="cls_003"> n,</span><span class="cls_004"> int</span><span class="cls_003"> cols) {</span></div>
+<div style="position:absolute;left:169.15px;top:399.16px" class="cls_004"><span class="cls_004">int</span><span class="cls_003"> i;</span></div>
+<div style="position:absolute;left:169.15px;top:414.32px" class="cls_004"><span class="cls_004">for</span><span class="cls_003"> (i = 1; i &lt;= cols; i = i + 1) {</span></div>
+<div style="position:absolute;left:193.76px;top:429.49px" class="cls_003"><span class="cls_003">System.out.printf(</span><span class="cls_006">"%4d"</span><span class="cls_003">, n * i);</span></div>
+<div style="position:absolute;left:169.15px;top:444.66px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:169.15px;top:459.83px" class="cls_003"><span class="cls_003">System.out.println(i);</span></div>
+<div style="position:absolute;left:144.54px;top:475.00px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:501.26px" class="cls_003"><span class="cls_003">Assignments like i = i + 1 don’t often appear in</span><span class="cls_004"> for</span><span class="cls_003"> loops, because Java</span></div>
+<div style="position:absolute;left:129.60px;top:516.43px" class="cls_003"><span class="cls_003">provides a more concise way to add and subtract by one.  Specifically, ++ is</span></div>
+<div style="position:absolute;left:129.60px;top:531.60px" class="cls_003"><span class="cls_003">the increment operator; it has the same effect as i = i + 1. And -- is the</span></div>
+<div style="position:absolute;left:129.60px;top:546.77px" class="cls_003"><span class="cls_003">decrement operator; it has the same effect as i = i - 1.</span></div>
+<div style="position:absolute;left:129.60px;top:574.35px" class="cls_003"><span class="cls_003">If you want to increment or decrement a variable by an amount other than 1,</span></div>
+<div style="position:absolute;left:129.60px;top:589.52px" class="cls_003"><span class="cls_003">you can use += and -=. For example, i += 2 increments i by 2.</span></div>
+<div style="position:absolute;left:129.60px;top:638.31px" class="cls_005"><span class="cls_005">7.6</span></div>
+<div style="position:absolute;left:173.71px;top:638.31px" class="cls_005"><span class="cls_005">The do-while loop</span></div>
+<div style="position:absolute;left:129.60px;top:674.88px" class="cls_003"><span class="cls_003">The</span><span class="cls_004"> while</span><span class="cls_003"> and</span><span class="cls_004"> for</span><span class="cls_003"> statements are pretest loops;  that is, they test the</span></div>
+<div style="position:absolute;left:129.60px;top:690.04px" class="cls_003"><span class="cls_003">condition first and at the beginning of each pass through the loop.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:8822px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="6e4ba8e2-5ad9-11e9-9d71-0cc47a792c0a_id_6e4ba8e2-5ad9-11e9-9d71-0cc47a792c0a_files/background12.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">116</span></div>
+<div style="position:absolute;left:375.00px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 7</span></div>
+<div style="position:absolute;left:447.72px;top:88.65px" class="cls_003"><span class="cls_003">Loops</span></div>
+<div style="position:absolute;left:86.40px;top:124.74px" class="cls_003"><span class="cls_003">Java also provides a posttest loop:  the</span><span class="cls_004"> do</span><span class="cls_003">-</span><span class="cls_004">while</span><span class="cls_003"> statement.  This type of</span></div>
+<div style="position:absolute;left:86.40px;top:139.91px" class="cls_003"><span class="cls_003">loop is useful when you need to run the body of the loop at least once.</span></div>
+<div style="position:absolute;left:86.40px;top:166.16px" class="cls_003"><span class="cls_003">For example, in Section 5.7 we used the</span><span class="cls_004"> return</span><span class="cls_003"> statement to avoid reading</span></div>
+<div style="position:absolute;left:86.40px;top:181.33px" class="cls_003"><span class="cls_003">invalid input from the user. We can use a</span><span class="cls_004"> do</span><span class="cls_003">-</span><span class="cls_004">while</span><span class="cls_003"> loop to keep reading input</span></div>
+<div style="position:absolute;left:86.40px;top:196.49px" class="cls_003"><span class="cls_003">until it’s valid:</span></div>
+<div style="position:absolute;left:101.34px;top:219.19px" class="cls_003"><span class="cls_003">Scanner in =</span><span class="cls_004"> new</span><span class="cls_003"> Scanner(System.in);</span></div>
+<div style="position:absolute;left:101.34px;top:234.35px" class="cls_004"><span class="cls_004">boolean</span><span class="cls_003"> okay;</span></div>
+<div style="position:absolute;left:101.34px;top:249.52px" class="cls_004"><span class="cls_004">do</span><span class="cls_003"> {</span></div>
+<div style="position:absolute;left:125.95px;top:264.69px" class="cls_003"><span class="cls_003">System.out.print(</span><span class="cls_006">"Enter a number: "</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:125.95px;top:279.86px" class="cls_004"><span class="cls_004">if</span><span class="cls_003"> (in.hasNextDouble()) {</span></div>
+<div style="position:absolute;left:150.56px;top:295.03px" class="cls_003"><span class="cls_003">okay =</span><span class="cls_004"> true</span><span class="cls_003">;</span></div>
+<div style="position:absolute;left:125.95px;top:310.20px" class="cls_003"><span class="cls_003">}</span><span class="cls_004"> else</span><span class="cls_003"> {</span></div>
+<div style="position:absolute;left:150.56px;top:325.36px" class="cls_003"><span class="cls_003">okay =</span><span class="cls_004"> false</span><span class="cls_003">;</span></div>
+<div style="position:absolute;left:150.56px;top:340.53px" class="cls_003"><span class="cls_003">String word = in.next();</span></div>
+<div style="position:absolute;left:150.56px;top:355.70px" class="cls_003"><span class="cls_003">System.err.println(word +</span><span class="cls_006"> " is not a number"</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:125.95px;top:370.87px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:101.34px;top:386.04px" class="cls_003"><span class="cls_003">}</span><span class="cls_004"> while</span><span class="cls_003"> (!okay);</span></div>
+<div style="position:absolute;left:101.34px;top:401.20px" class="cls_004"><span class="cls_004">double</span><span class="cls_003"> x = in.nextDouble();</span></div>
+<div style="position:absolute;left:86.40px;top:426.13px" class="cls_003"><span class="cls_003">Although this code looks complicated, it is essentially only three steps:</span></div>
+<div style="position:absolute;left:100.71px;top:454.61px" class="cls_003"><span class="cls_003">1. Display a prompt.</span></div>
+<div style="position:absolute;left:100.71px;top:479.30px" class="cls_003"><span class="cls_003">2. Check the input; if invalid, display an error and start over.</span></div>
+<div style="position:absolute;left:100.71px;top:503.99px" class="cls_003"><span class="cls_003">3. Read the input.</span></div>
+<div style="position:absolute;left:86.40px;top:532.47px" class="cls_003"><span class="cls_003">The code uses a flag variable, okay, to indicate whether we need to repeat the</span></div>
+<div style="position:absolute;left:86.40px;top:547.64px" class="cls_003"><span class="cls_003">loop body. If hasNextDouble() returns</span><span class="cls_004"> false</span><span class="cls_003">, we consume the invalid input</span></div>
+<div style="position:absolute;left:86.40px;top:562.81px" class="cls_003"><span class="cls_003">by calling next().  We then display an error message via System.err.  The</span></div>
+<div style="position:absolute;left:86.40px;top:577.98px" class="cls_003"><span class="cls_003">loop terminates when hasNextDouble() return</span><span class="cls_004"> true</span><span class="cls_003">.</span></div>
+<div style="position:absolute;left:86.40px;top:624.60px" class="cls_005"><span class="cls_005">7.7</span></div>
+<div style="position:absolute;left:130.51px;top:624.60px" class="cls_005"><span class="cls_005">Break and continue</span></div>
+<div style="position:absolute;left:86.40px;top:659.71px" class="cls_003"><span class="cls_003">Sometimes neither a pretest nor a posttest loop will provide exactly what you</span></div>
+<div style="position:absolute;left:86.40px;top:674.88px" class="cls_003"><span class="cls_003">need. In the previous example, the “test” needed to happen in the middle of</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_003"><span class="cls_003">the loop. As a result, we used a flag variable and a nested</span><span class="cls_004"> if</span><span class="cls_003">-</span><span class="cls_004">else</span><span class="cls_003"> statement.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:9624px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="6e4ba8e2-5ad9-11e9-9d71-0cc47a792c0a_id_6e4ba8e2-5ad9-11e9-9d71-0cc47a792c0a_files/background13.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">7.7</span></div>
+<div style="position:absolute;left:160.24px;top:88.65px" class="cls_003"><span class="cls_003">Break and continue</span></div>
+<div style="position:absolute;left:505.43px;top:88.65px" class="cls_003"><span class="cls_003">117</span></div>
+<div style="position:absolute;left:129.60px;top:124.74px" class="cls_003"><span class="cls_003">A simpler way to solve this problem is to use a</span><span class="cls_004"> break</span><span class="cls_003"> statement.  When a</span></div>
+<div style="position:absolute;left:129.60px;top:139.91px" class="cls_003"><span class="cls_003">program reaches a</span><span class="cls_004"> break</span><span class="cls_003"> statement, it exits the current loop.</span></div>
+<div style="position:absolute;left:144.54px;top:173.89px" class="cls_003"><span class="cls_003">Scanner in =</span><span class="cls_004"> new</span><span class="cls_003"> Scanner(System.in);</span></div>
+<div style="position:absolute;left:144.54px;top:189.06px" class="cls_004"><span class="cls_004">while</span><span class="cls_003"> (</span><span class="cls_004">true</span><span class="cls_003">) {</span></div>
+<div style="position:absolute;left:169.15px;top:204.22px" class="cls_003"><span class="cls_003">System.out.print(</span><span class="cls_006">"Enter a number: "</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:169.15px;top:219.39px" class="cls_004"><span class="cls_004">if</span><span class="cls_003"> (in.hasNextDouble()) {</span></div>
+<div style="position:absolute;left:193.76px;top:234.56px" class="cls_004"><span class="cls_004">break</span><span class="cls_003">;</span></div>
+<div style="position:absolute;left:169.15px;top:249.73px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:169.15px;top:264.90px" class="cls_003"><span class="cls_003">String word = in.next();</span></div>
+<div style="position:absolute;left:169.15px;top:280.06px" class="cls_003"><span class="cls_003">System.err.println(word +</span><span class="cls_006"> " is not a number"</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:144.54px;top:295.23px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:144.54px;top:310.40px" class="cls_004"><span class="cls_004">double</span><span class="cls_003"> x = in.nextDouble();</span></div>
+<div style="position:absolute;left:129.60px;top:344.29px" class="cls_003"><span class="cls_003">Using</span><span class="cls_004"> true</span><span class="cls_003"> as a conditional in a</span><span class="cls_004"> while</span><span class="cls_003"> loop is an idiom that means “loop</span></div>
+<div style="position:absolute;left:129.60px;top:359.45px" class="cls_003"><span class="cls_003">forever”, or in this case “loop until you get to a</span><span class="cls_004"> break</span><span class="cls_003"> statement.”</span></div>
+<div style="position:absolute;left:129.60px;top:394.66px" class="cls_003"><span class="cls_003">In addition to the</span><span class="cls_004"> break</span><span class="cls_003"> statement, which exits the loop, Java provides a</span></div>
+<div style="position:absolute;left:129.60px;top:409.83px" class="cls_004"><span class="cls_004">continue</span><span class="cls_003"> statement that moves on to the next iteration.  For example, the</span></div>
+<div style="position:absolute;left:129.60px;top:425.00px" class="cls_003"><span class="cls_003">following code reads integers from the keyboard and computes a running total.</span></div>
+<div style="position:absolute;left:129.60px;top:440.16px" class="cls_003"><span class="cls_003">The</span><span class="cls_004"> continue</span><span class="cls_003"> statement causes the program to skip over any negative values.</span></div>
+<div style="position:absolute;left:144.54px;top:474.14px" class="cls_003"><span class="cls_003">Scanner in =</span><span class="cls_004"> new</span><span class="cls_003"> Scanner(System.in);</span></div>
+<div style="position:absolute;left:144.54px;top:489.31px" class="cls_004"><span class="cls_004">int</span><span class="cls_003"> x = -1;</span></div>
+<div style="position:absolute;left:144.54px;top:504.48px" class="cls_004"><span class="cls_004">int</span><span class="cls_003"> sum = 0;</span></div>
+<div style="position:absolute;left:144.54px;top:519.64px" class="cls_004"><span class="cls_004">while</span><span class="cls_003"> (x != 0) {</span></div>
+<div style="position:absolute;left:169.15px;top:534.81px" class="cls_003"><span class="cls_003">x = in.nextInt();</span></div>
+<div style="position:absolute;left:169.15px;top:549.98px" class="cls_004"><span class="cls_004">if</span><span class="cls_003"> (x &lt;= 0) {</span></div>
+<div style="position:absolute;left:193.76px;top:565.15px" class="cls_004"><span class="cls_004">continue</span><span class="cls_003">;</span></div>
+<div style="position:absolute;left:169.15px;top:580.32px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:169.15px;top:595.49px" class="cls_003"><span class="cls_003">System.out.println(</span><span class="cls_006">"Adding "</span><span class="cls_003"> + x);</span></div>
+<div style="position:absolute;left:169.15px;top:610.65px" class="cls_003"><span class="cls_003">sum += x;</span></div>
+<div style="position:absolute;left:144.54px;top:625.82px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:659.71px" class="cls_003"><span class="cls_003">Although</span><span class="cls_004"> break</span><span class="cls_003"> and</span><span class="cls_004"> continue</span><span class="cls_003"> statements give you more control of the loop</span></div>
+<div style="position:absolute;left:129.60px;top:674.88px" class="cls_003"><span class="cls_003">execution, they can make code difficult to understand and debug. Use them</span></div>
+<div style="position:absolute;left:129.60px;top:690.04px" class="cls_003"><span class="cls_003">sparingly.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:10426px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="6e4ba8e2-5ad9-11e9-9d71-0cc47a792c0a_id_6e4ba8e2-5ad9-11e9-9d71-0cc47a792c0a_files/background14.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">118</span></div>
+<div style="position:absolute;left:375.00px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 7</span></div>
+<div style="position:absolute;left:447.72px;top:88.65px" class="cls_003"><span class="cls_003">Loops</span></div>
+<div style="position:absolute;left:86.40px;top:119.48px" class="cls_005"><span class="cls_005">7.8</span></div>
+<div style="position:absolute;left:130.51px;top:119.48px" class="cls_005"><span class="cls_005">Vocabulary</span></div>
+<div style="position:absolute;left:86.40px;top:154.97px" class="cls_003"><span class="cls_003">iteration: Executing a sequence of statements repeatedly.</span></div>
+<div style="position:absolute;left:86.40px;top:183.98px" class="cls_003"><span class="cls_003">loop: A statement that executes a sequence of statements repeatedly.</span></div>
+<div style="position:absolute;left:86.40px;top:212.99px" class="cls_003"><span class="cls_003">loop body: The statements inside the loop.</span></div>
+<div style="position:absolute;left:86.40px;top:242.00px" class="cls_003"><span class="cls_003">infinite loop: A loop whose condition is always true.</span></div>
+<div style="position:absolute;left:86.40px;top:271.01px" class="cls_003"><span class="cls_003">program development: A process for writing programs. So far we have seen</span></div>
+<div style="position:absolute;left:115.67px;top:286.18px" class="cls_003"><span class="cls_003">“incremental development” and “encapsulation and generalization”.</span></div>
+<div style="position:absolute;left:86.40px;top:315.19px" class="cls_003"><span class="cls_003">encapsulate: To wrap a sequence of statements in a method.</span></div>
+<div style="position:absolute;left:86.40px;top:344.20px" class="cls_003"><span class="cls_003">generalize: To replace something unnecessarily specific (like a constant value)</span></div>
+<div style="position:absolute;left:115.67px;top:359.37px" class="cls_003"><span class="cls_003">with something appropriately general (like a variable or parameter).</span></div>
+<div style="position:absolute;left:86.40px;top:388.38px" class="cls_003"><span class="cls_003">loop variable: A variable that is initialized, tested, and updated in order to</span></div>
+<div style="position:absolute;left:115.67px;top:403.54px" class="cls_003"><span class="cls_003">control a loop.</span></div>
+<div style="position:absolute;left:86.40px;top:432.55px" class="cls_003"><span class="cls_003">increment: Increase the value of a variable.</span></div>
+<div style="position:absolute;left:86.40px;top:461.56px" class="cls_003"><span class="cls_003">decrement: Decrease the value of a variable.</span></div>
+<div style="position:absolute;left:86.40px;top:490.58px" class="cls_003"><span class="cls_003">pretest loop: A loop that tests the condition before each iteration.</span></div>
+<div style="position:absolute;left:86.40px;top:519.59px" class="cls_003"><span class="cls_003">posttest loop: A loop that tests the condition after each iteration.</span></div>
+<div style="position:absolute;left:86.40px;top:574.42px" class="cls_005"><span class="cls_005">7.9</span></div>
+<div style="position:absolute;left:130.51px;top:574.42px" class="cls_005"><span class="cls_005">Exercises</span></div>
+<div style="position:absolute;left:86.40px;top:614.31px" class="cls_003"><span class="cls_003">The code for this chapter is in the ch07 directory of ThinkJavaCode.  See</span></div>
+<div style="position:absolute;left:86.40px;top:629.48px" class="cls_003"><span class="cls_003">page xv for instructions on how to download the repository. Before you start</span></div>
+<div style="position:absolute;left:86.40px;top:644.65px" class="cls_003"><span class="cls_003">the exercises, we recommend that you compile and run the examples.</span></div>
+<div style="position:absolute;left:86.40px;top:674.88px" class="cls_003"><span class="cls_003">If you have not already read Appendix A.5, now might be a good time.  It</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_003"><span class="cls_003">describes Checkstyle, a tool that analyzes many aspects of your source code.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:11228px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="6e4ba8e2-5ad9-11e9-9d71-0cc47a792c0a_id_6e4ba8e2-5ad9-11e9-9d71-0cc47a792c0a_files/background15.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">7.9</span></div>
+<div style="position:absolute;left:160.24px;top:88.65px" class="cls_003"><span class="cls_003">Exercises</span></div>
+<div style="position:absolute;left:505.43px;top:88.65px" class="cls_003"><span class="cls_003">119</span></div>
+<div style="position:absolute;left:129.60px;top:124.74px" class="cls_003"><span class="cls_003">Exercise 7.1</span></div>
+<div style="position:absolute;left:211.94px;top:124.74px" class="cls_003"><span class="cls_003">Consider the following methods:</span></div>
+<div style="position:absolute;left:144.54px;top:150.75px" class="cls_004"><span class="cls_004">public static void</span><span class="cls_003"> main(String[] args) {</span></div>
+<div style="position:absolute;left:169.15px;top:165.92px" class="cls_003"><span class="cls_003">loop(10);</span></div>
+<div style="position:absolute;left:144.54px;top:181.09px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:144.54px;top:211.42px" class="cls_004"><span class="cls_004">public static void</span><span class="cls_003"> loop(</span><span class="cls_004">int</span><span class="cls_003"> n) {</span></div>
+<div style="position:absolute;left:169.15px;top:226.59px" class="cls_004"><span class="cls_004">int</span><span class="cls_003"> i = n;</span></div>
+<div style="position:absolute;left:169.15px;top:241.76px" class="cls_004"><span class="cls_004">while</span><span class="cls_003"> (i > 1) {</span></div>
+<div style="position:absolute;left:193.76px;top:256.93px" class="cls_003"><span class="cls_003">System.out.println(i);</span></div>
+<div style="position:absolute;left:193.76px;top:272.10px" class="cls_004"><span class="cls_004">if</span><span class="cls_003"> (i % 2 == 0) {</span></div>
+<div style="position:absolute;left:218.37px;top:287.26px" class="cls_003"><span class="cls_003">i = i / 2;</span></div>
+<div style="position:absolute;left:193.76px;top:302.43px" class="cls_003"><span class="cls_003">}</span><span class="cls_004"> else</span><span class="cls_003"> {</span></div>
+<div style="position:absolute;left:218.37px;top:317.60px" class="cls_003"><span class="cls_003">i = i + 1;</span></div>
+<div style="position:absolute;left:193.76px;top:332.77px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:169.15px;top:347.94px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:144.54px;top:363.11px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:143.91px;top:393.18px" class="cls_003"><span class="cls_003">1. Draw a table that shows the value of the variables i and n during the</span></div>
+<div style="position:absolute;left:158.87px;top:408.35px" class="cls_003"><span class="cls_003">execution of loop. The table should contain one column for each variable</span></div>
+<div style="position:absolute;left:158.87px;top:423.52px" class="cls_003"><span class="cls_003">and one line for each iteration.</span></div>
+<div style="position:absolute;left:143.91px;top:448.79px" class="cls_003"><span class="cls_003">2. What is the output of this program?</span></div>
+<div style="position:absolute;left:143.91px;top:474.06px" class="cls_003"><span class="cls_003">3. Can you prove that this loop terminates for any positive value of n?</span></div>
+<div style="position:absolute;left:129.60px;top:501.19px" class="cls_003"><span class="cls_003">Exercise 7.2</span></div>
+<div style="position:absolute;left:213.30px;top:501.19px" class="cls_003"><span class="cls_003">Let’s say you are given a number, a, and you want to find</span></div>
+<div style="position:absolute;left:129.60px;top:516.36px" class="cls_003"><span class="cls_003">its square root. One way to do that is to start with a rough guess about the</span></div>
+<div style="position:absolute;left:129.60px;top:531.52px" class="cls_003"><span class="cls_003">answer, x</span><span class="cls_008"><sub>0</sub></span><span class="cls_003">, and then improve the guess using this formula:</span></div>
+<div style="position:absolute;left:279.04px;top:559.24px" class="cls_003"><span class="cls_003">x</span><span class="cls_008"><sub>1</sub></span><span class="cls_003"> = (x</span><span class="cls_008"><sub>0</sub></span><span class="cls_003"> + a/x</span><span class="cls_008"><sub>0</sub></span><span class="cls_003">)/2</span></div>
+<div style="position:absolute;left:129.60px;top:586.97px" class="cls_003"><span class="cls_003">For example, if we want to find the square root of 9, and we start with x</span><span class="cls_008"><sub>0</sub></span><span class="cls_003"> = 6,</span></div>
+<div style="position:absolute;left:129.60px;top:602.13px" class="cls_003"><span class="cls_003">then x</span><span class="cls_008"><sub>1</sub></span><span class="cls_003"> = (6 + 9/6)/2 = 3.75, which is closer. We can repeat the procedure,</span></div>
+<div style="position:absolute;left:129.60px;top:617.30px" class="cls_003"><span class="cls_003">using x</span><span class="cls_008"><sub>1</sub></span><span class="cls_003"> to calculate x</span><span class="cls_008"><sub>2</sub></span><span class="cls_003">, and so on. In this case, x</span><span class="cls_008"><sub>2</sub></span><span class="cls_003"> = 3.075 and x</span><span class="cls_008"><sub>3</sub></span><span class="cls_003"> = 3.00091.</span></div>
+<div style="position:absolute;left:129.60px;top:632.47px" class="cls_003"><span class="cls_003">So it converges quickly on the correct answer.</span></div>
+<div style="position:absolute;left:129.60px;top:659.71px" class="cls_003"><span class="cls_003">Write a method called squareRoot that takes a</span><span class="cls_004"> double</span><span class="cls_003"> and returns an ap-</span></div>
+<div style="position:absolute;left:129.60px;top:674.88px" class="cls_003"><span class="cls_003">proximation of the square root of the parameter, using this technique.  You</span></div>
+<div style="position:absolute;left:129.60px;top:690.04px" class="cls_003"><span class="cls_003">should not use Math.sqrt.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:12030px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="6e4ba8e2-5ad9-11e9-9d71-0cc47a792c0a_id_6e4ba8e2-5ad9-11e9-9d71-0cc47a792c0a_files/background16.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">120</span></div>
+<div style="position:absolute;left:375.00px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 7</span></div>
+<div style="position:absolute;left:447.72px;top:88.65px" class="cls_003"><span class="cls_003">Loops</span></div>
+<div style="position:absolute;left:86.40px;top:124.74px" class="cls_003"><span class="cls_003">As your initial guess, you should use a/2.  Your method should iterate until</span></div>
+<div style="position:absolute;left:86.40px;top:139.91px" class="cls_003"><span class="cls_003">it gets two consecutive estimates that differ by less than 0.0001. You can use</span></div>
+<div style="position:absolute;left:86.40px;top:155.08px" class="cls_003"><span class="cls_003">Math.abs to calculate the absolute value of the difference.</span></div>
+<div style="position:absolute;left:86.40px;top:182.20px" class="cls_003"><span class="cls_003">Exercise 7.3</span></div>
+<div style="position:absolute;left:169.26px;top:182.20px" class="cls_003"><span class="cls_003">In Exercise 6.9 we wrote a recursive version of power, which</span></div>
+<div style="position:absolute;left:86.40px;top:197.02px" class="cls_003"><span class="cls_003">takes a double x and an integer n and returns x</span><span class="cls_008"><sup>n</sup></span><span class="cls_003">.  Now write an iterative</span></div>
+<div style="position:absolute;left:86.40px;top:212.54px" class="cls_003"><span class="cls_003">method to perform the same calculation.</span></div>
+<div style="position:absolute;left:86.40px;top:239.66px" class="cls_003"><span class="cls_003">Exercise 7.4</span></div>
+<div style="position:absolute;left:170.44px;top:239.66px" class="cls_003"><span class="cls_003">Section 6.7 presents a recursive method that computes the</span></div>
+<div style="position:absolute;left:86.40px;top:254.83px" class="cls_003"><span class="cls_003">factorial function. Write an iterative version of factorial.</span></div>
+<div style="position:absolute;left:86.40px;top:281.95px" class="cls_003"><span class="cls_003">Exercise 7.5</span></div>
+<div style="position:absolute;left:168.39px;top:281.60px" class="cls_003"><span class="cls_003">One way to calculate e</span><span class="cls_008"><sup>x</sup></span><span class="cls_003"> is to use the infinite series expansion:</span></div>
+<div style="position:absolute;left:182.50px;top:308.72px" class="cls_003"><span class="cls_003">e</span><span class="cls_008"><sup>x</sup></span><span class="cls_003"> = 1 + x + x</span><span class="cls_008"><sup>2</sup></span><span class="cls_003">/2! + x</span><span class="cls_008"><sup>3</sup></span><span class="cls_003">/3! + x</span><span class="cls_008"><sup>4</sup></span><span class="cls_003">/4! + ...</span></div>
+<div style="position:absolute;left:86.40px;top:337.04px" class="cls_003"><span class="cls_003">The ith term in the series is x</span><span class="cls_008"><sup>i</sup></span><span class="cls_003">/i!.</span></div>
+<div style="position:absolute;left:100.71px;top:376.45px" class="cls_003"><span class="cls_003">1.</span></div>
+<div style="position:absolute;left:115.67px;top:376.45px" class="cls_003"><span class="cls_003">Write a method called myexp that takes x and n as parameters and</span></div>
+<div style="position:absolute;left:115.67px;top:391.26px" class="cls_003"><span class="cls_003">estimates e</span><span class="cls_008"><sup>x</sup></span><span class="cls_003">  by adding the first n terms of this series. You can use the</span></div>
+<div style="position:absolute;left:115.67px;top:406.78px" class="cls_003"><span class="cls_003">factorial method from Section 6.7 or your iterative version from the</span></div>
+<div style="position:absolute;left:115.67px;top:421.95px" class="cls_003"><span class="cls_003">previous exercise.</span></div>
+<div style="position:absolute;left:100.71px;top:451.06px" class="cls_003"><span class="cls_003">2.</span></div>
+<div style="position:absolute;left:115.67px;top:451.06px" class="cls_003"><span class="cls_003">You can make this method more efficient if you realize that the numerator</span></div>
+<div style="position:absolute;left:115.67px;top:466.22px" class="cls_003"><span class="cls_003">of each term is the same as its predecessor multiplied by x, and the</span></div>
+<div style="position:absolute;left:115.67px;top:481.39px" class="cls_003"><span class="cls_003">denominator is the same as its predecessor multiplied by i.  Use this</span></div>
+<div style="position:absolute;left:115.67px;top:496.56px" class="cls_003"><span class="cls_003">observation to eliminate the use of Math.pow and factorial, and check</span></div>
+<div style="position:absolute;left:115.67px;top:511.73px" class="cls_003"><span class="cls_003">that you get the same result.</span></div>
+<div style="position:absolute;left:100.71px;top:540.83px" class="cls_003"><span class="cls_003">3.</span></div>
+<div style="position:absolute;left:115.67px;top:540.83px" class="cls_003"><span class="cls_003">Write a method called check that takes a parameter, x, and displays x,</span></div>
+<div style="position:absolute;left:115.67px;top:556.00px" class="cls_003"><span class="cls_003">myexp(x), and Math.exp(x). The output should look something like:</span></div>
+<div style="position:absolute;left:130.61px;top:578.18px" class="cls_003"><span class="cls_003">1.0</span></div>
+<div style="position:absolute;left:179.83px;top:578.18px" class="cls_003"><span class="cls_003">2.708333333333333</span></div>
+<div style="position:absolute;left:315.16px;top:578.18px" class="cls_003"><span class="cls_003">2.718281828459045</span></div>
+<div style="position:absolute;left:115.67px;top:600.27px" class="cls_003"><span class="cls_003">You can use the escape sequence</span><span class="cls_006"> "\t"</span><span class="cls_003"> to put a tab character between</span></div>
+<div style="position:absolute;left:115.67px;top:615.44px" class="cls_003"><span class="cls_003">columns of a table.</span></div>
+<div style="position:absolute;left:100.71px;top:644.54px" class="cls_003"><span class="cls_003">4.</span></div>
+<div style="position:absolute;left:115.67px;top:644.54px" class="cls_003"><span class="cls_003">Vary the number of terms in the series (the second argument that check</span></div>
+<div style="position:absolute;left:115.67px;top:659.71px" class="cls_003"><span class="cls_003">sends to myexp) and see the effect on the accuracy of the result. Adjust</span></div>
+<div style="position:absolute;left:115.67px;top:674.88px" class="cls_003"><span class="cls_003">this value until the estimated value agrees with the correct answer when</span></div>
+<div style="position:absolute;left:115.67px;top:690.04px" class="cls_003"><span class="cls_003">x is 1.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:12832px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="6e4ba8e2-5ad9-11e9-9d71-0cc47a792c0a_id_6e4ba8e2-5ad9-11e9-9d71-0cc47a792c0a_files/background17.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">7.9</span></div>
+<div style="position:absolute;left:160.24px;top:88.65px" class="cls_003"><span class="cls_003">Exercises</span></div>
+<div style="position:absolute;left:505.43px;top:88.65px" class="cls_003"><span class="cls_003">121</span></div>
+<div style="position:absolute;left:143.91px;top:124.74px" class="cls_003"><span class="cls_003">5. Write a loop in main that invokes check with the values 0.1, 1.0, 10.0, and</span></div>
+<div style="position:absolute;left:158.87px;top:139.91px" class="cls_003"><span class="cls_003">100.0. How does the accuracy of the result vary as x varies? Compare</span></div>
+<div style="position:absolute;left:158.87px;top:155.08px" class="cls_003"><span class="cls_003">the number of digits of agreement rather than the difference between the</span></div>
+<div style="position:absolute;left:158.87px;top:170.25px" class="cls_003"><span class="cls_003">actual and estimated values.</span></div>
+<div style="position:absolute;left:143.91px;top:195.38px" class="cls_003"><span class="cls_003">6. Add a loop in main that checks myexp with the values -0.1, -1.0, -10.0,</span></div>
+<div style="position:absolute;left:158.87px;top:210.55px" class="cls_003"><span class="cls_003">and -100.0. Comment on the accuracy.</span></div>
+<div style="position:absolute;left:129.60px;top:237.67px" class="cls_003"><span class="cls_003">Exercise 7.6</span></div>
+<div style="position:absolute;left:213.99px;top:237.32px" class="cls_003"><span class="cls_003">One way to evaluate exp(−x</span><span class="cls_008"><sup>2</sup></span><span class="cls_003">) is to use the infinite series</span></div>
+<div style="position:absolute;left:129.60px;top:252.84px" class="cls_003"><span class="cls_003">expansion:</span></div>
+<div style="position:absolute;left:228.28px;top:267.06px" class="cls_003"><span class="cls_003">exp(−x</span><span class="cls_008"><sup>2</sup></span><span class="cls_003">) = 1 − x</span><span class="cls_008"><sup>2</sup></span><span class="cls_003"> + x</span><span class="cls_008"><sup>4</sup></span><span class="cls_003">/2 − x</span><span class="cls_008"><sup>6</sup></span><span class="cls_003">/6 + . . .</span></div>
+<div style="position:absolute;left:129.60px;top:289.62px" class="cls_003"><span class="cls_003">The ith term in this series is (−1)</span><span class="cls_008"><sup>i</sup></span><span class="cls_003">x</span><span class="cls_008"><sup>2i</sup></span><span class="cls_003">/i!. Write a method named gauss that</span></div>
+<div style="position:absolute;left:129.60px;top:305.14px" class="cls_003"><span class="cls_003">takes x and n as arguments and returns the sum of the first n terms of the</span></div>
+<div style="position:absolute;left:129.60px;top:320.31px" class="cls_003"><span class="cls_003">series. You should not use factorial or pow.</span></div>
+</div>
+
+</body>
+</html>

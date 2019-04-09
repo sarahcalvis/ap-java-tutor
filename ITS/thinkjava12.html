@@ -1,0 +1,637 @@
+<html>
+<head><meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<style type="text/css">
+<!--
+span.cls_002{font-family:Arial,serif;font-size:24.8px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_002{font-family:Arial,serif;font-size:24.8px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_003{font-family:Arial,serif;font-size:12.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_003{font-family:Arial,serif;font-size:12.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_004{font-family:Times,serif;font-size:8.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_004{font-family:Times,serif;font-size:8.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_005{font-family:Arial,serif;font-size:17.3px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_005{font-family:Arial,serif;font-size:17.3px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_006{font-family:Arial,serif;font-size:12.0px;color:rgb(0,0,255);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_006{font-family:Arial,serif;font-size:12.0px;color:rgb(0,0,255);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_007{font-family:Arial,serif;font-size:12.0px;color:rgb(178,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_007{font-family:Arial,serif;font-size:12.0px;color:rgb(178,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_008{font-family:Arial,serif;font-size:10.9px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_008{font-family:Arial,serif;font-size:10.9px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_009{font-family:Arial,serif;font-size:12.0px;color:rgb(0,123,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_009{font-family:Arial,serif;font-size:12.0px;color:rgb(0,123,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_010{font-family:Arial,serif;font-size:9.9px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_010{font-family:Arial,serif;font-size:9.9px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_011{font-family:Arial,serif;font-size:8.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_011{font-family:Arial,serif;font-size:8.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+-->
+</style>
+<script type="text/javascript" src="fce73714-5ada-11e9-9d71-0cc47a792c0a_id_fce73714-5ada-11e9-9d71-0cc47a792c0a_files/wz_jsgraphics.js"></script>
+</head>
+<body>
+<div style="position:absolute;left:50%;margin-left:-306px;top:0px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="fce73714-5ada-11e9-9d71-0cc47a792c0a_id_fce73714-5ada-11e9-9d71-0cc47a792c0a_files/background01.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:205.72px" class="cls_002"><span class="cls_002">Chapter 12</span></div>
+<div style="position:absolute;left:129.60px;top:269.64px" class="cls_002"><span class="cls_002">Arrays of objects</span></div>
+<div style="position:absolute;left:129.60px;top:350.10px" class="cls_003"><span class="cls_003">In the remaining chapters, we will develop programs that work with playing</span></div>
+<div style="position:absolute;left:129.60px;top:365.27px" class="cls_003"><span class="cls_003">cards and decks of cards. Here is an outline of the road ahead:</span></div>
+<div style="position:absolute;left:147.16px;top:398.01px" class="cls_004"><span class="cls_004"></span><span class="cls_003"> In this chapter, we define a Card class and write methods that work with</span></div>
+<div style="position:absolute;left:158.87px;top:413.18px" class="cls_003"><span class="cls_003">cards and arrays of cards.</span></div>
+<div style="position:absolute;left:147.16px;top:439.13px" class="cls_004"><span class="cls_004"></span><span class="cls_003"> In Chapter 13.1, we create a Deck class that encapsulates an array of</span></div>
+<div style="position:absolute;left:158.87px;top:454.30px" class="cls_003"><span class="cls_003">cards, and we write methods that operate on decks.</span></div>
+<div style="position:absolute;left:147.16px;top:480.25px" class="cls_004"><span class="cls_004"></span><span class="cls_003"> In Chapter 14, we introduce inheritance as a way to create new classes</span></div>
+<div style="position:absolute;left:158.87px;top:495.42px" class="cls_003"><span class="cls_003">that extend existing classes. We then use all these classes to implement</span></div>
+<div style="position:absolute;left:158.87px;top:510.59px" class="cls_003"><span class="cls_003">the card game Crazy Eights.</span></div>
+<div style="position:absolute;left:129.60px;top:543.33px" class="cls_003"><span class="cls_003">The code for this chapter is in Card.java, which is in the directory ch12 in</span></div>
+<div style="position:absolute;left:129.60px;top:558.50px" class="cls_003"><span class="cls_003">the repository for this book.  Instructions for downloading this code are on</span></div>
+<div style="position:absolute;left:129.60px;top:573.67px" class="cls_003"><span class="cls_003">page xv.</span></div>
+<div style="position:absolute;left:129.60px;top:622.90px" class="cls_005"><span class="cls_005">12.1</span></div>
+<div style="position:absolute;left:183.40px;top:622.90px" class="cls_005"><span class="cls_005">Card objects</span></div>
+<div style="position:absolute;left:129.60px;top:659.71px" class="cls_003"><span class="cls_003">If you are unfamiliar with traditional playing cards, now would be a good time</span></div>
+<div style="position:absolute;left:129.60px;top:674.88px" class="cls_003"><span class="cls_003">to get a deck or read through</span><span class="cls_006"> <A HREF="https://en.wikipedia.org/wiki/Standard_52-card_deck">https://en.wikipedia.org/wiki/Standard_</A> </span></div>
+<div style="position:absolute;left:129.60px;top:690.04px" class="cls_006"><span class="cls_006"> </span><A HREF="https://en.wikipedia.org/wiki/Standard_52-card_deck">52-card_deck</A> <span class="cls_003">.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:802px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="fce73714-5ada-11e9-9d71-0cc47a792c0a_id_fce73714-5ada-11e9-9d71-0cc47a792c0a_files/background02.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">190</span></div>
+<div style="position:absolute;left:301.74px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 12</span></div>
+<div style="position:absolute;left:381.18px;top:88.65px" class="cls_003"><span class="cls_003">Arrays of objects</span></div>
+<div style="position:absolute;left:86.40px;top:124.74px" class="cls_003"><span class="cls_003">There are 52 cards in a standard deck. Each card belongs to one of four suits</span></div>
+<div style="position:absolute;left:86.40px;top:139.91px" class="cls_003"><span class="cls_003">and one of 13 ranks. The suits are Spades, Hearts, Diamonds, and Clubs. The</span></div>
+<div style="position:absolute;left:86.40px;top:155.08px" class="cls_003"><span class="cls_003">ranks are Ace, 2, 3, 4, 5, 6, 7, 8, 9, 10, Jack, Queen, and King.</span></div>
+<div style="position:absolute;left:86.40px;top:186.85px" class="cls_003"><span class="cls_003">If we want to define a class to represent a playing card, it is pretty obvious</span></div>
+<div style="position:absolute;left:86.40px;top:202.02px" class="cls_003"><span class="cls_003">what the instance variables should be:  rank and suit.  It is not as obvious</span></div>
+<div style="position:absolute;left:86.40px;top:217.19px" class="cls_003"><span class="cls_003">what types they should be. One possibility is a String containing things like</span></div>
+<div style="position:absolute;left:86.40px;top:232.36px" class="cls_007"><span class="cls_007">"Spade"</span><span class="cls_003"> for suits and</span><span class="cls_007"> "Queen"</span><span class="cls_003"> for ranks. A problem with this design is that</span></div>
+<div style="position:absolute;left:86.40px;top:247.53px" class="cls_003"><span class="cls_003">it would not be easy to compare cards to see which had a higher rank or suit.</span></div>
+<div style="position:absolute;left:86.40px;top:279.30px" class="cls_003"><span class="cls_003">An alternative is to use integers to encode the ranks and suits. By “encode”</span></div>
+<div style="position:absolute;left:86.40px;top:294.47px" class="cls_003"><span class="cls_003">we don’t mean to encrypt or translate into a secret code. We mean “define a</span></div>
+<div style="position:absolute;left:86.40px;top:309.64px" class="cls_003"><span class="cls_003">mapping between a sequence of numbers and the things we want to represent.”</span></div>
+<div style="position:absolute;left:86.40px;top:341.41px" class="cls_003"><span class="cls_003">Here is a mapping for suits:</span></div>
+<div style="position:absolute;left:92.38px;top:377.26px" class="cls_003"><span class="cls_003">Clubs</span></div>
+<div style="position:absolute;left:155.61px;top:377.26px" class="cls_003"><span class="cls_003">→  0</span></div>
+<div style="position:absolute;left:92.38px;top:400.02px" class="cls_003"><span class="cls_003">Diamonds</span></div>
+<div style="position:absolute;left:155.61px;top:400.02px" class="cls_003"><span class="cls_003">→  1</span></div>
+<div style="position:absolute;left:92.38px;top:422.77px" class="cls_003"><span class="cls_003">Hearts</span></div>
+<div style="position:absolute;left:155.61px;top:422.77px" class="cls_003"><span class="cls_003">→  2</span></div>
+<div style="position:absolute;left:92.38px;top:445.52px" class="cls_003"><span class="cls_003">Spades</span></div>
+<div style="position:absolute;left:155.61px;top:445.52px" class="cls_003"><span class="cls_003">→  3</span></div>
+<div style="position:absolute;left:86.40px;top:478.25px" class="cls_003"><span class="cls_003">We use the mathematical symbol → to make it clear that these mappings are</span></div>
+<div style="position:absolute;left:86.40px;top:493.42px" class="cls_003"><span class="cls_003">not part of the program. They are part of the program design, but they never</span></div>
+<div style="position:absolute;left:86.40px;top:508.59px" class="cls_003"><span class="cls_003">appear explicitly in the code.</span></div>
+<div style="position:absolute;left:86.40px;top:540.36px" class="cls_003"><span class="cls_003">Each of the numerical ranks (2 through 10) maps to the corresponding integer,</span></div>
+<div style="position:absolute;left:86.40px;top:555.53px" class="cls_003"><span class="cls_003">and for face cards:</span></div>
+<div style="position:absolute;left:92.38px;top:589.06px" class="cls_003"><span class="cls_003">Ace</span></div>
+<div style="position:absolute;left:136.85px;top:589.06px" class="cls_003"><span class="cls_003">→  1</span></div>
+<div style="position:absolute;left:92.38px;top:611.81px" class="cls_003"><span class="cls_003">Jack</span></div>
+<div style="position:absolute;left:136.85px;top:611.81px" class="cls_003"><span class="cls_003">→  11</span></div>
+<div style="position:absolute;left:92.38px;top:634.56px" class="cls_003"><span class="cls_003">Queen</span></div>
+<div style="position:absolute;left:136.85px;top:634.56px" class="cls_003"><span class="cls_003">→  12</span></div>
+<div style="position:absolute;left:92.38px;top:657.31px" class="cls_003"><span class="cls_003">King</span></div>
+<div style="position:absolute;left:136.85px;top:657.31px" class="cls_003"><span class="cls_003">→  13</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_003"><span class="cls_003">So far, the class definition for the Card type looks like this:</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:1604px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="fce73714-5ada-11e9-9d71-0cc47a792c0a_id_fce73714-5ada-11e9-9d71-0cc47a792c0a_files/background03.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">12.2</span></div>
+<div style="position:absolute;left:166.96px;top:88.65px" class="cls_003"><span class="cls_003">Card toString</span></div>
+<div style="position:absolute;left:505.42px;top:88.65px" class="cls_003"><span class="cls_003">191</span></div>
+<div style="position:absolute;left:144.54px;top:123.41px" class="cls_006"><span class="cls_006">public class</span><span class="cls_003"> Card {</span></div>
+<div style="position:absolute;left:169.15px;top:138.57px" class="cls_006"><span class="cls_006">private int</span><span class="cls_003"> rank;</span></div>
+<div style="position:absolute;left:169.15px;top:153.74px" class="cls_006"><span class="cls_006">private int</span><span class="cls_003"> suit;</span></div>
+<div style="position:absolute;left:169.15px;top:184.08px" class="cls_006"><span class="cls_006">public</span><span class="cls_003"> Card(</span><span class="cls_006">int</span><span class="cls_003"> rank,</span><span class="cls_006"> int</span><span class="cls_003"> suit) {</span></div>
+<div style="position:absolute;left:193.76px;top:199.25px" class="cls_006"><span class="cls_006">this</span><span class="cls_003">.rank = rank;</span></div>
+<div style="position:absolute;left:193.76px;top:214.41px" class="cls_006"><span class="cls_006">this</span><span class="cls_003">.suit = suit;</span></div>
+<div style="position:absolute;left:169.15px;top:229.58px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:144.54px;top:244.75px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:271.60px" class="cls_003"><span class="cls_003">The instance variables are</span><span class="cls_006"> private</span><span class="cls_003">: we can access them from inside this class,</span></div>
+<div style="position:absolute;left:129.60px;top:286.77px" class="cls_003"><span class="cls_003">but not from other classes.</span></div>
+<div style="position:absolute;left:129.60px;top:314.93px" class="cls_003"><span class="cls_003">The constructor takes a parameter for each instance variable. To create a Card</span></div>
+<div style="position:absolute;left:129.60px;top:330.10px" class="cls_003"><span class="cls_003">object, we use the</span><span class="cls_006"> new</span><span class="cls_003"> operator:</span></div>
+<div style="position:absolute;left:144.54px;top:358.31px" class="cls_003"><span class="cls_003">Card threeOfClubs =</span><span class="cls_006"> new</span><span class="cls_003"> Card(3, 0);</span></div>
+<div style="position:absolute;left:129.60px;top:386.44px" class="cls_003"><span class="cls_003">The result is a reference to a Card that represents the 3 of Clubs.</span></div>
+<div style="position:absolute;left:129.60px;top:436.55px" class="cls_005"><span class="cls_005">12.2</span></div>
+<div style="position:absolute;left:183.40px;top:436.55px" class="cls_005"><span class="cls_005">Card toString</span></div>
+<div style="position:absolute;left:129.60px;top:473.85px" class="cls_003"><span class="cls_003">When you create a new class, the first step is to declare the instance variables</span></div>
+<div style="position:absolute;left:129.60px;top:489.02px" class="cls_003"><span class="cls_003">and write constructors. A good next step is to write toString, which is useful</span></div>
+<div style="position:absolute;left:129.60px;top:504.19px" class="cls_003"><span class="cls_003">for debugging and incremental development.</span></div>
+<div style="position:absolute;left:129.60px;top:532.36px" class="cls_003"><span class="cls_003">To display Card objects in a way that humans can read easily, we need to map</span></div>
+<div style="position:absolute;left:129.60px;top:547.53px" class="cls_003"><span class="cls_003">the integer codes onto words.  A natural way to do that is with an array of</span></div>
+<div style="position:absolute;left:129.60px;top:562.69px" class="cls_003"><span class="cls_003">Strings. We can create the array like this:</span></div>
+<div style="position:absolute;left:144.54px;top:590.91px" class="cls_003"><span class="cls_003">String[] suits =</span><span class="cls_006"> new</span><span class="cls_003"> String[4];</span></div>
+<div style="position:absolute;left:129.60px;top:619.03px" class="cls_003"><span class="cls_003">And then assign values to the elements:</span></div>
+<div style="position:absolute;left:144.54px;top:645.97px" class="cls_003"><span class="cls_003">suits[0] =</span><span class="cls_007"> "Clubs"</span><span class="cls_003">;</span></div>
+<div style="position:absolute;left:144.54px;top:661.14px" class="cls_003"><span class="cls_003">suits[1] =</span><span class="cls_007"> "Diamonds"</span><span class="cls_003">;</span></div>
+<div style="position:absolute;left:144.54px;top:676.30px" class="cls_003"><span class="cls_003">suits[2] =</span><span class="cls_007"> "Hearts"</span><span class="cls_003">;</span></div>
+<div style="position:absolute;left:144.54px;top:691.47px" class="cls_003"><span class="cls_003">suits[3] =</span><span class="cls_007"> "Spades"</span><span class="cls_003">;</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:2406px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="fce73714-5ada-11e9-9d71-0cc47a792c0a_id_fce73714-5ada-11e9-9d71-0cc47a792c0a_files/background04.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">192</span></div>
+<div style="position:absolute;left:301.74px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 12</span></div>
+<div style="position:absolute;left:381.18px;top:88.65px" class="cls_003"><span class="cls_003">Arrays of objects</span></div>
+<div style="position:absolute;left:86.40px;top:124.74px" class="cls_003"><span class="cls_003">Or we can create the array and initialize the elements at the same time, as we</span></div>
+<div style="position:absolute;left:86.40px;top:139.91px" class="cls_003"><span class="cls_003">saw in Section 8.3:</span></div>
+<div style="position:absolute;left:101.34px;top:166.08px" class="cls_003"><span class="cls_003">String[] suits = {</span><span class="cls_007">"Clubs"</span><span class="cls_003">,</span><span class="cls_007"> "Diamonds"</span><span class="cls_003">,</span><span class="cls_007"> "Hearts"</span><span class="cls_003">,</span><span class="cls_007"> "Spades"</span><span class="cls_003">};</span></div>
+<div style="position:absolute;left:86.40px;top:192.16px" class="cls_003"><span class="cls_003">The state diagram in Figure 12.1 shows the result. Each element of the array</span></div>
+<div style="position:absolute;left:86.40px;top:207.33px" class="cls_003"><span class="cls_003">is a reference to a String.</span></div>
+<div style="position:absolute;left:200.70px;top:238.39px" class="cls_008"><span class="cls_008">suits</span></div>
+<div style="position:absolute;left:308.40px;top:238.39px" class="cls_008"><span class="cls_008">"Clubs"</span></div>
+<div style="position:absolute;left:308.40px;top:251.89px" class="cls_008"><span class="cls_008">"Diamonds"</span></div>
+<div style="position:absolute;left:308.40px;top:265.39px" class="cls_008"><span class="cls_008">"Hearts"</span></div>
+<div style="position:absolute;left:308.40px;top:278.89px" class="cls_008"><span class="cls_008">"Spades"</span></div>
+<div style="position:absolute;left:157.93px;top:307.34px" class="cls_003"><span class="cls_003">Figure 12.1: State diagram of an array of strings.</span></div>
+<div style="position:absolute;left:86.40px;top:334.13px" class="cls_003"><span class="cls_003">Now we need an array to decode the ranks:</span></div>
+<div style="position:absolute;left:101.34px;top:359.03px" class="cls_003"><span class="cls_003">String[] ranks = {</span><span class="cls_006">null</span><span class="cls_003">,</span><span class="cls_007"> "Ace"</span><span class="cls_003">,</span><span class="cls_007"> "2"</span><span class="cls_003">,</span><span class="cls_007"> "3"</span><span class="cls_003">,</span><span class="cls_007"> "4"</span><span class="cls_003">,</span><span class="cls_007"> "5"</span><span class="cls_003">,</span><span class="cls_007"> "6"</span><span class="cls_003">,</span></div>
+<div style="position:absolute;left:169.01px;top:374.19px" class="cls_007"><span class="cls_007">"7"</span><span class="cls_003">,</span><span class="cls_007"> "8"</span><span class="cls_003">,</span><span class="cls_007"> "9"</span><span class="cls_003">,</span><span class="cls_007"> "10"</span><span class="cls_003">,</span><span class="cls_007"> "Jack"</span><span class="cls_003">,</span><span class="cls_007"> "Queen"</span><span class="cls_003">,</span><span class="cls_007"> "King"</span><span class="cls_003">};</span></div>
+<div style="position:absolute;left:86.40px;top:399.00px" class="cls_003"><span class="cls_003">The zeroth element should never be used, because the only valid ranks are</span></div>
+<div style="position:absolute;left:86.40px;top:414.17px" class="cls_003"><span class="cls_003">1-13. We set it to</span><span class="cls_006"> null</span><span class="cls_003"> to indicate an unused element.</span></div>
+<div style="position:absolute;left:86.40px;top:440.29px" class="cls_003"><span class="cls_003">Using these arrays, we can create a meaningful String using suit and rank</span></div>
+<div style="position:absolute;left:86.40px;top:455.46px" class="cls_003"><span class="cls_003">as indexes.</span></div>
+<div style="position:absolute;left:101.34px;top:481.63px" class="cls_003"><span class="cls_003">String s = ranks[card.rank] +</span><span class="cls_007"> " of "</span><span class="cls_003"> + suits[card.suit];</span></div>
+<div style="position:absolute;left:86.40px;top:507.71px" class="cls_003"><span class="cls_003">The expression suits[card.suit] means “use the instance variable suit from</span></div>
+<div style="position:absolute;left:86.40px;top:522.88px" class="cls_003"><span class="cls_003">the object card as an index into the array suits.”</span></div>
+<div style="position:absolute;left:86.40px;top:549.00px" class="cls_003"><span class="cls_003">Now we can wrap all that in a toString method.</span></div>
+<div style="position:absolute;left:101.34px;top:574.23px" class="cls_006"><span class="cls_006">public</span><span class="cls_003"> String toString() {</span></div>
+<div style="position:absolute;left:125.95px;top:589.40px" class="cls_003"><span class="cls_003">String[] ranks = {</span><span class="cls_006">null</span><span class="cls_003">,</span><span class="cls_007"> "Ace"</span><span class="cls_003">,</span><span class="cls_007"> "2"</span><span class="cls_003">,</span><span class="cls_007"> "3"</span><span class="cls_003">,</span><span class="cls_007"> "4"</span><span class="cls_003">,</span><span class="cls_007"> "5"</span><span class="cls_003">,</span><span class="cls_007"> "6"</span><span class="cls_003">,</span></div>
+<div style="position:absolute;left:193.62px;top:604.57px" class="cls_007"><span class="cls_007">"7"</span><span class="cls_003">,</span><span class="cls_007"> "8"</span><span class="cls_003">,</span><span class="cls_007"> "9"</span><span class="cls_003">,</span><span class="cls_007"> "10"</span><span class="cls_003">,</span><span class="cls_007"> "Jack"</span><span class="cls_003">,</span><span class="cls_007"> "Queen"</span><span class="cls_003">,</span><span class="cls_007"> "King"</span><span class="cls_003">};</span></div>
+<div style="position:absolute;left:125.95px;top:619.73px" class="cls_003"><span class="cls_003">String[] suits = {</span><span class="cls_007">"Clubs"</span><span class="cls_003">,</span><span class="cls_007"> "Diamonds"</span><span class="cls_003">,</span><span class="cls_007"> "Hearts"</span><span class="cls_003">,</span><span class="cls_007"> "Spades"</span><span class="cls_003">};</span></div>
+<div style="position:absolute;left:125.95px;top:634.90px" class="cls_003"><span class="cls_003">String s = ranks[</span><span class="cls_006">this</span><span class="cls_003">.rank] +</span><span class="cls_007"> " of "</span><span class="cls_003"> + suits[</span><span class="cls_006">this</span><span class="cls_003">.suit];</span></div>
+<div style="position:absolute;left:125.95px;top:650.07px" class="cls_006"><span class="cls_006">return</span><span class="cls_003"> s;</span></div>
+<div style="position:absolute;left:101.34px;top:665.24px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_003"><span class="cls_003">When we display a card, println automatically calls toString:</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:3208px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="fce73714-5ada-11e9-9d71-0cc47a792c0a_id_fce73714-5ada-11e9-9d71-0cc47a792c0a_files/background05.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">12.3</span></div>
+<div style="position:absolute;left:166.96px;top:88.65px" class="cls_003"><span class="cls_003">Class variables</span></div>
+<div style="position:absolute;left:505.43px;top:88.65px" class="cls_003"><span class="cls_003">193</span></div>
+<div style="position:absolute;left:144.54px;top:123.41px" class="cls_003"><span class="cls_003">Card card =</span><span class="cls_006"> new</span><span class="cls_003"> Card(11, 1);</span></div>
+<div style="position:absolute;left:144.54px;top:138.57px" class="cls_003"><span class="cls_003">System.out.println(card);</span></div>
+<div style="position:absolute;left:129.60px;top:162.61px" class="cls_003"><span class="cls_003">The output is Jack of Diamonds.</span></div>
+<div style="position:absolute;left:129.60px;top:208.10px" class="cls_005"><span class="cls_005">12.3</span></div>
+<div style="position:absolute;left:183.40px;top:208.10px" class="cls_005"><span class="cls_005">Class variables</span></div>
+<div style="position:absolute;left:129.60px;top:242.32px" class="cls_003"><span class="cls_003">So far we have seen local variables, which are declared inside a method, and</span></div>
+<div style="position:absolute;left:129.60px;top:257.49px" class="cls_003"><span class="cls_003">instance variables, which are declared in a class definition, usually before the</span></div>
+<div style="position:absolute;left:129.60px;top:272.65px" class="cls_003"><span class="cls_003">method definitions.</span></div>
+<div style="position:absolute;left:129.60px;top:298.01px" class="cls_003"><span class="cls_003">Local variables are created when a method is invoked, and their space is re-</span></div>
+<div style="position:absolute;left:129.60px;top:313.17px" class="cls_003"><span class="cls_003">claimed when the method ends. Instance variables are created when you con-</span></div>
+<div style="position:absolute;left:129.60px;top:328.34px" class="cls_003"><span class="cls_003">struct an object and reclaimed when the object is garbage-collected.</span></div>
+<div style="position:absolute;left:129.60px;top:353.69px" class="cls_003"><span class="cls_003">Now it’s time to learn about class variables.  Like instance variables, class</span></div>
+<div style="position:absolute;left:129.60px;top:368.86px" class="cls_003"><span class="cls_003">variables are defined in a class definition, before the method definitions. But</span></div>
+<div style="position:absolute;left:129.60px;top:384.03px" class="cls_003"><span class="cls_003">they are identified by the keyword</span><span class="cls_006"> static</span><span class="cls_003">. They are created when the program</span></div>
+<div style="position:absolute;left:129.60px;top:399.20px" class="cls_003"><span class="cls_003">begins (or when the class is used for the first time) and survive until the</span></div>
+<div style="position:absolute;left:129.60px;top:414.37px" class="cls_003"><span class="cls_003">program ends. Class variables are shared across all instances of the class.</span></div>
+<div style="position:absolute;left:144.54px;top:438.49px" class="cls_006"><span class="cls_006">public class</span><span class="cls_003"> Card {</span></div>
+<div style="position:absolute;left:169.15px;top:468.83px" class="cls_006"><span class="cls_006">public static final</span><span class="cls_003"> String[] RANKS = {</span></div>
+<div style="position:absolute;left:193.76px;top:483.99px" class="cls_006"><span class="cls_006">null</span><span class="cls_003">,</span><span class="cls_007"> "Ace"</span><span class="cls_003">,</span><span class="cls_007"> "2"</span><span class="cls_003">,</span><span class="cls_007"> "3"</span><span class="cls_003">,</span><span class="cls_007"> "4"</span><span class="cls_003">,</span><span class="cls_007"> "5"</span><span class="cls_003">,</span><span class="cls_007"> "6"</span><span class="cls_003">,</span><span class="cls_007"> "7"</span><span class="cls_003">,</span></div>
+<div style="position:absolute;left:193.76px;top:499.16px" class="cls_007"><span class="cls_007">"8"</span><span class="cls_003">,</span><span class="cls_007"> "9"</span><span class="cls_003">,</span><span class="cls_007"> "10"</span><span class="cls_003">,</span><span class="cls_007"> "Jack"</span><span class="cls_003">,</span><span class="cls_007"> "Queen"</span><span class="cls_003">,</span><span class="cls_007"> "King"</span><span class="cls_003">};</span></div>
+<div style="position:absolute;left:169.15px;top:529.50px" class="cls_006"><span class="cls_006">public static final</span><span class="cls_003"> String[] SUITS = {</span></div>
+<div style="position:absolute;left:193.76px;top:544.67px" class="cls_007"><span class="cls_007">"Clubs"</span><span class="cls_003">,</span><span class="cls_007"> "Diamonds"</span><span class="cls_003">,</span><span class="cls_007"> "Hearts"</span><span class="cls_003">,</span><span class="cls_007"> "Spades"</span><span class="cls_003">};</span></div>
+<div style="position:absolute;left:169.15px;top:575.00px" class="cls_009"><span class="cls_009">// instance variables and constructors go here</span></div>
+<div style="position:absolute;left:169.15px;top:605.34px" class="cls_006"><span class="cls_006">public</span><span class="cls_003"> String toString() {</span></div>
+<div style="position:absolute;left:193.76px;top:620.51px" class="cls_006"><span class="cls_006">return</span><span class="cls_003"> RANKS[</span><span class="cls_006">this</span><span class="cls_003">.rank] +</span><span class="cls_007"> " of "</span><span class="cls_003"> + SUITS[</span><span class="cls_006">this</span><span class="cls_003">.suit];</span></div>
+<div style="position:absolute;left:169.15px;top:635.68px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:144.54px;top:650.84px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:674.88px" class="cls_003"><span class="cls_003">Class variables are often used to store constant values that are needed in several</span></div>
+<div style="position:absolute;left:129.60px;top:690.04px" class="cls_003"><span class="cls_003">places. In that case, they should also be defined as</span><span class="cls_006"> final</span><span class="cls_003">. Note that whether</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:4010px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="fce73714-5ada-11e9-9d71-0cc47a792c0a_id_fce73714-5ada-11e9-9d71-0cc47a792c0a_files/background06.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">194</span></div>
+<div style="position:absolute;left:301.74px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 12</span></div>
+<div style="position:absolute;left:381.18px;top:88.65px" class="cls_003"><span class="cls_003">Arrays of objects</span></div>
+<div style="position:absolute;left:86.40px;top:124.74px" class="cls_003"><span class="cls_003">a variable is</span><span class="cls_006"> static</span><span class="cls_003"> or</span><span class="cls_006"> final</span><span class="cls_003"> involves two separate considerations:</span><span class="cls_006">  static</span></div>
+<div style="position:absolute;left:86.40px;top:139.91px" class="cls_003"><span class="cls_003">means the variable is shared, and</span><span class="cls_006"> final</span><span class="cls_003"> means the variable is constant.</span></div>
+<div style="position:absolute;left:86.40px;top:166.05px" class="cls_003"><span class="cls_003">Naming</span><span class="cls_006"> static final</span><span class="cls_003"> variables with capital letters is a common convention</span></div>
+<div style="position:absolute;left:86.40px;top:181.22px" class="cls_003"><span class="cls_003">that makes it easier to recognize their role in the class.  Inside toString we</span></div>
+<div style="position:absolute;left:86.40px;top:196.39px" class="cls_003"><span class="cls_003">can refer to SUITS and RANKS as if they were local variables, but we can tell</span></div>
+<div style="position:absolute;left:86.40px;top:211.56px" class="cls_003"><span class="cls_003">that they are class variables.</span></div>
+<div style="position:absolute;left:86.40px;top:237.70px" class="cls_003"><span class="cls_003">One advantage of defining SUITS and RANKS as class variables is that they don’t</span></div>
+<div style="position:absolute;left:86.40px;top:252.87px" class="cls_003"><span class="cls_003">need to be created (and garbage-collected) every time toString is called. They</span></div>
+<div style="position:absolute;left:86.40px;top:268.04px" class="cls_003"><span class="cls_003">may also be needed in other methods and classes, so it’s helpful to make them</span></div>
+<div style="position:absolute;left:86.40px;top:283.20px" class="cls_003"><span class="cls_003">available everywhere. Since the array variables are</span><span class="cls_006"> final</span><span class="cls_003">, and the strings they</span></div>
+<div style="position:absolute;left:86.40px;top:298.37px" class="cls_003"><span class="cls_003">reference are immutable, there is no danger in making them</span><span class="cls_006"> public</span><span class="cls_003">.</span></div>
+<div style="position:absolute;left:86.40px;top:344.86px" class="cls_005"><span class="cls_005">12.4</span></div>
+<div style="position:absolute;left:140.20px;top:344.86px" class="cls_005"><span class="cls_005">The compareTo method</span></div>
+<div style="position:absolute;left:86.40px;top:379.87px" class="cls_003"><span class="cls_003">As we saw in Section 11.7, it’s helpful to create an equals method to test</span></div>
+<div style="position:absolute;left:86.40px;top:395.03px" class="cls_003"><span class="cls_003">whether two objects are equivalent.</span></div>
+<div style="position:absolute;left:101.34px;top:419.95px" class="cls_006"><span class="cls_006">public boolean</span><span class="cls_003"> equals(Card that) {</span></div>
+<div style="position:absolute;left:125.95px;top:435.12px" class="cls_006"><span class="cls_006">return this</span><span class="cls_003">.rank == that.rank</span></div>
+<div style="position:absolute;left:150.56px;top:450.28px" class="cls_003"><span class="cls_003">&&</span><span class="cls_006"> this</span><span class="cls_003">.suit == that.suit;</span></div>
+<div style="position:absolute;left:101.34px;top:465.45px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:490.27px" class="cls_003"><span class="cls_003">It would also be nice to have a method for comparing cards, so we can tell</span></div>
+<div style="position:absolute;left:86.40px;top:505.44px" class="cls_003"><span class="cls_003">if one is higher or lower than another.  For primitive types, we can use the</span></div>
+<div style="position:absolute;left:86.40px;top:520.61px" class="cls_003"><span class="cls_003">comparison operators - &lt;, >, etc. - to compare values.  But these operators</span></div>
+<div style="position:absolute;left:86.40px;top:535.78px" class="cls_003"><span class="cls_003">don’t work for object types.</span></div>
+<div style="position:absolute;left:86.40px;top:561.92px" class="cls_003"><span class="cls_003">For Strings, Java provides a compareTo method, as we saw in Section 9.6.</span></div>
+<div style="position:absolute;left:86.40px;top:577.09px" class="cls_003"><span class="cls_003">Like the equals method, we can write our own version of compareTo for the</span></div>
+<div style="position:absolute;left:86.40px;top:592.26px" class="cls_003"><span class="cls_003">classes that we define.</span></div>
+<div style="position:absolute;left:86.40px;top:618.40px" class="cls_003"><span class="cls_003">Some types are “totally ordered”, which means that you can compare any two</span></div>
+<div style="position:absolute;left:86.40px;top:633.57px" class="cls_003"><span class="cls_003">values and tell which is bigger. Integers and strings are totally ordered.</span></div>
+<div style="position:absolute;left:86.40px;top:659.71px" class="cls_003"><span class="cls_003">Other types are “unordered”, which means that there is no meaningful way</span></div>
+<div style="position:absolute;left:86.40px;top:674.88px" class="cls_003"><span class="cls_003">to say that one element is bigger than another. In Java, the</span><span class="cls_006"> boolean</span><span class="cls_003"> type is</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_003"><span class="cls_003">unordered; if you try to compare</span><span class="cls_006"> true</span><span class="cls_003"> &lt;</span><span class="cls_006"> false</span><span class="cls_003">, you get a compiler error.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:4812px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="fce73714-5ada-11e9-9d71-0cc47a792c0a_id_fce73714-5ada-11e9-9d71-0cc47a792c0a_files/background07.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">12.5</span></div>
+<div style="position:absolute;left:166.96px;top:88.65px" class="cls_003"><span class="cls_003">Cards are immutable</span></div>
+<div style="position:absolute;left:505.42px;top:88.65px" class="cls_003"><span class="cls_003">195</span></div>
+<div style="position:absolute;left:129.60px;top:124.74px" class="cls_003"><span class="cls_003">The set of playing cards is “partially ordered”, which means that sometimes</span></div>
+<div style="position:absolute;left:129.60px;top:139.91px" class="cls_003"><span class="cls_003">we can compare cards and sometimes not. For example, we know that the 3</span></div>
+<div style="position:absolute;left:129.60px;top:155.08px" class="cls_003"><span class="cls_003">of Clubs is higher than the 2 of Clubs, and the 3 of Diamonds is higher than</span></div>
+<div style="position:absolute;left:129.60px;top:170.25px" class="cls_003"><span class="cls_003">the 3 of Clubs. But which is better, the 3 of Clubs or the 2 of Diamonds? One</span></div>
+<div style="position:absolute;left:129.60px;top:185.42px" class="cls_003"><span class="cls_003">has a higher rank, but the other has a higher suit.</span></div>
+<div style="position:absolute;left:129.60px;top:209.49px" class="cls_003"><span class="cls_003">To make cards comparable, we have to decide which is more important: rank</span></div>
+<div style="position:absolute;left:129.60px;top:224.66px" class="cls_003"><span class="cls_003">or suit. The choice is arbitrary, and it might be different for different games.</span></div>
+<div style="position:absolute;left:129.60px;top:239.83px" class="cls_003"><span class="cls_003">But when you buy a new deck of cards, it comes sorted with all the Clubs</span></div>
+<div style="position:absolute;left:129.60px;top:255.00px" class="cls_003"><span class="cls_003">together, followed by all the Diamonds, and so on. So for now, let’s say that</span></div>
+<div style="position:absolute;left:129.60px;top:270.17px" class="cls_003"><span class="cls_003">suit is more important.</span></div>
+<div style="position:absolute;left:129.60px;top:294.24px" class="cls_003"><span class="cls_003">With that decided, we can write compareTo as follows:</span></div>
+<div style="position:absolute;left:144.54px;top:317.42px" class="cls_006"><span class="cls_006">public int</span><span class="cls_003"> compareTo(Card that) {</span></div>
+<div style="position:absolute;left:169.15px;top:332.59px" class="cls_006"><span class="cls_006">if</span><span class="cls_003"> (</span><span class="cls_006">this</span><span class="cls_003">.suit &lt; that.suit) {</span></div>
+<div style="position:absolute;left:193.76px;top:347.76px" class="cls_006"><span class="cls_006">return</span><span class="cls_003"> -1;</span></div>
+<div style="position:absolute;left:169.15px;top:362.93px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:169.15px;top:378.10px" class="cls_006"><span class="cls_006">if</span><span class="cls_003"> (</span><span class="cls_006">this</span><span class="cls_003">.suit > that.suit) {</span></div>
+<div style="position:absolute;left:193.76px;top:393.27px" class="cls_006"><span class="cls_006">return</span><span class="cls_003"> 1;</span></div>
+<div style="position:absolute;left:169.15px;top:408.43px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:169.15px;top:423.60px" class="cls_006"><span class="cls_006">if</span><span class="cls_003"> (</span><span class="cls_006">this</span><span class="cls_003">.rank &lt; that.rank) {</span></div>
+<div style="position:absolute;left:193.76px;top:438.77px" class="cls_006"><span class="cls_006">return</span><span class="cls_003"> -1;</span></div>
+<div style="position:absolute;left:169.15px;top:453.94px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:169.15px;top:469.11px" class="cls_006"><span class="cls_006">if</span><span class="cls_003"> (</span><span class="cls_006">this</span><span class="cls_003">.rank > that.rank) {</span></div>
+<div style="position:absolute;left:193.76px;top:484.27px" class="cls_006"><span class="cls_006">return</span><span class="cls_003"> 1;</span></div>
+<div style="position:absolute;left:169.15px;top:499.44px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:169.15px;top:514.61px" class="cls_006"><span class="cls_006">return</span><span class="cls_003"> 0;</span></div>
+<div style="position:absolute;left:144.54px;top:529.78px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:552.54px" class="cls_003"><span class="cls_003">compareTo returns 1 if</span><span class="cls_006"> this</span><span class="cls_003"> wins, -1 if that wins, and 0 if they are equivalent.</span></div>
+<div style="position:absolute;left:129.60px;top:567.71px" class="cls_003"><span class="cls_003">It compares suits first.  If the suits are the same, it compares ranks.  If the</span></div>
+<div style="position:absolute;left:129.60px;top:582.87px" class="cls_003"><span class="cls_003">ranks are also the same, it returns 0.</span></div>
+<div style="position:absolute;left:129.60px;top:626.77px" class="cls_005"><span class="cls_005">12.5</span></div>
+<div style="position:absolute;left:183.40px;top:626.77px" class="cls_005"><span class="cls_005">Cards are immutable</span></div>
+<div style="position:absolute;left:129.60px;top:659.71px" class="cls_003"><span class="cls_003">The instance variables of Card are</span><span class="cls_006"> private</span><span class="cls_003">, so they can’t be accessed from</span></div>
+<div style="position:absolute;left:129.60px;top:674.88px" class="cls_003"><span class="cls_003">other classes. We can provide getters to allow other classes to read the rank</span></div>
+<div style="position:absolute;left:129.60px;top:690.04px" class="cls_003"><span class="cls_003">and suit values:</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:5614px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="fce73714-5ada-11e9-9d71-0cc47a792c0a_id_fce73714-5ada-11e9-9d71-0cc47a792c0a_files/background08.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">196</span></div>
+<div style="position:absolute;left:301.74px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 12</span></div>
+<div style="position:absolute;left:381.18px;top:88.65px" class="cls_003"><span class="cls_003">Arrays of objects</span></div>
+<div style="position:absolute;left:101.34px;top:123.41px" class="cls_006"><span class="cls_006">public int</span><span class="cls_003"> getRank() {</span></div>
+<div style="position:absolute;left:125.95px;top:138.57px" class="cls_006"><span class="cls_006">return this</span><span class="cls_003">.rank;</span></div>
+<div style="position:absolute;left:101.34px;top:153.74px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:101.34px;top:184.08px" class="cls_006"><span class="cls_006">public int</span><span class="cls_003"> getSuit() {</span></div>
+<div style="position:absolute;left:125.95px;top:199.25px" class="cls_006"><span class="cls_006">return this</span><span class="cls_003">.suit;</span></div>
+<div style="position:absolute;left:101.34px;top:214.41px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:242.63px" class="cls_003"><span class="cls_003">Whether or not to provide setters is a design decision. If we did, cards would</span></div>
+<div style="position:absolute;left:86.40px;top:257.80px" class="cls_003"><span class="cls_003">be mutable, so you could transform one card into another. That is probably</span></div>
+<div style="position:absolute;left:86.40px;top:272.97px" class="cls_003"><span class="cls_003">not a feature we need, and in general mutable objects are more error-prone.</span></div>
+<div style="position:absolute;left:86.40px;top:288.13px" class="cls_003"><span class="cls_003">So it might be better to make cards immutable. To do that, all we have to do</span></div>
+<div style="position:absolute;left:86.40px;top:303.30px" class="cls_003"><span class="cls_003">is not provide any modifier methods (including setters).</span></div>
+<div style="position:absolute;left:86.40px;top:332.84px" class="cls_003"><span class="cls_003">That’s easy enough, but it is not foolproof, because some fool might come</span></div>
+<div style="position:absolute;left:86.40px;top:348.00px" class="cls_003"><span class="cls_003">along later and add a modifier. We can prevent that possibility by declaring</span></div>
+<div style="position:absolute;left:86.40px;top:363.17px" class="cls_003"><span class="cls_003">the instance variables</span><span class="cls_006"> final</span><span class="cls_003">:</span></div>
+<div style="position:absolute;left:101.34px;top:389.15px" class="cls_006"><span class="cls_006">public class</span><span class="cls_003"> Card {</span></div>
+<div style="position:absolute;left:125.95px;top:404.32px" class="cls_006"><span class="cls_006">private final int</span><span class="cls_003"> rank;</span></div>
+<div style="position:absolute;left:125.95px;top:419.49px" class="cls_006"><span class="cls_006">private final int</span><span class="cls_003"> suit;</span></div>
+<div style="position:absolute;left:101.34px;top:464.99px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:493.21px" class="cls_003"><span class="cls_003">You can still assign values to these variables inside a constructor.  But if</span></div>
+<div style="position:absolute;left:86.40px;top:508.37px" class="cls_003"><span class="cls_003">someone writes a method that tries to modify these variables, they’ll get a</span></div>
+<div style="position:absolute;left:86.40px;top:523.54px" class="cls_003"><span class="cls_003">compiler error.</span></div>
+<div style="position:absolute;left:86.40px;top:576.79px" class="cls_005"><span class="cls_005">12.6</span></div>
+<div style="position:absolute;left:140.20px;top:576.79px" class="cls_005"><span class="cls_005">Arrays of cards</span></div>
+<div style="position:absolute;left:86.40px;top:615.81px" class="cls_003"><span class="cls_003">Just as you can create an array of String objects, you can create an array of</span></div>
+<div style="position:absolute;left:86.40px;top:630.98px" class="cls_003"><span class="cls_003">Card objects. The following statement creates an array of 52 cards:</span></div>
+<div style="position:absolute;left:101.34px;top:660.56px" class="cls_003"><span class="cls_003">Card[] cards =</span><span class="cls_006"> new</span><span class="cls_003"> Card[52];</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_003"><span class="cls_003">Figure 12.2 shows the state diagram for this array.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:6416px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="fce73714-5ada-11e9-9d71-0cc47a792c0a_id_fce73714-5ada-11e9-9d71-0cc47a792c0a_files/background09.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">12.6</span></div>
+<div style="position:absolute;left:166.96px;top:88.65px" class="cls_003"><span class="cls_003">Arrays of cards</span></div>
+<div style="position:absolute;left:505.43px;top:88.65px" class="cls_003"><span class="cls_003">197</span></div>
+<div style="position:absolute;left:259.10px;top:124.14px" class="cls_010"><span class="cls_010">0</span></div>
+<div style="position:absolute;left:272.60px;top:124.14px" class="cls_010"><span class="cls_010">1</span></div>
+<div style="position:absolute;left:286.10px;top:124.14px" class="cls_010"><span class="cls_010">2</span></div>
+<div style="position:absolute;left:299.60px;top:124.14px" class="cls_010"><span class="cls_010">3</span></div>
+<div style="position:absolute;left:457.10px;top:124.14px" class="cls_010"><span class="cls_010">51</span></div>
+<div style="position:absolute;left:187.70px;top:141.24px" class="cls_008"><span class="cls_008">cards</span></div>
+<div style="position:absolute;left:178.97px;top:174.20px" class="cls_003"><span class="cls_003">Figure 12.2: State diagram of an unpopulated Card array.</span></div>
+<div style="position:absolute;left:129.60px;top:207.15px" class="cls_003"><span class="cls_003">Although we call it an “array of cards”, the array contains references to objects;</span></div>
+<div style="position:absolute;left:129.60px;top:222.32px" class="cls_003"><span class="cls_003">it does not contain the Card objects themselves. The elements are initialized</span></div>
+<div style="position:absolute;left:129.60px;top:237.49px" class="cls_003"><span class="cls_003">to</span><span class="cls_006"> null</span><span class="cls_003">. You can access the elements of the array in the usual way:</span></div>
+<div style="position:absolute;left:144.54px;top:263.13px" class="cls_006"><span class="cls_006">if</span><span class="cls_003"> (cards[0] ==</span><span class="cls_006"> null</span><span class="cls_003">) {</span></div>
+<div style="position:absolute;left:169.15px;top:278.30px" class="cls_003"><span class="cls_003">System.out.println(</span><span class="cls_007">"No card yet!"</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:144.54px;top:293.47px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:319.02px" class="cls_003"><span class="cls_003">But if you try to access the instance variables of the non-existent Cards, you</span></div>
+<div style="position:absolute;left:129.60px;top:334.18px" class="cls_003"><span class="cls_003">will get a NullPointerException.</span></div>
+<div style="position:absolute;left:144.54px;top:361.10px" class="cls_003"><span class="cls_003">cards[0].rank</span></div>
+<div style="position:absolute;left:261.43px;top:361.10px" class="cls_009"><span class="cls_009">// NullPointerException</span></div>
+<div style="position:absolute;left:129.60px;top:387.93px" class="cls_003"><span class="cls_003">That code won’t work until we put cards in the array. One way to populate</span></div>
+<div style="position:absolute;left:129.60px;top:403.09px" class="cls_003"><span class="cls_003">the array is to write nested</span><span class="cls_006"> for</span><span class="cls_003"> loops:</span></div>
+<div style="position:absolute;left:144.54px;top:428.73px" class="cls_006"><span class="cls_006">int</span><span class="cls_003"> index = 0;</span></div>
+<div style="position:absolute;left:144.54px;top:443.90px" class="cls_006"><span class="cls_006">for</span><span class="cls_003"> (</span><span class="cls_006">int</span><span class="cls_003"> suit = 0; suit &lt;= 3; suit++) {</span></div>
+<div style="position:absolute;left:169.15px;top:459.07px" class="cls_006"><span class="cls_006">for</span><span class="cls_003"> (</span><span class="cls_006">int</span><span class="cls_003"> rank = 1; rank &lt;= 13; rank++) {</span></div>
+<div style="position:absolute;left:193.76px;top:474.24px" class="cls_003"><span class="cls_003">cards[index] =</span><span class="cls_006"> new</span><span class="cls_003"> Card(rank, suit);</span></div>
+<div style="position:absolute;left:193.76px;top:489.41px" class="cls_003"><span class="cls_003">index++;</span></div>
+<div style="position:absolute;left:169.15px;top:504.58px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:144.54px;top:519.74px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:545.29px" class="cls_003"><span class="cls_003">The outer loop iterates suits from 0 to 3. For each suit, the inner loop iterates</span></div>
+<div style="position:absolute;left:129.60px;top:560.46px" class="cls_003"><span class="cls_003">ranks from 1 to 13. Since the outer loop runs 4 times, and the inner loop runs</span></div>
+<div style="position:absolute;left:129.60px;top:575.63px" class="cls_003"><span class="cls_003">13 times for each suit, the body is executed 52 times.</span></div>
+<div style="position:absolute;left:129.60px;top:602.50px" class="cls_003"><span class="cls_003">We use a separate variable index to keep track of where in the array the next</span></div>
+<div style="position:absolute;left:129.60px;top:617.67px" class="cls_003"><span class="cls_003">card should go. Figure 12.3 shows what the array looks like after the first two</span></div>
+<div style="position:absolute;left:129.60px;top:632.84px" class="cls_003"><span class="cls_003">cards have been created.</span></div>
+<div style="position:absolute;left:129.60px;top:659.71px" class="cls_003"><span class="cls_003">When you work with arrays, it is convenient to have a method that displays</span></div>
+<div style="position:absolute;left:129.60px;top:674.88px" class="cls_003"><span class="cls_003">the contents. We have seen the pattern for traversing an array several times,</span></div>
+<div style="position:absolute;left:129.60px;top:690.04px" class="cls_003"><span class="cls_003">so the following method should be familiar:</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:7218px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="fce73714-5ada-11e9-9d71-0cc47a792c0a_id_fce73714-5ada-11e9-9d71-0cc47a792c0a_files/background10.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">198</span></div>
+<div style="position:absolute;left:301.74px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 12</span></div>
+<div style="position:absolute;left:381.18px;top:88.65px" class="cls_003"><span class="cls_003">Arrays of objects</span></div>
+<div style="position:absolute;left:215.90px;top:123.14px" class="cls_010"><span class="cls_010">0</span></div>
+<div style="position:absolute;left:229.40px;top:123.14px" class="cls_010"><span class="cls_010">1</span></div>
+<div style="position:absolute;left:242.90px;top:123.14px" class="cls_010"><span class="cls_010">2</span></div>
+<div style="position:absolute;left:256.40px;top:123.14px" class="cls_010"><span class="cls_010">3</span></div>
+<div style="position:absolute;left:413.90px;top:123.14px" class="cls_010"><span class="cls_010">51</span></div>
+<div style="position:absolute;left:144.49px;top:140.24px" class="cls_008"><span class="cls_008">cards</span></div>
+<div style="position:absolute;left:157.40px;top:162.74px" class="cls_008"><span class="cls_008">Card</span></div>
+<div style="position:absolute;left:269.90px;top:162.74px" class="cls_008"><span class="cls_008">Card</span></div>
+<div style="position:absolute;left:167.60px;top:194.24px" class="cls_008"><span class="cls_008">suit</span></div>
+<div style="position:absolute;left:200.89px;top:194.24px" class="cls_008"><span class="cls_008">0</span></div>
+<div style="position:absolute;left:244.10px;top:194.24px" class="cls_008"><span class="cls_008">suit</span></div>
+<div style="position:absolute;left:277.39px;top:194.24px" class="cls_008"><span class="cls_008">0</span></div>
+<div style="position:absolute;left:163.39px;top:230.24px" class="cls_008"><span class="cls_008">rank</span></div>
+<div style="position:absolute;left:200.89px;top:230.24px" class="cls_008"><span class="cls_008">1</span></div>
+<div style="position:absolute;left:239.89px;top:230.24px" class="cls_008"><span class="cls_008">rank</span></div>
+<div style="position:absolute;left:277.39px;top:230.24px" class="cls_008"><span class="cls_008">2</span></div>
+<div style="position:absolute;left:132.81px;top:272.20px" class="cls_003"><span class="cls_003">Figure 12.3: State diagram of a Card array with two cards.</span></div>
+<div style="position:absolute;left:101.34px;top:304.84px" class="cls_006"><span class="cls_006">public static void</span><span class="cls_003"> printDeck(Card[] cards) {</span></div>
+<div style="position:absolute;left:125.95px;top:320.00px" class="cls_006"><span class="cls_006">for</span><span class="cls_003"> (</span><span class="cls_006">int</span><span class="cls_003"> i = 0; i &lt; cards.length; i++) {</span></div>
+<div style="position:absolute;left:150.56px;top:335.17px" class="cls_003"><span class="cls_003">System.out.println(cards[i]);</span></div>
+<div style="position:absolute;left:125.95px;top:350.34px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:101.34px;top:365.51px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:392.85px" class="cls_003"><span class="cls_003">Since cards has type Card[], an element of cards has type Card. So println</span></div>
+<div style="position:absolute;left:86.40px;top:408.02px" class="cls_003"><span class="cls_003">invokes the toString method in the Card class.  This method is similar to</span></div>
+<div style="position:absolute;left:86.40px;top:423.19px" class="cls_003"><span class="cls_003">invoking System.out.println(Arrays.toString(cards)).</span></div>
+<div style="position:absolute;left:86.40px;top:474.44px" class="cls_005"><span class="cls_005">12.7</span></div>
+<div style="position:absolute;left:140.20px;top:474.44px" class="cls_005"><span class="cls_005">Sequential search</span></div>
+<div style="position:absolute;left:86.40px;top:512.36px" class="cls_003"><span class="cls_003">The next method we’ll write is search, which takes an array of cards and a</span></div>
+<div style="position:absolute;left:86.40px;top:527.53px" class="cls_003"><span class="cls_003">Card object as parameters. It returns the index where the Card appears in the</span></div>
+<div style="position:absolute;left:86.40px;top:542.69px" class="cls_003"><span class="cls_003">array, or -1 if it doesn’t. This version of search uses the algorithm we saw in</span></div>
+<div style="position:absolute;left:86.40px;top:557.86px" class="cls_003"><span class="cls_003">Section 8.6, which is called sequential search:</span></div>
+<div style="position:absolute;left:101.34px;top:585.29px" class="cls_006"><span class="cls_006">public static int</span><span class="cls_003"> search(Card[] cards, Card target) {</span></div>
+<div style="position:absolute;left:125.95px;top:600.46px" class="cls_006"><span class="cls_006">for</span><span class="cls_003"> (</span><span class="cls_006">int</span><span class="cls_003"> i = 0; i &lt; cards.length; i++) {</span></div>
+<div style="position:absolute;left:150.56px;top:615.63px" class="cls_006"><span class="cls_006">if</span><span class="cls_003"> (cards[i].equals(target)) {</span></div>
+<div style="position:absolute;left:175.17px;top:630.80px" class="cls_006"><span class="cls_006">return</span><span class="cls_003"> i;</span></div>
+<div style="position:absolute;left:150.56px;top:645.97px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:125.95px;top:661.14px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:125.95px;top:676.30px" class="cls_006"><span class="cls_006">return</span><span class="cls_003"> -1;</span></div>
+<div style="position:absolute;left:101.34px;top:691.47px" class="cls_003"><span class="cls_003">}</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:8020px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="fce73714-5ada-11e9-9d71-0cc47a792c0a_id_fce73714-5ada-11e9-9d71-0cc47a792c0a_files/background11.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">12.8</span></div>
+<div style="position:absolute;left:166.96px;top:88.65px" class="cls_003"><span class="cls_003">Binary search</span></div>
+<div style="position:absolute;left:505.42px;top:88.65px" class="cls_003"><span class="cls_003">199</span></div>
+<div style="position:absolute;left:129.60px;top:124.74px" class="cls_003"><span class="cls_003">The method returns as soon as it discovers the card, which means we don’t</span></div>
+<div style="position:absolute;left:129.60px;top:139.91px" class="cls_003"><span class="cls_003">have to traverse the entire array if we find the target.  If we get to the end</span></div>
+<div style="position:absolute;left:129.60px;top:155.08px" class="cls_003"><span class="cls_003">of the loop, we know the card is not in the array. Notice that this algorithm</span></div>
+<div style="position:absolute;left:129.60px;top:170.25px" class="cls_003"><span class="cls_003">depends on the equals method.</span></div>
+<div style="position:absolute;left:129.60px;top:199.66px" class="cls_003"><span class="cls_003">If the cards in the array are not in order, there is no way to search faster than</span></div>
+<div style="position:absolute;left:129.60px;top:214.83px" class="cls_003"><span class="cls_003">sequential search. We have to look at every card, because otherwise we can’t</span></div>
+<div style="position:absolute;left:129.60px;top:230.00px" class="cls_003"><span class="cls_003">be certain the card we want is not there. But if the cards are in order, we can</span></div>
+<div style="position:absolute;left:129.60px;top:245.17px" class="cls_003"><span class="cls_003">use better algorithms.</span></div>
+<div style="position:absolute;left:129.60px;top:274.59px" class="cls_003"><span class="cls_003">We will learn in the next chapter how to sort arrays. If you pay the price to</span></div>
+<div style="position:absolute;left:129.60px;top:289.75px" class="cls_003"><span class="cls_003">keep them sorted, finding elements becomes much easier. Especially for large</span></div>
+<div style="position:absolute;left:129.60px;top:304.92px" class="cls_003"><span class="cls_003">arrays, sequential search is rather inefficient.</span></div>
+<div style="position:absolute;left:129.60px;top:357.90px" class="cls_005"><span class="cls_005">12.8</span></div>
+<div style="position:absolute;left:183.40px;top:357.90px" class="cls_005"><span class="cls_005">Binary search</span></div>
+<div style="position:absolute;left:129.60px;top:396.77px" class="cls_003"><span class="cls_003">When you look for a word in a dictionary, you don’t just search page by page</span></div>
+<div style="position:absolute;left:129.60px;top:411.94px" class="cls_003"><span class="cls_003">from front to back.  Since the words are in alphabetical order, you probably</span></div>
+<div style="position:absolute;left:129.60px;top:427.11px" class="cls_003"><span class="cls_003">use a binary search algorithm:</span></div>
+<div style="position:absolute;left:143.91px;top:463.95px" class="cls_003"><span class="cls_003">1. Start on a page near the middle of the dictionary.</span></div>
+<div style="position:absolute;left:143.91px;top:491.95px" class="cls_003"><span class="cls_003">2. Compare a word on the page to the word you are looking for. If you find</span></div>
+<div style="position:absolute;left:158.87px;top:507.12px" class="cls_003"><span class="cls_003">it, stop.</span></div>
+<div style="position:absolute;left:143.91px;top:535.12px" class="cls_003"><span class="cls_003">3. If the word on the page comes before the word you are looking for, flip</span></div>
+<div style="position:absolute;left:158.87px;top:550.28px" class="cls_003"><span class="cls_003">to somewhere later in the dictionary and go to step 2.</span></div>
+<div style="position:absolute;left:143.91px;top:578.28px" class="cls_003"><span class="cls_003">4. If the word on the page comes after the word you are looking for, flip to</span></div>
+<div style="position:absolute;left:158.87px;top:593.45px" class="cls_003"><span class="cls_003">somewhere earlier in the dictionary and go to step 2.</span></div>
+<div style="position:absolute;left:129.60px;top:630.29px" class="cls_003"><span class="cls_003">If you find two adjacent words on the page and your word comes between</span></div>
+<div style="position:absolute;left:129.60px;top:645.46px" class="cls_003"><span class="cls_003">them, you can conclude that your word is not in the dictionary.</span></div>
+<div style="position:absolute;left:129.60px;top:674.88px" class="cls_003"><span class="cls_003">Getting back to the array of cards, we can write a faster version of search if</span></div>
+<div style="position:absolute;left:129.60px;top:690.04px" class="cls_003"><span class="cls_003">we know the cards are in order:</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:8822px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="fce73714-5ada-11e9-9d71-0cc47a792c0a_id_fce73714-5ada-11e9-9d71-0cc47a792c0a_files/background12.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">200</span></div>
+<div style="position:absolute;left:301.74px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 12</span></div>
+<div style="position:absolute;left:381.18px;top:88.65px" class="cls_003"><span class="cls_003">Arrays of objects</span></div>
+<div style="position:absolute;left:101.34px;top:123.41px" class="cls_006"><span class="cls_006">public static int</span><span class="cls_003"> binarySearch(Card[] cards, Card target) {</span></div>
+<div style="position:absolute;left:125.95px;top:138.57px" class="cls_006"><span class="cls_006">int</span><span class="cls_003"> low = 0;</span></div>
+<div style="position:absolute;left:125.95px;top:153.74px" class="cls_006"><span class="cls_006">int</span><span class="cls_003"> high = cards.length - 1;</span></div>
+<div style="position:absolute;left:125.95px;top:168.91px" class="cls_006"><span class="cls_006">while</span><span class="cls_003"> (low &lt;= high) {</span></div>
+<div style="position:absolute;left:150.56px;top:184.08px" class="cls_006"><span class="cls_006">int</span><span class="cls_003"> mid = (low + high) / 2;</span></div>
+<div style="position:absolute;left:421.25px;top:184.08px" class="cls_009"><span class="cls_009">// step 1</span></div>
+<div style="position:absolute;left:150.56px;top:199.25px" class="cls_006"><span class="cls_006">int</span><span class="cls_003"> comp = cards[mid].compareTo(target);</span></div>
+<div style="position:absolute;left:150.56px;top:229.58px" class="cls_006"><span class="cls_006">if</span><span class="cls_003"> (comp == 0) {</span></div>
+<div style="position:absolute;left:421.24px;top:229.58px" class="cls_009"><span class="cls_009">// step 2</span></div>
+<div style="position:absolute;left:175.17px;top:244.75px" class="cls_006"><span class="cls_006">return</span><span class="cls_003"> mid;</span></div>
+<div style="position:absolute;left:150.56px;top:259.92px" class="cls_003"><span class="cls_003">}</span><span class="cls_006"> else if</span><span class="cls_003"> (comp &lt; 0) {</span></div>
+<div style="position:absolute;left:421.24px;top:259.92px" class="cls_009"><span class="cls_009">// step 3</span></div>
+<div style="position:absolute;left:175.17px;top:275.09px" class="cls_003"><span class="cls_003">low = mid + 1;</span></div>
+<div style="position:absolute;left:150.56px;top:290.26px" class="cls_003"><span class="cls_003">}</span><span class="cls_006"> else</span><span class="cls_003"> {</span></div>
+<div style="position:absolute;left:421.24px;top:290.26px" class="cls_009"><span class="cls_009">// step 4</span></div>
+<div style="position:absolute;left:175.17px;top:305.42px" class="cls_003"><span class="cls_003">high = mid - 1;</span></div>
+<div style="position:absolute;left:150.56px;top:320.59px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:125.95px;top:335.76px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:125.95px;top:350.93px" class="cls_006"><span class="cls_006">return</span><span class="cls_003"> -1;</span></div>
+<div style="position:absolute;left:101.34px;top:366.10px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:395.84px" class="cls_003"><span class="cls_003">First, we declare low and high variables to represent the range we are search-</span></div>
+<div style="position:absolute;left:86.40px;top:411.01px" class="cls_003"><span class="cls_003">ing. Initially we search the entire array, from 0 to length - 1.</span></div>
+<div style="position:absolute;left:86.40px;top:442.08px" class="cls_003"><span class="cls_003">Inside the</span><span class="cls_006"> while</span><span class="cls_003"> loop, we repeat the four steps of binary search:</span></div>
+<div style="position:absolute;left:100.71px;top:483.05px" class="cls_003"><span class="cls_003">1. Choose an index between low and high - call it mid - and compare the</span></div>
+<div style="position:absolute;left:115.67px;top:498.22px" class="cls_003"><span class="cls_003">card at mid to the target.</span></div>
+<div style="position:absolute;left:100.71px;top:528.28px" class="cls_003"><span class="cls_003">2. If you found the target, return the index.</span></div>
+<div style="position:absolute;left:100.71px;top:558.34px" class="cls_003"><span class="cls_003">3. If the card at mid is lower than the target, search the range from mid + 1</span></div>
+<div style="position:absolute;left:115.67px;top:573.51px" class="cls_003"><span class="cls_003">to high.</span></div>
+<div style="position:absolute;left:100.71px;top:603.57px" class="cls_003"><span class="cls_003">4. If the card at mid is higher than the target, search the range from low</span></div>
+<div style="position:absolute;left:115.67px;top:618.74px" class="cls_003"><span class="cls_003">to mid - 1.</span></div>
+<div style="position:absolute;left:86.40px;top:659.71px" class="cls_003"><span class="cls_003">If low exceeds high, there are no cards in the range, so we break out of the</span></div>
+<div style="position:absolute;left:86.40px;top:674.88px" class="cls_003"><span class="cls_003">loop and return -1.  Notice that this algorithm depends on the compareTo</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_003"><span class="cls_003">method of the object.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:9624px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="fce73714-5ada-11e9-9d71-0cc47a792c0a_id_fce73714-5ada-11e9-9d71-0cc47a792c0a_files/background13.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">12.9</span></div>
+<div style="position:absolute;left:166.96px;top:88.65px" class="cls_003"><span class="cls_003">Tracing the code</span></div>
+<div style="position:absolute;left:505.43px;top:88.65px" class="cls_003"><span class="cls_003">201</span></div>
+<div style="position:absolute;left:129.60px;top:119.48px" class="cls_005"><span class="cls_005">12.9</span></div>
+<div style="position:absolute;left:183.40px;top:119.48px" class="cls_005"><span class="cls_005">Tracing the code</span></div>
+<div style="position:absolute;left:129.60px;top:156.65px" class="cls_003"><span class="cls_003">To see how binary search works, it’s helpful to add the following print state-</span></div>
+<div style="position:absolute;left:129.60px;top:171.81px" class="cls_003"><span class="cls_003">ment at the beginning of the loop:</span></div>
+<div style="position:absolute;left:144.54px;top:199.92px" class="cls_003"><span class="cls_003">System.out.println(low +</span><span class="cls_007"> ", "</span><span class="cls_003"> + high);</span></div>
+<div style="position:absolute;left:129.60px;top:227.93px" class="cls_003"><span class="cls_003">If we invoke binarySearch like this:</span></div>
+<div style="position:absolute;left:144.54px;top:255.09px" class="cls_003"><span class="cls_003">Card card =</span><span class="cls_006"> new</span><span class="cls_003"> Card(11, 0);</span></div>
+<div style="position:absolute;left:144.54px;top:270.26px" class="cls_003"><span class="cls_003">System.out.println(binarySearch(cards, card));</span></div>
+<div style="position:absolute;left:129.60px;top:297.00px" class="cls_003"><span class="cls_003">We expect to find this card at position 10. Here is the result:</span></div>
+<div style="position:absolute;left:144.54px;top:323.82px" class="cls_003"><span class="cls_003">0, 51</span></div>
+<div style="position:absolute;left:144.54px;top:338.99px" class="cls_003"><span class="cls_003">0, 24</span></div>
+<div style="position:absolute;left:144.54px;top:354.16px" class="cls_003"><span class="cls_003">0, 11</span></div>
+<div style="position:absolute;left:144.54px;top:369.33px" class="cls_003"><span class="cls_003">6, 11</span></div>
+<div style="position:absolute;left:144.54px;top:384.50px" class="cls_003"><span class="cls_003">9, 11</span></div>
+<div style="position:absolute;left:144.54px;top:399.66px" class="cls_003"><span class="cls_003">10</span></div>
+<div style="position:absolute;left:129.60px;top:426.40px" class="cls_003"><span class="cls_003">If we search for a card that’s not in the array, like</span><span class="cls_006"> new</span><span class="cls_003"> Card(15,</span></div>
+<div style="position:absolute;left:465.45px;top:426.40px" class="cls_003"><span class="cls_003">1), which is</span></div>
+<div style="position:absolute;left:129.60px;top:441.57px" class="cls_003"><span class="cls_003">the “15 of Diamonds”, we get the following:</span></div>
+<div style="position:absolute;left:144.54px;top:468.40px" class="cls_003"><span class="cls_003">0, 51</span></div>
+<div style="position:absolute;left:144.54px;top:483.57px" class="cls_003"><span class="cls_003">26, 51</span></div>
+<div style="position:absolute;left:144.54px;top:498.74px" class="cls_003"><span class="cls_003">26, 37</span></div>
+<div style="position:absolute;left:144.54px;top:513.90px" class="cls_003"><span class="cls_003">26, 30</span></div>
+<div style="position:absolute;left:144.54px;top:529.07px" class="cls_003"><span class="cls_003">26, 27</span></div>
+<div style="position:absolute;left:144.54px;top:544.24px" class="cls_003"><span class="cls_003">-1</span></div>
+<div style="position:absolute;left:129.60px;top:570.98px" class="cls_003"><span class="cls_003">Each time through the loop, we cut the distance between low and high in</span></div>
+<div style="position:absolute;left:129.60px;top:585.79px" class="cls_003"><span class="cls_003">half. After k iterations, the number of remaining cards is 52/2</span><span class="cls_011"><sup>k</sup></span><span class="cls_003">. To find the</span></div>
+<div style="position:absolute;left:129.60px;top:600.96px" class="cls_003"><span class="cls_003">number of iterations it takes to complete, we set 52/2</span><span class="cls_011"><sup>k</sup></span><span class="cls_003">  = 1 and solve for k.</span></div>
+<div style="position:absolute;left:129.60px;top:616.48px" class="cls_003"><span class="cls_003">The result is log</span><span class="cls_011"><sub>2</sub></span><span class="cls_003"> 52, which is about 5.7. So we might have to look at 5 or 6</span></div>
+<div style="position:absolute;left:129.60px;top:631.65px" class="cls_003"><span class="cls_003">cards, as opposed to all 52 if we did a sequential search.</span></div>
+<div style="position:absolute;left:129.60px;top:659.71px" class="cls_003"><span class="cls_003">More generally, if the array contains n elements, binary search requires log</span><span class="cls_011"><sub>2</sub></span><span class="cls_003"> n</span></div>
+<div style="position:absolute;left:129.60px;top:674.88px" class="cls_003"><span class="cls_003">comparisons, and sequential search requires n.  For large values of n, binary</span></div>
+<div style="position:absolute;left:129.60px;top:690.04px" class="cls_003"><span class="cls_003">search can be much faster.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:10426px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="fce73714-5ada-11e9-9d71-0cc47a792c0a_id_fce73714-5ada-11e9-9d71-0cc47a792c0a_files/background14.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">202</span></div>
+<div style="position:absolute;left:301.74px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 12</span></div>
+<div style="position:absolute;left:381.18px;top:88.65px" class="cls_003"><span class="cls_003">Arrays of objects</span></div>
+<div style="position:absolute;left:86.40px;top:119.48px" class="cls_005"><span class="cls_005">12.10</span></div>
+<div style="position:absolute;left:149.88px;top:119.48px" class="cls_005"><span class="cls_005">Recursive version</span></div>
+<div style="position:absolute;left:86.40px;top:156.04px" class="cls_003"><span class="cls_003">Another way to write a binary search is with a recursive method.  The trick</span></div>
+<div style="position:absolute;left:86.40px;top:171.21px" class="cls_003"><span class="cls_003">is to write a method that takes low and high as parameters, and turn steps 3</span></div>
+<div style="position:absolute;left:86.40px;top:186.37px" class="cls_003"><span class="cls_003">and 4 into recursive invocations. Here’s what the code looks like:</span></div>
+<div style="position:absolute;left:101.34px;top:210.39px" class="cls_006"><span class="cls_006">public static int</span><span class="cls_003"> binarySearch(Card[] cards, Card target,</span></div>
+<div style="position:absolute;left:292.05px;top:225.56px" class="cls_006"><span class="cls_006">int</span><span class="cls_003"> low,</span><span class="cls_006"> int</span><span class="cls_003"> high) {</span></div>
+<div style="position:absolute;left:125.95px;top:240.73px" class="cls_006"><span class="cls_006">if</span><span class="cls_003"> (high &lt; low) {</span></div>
+<div style="position:absolute;left:150.56px;top:255.90px" class="cls_006"><span class="cls_006">return</span><span class="cls_003"> -1;</span></div>
+<div style="position:absolute;left:125.95px;top:271.07px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:125.95px;top:286.24px" class="cls_006"><span class="cls_006">int</span><span class="cls_003"> mid = (low + high) / 2;</span></div>
+<div style="position:absolute;left:421.25px;top:286.24px" class="cls_009"><span class="cls_009">// step 1</span></div>
+<div style="position:absolute;left:125.95px;top:301.40px" class="cls_006"><span class="cls_006">int</span><span class="cls_003"> comp = cards[mid].compareTo(target);</span></div>
+<div style="position:absolute;left:125.95px;top:331.74px" class="cls_006"><span class="cls_006">if</span><span class="cls_003"> (comp == 0) {</span></div>
+<div style="position:absolute;left:421.25px;top:331.74px" class="cls_009"><span class="cls_009">// step 2</span></div>
+<div style="position:absolute;left:150.56px;top:346.91px" class="cls_006"><span class="cls_006">return</span><span class="cls_003"> mid;</span></div>
+<div style="position:absolute;left:125.95px;top:362.08px" class="cls_003"><span class="cls_003">}</span><span class="cls_006"> else if</span><span class="cls_003"> (comp &lt; 0) {</span></div>
+<div style="position:absolute;left:421.24px;top:362.08px" class="cls_009"><span class="cls_009">// step 3</span></div>
+<div style="position:absolute;left:150.56px;top:377.24px" class="cls_006"><span class="cls_006">return</span><span class="cls_003"> binarySearch(cards, target, mid + 1, high);</span></div>
+<div style="position:absolute;left:125.95px;top:392.41px" class="cls_003"><span class="cls_003">}</span><span class="cls_006"> else</span><span class="cls_003"> {</span></div>
+<div style="position:absolute;left:421.24px;top:392.41px" class="cls_009"><span class="cls_009">// step 4</span></div>
+<div style="position:absolute;left:150.56px;top:407.58px" class="cls_006"><span class="cls_006">return</span><span class="cls_003"> binarySearch(cards, target, low, mid - 1);</span></div>
+<div style="position:absolute;left:125.95px;top:422.75px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:101.34px;top:437.92px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:464.17px" class="cls_003"><span class="cls_003">Instead of a</span><span class="cls_006"> while</span><span class="cls_003"> loop, we have an</span><span class="cls_006"> if</span><span class="cls_003"> statement to terminate the recursion.</span></div>
+<div style="position:absolute;left:86.40px;top:479.34px" class="cls_003"><span class="cls_003">If high is less than low, there are no cards between them, and we conclude</span></div>
+<div style="position:absolute;left:86.40px;top:494.51px" class="cls_003"><span class="cls_003">that the card is not in the array.</span></div>
+<div style="position:absolute;left:86.40px;top:522.08px" class="cls_003"><span class="cls_003">Two common errors in recursive programs are (1) forgetting to include a base</span></div>
+<div style="position:absolute;left:86.40px;top:537.25px" class="cls_003"><span class="cls_003">case, and (2) writing the recursive call so that the base case is never reached.</span></div>
+<div style="position:absolute;left:86.40px;top:552.42px" class="cls_003"><span class="cls_003">Either error causes infinite recursion and a StackOverflowException.</span></div>
+<div style="position:absolute;left:86.40px;top:601.18px" class="cls_005"><span class="cls_005">12.11</span></div>
+<div style="position:absolute;left:149.88px;top:601.18px" class="cls_005"><span class="cls_005">Vocabulary</span></div>
+<div style="position:absolute;left:86.40px;top:634.01px" class="cls_003"><span class="cls_003">encode: To represent one set of values using another set of values, by con-</span></div>
+<div style="position:absolute;left:115.67px;top:649.18px" class="cls_003"><span class="cls_003">structing a mapping between them.</span></div>
+<div style="position:absolute;left:86.40px;top:674.88px" class="cls_003"><span class="cls_003">class variable: A variable declared within a class as</span><span class="cls_006"> static</span><span class="cls_003">. There is only</span></div>
+<div style="position:absolute;left:115.67px;top:690.04px" class="cls_003"><span class="cls_003">one copy of a class variable, no matter how many objects there are.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:11228px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="fce73714-5ada-11e9-9d71-0cc47a792c0a_id_fce73714-5ada-11e9-9d71-0cc47a792c0a_files/background15.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">12.12</span></div>
+<div style="position:absolute;left:173.68px;top:88.65px" class="cls_003"><span class="cls_003">Exercises</span></div>
+<div style="position:absolute;left:505.43px;top:88.65px" class="cls_003"><span class="cls_003">203</span></div>
+<div style="position:absolute;left:129.60px;top:124.74px" class="cls_003"><span class="cls_003">sequential search: An algorithm that searches array elements, one by one,</span></div>
+<div style="position:absolute;left:158.87px;top:139.91px" class="cls_003"><span class="cls_003">until a target value is found.</span></div>
+<div style="position:absolute;left:129.60px;top:164.67px" class="cls_003"><span class="cls_003">binary search: An algorithm that searches a sorted array by starting in the</span></div>
+<div style="position:absolute;left:158.87px;top:179.84px" class="cls_003"><span class="cls_003">middle, comparing and element to the target, and eliminating half of the</span></div>
+<div style="position:absolute;left:158.87px;top:195.01px" class="cls_003"><span class="cls_003">remaining elements.</span></div>
+<div style="position:absolute;left:129.60px;top:241.81px" class="cls_005"><span class="cls_005">12.12</span></div>
+<div style="position:absolute;left:193.08px;top:241.81px" class="cls_005"><span class="cls_005">Exercises</span></div>
+<div style="position:absolute;left:129.60px;top:277.05px" class="cls_003"><span class="cls_003">The code for this chapter is in the ch12 directory of ThinkJavaCode.  See</span></div>
+<div style="position:absolute;left:129.60px;top:292.22px" class="cls_003"><span class="cls_003">page xv for instructions on how to download the repository. Before you start</span></div>
+<div style="position:absolute;left:129.60px;top:307.39px" class="cls_003"><span class="cls_003">the exercises, we recommend that you compile and run the examples.</span></div>
+<div style="position:absolute;left:129.60px;top:334.51px" class="cls_003"><span class="cls_003">Exercise  12.1</span></div>
+<div style="position:absolute;left:221.29px;top:334.51px" class="cls_003"><span class="cls_003">Encapsulate the deck-building code from Section 12.6 in</span></div>
+<div style="position:absolute;left:129.60px;top:349.68px" class="cls_003"><span class="cls_003">a method called makeDeck that takes no parameters and returns a fully-</span></div>
+<div style="position:absolute;left:129.60px;top:364.85px" class="cls_003"><span class="cls_003">populated array of Cards.</span></div>
+<div style="position:absolute;left:129.60px;top:391.97px" class="cls_003"><span class="cls_003">Exercise 12.2</span></div>
+<div style="position:absolute;left:220.57px;top:391.97px" class="cls_003"><span class="cls_003">In some card games, Aces are ranked higher than Kings.</span></div>
+<div style="position:absolute;left:129.60px;top:407.14px" class="cls_003"><span class="cls_003">Modify the compareTo method to implement this ordering.</span></div>
+<div style="position:absolute;left:129.60px;top:434.26px" class="cls_003"><span class="cls_003">Exercise 12.3</span></div>
+<div style="position:absolute;left:218.31px;top:434.26px" class="cls_003"><span class="cls_003">In Poker a “flush” is a hand that contains five or more cards</span></div>
+<div style="position:absolute;left:129.60px;top:449.43px" class="cls_003"><span class="cls_003">of the same suit. A hand can contain any number of cards.</span></div>
+<div style="position:absolute;left:143.91px;top:478.33px" class="cls_003"><span class="cls_003">1. Write a method called suitHist that takes an array of cards as a pa-</span></div>
+<div style="position:absolute;left:158.87px;top:493.49px" class="cls_003"><span class="cls_003">rameter and that returns a histogram of the suits in the hand.  Your</span></div>
+<div style="position:absolute;left:158.87px;top:508.66px" class="cls_003"><span class="cls_003">solution should only traverse the array once.</span></div>
+<div style="position:absolute;left:143.91px;top:533.42px" class="cls_003"><span class="cls_003">2. Write a method called hasFlush that takes an array of cards as a param-</span></div>
+<div style="position:absolute;left:158.87px;top:548.59px" class="cls_003"><span class="cls_003">eter and returns</span><span class="cls_006"> true</span><span class="cls_003"> if the hand contains a flush (and</span><span class="cls_006"> false</span><span class="cls_003"> otherwise).</span></div>
+<div style="position:absolute;left:129.60px;top:575.72px" class="cls_003"><span class="cls_003">Exercise 12.4</span></div>
+<div style="position:absolute;left:220.21px;top:575.72px" class="cls_003"><span class="cls_003">Working with cards is more interesting if you can display</span></div>
+<div style="position:absolute;left:129.60px;top:590.88px" class="cls_003"><span class="cls_003">them on the screen.  If you have not already read Appendix B about 2D</span></div>
+<div style="position:absolute;left:129.60px;top:606.05px" class="cls_003"><span class="cls_003">graphics, you should read it before working on this exercise.  In the code</span></div>
+<div style="position:absolute;left:129.60px;top:621.22px" class="cls_003"><span class="cls_003">directory for this chapter, ch12, you will find:</span></div>
+<div style="position:absolute;left:147.16px;top:650.11px" class="cls_004"><span class="cls_004"></span><span class="cls_003"> cardset-oxymoron: A directory containing images of playing cards.</span></div>
+<div style="position:absolute;left:147.16px;top:674.88px" class="cls_004"><span class="cls_004"></span><span class="cls_003"> CardTable.java: A sample program that demonstrates how to read and</span></div>
+<div style="position:absolute;left:158.87px;top:690.04px" class="cls_003"><span class="cls_003">display images.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:12030px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="fce73714-5ada-11e9-9d71-0cc47a792c0a_id_fce73714-5ada-11e9-9d71-0cc47a792c0a_files/background16.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">204</span></div>
+<div style="position:absolute;left:301.74px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 12</span></div>
+<div style="position:absolute;left:381.18px;top:88.65px" class="cls_003"><span class="cls_003">Arrays of objects</span></div>
+<div style="position:absolute;left:86.40px;top:124.74px" class="cls_003"><span class="cls_003">This code demonstrates the use of a 2D array, specifically an array of images.</span></div>
+<div style="position:absolute;left:86.40px;top:139.91px" class="cls_003"><span class="cls_003">The declaration looks like this:</span></div>
+<div style="position:absolute;left:101.34px;top:167.08px" class="cls_006"><span class="cls_006">private</span><span class="cls_003"> Image[][] images;</span></div>
+<div style="position:absolute;left:86.40px;top:194.16px" class="cls_003"><span class="cls_003">The variable images refers to a 2D array of Image objects, which are defined</span></div>
+<div style="position:absolute;left:86.40px;top:209.33px" class="cls_003"><span class="cls_003">in the java.awt package. Here’s the code that creates the array itself:</span></div>
+<div style="position:absolute;left:101.34px;top:236.49px" class="cls_003"><span class="cls_003">images =</span><span class="cls_006"> new</span><span class="cls_003"> Image[14][4];</span></div>
+<div style="position:absolute;left:86.40px;top:263.57px" class="cls_003"><span class="cls_003">The array has 14 rows (one for each rank plus an unused row for rank 0) and</span></div>
+<div style="position:absolute;left:86.40px;top:278.74px" class="cls_003"><span class="cls_003">4 columns (one for each suit). Here’s the loop that populates the array:</span></div>
+<div style="position:absolute;left:101.34px;top:305.30px" class="cls_003"><span class="cls_003">String cardset =</span><span class="cls_007"> "cardset-oxymoron"</span><span class="cls_003">;</span></div>
+<div style="position:absolute;left:101.34px;top:320.47px" class="cls_003"><span class="cls_003">String suits =</span><span class="cls_007"> "cdhs"</span><span class="cls_003">;</span></div>
+<div style="position:absolute;left:101.34px;top:350.80px" class="cls_006"><span class="cls_006">for</span><span class="cls_003"> (</span><span class="cls_006">int</span><span class="cls_003"> suit = 0; suit &lt;= 3; suit++) {</span></div>
+<div style="position:absolute;left:125.95px;top:365.97px" class="cls_006"><span class="cls_006">char</span><span class="cls_003"> c = suits.charAt(suit);</span></div>
+<div style="position:absolute;left:125.95px;top:396.31px" class="cls_006"><span class="cls_006">for</span><span class="cls_003"> (</span><span class="cls_006">int</span><span class="cls_003"> rank = 1; rank &lt;= 13; rank++) {</span></div>
+<div style="position:absolute;left:150.56px;top:411.48px" class="cls_003"><span class="cls_003">String s = String.format(</span><span class="cls_007">"%s/%02d%c.gif"</span><span class="cls_003">,</span></div>
+<div style="position:absolute;left:304.36px;top:426.64px" class="cls_003"><span class="cls_003">cardset, rank, c);</span></div>
+<div style="position:absolute;left:150.56px;top:441.81px" class="cls_003"><span class="cls_003">images[rank][suit] =</span><span class="cls_006"> new</span><span class="cls_003"> ImageIcon(s).getImage();</span></div>
+<div style="position:absolute;left:125.95px;top:456.98px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:101.34px;top:472.15px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:497.95px" class="cls_003"><span class="cls_003">The variable cardset contains the name of the directory that contains the</span></div>
+<div style="position:absolute;left:86.40px;top:513.12px" class="cls_003"><span class="cls_003">image files. suits is a string that contains the single-letter abbreviations for</span></div>
+<div style="position:absolute;left:86.40px;top:528.29px" class="cls_003"><span class="cls_003">the suits.  These strings are used to assemble s, which contains the filename</span></div>
+<div style="position:absolute;left:86.40px;top:543.46px" class="cls_003"><span class="cls_003">for each image.  For example, when rank=1 and suit=2, the value of s is</span></div>
+<div style="position:absolute;left:86.40px;top:558.63px" class="cls_007"><span class="cls_007">"cardset-oxymoron/01h.gif"</span><span class="cls_003">, which is an image of the Ace of Hearts.</span></div>
+<div style="position:absolute;left:86.40px;top:585.75px" class="cls_003"><span class="cls_003">The last line of the loop reads the image file, extracts an Image object, and</span></div>
+<div style="position:absolute;left:86.40px;top:600.92px" class="cls_003"><span class="cls_003">assigns it to a location in the array, as specified by the indexes rank and suit.</span></div>
+<div style="position:absolute;left:86.40px;top:616.08px" class="cls_003"><span class="cls_003">For example, the image of the Ace of Hearts is stored in row 1, column 2.</span></div>
+<div style="position:absolute;left:86.40px;top:643.21px" class="cls_003"><span class="cls_003">If you compile and run CardTable.java, you should see images of a deck of</span></div>
+<div style="position:absolute;left:86.40px;top:658.38px" class="cls_003"><span class="cls_003">cards laid out on a green table. You can use this class as a starting place to</span></div>
+<div style="position:absolute;left:86.40px;top:673.54px" class="cls_003"><span class="cls_003">implement your own card games.</span></div>
+</div>
+
+</body>
+</html>

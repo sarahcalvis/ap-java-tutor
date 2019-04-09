@@ -1,0 +1,569 @@
+<html>
+<head><meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<style type="text/css">
+<!--
+span.cls_002{font-family:Arial,serif;font-size:24.8px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_002{font-family:Arial,serif;font-size:24.8px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_003{font-family:Arial,serif;font-size:12.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_003{font-family:Arial,serif;font-size:12.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_004{font-family:Arial,serif;font-size:17.3px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_004{font-family:Arial,serif;font-size:17.3px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_005{font-family:Arial,serif;font-size:12.0px;color:rgb(0,0,255);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_005{font-family:Arial,serif;font-size:12.0px;color:rgb(0,0,255);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_006{font-family:Arial,serif;font-size:10.9px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_006{font-family:Arial,serif;font-size:10.9px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_007{font-family:Arial,serif;font-size:12.0px;color:rgb(178,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_007{font-family:Arial,serif;font-size:12.0px;color:rgb(178,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_008{font-family:Arial,serif;font-size:12.0px;color:rgb(0,123,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_008{font-family:Arial,serif;font-size:12.0px;color:rgb(0,123,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_009{font-family:Times,serif;font-size:8.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_009{font-family:Times,serif;font-size:8.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+-->
+</style>
+<script type="text/javascript" src="49e16ad6-5ada-11e9-9d71-0cc47a792c0a_id_49e16ad6-5ada-11e9-9d71-0cc47a792c0a_files/wz_jsgraphics.js"></script>
+</head>
+<body>
+<div style="position:absolute;left:50%;margin-left:-306px;top:0px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="49e16ad6-5ada-11e9-9d71-0cc47a792c0a_id_49e16ad6-5ada-11e9-9d71-0cc47a792c0a_files/background01.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:204.43px" class="cls_002"><span class="cls_002">Chapter 10</span></div>
+<div style="position:absolute;left:129.60px;top:267.07px" class="cls_002"><span class="cls_002">Objects</span></div>
+<div style="position:absolute;left:129.60px;top:346.25px" class="cls_003"><span class="cls_003">As we learned in the previous chapter, an object is a collection of data that</span></div>
+<div style="position:absolute;left:129.60px;top:361.42px" class="cls_003"><span class="cls_003">provides a set of methods. For example, a String is a collection of characters</span></div>
+<div style="position:absolute;left:129.60px;top:376.58px" class="cls_003"><span class="cls_003">that provides methods like charAt and substring.</span></div>
+<div style="position:absolute;left:129.60px;top:403.08px" class="cls_003"><span class="cls_003">Java is an “object-oriented” language, which means that it uses objects to</span></div>
+<div style="position:absolute;left:129.60px;top:418.25px" class="cls_003"><span class="cls_003">represent data and provide methods related to them. This way of organizing</span></div>
+<div style="position:absolute;left:129.60px;top:433.42px" class="cls_003"><span class="cls_003">programs is a powerful design concept, and we will introduce it a little at a</span></div>
+<div style="position:absolute;left:129.60px;top:448.58px" class="cls_003"><span class="cls_003">time throughout the remainder of the book.</span></div>
+<div style="position:absolute;left:129.60px;top:475.08px" class="cls_003"><span class="cls_003">In this chapter, we introduce two new types of objects: Point and Rectangle.</span></div>
+<div style="position:absolute;left:129.60px;top:490.25px" class="cls_003"><span class="cls_003">We show how to write methods that take objects as parameters and produce</span></div>
+<div style="position:absolute;left:129.60px;top:505.42px" class="cls_003"><span class="cls_003">objects as return values. We also take a look at the source code for the Java</span></div>
+<div style="position:absolute;left:129.60px;top:520.58px" class="cls_003"><span class="cls_003">library.</span></div>
+<div style="position:absolute;left:129.60px;top:567.52px" class="cls_004"><span class="cls_004">10.1</span></div>
+<div style="position:absolute;left:183.40px;top:567.52px" class="cls_004"><span class="cls_004">Point objects</span></div>
+<div style="position:absolute;left:129.60px;top:602.88px" class="cls_003"><span class="cls_003">The java.awt package provides a class named Point intended to represent</span></div>
+<div style="position:absolute;left:129.60px;top:618.04px" class="cls_003"><span class="cls_003">the coordinates of a location in a Cartesian plane. In mathematical notation,</span></div>
+<div style="position:absolute;left:129.60px;top:633.21px" class="cls_003"><span class="cls_003">points are often written in parentheses with a comma separating the coordi-</span></div>
+<div style="position:absolute;left:129.60px;top:648.38px" class="cls_003"><span class="cls_003">nates. For example, (0, 0) indicates the origin, and (x, y) indicates the point</span></div>
+<div style="position:absolute;left:129.60px;top:663.55px" class="cls_003"><span class="cls_003">x units to the right and y units up from the origin.</span></div>
+<div style="position:absolute;left:129.60px;top:690.04px" class="cls_003"><span class="cls_003">In order to use the Point class, you have to import it:</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:802px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="49e16ad6-5ada-11e9-9d71-0cc47a792c0a_id_49e16ad6-5ada-11e9-9d71-0cc47a792c0a_files/background02.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">156</span></div>
+<div style="position:absolute;left:357.88px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 10</span></div>
+<div style="position:absolute;left:437.32px;top:88.65px" class="cls_003"><span class="cls_003">Objects</span></div>
+<div style="position:absolute;left:101.34px;top:124.79px" class="cls_005"><span class="cls_005">import</span><span class="cls_003"> java.awt.Point;</span></div>
+<div style="position:absolute;left:86.40px;top:150.66px" class="cls_003"><span class="cls_003">Then, to create a new point, you have to use the</span><span class="cls_005"> new</span><span class="cls_003"> operator:</span></div>
+<div style="position:absolute;left:101.34px;top:175.34px" class="cls_003"><span class="cls_003">Point blank;</span></div>
+<div style="position:absolute;left:101.34px;top:190.51px" class="cls_003"><span class="cls_003">blank =</span><span class="cls_005"> new</span><span class="cls_003"> Point(3, 4);</span></div>
+<div style="position:absolute;left:86.40px;top:215.10px" class="cls_003"><span class="cls_003">The first line declares that blank has type Point. The second line creates the</span></div>
+<div style="position:absolute;left:86.40px;top:230.27px" class="cls_003"><span class="cls_003">new Point with the given arguments as coordinates.</span></div>
+<div style="position:absolute;left:86.40px;top:256.18px" class="cls_003"><span class="cls_003">The result of the</span><span class="cls_005"> new</span><span class="cls_003"> operator is a reference to the new object.  So blank</span></div>
+<div style="position:absolute;left:86.40px;top:271.35px" class="cls_003"><span class="cls_003">contains a reference to the new Point object. Figure 10.1 shows the result.</span></div>
+<div style="position:absolute;left:293.90px;top:297.87px" class="cls_006"><span class="cls_006">Point</span></div>
+<div style="position:absolute;left:306.50px;top:324.87px" class="cls_006"><span class="cls_006">x</span></div>
+<div style="position:absolute;left:319.40px;top:324.87px" class="cls_006"><span class="cls_006">3</span></div>
+<div style="position:absolute;left:232.09px;top:342.87px" class="cls_006"><span class="cls_006">blank</span></div>
+<div style="position:absolute;left:306.50px;top:356.37px" class="cls_006"><span class="cls_006">y</span></div>
+<div style="position:absolute;left:319.40px;top:356.37px" class="cls_006"><span class="cls_006">4</span></div>
+<div style="position:absolute;left:88.89px;top:393.82px" class="cls_003"><span class="cls_003">Figure 10.1: State diagram showing a variable that refers to a Point object.</span></div>
+<div style="position:absolute;left:86.40px;top:420.73px" class="cls_003"><span class="cls_003">As usual, the name of the variable blank appears outside the box, and its</span></div>
+<div style="position:absolute;left:86.40px;top:435.90px" class="cls_003"><span class="cls_003">value appears inside the box.  In this case, the value is a reference, which is</span></div>
+<div style="position:absolute;left:86.40px;top:451.06px" class="cls_003"><span class="cls_003">represented with an arrow. The arrow points to the new object, which contains</span></div>
+<div style="position:absolute;left:86.40px;top:466.23px" class="cls_003"><span class="cls_003">two variables, x and y.</span></div>
+<div style="position:absolute;left:86.40px;top:512.43px" class="cls_004"><span class="cls_004">10.2</span></div>
+<div style="position:absolute;left:140.20px;top:512.43px" class="cls_004"><span class="cls_004">Attributes</span></div>
+<div style="position:absolute;left:86.40px;top:547.21px" class="cls_003"><span class="cls_003">Variables that belong to an object are usually called attributes, but you</span></div>
+<div style="position:absolute;left:86.40px;top:562.38px" class="cls_003"><span class="cls_003">might also see them called “fields”. To access an attribute of an object, Java</span></div>
+<div style="position:absolute;left:86.40px;top:577.55px" class="cls_003"><span class="cls_003">uses dot notation. For example:</span></div>
+<div style="position:absolute;left:101.34px;top:603.50px" class="cls_005"><span class="cls_005">int</span><span class="cls_003"> x = blank.x;</span></div>
+<div style="position:absolute;left:86.40px;top:629.37px" class="cls_003"><span class="cls_003">The expression blank.x means “go to the object blank refers to, and get the</span></div>
+<div style="position:absolute;left:86.40px;top:644.54px" class="cls_003"><span class="cls_003">value of the attribute x.” In this case, we assign that value to a local variable</span></div>
+<div style="position:absolute;left:86.40px;top:659.71px" class="cls_003"><span class="cls_003">named x.  There is no conflict between the local variable named x and the</span></div>
+<div style="position:absolute;left:86.40px;top:674.88px" class="cls_003"><span class="cls_003">attribute named x. The purpose of dot notation is to identify which variable</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_003"><span class="cls_003">you are referring to unambiguously.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:1604px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="49e16ad6-5ada-11e9-9d71-0cc47a792c0a_id_49e16ad6-5ada-11e9-9d71-0cc47a792c0a_files/background03.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">10.3</span></div>
+<div style="position:absolute;left:166.96px;top:88.65px" class="cls_003"><span class="cls_003">Objects as parameters</span></div>
+<div style="position:absolute;left:505.42px;top:88.65px" class="cls_003"><span class="cls_003">157</span></div>
+<div style="position:absolute;left:129.60px;top:124.74px" class="cls_003"><span class="cls_003">You can use dot notation as part of an expression. For example:</span></div>
+<div style="position:absolute;left:144.54px;top:151.05px" class="cls_003"><span class="cls_003">System.out.println(blank.x +</span><span class="cls_007"> ", "</span><span class="cls_003"> + blank.y);</span></div>
+<div style="position:absolute;left:144.54px;top:166.22px" class="cls_005"><span class="cls_005">int</span><span class="cls_003"> sum = blank.x * blank.x + blank.y * blank.y;</span></div>
+<div style="position:absolute;left:129.60px;top:192.44px" class="cls_003"><span class="cls_003">The first line displays 3, 4; the second line calculates the value 25.</span></div>
+<div style="position:absolute;left:129.60px;top:241.12px" class="cls_004"><span class="cls_004">10.3</span></div>
+<div style="position:absolute;left:183.40px;top:241.12px" class="cls_004"><span class="cls_004">Objects as parameters</span></div>
+<div style="position:absolute;left:129.60px;top:277.63px" class="cls_003"><span class="cls_003">You can pass objects as parameters in the usual way. For example:</span></div>
+<div style="position:absolute;left:144.54px;top:303.94px" class="cls_005"><span class="cls_005">public static void</span><span class="cls_003"> printPoint(Point p) {</span></div>
+<div style="position:absolute;left:169.15px;top:319.11px" class="cls_003"><span class="cls_003">System.out.println(</span><span class="cls_007">"("</span><span class="cls_003"> + p.x +</span><span class="cls_007"> ", "</span><span class="cls_003"> + p.y +</span><span class="cls_007"> ")"</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:144.54px;top:334.28px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:360.50px" class="cls_003"><span class="cls_003">This method takes a point as an argument and displays its attributes in paren-</span></div>
+<div style="position:absolute;left:129.60px;top:375.67px" class="cls_003"><span class="cls_003">theses. If you invoke printPoint(blank), it displays (3, 4).</span></div>
+<div style="position:absolute;left:129.60px;top:403.21px" class="cls_003"><span class="cls_003">But we don’t really need a method like printPoint, because if you invoke</span></div>
+<div style="position:absolute;left:129.60px;top:418.38px" class="cls_003"><span class="cls_003">System.out.println(blank) you get:</span></div>
+<div style="position:absolute;left:144.54px;top:445.96px" class="cls_003"><span class="cls_003">java.awt.Point[x=3,y=4]</span></div>
+<div style="position:absolute;left:129.60px;top:473.46px" class="cls_003"><span class="cls_003">Point objects provide a method called toString that returns a string repre-</span></div>
+<div style="position:absolute;left:129.60px;top:488.63px" class="cls_003"><span class="cls_003">sentation of a point.  When you call println with objects, it automatically</span></div>
+<div style="position:absolute;left:129.60px;top:503.80px" class="cls_003"><span class="cls_003">calls toString and displays the result. In this case, it shows the name of the</span></div>
+<div style="position:absolute;left:129.60px;top:518.96px" class="cls_003"><span class="cls_003">type (java.awt.Point) and the names and values of the attributes.</span></div>
+<div style="position:absolute;left:129.60px;top:546.50px" class="cls_003"><span class="cls_003">As another example, we can rewrite the distance method from Section 6.2 so</span></div>
+<div style="position:absolute;left:129.60px;top:561.67px" class="cls_003"><span class="cls_003">that it takes two Points as parameters instead of four</span><span class="cls_005"> double</span><span class="cls_003">s.</span></div>
+<div style="position:absolute;left:144.54px;top:587.98px" class="cls_005"><span class="cls_005">public static double</span><span class="cls_003"> distance(Point p1, Point p2) {</span></div>
+<div style="position:absolute;left:169.15px;top:603.15px" class="cls_005"><span class="cls_005">int</span><span class="cls_003"> dx = p2.x - p1.x;</span></div>
+<div style="position:absolute;left:169.15px;top:618.32px" class="cls_005"><span class="cls_005">int</span><span class="cls_003"> dy = p2.y - p1.y;</span></div>
+<div style="position:absolute;left:169.15px;top:633.49px" class="cls_005"><span class="cls_005">return</span><span class="cls_003"> Math.sqrt(dx * dx + dy * dy);</span></div>
+<div style="position:absolute;left:144.54px;top:648.66px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:674.88px" class="cls_003"><span class="cls_003">Passing objects as parameters makes the source code more readable and less</span></div>
+<div style="position:absolute;left:129.60px;top:690.04px" class="cls_003"><span class="cls_003">error-prone, because related values are bundled together.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:2406px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="49e16ad6-5ada-11e9-9d71-0cc47a792c0a_id_49e16ad6-5ada-11e9-9d71-0cc47a792c0a_files/background04.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">158</span></div>
+<div style="position:absolute;left:357.88px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 10</span></div>
+<div style="position:absolute;left:437.32px;top:88.65px" class="cls_003"><span class="cls_003">Objects</span></div>
+<div style="position:absolute;left:86.40px;top:119.48px" class="cls_004"><span class="cls_004">10.4</span></div>
+<div style="position:absolute;left:140.20px;top:119.48px" class="cls_004"><span class="cls_004">Objects as return types</span></div>
+<div style="position:absolute;left:86.40px;top:153.64px" class="cls_003"><span class="cls_003">The java.awt package also provides a class called Rectangle. To use it, you</span></div>
+<div style="position:absolute;left:86.40px;top:168.81px" class="cls_003"><span class="cls_003">have to import it:</span></div>
+<div style="position:absolute;left:101.34px;top:194.14px" class="cls_005"><span class="cls_005">import</span><span class="cls_003"> java.awt.Rectangle;</span></div>
+<div style="position:absolute;left:86.40px;top:219.39px" class="cls_003"><span class="cls_003">Rectangle objects are similar to points, but they have four attributes: x, y,</span></div>
+<div style="position:absolute;left:86.40px;top:234.56px" class="cls_003"><span class="cls_003">width, and height.  The following example creates a Rectangle object and</span></div>
+<div style="position:absolute;left:86.40px;top:249.73px" class="cls_003"><span class="cls_003">makes the variable box refer to it:</span></div>
+<div style="position:absolute;left:101.34px;top:275.07px" class="cls_003"><span class="cls_003">Rectangle box =</span><span class="cls_005"> new</span><span class="cls_003"> Rectangle(0, 0, 100, 200);</span></div>
+<div style="position:absolute;left:86.40px;top:300.31px" class="cls_003"><span class="cls_003">Figure 10.2 shows the effect of this assignment.</span></div>
+<div style="position:absolute;left:246.70px;top:326.71px" class="cls_006"><span class="cls_006">Rectangle</span></div>
+<div style="position:absolute;left:254.80px;top:353.71px" class="cls_006"><span class="cls_006">x</span></div>
+<div style="position:absolute;left:282.70px;top:353.71px" class="cls_006"><span class="cls_006">0</span></div>
+<div style="position:absolute;left:315.99px;top:353.71px" class="cls_006"><span class="cls_006">width</span></div>
+<div style="position:absolute;left:350.20px;top:353.71px" class="cls_006"><span class="cls_006">100</span></div>
+<div style="position:absolute;left:188.79px;top:367.21px" class="cls_006"><span class="cls_006">box</span></div>
+<div style="position:absolute;left:254.80px;top:380.71px" class="cls_006"><span class="cls_006">y</span></div>
+<div style="position:absolute;left:282.70px;top:380.71px" class="cls_006"><span class="cls_006">0</span></div>
+<div style="position:absolute;left:311.78px;top:380.71px" class="cls_006"><span class="cls_006">height</span></div>
+<div style="position:absolute;left:350.20px;top:380.71px" class="cls_006"><span class="cls_006">200</span></div>
+<div style="position:absolute;left:139.06px;top:418.16px" class="cls_003"><span class="cls_003">Figure 10.2: State diagram showing a Rectangle object.</span></div>
+<div style="position:absolute;left:86.40px;top:444.78px" class="cls_003"><span class="cls_003">If you run System.out.println(box), you get:</span></div>
+<div style="position:absolute;left:101.34px;top:470.12px" class="cls_003"><span class="cls_003">java.awt.Rectangle[x=0,y=0,width=100,height=200]</span></div>
+<div style="position:absolute;left:86.40px;top:495.37px" class="cls_003"><span class="cls_003">Again, println uses the toString method provided by Rectangle, which</span></div>
+<div style="position:absolute;left:86.40px;top:510.54px" class="cls_003"><span class="cls_003">knows how to display Rectangle objects.</span></div>
+<div style="position:absolute;left:86.40px;top:535.83px" class="cls_003"><span class="cls_003">You can write methods that return objects. For example, findCenter takes</span></div>
+<div style="position:absolute;left:86.40px;top:551.00px" class="cls_003"><span class="cls_003">a Rectangle as an argument and returns a Point with the coordinates of the</span></div>
+<div style="position:absolute;left:86.40px;top:566.17px" class="cls_003"><span class="cls_003">center of the rectangle:</span></div>
+<div style="position:absolute;left:101.34px;top:590.23px" class="cls_005"><span class="cls_005">public static</span><span class="cls_003"> Point findCenter(Rectangle box) {</span></div>
+<div style="position:absolute;left:125.95px;top:605.40px" class="cls_005"><span class="cls_005">int</span><span class="cls_003"> x = box.x + box.width / 2;</span></div>
+<div style="position:absolute;left:125.95px;top:620.57px" class="cls_005"><span class="cls_005">int</span><span class="cls_003"> y = box.y + box.height / 2;</span></div>
+<div style="position:absolute;left:125.95px;top:635.73px" class="cls_005"><span class="cls_005">return new</span><span class="cls_003"> Point(x, y);</span></div>
+<div style="position:absolute;left:101.34px;top:650.90px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:674.88px" class="cls_003"><span class="cls_003">The return type of this method is Point. The last line creates a new Point</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_003"><span class="cls_003">object and returns a reference to it.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:3208px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="49e16ad6-5ada-11e9-9d71-0cc47a792c0a_id_49e16ad6-5ada-11e9-9d71-0cc47a792c0a_files/background05.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">10.5</span></div>
+<div style="position:absolute;left:166.96px;top:88.65px" class="cls_003"><span class="cls_003">Mutable objects</span></div>
+<div style="position:absolute;left:505.42px;top:88.65px" class="cls_003"><span class="cls_003">159</span></div>
+<div style="position:absolute;left:129.60px;top:119.48px" class="cls_004"><span class="cls_004">10.5</span></div>
+<div style="position:absolute;left:183.40px;top:119.48px" class="cls_004"><span class="cls_004">Mutable objects</span></div>
+<div style="position:absolute;left:129.60px;top:158.05px" class="cls_003"><span class="cls_003">You can change the contents of an object by making an assignment to one of</span></div>
+<div style="position:absolute;left:129.60px;top:173.22px" class="cls_003"><span class="cls_003">its attributes. For example, to “move” a rectangle without changing its size,</span></div>
+<div style="position:absolute;left:129.60px;top:188.39px" class="cls_003"><span class="cls_003">you can modify the x and y values:</span></div>
+<div style="position:absolute;left:144.54px;top:216.67px" class="cls_003"><span class="cls_003">Rectangle box =</span><span class="cls_005"> new</span><span class="cls_003"> Rectangle(0, 0, 100, 200);</span></div>
+<div style="position:absolute;left:144.54px;top:231.83px" class="cls_003"><span class="cls_003">box.x = box.x + 50;</span></div>
+<div style="position:absolute;left:144.54px;top:247.00px" class="cls_003"><span class="cls_003">box.y = box.y + 100;</span></div>
+<div style="position:absolute;left:129.60px;top:274.86px" class="cls_003"><span class="cls_003">The result is shown in Figure 10.3.</span></div>
+<div style="position:absolute;left:289.90px;top:305.14px" class="cls_006"><span class="cls_006">Rectangle</span></div>
+<div style="position:absolute;left:298.00px;top:332.14px" class="cls_006"><span class="cls_006">x</span></div>
+<div style="position:absolute;left:316.90px;top:332.14px" class="cls_006"><span class="cls_006">50</span></div>
+<div style="position:absolute;left:359.19px;top:332.14px" class="cls_006"><span class="cls_006">width</span></div>
+<div style="position:absolute;left:393.40px;top:332.14px" class="cls_006"><span class="cls_006">100</span></div>
+<div style="position:absolute;left:231.99px;top:345.64px" class="cls_006"><span class="cls_006">box</span></div>
+<div style="position:absolute;left:298.00px;top:359.14px" class="cls_006"><span class="cls_006">y</span></div>
+<div style="position:absolute;left:312.40px;top:359.14px" class="cls_006"><span class="cls_006">100</span></div>
+<div style="position:absolute;left:354.98px;top:359.14px" class="cls_006"><span class="cls_006">height</span></div>
+<div style="position:absolute;left:393.40px;top:359.14px" class="cls_006"><span class="cls_006">200</span></div>
+<div style="position:absolute;left:184.54px;top:396.59px" class="cls_003"><span class="cls_003">Figure 10.3: State diagram showing updated attributes.</span></div>
+<div style="position:absolute;left:129.60px;top:426.76px" class="cls_003"><span class="cls_003">We can encapsulate this code in a method and generalize it to move the rect-</span></div>
+<div style="position:absolute;left:129.60px;top:441.93px" class="cls_003"><span class="cls_003">angle by any amount:</span></div>
+<div style="position:absolute;left:144.54px;top:469.87px" class="cls_005"><span class="cls_005">public static void</span><span class="cls_003"> moveRect(Rectangle box,</span><span class="cls_005"> int</span><span class="cls_003"> dx,</span><span class="cls_005"> int</span><span class="cls_003"> dy) {</span></div>
+<div style="position:absolute;left:169.15px;top:485.04px" class="cls_003"><span class="cls_003">box.x = box.x + dx;</span></div>
+<div style="position:absolute;left:169.15px;top:500.21px" class="cls_003"><span class="cls_003">box.y = box.y + dy;</span></div>
+<div style="position:absolute;left:144.54px;top:515.38px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:543.23px" class="cls_003"><span class="cls_003">The variables dx and dy indicate how far to move the rectangle in each direc-</span></div>
+<div style="position:absolute;left:129.60px;top:558.40px" class="cls_003"><span class="cls_003">tion. Invoking this method has the effect of modifying the Rectangle that is</span></div>
+<div style="position:absolute;left:129.60px;top:573.57px" class="cls_003"><span class="cls_003">passed as an argument.</span></div>
+<div style="position:absolute;left:144.54px;top:601.52px" class="cls_003"><span class="cls_003">Rectangle box =</span><span class="cls_005"> new</span><span class="cls_003"> Rectangle(0, 0, 100, 200);</span></div>
+<div style="position:absolute;left:144.54px;top:616.68px" class="cls_003"><span class="cls_003">moveRect(box, 50, 100);</span></div>
+<div style="position:absolute;left:144.54px;top:631.85px" class="cls_003"><span class="cls_003">System.out.println(box);</span></div>
+<div style="position:absolute;left:129.60px;top:659.71px" class="cls_003"><span class="cls_003">Modifying objects by passing them as arguments to methods can be useful.</span></div>
+<div style="position:absolute;left:129.60px;top:674.88px" class="cls_003"><span class="cls_003">But it can also make debugging more difficult, because it is not always clear</span></div>
+<div style="position:absolute;left:129.60px;top:690.04px" class="cls_003"><span class="cls_003">which method invocations modify their arguments.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:4010px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="49e16ad6-5ada-11e9-9d71-0cc47a792c0a_id_49e16ad6-5ada-11e9-9d71-0cc47a792c0a_files/background06.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">160</span></div>
+<div style="position:absolute;left:357.88px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 10</span></div>
+<div style="position:absolute;left:437.32px;top:88.65px" class="cls_003"><span class="cls_003">Objects</span></div>
+<div style="position:absolute;left:86.40px;top:124.74px" class="cls_003"><span class="cls_003">Java provides a number of methods that operate on Points and Rectangles.</span></div>
+<div style="position:absolute;left:86.40px;top:139.91px" class="cls_003"><span class="cls_003">For example, translate has the same effect as moveRect, but instead of pass-</span></div>
+<div style="position:absolute;left:86.40px;top:155.08px" class="cls_003"><span class="cls_003">ing the rectangle as an argument, you use dot notation:</span></div>
+<div style="position:absolute;left:101.34px;top:182.83px" class="cls_003"><span class="cls_003">box.translate(50, 100);</span></div>
+<div style="position:absolute;left:86.40px;top:210.50px" class="cls_003"><span class="cls_003">This line invokes the translate method for the object that box refers to. As</span></div>
+<div style="position:absolute;left:86.40px;top:225.67px" class="cls_003"><span class="cls_003">a result, the box object is updated directly.</span></div>
+<div style="position:absolute;left:86.40px;top:253.38px" class="cls_003"><span class="cls_003">This example is a good illustration of object-oriented programming. Rather</span></div>
+<div style="position:absolute;left:86.40px;top:268.55px" class="cls_003"><span class="cls_003">than write methods like moveRect that modify one or more parameters, we</span></div>
+<div style="position:absolute;left:86.40px;top:283.71px" class="cls_003"><span class="cls_003">apply methods to objects themselves using dot notation.</span></div>
+<div style="position:absolute;left:86.40px;top:332.78px" class="cls_004"><span class="cls_004">10.6</span></div>
+<div style="position:absolute;left:140.20px;top:332.78px" class="cls_004"><span class="cls_004">Aliasing</span></div>
+<div style="position:absolute;left:86.40px;top:369.51px" class="cls_003"><span class="cls_003">Remember that when you assign an object to a variable, you are assigning a</span></div>
+<div style="position:absolute;left:86.40px;top:384.68px" class="cls_003"><span class="cls_003">reference to an object.  It is possible to have multiple variables that refer to</span></div>
+<div style="position:absolute;left:86.40px;top:399.85px" class="cls_003"><span class="cls_003">the same object. The state diagram in Figure 10.4 shows the result.</span></div>
+<div style="position:absolute;left:101.34px;top:426.33px" class="cls_003"><span class="cls_003">Rectangle box1 =</span><span class="cls_005"> new</span><span class="cls_003"> Rectangle(0, 0, 100, 200);</span></div>
+<div style="position:absolute;left:101.34px;top:441.50px" class="cls_003"><span class="cls_003">Rectangle box2 = box1;</span></div>
+<div style="position:absolute;left:250.20px;top:472.54px" class="cls_006"><span class="cls_006">Rectangle</span></div>
+<div style="position:absolute;left:186.29px;top:499.54px" class="cls_006"><span class="cls_006">box1</span></div>
+<div style="position:absolute;left:258.30px;top:499.54px" class="cls_006"><span class="cls_006">x</span></div>
+<div style="position:absolute;left:284.70px;top:499.54px" class="cls_006"><span class="cls_006">0</span></div>
+<div style="position:absolute;left:319.49px;top:499.54px" class="cls_006"><span class="cls_006">width</span></div>
+<div style="position:absolute;left:353.69px;top:499.54px" class="cls_006"><span class="cls_006">100</span></div>
+<div style="position:absolute;left:186.29px;top:526.54px" class="cls_006"><span class="cls_006">box2</span></div>
+<div style="position:absolute;left:258.30px;top:526.54px" class="cls_006"><span class="cls_006">y</span></div>
+<div style="position:absolute;left:284.70px;top:526.54px" class="cls_006"><span class="cls_006">0</span></div>
+<div style="position:absolute;left:315.28px;top:526.54px" class="cls_006"><span class="cls_006">height</span></div>
+<div style="position:absolute;left:353.69px;top:526.54px" class="cls_006"><span class="cls_006">200</span></div>
+<div style="position:absolute;left:86.40px;top:563.99px" class="cls_003"><span class="cls_003">Figure 10.4: State diagram showing two variables that refer to the same object.</span></div>
+<div style="position:absolute;left:86.40px;top:589.15px" class="cls_003"><span class="cls_003">Notice how box1 and box2 are aliases for the same object, so any changes</span></div>
+<div style="position:absolute;left:86.40px;top:604.32px" class="cls_003"><span class="cls_003">that affect one variable also affect the other. This example adds 50 to all four</span></div>
+<div style="position:absolute;left:86.40px;top:619.49px" class="cls_003"><span class="cls_003">sides of the rectangle, so it moves the corner up and to the left by 50, and it</span></div>
+<div style="position:absolute;left:86.40px;top:634.65px" class="cls_003"><span class="cls_003">increases the height and width by 100:</span></div>
+<div style="position:absolute;left:101.34px;top:661.14px" class="cls_003"><span class="cls_003">System.out.println(box2.width);</span></div>
+<div style="position:absolute;left:101.34px;top:676.30px" class="cls_003"><span class="cls_003">box1.grow(50, 50);</span></div>
+<div style="position:absolute;left:101.34px;top:691.47px" class="cls_003"><span class="cls_003">System.out.println(box2.width);</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:4812px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="49e16ad6-5ada-11e9-9d71-0cc47a792c0a_id_49e16ad6-5ada-11e9-9d71-0cc47a792c0a_files/background07.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">10.7</span></div>
+<div style="position:absolute;left:166.96px;top:88.65px" class="cls_003"><span class="cls_003">The null keyword</span></div>
+<div style="position:absolute;left:505.42px;top:88.65px" class="cls_003"><span class="cls_003">161</span></div>
+<div style="position:absolute;left:129.60px;top:124.74px" class="cls_003"><span class="cls_003">The first line displays 100, which is the width of the Rectangle referred to by</span></div>
+<div style="position:absolute;left:129.60px;top:139.91px" class="cls_003"><span class="cls_003">box2. The second line invokes the grow method on box1, which stretches the</span></div>
+<div style="position:absolute;left:129.60px;top:155.08px" class="cls_003"><span class="cls_003">Rectangle horizontally and vertically. The effect is shown in Figure 10.5.</span></div>
+<div style="position:absolute;left:293.40px;top:181.74px" class="cls_006"><span class="cls_006">Rectangle</span></div>
+<div style="position:absolute;left:229.49px;top:208.74px" class="cls_006"><span class="cls_006">box1</span></div>
+<div style="position:absolute;left:301.50px;top:208.74px" class="cls_006"><span class="cls_006">x</span></div>
+<div style="position:absolute;left:315.58px;top:208.74px" class="cls_006"><span class="cls_006">−50</span></div>
+<div style="position:absolute;left:362.69px;top:208.74px" class="cls_006"><span class="cls_006">width</span></div>
+<div style="position:absolute;left:396.89px;top:208.74px" class="cls_006"><span class="cls_006">200</span></div>
+<div style="position:absolute;left:229.49px;top:235.74px" class="cls_006"><span class="cls_006">box2</span></div>
+<div style="position:absolute;left:301.50px;top:235.74px" class="cls_006"><span class="cls_006">y</span></div>
+<div style="position:absolute;left:315.58px;top:235.74px" class="cls_006"><span class="cls_006">−50</span></div>
+<div style="position:absolute;left:358.48px;top:235.74px" class="cls_006"><span class="cls_006">height</span></div>
+<div style="position:absolute;left:396.89px;top:235.74px" class="cls_006"><span class="cls_006">300</span></div>
+<div style="position:absolute;left:164.63px;top:273.19px" class="cls_003"><span class="cls_003">Figure 10.5: State diagram showing the effect of invoking grow.</span></div>
+<div style="position:absolute;left:129.60px;top:299.42px" class="cls_003"><span class="cls_003">When we make a change using box1, we see the change using box2. Thus, the</span></div>
+<div style="position:absolute;left:129.60px;top:314.58px" class="cls_003"><span class="cls_003">value displayed by the third line is 200, the width of the expanded rectangle.</span></div>
+<div style="position:absolute;left:129.60px;top:359.92px" class="cls_004"><span class="cls_004">10.7</span></div>
+<div style="position:absolute;left:183.40px;top:359.92px" class="cls_004"><span class="cls_004">The null keyword</span></div>
+<div style="position:absolute;left:129.60px;top:394.01px" class="cls_003"><span class="cls_003">When you create an object variable, remember that you are storing a reference</span></div>
+<div style="position:absolute;left:129.60px;top:409.18px" class="cls_003"><span class="cls_003">to an object.  In Java, the keyword</span><span class="cls_005"> null</span><span class="cls_003"> is a special value that means “no</span></div>
+<div style="position:absolute;left:129.60px;top:424.35px" class="cls_003"><span class="cls_003">object”. You can declare and initialize object variables this way:</span></div>
+<div style="position:absolute;left:144.54px;top:449.62px" class="cls_003"><span class="cls_003">Point blank =</span><span class="cls_005"> null</span><span class="cls_003">;</span></div>
+<div style="position:absolute;left:129.60px;top:474.80px" class="cls_003"><span class="cls_003">The value</span><span class="cls_005"> null</span><span class="cls_003"> is represented in state diagrams by a small box with no arrow,</span></div>
+<div style="position:absolute;left:129.60px;top:489.96px" class="cls_003"><span class="cls_003">as in Figure 10.6.</span></div>
+<div style="position:absolute;left:308.89px;top:515.60px" class="cls_006"><span class="cls_006">blank</span></div>
+<div style="position:absolute;left:129.60px;top:539.75px" class="cls_003"><span class="cls_003">Figure 10.6: State diagram showing a variable that contains a</span><span class="cls_005"> null</span><span class="cls_003"> reference.</span></div>
+<div style="position:absolute;left:129.60px;top:565.97px" class="cls_003"><span class="cls_003">If you try to use a</span><span class="cls_005"> null</span><span class="cls_003"> value, either by accessing an attribute or invoking a</span></div>
+<div style="position:absolute;left:129.60px;top:581.14px" class="cls_003"><span class="cls_003">method, Java throws a NullPointerException.</span></div>
+<div style="position:absolute;left:144.54px;top:605.47px" class="cls_003"><span class="cls_003">Point blank =</span><span class="cls_005"> null</span><span class="cls_003">;</span></div>
+<div style="position:absolute;left:144.54px;top:620.63px" class="cls_005"><span class="cls_005">int</span><span class="cls_003"> x = blank.x;</span></div>
+<div style="position:absolute;left:329.11px;top:620.63px" class="cls_008"><span class="cls_008">// NullPointerException</span></div>
+<div style="position:absolute;left:144.54px;top:635.80px" class="cls_003"><span class="cls_003">blank.translate(50, 50);</span></div>
+<div style="position:absolute;left:329.11px;top:635.80px" class="cls_008"><span class="cls_008">// NullPointerException</span></div>
+<div style="position:absolute;left:129.60px;top:659.71px" class="cls_003"><span class="cls_003">On the other hand, it is legal to pass a null reference as an argument or receive</span></div>
+<div style="position:absolute;left:129.60px;top:674.88px" class="cls_003"><span class="cls_003">one as a return value. For example,</span><span class="cls_005"> null</span><span class="cls_003"> is often used to represent a special</span></div>
+<div style="position:absolute;left:129.60px;top:690.04px" class="cls_003"><span class="cls_003">condition or indicate an error.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:5614px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="49e16ad6-5ada-11e9-9d71-0cc47a792c0a_id_49e16ad6-5ada-11e9-9d71-0cc47a792c0a_files/background08.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">162</span></div>
+<div style="position:absolute;left:357.88px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 10</span></div>
+<div style="position:absolute;left:437.32px;top:88.65px" class="cls_003"><span class="cls_003">Objects</span></div>
+<div style="position:absolute;left:86.40px;top:119.48px" class="cls_004"><span class="cls_004">10.8</span></div>
+<div style="position:absolute;left:140.20px;top:119.48px" class="cls_004"><span class="cls_004">Garbage collection</span></div>
+<div style="position:absolute;left:86.40px;top:155.03px" class="cls_003"><span class="cls_003">In Section 10.6, we saw what happens when more than one variable refers to</span></div>
+<div style="position:absolute;left:86.40px;top:170.20px" class="cls_003"><span class="cls_003">the same object. What happens when no variables refer to an object?</span></div>
+<div style="position:absolute;left:101.34px;top:195.65px" class="cls_003"><span class="cls_003">Point blank =</span><span class="cls_005"> new</span><span class="cls_003"> Point(3, 4);</span></div>
+<div style="position:absolute;left:101.34px;top:210.82px" class="cls_003"><span class="cls_003">blank =</span><span class="cls_005"> null</span><span class="cls_003">;</span></div>
+<div style="position:absolute;left:86.40px;top:236.19px" class="cls_003"><span class="cls_003">The first line creates a new Point object and makes blank refer to it.  The</span></div>
+<div style="position:absolute;left:86.40px;top:251.35px" class="cls_003"><span class="cls_003">second line changes blank so that instead of referring to the object, it refers</span></div>
+<div style="position:absolute;left:86.40px;top:266.52px" class="cls_003"><span class="cls_003">to nothing.  In the state diagram, we remove the arrow between them, as in</span></div>
+<div style="position:absolute;left:86.40px;top:281.69px" class="cls_003"><span class="cls_003">Figure 10.7.</span></div>
+<div style="position:absolute;left:293.90px;top:308.98px" class="cls_006"><span class="cls_006">Point</span></div>
+<div style="position:absolute;left:306.50px;top:335.98px" class="cls_006"><span class="cls_006">x</span></div>
+<div style="position:absolute;left:319.40px;top:335.98px" class="cls_006"><span class="cls_006">3</span></div>
+<div style="position:absolute;left:232.09px;top:353.98px" class="cls_006"><span class="cls_006">blank</span></div>
+<div style="position:absolute;left:306.50px;top:367.48px" class="cls_006"><span class="cls_006">y</span></div>
+<div style="position:absolute;left:319.40px;top:367.48px" class="cls_006"><span class="cls_006">4</span></div>
+<div style="position:absolute;left:91.65px;top:404.93px" class="cls_003"><span class="cls_003">Figure 10.7: State diagram showing the effect of setting a variable to</span><span class="cls_005"> null</span><span class="cls_003">.</span></div>
+<div style="position:absolute;left:86.40px;top:432.61px" class="cls_003"><span class="cls_003">If there are no references to an object, there is no way to access its attributes</span></div>
+<div style="position:absolute;left:86.40px;top:447.78px" class="cls_003"><span class="cls_003">or invoke a method on it.  From the programmer’s view, it ceases to exist.</span></div>
+<div style="position:absolute;left:86.40px;top:462.95px" class="cls_003"><span class="cls_003">However it’s still present in the computer’s memory, taking up space.</span></div>
+<div style="position:absolute;left:86.40px;top:489.63px" class="cls_003"><span class="cls_003">As your program runs, the system automatically looks for stranded objects</span></div>
+<div style="position:absolute;left:86.40px;top:504.80px" class="cls_003"><span class="cls_003">and reclaims them; then the space can be reused for new objects. This process</span></div>
+<div style="position:absolute;left:86.40px;top:519.97px" class="cls_003"><span class="cls_003">is called garbage collection.</span></div>
+<div style="position:absolute;left:86.40px;top:546.65px" class="cls_003"><span class="cls_003">You don’t have to do anything to make garbage collection happen, and in</span></div>
+<div style="position:absolute;left:86.40px;top:561.82px" class="cls_003"><span class="cls_003">general don’t have to be aware of it.  But in high-performance applications,</span></div>
+<div style="position:absolute;left:86.40px;top:576.99px" class="cls_003"><span class="cls_003">you may notice a slight delay every now and then when Java reclaims space</span></div>
+<div style="position:absolute;left:86.40px;top:592.16px" class="cls_003"><span class="cls_003">from discarded objects.</span></div>
+<div style="position:absolute;left:86.40px;top:639.33px" class="cls_004"><span class="cls_004">10.9</span></div>
+<div style="position:absolute;left:140.20px;top:639.33px" class="cls_004"><span class="cls_004">Class diagrams</span></div>
+<div style="position:absolute;left:86.40px;top:674.88px" class="cls_003"><span class="cls_003">To summarize what we’ve learned so far, Point and Rectangle objects each</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_003"><span class="cls_003">have their own attributes and methods. Attributes are an object’s data, and</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:6416px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="49e16ad6-5ada-11e9-9d71-0cc47a792c0a_id_49e16ad6-5ada-11e9-9d71-0cc47a792c0a_files/background09.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">10.10</span></div>
+<div style="position:absolute;left:173.68px;top:88.65px" class="cls_003"><span class="cls_003">Java library source</span></div>
+<div style="position:absolute;left:505.43px;top:88.65px" class="cls_003"><span class="cls_003">163</span></div>
+<div style="position:absolute;left:129.60px;top:124.74px" class="cls_003"><span class="cls_003">methods are an object’s code. An object’s class defines which attributes and</span></div>
+<div style="position:absolute;left:129.60px;top:139.91px" class="cls_003"><span class="cls_003">methods it will have.</span></div>
+<div style="position:absolute;left:129.60px;top:163.84px" class="cls_003"><span class="cls_003">In practice, it’s more convenient to look at high-level pictures than to examine</span></div>
+<div style="position:absolute;left:129.60px;top:179.01px" class="cls_003"><span class="cls_003">the source code.  Unified Modeling Language (UML) defines a standard</span></div>
+<div style="position:absolute;left:129.60px;top:194.18px" class="cls_003"><span class="cls_003">way to summarize the design of a class.</span></div>
+<div style="position:absolute;left:173.40px;top:349.66px" class="cls_003"><span class="cls_003">Figure 10.8: UML class diagrams for Point and Rectangle.</span></div>
+<div style="position:absolute;left:129.60px;top:374.92px" class="cls_003"><span class="cls_003">As shown in Figure 10.8, a class diagram is divided into two sections. The</span></div>
+<div style="position:absolute;left:129.60px;top:390.08px" class="cls_003"><span class="cls_003">top half lists the attributes, and the bottom half lists the methods. UML uses</span></div>
+<div style="position:absolute;left:129.60px;top:405.25px" class="cls_003"><span class="cls_003">a language-independent format, so rather than showing</span><span class="cls_005"> int</span><span class="cls_003"> x, the diagram</span></div>
+<div style="position:absolute;left:129.60px;top:420.42px" class="cls_003"><span class="cls_003">uses x: int.</span></div>
+<div style="position:absolute;left:129.60px;top:444.35px" class="cls_003"><span class="cls_003">In contrast to state diagrams, which visualize objects (and variables) at run-</span></div>
+<div style="position:absolute;left:129.60px;top:459.52px" class="cls_003"><span class="cls_003">time, a class diagram visualizes the source code at compile-time.</span></div>
+<div style="position:absolute;left:129.60px;top:483.44px" class="cls_003"><span class="cls_003">Both Point and Rectangle have additional methods; we are only showing the</span></div>
+<div style="position:absolute;left:129.60px;top:498.61px" class="cls_003"><span class="cls_003">ones introduced in this chapter.  See the documentation for these classes to</span></div>
+<div style="position:absolute;left:129.60px;top:513.78px" class="cls_003"><span class="cls_003">learn more about what they can do.</span></div>
+<div style="position:absolute;left:129.60px;top:557.48px" class="cls_004"><span class="cls_004">10.10</span></div>
+<div style="position:absolute;left:193.08px;top:557.48px" class="cls_004"><span class="cls_004">Java library source</span></div>
+<div style="position:absolute;left:129.60px;top:590.28px" class="cls_003"><span class="cls_003">Throughout the book, you have used classes from the Java library including</span></div>
+<div style="position:absolute;left:129.60px;top:605.44px" class="cls_003"><span class="cls_003">System, String, Scanner, Math, Random, and others. You may not have real-</span></div>
+<div style="position:absolute;left:129.60px;top:620.61px" class="cls_003"><span class="cls_003">ized that these classes are written in Java. In fact, you can take a look at the</span></div>
+<div style="position:absolute;left:129.60px;top:635.78px" class="cls_003"><span class="cls_003">source code to see how they work.</span></div>
+<div style="position:absolute;left:129.60px;top:659.71px" class="cls_003"><span class="cls_003">The Java library contains thousands of files, many of which are thousands of</span></div>
+<div style="position:absolute;left:129.60px;top:674.88px" class="cls_003"><span class="cls_003">lines of code. That’s more than one person could read and understand fully,</span></div>
+<div style="position:absolute;left:129.60px;top:690.04px" class="cls_003"><span class="cls_003">so please don’t be intimidated!</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:7218px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="49e16ad6-5ada-11e9-9d71-0cc47a792c0a_id_49e16ad6-5ada-11e9-9d71-0cc47a792c0a_files/background10.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">164</span></div>
+<div style="position:absolute;left:357.88px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 10</span></div>
+<div style="position:absolute;left:437.32px;top:88.65px" class="cls_003"><span class="cls_003">Objects</span></div>
+<div style="position:absolute;left:86.40px;top:124.74px" class="cls_003"><span class="cls_003">Because it’s so large, the library source code is stored in a file named src.zip.</span></div>
+<div style="position:absolute;left:86.40px;top:139.91px" class="cls_003"><span class="cls_003">Take a few minutes to locate this file on your machine:</span></div>
+<div style="position:absolute;left:103.96px;top:169.03px" class="cls_009"><span class="cls_009"></span><span class="cls_003"> On Linux, it’s likely under: /usr/lib/jvm/openjdk-8/</span></div>
+<div style="position:absolute;left:115.67px;top:184.20px" class="cls_003"><span class="cls_003">(You might need to install the openjdk-8-source package.)</span></div>
+<div style="position:absolute;left:103.96px;top:208.99px" class="cls_009"><span class="cls_009"></span><span class="cls_003"> On OS X, it’s likely under:</span></div>
+<div style="position:absolute;left:115.67px;top:224.16px" class="cls_003"><span class="cls_003">/Library/Java/JavaVirtualMachines/jdk.../Contents/Home/</span></div>
+<div style="position:absolute;left:103.96px;top:248.96px" class="cls_009"><span class="cls_009"></span><span class="cls_003"> On Windows, it’s likely under: C:\Program Files\Java\jdk...\</span></div>
+<div style="position:absolute;left:86.40px;top:278.08px" class="cls_003"><span class="cls_003">When you open (or unzip) the file, you will see folders that correspond to Java</span></div>
+<div style="position:absolute;left:86.40px;top:293.25px" class="cls_003"><span class="cls_003">packages.  For example, open the java folder and then open the awt folder.</span></div>
+<div style="position:absolute;left:86.40px;top:308.41px" class="cls_003"><span class="cls_003">You should now see Point.java and Rectangle.java, along with the other</span></div>
+<div style="position:absolute;left:86.40px;top:323.58px" class="cls_003"><span class="cls_003">classes in the java.awt package.</span></div>
+<div style="position:absolute;left:86.40px;top:350.04px" class="cls_003"><span class="cls_003">Open Point.java in your editor and skim through the file. It uses language</span></div>
+<div style="position:absolute;left:86.40px;top:365.21px" class="cls_003"><span class="cls_003">features we haven’t yet discussed, so you probably won’t understand every-</span></div>
+<div style="position:absolute;left:86.40px;top:380.38px" class="cls_003"><span class="cls_003">thing.  But you can get a sense of what professional Java software looks like</span></div>
+<div style="position:absolute;left:86.40px;top:395.55px" class="cls_003"><span class="cls_003">by browsing through the library.</span></div>
+<div style="position:absolute;left:86.40px;top:422.00px" class="cls_003"><span class="cls_003">Notice how much of Point.java is documentation. Each method is thoroughly</span></div>
+<div style="position:absolute;left:86.40px;top:437.17px" class="cls_003"><span class="cls_003">commented, including @param, @return, and other Javadoc tags.  Javadoc</span></div>
+<div style="position:absolute;left:86.40px;top:452.34px" class="cls_003"><span class="cls_003">reads these comments and generates documentation in HTML. You can see</span></div>
+<div style="position:absolute;left:86.40px;top:467.51px" class="cls_003"><span class="cls_003">the results by reading the documentation for the Point class, which you can</span></div>
+<div style="position:absolute;left:86.40px;top:482.68px" class="cls_003"><span class="cls_003">find by doing a web search for “Java Point”.</span></div>
+<div style="position:absolute;left:86.40px;top:509.14px" class="cls_003"><span class="cls_003">Now take a look at Rectangle’s grow and translate methods. There is more</span></div>
+<div style="position:absolute;left:86.40px;top:524.30px" class="cls_003"><span class="cls_003">to them than you may have realized, but that doesn’t limit your ability to use</span></div>
+<div style="position:absolute;left:86.40px;top:539.47px" class="cls_003"><span class="cls_003">these methods in a program.</span></div>
+<div style="position:absolute;left:86.40px;top:565.93px" class="cls_003"><span class="cls_003">To summarize the whole chapter, objects encapsulate data and provide meth-</span></div>
+<div style="position:absolute;left:86.40px;top:581.10px" class="cls_003"><span class="cls_003">ods to access and modify the data directly.  Object-oriented programming</span></div>
+<div style="position:absolute;left:86.40px;top:596.27px" class="cls_003"><span class="cls_003">makes it possible to hide messy details so that you can more easily use and</span></div>
+<div style="position:absolute;left:86.40px;top:611.44px" class="cls_003"><span class="cls_003">understand code that other people wrote.</span></div>
+<div style="position:absolute;left:86.40px;top:658.33px" class="cls_004"><span class="cls_004">10.11</span></div>
+<div style="position:absolute;left:149.88px;top:658.33px" class="cls_004"><span class="cls_004">Vocabulary</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_003"><span class="cls_003">attribute: One of the named data items that make up an object.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:8020px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="49e16ad6-5ada-11e9-9d71-0cc47a792c0a_id_49e16ad6-5ada-11e9-9d71-0cc47a792c0a_files/background11.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">10.12</span></div>
+<div style="position:absolute;left:173.68px;top:88.65px" class="cls_003"><span class="cls_003">Exercises</span></div>
+<div style="position:absolute;left:505.43px;top:88.65px" class="cls_003"><span class="cls_003">165</span></div>
+<div style="position:absolute;left:129.60px;top:124.74px" class="cls_003"><span class="cls_003">dot notation: Use of the dot operator (.) to access an object’s attributes or</span></div>
+<div style="position:absolute;left:158.87px;top:139.91px" class="cls_003"><span class="cls_003">methods.</span></div>
+<div style="position:absolute;left:129.60px;top:169.88px" class="cls_003"><span class="cls_003">object-oriented: A way of organizing code and data into objects, rather than</span></div>
+<div style="position:absolute;left:158.87px;top:185.05px" class="cls_003"><span class="cls_003">independent methods.</span></div>
+<div style="position:absolute;left:129.60px;top:215.01px" class="cls_003"><span class="cls_003">garbage collection: The process of finding objects that have no references</span></div>
+<div style="position:absolute;left:158.87px;top:230.18px" class="cls_003"><span class="cls_003">and reclaiming their storage space.</span></div>
+<div style="position:absolute;left:129.60px;top:260.15px" class="cls_003"><span class="cls_003">UML: Unified Modeling Language, a standard way to draw diagrams for</span></div>
+<div style="position:absolute;left:158.87px;top:275.32px" class="cls_003"><span class="cls_003">software engineering.</span></div>
+<div style="position:absolute;left:129.60px;top:305.29px" class="cls_003"><span class="cls_003">class diagram: An illustration of the attributes and methods for a class.</span></div>
+<div style="position:absolute;left:129.60px;top:361.88px" class="cls_004"><span class="cls_004">10.12</span></div>
+<div style="position:absolute;left:193.08px;top:361.88px" class="cls_004"><span class="cls_004">Exercises</span></div>
+<div style="position:absolute;left:129.60px;top:402.73px" class="cls_003"><span class="cls_003">The code for this chapter is in the ch10 directory of ThinkJavaCode.  See</span></div>
+<div style="position:absolute;left:129.60px;top:417.90px" class="cls_003"><span class="cls_003">page xv for instructions on how to download the repository. Before you start</span></div>
+<div style="position:absolute;left:129.60px;top:433.07px" class="cls_003"><span class="cls_003">the exercises, we recommend that you compile and run the examples.</span></div>
+<div style="position:absolute;left:129.60px;top:460.19px" class="cls_003"><span class="cls_003">Exercise 10.1</span></div>
+<div style="position:absolute;left:217.89px;top:460.19px" class="cls_003"><span class="cls_003">The point of this exercise is to make sure you understand the</span></div>
+<div style="position:absolute;left:129.60px;top:475.36px" class="cls_003"><span class="cls_003">mechanism for passing objects as parameters.</span></div>
+<div style="position:absolute;left:143.91px;top:516.14px" class="cls_003"><span class="cls_003">1. For the following program, draw a stack diagram showing the local vari-</span></div>
+<div style="position:absolute;left:158.87px;top:531.31px" class="cls_003"><span class="cls_003">ables and parameters of main and riddle just before riddle returns.</span></div>
+<div style="position:absolute;left:158.87px;top:546.48px" class="cls_003"><span class="cls_003">Use arrows to show which objects each variable references.</span></div>
+<div style="position:absolute;left:143.91px;top:576.45px" class="cls_003"><span class="cls_003">2. What is the output of the program?</span></div>
+<div style="position:absolute;left:143.91px;top:606.41px" class="cls_003"><span class="cls_003">3. Is the blank object mutable or immutable? How can you tell?</span></div>
+<div style="position:absolute;left:144.54px;top:645.97px" class="cls_005"><span class="cls_005">public static int</span><span class="cls_003"> riddle(</span><span class="cls_005">int</span><span class="cls_003"> x, Point p) {</span></div>
+<div style="position:absolute;left:169.15px;top:661.14px" class="cls_003"><span class="cls_003">x = x + 7;</span></div>
+<div style="position:absolute;left:169.15px;top:676.30px" class="cls_005"><span class="cls_005">return</span><span class="cls_003"> x + p.x + p.y;</span></div>
+<div style="position:absolute;left:144.54px;top:691.47px" class="cls_003"><span class="cls_003">}</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:8822px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="49e16ad6-5ada-11e9-9d71-0cc47a792c0a_id_49e16ad6-5ada-11e9-9d71-0cc47a792c0a_files/background12.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">166</span></div>
+<div style="position:absolute;left:357.88px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 10</span></div>
+<div style="position:absolute;left:437.32px;top:88.65px" class="cls_003"><span class="cls_003">Objects</span></div>
+<div style="position:absolute;left:101.34px;top:123.41px" class="cls_005"><span class="cls_005">public static void</span><span class="cls_003"> main(String[] args) {</span></div>
+<div style="position:absolute;left:125.95px;top:138.57px" class="cls_005"><span class="cls_005">int</span><span class="cls_003"> x = 5;</span></div>
+<div style="position:absolute;left:125.95px;top:153.74px" class="cls_003"><span class="cls_003">Point blank =</span><span class="cls_005"> new</span><span class="cls_003"> Point(1, 2);</span></div>
+<div style="position:absolute;left:125.95px;top:184.08px" class="cls_003"><span class="cls_003">System.out.println(riddle(x, blank));</span></div>
+<div style="position:absolute;left:125.95px;top:199.25px" class="cls_003"><span class="cls_003">System.out.println(x);</span></div>
+<div style="position:absolute;left:125.95px;top:214.41px" class="cls_003"><span class="cls_003">System.out.println(blank.x);</span></div>
+<div style="position:absolute;left:125.95px;top:229.58px" class="cls_003"><span class="cls_003">System.out.println(blank.y);</span></div>
+<div style="position:absolute;left:101.34px;top:244.75px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:270.56px" class="cls_003"><span class="cls_003">Exercise 10.2</span></div>
+<div style="position:absolute;left:174.69px;top:270.56px" class="cls_003"><span class="cls_003">The point of this exercise is to make sure you understand the</span></div>
+<div style="position:absolute;left:86.40px;top:285.72px" class="cls_003"><span class="cls_003">mechanism for returning new objects from methods.</span></div>
+<div style="position:absolute;left:100.71px;top:311.83px" class="cls_003"><span class="cls_003">1. Draw a stack diagram showing the state of the program just before</span></div>
+<div style="position:absolute;left:115.67px;top:326.99px" class="cls_003"><span class="cls_003">distance returns.  Include all variables and parameters, and show the</span></div>
+<div style="position:absolute;left:115.67px;top:342.16px" class="cls_003"><span class="cls_003">objects those variables refer to.</span></div>
+<div style="position:absolute;left:100.71px;top:366.46px" class="cls_003"><span class="cls_003">2. What is the output of this program? (Can you tell without running it?)</span></div>
+<div style="position:absolute;left:101.34px;top:391.99px" class="cls_005"><span class="cls_005">public static double</span><span class="cls_003"> distance(Point p1, Point p2) {</span></div>
+<div style="position:absolute;left:125.95px;top:407.16px" class="cls_005"><span class="cls_005">int</span><span class="cls_003"> dx = p2.x - p1.x;</span></div>
+<div style="position:absolute;left:125.95px;top:422.33px" class="cls_005"><span class="cls_005">int</span><span class="cls_003"> dy = p2.y - p1.y;</span></div>
+<div style="position:absolute;left:125.95px;top:437.50px" class="cls_005"><span class="cls_005">return</span><span class="cls_003"> Math.sqrt(dx * dx + dy * dy);</span></div>
+<div style="position:absolute;left:101.34px;top:452.67px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:101.34px;top:483.00px" class="cls_005"><span class="cls_005">public static</span><span class="cls_003"> Point findCenter(Rectangle box) {</span></div>
+<div style="position:absolute;left:125.95px;top:498.17px" class="cls_005"><span class="cls_005">int</span><span class="cls_003"> x = box.x + box.width / 2;</span></div>
+<div style="position:absolute;left:125.95px;top:513.34px" class="cls_005"><span class="cls_005">int</span><span class="cls_003"> y = box.y + box.height / 2;</span></div>
+<div style="position:absolute;left:125.95px;top:528.51px" class="cls_005"><span class="cls_005">return new</span><span class="cls_003"> Point(x, y);</span></div>
+<div style="position:absolute;left:101.34px;top:543.68px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:101.34px;top:570.13px" class="cls_005"><span class="cls_005">public static void</span><span class="cls_003"> main(String[] args) {</span></div>
+<div style="position:absolute;left:125.95px;top:585.29px" class="cls_003"><span class="cls_003">Point blank =</span><span class="cls_005"> new</span><span class="cls_003"> Point(5, 8);</span></div>
+<div style="position:absolute;left:125.95px;top:615.63px" class="cls_003"><span class="cls_003">Rectangle rect =</span><span class="cls_005"> new</span><span class="cls_003"> Rectangle(0, 2, 4, 4);</span></div>
+<div style="position:absolute;left:125.95px;top:630.80px" class="cls_003"><span class="cls_003">Point center = findCenter(rect);</span></div>
+<div style="position:absolute;left:125.95px;top:661.14px" class="cls_005"><span class="cls_005">double</span><span class="cls_003"> dist = distance(center, blank);</span></div>
+<div style="position:absolute;left:125.95px;top:676.30px" class="cls_003"><span class="cls_003">System.out.println(dist);</span></div>
+<div style="position:absolute;left:101.34px;top:691.47px" class="cls_003"><span class="cls_003">}</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:9624px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="49e16ad6-5ada-11e9-9d71-0cc47a792c0a_id_49e16ad6-5ada-11e9-9d71-0cc47a792c0a_files/background13.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">10.12</span></div>
+<div style="position:absolute;left:173.68px;top:88.65px" class="cls_003"><span class="cls_003">Exercises</span></div>
+<div style="position:absolute;left:505.43px;top:88.65px" class="cls_003"><span class="cls_003">167</span></div>
+<div style="position:absolute;left:129.60px;top:124.74px" class="cls_003"><span class="cls_003">Exercise 10.3</span></div>
+<div style="position:absolute;left:219.59px;top:124.74px" class="cls_003"><span class="cls_003">This exercise is about aliasing.  Recall that aliases are two</span></div>
+<div style="position:absolute;left:129.60px;top:139.91px" class="cls_003"><span class="cls_003">variables that refer to the same object.</span></div>
+<div style="position:absolute;left:143.91px;top:173.03px" class="cls_003"><span class="cls_003">1. Draw a diagram that shows the state of the program just before the end</span></div>
+<div style="position:absolute;left:158.87px;top:188.20px" class="cls_003"><span class="cls_003">of main. Include all local variables and the objects they refer to.</span></div>
+<div style="position:absolute;left:143.91px;top:214.34px" class="cls_003"><span class="cls_003">2. What is the output of the program?</span></div>
+<div style="position:absolute;left:143.91px;top:240.47px" class="cls_003"><span class="cls_003">3. At the end of main, are p1 and p2 aliased? Why or why not?</span></div>
+<div style="position:absolute;left:144.54px;top:272.70px" class="cls_005"><span class="cls_005">public static void</span><span class="cls_003"> printPoint(Point p) {</span></div>
+<div style="position:absolute;left:169.15px;top:287.86px" class="cls_003"><span class="cls_003">System.out.println(</span><span class="cls_007">"("</span><span class="cls_003"> + p.x +</span><span class="cls_007"> ", "</span><span class="cls_003"> + p.y +</span><span class="cls_007"> ")"</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:144.54px;top:303.03px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:144.54px;top:333.37px" class="cls_005"><span class="cls_005">public static</span><span class="cls_003"> Point findCenter(Rectangle box) {</span></div>
+<div style="position:absolute;left:169.15px;top:348.54px" class="cls_005"><span class="cls_005">int</span><span class="cls_003"> x = box.x + box.width / 2;</span></div>
+<div style="position:absolute;left:169.15px;top:363.70px" class="cls_005"><span class="cls_005">int</span><span class="cls_003"> y = box.y + box.height / 2;</span></div>
+<div style="position:absolute;left:169.15px;top:378.87px" class="cls_005"><span class="cls_005">return new</span><span class="cls_003"> Point(x, y);</span></div>
+<div style="position:absolute;left:144.54px;top:394.04px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:144.54px;top:422.97px" class="cls_005"><span class="cls_005">public static void</span><span class="cls_003"> main(String[] args) {</span></div>
+<div style="position:absolute;left:169.15px;top:438.13px" class="cls_003"><span class="cls_003">Rectangle box1 =</span><span class="cls_005"> new</span><span class="cls_003"> Rectangle(2, 4, 7, 9);</span></div>
+<div style="position:absolute;left:169.15px;top:453.30px" class="cls_003"><span class="cls_003">Point p1 = findCenter(box1);</span></div>
+<div style="position:absolute;left:169.15px;top:468.47px" class="cls_003"><span class="cls_003">printPoint(p1);</span></div>
+<div style="position:absolute;left:169.15px;top:498.81px" class="cls_003"><span class="cls_003">box1.grow(1, 1);</span></div>
+<div style="position:absolute;left:169.15px;top:513.97px" class="cls_003"><span class="cls_003">Point p2 = findCenter(box1);</span></div>
+<div style="position:absolute;left:169.15px;top:529.14px" class="cls_003"><span class="cls_003">printPoint(p2);</span></div>
+<div style="position:absolute;left:144.54px;top:544.31px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:570.11px" class="cls_003"><span class="cls_003">Exercise 10.4</span></div>
+<div style="position:absolute;left:218.37px;top:570.11px" class="cls_003"><span class="cls_003">You might be sick of the factorial method by now, but we’re</span></div>
+<div style="position:absolute;left:129.60px;top:585.28px" class="cls_003"><span class="cls_003">going to do one more version.</span></div>
+<div style="position:absolute;left:143.91px;top:618.40px" class="cls_003"><span class="cls_003">1. Create a new program called Big.java and write (or reuse) an iterative</span></div>
+<div style="position:absolute;left:158.87px;top:633.57px" class="cls_003"><span class="cls_003">version of factorial.</span></div>
+<div style="position:absolute;left:143.91px;top:659.71px" class="cls_003"><span class="cls_003">2. Display a table of the integers from 0 to 30 along with their factorials.</span></div>
+<div style="position:absolute;left:158.87px;top:674.88px" class="cls_003"><span class="cls_003">At some point around 15, you will probably see that the answers are not</span></div>
+<div style="position:absolute;left:158.87px;top:690.04px" class="cls_003"><span class="cls_003">right anymore. Why not?</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:10426px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="49e16ad6-5ada-11e9-9d71-0cc47a792c0a_id_49e16ad6-5ada-11e9-9d71-0cc47a792c0a_files/background14.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">168</span></div>
+<div style="position:absolute;left:357.88px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 10</span></div>
+<div style="position:absolute;left:437.32px;top:88.65px" class="cls_003"><span class="cls_003">Objects</span></div>
+<div style="position:absolute;left:100.71px;top:124.74px" class="cls_003"><span class="cls_003">3. BigInteger is a Java class that can represent arbitrarily big integers.</span></div>
+<div style="position:absolute;left:115.67px;top:139.91px" class="cls_003"><span class="cls_003">There is no upper bound except the limitations of memory size and</span></div>
+<div style="position:absolute;left:115.67px;top:155.08px" class="cls_003"><span class="cls_003">processing speed. Take a minute to read the documentation, which you</span></div>
+<div style="position:absolute;left:115.67px;top:170.25px" class="cls_003"><span class="cls_003">can find by doing a web search for “Java BigInteger”.</span></div>
+<div style="position:absolute;left:100.71px;top:209.31px" class="cls_003"><span class="cls_003">4. To use BigIntegers, you have to import java.math.BigInteger at the</span></div>
+<div style="position:absolute;left:115.67px;top:224.48px" class="cls_003"><span class="cls_003">beginning of your program.</span></div>
+<div style="position:absolute;left:100.71px;top:263.55px" class="cls_003"><span class="cls_003">5. There are several ways to create a BigInteger, but the simplest uses</span></div>
+<div style="position:absolute;left:115.67px;top:278.72px" class="cls_003"><span class="cls_003">valueOf. The following code converts an integer to a BigInteger:</span></div>
+<div style="position:absolute;left:130.61px;top:304.61px" class="cls_005"><span class="cls_005">int</span><span class="cls_003"> x = 17;</span></div>
+<div style="position:absolute;left:130.61px;top:319.77px" class="cls_003"><span class="cls_003">BigInteger big = BigInteger.valueOf(x);</span></div>
+<div style="position:absolute;left:100.71px;top:357.52px" class="cls_003"><span class="cls_003">6. Since BigIntegers are not primitive types, the usual math operators don’t</span></div>
+<div style="position:absolute;left:115.67px;top:372.69px" class="cls_003"><span class="cls_003">work. Instead, we have to use methods like add. To add two BigIntegers,</span></div>
+<div style="position:absolute;left:115.67px;top:387.86px" class="cls_003"><span class="cls_003">invoke add on one and pass the other as an argument.</span></div>
+<div style="position:absolute;left:130.61px;top:413.75px" class="cls_003"><span class="cls_003">BigInteger small = BigInteger.valueOf(17);</span></div>
+<div style="position:absolute;left:130.61px;top:428.91px" class="cls_003"><span class="cls_003">BigInteger big = BigInteger.valueOf(1700000000);</span></div>
+<div style="position:absolute;left:130.61px;top:444.08px" class="cls_003"><span class="cls_003">BigInteger total = small.add(big);</span></div>
+<div style="position:absolute;left:115.67px;top:469.88px" class="cls_003"><span class="cls_003">Try out some of the other methods, like multiply and pow.</span></div>
+<div style="position:absolute;left:100.71px;top:508.95px" class="cls_003"><span class="cls_003">7. Convert factorial so that it performs its calculation using BigIntegers</span></div>
+<div style="position:absolute;left:115.67px;top:524.11px" class="cls_003"><span class="cls_003">and returns a BigInteger as a result. You can leave the parameter alone;</span></div>
+<div style="position:absolute;left:115.67px;top:539.28px" class="cls_003"><span class="cls_003">it will still be an integer.</span></div>
+<div style="position:absolute;left:100.71px;top:578.35px" class="cls_003"><span class="cls_003">8. Try displaying the table again with your modified factorial method. Is</span></div>
+<div style="position:absolute;left:115.67px;top:593.52px" class="cls_003"><span class="cls_003">it correct up to 30? How high can you make it go?</span></div>
+<div style="position:absolute;left:100.71px;top:632.58px" class="cls_003"><span class="cls_003">9. Are BigInteger objects mutable or immutable? How can you tell?</span></div>
+<div style="position:absolute;left:86.40px;top:659.71px" class="cls_003"><span class="cls_003">Exercise 10.5</span></div>
+<div style="position:absolute;left:176.30px;top:659.71px" class="cls_003"><span class="cls_003">Many encryption algorithms depend on the ability to raise</span></div>
+<div style="position:absolute;left:86.40px;top:674.88px" class="cls_003"><span class="cls_003">large integers to a power.  Here is a method that implements an efficient</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_003"><span class="cls_003">algorithm for integer exponentiation:</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:11228px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="49e16ad6-5ada-11e9-9d71-0cc47a792c0a_id_49e16ad6-5ada-11e9-9d71-0cc47a792c0a_files/background15.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">10.12</span></div>
+<div style="position:absolute;left:173.68px;top:88.65px" class="cls_003"><span class="cls_003">Exercises</span></div>
+<div style="position:absolute;left:505.43px;top:88.65px" class="cls_003"><span class="cls_003">169</span></div>
+<div style="position:absolute;left:144.54px;top:123.41px" class="cls_005"><span class="cls_005">public static int</span><span class="cls_003"> pow(</span><span class="cls_005">int</span><span class="cls_003"> x,</span><span class="cls_005"> int</span><span class="cls_003"> n) {</span></div>
+<div style="position:absolute;left:169.15px;top:138.57px" class="cls_005"><span class="cls_005">if</span><span class="cls_003"> (n == 0)</span><span class="cls_005"> return</span><span class="cls_003"> 1;</span></div>
+<div style="position:absolute;left:169.15px;top:168.91px" class="cls_008"><span class="cls_008">// find x to the n/2 recursively</span></div>
+<div style="position:absolute;left:169.15px;top:184.08px" class="cls_005"><span class="cls_005">int</span><span class="cls_003"> t = pow(x, n / 2);</span></div>
+<div style="position:absolute;left:169.15px;top:214.41px" class="cls_008"><span class="cls_008">// if n is even, the result is t squared</span></div>
+<div style="position:absolute;left:169.15px;top:229.58px" class="cls_008"><span class="cls_008">// if n is odd, the result is t squared times x</span></div>
+<div style="position:absolute;left:169.15px;top:244.75px" class="cls_005"><span class="cls_005">if</span><span class="cls_003"> (n % 2 == 0) {</span></div>
+<div style="position:absolute;left:193.76px;top:259.92px" class="cls_005"><span class="cls_005">return</span><span class="cls_003"> t * t;</span></div>
+<div style="position:absolute;left:169.15px;top:275.09px" class="cls_003"><span class="cls_003">}</span><span class="cls_005"> else</span><span class="cls_003"> {</span></div>
+<div style="position:absolute;left:193.76px;top:290.26px" class="cls_005"><span class="cls_005">return</span><span class="cls_003"> t * t * x;</span></div>
+<div style="position:absolute;left:169.15px;top:305.42px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:144.54px;top:320.59px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:346.40px" class="cls_003"><span class="cls_003">The problem with this method is that it only works if the result is small enough</span></div>
+<div style="position:absolute;left:129.60px;top:361.56px" class="cls_003"><span class="cls_003">to be represented by an</span><span class="cls_005"> int</span><span class="cls_003">.  Rewrite it so that the result is a BigInteger.</span></div>
+<div style="position:absolute;left:129.60px;top:376.73px" class="cls_003"><span class="cls_003">The parameters should still be integers, though.</span></div>
+<div style="position:absolute;left:129.60px;top:403.86px" class="cls_003"><span class="cls_003">You should use the BigInteger methods add and multiply.  But don’t use</span></div>
+<div style="position:absolute;left:129.60px;top:419.02px" class="cls_003"><span class="cls_003">BigInteger.pow; that would spoil the fun.</span></div>
+</div>
+
+</body>
+</html>

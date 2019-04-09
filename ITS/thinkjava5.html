@@ -1,0 +1,671 @@
+<html>
+<head><meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<style type="text/css">
+<!--
+span.cls_002{font-family:Arial,serif;font-size:24.8px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_002{font-family:Arial,serif;font-size:24.8px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_003{font-family:Arial,serif;font-size:12.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_003{font-family:Arial,serif;font-size:12.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_004{font-family:Arial,serif;font-size:12.0px;color:rgb(0,0,255);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_004{font-family:Arial,serif;font-size:12.0px;color:rgb(0,0,255);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_005{font-family:Arial,serif;font-size:17.3px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_005{font-family:Arial,serif;font-size:17.3px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_006{font-family:Arial,serif;font-size:12.0px;color:rgb(0,123,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_006{font-family:Arial,serif;font-size:12.0px;color:rgb(0,123,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_007{font-family:Arial,serif;font-size:12.0px;color:rgb(178,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_007{font-family:Arial,serif;font-size:12.0px;color:rgb(178,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_008{font-family:Times,serif;font-size:8.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_008{font-family:Times,serif;font-size:8.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_009{font-family:Arial,serif;font-size:10.9px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_009{font-family:Arial,serif;font-size:10.9px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_010{font-family:Times,serif;font-size:8.1px;color:rgb(178,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_010{font-family:Times,serif;font-size:8.1px;color:rgb(178,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_011{font-family:Arial,serif;font-size:8.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_011{font-family:Arial,serif;font-size:8.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+-->
+</style>
+<script type="text/javascript" src="5a20e108-5ad8-11e9-9d71-0cc47a792c0a_id_5a20e108-5ad8-11e9-9d71-0cc47a792c0a_files/wz_jsgraphics.js"></script>
+</head>
+<body>
+<div style="position:absolute;left:50%;margin-left:-306px;top:0px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="5a20e108-5ad8-11e9-9d71-0cc47a792c0a_id_5a20e108-5ad8-11e9-9d71-0cc47a792c0a_files/background01.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:204.26px" class="cls_002"><span class="cls_002">Chapter 5</span></div>
+<div style="position:absolute;left:129.60px;top:266.71px" class="cls_002"><span class="cls_002">Conditionals and logic</span></div>
+<div style="position:absolute;left:129.60px;top:345.71px" class="cls_003"><span class="cls_003">The programs we’ve seen in previous chapters do pretty much the same thing</span></div>
+<div style="position:absolute;left:129.60px;top:360.88px" class="cls_003"><span class="cls_003">every time, regardless of the input.  For more complex computations, pro-</span></div>
+<div style="position:absolute;left:129.60px;top:376.05px" class="cls_003"><span class="cls_003">grams usually react to the inputs, check for certain conditions, and generate</span></div>
+<div style="position:absolute;left:129.60px;top:391.22px" class="cls_003"><span class="cls_003">appropriate results. This chapter presents the features you need for programs</span></div>
+<div style="position:absolute;left:129.60px;top:406.39px" class="cls_003"><span class="cls_003">to make decisions: a new data type called</span><span class="cls_004"> boolean</span><span class="cls_003">, operators for expressing</span></div>
+<div style="position:absolute;left:129.60px;top:421.55px" class="cls_003"><span class="cls_003">logic, and</span><span class="cls_004"> if</span><span class="cls_003"> statements.</span></div>
+<div style="position:absolute;left:129.60px;top:468.26px" class="cls_005"><span class="cls_005">5.1</span></div>
+<div style="position:absolute;left:173.71px;top:468.26px" class="cls_005"><span class="cls_005">Relational operators</span></div>
+<div style="position:absolute;left:129.60px;top:503.45px" class="cls_003"><span class="cls_003">Relational operators are used to check conditions like whether two values</span></div>
+<div style="position:absolute;left:129.60px;top:518.61px" class="cls_003"><span class="cls_003">are equal, or whether one is greater than the other. The following expressions</span></div>
+<div style="position:absolute;left:129.60px;top:533.78px" class="cls_003"><span class="cls_003">show how they are used:</span></div>
+<div style="position:absolute;left:144.54px;top:558.87px" class="cls_003"><span class="cls_003">x == y</span></div>
+<div style="position:absolute;left:242.98px;top:558.87px" class="cls_006"><span class="cls_006">// x is equal to y</span></div>
+<div style="position:absolute;left:144.54px;top:574.04px" class="cls_003"><span class="cls_003">x != y</span></div>
+<div style="position:absolute;left:242.98px;top:574.04px" class="cls_006"><span class="cls_006">// x is not equal to y</span></div>
+<div style="position:absolute;left:144.54px;top:589.21px" class="cls_003"><span class="cls_003">x > y</span></div>
+<div style="position:absolute;left:242.98px;top:589.21px" class="cls_006"><span class="cls_006">// x is greater than y</span></div>
+<div style="position:absolute;left:144.54px;top:604.37px" class="cls_003"><span class="cls_003">x &lt; y</span></div>
+<div style="position:absolute;left:242.98px;top:604.37px" class="cls_006"><span class="cls_006">// x is less than y</span></div>
+<div style="position:absolute;left:144.54px;top:619.54px" class="cls_003"><span class="cls_003">x >= y</span></div>
+<div style="position:absolute;left:242.98px;top:619.54px" class="cls_006"><span class="cls_006">// x is greater than or equal to y</span></div>
+<div style="position:absolute;left:144.54px;top:634.71px" class="cls_003"><span class="cls_003">x &lt;= y</span></div>
+<div style="position:absolute;left:242.98px;top:634.71px" class="cls_006"><span class="cls_006">// x is less than or equal to y</span></div>
+<div style="position:absolute;left:129.60px;top:659.71px" class="cls_003"><span class="cls_003">The result of a relational operator is one of two special values,</span><span class="cls_004"> true</span><span class="cls_003"> or</span><span class="cls_004"> false</span><span class="cls_003">.</span></div>
+<div style="position:absolute;left:129.60px;top:674.88px" class="cls_003"><span class="cls_003">These values belong to the data type</span><span class="cls_004"> boolean</span><span class="cls_003">; in fact, they are the only</span></div>
+<div style="position:absolute;left:129.60px;top:690.04px" class="cls_003"><span class="cls_003">boolean values.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:802px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="5a20e108-5ad8-11e9-9d71-0cc47a792c0a_id_5a20e108-5ad8-11e9-9d71-0cc47a792c0a_files/background02.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">68</span></div>
+<div style="position:absolute;left:278.48px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 5</span></div>
+<div style="position:absolute;left:351.19px;top:88.65px" class="cls_003"><span class="cls_003">Conditionals and logic</span></div>
+<div style="position:absolute;left:86.40px;top:124.74px" class="cls_003"><span class="cls_003">You are probably familiar with these operations, but notice that the Java</span></div>
+<div style="position:absolute;left:86.40px;top:139.91px" class="cls_003"><span class="cls_003">operators are different from the mathematical symbols like =, =, and ≤.  A</span></div>
+<div style="position:absolute;left:86.40px;top:155.08px" class="cls_003"><span class="cls_003">common error is to use a single = instead of a double ==. Remember that = is</span></div>
+<div style="position:absolute;left:86.40px;top:170.25px" class="cls_003"><span class="cls_003">the assignment operator, and == is a comparison operator.  Also, there is no</span></div>
+<div style="position:absolute;left:86.40px;top:185.42px" class="cls_003"><span class="cls_003">such thing as the =&lt; or => operators.</span></div>
+<div style="position:absolute;left:86.40px;top:212.80px" class="cls_003"><span class="cls_003">The two sides of a relational operator have to be compatible. For example, the</span></div>
+<div style="position:absolute;left:86.40px;top:227.97px" class="cls_003"><span class="cls_003">expression 5 &lt;</span><span class="cls_007"> "6"</span><span class="cls_003"> is invalid because 5 is an</span><span class="cls_004"> int</span><span class="cls_003"> and</span><span class="cls_007"> "6"</span><span class="cls_003"> is a String. When</span></div>
+<div style="position:absolute;left:86.40px;top:243.14px" class="cls_003"><span class="cls_003">comparing values of different numeric types, Java applies the same conversion</span></div>
+<div style="position:absolute;left:86.40px;top:258.31px" class="cls_003"><span class="cls_003">rules we saw previously with the assignment operator.  For example, when</span></div>
+<div style="position:absolute;left:86.40px;top:273.48px" class="cls_003"><span class="cls_003">evaluating the expression 5 &lt; 6.0, Java automatically converts the 5 to 5.0.</span></div>
+<div style="position:absolute;left:86.40px;top:300.87px" class="cls_003"><span class="cls_003">Most relational operators don’t work with strings.  But confusingly, == and</span></div>
+<div style="position:absolute;left:86.40px;top:316.03px" class="cls_003"><span class="cls_003">!= do work with strings - they just don’t do what you expect. We’ll explain</span></div>
+<div style="position:absolute;left:86.40px;top:331.20px" class="cls_003"><span class="cls_003">what they do later; in the meantime, don’t use them with strings.  Instead,</span></div>
+<div style="position:absolute;left:86.40px;top:346.37px" class="cls_003"><span class="cls_003">you should use the equals method:</span></div>
+<div style="position:absolute;left:101.34px;top:372.86px" class="cls_003"><span class="cls_003">String fruit1 =</span><span class="cls_007"> "Apple"</span><span class="cls_003">;</span></div>
+<div style="position:absolute;left:101.34px;top:388.03px" class="cls_003"><span class="cls_003">String fruit2 =</span><span class="cls_007"> "Orange"</span><span class="cls_003">;</span></div>
+<div style="position:absolute;left:101.34px;top:403.20px" class="cls_003"><span class="cls_003">System.out.println(fruit1.equals(fruit2));</span></div>
+<div style="position:absolute;left:86.40px;top:429.27px" class="cls_003"><span class="cls_003">The result of fruit1.equals(fruit2) is the boolean value</span><span class="cls_004"> false</span><span class="cls_003">.</span></div>
+<div style="position:absolute;left:86.40px;top:477.60px" class="cls_005"><span class="cls_005">5.2</span></div>
+<div style="position:absolute;left:130.51px;top:477.60px" class="cls_005"><span class="cls_005">Logical operators</span></div>
+<div style="position:absolute;left:86.40px;top:513.92px" class="cls_003"><span class="cls_003">Java has three logical operators: &&, ||, and !, which respectively stand for</span></div>
+<div style="position:absolute;left:86.40px;top:529.09px" class="cls_003"><span class="cls_003">and, or, and not. The results of these operators are similar to their meanings</span></div>
+<div style="position:absolute;left:86.40px;top:544.26px" class="cls_003"><span class="cls_003">in English.</span></div>
+<div style="position:absolute;left:86.40px;top:571.65px" class="cls_003"><span class="cls_003">For example, x > 0 && x &lt; 10 is true when x is both greater than zero and</span></div>
+<div style="position:absolute;left:86.40px;top:586.81px" class="cls_003"><span class="cls_003">less than 10. The expression evenFlag || n % 3 == 0 is true if either con-</span></div>
+<div style="position:absolute;left:86.40px;top:601.98px" class="cls_003"><span class="cls_003">dition is true, that is, if evenFlag is true or the number n is divisible by 3.</span></div>
+<div style="position:absolute;left:86.40px;top:617.15px" class="cls_003"><span class="cls_003">Finally, the ! operator inverts a boolean expression. So !evenFlag is true if</span></div>
+<div style="position:absolute;left:86.40px;top:632.32px" class="cls_003"><span class="cls_003">evenFlag is not true.</span></div>
+<div style="position:absolute;left:86.40px;top:659.71px" class="cls_003"><span class="cls_003">Logical operators evaluate the second expression only when necessary.  For</span></div>
+<div style="position:absolute;left:86.40px;top:674.88px" class="cls_003"><span class="cls_003">example,</span><span class="cls_004"> true</span><span class="cls_003"> || anything is always true, so Java does not need to evalu-</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_003"><span class="cls_003">ate the expression anything.  Likewise,</span><span class="cls_004"> false</span><span class="cls_003"> && anything is always false.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:1604px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="5a20e108-5ad8-11e9-9d71-0cc47a792c0a_id_5a20e108-5ad8-11e9-9d71-0cc47a792c0a_files/background03.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">5.3</span></div>
+<div style="position:absolute;left:160.24px;top:88.65px" class="cls_003"><span class="cls_003">Conditional statements</span></div>
+<div style="position:absolute;left:512.15px;top:88.65px" class="cls_003"><span class="cls_003">69</span></div>
+<div style="position:absolute;left:129.60px;top:124.74px" class="cls_003"><span class="cls_003">Ignoring the second operand, when possible, is called short circuit evalua-</span></div>
+<div style="position:absolute;left:129.60px;top:139.91px" class="cls_003"><span class="cls_003">tion, by analogy with an electrical circuit.  Short circuit evaluation can save</span></div>
+<div style="position:absolute;left:129.60px;top:155.08px" class="cls_003"><span class="cls_003">time, especially if anything takes a long time to evaluate.  It can also avoid</span></div>
+<div style="position:absolute;left:129.60px;top:170.25px" class="cls_003"><span class="cls_003">unnecessary errors, if anything might fail.</span></div>
+<div style="position:absolute;left:129.60px;top:196.11px" class="cls_003"><span class="cls_003">If you ever have to negate an expression that contains logical operators, and</span></div>
+<div style="position:absolute;left:129.60px;top:211.28px" class="cls_003"><span class="cls_003">you probably will, De Morgan’s laws can help:</span></div>
+<div style="position:absolute;left:147.16px;top:238.61px" class="cls_008"><span class="cls_008"></span><span class="cls_003"> !(A && B)  is the same as</span></div>
+<div style="position:absolute;left:301.57px;top:238.61px" class="cls_003"><span class="cls_003">!A || !B</span></div>
+<div style="position:absolute;left:147.16px;top:263.11px" class="cls_008"><span class="cls_008"></span><span class="cls_003"> !(A || B)  is the same as</span></div>
+<div style="position:absolute;left:301.57px;top:263.11px" class="cls_003"><span class="cls_003">!A && !B</span></div>
+<div style="position:absolute;left:129.60px;top:290.44px" class="cls_003"><span class="cls_003">Negating a logical expression is the same as negating each term and changing</span></div>
+<div style="position:absolute;left:129.60px;top:305.61px" class="cls_003"><span class="cls_003">the operator. The ! operator takes precedence over && and ||, so you don’t</span></div>
+<div style="position:absolute;left:129.60px;top:320.78px" class="cls_003"><span class="cls_003">have to put parentheses around the individual terms !A and !B.</span></div>
+<div style="position:absolute;left:129.60px;top:346.64px" class="cls_003"><span class="cls_003">De Morgan’s laws also apply to the relational operators. In this case, negating</span></div>
+<div style="position:absolute;left:129.60px;top:361.81px" class="cls_003"><span class="cls_003">each term means using the “opposite” relational operator.</span></div>
+<div style="position:absolute;left:147.16px;top:389.14px" class="cls_008"><span class="cls_008"></span><span class="cls_003"> !(x &lt; 5 && y == 3)  is the same as  x >= 5 || y != 3</span></div>
+<div style="position:absolute;left:147.16px;top:413.65px" class="cls_008"><span class="cls_008"></span><span class="cls_003"> !(x >= 1 || y != 7)  is the same as  x &lt; 1 && y == 7</span></div>
+<div style="position:absolute;left:129.60px;top:440.98px" class="cls_003"><span class="cls_003">It may help to read these examples out loud in English.  For instance, “If I</span></div>
+<div style="position:absolute;left:129.60px;top:456.14px" class="cls_003"><span class="cls_003">don’t want the case where x is less than 5 and y is 3, then I need x to be</span></div>
+<div style="position:absolute;left:129.60px;top:471.31px" class="cls_003"><span class="cls_003">greater than or equal to 5, or I need y to be anything but 3.”</span></div>
+<div style="position:absolute;left:129.60px;top:517.45px" class="cls_005"><span class="cls_005">5.3</span></div>
+<div style="position:absolute;left:173.71px;top:517.45px" class="cls_005"><span class="cls_005">Conditional statements</span></div>
+<div style="position:absolute;left:129.60px;top:552.18px" class="cls_003"><span class="cls_003">To write useful programs, we almost always need to check conditions and</span></div>
+<div style="position:absolute;left:129.60px;top:567.35px" class="cls_003"><span class="cls_003">react accordingly. Conditional statements give us this ability. The simplest</span></div>
+<div style="position:absolute;left:129.60px;top:582.52px" class="cls_003"><span class="cls_003">conditional statement in Java is the</span><span class="cls_004"> if</span><span class="cls_003"> statement:</span></div>
+<div style="position:absolute;left:144.54px;top:604.83px" class="cls_004"><span class="cls_004">if</span><span class="cls_003"> (x > 0) {</span></div>
+<div style="position:absolute;left:169.15px;top:619.99px" class="cls_003"><span class="cls_003">System.out.println(</span><span class="cls_007">"x is positive"</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:144.54px;top:635.16px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:659.71px" class="cls_003"><span class="cls_003">The expression in parentheses is called the condition. If it is true, the state-</span></div>
+<div style="position:absolute;left:129.60px;top:674.88px" class="cls_003"><span class="cls_003">ments in braces get executed. If the condition is false, execution skips over that</span></div>
+<div style="position:absolute;left:129.60px;top:690.04px" class="cls_003"><span class="cls_003">block of code. The condition in parentheses can be any boolean expression.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:2406px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="5a20e108-5ad8-11e9-9d71-0cc47a792c0a_id_5a20e108-5ad8-11e9-9d71-0cc47a792c0a_files/background04.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">70</span></div>
+<div style="position:absolute;left:278.48px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 5</span></div>
+<div style="position:absolute;left:351.19px;top:88.65px" class="cls_003"><span class="cls_003">Conditionals and logic</span></div>
+<div style="position:absolute;left:86.40px;top:124.74px" class="cls_003"><span class="cls_003">A second form of conditional statement has two possibilities, indicated by</span><span class="cls_004"> if</span></div>
+<div style="position:absolute;left:86.40px;top:139.91px" class="cls_003"><span class="cls_003">and</span><span class="cls_004"> else</span><span class="cls_003">. The possibilities are called branches, and the condition determines</span></div>
+<div style="position:absolute;left:86.40px;top:155.08px" class="cls_003"><span class="cls_003">which one gets executed:</span></div>
+<div style="position:absolute;left:101.34px;top:179.29px" class="cls_004"><span class="cls_004">if</span><span class="cls_003"> (x % 2 == 0) {</span></div>
+<div style="position:absolute;left:125.95px;top:194.46px" class="cls_003"><span class="cls_003">System.out.println(</span><span class="cls_007">"x is even"</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:101.34px;top:209.63px" class="cls_003"><span class="cls_003">}</span><span class="cls_004"> else</span><span class="cls_003"> {</span></div>
+<div style="position:absolute;left:125.95px;top:224.79px" class="cls_003"><span class="cls_003">System.out.println(</span><span class="cls_007">"x is odd"</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:101.34px;top:239.96px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:264.08px" class="cls_003"><span class="cls_003">If the remainder when x is divided by 2 is zero, we know that x is even, and</span></div>
+<div style="position:absolute;left:86.40px;top:279.25px" class="cls_003"><span class="cls_003">this fragment displays a message to that effect.  If the condition is false, the</span></div>
+<div style="position:absolute;left:86.40px;top:294.42px" class="cls_003"><span class="cls_003">second print statement is executed instead. Since the condition must be true</span></div>
+<div style="position:absolute;left:86.40px;top:309.59px" class="cls_003"><span class="cls_003">or false, exactly one of the branches will run.</span></div>
+<div style="position:absolute;left:86.40px;top:335.03px" class="cls_003"><span class="cls_003">The braces are optional for branches that have only one statement.  So we</span></div>
+<div style="position:absolute;left:86.40px;top:350.19px" class="cls_003"><span class="cls_003">could have written the previous example this way:</span></div>
+<div style="position:absolute;left:101.34px;top:374.40px" class="cls_004"><span class="cls_004">if</span><span class="cls_003"> (x % 2 == 0)</span></div>
+<div style="position:absolute;left:125.95px;top:389.57px" class="cls_003"><span class="cls_003">System.out.println(</span><span class="cls_007">"x is even"</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:101.34px;top:404.74px" class="cls_004"><span class="cls_004">else</span></div>
+<div style="position:absolute;left:125.95px;top:419.91px" class="cls_003"><span class="cls_003">System.out.println(</span><span class="cls_007">"x is odd"</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:86.40px;top:444.03px" class="cls_003"><span class="cls_003">However, it’s better to use braces - even when they are optional - to avoid</span></div>
+<div style="position:absolute;left:86.40px;top:459.20px" class="cls_003"><span class="cls_003">making the mistake of adding statements to an</span><span class="cls_004"> if</span><span class="cls_003"> or</span><span class="cls_004"> else</span><span class="cls_003"> block and forgetting</span></div>
+<div style="position:absolute;left:86.40px;top:474.36px" class="cls_003"><span class="cls_003">to add the braces.</span></div>
+<div style="position:absolute;left:101.34px;top:496.25px" class="cls_004"><span class="cls_004">if</span><span class="cls_003"> (x > 0)</span></div>
+<div style="position:absolute;left:125.95px;top:511.42px" class="cls_003"><span class="cls_003">System.out.println(</span><span class="cls_007">"x is positive"</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:125.95px;top:526.59px" class="cls_003"><span class="cls_003">System.out.println(</span><span class="cls_007">"x is not zero"</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:86.40px;top:550.71px" class="cls_003"><span class="cls_003">This code is misleading because it’s not indented correctly. Since there are no</span></div>
+<div style="position:absolute;left:86.40px;top:565.87px" class="cls_003"><span class="cls_003">braces, only the first println is part of the</span><span class="cls_004"> if</span><span class="cls_003"> statement.  Here is what the</span></div>
+<div style="position:absolute;left:86.40px;top:581.04px" class="cls_003"><span class="cls_003">compiler actually sees:</span></div>
+<div style="position:absolute;left:101.34px;top:605.25px" class="cls_004"><span class="cls_004">if</span><span class="cls_003"> (x > 0) {</span></div>
+<div style="position:absolute;left:125.95px;top:620.42px" class="cls_003"><span class="cls_003">System.out.println(</span><span class="cls_007">"x is positive"</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:101.34px;top:635.59px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:125.95px;top:650.76px" class="cls_003"><span class="cls_003">System.out.println(</span><span class="cls_007">"x is not zero"</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:86.40px;top:674.88px" class="cls_003"><span class="cls_003">As a result, the second println runs no matter what.  Even experienced</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_003"><span class="cls_003">programmers make this mistake; search the web for Apple’s “goto fail” bug.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:3208px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="5a20e108-5ad8-11e9-9d71-0cc47a792c0a_id_5a20e108-5ad8-11e9-9d71-0cc47a792c0a_files/background05.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">5.4</span></div>
+<div style="position:absolute;left:160.24px;top:88.65px" class="cls_003"><span class="cls_003">Chaining and nesting</span></div>
+<div style="position:absolute;left:512.15px;top:88.65px" class="cls_003"><span class="cls_003">71</span></div>
+<div style="position:absolute;left:129.60px;top:119.48px" class="cls_005"><span class="cls_005">5.4</span></div>
+<div style="position:absolute;left:173.71px;top:119.48px" class="cls_005"><span class="cls_005">Chaining and nesting</span></div>
+<div style="position:absolute;left:129.60px;top:155.15px" class="cls_003"><span class="cls_003">Sometimes you want to check related conditions and choose one of several</span></div>
+<div style="position:absolute;left:129.60px;top:170.31px" class="cls_003"><span class="cls_003">actions. One way to do this is by chaining a series of</span><span class="cls_004"> if</span><span class="cls_003"> and</span><span class="cls_004"> else</span><span class="cls_003"> statements:</span></div>
+<div style="position:absolute;left:144.54px;top:195.88px" class="cls_004"><span class="cls_004">if</span><span class="cls_003"> (x > 0) {</span></div>
+<div style="position:absolute;left:169.15px;top:211.05px" class="cls_003"><span class="cls_003">System.out.println(</span><span class="cls_007">"x is positive"</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:144.54px;top:226.22px" class="cls_003"><span class="cls_003">}</span><span class="cls_004"> else if</span><span class="cls_003"> (x &lt; 0) {</span></div>
+<div style="position:absolute;left:169.15px;top:241.39px" class="cls_003"><span class="cls_003">System.out.println(</span><span class="cls_007">"x is negative"</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:144.54px;top:256.56px" class="cls_003"><span class="cls_003">}</span><span class="cls_004"> else</span><span class="cls_003"> {</span></div>
+<div style="position:absolute;left:169.15px;top:271.72px" class="cls_003"><span class="cls_003">System.out.println(</span><span class="cls_007">"x is zero"</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:144.54px;top:286.89px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:312.37px" class="cls_003"><span class="cls_003">These chains can be as long as you want, although they can be difficult to</span></div>
+<div style="position:absolute;left:129.60px;top:327.54px" class="cls_003"><span class="cls_003">read if they get out of hand. One way to make them easier to read is to use</span></div>
+<div style="position:absolute;left:129.60px;top:342.71px" class="cls_003"><span class="cls_003">standard indentation, as demonstrated in these examples. If you keep all the</span></div>
+<div style="position:absolute;left:129.60px;top:357.88px" class="cls_003"><span class="cls_003">statements and braces lined up, you are less likely to make syntax errors.</span></div>
+<div style="position:absolute;left:129.60px;top:384.67px" class="cls_003"><span class="cls_003">In addition to chaining, you can also make complex decisions by nesting one</span></div>
+<div style="position:absolute;left:129.60px;top:399.84px" class="cls_003"><span class="cls_003">conditional statement inside another.  We could have written the previous</span></div>
+<div style="position:absolute;left:129.60px;top:415.01px" class="cls_003"><span class="cls_003">example as:</span></div>
+<div style="position:absolute;left:144.54px;top:440.58px" class="cls_004"><span class="cls_004">if</span><span class="cls_003"> (x == 0) {</span></div>
+<div style="position:absolute;left:169.15px;top:455.75px" class="cls_003"><span class="cls_003">System.out.println(</span><span class="cls_007">"x is zero"</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:144.54px;top:470.92px" class="cls_003"><span class="cls_003">}</span><span class="cls_004"> else</span><span class="cls_003"> {</span></div>
+<div style="position:absolute;left:169.15px;top:486.08px" class="cls_004"><span class="cls_004">if</span><span class="cls_003"> (x > 0) {</span></div>
+<div style="position:absolute;left:193.76px;top:501.25px" class="cls_003"><span class="cls_003">System.out.println(</span><span class="cls_007">"x is positive"</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:169.15px;top:516.42px" class="cls_003"><span class="cls_003">}</span><span class="cls_004"> else</span><span class="cls_003"> {</span></div>
+<div style="position:absolute;left:193.76px;top:531.59px" class="cls_003"><span class="cls_003">System.out.println(</span><span class="cls_007">"x is negative"</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:169.15px;top:546.76px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:144.54px;top:561.93px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:587.40px" class="cls_003"><span class="cls_003">The outer conditional has two branches.  The first branch contains a print</span></div>
+<div style="position:absolute;left:129.60px;top:602.57px" class="cls_003"><span class="cls_003">statement, and the second branch contains another conditional statement,</span></div>
+<div style="position:absolute;left:129.60px;top:617.74px" class="cls_003"><span class="cls_003">which has two branches of its own. These two branches are also print state-</span></div>
+<div style="position:absolute;left:129.60px;top:632.91px" class="cls_003"><span class="cls_003">ments, but they could have been conditional statements as well.</span></div>
+<div style="position:absolute;left:129.60px;top:659.71px" class="cls_003"><span class="cls_003">These kinds of nested structures are common, but they get difficult to read</span></div>
+<div style="position:absolute;left:129.60px;top:674.88px" class="cls_003"><span class="cls_003">very quickly. Good indentation is essential to make the structure (or intended</span></div>
+<div style="position:absolute;left:129.60px;top:690.04px" class="cls_003"><span class="cls_003">structure) apparent to the reader.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:4010px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="5a20e108-5ad8-11e9-9d71-0cc47a792c0a_id_5a20e108-5ad8-11e9-9d71-0cc47a792c0a_files/background06.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">72</span></div>
+<div style="position:absolute;left:278.48px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 5</span></div>
+<div style="position:absolute;left:351.19px;top:88.65px" class="cls_003"><span class="cls_003">Conditionals and logic</span></div>
+<div style="position:absolute;left:86.40px;top:119.48px" class="cls_005"><span class="cls_005">5.5</span></div>
+<div style="position:absolute;left:130.51px;top:119.48px" class="cls_005"><span class="cls_005">Flag variables</span></div>
+<div style="position:absolute;left:86.40px;top:159.23px" class="cls_003"><span class="cls_003">To store a</span><span class="cls_004"> true</span><span class="cls_003"> or</span><span class="cls_004"> false</span><span class="cls_003"> value, you need a</span><span class="cls_004"> boolean</span><span class="cls_003"> variable. You can create</span></div>
+<div style="position:absolute;left:86.40px;top:174.39px" class="cls_003"><span class="cls_003">one like this:</span></div>
+<div style="position:absolute;left:101.34px;top:200.95px" class="cls_004"><span class="cls_004">boolean</span><span class="cls_003"> flag;</span></div>
+<div style="position:absolute;left:101.34px;top:216.12px" class="cls_003"><span class="cls_003">flag =</span><span class="cls_004"> true</span><span class="cls_003">;</span></div>
+<div style="position:absolute;left:101.34px;top:231.28px" class="cls_004"><span class="cls_004">boolean</span><span class="cls_003"> testResult =</span><span class="cls_004"> false</span><span class="cls_003">;</span></div>
+<div style="position:absolute;left:86.40px;top:260.07px" class="cls_003"><span class="cls_003">The first line is a variable declaration, the second is an assignment, and the</span></div>
+<div style="position:absolute;left:86.40px;top:275.24px" class="cls_003"><span class="cls_003">third is both. Since relational operators evaluate to a</span><span class="cls_004"> boolean</span><span class="cls_003"> value, you can</span></div>
+<div style="position:absolute;left:86.40px;top:290.41px" class="cls_003"><span class="cls_003">store the result of a comparison in a variable:</span></div>
+<div style="position:absolute;left:101.34px;top:319.29px" class="cls_004"><span class="cls_004">boolean</span><span class="cls_003"> evenFlag = (n % 2 == 0);</span></div>
+<div style="position:absolute;left:322.81px;top:319.29px" class="cls_006"><span class="cls_006">// true if n is even</span></div>
+<div style="position:absolute;left:101.34px;top:334.46px" class="cls_004"><span class="cls_004">boolean</span><span class="cls_003"> positiveFlag = (x > 0);</span></div>
+<div style="position:absolute;left:322.81px;top:334.46px" class="cls_006"><span class="cls_006">// true if x is positive</span></div>
+<div style="position:absolute;left:86.40px;top:363.25px" class="cls_003"><span class="cls_003">The parentheses are unnecessary, but they make the code easier to read.  A</span></div>
+<div style="position:absolute;left:86.40px;top:378.41px" class="cls_003"><span class="cls_003">variable defined in this way is called a flag, because it signals or “flags” the</span></div>
+<div style="position:absolute;left:86.40px;top:393.58px" class="cls_003"><span class="cls_003">presence or absence of a condition.</span></div>
+<div style="position:absolute;left:86.40px;top:423.69px" class="cls_003"><span class="cls_003">You can use flag variables as part of a conditional statement later:</span></div>
+<div style="position:absolute;left:101.34px;top:452.57px" class="cls_004"><span class="cls_004">if</span><span class="cls_003"> (evenFlag) {</span></div>
+<div style="position:absolute;left:125.95px;top:467.74px" class="cls_003"><span class="cls_003">System.out.println(</span><span class="cls_007">"n was even when I checked it"</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:101.34px;top:482.91px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:511.70px" class="cls_003"><span class="cls_003">Notice that you don’t have to write</span><span class="cls_004"> if</span><span class="cls_003"> (evenFlag ==</span><span class="cls_004"> true</span><span class="cls_003">). Since evenFlag</span></div>
+<div style="position:absolute;left:86.40px;top:526.86px" class="cls_003"><span class="cls_003">is a</span><span class="cls_004"> boolean</span><span class="cls_003">, it’s already a condition. Likewise, to check if a flag is</span><span class="cls_004"> false</span><span class="cls_003">:</span></div>
+<div style="position:absolute;left:101.34px;top:555.74px" class="cls_004"><span class="cls_004">if</span><span class="cls_003"> (!evenFlag) {</span></div>
+<div style="position:absolute;left:125.95px;top:570.91px" class="cls_003"><span class="cls_003">System.out.println(</span><span class="cls_007">"n was odd when I checked it"</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:101.34px;top:586.08px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:635.13px" class="cls_005"><span class="cls_005">5.6</span></div>
+<div style="position:absolute;left:130.51px;top:635.13px" class="cls_005"><span class="cls_005">The return statement</span></div>
+<div style="position:absolute;left:86.40px;top:674.88px" class="cls_003"><span class="cls_003">The</span><span class="cls_004"> return</span><span class="cls_003"> statement allows you to terminate a method before you reach the</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_003"><span class="cls_003">end of it. One reason to use</span><span class="cls_004"> return</span><span class="cls_003"> is if you detect an error condition:</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:4812px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="5a20e108-5ad8-11e9-9d71-0cc47a792c0a_id_5a20e108-5ad8-11e9-9d71-0cc47a792c0a_files/background07.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">5.7</span></div>
+<div style="position:absolute;left:160.24px;top:88.65px" class="cls_003"><span class="cls_003">Validating input</span></div>
+<div style="position:absolute;left:512.15px;top:88.65px" class="cls_003"><span class="cls_003">73</span></div>
+<div style="position:absolute;left:144.54px;top:123.41px" class="cls_004"><span class="cls_004">public static void</span><span class="cls_003"> printLogarithm(</span><span class="cls_004">double</span><span class="cls_003"> x) {</span></div>
+<div style="position:absolute;left:169.15px;top:138.57px" class="cls_004"><span class="cls_004">if</span><span class="cls_003"> (x &lt;= 0.0) {</span></div>
+<div style="position:absolute;left:193.76px;top:153.74px" class="cls_003"><span class="cls_003">System.err.println(</span><span class="cls_007">"Error: x must be positive."</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:193.76px;top:168.91px" class="cls_004"><span class="cls_004">return</span><span class="cls_003">;</span></div>
+<div style="position:absolute;left:169.15px;top:184.08px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:169.15px;top:199.25px" class="cls_004"><span class="cls_004">double</span><span class="cls_003"> result = Math.log(x);</span></div>
+<div style="position:absolute;left:169.15px;top:214.41px" class="cls_003"><span class="cls_003">System.out.println(</span><span class="cls_007">"The log of x is "</span><span class="cls_003"> + result);</span></div>
+<div style="position:absolute;left:144.54px;top:229.58px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:260.86px" class="cls_003"><span class="cls_003">This example defines a method named printLogarithm that takes a</span><span class="cls_004"> double</span></div>
+<div style="position:absolute;left:129.60px;top:276.03px" class="cls_003"><span class="cls_003">value (named x) as a parameter. It checks whether x is less than or equal to</span></div>
+<div style="position:absolute;left:129.60px;top:291.20px" class="cls_003"><span class="cls_003">zero, in which case it displays an error message and then uses</span><span class="cls_004"> return</span><span class="cls_003"> to exit</span></div>
+<div style="position:absolute;left:129.60px;top:306.37px" class="cls_003"><span class="cls_003">the method. The flow of execution immediately returns to where the method</span></div>
+<div style="position:absolute;left:129.60px;top:321.54px" class="cls_003"><span class="cls_003">was invoked, and the remaining lines of the method are not executed.</span></div>
+<div style="position:absolute;left:129.60px;top:354.13px" class="cls_003"><span class="cls_003">This example uses System.err, which is an OutputStream normally used for</span></div>
+<div style="position:absolute;left:129.60px;top:369.30px" class="cls_003"><span class="cls_003">error messages and warnings. Some development environments display output</span></div>
+<div style="position:absolute;left:129.60px;top:384.47px" class="cls_003"><span class="cls_003">to System.err with a different color or in a separate window.</span></div>
+<div style="position:absolute;left:129.60px;top:444.74px" class="cls_005"><span class="cls_005">5.7</span></div>
+<div style="position:absolute;left:173.71px;top:444.74px" class="cls_005"><span class="cls_005">Validating input</span></div>
+<div style="position:absolute;left:129.60px;top:487.62px" class="cls_003"><span class="cls_003">Here is a method that uses printLogarithm from the previous section:</span></div>
+<div style="position:absolute;left:144.54px;top:519.32px" class="cls_004"><span class="cls_004">public static void</span><span class="cls_003"> scanDouble(Scanner in) {</span></div>
+<div style="position:absolute;left:169.15px;top:534.49px" class="cls_003"><span class="cls_003">System.out.print(</span><span class="cls_007">"Enter a number: "</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:169.15px;top:549.66px" class="cls_004"><span class="cls_004">double</span><span class="cls_003"> x = in.nextDouble();</span></div>
+<div style="position:absolute;left:169.15px;top:564.83px" class="cls_003"><span class="cls_003">printLogarithm(x);</span></div>
+<div style="position:absolute;left:144.54px;top:580.00px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:611.94px" class="cls_003"><span class="cls_003">This example uses nextDouble, so the Scanner (provided by the main method)</span></div>
+<div style="position:absolute;left:129.60px;top:627.11px" class="cls_003"><span class="cls_003">tries to read a</span><span class="cls_004"> double</span><span class="cls_003">. If the user enters a floating-point number, the Scanner</span></div>
+<div style="position:absolute;left:129.60px;top:642.28px" class="cls_003"><span class="cls_003">converts it to a</span><span class="cls_004"> double</span><span class="cls_003">. But if the user types anything else, the Scanner throws</span></div>
+<div style="position:absolute;left:129.60px;top:657.45px" class="cls_003"><span class="cls_003">an InputMismatchException.</span></div>
+<div style="position:absolute;left:129.60px;top:690.04px" class="cls_003"><span class="cls_003">We can prevent this error by checking the input before parsing it:</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:5614px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="5a20e108-5ad8-11e9-9d71-0cc47a792c0a_id_5a20e108-5ad8-11e9-9d71-0cc47a792c0a_files/background08.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">74</span></div>
+<div style="position:absolute;left:278.48px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 5</span></div>
+<div style="position:absolute;left:351.19px;top:88.65px" class="cls_003"><span class="cls_003">Conditionals and logic</span></div>
+<div style="position:absolute;left:101.34px;top:123.41px" class="cls_004"><span class="cls_004">public static void</span><span class="cls_003"> scanDouble(Scanner in) {</span></div>
+<div style="position:absolute;left:125.95px;top:138.57px" class="cls_003"><span class="cls_003">System.out.print(</span><span class="cls_007">"Enter a number: "</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:125.95px;top:153.74px" class="cls_004"><span class="cls_004">if</span><span class="cls_003"> (!in.hasNextDouble()) {</span></div>
+<div style="position:absolute;left:150.56px;top:168.91px" class="cls_003"><span class="cls_003">String word = in.next();</span></div>
+<div style="position:absolute;left:150.56px;top:184.08px" class="cls_003"><span class="cls_003">System.err.println(word +</span><span class="cls_007"> " is not a number"</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:150.56px;top:199.25px" class="cls_004"><span class="cls_004">return</span><span class="cls_003">;</span></div>
+<div style="position:absolute;left:125.95px;top:214.41px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:125.95px;top:229.58px" class="cls_004"><span class="cls_004">double</span><span class="cls_003"> x = in.nextDouble();</span></div>
+<div style="position:absolute;left:125.95px;top:244.75px" class="cls_003"><span class="cls_003">printLogarithm(x);</span></div>
+<div style="position:absolute;left:101.34px;top:259.92px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:284.46px" class="cls_003"><span class="cls_003">The Scanner class provides hasNextDouble, which checks whether the next</span></div>
+<div style="position:absolute;left:86.40px;top:299.63px" class="cls_003"><span class="cls_003">token in the input stream can be interpreted as a</span><span class="cls_004"> double</span><span class="cls_003">. If so, we can call</span></div>
+<div style="position:absolute;left:86.40px;top:314.80px" class="cls_003"><span class="cls_003">nextDouble with no chance of throwing an exception.  If not, we display an</span></div>
+<div style="position:absolute;left:86.40px;top:329.96px" class="cls_003"><span class="cls_003">error message and return.</span></div>
+<div style="position:absolute;left:86.40px;top:376.10px" class="cls_005"><span class="cls_005">5.8</span></div>
+<div style="position:absolute;left:130.51px;top:376.10px" class="cls_005"><span class="cls_005">Recursive methods</span></div>
+<div style="position:absolute;left:86.40px;top:410.82px" class="cls_003"><span class="cls_003">Now that we have conditional statements, we can explore one of the most</span></div>
+<div style="position:absolute;left:86.40px;top:425.99px" class="cls_003"><span class="cls_003">magical things a program can do: recursion. Consider the following example:</span></div>
+<div style="position:absolute;left:101.34px;top:450.62px" class="cls_004"><span class="cls_004">public static void</span><span class="cls_003"> countdown(</span><span class="cls_004">int</span><span class="cls_003"> n) {</span></div>
+<div style="position:absolute;left:125.95px;top:465.79px" class="cls_004"><span class="cls_004">if</span><span class="cls_003"> (n == 0) {</span></div>
+<div style="position:absolute;left:150.56px;top:480.96px" class="cls_003"><span class="cls_003">System.out.println(</span><span class="cls_007">"Blastoff!"</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:125.95px;top:496.13px" class="cls_003"><span class="cls_003">}</span><span class="cls_004"> else</span><span class="cls_003"> {</span></div>
+<div style="position:absolute;left:150.56px;top:511.29px" class="cls_003"><span class="cls_003">System.out.println(n);</span></div>
+<div style="position:absolute;left:150.56px;top:526.46px" class="cls_003"><span class="cls_003">countdown(n - 1);</span></div>
+<div style="position:absolute;left:125.95px;top:541.63px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:101.34px;top:556.80px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:581.34px" class="cls_003"><span class="cls_003">The name of the method is countdown; it takes a single integer as a parameter.</span></div>
+<div style="position:absolute;left:86.40px;top:596.51px" class="cls_003"><span class="cls_003">If the parameter is zero, it displays the word “Blastoff”. Otherwise, it displays</span></div>
+<div style="position:absolute;left:86.40px;top:611.68px" class="cls_003"><span class="cls_003">the number and then invokes itself, passing n - 1 as the argument. A method</span></div>
+<div style="position:absolute;left:86.40px;top:626.84px" class="cls_003"><span class="cls_003">that invokes itself is called recursive.</span></div>
+<div style="position:absolute;left:86.40px;top:652.70px" class="cls_003"><span class="cls_003">What happens if we invoke countdown(3) from main?</span></div>
+<div style="position:absolute;left:115.67px;top:674.88px" class="cls_003"><span class="cls_003">The execution of countdown begins with n == 3, and since n is not</span></div>
+<div style="position:absolute;left:115.67px;top:690.04px" class="cls_003"><span class="cls_003">zero, it displays the value 3, and then invokes itself...</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:6416px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="5a20e108-5ad8-11e9-9d71-0cc47a792c0a_id_5a20e108-5ad8-11e9-9d71-0cc47a792c0a_files/background09.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">5.8</span></div>
+<div style="position:absolute;left:160.24px;top:88.65px" class="cls_003"><span class="cls_003">Recursive methods</span></div>
+<div style="position:absolute;left:512.16px;top:88.65px" class="cls_003"><span class="cls_003">75</span></div>
+<div style="position:absolute;left:184.62px;top:124.74px" class="cls_003"><span class="cls_003">The execution of countdown begins with n == 2, and</span></div>
+<div style="position:absolute;left:184.62px;top:139.91px" class="cls_003"><span class="cls_003">since n is not zero, it displays the value 2, and then</span></div>
+<div style="position:absolute;left:184.62px;top:155.08px" class="cls_003"><span class="cls_003">invokes itself...</span></div>
+<div style="position:absolute;left:206.51px;top:177.90px" class="cls_003"><span class="cls_003">The execution of countdown begins with n == 1,</span></div>
+<div style="position:absolute;left:206.51px;top:193.06px" class="cls_003"><span class="cls_003">and since n is not zero, it displays the value 1,</span></div>
+<div style="position:absolute;left:206.51px;top:208.23px" class="cls_003"><span class="cls_003">and then invokes itself...</span></div>
+<div style="position:absolute;left:226.41px;top:227.22px" class="cls_003"><span class="cls_003">The execution of countdown begins with</span></div>
+<div style="position:absolute;left:226.41px;top:242.39px" class="cls_003"><span class="cls_003">n == 0, and since n is zero, it displays</span></div>
+<div style="position:absolute;left:226.41px;top:257.56px" class="cls_003"><span class="cls_003">the word “Blastoff!” and then returns.</span></div>
+<div style="position:absolute;left:206.51px;top:276.55px" class="cls_003"><span class="cls_003">The countdown that got n == 1 returns.</span></div>
+<div style="position:absolute;left:184.62px;top:299.37px" class="cls_003"><span class="cls_003">The countdown that got n == 2 returns.</span></div>
+<div style="position:absolute;left:158.87px;top:331.16px" class="cls_003"><span class="cls_003">The countdown that got n == 3 returns.</span></div>
+<div style="position:absolute;left:129.60px;top:370.46px" class="cls_003"><span class="cls_003">And then you’re back in main. So the total output looks like:</span></div>
+<div style="position:absolute;left:144.54px;top:401.68px" class="cls_003"><span class="cls_003">3</span></div>
+<div style="position:absolute;left:144.54px;top:416.85px" class="cls_003"><span class="cls_003">2</span></div>
+<div style="position:absolute;left:144.54px;top:432.02px" class="cls_003"><span class="cls_003">1</span></div>
+<div style="position:absolute;left:144.54px;top:447.19px" class="cls_003"><span class="cls_003">Blastoff!</span></div>
+<div style="position:absolute;left:129.60px;top:478.32px" class="cls_003"><span class="cls_003">As a second example, we’ll rewrite the methods newLine and threeLine from</span></div>
+<div style="position:absolute;left:129.60px;top:493.49px" class="cls_003"><span class="cls_003">Section 4.3.</span></div>
+<div style="position:absolute;left:144.54px;top:522.39px" class="cls_004"><span class="cls_004">public static void</span><span class="cls_003"> newLine() {</span></div>
+<div style="position:absolute;left:169.15px;top:537.56px" class="cls_003"><span class="cls_003">System.out.println();</span></div>
+<div style="position:absolute;left:144.54px;top:552.73px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:144.54px;top:583.07px" class="cls_004"><span class="cls_004">public static void</span><span class="cls_003"> threeLine() {</span></div>
+<div style="position:absolute;left:169.15px;top:598.24px" class="cls_003"><span class="cls_003">newLine();</span></div>
+<div style="position:absolute;left:169.15px;top:613.40px" class="cls_003"><span class="cls_003">newLine();</span></div>
+<div style="position:absolute;left:169.15px;top:628.57px" class="cls_003"><span class="cls_003">newLine();</span></div>
+<div style="position:absolute;left:144.54px;top:643.74px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:674.88px" class="cls_003"><span class="cls_003">Although these methods work, they would not help if we wanted to display</span></div>
+<div style="position:absolute;left:129.60px;top:690.04px" class="cls_003"><span class="cls_003">two newlines, or maybe 100. A better alternative would be:</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:7218px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="5a20e108-5ad8-11e9-9d71-0cc47a792c0a_id_5a20e108-5ad8-11e9-9d71-0cc47a792c0a_files/background10.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">76</span></div>
+<div style="position:absolute;left:278.48px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 5</span></div>
+<div style="position:absolute;left:351.19px;top:88.65px" class="cls_003"><span class="cls_003">Conditionals and logic</span></div>
+<div style="position:absolute;left:101.34px;top:123.41px" class="cls_004"><span class="cls_004">public static void</span><span class="cls_003"> nLines(</span><span class="cls_004">int</span><span class="cls_003"> n) {</span></div>
+<div style="position:absolute;left:125.95px;top:138.57px" class="cls_004"><span class="cls_004">if</span><span class="cls_003"> (n > 0) {</span></div>
+<div style="position:absolute;left:150.56px;top:153.74px" class="cls_003"><span class="cls_003">System.out.println();</span></div>
+<div style="position:absolute;left:150.56px;top:168.91px" class="cls_003"><span class="cls_003">nLines(n - 1);</span></div>
+<div style="position:absolute;left:125.95px;top:184.08px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:101.34px;top:199.25px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:224.07px" class="cls_003"><span class="cls_003">This method takes an integer, n, as a parameter and displays n newlines. The</span></div>
+<div style="position:absolute;left:86.40px;top:239.24px" class="cls_003"><span class="cls_003">structure is similar to countdown. As long as n is greater than zero, it displays</span></div>
+<div style="position:absolute;left:86.40px;top:254.40px" class="cls_003"><span class="cls_003">a newline and then invokes itself to display (n − 1) additional newlines. The</span></div>
+<div style="position:absolute;left:86.40px;top:269.57px" class="cls_003"><span class="cls_003">total number of newlines is 1 + (n − 1), which is just what we wanted: n.</span></div>
+<div style="position:absolute;left:86.40px;top:316.06px" class="cls_005"><span class="cls_005">5.9</span></div>
+<div style="position:absolute;left:130.51px;top:316.06px" class="cls_005"><span class="cls_005">Recursive stack diagrams</span></div>
+<div style="position:absolute;left:86.40px;top:351.06px" class="cls_003"><span class="cls_003">In the previous chapter, we used a stack diagram to represent the state of a</span></div>
+<div style="position:absolute;left:86.40px;top:366.23px" class="cls_003"><span class="cls_003">program during a method invocation. The same kind of diagram can make it</span></div>
+<div style="position:absolute;left:86.40px;top:381.40px" class="cls_003"><span class="cls_003">easier to interpret a recursive method.</span></div>
+<div style="position:absolute;left:86.40px;top:407.54px" class="cls_003"><span class="cls_003">Remember that every time a method gets called, Java creates a new frame</span></div>
+<div style="position:absolute;left:86.40px;top:422.71px" class="cls_003"><span class="cls_003">that contains the current method’s parameters and variables. Figure 5.1 is a</span></div>
+<div style="position:absolute;left:86.40px;top:437.87px" class="cls_003"><span class="cls_003">stack diagram for countdown, called with n == 3.</span></div>
+<div style="position:absolute;left:257.70px;top:473.62px" class="cls_009"><span class="cls_009">main</span></div>
+<div style="position:absolute;left:228.87px;top:505.12px" class="cls_009"><span class="cls_009">countdown</span></div>
+<div style="position:absolute;left:297.60px;top:505.12px" class="cls_009"><span class="cls_009">n</span></div>
+<div style="position:absolute;left:321.60px;top:505.12px" class="cls_009"><span class="cls_009">3</span></div>
+<div style="position:absolute;left:228.87px;top:536.62px" class="cls_009"><span class="cls_009">countdown</span></div>
+<div style="position:absolute;left:297.60px;top:536.62px" class="cls_009"><span class="cls_009">n</span></div>
+<div style="position:absolute;left:321.60px;top:536.62px" class="cls_009"><span class="cls_009">2</span></div>
+<div style="position:absolute;left:228.87px;top:568.12px" class="cls_009"><span class="cls_009">countdown</span></div>
+<div style="position:absolute;left:297.60px;top:568.12px" class="cls_009"><span class="cls_009">n</span></div>
+<div style="position:absolute;left:321.60px;top:568.12px" class="cls_009"><span class="cls_009">1</span></div>
+<div style="position:absolute;left:228.87px;top:599.62px" class="cls_009"><span class="cls_009">countdown</span></div>
+<div style="position:absolute;left:297.60px;top:599.62px" class="cls_009"><span class="cls_009">n</span></div>
+<div style="position:absolute;left:321.60px;top:599.62px" class="cls_009"><span class="cls_009">0</span></div>
+<div style="position:absolute;left:143.80px;top:632.57px" class="cls_003"><span class="cls_003">Figure 5.1: Stack diagram for the countdown program.</span></div>
+<div style="position:absolute;left:86.40px;top:659.71px" class="cls_003"><span class="cls_003">By convention, the stack for main is at the top and the stack grows down. The</span></div>
+<div style="position:absolute;left:86.40px;top:674.88px" class="cls_003"><span class="cls_003">frame for main is empty because main does not have any variables. (It has the</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_003"><span class="cls_003">parameter args, but since we’re not using it, we left it out of the diagram.)</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:8020px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="5a20e108-5ad8-11e9-9d71-0cc47a792c0a_id_5a20e108-5ad8-11e9-9d71-0cc47a792c0a_files/background11.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">5.10</span></div>
+<div style="position:absolute;left:166.96px;top:88.65px" class="cls_003"><span class="cls_003">Binary numbers</span></div>
+<div style="position:absolute;left:512.15px;top:88.65px" class="cls_003"><span class="cls_003">77</span></div>
+<div style="position:absolute;left:129.60px;top:124.74px" class="cls_003"><span class="cls_003">There are four frames for countdown, each with a different value for the pa-</span></div>
+<div style="position:absolute;left:129.60px;top:139.91px" class="cls_003"><span class="cls_003">rameter n. The last frame, with n == 0, is called the base case. It does not</span></div>
+<div style="position:absolute;left:129.60px;top:155.08px" class="cls_003"><span class="cls_003">make a recursive call, so there are no more frames below it.</span></div>
+<div style="position:absolute;left:129.60px;top:178.51px" class="cls_003"><span class="cls_003">If there is no base case in a recursive method, or if the base case is never</span></div>
+<div style="position:absolute;left:129.60px;top:193.68px" class="cls_003"><span class="cls_003">reached, the stack would grow forever, at least in theory. In practice, the size</span></div>
+<div style="position:absolute;left:129.60px;top:208.84px" class="cls_003"><span class="cls_003">of the stack is limited; if you exceed the limit, you get a StackOverflowError.</span></div>
+<div style="position:absolute;left:129.60px;top:232.27px" class="cls_003"><span class="cls_003">For example, here is a recursive method without a base case:</span></div>
+<div style="position:absolute;left:144.54px;top:254.47px" class="cls_004"><span class="cls_004">public static void</span><span class="cls_003"> forever(String s) {</span></div>
+<div style="position:absolute;left:169.15px;top:269.64px" class="cls_003"><span class="cls_003">System.out.println(s);</span></div>
+<div style="position:absolute;left:169.15px;top:284.80px" class="cls_003"><span class="cls_003">forever(s);</span></div>
+<div style="position:absolute;left:144.54px;top:299.97px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:322.08px" class="cls_003"><span class="cls_003">This method displays the string until the stack overflows, at which point it</span></div>
+<div style="position:absolute;left:129.60px;top:337.25px" class="cls_003"><span class="cls_003">throws an exception.</span></div>
+<div style="position:absolute;left:129.60px;top:380.32px" class="cls_005"><span class="cls_005">5.10</span></div>
+<div style="position:absolute;left:183.40px;top:380.32px" class="cls_005"><span class="cls_005">Binary numbers</span></div>
+<div style="position:absolute;left:129.60px;top:412.61px" class="cls_003"><span class="cls_003">The countdown example has three parts:</span></div>
+<div style="position:absolute;left:357.60px;top:412.61px" class="cls_003"><span class="cls_003">(1) it checks the base case, (2)</span></div>
+<div style="position:absolute;left:129.60px;top:427.78px" class="cls_003"><span class="cls_003">displays something, and (3) makes a recursive call. What do you think happens</span></div>
+<div style="position:absolute;left:129.60px;top:442.95px" class="cls_003"><span class="cls_003">if you reverse steps 2 and 3, making the recursive call before displaying?</span></div>
+<div style="position:absolute;left:144.54px;top:465.15px" class="cls_004"><span class="cls_004">public static void</span><span class="cls_003"> countup(</span><span class="cls_004">int</span><span class="cls_003"> n) {</span></div>
+<div style="position:absolute;left:169.15px;top:480.32px" class="cls_004"><span class="cls_004">if</span><span class="cls_003"> (n == 0) {</span></div>
+<div style="position:absolute;left:193.76px;top:495.48px" class="cls_003"><span class="cls_003">System.out.println(</span><span class="cls_007">"Blastoff!"</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:169.15px;top:510.65px" class="cls_003"><span class="cls_003">}</span><span class="cls_004"> else</span><span class="cls_003"> {</span></div>
+<div style="position:absolute;left:193.76px;top:525.82px" class="cls_003"><span class="cls_003">countup(n - 1);</span></div>
+<div style="position:absolute;left:193.76px;top:540.99px" class="cls_003"><span class="cls_003">System.out.println(n);</span></div>
+<div style="position:absolute;left:169.15px;top:556.16px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:144.54px;top:571.32px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:593.43px" class="cls_003"><span class="cls_003">The stack diagram is the same as before, and the method is still called n</span></div>
+<div style="position:absolute;left:129.60px;top:608.60px" class="cls_003"><span class="cls_003">times. But now the System.out.println happens just before each recursive</span></div>
+<div style="position:absolute;left:129.60px;top:623.77px" class="cls_003"><span class="cls_003">call returns. As a result, it counts up instead of down:</span></div>
+<div style="position:absolute;left:144.54px;top:645.97px" class="cls_003"><span class="cls_003">Blastoff!</span></div>
+<div style="position:absolute;left:144.54px;top:661.14px" class="cls_003"><span class="cls_003">1</span></div>
+<div style="position:absolute;left:144.54px;top:676.30px" class="cls_003"><span class="cls_003">2</span></div>
+<div style="position:absolute;left:144.54px;top:691.47px" class="cls_003"><span class="cls_003">3</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:8822px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="5a20e108-5ad8-11e9-9d71-0cc47a792c0a_id_5a20e108-5ad8-11e9-9d71-0cc47a792c0a_files/background12.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">78</span></div>
+<div style="position:absolute;left:278.48px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 5</span></div>
+<div style="position:absolute;left:351.19px;top:88.65px" class="cls_003"><span class="cls_003">Conditionals and logic</span></div>
+<div style="position:absolute;left:86.40px;top:124.74px" class="cls_003"><span class="cls_003">This behavior comes in handy when it is easier to compute results in reverse or-</span></div>
+<div style="position:absolute;left:86.40px;top:139.91px" class="cls_003"><span class="cls_003">der. For example, to convert a decimal integer into its binary representation,</span></div>
+<div style="position:absolute;left:86.40px;top:155.08px" class="cls_003"><span class="cls_003">you repeatedly divide the number by two:</span></div>
+<div style="position:absolute;left:101.34px;top:181.74px" class="cls_003"><span class="cls_003">23 / 2 is 11 remainder 1</span></div>
+<div style="position:absolute;left:101.34px;top:196.90px" class="cls_003"><span class="cls_003">11 / 2 is</span></div>
+<div style="position:absolute;left:169.02px;top:196.90px" class="cls_003"><span class="cls_003">5 remainder 1</span></div>
+<div style="position:absolute;left:107.50px;top:212.07px" class="cls_003"><span class="cls_003">5 / 2 is</span></div>
+<div style="position:absolute;left:169.02px;top:212.07px" class="cls_003"><span class="cls_003">2 remainder 1</span></div>
+<div style="position:absolute;left:107.50px;top:227.24px" class="cls_003"><span class="cls_003">2 / 2 is</span></div>
+<div style="position:absolute;left:169.02px;top:227.24px" class="cls_003"><span class="cls_003">1 remainder 0</span></div>
+<div style="position:absolute;left:107.50px;top:242.41px" class="cls_003"><span class="cls_003">1 / 2 is</span></div>
+<div style="position:absolute;left:169.02px;top:242.41px" class="cls_003"><span class="cls_003">0 remainder 1</span></div>
+<div style="position:absolute;left:86.40px;top:268.97px" class="cls_003"><span class="cls_003">Reading these remainders from bottom to top, 23 in binary is 10111.  For</span></div>
+<div style="position:absolute;left:86.40px;top:284.14px" class="cls_003"><span class="cls_003">more background about binary numbers, see</span><span class="cls_004"> <A HREF="http://www.mathsisfun.com/binary-number-system.html">http://www.mathsisfun.com/</A> </span></div>
+<div style="position:absolute;left:86.40px;top:299.31px" class="cls_004"><span class="cls_004"> </span><A HREF="http://www.mathsisfun.com/binary-number-system.html">binary-number-system.html</A> <span class="cls_003">.</span></div>
+<div style="position:absolute;left:86.40px;top:327.20px" class="cls_003"><span class="cls_003">Here is a recursive method that displays the binary representation of any</span></div>
+<div style="position:absolute;left:86.40px;top:342.36px" class="cls_003"><span class="cls_003">positive integer:</span></div>
+<div style="position:absolute;left:101.34px;top:369.02px" class="cls_004"><span class="cls_004">public static void</span><span class="cls_003"> displayBinary(</span><span class="cls_004">int</span><span class="cls_003"> value) {</span></div>
+<div style="position:absolute;left:125.95px;top:384.19px" class="cls_004"><span class="cls_004">if</span><span class="cls_003"> (value > 0) {</span></div>
+<div style="position:absolute;left:150.56px;top:399.36px" class="cls_003"><span class="cls_003">displayBinary(value / 2);</span></div>
+<div style="position:absolute;left:150.56px;top:414.52px" class="cls_003"><span class="cls_003">System.out.print(value % 2);</span></div>
+<div style="position:absolute;left:125.95px;top:429.69px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:101.34px;top:444.86px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:472.09px" class="cls_003"><span class="cls_003">If value is zero, displayBinary does nothing (that’s the base case).  If the</span></div>
+<div style="position:absolute;left:86.40px;top:487.26px" class="cls_003"><span class="cls_003">argument is positive, the method divides it by two and calls displayBinary</span></div>
+<div style="position:absolute;left:86.40px;top:502.43px" class="cls_003"><span class="cls_003">recursively. When the recursive call returns, the method displays one digit of</span></div>
+<div style="position:absolute;left:86.40px;top:517.60px" class="cls_003"><span class="cls_003">the result and returns (again).</span></div>
+<div style="position:absolute;left:86.40px;top:545.48px" class="cls_003"><span class="cls_003">The leftmost digit is at the bottom of the stack, so it gets displayed first. The</span></div>
+<div style="position:absolute;left:86.40px;top:560.65px" class="cls_003"><span class="cls_003">rightmost digit, at the top of the stack, gets displayed last.  After invoking</span></div>
+<div style="position:absolute;left:86.40px;top:575.82px" class="cls_003"><span class="cls_003">displayBinary, we use println to complete the output.</span></div>
+<div style="position:absolute;left:101.34px;top:602.81px" class="cls_003"><span class="cls_003">displayBinary(23);</span></div>
+<div style="position:absolute;left:101.34px;top:617.97px" class="cls_003"><span class="cls_003">System.out.println();</span></div>
+<div style="position:absolute;left:101.34px;top:633.14px" class="cls_006"><span class="cls_006">// output is 10111</span></div>
+<div style="position:absolute;left:86.40px;top:659.71px" class="cls_003"><span class="cls_003">Learning to think recursively is an important aspect of learning to think like a</span></div>
+<div style="position:absolute;left:86.40px;top:674.88px" class="cls_003"><span class="cls_003">computer scientist. Many algorithms can be written concisely with recursive</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_003"><span class="cls_003">methods that perform computations on the way down, on the way up, or both.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:9624px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="5a20e108-5ad8-11e9-9d71-0cc47a792c0a_id_5a20e108-5ad8-11e9-9d71-0cc47a792c0a_files/background13.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">5.11</span></div>
+<div style="position:absolute;left:166.96px;top:88.65px" class="cls_003"><span class="cls_003">Vocabulary</span></div>
+<div style="position:absolute;left:512.15px;top:88.65px" class="cls_003"><span class="cls_003">79</span></div>
+<div style="position:absolute;left:129.60px;top:119.48px" class="cls_005"><span class="cls_005">5.11</span></div>
+<div style="position:absolute;left:183.40px;top:119.48px" class="cls_005"><span class="cls_005">Vocabulary</span></div>
+<div style="position:absolute;left:129.60px;top:155.33px" class="cls_003"><span class="cls_003">boolean: A data type with only two values,</span><span class="cls_004"> true</span><span class="cls_003"> and</span><span class="cls_004"> false</span><span class="cls_003">.</span></div>
+<div style="position:absolute;left:129.60px;top:184.80px" class="cls_003"><span class="cls_003">relational operator: An operator that compares two values and produces a</span></div>
+<div style="position:absolute;left:158.87px;top:199.96px" class="cls_004"><span class="cls_004">boolean</span><span class="cls_003"> indicating the relationship between them.</span></div>
+<div style="position:absolute;left:129.60px;top:229.43px" class="cls_003"><span class="cls_003">logical operator: An operator that combines boolean values and produces a</span></div>
+<div style="position:absolute;left:158.87px;top:244.60px" class="cls_003"><span class="cls_003">boolean value.</span></div>
+<div style="position:absolute;left:129.60px;top:274.06px" class="cls_003"><span class="cls_003">short circuit: A way of evaluating logical operators that only evaluates the</span></div>
+<div style="position:absolute;left:158.87px;top:289.23px" class="cls_003"><span class="cls_003">second operand if necessary.</span></div>
+<div style="position:absolute;left:129.60px;top:318.69px" class="cls_003"><span class="cls_003">De Morgan’s laws: Mathematical rules that show how to negate a logical</span></div>
+<div style="position:absolute;left:158.87px;top:333.86px" class="cls_003"><span class="cls_003">expression.</span></div>
+<div style="position:absolute;left:129.60px;top:363.32px" class="cls_003"><span class="cls_003">conditional statement: A statement that uses a condition to determine</span></div>
+<div style="position:absolute;left:158.87px;top:378.49px" class="cls_003"><span class="cls_003">which statements to execute.</span></div>
+<div style="position:absolute;left:129.60px;top:407.96px" class="cls_003"><span class="cls_003">branch: One of the alternative sets of statements inside a conditional state-</span></div>
+<div style="position:absolute;left:158.87px;top:423.12px" class="cls_003"><span class="cls_003">ment.</span></div>
+<div style="position:absolute;left:129.60px;top:452.59px" class="cls_003"><span class="cls_003">chaining: A way of joining several conditional statements in sequence.</span></div>
+<div style="position:absolute;left:129.60px;top:482.05px" class="cls_003"><span class="cls_003">nesting: Putting a conditional statement inside one or both branches of an-</span></div>
+<div style="position:absolute;left:158.87px;top:497.22px" class="cls_003"><span class="cls_003">other conditional statement.</span></div>
+<div style="position:absolute;left:129.60px;top:526.68px" class="cls_003"><span class="cls_003">flag: A variable (usually</span><span class="cls_004"> boolean</span><span class="cls_003">) that represents a condition or status.</span></div>
+<div style="position:absolute;left:129.60px;top:556.15px" class="cls_003"><span class="cls_003">recursion: The process of invoking (and restarting) the same method that is</span></div>
+<div style="position:absolute;left:158.87px;top:571.32px" class="cls_003"><span class="cls_003">currently executing.</span></div>
+<div style="position:absolute;left:129.60px;top:600.78px" class="cls_003"><span class="cls_003">recursive: A method that invokes itself, usually with different arguments.</span></div>
+<div style="position:absolute;left:129.60px;top:630.24px" class="cls_003"><span class="cls_003">base case: A condition that causes a recursive method not to make another</span></div>
+<div style="position:absolute;left:158.87px;top:645.41px" class="cls_003"><span class="cls_003">recursive call.</span></div>
+<div style="position:absolute;left:129.60px;top:674.88px" class="cls_003"><span class="cls_003">binary: A system that uses only zeros and ones to represent numbers. Also</span></div>
+<div style="position:absolute;left:158.87px;top:690.04px" class="cls_003"><span class="cls_003">known as “base 2”.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:10426px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="5a20e108-5ad8-11e9-9d71-0cc47a792c0a_id_5a20e108-5ad8-11e9-9d71-0cc47a792c0a_files/background14.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">80</span></div>
+<div style="position:absolute;left:278.48px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 5</span></div>
+<div style="position:absolute;left:351.19px;top:88.65px" class="cls_003"><span class="cls_003">Conditionals and logic</span></div>
+<div style="position:absolute;left:86.40px;top:119.48px" class="cls_005"><span class="cls_005">5.12</span></div>
+<div style="position:absolute;left:140.20px;top:119.48px" class="cls_005"><span class="cls_005">Exercises</span></div>
+<div style="position:absolute;left:86.40px;top:153.35px" class="cls_003"><span class="cls_003">The code for this chapter is in the ch05 directory of ThinkJavaCode.  See</span></div>
+<div style="position:absolute;left:86.40px;top:168.52px" class="cls_003"><span class="cls_003">page xv for instructions on how to download the repository. Before you start</span></div>
+<div style="position:absolute;left:86.40px;top:183.69px" class="cls_003"><span class="cls_003">the exercises, we recommend that you compile and run the examples.</span></div>
+<div style="position:absolute;left:86.40px;top:208.70px" class="cls_003"><span class="cls_003">If you have not already read Appendix A.6, now might be a good time.  It</span></div>
+<div style="position:absolute;left:86.40px;top:223.87px" class="cls_003"><span class="cls_003">describes the DrJava debugger, which is a useful tool for tracing the flow of</span></div>
+<div style="position:absolute;left:86.40px;top:239.03px" class="cls_003"><span class="cls_003">execution.</span></div>
+<div style="position:absolute;left:86.40px;top:266.16px" class="cls_003"><span class="cls_003">Exercise 5.1</span></div>
+<div style="position:absolute;left:168.79px;top:266.16px" class="cls_003"><span class="cls_003">Logical operators can simplify nested conditional statements.</span></div>
+<div style="position:absolute;left:86.40px;top:281.33px" class="cls_003"><span class="cls_003">For example, can you rewrite this code using a single</span><span class="cls_004"> if</span><span class="cls_003"> statement?</span></div>
+<div style="position:absolute;left:101.34px;top:305.10px" class="cls_004"><span class="cls_004">if</span><span class="cls_003"> (x > 0) {</span></div>
+<div style="position:absolute;left:125.95px;top:320.27px" class="cls_004"><span class="cls_004">if</span><span class="cls_003"> (x &lt; 10) {</span></div>
+<div style="position:absolute;left:150.56px;top:335.44px" class="cls_003"><span class="cls_003">System.out.println(</span><span class="cls_007">"positive single digit number."</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:125.95px;top:350.61px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:101.34px;top:365.78px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:391.58px" class="cls_003"><span class="cls_003">Exercise 5.2</span></div>
+<div style="position:absolute;left:168.74px;top:391.58px" class="cls_003"><span class="cls_003">For the following program:</span></div>
+<div style="position:absolute;left:100.71px;top:416.34px" class="cls_003"><span class="cls_003">1. Draw a stack diagram that shows the state of the program the second</span></div>
+<div style="position:absolute;left:115.67px;top:431.51px" class="cls_003"><span class="cls_003">time zoop is invoked.</span></div>
+<div style="position:absolute;left:100.71px;top:455.58px" class="cls_003"><span class="cls_003">2. What is the complete output?</span></div>
+<div style="position:absolute;left:101.34px;top:479.12px" class="cls_004"><span class="cls_004">public static void</span><span class="cls_003"> zoop(String fred,</span><span class="cls_004"> int</span><span class="cls_003"> bob) {</span></div>
+<div style="position:absolute;left:125.95px;top:494.29px" class="cls_003"><span class="cls_003">System.out.println(fred);</span></div>
+<div style="position:absolute;left:125.95px;top:509.45px" class="cls_004"><span class="cls_004">if</span><span class="cls_003"> (bob == 5) {</span></div>
+<div style="position:absolute;left:150.56px;top:524.62px" class="cls_003"><span class="cls_003">ping(</span><span class="cls_007">"not "</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:125.95px;top:539.79px" class="cls_003"><span class="cls_003">}</span><span class="cls_004"> else</span><span class="cls_003"> {</span></div>
+<div style="position:absolute;left:150.56px;top:554.96px" class="cls_003"><span class="cls_003">System.out.println(</span><span class="cls_007">"!"</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:125.95px;top:570.13px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:101.34px;top:585.29px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:101.34px;top:615.63px" class="cls_004"><span class="cls_004">public static void</span><span class="cls_003"> main(String[] args) {</span></div>
+<div style="position:absolute;left:125.95px;top:630.80px" class="cls_004"><span class="cls_004">int</span><span class="cls_003"> bizz = 5;</span></div>
+<div style="position:absolute;left:125.95px;top:645.97px" class="cls_004"><span class="cls_004">int</span><span class="cls_003"> buzz = 2;</span></div>
+<div style="position:absolute;left:125.95px;top:661.14px" class="cls_003"><span class="cls_003">zoop(</span><span class="cls_007">"just for"</span><span class="cls_003">, bizz);</span></div>
+<div style="position:absolute;left:125.95px;top:676.30px" class="cls_003"><span class="cls_003">clink(2 * buzz);</span></div>
+<div style="position:absolute;left:101.34px;top:691.47px" class="cls_003"><span class="cls_003">}</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:11228px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="5a20e108-5ad8-11e9-9d71-0cc47a792c0a_id_5a20e108-5ad8-11e9-9d71-0cc47a792c0a_files/background15.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">5.12</span></div>
+<div style="position:absolute;left:166.96px;top:88.65px" class="cls_003"><span class="cls_003">Exercises</span></div>
+<div style="position:absolute;left:512.16px;top:88.65px" class="cls_003"><span class="cls_003">81</span></div>
+<div style="position:absolute;left:144.54px;top:123.41px" class="cls_004"><span class="cls_004">public static void</span><span class="cls_003"> clink(</span><span class="cls_004">int</span><span class="cls_003"> fork) {</span></div>
+<div style="position:absolute;left:169.15px;top:138.57px" class="cls_003"><span class="cls_003">System.out.print(</span><span class="cls_007">"It</span><span class="cls_010">'</span><span class="cls_007">s "</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:169.15px;top:153.74px" class="cls_003"><span class="cls_003">zoop(</span><span class="cls_007">"breakfast "</span><span class="cls_003">, fork);</span></div>
+<div style="position:absolute;left:144.54px;top:168.91px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:144.54px;top:199.25px" class="cls_004"><span class="cls_004">public static void</span><span class="cls_003"> ping(String strangStrung) {</span></div>
+<div style="position:absolute;left:169.15px;top:214.41px" class="cls_003"><span class="cls_003">System.out.println(</span><span class="cls_007">"any "</span><span class="cls_003"> + strangStrung +</span><span class="cls_007"> "more "</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:144.54px;top:229.58px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:255.39px" class="cls_003"><span class="cls_003">Exercise 5.3</span></div>
+<div style="position:absolute;left:211.85px;top:255.39px" class="cls_003"><span class="cls_003">Draw a stack diagram that shows the state of the program in</span></div>
+<div style="position:absolute;left:129.60px;top:270.56px" class="cls_003"><span class="cls_003">Section 5.8 after main invokes nLines with the parameter n == 4, just before</span></div>
+<div style="position:absolute;left:129.60px;top:285.72px" class="cls_003"><span class="cls_003">the last invocation of nLines returns.</span></div>
+<div style="position:absolute;left:129.60px;top:312.85px" class="cls_003"><span class="cls_003">Exercise 5.4</span></div>
+<div style="position:absolute;left:212.84px;top:312.85px" class="cls_003"><span class="cls_003">Fermat’s Last Theorem says that there are no integers a, b,</span></div>
+<div style="position:absolute;left:129.60px;top:327.66px" class="cls_003"><span class="cls_003">and c such that a</span><span class="cls_011"><sup>n</sup></span><span class="cls_003"> + b</span><span class="cls_011"><sup>n</sup></span><span class="cls_003"> = c</span><span class="cls_011"><sup>n</sup></span><span class="cls_003">, except when n ≤ 2.</span></div>
+<div style="position:absolute;left:129.60px;top:355.70px" class="cls_003"><span class="cls_003">Write a method named checkFermat that takes four integers as parameters -</span></div>
+<div style="position:absolute;left:129.60px;top:370.87px" class="cls_003"><span class="cls_003">a, b, c and n - and checks to see if Fermat’s theorem holds.  If n is greater</span></div>
+<div style="position:absolute;left:129.60px;top:385.68px" class="cls_003"><span class="cls_003">than 2 and a</span><span class="cls_011"><sup>n</sup></span><span class="cls_003"> + b</span><span class="cls_011"><sup>n</sup></span><span class="cls_003">  = c</span><span class="cls_011"><sup>n</sup></span><span class="cls_003">, the program should display “Holy smokes, Fermat</span></div>
+<div style="position:absolute;left:129.60px;top:401.20px" class="cls_003"><span class="cls_003">was wrong!” Otherwise the program should display “No, that doesn’t work.”</span></div>
+<div style="position:absolute;left:129.60px;top:428.89px" class="cls_003"><span class="cls_003">Hint: You may want to use Math.pow.</span></div>
+<div style="position:absolute;left:129.60px;top:456.01px" class="cls_003"><span class="cls_003">Exercise 5.5</span></div>
+<div style="position:absolute;left:212.73px;top:456.01px" class="cls_003"><span class="cls_003">The purpose of this exercise is to take a problem and break</span></div>
+<div style="position:absolute;left:129.60px;top:471.18px" class="cls_003"><span class="cls_003">it into smaller problems, and to solve the smaller problems by writing simple</span></div>
+<div style="position:absolute;left:129.60px;top:486.34px" class="cls_003"><span class="cls_003">methods. Consider the first verse of the song “99 Bottles of Beer”:</span></div>
+<div style="position:absolute;left:158.87px;top:518.85px" class="cls_003"><span class="cls_003">99 bottles of beer on the wall,</span></div>
+<div style="position:absolute;left:158.87px;top:534.02px" class="cls_003"><span class="cls_003">99 bottles of beer,</span></div>
+<div style="position:absolute;left:158.87px;top:549.19px" class="cls_003"><span class="cls_003">ya’ take one down, ya’ pass it around,</span></div>
+<div style="position:absolute;left:158.87px;top:564.36px" class="cls_003"><span class="cls_003">98 bottles of beer on the wall.</span></div>
+<div style="position:absolute;left:129.60px;top:596.86px" class="cls_003"><span class="cls_003">Subsequent verses are identical except that the number of bottles gets smaller</span></div>
+<div style="position:absolute;left:129.60px;top:612.03px" class="cls_003"><span class="cls_003">by one in each verse, until the last verse:</span></div>
+<div style="position:absolute;left:158.87px;top:644.54px" class="cls_003"><span class="cls_003">No bottles of beer on the wall,</span></div>
+<div style="position:absolute;left:158.87px;top:659.71px" class="cls_003"><span class="cls_003">no bottles of beer,</span></div>
+<div style="position:absolute;left:158.87px;top:674.88px" class="cls_003"><span class="cls_003">ya’ can’t take one down, ya’ can’t pass it around,</span></div>
+<div style="position:absolute;left:158.87px;top:690.04px" class="cls_003"><span class="cls_003">’cause there are no more bottles of beer on the wall!</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:12030px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="5a20e108-5ad8-11e9-9d71-0cc47a792c0a_id_5a20e108-5ad8-11e9-9d71-0cc47a792c0a_files/background16.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">82</span></div>
+<div style="position:absolute;left:278.48px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 5</span></div>
+<div style="position:absolute;left:351.19px;top:88.65px" class="cls_003"><span class="cls_003">Conditionals and logic</span></div>
+<div style="position:absolute;left:86.40px;top:124.74px" class="cls_003"><span class="cls_003">And then the song (finally) ends.</span></div>
+<div style="position:absolute;left:86.40px;top:152.83px" class="cls_003"><span class="cls_003">Write a program that displays the entire lyrics of “99 Bottles of Beer”. Your</span></div>
+<div style="position:absolute;left:86.40px;top:168.00px" class="cls_003"><span class="cls_003">program should include a recursive method that does the hard part, but you</span></div>
+<div style="position:absolute;left:86.40px;top:183.17px" class="cls_003"><span class="cls_003">might want to write additional methods to separate other parts of the program.</span></div>
+<div style="position:absolute;left:86.40px;top:198.33px" class="cls_003"><span class="cls_003">As you develop your code, test it with a small number of verses, like 3.</span></div>
+<div style="position:absolute;left:86.40px;top:225.46px" class="cls_003"><span class="cls_003">Exercise 5.6</span></div>
+<div style="position:absolute;left:168.18px;top:225.46px" class="cls_003"><span class="cls_003">This exercise reviews the flow of execution through a program</span></div>
+<div style="position:absolute;left:86.40px;top:240.62px" class="cls_003"><span class="cls_003">with multiple methods. Read the following code and answer the questions.</span></div>
+<div style="position:absolute;left:101.34px;top:267.48px" class="cls_004"><span class="cls_004">public class</span><span class="cls_003"> Buzz {</span></div>
+<div style="position:absolute;left:125.95px;top:297.82px" class="cls_004"><span class="cls_004">public static void</span><span class="cls_003"> baffle(String blimp) {</span></div>
+<div style="position:absolute;left:150.56px;top:312.99px" class="cls_003"><span class="cls_003">System.out.println(blimp);</span></div>
+<div style="position:absolute;left:150.56px;top:328.15px" class="cls_003"><span class="cls_003">zippo(</span><span class="cls_007">"ping"</span><span class="cls_003">, -5);</span></div>
+<div style="position:absolute;left:125.95px;top:343.32px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:125.95px;top:373.66px" class="cls_004"><span class="cls_004">public static void</span><span class="cls_003"> zippo(String quince,</span><span class="cls_004"> int</span><span class="cls_003"> flag) {</span></div>
+<div style="position:absolute;left:150.56px;top:388.83px" class="cls_004"><span class="cls_004">if</span><span class="cls_003"> (flag &lt; 0) {</span></div>
+<div style="position:absolute;left:175.17px;top:403.99px" class="cls_003"><span class="cls_003">System.out.println(quince +</span><span class="cls_007"> " zoop"</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:150.56px;top:419.16px" class="cls_003"><span class="cls_003">}</span><span class="cls_004"> else</span><span class="cls_003"> {</span></div>
+<div style="position:absolute;left:175.17px;top:434.33px" class="cls_003"><span class="cls_003">System.out.println(</span><span class="cls_007">"ik"</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:175.17px;top:449.50px" class="cls_003"><span class="cls_003">baffle(quince);</span></div>
+<div style="position:absolute;left:175.17px;top:464.67px" class="cls_003"><span class="cls_003">System.out.println(</span><span class="cls_007">"boo-wa-ha-ha"</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:150.56px;top:479.83px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:125.95px;top:495.00px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:125.95px;top:525.34px" class="cls_004"><span class="cls_004">public static void</span><span class="cls_003"> main(String[] args) {</span></div>
+<div style="position:absolute;left:150.56px;top:540.51px" class="cls_003"><span class="cls_003">zippo(</span><span class="cls_007">"rattle"</span><span class="cls_003">, 13);</span></div>
+<div style="position:absolute;left:125.95px;top:555.68px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:101.34px;top:586.01px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:100.71px;top:618.21px" class="cls_003"><span class="cls_003">1.</span></div>
+<div style="position:absolute;left:115.67px;top:618.21px" class="cls_003"><span class="cls_003">Write the number 1 next to the first line of code in this program that</span></div>
+<div style="position:absolute;left:115.67px;top:633.37px" class="cls_003"><span class="cls_003">will execute.</span></div>
+<div style="position:absolute;left:100.71px;top:659.71px" class="cls_003"><span class="cls_003">2.</span></div>
+<div style="position:absolute;left:115.67px;top:659.71px" class="cls_003"><span class="cls_003">Write the number 2 next to the second line of code, and so on until the</span></div>
+<div style="position:absolute;left:115.67px;top:674.88px" class="cls_003"><span class="cls_003">end of the program. If a line is executed more than once, it might end</span></div>
+<div style="position:absolute;left:115.67px;top:690.04px" class="cls_003"><span class="cls_003">up with more than one number next to it.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:12832px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="5a20e108-5ad8-11e9-9d71-0cc47a792c0a_id_5a20e108-5ad8-11e9-9d71-0cc47a792c0a_files/background17.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">5.12</span></div>
+<div style="position:absolute;left:166.96px;top:88.65px" class="cls_003"><span class="cls_003">Exercises</span></div>
+<div style="position:absolute;left:512.16px;top:88.65px" class="cls_003"><span class="cls_003">83</span></div>
+<div style="position:absolute;left:143.91px;top:124.74px" class="cls_003"><span class="cls_003">3. What is the value of the parameter blimp when baffle gets invoked?</span></div>
+<div style="position:absolute;left:143.91px;top:149.87px" class="cls_003"><span class="cls_003">4. What is the output of this program?</span></div>
+<div style="position:absolute;left:129.60px;top:177.00px" class="cls_003"><span class="cls_003">Exercise 5.7</span></div>
+<div style="position:absolute;left:211.81px;top:177.00px" class="cls_003"><span class="cls_003">Now that we have conditional statements, we can get back to</span></div>
+<div style="position:absolute;left:129.60px;top:192.17px" class="cls_003"><span class="cls_003">the “Guess My Number” game from Exercise 3.4.</span></div>
+<div style="position:absolute;left:129.60px;top:219.29px" class="cls_003"><span class="cls_003">You should already have a program that chooses a random number, prompts</span></div>
+<div style="position:absolute;left:129.60px;top:234.46px" class="cls_003"><span class="cls_003">the user to guess it, and displays the difference between the guess and the</span></div>
+<div style="position:absolute;left:129.60px;top:249.63px" class="cls_003"><span class="cls_003">chosen number.</span></div>
+<div style="position:absolute;left:129.60px;top:276.75px" class="cls_003"><span class="cls_003">Adding a small amount of code at a time, and testing as you go, modify the</span></div>
+<div style="position:absolute;left:129.60px;top:291.92px" class="cls_003"><span class="cls_003">program so it tells the user whether the guess is too high or too low, and then</span></div>
+<div style="position:absolute;left:129.60px;top:307.08px" class="cls_003"><span class="cls_003">prompts the user for another guess.</span></div>
+<div style="position:absolute;left:129.60px;top:334.21px" class="cls_003"><span class="cls_003">The program should continue until the user gets it right.  Hint:  Use two</span></div>
+<div style="position:absolute;left:129.60px;top:349.38px" class="cls_003"><span class="cls_003">methods, and make one of them recursive.</span></div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,619 @@
+<html>
+<head><meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<style type="text/css">
+<!--
+span.cls_002{font-family:Arial,serif;font-size:24.8px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_002{font-family:Arial,serif;font-size:24.8px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_003{font-family:Arial,serif;font-size:12.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_003{font-family:Arial,serif;font-size:12.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_004{font-family:Arial,serif;font-size:12.0px;color:rgb(0,0,255);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_004{font-family:Arial,serif;font-size:12.0px;color:rgb(0,0,255);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_005{font-family:Arial,serif;font-size:17.3px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_005{font-family:Arial,serif;font-size:17.3px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_006{font-family:Arial,serif;font-size:12.0px;color:rgb(178,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_006{font-family:Arial,serif;font-size:12.0px;color:rgb(178,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_007{font-family:Times,serif;font-size:8.1px;color:rgb(178,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_007{font-family:Times,serif;font-size:8.1px;color:rgb(178,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_008{font-family:Arial,serif;font-size:12.0px;color:rgb(0,123,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_008{font-family:Arial,serif;font-size:12.0px;color:rgb(0,123,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_009{font-family:Times,serif;font-size:8.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_009{font-family:Times,serif;font-size:8.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_010{font-family:Arial,serif;font-size:10.9px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_010{font-family:Arial,serif;font-size:10.9px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_011{font-family:Arial,serif;font-size:10.9px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: none}
+div.cls_011{font-family:Arial,serif;font-size:10.9px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: none}
+span.cls_012{font-family:Arial,serif;font-size:9.9px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_012{font-family:Arial,serif;font-size:9.9px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_013{font-family:Arial,serif;font-size:8.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_013{font-family:Arial,serif;font-size:8.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_014{font-family:Arial,serif;font-size:7.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_014{font-family:Arial,serif;font-size:7.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_015{font-family:Arial,serif;font-size:10.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_015{font-family:Arial,serif;font-size:10.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+-->
+</style>
+<script type="text/javascript" src="1ec315de-5ada-11e9-9d71-0cc47a792c0a_id_1ec315de-5ada-11e9-9d71-0cc47a792c0a_files/wz_jsgraphics.js"></script>
+</head>
+<body>
+<div style="position:absolute;left:50%;margin-left:-306px;top:0px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="1ec315de-5ada-11e9-9d71-0cc47a792c0a_id_1ec315de-5ada-11e9-9d71-0cc47a792c0a_files/background01.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:205.05px" class="cls_002"><span class="cls_002">Chapter 9</span></div>
+<div style="position:absolute;left:129.60px;top:268.31px" class="cls_002"><span class="cls_002">Strings and things</span></div>
+<div style="position:absolute;left:129.60px;top:348.10px" class="cls_003"><span class="cls_003">In Java and other object-oriented languages, an object is a collection of data</span></div>
+<div style="position:absolute;left:129.60px;top:363.27px" class="cls_003"><span class="cls_003">that provides a set of methods.  For example, Scanner, which we saw in</span></div>
+<div style="position:absolute;left:129.60px;top:378.44px" class="cls_003"><span class="cls_003">Section 3.2, is an object that provides methods for parsing input. System.out</span></div>
+<div style="position:absolute;left:129.60px;top:393.61px" class="cls_003"><span class="cls_003">and System.in are also objects.</span></div>
+<div style="position:absolute;left:129.60px;top:420.72px" class="cls_003"><span class="cls_003">Strings are objects, too. They contain characters and provide methods for ma-</span></div>
+<div style="position:absolute;left:129.60px;top:435.89px" class="cls_003"><span class="cls_003">nipulating character data. We explore some of those methods in this chapter.</span></div>
+<div style="position:absolute;left:129.60px;top:463.00px" class="cls_003"><span class="cls_003">Not everything in Java is an object:</span><span class="cls_004"> int</span><span class="cls_003">,</span><span class="cls_004"> double</span><span class="cls_003">, and</span><span class="cls_004"> boolean</span><span class="cls_003"> are so-called</span></div>
+<div style="position:absolute;left:129.60px;top:478.17px" class="cls_003"><span class="cls_003">primitive types. We will explain some of the differences between object types</span></div>
+<div style="position:absolute;left:129.60px;top:493.34px" class="cls_003"><span class="cls_003">and primitive types as we go along.</span></div>
+<div style="position:absolute;left:129.60px;top:541.05px" class="cls_005"><span class="cls_005">9.1</span></div>
+<div style="position:absolute;left:173.71px;top:541.05px" class="cls_005"><span class="cls_005">Characters</span></div>
+<div style="position:absolute;left:129.60px;top:577.03px" class="cls_003"><span class="cls_003">Strings provide a method named charAt, which extracts a character. It returns</span></div>
+<div style="position:absolute;left:129.60px;top:592.20px" class="cls_003"><span class="cls_003">a</span><span class="cls_004"> char</span><span class="cls_003">, a primitive type that stores an individual character (as opposed to</span></div>
+<div style="position:absolute;left:129.60px;top:607.37px" class="cls_003"><span class="cls_003">strings of them).</span></div>
+<div style="position:absolute;left:144.54px;top:633.91px" class="cls_003"><span class="cls_003">String fruit =</span><span class="cls_006"> "banana"</span><span class="cls_003">;</span></div>
+<div style="position:absolute;left:144.54px;top:649.08px" class="cls_004"><span class="cls_004">char</span><span class="cls_003"> letter = fruit.charAt(0);</span></div>
+<div style="position:absolute;left:129.60px;top:674.88px" class="cls_003"><span class="cls_003">The argument 0 means that we want the letter at position 0.  Like array</span></div>
+<div style="position:absolute;left:129.60px;top:690.04px" class="cls_003"><span class="cls_003">indexes, string indexes start at 0, so the character assigned to letter is b.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:802px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="1ec315de-5ada-11e9-9d71-0cc47a792c0a_id_1ec315de-5ada-11e9-9d71-0cc47a792c0a_files/background02.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">140</span></div>
+<div style="position:absolute;left:301.86px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 9</span></div>
+<div style="position:absolute;left:374.58px;top:88.65px" class="cls_003"><span class="cls_003">Strings and things</span></div>
+<div style="position:absolute;left:86.40px;top:124.74px" class="cls_003"><span class="cls_003">Characters work like the other primitive types we have seen. You can compare</span></div>
+<div style="position:absolute;left:86.40px;top:139.91px" class="cls_003"><span class="cls_003">them using relational operators:</span></div>
+<div style="position:absolute;left:101.34px;top:172.30px" class="cls_004"><span class="cls_004">if</span><span class="cls_003"> (letter ==</span><span class="cls_007"> '</span><span class="cls_006">a</span><span class="cls_007">'</span><span class="cls_003">) {</span></div>
+<div style="position:absolute;left:125.95px;top:187.46px" class="cls_003"><span class="cls_003">System.out.println(</span><span class="cls_007">'</span><span class="cls_006">?</span><span class="cls_007">'</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:101.34px;top:202.63px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:234.93px" class="cls_003"><span class="cls_003">Character literals, like</span><span class="cls_007"> '</span><span class="cls_006">a</span><span class="cls_007">'</span><span class="cls_003">, appear in single quotes.  Unlike string literals,</span></div>
+<div style="position:absolute;left:86.40px;top:250.10px" class="cls_003"><span class="cls_003">which appear in double quotes, character literals can only contain a single</span></div>
+<div style="position:absolute;left:86.40px;top:265.27px" class="cls_003"><span class="cls_003">character.  Escape sequences, like</span><span class="cls_007"> '</span><span class="cls_006">\t</span><span class="cls_007">'</span><span class="cls_003">, are legal because they represent a</span></div>
+<div style="position:absolute;left:86.40px;top:280.43px" class="cls_003"><span class="cls_003">single character.</span></div>
+<div style="position:absolute;left:86.40px;top:314.05px" class="cls_003"><span class="cls_003">The increment and decrement operators work with characters.  So this loop</span></div>
+<div style="position:absolute;left:86.40px;top:329.22px" class="cls_003"><span class="cls_003">displays the letters of the alphabet:</span></div>
+<div style="position:absolute;left:101.34px;top:361.60px" class="cls_003"><span class="cls_003">System.out.print(</span><span class="cls_006">"Roman alphabet: "</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:101.34px;top:376.77px" class="cls_004"><span class="cls_004">for</span><span class="cls_003"> (</span><span class="cls_004">char</span><span class="cls_003"> c =</span><span class="cls_007"> '</span><span class="cls_006">A</span><span class="cls_007">'</span><span class="cls_003">; c &lt;=</span><span class="cls_007"> '</span><span class="cls_006">Z</span><span class="cls_007">'</span><span class="cls_003">; c++) {</span></div>
+<div style="position:absolute;left:125.95px;top:391.94px" class="cls_003"><span class="cls_003">System.out.print(c);</span></div>
+<div style="position:absolute;left:101.34px;top:407.11px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:101.34px;top:422.27px" class="cls_003"><span class="cls_003">System.out.println();</span></div>
+<div style="position:absolute;left:86.40px;top:454.57px" class="cls_003"><span class="cls_003">Java uses Unicode to represent characters, so strings can store text in other</span></div>
+<div style="position:absolute;left:86.40px;top:469.74px" class="cls_003"><span class="cls_003">alphabets like Cyrillic and Greek, and non-alphabetic languages like Chinese.</span></div>
+<div style="position:absolute;left:86.40px;top:484.91px" class="cls_003"><span class="cls_003">You can read more about it at</span><span class="cls_004"> <A HREF="http://unicode.org/">http://unicode.org/</A> </span><span class="cls_003">.</span></div>
+<div style="position:absolute;left:86.40px;top:518.52px" class="cls_003"><span class="cls_003">In Unicode, each character is represented by a “code unit”, which you can</span></div>
+<div style="position:absolute;left:86.40px;top:533.69px" class="cls_003"><span class="cls_003">think of as an integer.  The code units for uppercase Greek letters run from</span></div>
+<div style="position:absolute;left:86.40px;top:548.86px" class="cls_003"><span class="cls_003">913 to 937, so we can display the Greek alphabet like this:</span></div>
+<div style="position:absolute;left:101.34px;top:581.24px" class="cls_003"><span class="cls_003">System.out.print(</span><span class="cls_006">"Greek alphabet: "</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:101.34px;top:596.41px" class="cls_004"><span class="cls_004">for</span><span class="cls_003"> (</span><span class="cls_004">int</span><span class="cls_003"> i = 913; i &lt;= 937; i++) {</span></div>
+<div style="position:absolute;left:125.95px;top:611.58px" class="cls_003"><span class="cls_003">System.out.print((</span><span class="cls_004">char</span><span class="cls_003">) i);</span></div>
+<div style="position:absolute;left:101.34px;top:626.75px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:101.34px;top:641.92px" class="cls_003"><span class="cls_003">System.out.println();</span></div>
+<div style="position:absolute;left:86.40px;top:674.88px" class="cls_003"><span class="cls_003">This example uses a type cast to convert each integer (in the range) to the</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_003"><span class="cls_003">corresponding character.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:1604px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="1ec315de-5ada-11e9-9d71-0cc47a792c0a_id_1ec315de-5ada-11e9-9d71-0cc47a792c0a_files/background03.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">9.2</span></div>
+<div style="position:absolute;left:160.24px;top:88.65px" class="cls_003"><span class="cls_003">Strings are immutable</span></div>
+<div style="position:absolute;left:505.43px;top:88.65px" class="cls_003"><span class="cls_003">141</span></div>
+<div style="position:absolute;left:129.60px;top:119.48px" class="cls_005"><span class="cls_005">9.2</span></div>
+<div style="position:absolute;left:173.71px;top:119.48px" class="cls_005"><span class="cls_005">Strings are immutable</span></div>
+<div style="position:absolute;left:129.60px;top:157.05px" class="cls_003"><span class="cls_003">Strings provide methods, toUpperCase and toLowerCase, that convert from</span></div>
+<div style="position:absolute;left:129.60px;top:172.22px" class="cls_003"><span class="cls_003">uppercase to lowercase and back. These methods are often a source of confu-</span></div>
+<div style="position:absolute;left:129.60px;top:187.39px" class="cls_003"><span class="cls_003">sion, because it sounds like they modify strings.  But neither these methods</span></div>
+<div style="position:absolute;left:129.60px;top:202.56px" class="cls_003"><span class="cls_003">nor any others can change a string, because strings are immutable.</span></div>
+<div style="position:absolute;left:129.60px;top:230.94px" class="cls_003"><span class="cls_003">When you invoke toUpperCase on a string, you get a new string object as a</span></div>
+<div style="position:absolute;left:129.60px;top:246.10px" class="cls_003"><span class="cls_003">return value. For example:</span></div>
+<div style="position:absolute;left:144.54px;top:273.26px" class="cls_003"><span class="cls_003">String name =</span><span class="cls_006"> "Alan Turing"</span><span class="cls_003">;</span></div>
+<div style="position:absolute;left:144.54px;top:288.42px" class="cls_003"><span class="cls_003">String upperName = name.toUpperCase();</span></div>
+<div style="position:absolute;left:129.60px;top:315.48px" class="cls_003"><span class="cls_003">After these statements run, upperName refers to the string</span><span class="cls_006"> "ALAN TURING"</span><span class="cls_003">.</span></div>
+<div style="position:absolute;left:129.60px;top:330.65px" class="cls_003"><span class="cls_003">But name still refers to</span><span class="cls_006"> "Alan Turing"</span><span class="cls_003">.</span></div>
+<div style="position:absolute;left:129.60px;top:359.03px" class="cls_003"><span class="cls_003">Another useful method is replace, which finds and replaces instances of one</span></div>
+<div style="position:absolute;left:129.60px;top:374.20px" class="cls_003"><span class="cls_003">string within another. This example replaces</span><span class="cls_006"> "Computer Science"</span><span class="cls_003"> with</span><span class="cls_006"> "CS"</span><span class="cls_003">:</span></div>
+<div style="position:absolute;left:144.54px;top:401.68px" class="cls_003"><span class="cls_003">String text =</span><span class="cls_006"> "Computer Science is fun!"</span><span class="cls_003">;</span></div>
+<div style="position:absolute;left:144.54px;top:416.85px" class="cls_003"><span class="cls_003">text = text.replace(</span><span class="cls_006">"Computer Science"</span><span class="cls_003">,</span><span class="cls_006"> "CS"</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:129.60px;top:443.91px" class="cls_003"><span class="cls_003">This example demonstrates a common way to work with string methods. It in-</span></div>
+<div style="position:absolute;left:129.60px;top:459.08px" class="cls_003"><span class="cls_003">vokes text.replace, which returns a reference to a new string,</span><span class="cls_006"> "CS is fun!"</span><span class="cls_003">.</span></div>
+<div style="position:absolute;left:129.60px;top:474.25px" class="cls_003"><span class="cls_003">Then it assigns the new string to text, replacing the old string.</span></div>
+<div style="position:absolute;left:129.60px;top:502.63px" class="cls_003"><span class="cls_003">This assignment is important; if you don’t save the return value, invoking</span></div>
+<div style="position:absolute;left:129.60px;top:517.80px" class="cls_003"><span class="cls_003">text.replace has no effect.</span></div>
+<div style="position:absolute;left:129.60px;top:568.40px" class="cls_005"><span class="cls_005">9.3</span></div>
+<div style="position:absolute;left:173.71px;top:568.40px" class="cls_005"><span class="cls_005">String traversal</span></div>
+<div style="position:absolute;left:129.60px;top:605.97px" class="cls_003"><span class="cls_003">The following loop traverses the characters in fruit and displays them, one</span></div>
+<div style="position:absolute;left:129.60px;top:621.14px" class="cls_003"><span class="cls_003">on each line:</span></div>
+<div style="position:absolute;left:144.54px;top:645.97px" class="cls_004"><span class="cls_004">for</span><span class="cls_003"> (</span><span class="cls_004">int</span><span class="cls_003"> i = 0; i &lt; fruit.length(); i++) {</span></div>
+<div style="position:absolute;left:169.15px;top:661.14px" class="cls_004"><span class="cls_004">char</span><span class="cls_003"> letter = fruit.charAt(i);</span></div>
+<div style="position:absolute;left:169.15px;top:676.30px" class="cls_003"><span class="cls_003">System.out.println(letter);</span></div>
+<div style="position:absolute;left:144.54px;top:691.47px" class="cls_003"><span class="cls_003">}</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:2406px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="1ec315de-5ada-11e9-9d71-0cc47a792c0a_id_1ec315de-5ada-11e9-9d71-0cc47a792c0a_files/background04.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">142</span></div>
+<div style="position:absolute;left:301.86px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 9</span></div>
+<div style="position:absolute;left:374.58px;top:88.65px" class="cls_003"><span class="cls_003">Strings and things</span></div>
+<div style="position:absolute;left:86.40px;top:124.74px" class="cls_003"><span class="cls_003">Strings provide a method called length that returns the number of characters</span></div>
+<div style="position:absolute;left:86.40px;top:139.91px" class="cls_003"><span class="cls_003">in the string.  Because it is a method, you have to invoke it with the empty</span></div>
+<div style="position:absolute;left:86.40px;top:155.08px" class="cls_003"><span class="cls_003">argument list, ().</span></div>
+<div style="position:absolute;left:86.40px;top:180.74px" class="cls_003"><span class="cls_003">The condition is i &lt; fruit.length(), which means that when i is equal to</span></div>
+<div style="position:absolute;left:86.40px;top:195.91px" class="cls_003"><span class="cls_003">the length of the string, the condition is</span><span class="cls_004"> false</span><span class="cls_003"> and the loop terminates.</span></div>
+<div style="position:absolute;left:86.40px;top:221.57px" class="cls_003"><span class="cls_003">Unfortunately, the enhanced</span><span class="cls_004"> for</span><span class="cls_003"> loop does not work with strings.  But you</span></div>
+<div style="position:absolute;left:86.40px;top:236.74px" class="cls_003"><span class="cls_003">can convert any string to a character array and iterate that:</span></div>
+<div style="position:absolute;left:101.34px;top:261.18px" class="cls_004"><span class="cls_004">for</span><span class="cls_003"> (</span><span class="cls_004">char</span><span class="cls_003"> letter : fruit.toCharArray()) {</span></div>
+<div style="position:absolute;left:125.95px;top:276.34px" class="cls_003"><span class="cls_003">System.out.println(letter);</span></div>
+<div style="position:absolute;left:101.34px;top:291.51px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:315.86px" class="cls_003"><span class="cls_003">To find the last letter of a string, you might be tempted to try something like:</span></div>
+<div style="position:absolute;left:101.34px;top:340.29px" class="cls_004"><span class="cls_004">int</span><span class="cls_003"> length = fruit.length();</span></div>
+<div style="position:absolute;left:101.34px;top:355.46px" class="cls_004"><span class="cls_004">char</span><span class="cls_003"> last = fruit.charAt(length);</span></div>
+<div style="position:absolute;left:341.27px;top:355.46px" class="cls_008"><span class="cls_008">// wrong!</span></div>
+<div style="position:absolute;left:86.40px;top:379.80px" class="cls_003"><span class="cls_003">This code compiles and runs,  but invoking the charAt method throws a</span></div>
+<div style="position:absolute;left:86.40px;top:394.97px" class="cls_003"><span class="cls_003">StringIndexOutOfBoundsException.  The problem is that there is no sixth</span></div>
+<div style="position:absolute;left:86.40px;top:410.14px" class="cls_003"><span class="cls_003">letter in</span><span class="cls_006"> "banana"</span><span class="cls_003">. Since we started counting at 0, the 6 letters are indexed</span></div>
+<div style="position:absolute;left:86.40px;top:425.31px" class="cls_003"><span class="cls_003">from 0 to 5. To get the last character, you have to subtract 1 from length.</span></div>
+<div style="position:absolute;left:101.34px;top:450.07px" class="cls_004"><span class="cls_004">int</span><span class="cls_003"> length = fruit.length();</span></div>
+<div style="position:absolute;left:101.34px;top:465.24px" class="cls_004"><span class="cls_004">char</span><span class="cls_003"> last = fruit.charAt(length - 1);</span></div>
+<div style="position:absolute;left:341.28px;top:465.24px" class="cls_008"><span class="cls_008">// correct</span></div>
+<div style="position:absolute;left:86.40px;top:489.59px" class="cls_003"><span class="cls_003">Many string traversals involve reading one string and creating another.  For</span></div>
+<div style="position:absolute;left:86.40px;top:504.75px" class="cls_003"><span class="cls_003">example, to reverse a string, we simply add one character at a time:</span></div>
+<div style="position:absolute;left:101.34px;top:529.19px" class="cls_004"><span class="cls_004">public static</span><span class="cls_003"> String reverse(String s) {</span></div>
+<div style="position:absolute;left:125.95px;top:544.36px" class="cls_003"><span class="cls_003">String r =</span><span class="cls_006"> ""</span><span class="cls_003">;</span></div>
+<div style="position:absolute;left:125.95px;top:559.52px" class="cls_004"><span class="cls_004">for</span><span class="cls_003"> (</span><span class="cls_004">int</span><span class="cls_003"> i = s.length() - 1; i >= 0; i--) {</span></div>
+<div style="position:absolute;left:150.56px;top:574.69px" class="cls_003"><span class="cls_003">r = r + s.charAt(i);</span></div>
+<div style="position:absolute;left:125.95px;top:589.86px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:125.95px;top:605.03px" class="cls_004"><span class="cls_004">return</span><span class="cls_003"> r;</span></div>
+<div style="position:absolute;left:101.34px;top:620.20px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:644.54px" class="cls_003"><span class="cls_003">The initial value of r is</span><span class="cls_006"> ""</span><span class="cls_003">, which is the empty string.  The loop traverses</span></div>
+<div style="position:absolute;left:86.40px;top:659.71px" class="cls_003"><span class="cls_003">the letters of s in reverse order. Each time through the loop, it creates a new</span></div>
+<div style="position:absolute;left:86.40px;top:674.88px" class="cls_003"><span class="cls_003">string and assigns it to r. When the loop exits, r contains the letters from s</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_003"><span class="cls_003">in reverse order. So the result of reverse(</span><span class="cls_006">"banana"</span><span class="cls_003">) is</span><span class="cls_006"> "ananab"</span><span class="cls_003">.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:3208px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="1ec315de-5ada-11e9-9d71-0cc47a792c0a_id_1ec315de-5ada-11e9-9d71-0cc47a792c0a_files/background05.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">9.4</span></div>
+<div style="position:absolute;left:160.24px;top:88.65px" class="cls_003"><span class="cls_003">Substrings</span></div>
+<div style="position:absolute;left:505.42px;top:88.65px" class="cls_003"><span class="cls_003">143</span></div>
+<div style="position:absolute;left:129.60px;top:119.48px" class="cls_005"><span class="cls_005">9.4</span></div>
+<div style="position:absolute;left:173.71px;top:119.48px" class="cls_005"><span class="cls_005">Substrings</span></div>
+<div style="position:absolute;left:129.60px;top:158.27px" class="cls_003"><span class="cls_003">The substring method returns a new string that copies letters from an exist-</span></div>
+<div style="position:absolute;left:129.60px;top:173.44px" class="cls_003"><span class="cls_003">ing string, starting at the given index.</span></div>
+<div style="position:absolute;left:147.16px;top:210.11px" class="cls_009"><span class="cls_009"></span><span class="cls_003"> fruit.substring(0) returns</span><span class="cls_006"> "banana"</span></div>
+<div style="position:absolute;left:147.16px;top:238.02px" class="cls_009"><span class="cls_009"></span><span class="cls_003"> fruit.substring(2) returns</span><span class="cls_006"> "nana"</span></div>
+<div style="position:absolute;left:147.16px;top:265.93px" class="cls_009"><span class="cls_009"></span><span class="cls_003"> fruit.substring(6) returns</span><span class="cls_006"> ""</span></div>
+<div style="position:absolute;left:129.60px;top:302.60px" class="cls_003"><span class="cls_003">The first example returns a copy of the entire string.  The second example</span></div>
+<div style="position:absolute;left:129.60px;top:317.77px" class="cls_003"><span class="cls_003">returns all but the first two characters. As the last example shows, substring</span></div>
+<div style="position:absolute;left:129.60px;top:332.94px" class="cls_003"><span class="cls_003">returns the empty string if the argument is the length of the string.</span></div>
+<div style="position:absolute;left:129.60px;top:362.29px" class="cls_003"><span class="cls_003">To visualize how the substring method works, it helps to draw a picture like</span></div>
+<div style="position:absolute;left:129.60px;top:377.46px" class="cls_003"><span class="cls_003">Figure 9.1.</span></div>
+<div style="position:absolute;left:217.70px;top:412.21px" class="cls_010"><span class="cls_010">fruit</span></div>
+<div style="position:absolute;left:298.10px;top:412.21px" class="cls_011"><span class="cls_011">b</span></div>
+<div style="position:absolute;left:325.69px;top:412.21px" class="cls_011"><span class="cls_011">a</span></div>
+<div style="position:absolute;left:352.10px;top:412.21px" class="cls_011"><span class="cls_011">n</span></div>
+<div style="position:absolute;left:379.69px;top:412.21px" class="cls_011"><span class="cls_011">a</span></div>
+<div style="position:absolute;left:406.10px;top:412.21px" class="cls_011"><span class="cls_011">n</span></div>
+<div style="position:absolute;left:433.69px;top:412.21px" class="cls_011"><span class="cls_011">a</span></div>
+<div style="position:absolute;left:297.70px;top:431.11px" class="cls_012"><span class="cls_012">0</span></div>
+<div style="position:absolute;left:324.70px;top:431.11px" class="cls_012"><span class="cls_012">1</span></div>
+<div style="position:absolute;left:351.70px;top:431.11px" class="cls_012"><span class="cls_012">2</span></div>
+<div style="position:absolute;left:378.70px;top:431.11px" class="cls_012"><span class="cls_012">3</span></div>
+<div style="position:absolute;left:405.70px;top:431.11px" class="cls_012"><span class="cls_012">4</span></div>
+<div style="position:absolute;left:432.70px;top:431.11px" class="cls_012"><span class="cls_012">5</span></div>
+<div style="position:absolute;left:182.02px;top:454.36px" class="cls_003"><span class="cls_003">Figure 9.1: State diagram for a String of six characters.</span></div>
+<div style="position:absolute;left:129.60px;top:485.04px" class="cls_003"><span class="cls_003">Like most string methods, substring is overloaded. That is, there are other</span></div>
+<div style="position:absolute;left:129.60px;top:500.21px" class="cls_003"><span class="cls_003">versions of substring that have different parameters. If it’s invoked with two</span></div>
+<div style="position:absolute;left:129.60px;top:515.37px" class="cls_003"><span class="cls_003">arguments, they are treated as a start and end index:</span></div>
+<div style="position:absolute;left:147.16px;top:552.05px" class="cls_009"><span class="cls_009"></span><span class="cls_003"> fruit.substring(0, 3) returns</span><span class="cls_006"> "ban"</span></div>
+<div style="position:absolute;left:147.16px;top:579.96px" class="cls_009"><span class="cls_009"></span><span class="cls_003"> fruit.substring(2, 5) returns</span><span class="cls_006"> "nan"</span></div>
+<div style="position:absolute;left:147.16px;top:607.87px" class="cls_009"><span class="cls_009"></span><span class="cls_003"> fruit.substring(6, 6) returns</span><span class="cls_006"> ""</span></div>
+<div style="position:absolute;left:129.60px;top:644.54px" class="cls_003"><span class="cls_003">Notice that the character indicated by the end index is not included. Defin-</span></div>
+<div style="position:absolute;left:129.60px;top:659.71px" class="cls_003"><span class="cls_003">ing substring this way simplifies some common operations.  For example,</span></div>
+<div style="position:absolute;left:129.60px;top:674.88px" class="cls_003"><span class="cls_003">to select a substring with length len, starting at index i, you could write</span></div>
+<div style="position:absolute;left:129.60px;top:690.04px" class="cls_003"><span class="cls_003">fruit.substring(i, i + len).</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:4010px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="1ec315de-5ada-11e9-9d71-0cc47a792c0a_id_1ec315de-5ada-11e9-9d71-0cc47a792c0a_files/background06.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">144</span></div>
+<div style="position:absolute;left:301.86px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 9</span></div>
+<div style="position:absolute;left:374.58px;top:88.65px" class="cls_003"><span class="cls_003">Strings and things</span></div>
+<div style="position:absolute;left:86.40px;top:119.48px" class="cls_005"><span class="cls_005">9.5</span></div>
+<div style="position:absolute;left:130.51px;top:119.48px" class="cls_005"><span class="cls_005">The indexOf method</span></div>
+<div style="position:absolute;left:86.40px;top:155.43px" class="cls_003"><span class="cls_003">The indexOf method searches for a character in a string.</span></div>
+<div style="position:absolute;left:101.34px;top:181.28px" class="cls_003"><span class="cls_003">String fruit =</span><span class="cls_006"> "banana"</span><span class="cls_003">;</span></div>
+<div style="position:absolute;left:101.34px;top:196.45px" class="cls_004"><span class="cls_004">int</span><span class="cls_003"> index = fruit.indexOf(</span><span class="cls_007">'</span><span class="cls_006">a</span><span class="cls_007">'</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:86.40px;top:222.21px" class="cls_003"><span class="cls_003">This example finds the index of</span><span class="cls_007"> '</span><span class="cls_006">a</span><span class="cls_007">'</span><span class="cls_003">  in the string.  But the letter appears</span></div>
+<div style="position:absolute;left:86.40px;top:237.38px" class="cls_003"><span class="cls_003">three times, so it’s not obvious what indexOf should do.  According to the</span></div>
+<div style="position:absolute;left:86.40px;top:252.55px" class="cls_003"><span class="cls_003">documentation, it returns the index of the first appearance.</span></div>
+<div style="position:absolute;left:86.40px;top:279.63px" class="cls_003"><span class="cls_003">To find subsequent appearances, you can use another version of indexOf, which</span></div>
+<div style="position:absolute;left:86.40px;top:294.80px" class="cls_003"><span class="cls_003">takes a second argument that indicates where in the string to start looking.</span></div>
+<div style="position:absolute;left:101.34px;top:321.93px" class="cls_004"><span class="cls_004">int</span><span class="cls_003"> index = fruit.indexOf(</span><span class="cls_007">'</span><span class="cls_006">a</span><span class="cls_007">'</span><span class="cls_003">, 2);</span></div>
+<div style="position:absolute;left:86.40px;top:348.96px" class="cls_003"><span class="cls_003">This code starts at index 2 (the first</span><span class="cls_007"> '</span><span class="cls_006">n</span><span class="cls_007">'</span><span class="cls_003">) and finds the next</span><span class="cls_007"> '</span><span class="cls_006">a</span><span class="cls_007">'</span><span class="cls_003">, which is</span></div>
+<div style="position:absolute;left:86.40px;top:364.13px" class="cls_003"><span class="cls_003">at index 3. If the letter happens to appear at the starting index, the starting</span></div>
+<div style="position:absolute;left:86.40px;top:379.30px" class="cls_003"><span class="cls_003">index is the answer. So fruit.indexOf(</span><span class="cls_007">'</span><span class="cls_006">a</span><span class="cls_007">'</span><span class="cls_003">, 5) returns 5.</span></div>
+<div style="position:absolute;left:86.40px;top:406.38px" class="cls_003"><span class="cls_003">If the character does not appear in the string, indexOf returns -1.  Since</span></div>
+<div style="position:absolute;left:86.40px;top:421.55px" class="cls_003"><span class="cls_003">indexes cannot be negative, this value indicates the character was not found.</span></div>
+<div style="position:absolute;left:86.40px;top:448.63px" class="cls_003"><span class="cls_003">You can also use indexOf to search for a substring, not just a single character.</span></div>
+<div style="position:absolute;left:86.40px;top:463.80px" class="cls_003"><span class="cls_003">For example, the expression fruit.indexOf(</span><span class="cls_006">"nan"</span><span class="cls_003">) returns 2.</span></div>
+<div style="position:absolute;left:86.40px;top:511.47px" class="cls_005"><span class="cls_005">9.6</span></div>
+<div style="position:absolute;left:130.51px;top:511.47px" class="cls_005"><span class="cls_005">String comparison</span></div>
+<div style="position:absolute;left:86.40px;top:547.42px" class="cls_003"><span class="cls_003">To compare two strings, it may be tempting to use the == and != operators.</span></div>
+<div style="position:absolute;left:101.34px;top:573.27px" class="cls_003"><span class="cls_003">String name1 =</span><span class="cls_006"> "Alan Turing"</span><span class="cls_003">;</span></div>
+<div style="position:absolute;left:101.34px;top:588.44px" class="cls_003"><span class="cls_003">String name2 =</span><span class="cls_006"> "Ada Lovelace"</span><span class="cls_003">;</span></div>
+<div style="position:absolute;left:101.34px;top:603.61px" class="cls_004"><span class="cls_004">if</span><span class="cls_003"> (name1 == name2) {</span></div>
+<div style="position:absolute;left:335.12px;top:603.61px" class="cls_008"><span class="cls_008">// wrong!</span></div>
+<div style="position:absolute;left:125.95px;top:618.78px" class="cls_003"><span class="cls_003">System.out.println(</span><span class="cls_006">"The names are the same."</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:101.34px;top:633.95px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:659.71px" class="cls_003"><span class="cls_003">This code compiles and runs, and most of the time it gets the answer right.</span></div>
+<div style="position:absolute;left:86.40px;top:674.88px" class="cls_003"><span class="cls_003">But it is not correct, and sometimes it gets the answer wrong. The problem is</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_003"><span class="cls_003">that the == operator checks whether the two variables refer to the same object</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:4812px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="1ec315de-5ada-11e9-9d71-0cc47a792c0a_id_1ec315de-5ada-11e9-9d71-0cc47a792c0a_files/background07.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">9.7</span></div>
+<div style="position:absolute;left:160.24px;top:88.65px" class="cls_003"><span class="cls_003">String formatting</span></div>
+<div style="position:absolute;left:505.43px;top:88.65px" class="cls_003"><span class="cls_003">145</span></div>
+<div style="position:absolute;left:129.60px;top:124.74px" class="cls_003"><span class="cls_003">(by comparing the references). If you give it two different strings that contain</span></div>
+<div style="position:absolute;left:129.60px;top:139.91px" class="cls_003"><span class="cls_003">the same letters, it yields</span><span class="cls_004"> false</span><span class="cls_003">.</span></div>
+<div style="position:absolute;left:129.60px;top:165.43px" class="cls_003"><span class="cls_003">The right way to compare strings is with the equals method, like this:</span></div>
+<div style="position:absolute;left:144.54px;top:190.04px" class="cls_004"><span class="cls_004">if</span><span class="cls_003"> (name1.equals(name2)) {</span></div>
+<div style="position:absolute;left:169.15px;top:205.21px" class="cls_003"><span class="cls_003">System.out.println(</span><span class="cls_006">"The names are the same."</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:144.54px;top:220.38px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:244.58px" class="cls_003"><span class="cls_003">This example invokes equals on name1 and passes name2 as an argument.</span></div>
+<div style="position:absolute;left:129.60px;top:259.74px" class="cls_003"><span class="cls_003">The equals method returns</span><span class="cls_004"> true</span><span class="cls_003"> if the strings contain the same characters;</span></div>
+<div style="position:absolute;left:129.60px;top:274.91px" class="cls_003"><span class="cls_003">otherwise it returns</span><span class="cls_004"> false</span><span class="cls_003">.</span></div>
+<div style="position:absolute;left:129.60px;top:300.43px" class="cls_003"><span class="cls_003">If the strings differ, we can use compareTo to see which comes first in alpha-</span></div>
+<div style="position:absolute;left:129.60px;top:315.59px" class="cls_003"><span class="cls_003">betical order:</span></div>
+<div style="position:absolute;left:144.54px;top:337.55px" class="cls_004"><span class="cls_004">int</span><span class="cls_003"> diff = name1.compareTo(name2);</span></div>
+<div style="position:absolute;left:144.54px;top:352.72px" class="cls_004"><span class="cls_004">if</span><span class="cls_003"> (diff == 0) {</span></div>
+<div style="position:absolute;left:169.15px;top:367.89px" class="cls_003"><span class="cls_003">System.out.println(</span><span class="cls_006">"The names are the same."</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:144.54px;top:383.06px" class="cls_003"><span class="cls_003">}</span><span class="cls_004"> else if</span><span class="cls_003"> (diff &lt; 0) {</span></div>
+<div style="position:absolute;left:169.15px;top:398.23px" class="cls_003"><span class="cls_003">System.out.println(</span><span class="cls_006">"name1 comes before name2."</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:144.54px;top:413.40px" class="cls_003"><span class="cls_003">}</span><span class="cls_004"> else if</span><span class="cls_003"> (diff > 0) {</span></div>
+<div style="position:absolute;left:169.15px;top:428.56px" class="cls_003"><span class="cls_003">System.out.println(</span><span class="cls_006">"name2 comes before name1."</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:144.54px;top:443.73px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:467.93px" class="cls_003"><span class="cls_003">The return value from compareTo is the difference between the first characters</span></div>
+<div style="position:absolute;left:129.60px;top:483.10px" class="cls_003"><span class="cls_003">in the strings that differ.  If the strings are equal, their difference is zero.  If</span></div>
+<div style="position:absolute;left:129.60px;top:498.26px" class="cls_003"><span class="cls_003">the first string (the one on which the method is invoked) comes first in the</span></div>
+<div style="position:absolute;left:129.60px;top:513.43px" class="cls_003"><span class="cls_003">alphabet, the difference is negative. Otherwise, the difference is positive.</span></div>
+<div style="position:absolute;left:129.60px;top:538.95px" class="cls_003"><span class="cls_003">In the preceding code, compareTo returns positive 8, because the second letter</span></div>
+<div style="position:absolute;left:129.60px;top:554.11px" class="cls_003"><span class="cls_003">of</span><span class="cls_006"> "Ada"</span><span class="cls_003"> comes before the second letter of</span><span class="cls_006"> "Alan"</span><span class="cls_003"> by 8 letters.</span></div>
+<div style="position:absolute;left:129.60px;top:579.63px" class="cls_003"><span class="cls_003">Both equals and compareTo are case-sensitive.  The uppercase letters come</span></div>
+<div style="position:absolute;left:129.60px;top:594.80px" class="cls_003"><span class="cls_003">before the lowercase letters, so</span><span class="cls_006"> "Ada"</span><span class="cls_003"> comes before</span><span class="cls_006"> "ada"</span><span class="cls_003">.</span></div>
+<div style="position:absolute;left:129.60px;top:640.50px" class="cls_005"><span class="cls_005">9.7</span></div>
+<div style="position:absolute;left:173.71px;top:640.50px" class="cls_005"><span class="cls_005">String formatting</span></div>
+<div style="position:absolute;left:129.60px;top:674.88px" class="cls_003"><span class="cls_003">In Section 3.6, we learned how to use printf to display formatted output.</span></div>
+<div style="position:absolute;left:129.60px;top:690.04px" class="cls_003"><span class="cls_003">Sometimes programs need to create strings that are formatted a certain way,</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:5614px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="1ec315de-5ada-11e9-9d71-0cc47a792c0a_id_1ec315de-5ada-11e9-9d71-0cc47a792c0a_files/background08.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">146</span></div>
+<div style="position:absolute;left:301.86px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 9</span></div>
+<div style="position:absolute;left:374.58px;top:88.65px" class="cls_003"><span class="cls_003">Strings and things</span></div>
+<div style="position:absolute;left:86.40px;top:124.74px" class="cls_003"><span class="cls_003">but not display them immediately, or ever. For example, the following method</span></div>
+<div style="position:absolute;left:86.40px;top:139.91px" class="cls_003"><span class="cls_003">returns a time string in 12-hour format:</span></div>
+<div style="position:absolute;left:101.34px;top:166.02px" class="cls_004"><span class="cls_004">public static</span><span class="cls_003"> String timeString(</span><span class="cls_004">int</span><span class="cls_003"> hour,</span><span class="cls_004"> int</span><span class="cls_003"> minute) {</span></div>
+<div style="position:absolute;left:125.95px;top:181.19px" class="cls_003"><span class="cls_003">String ampm;</span></div>
+<div style="position:absolute;left:125.95px;top:196.36px" class="cls_004"><span class="cls_004">if</span><span class="cls_003"> (hour &lt; 12) {</span></div>
+<div style="position:absolute;left:150.56px;top:211.53px" class="cls_003"><span class="cls_003">ampm =</span><span class="cls_006"> "AM"</span><span class="cls_003">;</span></div>
+<div style="position:absolute;left:150.56px;top:226.70px" class="cls_004"><span class="cls_004">if</span><span class="cls_003"> (hour == 0) {</span></div>
+<div style="position:absolute;left:175.17px;top:241.86px" class="cls_003"><span class="cls_003">hour = 12;</span></div>
+<div style="position:absolute;left:248.99px;top:241.86px" class="cls_008"><span class="cls_008">// midnight</span></div>
+<div style="position:absolute;left:150.56px;top:257.03px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:125.95px;top:272.20px" class="cls_003"><span class="cls_003">}</span><span class="cls_004"> else</span><span class="cls_003"> {</span></div>
+<div style="position:absolute;left:150.56px;top:287.37px" class="cls_003"><span class="cls_003">ampm =</span><span class="cls_006"> "PM"</span><span class="cls_003">;</span></div>
+<div style="position:absolute;left:150.56px;top:302.54px" class="cls_003"><span class="cls_003">hour = hour - 12;</span></div>
+<div style="position:absolute;left:125.95px;top:317.71px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:125.95px;top:332.87px" class="cls_004"><span class="cls_004">return</span><span class="cls_003"> String.format(</span><span class="cls_006">"%02d:%02d %s"</span><span class="cls_003">, hour, minute, ampm);</span></div>
+<div style="position:absolute;left:101.34px;top:348.04px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:374.06px" class="cls_003"><span class="cls_003">String.format takes the same arguments as System.out.printf:  a for-</span></div>
+<div style="position:absolute;left:86.40px;top:389.23px" class="cls_003"><span class="cls_003">mat specifier followed by a sequence of values.  The main difference is that</span></div>
+<div style="position:absolute;left:86.40px;top:404.40px" class="cls_003"><span class="cls_003">System.out.printf displays the result on the screen; String.format creates</span></div>
+<div style="position:absolute;left:86.40px;top:419.57px" class="cls_003"><span class="cls_003">a new string, but does not display anything.</span></div>
+<div style="position:absolute;left:86.40px;top:446.91px" class="cls_003"><span class="cls_003">In this example, the format specifier %02d means “two digit integer padded</span></div>
+<div style="position:absolute;left:86.40px;top:462.08px" class="cls_003"><span class="cls_003">with zeros”, so timeString(19, 5) returns the string</span><span class="cls_006"> "07:05 PM"</span><span class="cls_003">.</span></div>
+<div style="position:absolute;left:86.40px;top:510.31px" class="cls_005"><span class="cls_005">9.8</span></div>
+<div style="position:absolute;left:130.51px;top:510.31px" class="cls_005"><span class="cls_005">Wrapper classes</span></div>
+<div style="position:absolute;left:86.40px;top:546.57px" class="cls_003"><span class="cls_003">Primitive values (like</span><span class="cls_004"> int</span><span class="cls_003">s,</span><span class="cls_004"> double</span><span class="cls_003">s, and</span><span class="cls_004"> char</span><span class="cls_003">s) do not provide methods. For</span></div>
+<div style="position:absolute;left:86.40px;top:561.74px" class="cls_003"><span class="cls_003">example, you can’t call equals on an</span><span class="cls_004"> int</span><span class="cls_003">:</span></div>
+<div style="position:absolute;left:101.34px;top:588.18px" class="cls_004"><span class="cls_004">int</span><span class="cls_003"> i = 5;</span></div>
+<div style="position:absolute;left:101.34px;top:603.35px" class="cls_003"><span class="cls_003">System.out.println(i.equals(5));</span></div>
+<div style="position:absolute;left:310.51px;top:603.35px" class="cls_008"><span class="cls_008">// compiler error</span></div>
+<div style="position:absolute;left:86.40px;top:629.37px" class="cls_003"><span class="cls_003">But for each primitive type, there is a corresponding class in the Java library,</span></div>
+<div style="position:absolute;left:86.40px;top:644.54px" class="cls_003"><span class="cls_003">called a wrapper class. The wrapper class for</span><span class="cls_004"> char</span><span class="cls_003"> is called Character; for</span></div>
+<div style="position:absolute;left:86.40px;top:659.71px" class="cls_004"><span class="cls_004">int</span><span class="cls_003"> it’s called Integer.  Other wrapper classes include Boolean, Long, and</span></div>
+<div style="position:absolute;left:86.40px;top:674.88px" class="cls_003"><span class="cls_003">Double.  They are in the java.lang package, so you can use them without</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_003"><span class="cls_003">importing them.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:6416px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="1ec315de-5ada-11e9-9d71-0cc47a792c0a_id_1ec315de-5ada-11e9-9d71-0cc47a792c0a_files/background09.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">9.9</span></div>
+<div style="position:absolute;left:160.24px;top:88.65px" class="cls_003"><span class="cls_003">Command-line arguments</span></div>
+<div style="position:absolute;left:505.43px;top:88.65px" class="cls_003"><span class="cls_003">147</span></div>
+<div style="position:absolute;left:129.60px;top:124.74px" class="cls_003"><span class="cls_003">Each wrapper class defines constants MIN_VALUE and MAX_VALUE. For example,</span></div>
+<div style="position:absolute;left:129.60px;top:139.91px" class="cls_003"><span class="cls_003">Integer.MIN_VALUE is -2147483648, and Integer.MAX_VALUE is 2147483647.</span></div>
+<div style="position:absolute;left:129.60px;top:155.08px" class="cls_003"><span class="cls_003">Because these constants are available in wrapper classes, you don’t have to</span></div>
+<div style="position:absolute;left:129.60px;top:170.25px" class="cls_003"><span class="cls_003">remember them, and you don’t have to include them in your programs.</span></div>
+<div style="position:absolute;left:129.60px;top:197.51px" class="cls_003"><span class="cls_003">Wrapper classes provide methods for converting strings to other types.  For</span></div>
+<div style="position:absolute;left:129.60px;top:212.68px" class="cls_003"><span class="cls_003">example, Integer.parseInt converts a string to (you guessed it) an integer:</span></div>
+<div style="position:absolute;left:144.54px;top:239.38px" class="cls_003"><span class="cls_003">String str =</span><span class="cls_006"> "12345"</span><span class="cls_003">;</span></div>
+<div style="position:absolute;left:144.54px;top:254.55px" class="cls_004"><span class="cls_004">int</span><span class="cls_003"> num = Integer.parseInt(str);</span></div>
+<div style="position:absolute;left:129.60px;top:280.49px" class="cls_003"><span class="cls_003">In this context, parse means something like “read and translate”.</span></div>
+<div style="position:absolute;left:129.60px;top:307.76px" class="cls_003"><span class="cls_003">The other wrapper classes provide similar methods, like Double.parseDouble</span></div>
+<div style="position:absolute;left:129.60px;top:322.93px" class="cls_003"><span class="cls_003">and Boolean.parseBoolean.  They also provide toString, which returns a</span></div>
+<div style="position:absolute;left:129.60px;top:338.09px" class="cls_003"><span class="cls_003">string representation of a value:</span></div>
+<div style="position:absolute;left:144.54px;top:364.13px" class="cls_004"><span class="cls_004">int</span><span class="cls_003"> num = 12345;</span></div>
+<div style="position:absolute;left:144.54px;top:379.30px" class="cls_003"><span class="cls_003">String str = Integer.toString(num);</span></div>
+<div style="position:absolute;left:129.60px;top:405.24px" class="cls_003"><span class="cls_003">The result is the string</span><span class="cls_006"> "12345"</span><span class="cls_003">.</span></div>
+<div style="position:absolute;left:129.60px;top:453.29px" class="cls_005"><span class="cls_005">9.9</span></div>
+<div style="position:absolute;left:173.71px;top:453.29px" class="cls_005"><span class="cls_005">Command-line arguments</span></div>
+<div style="position:absolute;left:129.60px;top:489.45px" class="cls_003"><span class="cls_003">Now that you know about arrays and strings, we can finally explain the args</span></div>
+<div style="position:absolute;left:129.60px;top:504.62px" class="cls_003"><span class="cls_003">parameter for main that we have been ignoring since Chapter 1. If you are un-</span></div>
+<div style="position:absolute;left:129.60px;top:519.79px" class="cls_003"><span class="cls_003">familiar with the command-line interface, please read or review Appendix A.3.</span></div>
+<div style="position:absolute;left:129.60px;top:547.06px" class="cls_003"><span class="cls_003">Continuing an earlier example, let’s write a program to find the largest value</span></div>
+<div style="position:absolute;left:129.60px;top:562.22px" class="cls_003"><span class="cls_003">in a sequence of numbers.  Rather than read the numbers from System.in,</span></div>
+<div style="position:absolute;left:129.60px;top:577.39px" class="cls_003"><span class="cls_003">we’ll pass them as command-line arguments. Here is a starting point:</span></div>
+<div style="position:absolute;left:144.54px;top:603.43px" class="cls_004"><span class="cls_004">public class</span><span class="cls_003"> Max {</span></div>
+<div style="position:absolute;left:169.15px;top:618.59px" class="cls_004"><span class="cls_004">public static void</span><span class="cls_003"> main(String[] args) {</span></div>
+<div style="position:absolute;left:193.76px;top:633.76px" class="cls_003"><span class="cls_003">System.out.println(Arrays.toString(args));</span></div>
+<div style="position:absolute;left:169.15px;top:648.93px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:144.54px;top:664.10px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:690.04px" class="cls_003"><span class="cls_003">You can run this program from the command line by typing:</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:7218px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="1ec315de-5ada-11e9-9d71-0cc47a792c0a_id_1ec315de-5ada-11e9-9d71-0cc47a792c0a_files/background10.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">148</span></div>
+<div style="position:absolute;left:301.86px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 9</span></div>
+<div style="position:absolute;left:374.58px;top:88.65px" class="cls_003"><span class="cls_003">Strings and things</span></div>
+<div style="position:absolute;left:101.34px;top:124.79px" class="cls_003"><span class="cls_003">java Max</span></div>
+<div style="position:absolute;left:86.40px;top:152.42px" class="cls_003"><span class="cls_003">The output indicates that args is an empty array; that is, it has no elements:</span></div>
+<div style="position:absolute;left:101.34px;top:180.14px" class="cls_003"><span class="cls_003">[]</span></div>
+<div style="position:absolute;left:86.40px;top:207.77px" class="cls_003"><span class="cls_003">But if you provide additional values on the command line, they are passed as</span></div>
+<div style="position:absolute;left:86.40px;top:222.94px" class="cls_003"><span class="cls_003">arguments to main. For example, if you run it like this:</span></div>
+<div style="position:absolute;left:101.34px;top:250.66px" class="cls_003"><span class="cls_003">java Max 10 -3 55 0 14</span></div>
+<div style="position:absolute;left:86.40px;top:278.29px" class="cls_003"><span class="cls_003">The output is:</span></div>
+<div style="position:absolute;left:101.34px;top:306.01px" class="cls_003"><span class="cls_003">[10, -3, 55, 0, 14]</span></div>
+<div style="position:absolute;left:86.40px;top:333.64px" class="cls_003"><span class="cls_003">But remember that the elements of args are strings.  To find the maximum</span></div>
+<div style="position:absolute;left:86.40px;top:348.81px" class="cls_003"><span class="cls_003">number, we have to convert the arguments to integers.</span></div>
+<div style="position:absolute;left:86.40px;top:376.48px" class="cls_003"><span class="cls_003">The following fragment uses an enhanced</span><span class="cls_004"> for</span><span class="cls_003"> loop to parse the arguments</span></div>
+<div style="position:absolute;left:86.40px;top:391.65px" class="cls_003"><span class="cls_003">(using the Integer wrapper class) and find the largest value:</span></div>
+<div style="position:absolute;left:101.34px;top:418.76px" class="cls_004"><span class="cls_004">int</span><span class="cls_003"> max = Integer.MIN_VALUE;</span></div>
+<div style="position:absolute;left:101.34px;top:433.93px" class="cls_004"><span class="cls_004">for</span><span class="cls_003"> (String arg : args) {</span></div>
+<div style="position:absolute;left:125.95px;top:449.10px" class="cls_004"><span class="cls_004">int</span><span class="cls_003"> value = Integer.parseInt(arg);</span></div>
+<div style="position:absolute;left:125.95px;top:464.27px" class="cls_004"><span class="cls_004">if</span><span class="cls_003"> (value > max) {</span></div>
+<div style="position:absolute;left:150.56px;top:479.44px" class="cls_003"><span class="cls_003">max = value;</span></div>
+<div style="position:absolute;left:125.95px;top:494.60px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:101.34px;top:509.77px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:101.34px;top:524.94px" class="cls_003"><span class="cls_003">System.out.println(</span><span class="cls_006">"The max is "</span><span class="cls_003"> + max);</span></div>
+<div style="position:absolute;left:86.40px;top:551.96px" class="cls_003"><span class="cls_003">The initial value of max is the smallest (most negative) number an</span><span class="cls_004"> int</span><span class="cls_003"> can rep-</span></div>
+<div style="position:absolute;left:86.40px;top:567.13px" class="cls_003"><span class="cls_003">resent, so any other value is greater. If args is empty, the result is MIN_VALUE.</span></div>
+<div style="position:absolute;left:86.40px;top:616.12px" class="cls_005"><span class="cls_005">9.10</span></div>
+<div style="position:absolute;left:140.20px;top:616.12px" class="cls_005"><span class="cls_005">Vocabulary</span></div>
+<div style="position:absolute;left:86.40px;top:649.06px" class="cls_003"><span class="cls_003">object: A collection of related data that comes with a set of methods that</span></div>
+<div style="position:absolute;left:115.67px;top:664.22px" class="cls_003"><span class="cls_003">operate on it.</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_003"><span class="cls_003">primitive: A data type that stores a single value and provides no methods.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:8020px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="1ec315de-5ada-11e9-9d71-0cc47a792c0a_id_1ec315de-5ada-11e9-9d71-0cc47a792c0a_files/background11.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">9.11</span></div>
+<div style="position:absolute;left:166.96px;top:88.65px" class="cls_003"><span class="cls_003">Exercises</span></div>
+<div style="position:absolute;left:505.43px;top:88.65px" class="cls_003"><span class="cls_003">149</span></div>
+<div style="position:absolute;left:129.60px;top:124.74px" class="cls_003"><span class="cls_003">Unicode: A standard for representing characters in most of the world’s lan-</span></div>
+<div style="position:absolute;left:158.87px;top:139.91px" class="cls_003"><span class="cls_003">guages.</span></div>
+<div style="position:absolute;left:129.60px;top:170.60px" class="cls_003"><span class="cls_003">immutable: An object that, once created, cannot be modified.  Strings are</span></div>
+<div style="position:absolute;left:158.87px;top:185.77px" class="cls_003"><span class="cls_003">immutable by design.</span></div>
+<div style="position:absolute;left:129.60px;top:216.45px" class="cls_003"><span class="cls_003">empty string: The string</span><span class="cls_006"> ""</span><span class="cls_003">, which contains no characters and has a length</span></div>
+<div style="position:absolute;left:158.87px;top:231.62px" class="cls_003"><span class="cls_003">of zero.</span></div>
+<div style="position:absolute;left:129.60px;top:262.31px" class="cls_003"><span class="cls_003">wrapper class: Classes in java.lang that provide constants and methods</span></div>
+<div style="position:absolute;left:158.87px;top:277.47px" class="cls_003"><span class="cls_003">for working with primitive types.</span></div>
+<div style="position:absolute;left:129.60px;top:308.16px" class="cls_003"><span class="cls_003">parse: To read a string and interpret or translate it.</span></div>
+<div style="position:absolute;left:129.60px;top:338.85px" class="cls_003"><span class="cls_003">empty array: An array with no elements and a length of zero.</span></div>
+<div style="position:absolute;left:129.60px;top:396.76px" class="cls_005"><span class="cls_005">9.11</span></div>
+<div style="position:absolute;left:183.40px;top:396.76px" class="cls_005"><span class="cls_005">Exercises</span></div>
+<div style="position:absolute;left:129.60px;top:438.33px" class="cls_003"><span class="cls_003">The code for this chapter is in the ch09 directory of ThinkJavaCode.  See</span></div>
+<div style="position:absolute;left:129.60px;top:453.50px" class="cls_003"><span class="cls_003">page xv for instructions on how to download the repository. Before you start</span></div>
+<div style="position:absolute;left:129.60px;top:468.67px" class="cls_003"><span class="cls_003">the exercises, we recommend that you compile and run the examples.</span></div>
+<div style="position:absolute;left:129.60px;top:495.79px" class="cls_003"><span class="cls_003">Exercise 9.1</span></div>
+<div style="position:absolute;left:212.43px;top:495.79px" class="cls_003"><span class="cls_003">The point of this exercise is to explore Java types and fill in</span></div>
+<div style="position:absolute;left:129.60px;top:510.96px" class="cls_003"><span class="cls_003">some of the details that aren’t covered in the chapter.</span></div>
+<div style="position:absolute;left:143.91px;top:553.18px" class="cls_003"><span class="cls_003">1. Create a new program named Test.java and write a main method that</span></div>
+<div style="position:absolute;left:158.87px;top:568.35px" class="cls_003"><span class="cls_003">contains expressions that combine various types using the + operator.</span></div>
+<div style="position:absolute;left:158.87px;top:583.52px" class="cls_003"><span class="cls_003">For example, what happens when you “add” a String and a</span><span class="cls_004"> char</span><span class="cls_003">?</span></div>
+<div style="position:absolute;left:158.87px;top:598.69px" class="cls_003"><span class="cls_003">Does it perform character addition or string concatenation? What is the</span></div>
+<div style="position:absolute;left:158.87px;top:613.85px" class="cls_003"><span class="cls_003">type of the result? (How can you determine the type of the result?)</span></div>
+<div style="position:absolute;left:143.91px;top:644.54px" class="cls_003"><span class="cls_003">2. Make a bigger copy of the following table and fill it in. At the intersection</span></div>
+<div style="position:absolute;left:158.87px;top:659.71px" class="cls_003"><span class="cls_003">of each pair of types, you should indicate whether it is legal to use the</span></div>
+<div style="position:absolute;left:158.87px;top:674.88px" class="cls_003"><span class="cls_003">+ operator with these types, what operation is performed (addition or</span></div>
+<div style="position:absolute;left:158.87px;top:690.04px" class="cls_003"><span class="cls_003">concatenation), and what the type of the result is.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:8822px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="1ec315de-5ada-11e9-9d71-0cc47a792c0a_id_1ec315de-5ada-11e9-9d71-0cc47a792c0a_files/background12.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">150</span></div>
+<div style="position:absolute;left:301.86px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 9</span></div>
+<div style="position:absolute;left:374.58px;top:88.65px" class="cls_003"><span class="cls_003">Strings and things</span></div>
+<div style="position:absolute;left:218.99px;top:129.11px" class="cls_003"><span class="cls_003">boolean</span></div>
+<div style="position:absolute;left:274.52px;top:129.11px" class="cls_003"><span class="cls_003">char</span></div>
+<div style="position:absolute;left:319.97px;top:129.11px" class="cls_003"><span class="cls_003">int</span></div>
+<div style="position:absolute;left:353.71px;top:129.11px" class="cls_003"><span class="cls_003">double</span></div>
+<div style="position:absolute;left:399.48px;top:129.11px" class="cls_003"><span class="cls_003">String</span></div>
+<div style="position:absolute;left:167.37px;top:152.26px" class="cls_003"><span class="cls_003">boolean</span></div>
+<div style="position:absolute;left:167.37px;top:175.41px" class="cls_003"><span class="cls_003">char</span></div>
+<div style="position:absolute;left:167.37px;top:198.57px" class="cls_003"><span class="cls_003">int</span></div>
+<div style="position:absolute;left:167.37px;top:221.72px" class="cls_003"><span class="cls_003">double</span></div>
+<div style="position:absolute;left:167.37px;top:244.87px" class="cls_003"><span class="cls_003">String</span></div>
+<div style="position:absolute;left:100.71px;top:290.53px" class="cls_003"><span class="cls_003">3. Think about some of the choices the designers of Java made when they</span></div>
+<div style="position:absolute;left:115.67px;top:305.69px" class="cls_003"><span class="cls_003">filled in this table. How many of the entries seem unavoidable, as if there</span></div>
+<div style="position:absolute;left:115.67px;top:320.86px" class="cls_003"><span class="cls_003">was no other choice? How many seem like arbitrary choices from several</span></div>
+<div style="position:absolute;left:115.67px;top:336.03px" class="cls_003"><span class="cls_003">equally reasonable possibilities? Which entries seem most problematic?</span></div>
+<div style="position:absolute;left:100.71px;top:380.34px" class="cls_003"><span class="cls_003">4. Here’s a puzzler:  normally, the statement x++ is exactly equivalent to</span></div>
+<div style="position:absolute;left:115.67px;top:395.50px" class="cls_003"><span class="cls_003">x = x + 1. But if x is a</span><span class="cls_004"> char</span><span class="cls_003">, it’s not exactly the same! In that case,</span></div>
+<div style="position:absolute;left:115.67px;top:410.67px" class="cls_003"><span class="cls_003">x++ is legal, but x = x + 1 causes an error. Try it out and see what the</span></div>
+<div style="position:absolute;left:115.67px;top:425.84px" class="cls_003"><span class="cls_003">error message is, then see if you can figure out what is going on.</span></div>
+<div style="position:absolute;left:100.71px;top:470.15px" class="cls_003"><span class="cls_003">5. What happens when you add</span><span class="cls_006"> ""</span><span class="cls_003"> (the empty string) to the other types,</span></div>
+<div style="position:absolute;left:115.67px;top:485.32px" class="cls_003"><span class="cls_003">for example,</span><span class="cls_006"> ""</span><span class="cls_003"> + 5?</span></div>
+<div style="position:absolute;left:100.71px;top:529.62px" class="cls_003"><span class="cls_003">6. For each data type, what types of values can you assign to it?  For</span></div>
+<div style="position:absolute;left:115.67px;top:544.79px" class="cls_003"><span class="cls_003">example, you can assign an</span><span class="cls_004"> int</span><span class="cls_003"> to a</span><span class="cls_004"> double</span><span class="cls_003"> but not vice versa.</span></div>
+<div style="position:absolute;left:86.40px;top:571.91px" class="cls_003"><span class="cls_003">Exercise 9.2</span></div>
+<div style="position:absolute;left:169.94px;top:571.91px" class="cls_003"><span class="cls_003">Write a method called letterHist that takes a string as a</span></div>
+<div style="position:absolute;left:86.40px;top:587.08px" class="cls_003"><span class="cls_003">parameter and returns a histogram of the letters in the string.  The zeroth</span></div>
+<div style="position:absolute;left:86.40px;top:602.25px" class="cls_003"><span class="cls_003">element of the histogram should contain the number of a’s in the string (upper-</span></div>
+<div style="position:absolute;left:86.40px;top:617.42px" class="cls_003"><span class="cls_003">and lowercase); the 25th element should contain the number of z’s.  Your</span></div>
+<div style="position:absolute;left:86.40px;top:632.58px" class="cls_003"><span class="cls_003">solution should only traverse the string once.</span></div>
+<div style="position:absolute;left:86.40px;top:659.71px" class="cls_003"><span class="cls_003">Exercise 9.3</span></div>
+<div style="position:absolute;left:169.97px;top:659.71px" class="cls_003"><span class="cls_003">The purpose of this exercise is to review encapsulation and</span></div>
+<div style="position:absolute;left:86.40px;top:674.88px" class="cls_003"><span class="cls_003">generalization (see Section 7.3). The following code fragment traverses a string</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_003"><span class="cls_003">and checks whether it has the same number of open and close parentheses:</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:9624px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="1ec315de-5ada-11e9-9d71-0cc47a792c0a_id_1ec315de-5ada-11e9-9d71-0cc47a792c0a_files/background13.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">9.11</span></div>
+<div style="position:absolute;left:166.96px;top:88.65px" class="cls_003"><span class="cls_003">Exercises</span></div>
+<div style="position:absolute;left:505.43px;top:88.65px" class="cls_003"><span class="cls_003">151</span></div>
+<div style="position:absolute;left:144.54px;top:123.41px" class="cls_003"><span class="cls_003">String s =</span><span class="cls_006"> "((3 + 7) * 2)"</span><span class="cls_003">;</span></div>
+<div style="position:absolute;left:144.54px;top:138.57px" class="cls_004"><span class="cls_004">int</span><span class="cls_003"> count = 0;</span></div>
+<div style="position:absolute;left:144.54px;top:168.91px" class="cls_004"><span class="cls_004">for</span><span class="cls_003"> (</span><span class="cls_004">int</span><span class="cls_003"> i = 0; i &lt; s.length(); i++) {</span></div>
+<div style="position:absolute;left:169.15px;top:184.08px" class="cls_004"><span class="cls_004">char</span><span class="cls_003"> c = s.charAt(i);</span></div>
+<div style="position:absolute;left:169.15px;top:199.25px" class="cls_004"><span class="cls_004">if</span><span class="cls_003"> (c ==</span><span class="cls_007"> '</span><span class="cls_006">(</span><span class="cls_007">'</span><span class="cls_003">) {</span></div>
+<div style="position:absolute;left:193.76px;top:214.41px" class="cls_003"><span class="cls_003">count++;</span></div>
+<div style="position:absolute;left:169.15px;top:229.58px" class="cls_003"><span class="cls_003">}</span><span class="cls_004"> else if</span><span class="cls_003"> (c ==</span><span class="cls_007"> '</span><span class="cls_006">)</span><span class="cls_007">'</span><span class="cls_003">) {</span></div>
+<div style="position:absolute;left:193.76px;top:244.75px" class="cls_003"><span class="cls_003">count--;</span></div>
+<div style="position:absolute;left:169.15px;top:259.92px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:144.54px;top:275.09px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:144.54px;top:305.42px" class="cls_003"><span class="cls_003">System.out.println(count);</span></div>
+<div style="position:absolute;left:143.91px;top:339.68px" class="cls_003"><span class="cls_003">1. Encapsulate this fragment in a method that takes a string argument and</span></div>
+<div style="position:absolute;left:158.87px;top:354.85px" class="cls_003"><span class="cls_003">returns the final value of count.</span></div>
+<div style="position:absolute;left:143.91px;top:382.21px" class="cls_003"><span class="cls_003">2. Now that you have generalized the code so that it works on any string,</span></div>
+<div style="position:absolute;left:158.87px;top:397.38px" class="cls_003"><span class="cls_003">what could you do to generalize it more?</span></div>
+<div style="position:absolute;left:143.91px;top:424.74px" class="cls_003"><span class="cls_003">3. Test your method with multiple strings, including some that are balanced</span></div>
+<div style="position:absolute;left:158.87px;top:439.91px" class="cls_003"><span class="cls_003">and some that are not.</span></div>
+<div style="position:absolute;left:129.60px;top:467.04px" class="cls_003"><span class="cls_003">Exercise 9.4</span></div>
+<div style="position:absolute;left:212.95px;top:467.04px" class="cls_003"><span class="cls_003">Create a program called Recurse.java and type in the fol-</span></div>
+<div style="position:absolute;left:129.60px;top:482.20px" class="cls_003"><span class="cls_003">lowing methods:</span></div>
+<div style="position:absolute;left:144.54px;top:509.88px" class="cls_008"><span class="cls_008">/**</span></div>
+<div style="position:absolute;left:150.70px;top:525.05px" class="cls_008"><span class="cls_008">* Returns the first character of the given String.</span></div>
+<div style="position:absolute;left:150.70px;top:540.22px" class="cls_008"><span class="cls_008">*/</span></div>
+<div style="position:absolute;left:144.54px;top:555.39px" class="cls_004"><span class="cls_004">public static char</span><span class="cls_003"> first(String s) {</span></div>
+<div style="position:absolute;left:169.15px;top:570.56px" class="cls_004"><span class="cls_004">return</span><span class="cls_003"> s.charAt(0);</span></div>
+<div style="position:absolute;left:144.54px;top:585.72px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:144.54px;top:615.63px" class="cls_008"><span class="cls_008">/**</span></div>
+<div style="position:absolute;left:150.70px;top:630.80px" class="cls_008"><span class="cls_008">* Returns all but the first letter of the given String.</span></div>
+<div style="position:absolute;left:150.70px;top:645.97px" class="cls_008"><span class="cls_008">*/</span></div>
+<div style="position:absolute;left:144.54px;top:661.14px" class="cls_004"><span class="cls_004">public static</span><span class="cls_003"> String rest(String s) {</span></div>
+<div style="position:absolute;left:169.15px;top:676.30px" class="cls_004"><span class="cls_004">return</span><span class="cls_003"> s.substring(1);</span></div>
+<div style="position:absolute;left:144.54px;top:691.47px" class="cls_003"><span class="cls_003">}</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:10426px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="1ec315de-5ada-11e9-9d71-0cc47a792c0a_id_1ec315de-5ada-11e9-9d71-0cc47a792c0a_files/background14.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">152</span></div>
+<div style="position:absolute;left:301.86px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 9</span></div>
+<div style="position:absolute;left:374.58px;top:88.65px" class="cls_003"><span class="cls_003">Strings and things</span></div>
+<div style="position:absolute;left:101.34px;top:123.41px" class="cls_008"><span class="cls_008">/**</span></div>
+<div style="position:absolute;left:107.50px;top:138.57px" class="cls_008"><span class="cls_008">* Returns all but the first and last letter of the String.</span></div>
+<div style="position:absolute;left:107.50px;top:153.74px" class="cls_008"><span class="cls_008">*/</span></div>
+<div style="position:absolute;left:101.34px;top:168.91px" class="cls_004"><span class="cls_004">public static</span><span class="cls_003"> String middle(String s) {</span></div>
+<div style="position:absolute;left:125.95px;top:184.08px" class="cls_004"><span class="cls_004">return</span><span class="cls_003"> s.substring(1, s.length() - 1);</span></div>
+<div style="position:absolute;left:101.34px;top:199.25px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:101.34px;top:230.43px" class="cls_008"><span class="cls_008">/**</span></div>
+<div style="position:absolute;left:107.50px;top:245.60px" class="cls_008"><span class="cls_008">* Returns the length of the given String.</span></div>
+<div style="position:absolute;left:107.50px;top:260.77px" class="cls_008"><span class="cls_008">*/</span></div>
+<div style="position:absolute;left:101.34px;top:275.93px" class="cls_004"><span class="cls_004">public static int</span><span class="cls_003"> length(String s) {</span></div>
+<div style="position:absolute;left:125.95px;top:291.10px" class="cls_004"><span class="cls_004">return</span><span class="cls_003"> s.length();</span></div>
+<div style="position:absolute;left:101.34px;top:306.27px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:100.71px;top:343.72px" class="cls_003"><span class="cls_003">1.</span></div>
+<div style="position:absolute;left:115.67px;top:343.72px" class="cls_003"><span class="cls_003">Write some code in main that tests each of these methods.  Make sure</span></div>
+<div style="position:absolute;left:115.67px;top:358.88px" class="cls_003"><span class="cls_003">they work, and you understand what they do.</span></div>
+<div style="position:absolute;left:100.71px;top:387.84px" class="cls_003"><span class="cls_003">2.</span></div>
+<div style="position:absolute;left:115.67px;top:387.84px" class="cls_003"><span class="cls_003">Using these methods, and without using any other String methods,</span></div>
+<div style="position:absolute;left:115.67px;top:403.01px" class="cls_003"><span class="cls_003">write a method called printString that takes a string as a parameter</span></div>
+<div style="position:absolute;left:115.67px;top:418.18px" class="cls_003"><span class="cls_003">and that displays the letters of the string, one on each line. It should be</span></div>
+<div style="position:absolute;left:115.67px;top:433.35px" class="cls_003"><span class="cls_003">a void method.</span></div>
+<div style="position:absolute;left:100.71px;top:462.31px" class="cls_003"><span class="cls_003">3.</span></div>
+<div style="position:absolute;left:115.67px;top:462.31px" class="cls_003"><span class="cls_003">Again using only these methods, write a method called printBackward</span></div>
+<div style="position:absolute;left:115.67px;top:477.47px" class="cls_003"><span class="cls_003">that does the same thing as printString but that displays the string</span></div>
+<div style="position:absolute;left:115.67px;top:492.64px" class="cls_003"><span class="cls_003">backward (again, one character per line).</span></div>
+<div style="position:absolute;left:100.71px;top:521.60px" class="cls_003"><span class="cls_003">4.</span></div>
+<div style="position:absolute;left:115.67px;top:521.60px" class="cls_003"><span class="cls_003">Now write a method called reverseString that takes a string as a pa-</span></div>
+<div style="position:absolute;left:115.67px;top:536.77px" class="cls_003"><span class="cls_003">rameter and that returns a new string as a return value. The new string</span></div>
+<div style="position:absolute;left:115.67px;top:551.94px" class="cls_003"><span class="cls_003">should contain the same letters as the parameter, but in reverse order.</span></div>
+<div style="position:absolute;left:130.61px;top:572.77px" class="cls_003"><span class="cls_003">String backwards = reverseString(</span><span class="cls_006">"coffee"</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:130.61px;top:587.94px" class="cls_003"><span class="cls_003">System.out.println(backwards);</span></div>
+<div style="position:absolute;left:115.67px;top:608.69px" class="cls_003"><span class="cls_003">The output of this example code should be:</span></div>
+<div style="position:absolute;left:130.61px;top:630.79px" class="cls_003"><span class="cls_003">eeffoc</span></div>
+<div style="position:absolute;left:100.71px;top:659.71px" class="cls_003"><span class="cls_003">5.</span></div>
+<div style="position:absolute;left:115.67px;top:659.71px" class="cls_003"><span class="cls_003">A palindrome is a word that reads the same both forward and backward,</span></div>
+<div style="position:absolute;left:115.67px;top:674.88px" class="cls_003"><span class="cls_003">like “otto” and “palindromeemordnilap”. Here’s one way to test whether</span></div>
+<div style="position:absolute;left:115.67px;top:690.04px" class="cls_003"><span class="cls_003">a string is a palindrome:</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:11228px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="1ec315de-5ada-11e9-9d71-0cc47a792c0a_id_1ec315de-5ada-11e9-9d71-0cc47a792c0a_files/background15.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">9.11</span></div>
+<div style="position:absolute;left:166.96px;top:88.65px" class="cls_003"><span class="cls_003">Exercises</span></div>
+<div style="position:absolute;left:505.43px;top:88.65px" class="cls_003"><span class="cls_003">153</span></div>
+<div style="position:absolute;left:184.62px;top:124.74px" class="cls_003"><span class="cls_003">A single letter is a palindrome, a two-letter word is a palin-</span></div>
+<div style="position:absolute;left:184.62px;top:139.91px" class="cls_003"><span class="cls_003">drome if the letters are the same, and any other word is a</span></div>
+<div style="position:absolute;left:184.62px;top:155.08px" class="cls_003"><span class="cls_003">palindrome if the first letter is the same as the last and the</span></div>
+<div style="position:absolute;left:184.62px;top:170.25px" class="cls_003"><span class="cls_003">middle is a palindrome.</span></div>
+<div style="position:absolute;left:158.87px;top:192.84px" class="cls_003"><span class="cls_003">Write a recursive method named isPalindrome that takes a String and</span></div>
+<div style="position:absolute;left:158.87px;top:208.00px" class="cls_003"><span class="cls_003">returns a</span><span class="cls_004"> boolean</span><span class="cls_003"> indicating whether the word is a palindrome.</span></div>
+<div style="position:absolute;left:129.60px;top:235.13px" class="cls_003"><span class="cls_003">Exercise 9.5</span></div>
+<div style="position:absolute;left:212.28px;top:235.13px" class="cls_003"><span class="cls_003">A word is said to be “abecedarian” if the letters in the word</span></div>
+<div style="position:absolute;left:129.60px;top:250.30px" class="cls_003"><span class="cls_003">appear in alphabetical order.  For example, the following are all six-letter</span></div>
+<div style="position:absolute;left:129.60px;top:265.46px" class="cls_003"><span class="cls_003">English abecedarian words:</span></div>
+<div style="position:absolute;left:158.87px;top:301.48px" class="cls_003"><span class="cls_003">abdest, acknow, acorsy, adempt, adipsy, agnosy, befist, behint, be-</span></div>
+<div style="position:absolute;left:158.87px;top:316.65px" class="cls_003"><span class="cls_003">know, bijoux, biopsy, cestuy, chintz, deflux, dehors, dehort, deinos,</span></div>
+<div style="position:absolute;left:158.87px;top:331.82px" class="cls_003"><span class="cls_003">diluvy, dimpsy</span></div>
+<div style="position:absolute;left:129.60px;top:367.83px" class="cls_003"><span class="cls_003">Write a method called isAbecedarian that takes a String and returns a</span></div>
+<div style="position:absolute;left:129.60px;top:383.00px" class="cls_004"><span class="cls_004">boolean</span><span class="cls_003"> indicating whether the word is abecedarian.  Your method can be</span></div>
+<div style="position:absolute;left:129.60px;top:398.17px" class="cls_003"><span class="cls_003">iterative or recursive.</span></div>
+<div style="position:absolute;left:129.60px;top:425.29px" class="cls_003"><span class="cls_003">Exercise 9.6</span></div>
+<div style="position:absolute;left:211.57px;top:425.29px" class="cls_003"><span class="cls_003">A word is said to be a “doubloon” if every letter that appears</span></div>
+<div style="position:absolute;left:129.60px;top:440.46px" class="cls_003"><span class="cls_003">in the word appears exactly twice.  Here are some example doubloons found</span></div>
+<div style="position:absolute;left:129.60px;top:455.63px" class="cls_003"><span class="cls_003">in the dictionary:</span></div>
+<div style="position:absolute;left:158.87px;top:491.64px" class="cls_003"><span class="cls_003">Abba, Anna, appall, appearer, appeases, arraigning, beriberi, bil-</span></div>
+<div style="position:absolute;left:158.87px;top:506.81px" class="cls_003"><span class="cls_003">abial, boob, Caucasus, coco, Dada, deed, Emmett, Hannah, horse-</span></div>
+<div style="position:absolute;left:158.87px;top:521.98px" class="cls_003"><span class="cls_003">shoer, intestines, Isis, mama, Mimi, murmur, noon, Otto, papa,</span></div>
+<div style="position:absolute;left:158.87px;top:537.15px" class="cls_003"><span class="cls_003">peep, reappear, redder, sees, Shanghaiings, Toto</span></div>
+<div style="position:absolute;left:129.60px;top:573.16px" class="cls_003"><span class="cls_003">Write a method called isDoubloon that takes a string and checks whether it is</span></div>
+<div style="position:absolute;left:129.60px;top:588.33px" class="cls_003"><span class="cls_003">a doubloon. To ignore case, invoke the toLowerCase method before checking.</span></div>
+<div style="position:absolute;left:129.60px;top:615.45px" class="cls_003"><span class="cls_003">Exercise 9.7</span></div>
+<div style="position:absolute;left:211.83px;top:615.45px" class="cls_003"><span class="cls_003">Two words are anagrams if they contain the same letters and</span></div>
+<div style="position:absolute;left:129.60px;top:630.62px" class="cls_003"><span class="cls_003">the same number of each letter. For example, “stop” is an anagram of “pots”</span></div>
+<div style="position:absolute;left:129.60px;top:645.79px" class="cls_003"><span class="cls_003">and “allen downey” is an anagram of “well annoyed”.</span></div>
+<div style="position:absolute;left:129.60px;top:674.88px" class="cls_003"><span class="cls_003">Write a method that takes two strings and checks whether they are anagrams</span></div>
+<div style="position:absolute;left:129.60px;top:690.04px" class="cls_003"><span class="cls_003">of each other.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:12030px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="1ec315de-5ada-11e9-9d71-0cc47a792c0a_id_1ec315de-5ada-11e9-9d71-0cc47a792c0a_files/background16.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">154</span></div>
+<div style="position:absolute;left:301.86px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 9</span></div>
+<div style="position:absolute;left:374.58px;top:88.65px" class="cls_003"><span class="cls_003">Strings and things</span></div>
+<div style="position:absolute;left:86.40px;top:124.74px" class="cls_003"><span class="cls_003">Exercise 9.8</span></div>
+<div style="position:absolute;left:167.92px;top:124.39px" class="cls_003"><span class="cls_003">In Scrabble</span><span class="cls_013"><sup>1</sup></span><span class="cls_003"> each player has a set of tiles with letters on them.</span></div>
+<div style="position:absolute;left:86.40px;top:139.91px" class="cls_003"><span class="cls_003">The object of the game is to use those letters to spell words. The scoring system</span></div>
+<div style="position:absolute;left:86.40px;top:155.08px" class="cls_003"><span class="cls_003">is complex, but longer words are usually worth more than shorter words.</span></div>
+<div style="position:absolute;left:86.40px;top:182.20px" class="cls_003"><span class="cls_003">Imagine you are given your set of tiles as a string, like</span><span class="cls_006"> "quijibo"</span><span class="cls_003">, and you</span></div>
+<div style="position:absolute;left:86.40px;top:197.37px" class="cls_003"><span class="cls_003">are given another string to test, like</span><span class="cls_006"> "jib"</span><span class="cls_003">.</span></div>
+<div style="position:absolute;left:86.40px;top:224.49px" class="cls_003"><span class="cls_003">Write a method called canSpell that takes two strings and checks whether</span></div>
+<div style="position:absolute;left:86.40px;top:239.66px" class="cls_003"><span class="cls_003">the set of tiles can spell the word.  You might have more than one tile with</span></div>
+<div style="position:absolute;left:86.40px;top:254.83px" class="cls_003"><span class="cls_003">the same letter, but you can only use each tile once.</span></div>
+<div style="position:absolute;left:99.86px;top:667.50px" class="cls_014"><span class="cls_014"><sup>1</sup></span><span class="cls_015">Scrabble is a registered trademark owned in the USA and Canada by Hasbro Inc., and</span></div>
+<div style="position:absolute;left:86.40px;top:680.08px" class="cls_015"><span class="cls_015">in the rest of the world by J. W. Spear & Sons Limited of Maidenhead, Berkshire, England,</span></div>
+<div style="position:absolute;left:86.40px;top:692.04px" class="cls_015"><span class="cls_015">a subsidiary of Mattel Inc.</span></div>
+</div>
+
+</body>
+</html>

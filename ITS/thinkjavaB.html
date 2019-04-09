@@ -1,0 +1,244 @@
+<html>
+<head><meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<style type="text/css">
+<!--
+span.cls_002{font-family:Arial,serif;font-size:24.8px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_002{font-family:Arial,serif;font-size:24.8px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_003{font-family:Arial,serif;font-size:12.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_003{font-family:Arial,serif;font-size:12.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_004{font-family:Arial,serif;font-size:12.0px;color:rgb(0,0,255);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_004{font-family:Arial,serif;font-size:12.0px;color:rgb(0,0,255);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_005{font-family:Arial,serif;font-size:17.3px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_005{font-family:Arial,serif;font-size:17.3px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_006{font-family:Arial,serif;font-size:12.0px;color:rgb(178,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_006{font-family:Arial,serif;font-size:12.0px;color:rgb(178,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_007{font-family:Arial,serif;font-size:8.8px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_007{font-family:Arial,serif;font-size:8.8px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_008{font-family:Arial,serif;font-size:12.0px;color:rgb(0,123,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_008{font-family:Arial,serif;font-size:12.0px;color:rgb(0,123,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_009{font-family:Arial,serif;font-size:10.9px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_009{font-family:Arial,serif;font-size:10.9px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_010{font-family:Arial,serif;font-size:9.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_010{font-family:Arial,serif;font-size:9.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+-->
+</style>
+<script type="text/javascript" src="d89062ae-5adb-11e9-9d71-0cc47a792c0a_id_d89062ae-5adb-11e9-9d71-0cc47a792c0a_files/wz_jsgraphics.js"></script>
+</head>
+<body>
+<div style="position:absolute;left:50%;margin-left:-306px;top:0px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="d89062ae-5adb-11e9-9d71-0cc47a792c0a_id_d89062ae-5adb-11e9-9d71-0cc47a792c0a_files/background1.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:211.49px" class="cls_002"><span class="cls_002">Appendix B</span></div>
+<div style="position:absolute;left:129.60px;top:281.17px" class="cls_002"><span class="cls_002">Java 2D graphics</span></div>
+<div style="position:absolute;left:129.60px;top:367.40px" class="cls_003"><span class="cls_003">The Java library includes a simple package for drawing 2D graphics, called</span></div>
+<div style="position:absolute;left:129.60px;top:382.57px" class="cls_003"><span class="cls_003">java.awt. AWT stands for “Abstract Window Toolkit”. We are only going</span></div>
+<div style="position:absolute;left:129.60px;top:397.74px" class="cls_003"><span class="cls_003">to scratch the surface of graphics programming; you can read more about it</span></div>
+<div style="position:absolute;left:129.60px;top:412.91px" class="cls_003"><span class="cls_003">in the Java tutorials at</span><span class="cls_004"> <A HREF="https://docs.oracle.com/javase/tutorial/2d/">https://docs.oracle.com/javase/tutorial/2d/</A> </span><span class="cls_003">.</span></div>
+<div style="position:absolute;left:129.60px;top:475.36px" class="cls_005"><span class="cls_005">B.1</span></div>
+<div style="position:absolute;left:177.80px;top:475.36px" class="cls_005"><span class="cls_005">Creating graphics</span></div>
+<div style="position:absolute;left:129.60px;top:519.43px" class="cls_003"><span class="cls_003">There are several ways to create graphics in Java; the simplest way is to use</span></div>
+<div style="position:absolute;left:129.60px;top:534.60px" class="cls_003"><span class="cls_003">java.awt.Canvas and java.awt.Graphics.  A Canvas is a blank rectangu-</span></div>
+<div style="position:absolute;left:129.60px;top:549.76px" class="cls_003"><span class="cls_003">lar area of the screen onto which the application can draw. The Graphics class</span></div>
+<div style="position:absolute;left:129.60px;top:564.93px" class="cls_003"><span class="cls_003">provides basic drawing methods such as drawLine, drawRect, and drawString.</span></div>
+<div style="position:absolute;left:129.60px;top:598.48px" class="cls_003"><span class="cls_003">Here is an example program that draws a circle using the fillOval method:</span></div>
+<div style="position:absolute;left:144.54px;top:630.80px" class="cls_004"><span class="cls_004">import</span><span class="cls_003"> java.awt.Canvas;</span></div>
+<div style="position:absolute;left:144.54px;top:645.97px" class="cls_004"><span class="cls_004">import</span><span class="cls_003"> java.awt.Graphics;</span></div>
+<div style="position:absolute;left:144.54px;top:661.14px" class="cls_004"><span class="cls_004">import</span><span class="cls_003"> javax.swing.JFrame;</span></div>
+<div style="position:absolute;left:144.54px;top:691.47px" class="cls_004"><span class="cls_004">public class</span><span class="cls_003"> Drawing</span><span class="cls_004"> extends</span><span class="cls_003"> Canvas {</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:802px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="d89062ae-5adb-11e9-9d71-0cc47a792c0a_id_d89062ae-5adb-11e9-9d71-0cc47a792c0a_files/background2.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">246</span></div>
+<div style="position:absolute;left:296.79px;top:88.65px" class="cls_003"><span class="cls_003">Appendix B   Java 2D graphics</span></div>
+<div style="position:absolute;left:125.95px;top:123.41px" class="cls_004"><span class="cls_004">public static void</span><span class="cls_003"> main(String[] args) {</span></div>
+<div style="position:absolute;left:150.56px;top:138.57px" class="cls_003"><span class="cls_003">JFrame frame =</span><span class="cls_004"> new</span><span class="cls_003"> JFrame(</span><span class="cls_006">"My Drawing"</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:150.56px;top:153.74px" class="cls_003"><span class="cls_003">Canvas canvas =</span><span class="cls_004"> new</span><span class="cls_003"> Drawing();</span></div>
+<div style="position:absolute;left:150.56px;top:168.91px" class="cls_003"><span class="cls_003">canvas.setSize(400, 400);</span></div>
+<div style="position:absolute;left:150.56px;top:184.08px" class="cls_003"><span class="cls_003">frame.add(canvas);</span></div>
+<div style="position:absolute;left:150.56px;top:199.25px" class="cls_003"><span class="cls_003">frame.pack();</span></div>
+<div style="position:absolute;left:150.56px;top:214.41px" class="cls_003"><span class="cls_003">frame.setVisible(</span><span class="cls_004">true</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:125.95px;top:229.58px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:125.95px;top:259.92px" class="cls_004"><span class="cls_004">public void</span><span class="cls_003"> paint(Graphics g) {</span></div>
+<div style="position:absolute;left:150.56px;top:275.09px" class="cls_003"><span class="cls_003">g.fillOval(100, 100, 200, 200);</span></div>
+<div style="position:absolute;left:125.95px;top:290.26px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:101.34px;top:305.42px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:332.31px" class="cls_003"><span class="cls_003">The Drawing class extends Canvas, so it has all the methods provided by</span></div>
+<div style="position:absolute;left:86.40px;top:347.48px" class="cls_003"><span class="cls_003">Canvas, including setSize.  You can read about the other methods in the</span></div>
+<div style="position:absolute;left:86.40px;top:362.65px" class="cls_003"><span class="cls_003">documentation, which you can find by doing a web search for “Java Canvas”.</span></div>
+<div style="position:absolute;left:86.40px;top:390.86px" class="cls_003"><span class="cls_003">In the main method, we:</span></div>
+<div style="position:absolute;left:100.71px;top:424.68px" class="cls_003"><span class="cls_003">1. Create a JFrame object, which is the window that will contain the canvas.</span></div>
+<div style="position:absolute;left:100.71px;top:451.16px" class="cls_003"><span class="cls_003">2. Create a Drawing object (which is the canvas), set its width and height,</span></div>
+<div style="position:absolute;left:115.67px;top:466.33px" class="cls_003"><span class="cls_003">and add it to the frame.</span></div>
+<div style="position:absolute;left:100.71px;top:492.82px" class="cls_003"><span class="cls_003">3. Pack the frame (resize it) to fit the canvas, and display it on the screen.</span></div>
+<div style="position:absolute;left:86.40px;top:526.64px" class="cls_003"><span class="cls_003">Once the frame is visible, the paint method is called whenever the canvas</span></div>
+<div style="position:absolute;left:86.40px;top:541.81px" class="cls_003"><span class="cls_003">needs to be drawn; for example, when the window is moved or resized.  The</span></div>
+<div style="position:absolute;left:86.40px;top:556.98px" class="cls_003"><span class="cls_003">application doesn’t end after the main method returns; instead, it waits for</span></div>
+<div style="position:absolute;left:86.40px;top:572.15px" class="cls_003"><span class="cls_003">the JFrame to close. If you run this code, you should see a black circle on a</span></div>
+<div style="position:absolute;left:86.40px;top:587.31px" class="cls_003"><span class="cls_003">gray background.</span></div>
+<div style="position:absolute;left:86.40px;top:637.52px" class="cls_005"><span class="cls_005">B.2</span></div>
+<div style="position:absolute;left:134.60px;top:637.52px" class="cls_005"><span class="cls_005">Graphics methods</span></div>
+<div style="position:absolute;left:86.40px;top:674.88px" class="cls_003"><span class="cls_003">You are probably used to Cartesian coordinates, where x and y values can</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_003"><span class="cls_003">be positive or negative.  In contrast, Java uses a coordinate system where</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:1604px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="d89062ae-5adb-11e9-9d71-0cc47a792c0a_id_d89062ae-5adb-11e9-9d71-0cc47a792c0a_files/background3.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">B.2</span></div>
+<div style="position:absolute;left:163.07px;top:88.65px" class="cls_003"><span class="cls_003">Graphics methods</span></div>
+<div style="position:absolute;left:505.43px;top:88.65px" class="cls_003"><span class="cls_003">247</span></div>
+<div style="position:absolute;left:129.60px;top:124.74px" class="cls_003"><span class="cls_003">the origin is in the upper-left corner. That way, x and y are always positive</span></div>
+<div style="position:absolute;left:129.60px;top:139.91px" class="cls_003"><span class="cls_003">integers. Figure B.1 shows these coordinate systems.</span></div>
+<div style="position:absolute;left:129.60px;top:168.09px" class="cls_003"><span class="cls_003">Graphical coordinates are measured in pixels; each pixel corresponds to a dot</span></div>
+<div style="position:absolute;left:129.60px;top:183.26px" class="cls_003"><span class="cls_003">on the screen.</span></div>
+<div style="position:absolute;left:166.62px;top:209.90px" class="cls_007"><span class="cls_007">Cartesian coordinates</span></div>
+<div style="position:absolute;left:353.12px;top:209.90px" class="cls_007"><span class="cls_007">Java graphical coordinates</span></div>
+<div style="position:absolute;left:210.50px;top:228.18px" class="cls_007"><span class="cls_007">positive y</span></div>
+<div style="position:absolute;left:466.48px;top:242.81px" class="cls_007"><span class="cls_007">positive x</span></div>
+<div style="position:absolute;left:250.72px;top:268.41px" class="cls_007"><span class="cls_007">origin (0, 0)</span></div>
+<div style="position:absolute;left:382.37px;top:272.06px" class="cls_007"><span class="cls_007">origin (0, 0)</span></div>
+<div style="position:absolute;left:148.33px;top:290.35px" class="cls_007"><span class="cls_007">negative x</span></div>
+<div style="position:absolute;left:279.98px;top:290.35px" class="cls_007"><span class="cls_007">positive x</span></div>
+<div style="position:absolute;left:367.74px;top:345.20px" class="cls_007"><span class="cls_007">positive y</span></div>
+<div style="position:absolute;left:210.50px;top:359.83px" class="cls_007"><span class="cls_007">negative y</span></div>
+<div style="position:absolute;left:129.60px;top:384.39px" class="cls_003"><span class="cls_003">Figure B.1: Diagram of the difference between Cartesian coordinates and Java</span></div>
+<div style="position:absolute;left:129.60px;top:398.84px" class="cls_003"><span class="cls_003">graphical coordinates.</span></div>
+<div style="position:absolute;left:129.60px;top:430.34px" class="cls_003"><span class="cls_003">To draw on the canvas, you invoke methods on a Graphics object. You don’t</span></div>
+<div style="position:absolute;left:129.60px;top:445.51px" class="cls_003"><span class="cls_003">have to create the Graphics object; it gets created when you create the Canvas,</span></div>
+<div style="position:absolute;left:129.60px;top:460.68px" class="cls_003"><span class="cls_003">and it gets passed as an argument to paint.</span></div>
+<div style="position:absolute;left:129.60px;top:488.86px" class="cls_003"><span class="cls_003">The previous example used fillOval, which has the following signature:</span></div>
+<div style="position:absolute;left:144.54px;top:515.81px" class="cls_008"><span class="cls_008">/**</span></div>
+<div style="position:absolute;left:150.70px;top:530.98px" class="cls_008"><span class="cls_008">* Fills an oval bounded by the specified rectangle with</span></div>
+<div style="position:absolute;left:150.70px;top:546.15px" class="cls_008"><span class="cls_008">* the current color.</span></div>
+<div style="position:absolute;left:150.70px;top:561.31px" class="cls_008"><span class="cls_008">*/</span></div>
+<div style="position:absolute;left:144.54px;top:576.48px" class="cls_004"><span class="cls_004">public void</span><span class="cls_003"> fillOval(</span><span class="cls_004">int</span><span class="cls_003"> x,</span><span class="cls_004"> int</span><span class="cls_003"> y,</span><span class="cls_004"> int</span><span class="cls_003"> width,</span><span class="cls_004"> int</span><span class="cls_003"> height)</span></div>
+<div style="position:absolute;left:129.60px;top:603.34px" class="cls_003"><span class="cls_003">The four parameters specify a bounding box, which is the rectangle in which</span></div>
+<div style="position:absolute;left:129.60px;top:618.51px" class="cls_003"><span class="cls_003">the oval is drawn. x and y specify the the location of the upper-left corner of</span></div>
+<div style="position:absolute;left:129.60px;top:633.68px" class="cls_003"><span class="cls_003">the bounding box. The bounding box itself is not drawn (see Figure B.2).</span></div>
+<div style="position:absolute;left:129.60px;top:661.86px" class="cls_003"><span class="cls_003">To choose the color of a shape, invoke setColor on the Graphics object:</span></div>
+<div style="position:absolute;left:144.54px;top:690.09px" class="cls_003"><span class="cls_003">g.setColor(Color.red);</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:2406px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="d89062ae-5adb-11e9-9d71-0cc47a792c0a_id_d89062ae-5adb-11e9-9d71-0cc47a792c0a_files/background4.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">248</span></div>
+<div style="position:absolute;left:296.79px;top:88.65px" class="cls_003"><span class="cls_003">Appendix B   Java 2D graphics</span></div>
+<div style="position:absolute;left:212.30px;top:123.74px" class="cls_009"><span class="cls_009">bounding box</span></div>
+<div style="position:absolute;left:248.30px;top:177.74px" class="cls_009"><span class="cls_009">inscribed oval</span></div>
+<div style="position:absolute;left:140.70px;top:242.20px" class="cls_003"><span class="cls_003">Figure B.2: Diagram of an oval inside its bounding box.</span></div>
+<div style="position:absolute;left:86.40px;top:276.37px" class="cls_003"><span class="cls_003">The setColor method determines the color of everything that gets drawn</span></div>
+<div style="position:absolute;left:86.40px;top:291.54px" class="cls_003"><span class="cls_003">afterward. Color.red is a constant provided by the Color class; to use it you</span></div>
+<div style="position:absolute;left:86.40px;top:306.70px" class="cls_003"><span class="cls_003">have to</span><span class="cls_004"> import</span><span class="cls_003"> java.awt.Color. Other colors include:</span></div>
+<div style="position:absolute;left:101.34px;top:334.85px" class="cls_003"><span class="cls_003">black</span></div>
+<div style="position:absolute;left:175.17px;top:334.85px" class="cls_003"><span class="cls_003">blue</span></div>
+<div style="position:absolute;left:236.68px;top:334.85px" class="cls_003"><span class="cls_003">cyan</span></div>
+<div style="position:absolute;left:292.05px;top:334.85px" class="cls_003"><span class="cls_003">darkGray    gray</span></div>
+<div style="position:absolute;left:408.94px;top:334.85px" class="cls_003"><span class="cls_003">green</span></div>
+<div style="position:absolute;left:101.34px;top:350.02px" class="cls_003"><span class="cls_003">lightGray</span></div>
+<div style="position:absolute;left:175.17px;top:350.02px" class="cls_003"><span class="cls_003">magenta</span></div>
+<div style="position:absolute;left:236.68px;top:350.02px" class="cls_003"><span class="cls_003">orange</span></div>
+<div style="position:absolute;left:292.06px;top:350.02px" class="cls_003"><span class="cls_003">pink</span></div>
+<div style="position:absolute;left:359.73px;top:350.02px" class="cls_003"><span class="cls_003">white    yellow</span></div>
+<div style="position:absolute;left:86.40px;top:378.42px" class="cls_003"><span class="cls_003">You can create your own colors by specifying the red, green, and blue (RGB)</span></div>
+<div style="position:absolute;left:86.40px;top:393.58px" class="cls_003"><span class="cls_003">components. For example:</span></div>
+<div style="position:absolute;left:101.34px;top:422.68px" class="cls_003"><span class="cls_003">Color purple =</span><span class="cls_004"> new</span><span class="cls_003"> Color(128, 0, 128);</span></div>
+<div style="position:absolute;left:86.40px;top:451.68px" class="cls_003"><span class="cls_003">Each value is an integer in the range 0 (darkest) to 255 (lightest). The color</span></div>
+<div style="position:absolute;left:86.40px;top:466.85px" class="cls_003"><span class="cls_003">(0, 0, 0) is black, and (255, 255, 255) is white.</span></div>
+<div style="position:absolute;left:86.40px;top:495.90px" class="cls_003"><span class="cls_003">You can set the background color of the Canvas by invoking setBackground:</span></div>
+<div style="position:absolute;left:101.34px;top:524.99px" class="cls_003"><span class="cls_003">canvas.setBackground(Color.white);</span></div>
+<div style="position:absolute;left:86.40px;top:577.08px" class="cls_005"><span class="cls_005">B.3</span></div>
+<div style="position:absolute;left:134.60px;top:577.08px" class="cls_005"><span class="cls_005">Example drawing</span></div>
+<div style="position:absolute;left:86.40px;top:615.49px" class="cls_003"><span class="cls_003">Suppose we want to draw a “Hidden Mickey”, which is an icon that represents</span></div>
+<div style="position:absolute;left:86.40px;top:630.66px" class="cls_003"><span class="cls_003">Mickey Mouse (see</span><span class="cls_004"> <A HREF="https://en.wikipedia.org/wiki/Hidden_Mickey">https://en.wikipedia.org/wiki/Hidden_Mickey</A> </span><span class="cls_003">). We</span></div>
+<div style="position:absolute;left:86.40px;top:645.83px" class="cls_003"><span class="cls_003">can use the oval we just drew as the face, and then add two ears. To make the</span></div>
+<div style="position:absolute;left:86.40px;top:661.00px" class="cls_003"><span class="cls_003">code more readable, let’s use Rectangle objects to represent bounding boxes.</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_003"><span class="cls_003">Here’s a method that takes a Rectangle and invokes fillOval:</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:3208px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="d89062ae-5adb-11e9-9d71-0cc47a792c0a_id_d89062ae-5adb-11e9-9d71-0cc47a792c0a_files/background5.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">B.3</span></div>
+<div style="position:absolute;left:163.07px;top:88.65px" class="cls_003"><span class="cls_003">Example drawing</span></div>
+<div style="position:absolute;left:505.42px;top:88.65px" class="cls_003"><span class="cls_003">249</span></div>
+<div style="position:absolute;left:144.54px;top:123.41px" class="cls_004"><span class="cls_004">public void</span><span class="cls_003"> boxOval(Graphics g, Rectangle bb) {</span></div>
+<div style="position:absolute;left:169.15px;top:138.57px" class="cls_003"><span class="cls_003">g.fillOval(bb.x, bb.y, bb.width, bb.height);</span></div>
+<div style="position:absolute;left:144.54px;top:153.74px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:183.24px" class="cls_003"><span class="cls_003">And here’s a method that draws Mickey Mouse:</span></div>
+<div style="position:absolute;left:144.54px;top:212.83px" class="cls_004"><span class="cls_004">public void</span><span class="cls_003"> mickey(Graphics g, Rectangle bb) {</span></div>
+<div style="position:absolute;left:169.15px;top:228.00px" class="cls_003"><span class="cls_003">boxOval(g, bb);</span></div>
+<div style="position:absolute;left:169.15px;top:258.34px" class="cls_004"><span class="cls_004">int</span><span class="cls_003"> dx = bb.width / 2;</span></div>
+<div style="position:absolute;left:169.15px;top:273.50px" class="cls_004"><span class="cls_004">int</span><span class="cls_003"> dy = bb.height / 2;</span></div>
+<div style="position:absolute;left:169.15px;top:288.67px" class="cls_003"><span class="cls_003">Rectangle half =</span><span class="cls_004"> new</span><span class="cls_003"> Rectangle(bb.x, bb.y, dx, dy);</span></div>
+<div style="position:absolute;left:169.15px;top:319.01px" class="cls_003"><span class="cls_003">half.translate(-dx / 2, -dy / 2);</span></div>
+<div style="position:absolute;left:169.15px;top:334.18px" class="cls_003"><span class="cls_003">boxOval(g, half);</span></div>
+<div style="position:absolute;left:169.15px;top:364.51px" class="cls_003"><span class="cls_003">half.translate(dx * 2, 0);</span></div>
+<div style="position:absolute;left:169.15px;top:379.68px" class="cls_003"><span class="cls_003">boxOval(g, half);</span></div>
+<div style="position:absolute;left:144.54px;top:394.85px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:424.35px" class="cls_003"><span class="cls_003">The first line draws the face. The next three lines create a smaller rectangle</span></div>
+<div style="position:absolute;left:129.60px;top:439.52px" class="cls_003"><span class="cls_003">for the ears. We translate the rectangle up and left for the first ear, then to</span></div>
+<div style="position:absolute;left:129.60px;top:454.68px" class="cls_003"><span class="cls_003">the right for the second ear. The result is shown in Figure B.3.</span></div>
+<div style="position:absolute;left:174.47px;top:643.06px" class="cls_003"><span class="cls_003">Figure B.3: A “Hidden Mickey” drawn using Java graphics.</span></div>
+<div style="position:absolute;left:129.60px;top:674.88px" class="cls_003"><span class="cls_003">You can read more about Rectangle and translate in Chapter 10. See the</span></div>
+<div style="position:absolute;left:129.60px;top:690.04px" class="cls_003"><span class="cls_003">exercises at the end of this appendix for more example drawings.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:4010px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="d89062ae-5adb-11e9-9d71-0cc47a792c0a_id_d89062ae-5adb-11e9-9d71-0cc47a792c0a_files/background6.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">250</span></div>
+<div style="position:absolute;left:296.79px;top:88.65px" class="cls_003"><span class="cls_003">Appendix B   Java 2D graphics</span></div>
+<div style="position:absolute;left:86.40px;top:119.48px" class="cls_005"><span class="cls_005">B.4</span></div>
+<div style="position:absolute;left:134.60px;top:119.48px" class="cls_005"><span class="cls_005">Vocabulary</span></div>
+<div style="position:absolute;left:86.40px;top:153.18px" class="cls_003"><span class="cls_003">AWT: The “Abstract Window Toolkit”, a Java package for creating graphical</span></div>
+<div style="position:absolute;left:115.67px;top:168.35px" class="cls_003"><span class="cls_003">user interfaces.</span></div>
+<div style="position:absolute;left:86.40px;top:195.12px" class="cls_003"><span class="cls_003">coordinate: A value that specifies a location in a two-dimensional graphical</span></div>
+<div style="position:absolute;left:115.67px;top:210.29px" class="cls_003"><span class="cls_003">window.</span></div>
+<div style="position:absolute;left:86.40px;top:237.07px" class="cls_003"><span class="cls_003">pixel: The unit in which coordinates are measured.</span></div>
+<div style="position:absolute;left:86.40px;top:263.84px" class="cls_003"><span class="cls_003">bounding box: A common way to specify the coordinates of a rectangular</span></div>
+<div style="position:absolute;left:115.67px;top:279.01px" class="cls_003"><span class="cls_003">area.</span></div>
+<div style="position:absolute;left:86.40px;top:305.78px" class="cls_003"><span class="cls_003">RGB: A color model based on adding red, green, and blue light.</span></div>
+<div style="position:absolute;left:86.40px;top:356.52px" class="cls_005"><span class="cls_005">B.5</span></div>
+<div style="position:absolute;left:134.60px;top:356.52px" class="cls_005"><span class="cls_005">Exercises</span></div>
+<div style="position:absolute;left:86.40px;top:394.16px" class="cls_003"><span class="cls_003">The code for this chapter is in the ap02 directory of ThinkJavaCode.  See</span></div>
+<div style="position:absolute;left:86.40px;top:409.33px" class="cls_003"><span class="cls_003">page xv for instructions on how to download the repository. Before you start</span></div>
+<div style="position:absolute;left:86.40px;top:424.50px" class="cls_003"><span class="cls_003">the exercises, we recommend that you compile and run the examples.</span></div>
+<div style="position:absolute;left:86.40px;top:451.62px" class="cls_003"><span class="cls_003">Exercise B.1</span></div>
+<div style="position:absolute;left:172.20px;top:451.62px" class="cls_003"><span class="cls_003">Draw the flag of Japan: a red circle on a white background</span></div>
+<div style="position:absolute;left:86.40px;top:466.79px" class="cls_003"><span class="cls_003">that is wider than it is tall.</span></div>
+<div style="position:absolute;left:86.40px;top:493.91px" class="cls_003"><span class="cls_003">Exercise B.2</span></div>
+<div style="position:absolute;left:172.43px;top:493.91px" class="cls_003"><span class="cls_003">Modify Mickey.java to draw ears on the ears, and ears on</span></div>
+<div style="position:absolute;left:86.40px;top:509.08px" class="cls_003"><span class="cls_003">those ears, and more ears all the way down until the smallest ears are only 3</span></div>
+<div style="position:absolute;left:86.40px;top:524.25px" class="cls_003"><span class="cls_003">pixels wide.</span></div>
+<div style="position:absolute;left:86.40px;top:552.69px" class="cls_003"><span class="cls_003">The result should look like “Mickey Moose”, shown in Figure B.4. Hint: You</span></div>
+<div style="position:absolute;left:86.40px;top:567.85px" class="cls_003"><span class="cls_003">should only have to add or modify a few lines of code.</span></div>
+<div style="position:absolute;left:86.40px;top:594.98px" class="cls_003"><span class="cls_003">Exercise B.3</span></div>
+<div style="position:absolute;left:172.91px;top:594.98px" class="cls_003"><span class="cls_003">In this exercise, you will draw “Moiré patterns” that seem</span></div>
+<div style="position:absolute;left:86.40px;top:610.15px" class="cls_003"><span class="cls_003">to shift around as you move.  For an explanation of what is going on, see</span></div>
+<div style="position:absolute;left:86.40px;top:625.31px" class="cls_004"><span class="cls_004"> </span><A HREF="https://en.wikipedia.org/wiki/Moire_pattern">https://en.wikipedia.org/wiki/Moire_pattern</A> <span class="cls_003">.</span></div>
+<div style="position:absolute;left:100.71px;top:659.71px" class="cls_003"><span class="cls_003">1. In the directory app02 in the repository for this book, you’ll find a file</span></div>
+<div style="position:absolute;left:115.67px;top:674.88px" class="cls_003"><span class="cls_003">named Moire.java. Open it and read the paint method. Draw a sketch</span></div>
+<div style="position:absolute;left:115.67px;top:690.04px" class="cls_003"><span class="cls_003">of what you expect it to do. Now run it. Did you get what you expected?</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:4812px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="d89062ae-5adb-11e9-9d71-0cc47a792c0a_id_d89062ae-5adb-11e9-9d71-0cc47a792c0a_files/background7.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">B.5</span></div>
+<div style="position:absolute;left:163.07px;top:88.65px" class="cls_003"><span class="cls_003">Exercises</span></div>
+<div style="position:absolute;left:505.42px;top:88.65px" class="cls_003"><span class="cls_003">251</span></div>
+<div style="position:absolute;left:185.90px;top:281.20px" class="cls_003"><span class="cls_003">Figure B.4: A recursive shape we call “Mickey Moose”.</span></div>
+<div style="position:absolute;left:143.91px;top:313.78px" class="cls_003"><span class="cls_003">2. Modify the program so that the space between the circles is larger or</span></div>
+<div style="position:absolute;left:158.87px;top:328.94px" class="cls_003"><span class="cls_003">smaller. See what happens to the image.</span></div>
+<div style="position:absolute;left:143.91px;top:353.76px" class="cls_003"><span class="cls_003">3. Modify the program so that the circles are drawn in the center of the</span></div>
+<div style="position:absolute;left:158.87px;top:368.93px" class="cls_003"><span class="cls_003">screen and concentric, as in Figure B.5 (left). The distance between the</span></div>
+<div style="position:absolute;left:158.87px;top:384.10px" class="cls_003"><span class="cls_003">circles should be small enough that the Moiré interference is apparent.</span></div>
+<div style="position:absolute;left:186.84px;top:411.27px" class="cls_010"><span class="cls_010">concentric circles</span></div>
+<div style="position:absolute;left:347.91px;top:411.27px" class="cls_010"><span class="cls_010">radial Moire pattern</span></div>
+<div style="position:absolute;left:155.03px;top:568.15px" class="cls_003"><span class="cls_003">Figure B.5: Graphical patterns that can exhibit Moiré interference.</span></div>
+<div style="position:absolute;left:143.91px;top:605.44px" class="cls_003"><span class="cls_003">4. Write a method named radial that draws a radial set of line segments</span></div>
+<div style="position:absolute;left:158.87px;top:620.61px" class="cls_003"><span class="cls_003">as shown in Figure B.5 (right), but they should be close enough together</span></div>
+<div style="position:absolute;left:158.87px;top:635.78px" class="cls_003"><span class="cls_003">to create a Moiré pattern.</span></div>
+<div style="position:absolute;left:143.91px;top:660.60px" class="cls_003"><span class="cls_003">5. Just about any kind of graphical pattern can generate Moiré-like inter-</span></div>
+<div style="position:absolute;left:158.87px;top:675.76px" class="cls_003"><span class="cls_003">ference patterns. Play around and see what you can create.</span></div>
+</div>
+
+</body>
+</html>

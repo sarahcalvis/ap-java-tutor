@@ -1,0 +1,664 @@
+<html>
+<head><meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<style type="text/css">
+<!--
+span.cls_002{font-family:Arial,serif;font-size:24.8px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_002{font-family:Arial,serif;font-size:24.8px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_003{font-family:Arial,serif;font-size:12.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_003{font-family:Arial,serif;font-size:12.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_004{font-family:Arial,serif;font-size:17.3px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_004{font-family:Arial,serif;font-size:17.3px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_005{font-family:Arial,serif;font-size:12.0px;color:rgb(0,0,255);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_005{font-family:Arial,serif;font-size:12.0px;color:rgb(0,0,255);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_006{font-family:Arial,serif;font-size:12.0px;color:rgb(178,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_006{font-family:Arial,serif;font-size:12.0px;color:rgb(178,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_007{font-family:Arial,serif;font-size:12.0px;color:rgb(0,123,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_007{font-family:Arial,serif;font-size:12.0px;color:rgb(0,123,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_008{font-family:Times,serif;font-size:8.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_008{font-family:Times,serif;font-size:8.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_009{font-family:Times,serif;font-size:8.1px;color:rgb(178,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_009{font-family:Times,serif;font-size:8.1px;color:rgb(178,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_010{font-family:Arial,serif;font-size:10.9px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_010{font-family:Arial,serif;font-size:10.9px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_011{font-family:Arial,serif;font-size:11.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_011{font-family:Arial,serif;font-size:11.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+-->
+</style>
+<script type="text/javascript" src="6bb36c0e-5ad5-11e9-9d71-0cc47a792c0a_id_6bb36c0e-5ad5-11e9-9d71-0cc47a792c0a_files/wz_jsgraphics.js"></script>
+</head>
+<body>
+<div style="position:absolute;left:50%;margin-left:-306px;top:0px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="6bb36c0e-5ad5-11e9-9d71-0cc47a792c0a_id_6bb36c0e-5ad5-11e9-9d71-0cc47a792c0a_files/background01.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:206.11px" class="cls_002"><span class="cls_002">Chapter 2</span></div>
+<div style="position:absolute;left:129.60px;top:270.42px" class="cls_002"><span class="cls_002">Variables and operators</span></div>
+<div style="position:absolute;left:129.60px;top:351.27px" class="cls_003"><span class="cls_003">This chapter describes how to write statements using variables, which store</span></div>
+<div style="position:absolute;left:129.60px;top:366.43px" class="cls_003"><span class="cls_003">values like numbers and words, and operators, which are symbols that perform</span></div>
+<div style="position:absolute;left:129.60px;top:381.60px" class="cls_003"><span class="cls_003">a computation. We also explain three kinds of programming errors and offer</span></div>
+<div style="position:absolute;left:129.60px;top:396.77px" class="cls_003"><span class="cls_003">additional debugging advice.</span></div>
+<div style="position:absolute;left:129.60px;top:446.89px" class="cls_004"><span class="cls_004">2.1</span></div>
+<div style="position:absolute;left:173.71px;top:446.89px" class="cls_004"><span class="cls_004">Declaring variables</span></div>
+<div style="position:absolute;left:129.60px;top:484.19px" class="cls_003"><span class="cls_003">One of the most powerful features of a programming language is the ability to</span></div>
+<div style="position:absolute;left:129.60px;top:499.36px" class="cls_003"><span class="cls_003">define and manipulate variables. A variable is a named location that stores</span></div>
+<div style="position:absolute;left:129.60px;top:514.53px" class="cls_003"><span class="cls_003">a value.  Values may be numbers, text, images, sounds, and other types of</span></div>
+<div style="position:absolute;left:129.60px;top:529.70px" class="cls_003"><span class="cls_003">data. To store a value, you first have to declare a variable.</span></div>
+<div style="position:absolute;left:144.54px;top:557.91px" class="cls_003"><span class="cls_003">String message;</span></div>
+<div style="position:absolute;left:129.60px;top:586.04px" class="cls_003"><span class="cls_003">This statement is a declaration, because it declares that the variable named</span></div>
+<div style="position:absolute;left:129.60px;top:601.20px" class="cls_003"><span class="cls_003">message has the type String. Each variable has a type that determines what</span></div>
+<div style="position:absolute;left:129.60px;top:616.37px" class="cls_003"><span class="cls_003">kind of values it can store. For example, the</span><span class="cls_005"> int</span><span class="cls_003"> type can store integers, and</span></div>
+<div style="position:absolute;left:129.60px;top:631.54px" class="cls_003"><span class="cls_003">the</span><span class="cls_005"> char</span><span class="cls_003"> type can store characters.</span></div>
+<div style="position:absolute;left:129.60px;top:659.71px" class="cls_003"><span class="cls_003">Some types begin with a capital letter and some with lowercase. We will learn</span></div>
+<div style="position:absolute;left:129.60px;top:674.88px" class="cls_003"><span class="cls_003">the significance of this distinction later, but for now you should take care to</span></div>
+<div style="position:absolute;left:129.60px;top:690.04px" class="cls_003"><span class="cls_003">get it right. There is no such type as Int or string.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:802px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="6bb36c0e-5ad5-11e9-9d71-0cc47a792c0a_id_6bb36c0e-5ad5-11e9-9d71-0cc47a792c0a_files/background02.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">16</span></div>
+<div style="position:absolute;left:269.76px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 2</span></div>
+<div style="position:absolute;left:342.47px;top:88.65px" class="cls_003"><span class="cls_003">Variables and operators</span></div>
+<div style="position:absolute;left:86.40px;top:124.74px" class="cls_003"><span class="cls_003">To declare an integer variable named x, you simply type:</span></div>
+<div style="position:absolute;left:101.34px;top:150.12px" class="cls_005"><span class="cls_005">int</span><span class="cls_003"> x;</span></div>
+<div style="position:absolute;left:86.40px;top:175.41px" class="cls_003"><span class="cls_003">Note that x is an arbitrary name for the variable. In general, you should use</span></div>
+<div style="position:absolute;left:86.40px;top:190.57px" class="cls_003"><span class="cls_003">names that indicate what the variables mean. For example, if you saw these</span></div>
+<div style="position:absolute;left:86.40px;top:205.74px" class="cls_003"><span class="cls_003">declarations, you could probably guess what values would be stored:</span></div>
+<div style="position:absolute;left:101.34px;top:229.84px" class="cls_003"><span class="cls_003">String firstName;</span></div>
+<div style="position:absolute;left:101.34px;top:245.01px" class="cls_003"><span class="cls_003">String lastName;</span></div>
+<div style="position:absolute;left:101.34px;top:260.18px" class="cls_005"><span class="cls_005">int</span><span class="cls_003"> hour, minute;</span></div>
+<div style="position:absolute;left:86.40px;top:284.19px" class="cls_003"><span class="cls_003">This example declares two variables with type String and two with type</span></div>
+<div style="position:absolute;left:86.40px;top:299.36px" class="cls_005"><span class="cls_005">int</span><span class="cls_003">.  When a variable name contains more than one word, like firstName,</span></div>
+<div style="position:absolute;left:86.40px;top:314.53px" class="cls_003"><span class="cls_003">it is conventional to capitalize the first letter of each word except the first.</span></div>
+<div style="position:absolute;left:86.40px;top:329.70px" class="cls_003"><span class="cls_003">Variable names are case-sensitive, so firstName is not the same as firstname</span></div>
+<div style="position:absolute;left:86.40px;top:344.86px" class="cls_003"><span class="cls_003">or FirstName.</span></div>
+<div style="position:absolute;left:86.40px;top:370.19px" class="cls_003"><span class="cls_003">This example also demonstrates the syntax for declaring multiple variables</span></div>
+<div style="position:absolute;left:86.40px;top:385.36px" class="cls_003"><span class="cls_003">with the same type on one line: hour and minute are both integers. Note that</span></div>
+<div style="position:absolute;left:86.40px;top:400.53px" class="cls_003"><span class="cls_003">each declaration statement ends with a semicolon.</span></div>
+<div style="position:absolute;left:86.40px;top:425.86px" class="cls_003"><span class="cls_003">You can use any name you want for a variable. But there are about 50 reserved</span></div>
+<div style="position:absolute;left:86.40px;top:441.03px" class="cls_003"><span class="cls_003">words, called keywords, that you are not allowed to use as variable names.</span></div>
+<div style="position:absolute;left:86.40px;top:456.20px" class="cls_003"><span class="cls_003">These words include</span><span class="cls_005"> public</span><span class="cls_003">,</span><span class="cls_005"> class</span><span class="cls_003">,</span><span class="cls_005"> static</span><span class="cls_003">,</span><span class="cls_005"> void</span><span class="cls_003">, and</span><span class="cls_005"> int</span><span class="cls_003">, which are used</span></div>
+<div style="position:absolute;left:86.40px;top:471.37px" class="cls_003"><span class="cls_003">by the compiler to analyze the structure of the program.</span></div>
+<div style="position:absolute;left:86.40px;top:496.70px" class="cls_003"><span class="cls_003">You can find the complete list of keywords at</span><span class="cls_005"> <A HREF="http://docs.oracle.com/javase/tutorial/java/nutsandbolts/_keywords.html">http://docs.oracle.com/</A> </span></div>
+<div style="position:absolute;left:86.40px;top:511.87px" class="cls_005"><span class="cls_005"> </span><A HREF="http://docs.oracle.com/javase/tutorial/java/nutsandbolts/_keywords.html">javase/tutorial/java/nutsandbolts/_keywords.html</A> <span class="cls_003">, but you don’t have</span></div>
+<div style="position:absolute;left:86.40px;top:527.03px" class="cls_003"><span class="cls_003">to memorize them. Most programming editors provide “syntax highlighting”,</span></div>
+<div style="position:absolute;left:86.40px;top:542.20px" class="cls_003"><span class="cls_003">which makes different parts of the program appear in different colors.</span></div>
+<div style="position:absolute;left:86.40px;top:587.67px" class="cls_004"><span class="cls_004">2.2</span></div>
+<div style="position:absolute;left:130.51px;top:587.67px" class="cls_004"><span class="cls_004">Assignment</span></div>
+<div style="position:absolute;left:86.40px;top:621.87px" class="cls_003"><span class="cls_003">Now that we have declared variables, we want to use them to store values. We</span></div>
+<div style="position:absolute;left:86.40px;top:637.03px" class="cls_003"><span class="cls_003">do that with an assignment statement.</span></div>
+<div style="position:absolute;left:101.34px;top:661.14px" class="cls_003"><span class="cls_003">message =</span><span class="cls_006"> "Hello!"</span><span class="cls_003">;</span></div>
+<div style="position:absolute;left:230.53px;top:661.14px" class="cls_007"><span class="cls_007">// give message the value "Hello!"</span></div>
+<div style="position:absolute;left:101.34px;top:676.30px" class="cls_003"><span class="cls_003">hour = 11;</span></div>
+<div style="position:absolute;left:230.53px;top:676.30px" class="cls_007"><span class="cls_007">// assign the value 11 to hour</span></div>
+<div style="position:absolute;left:101.34px;top:691.47px" class="cls_003"><span class="cls_003">minute = 59;</span></div>
+<div style="position:absolute;left:230.53px;top:691.47px" class="cls_007"><span class="cls_007">// set minute to 59</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:1604px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="6bb36c0e-5ad5-11e9-9d71-0cc47a792c0a_id_6bb36c0e-5ad5-11e9-9d71-0cc47a792c0a_files/background03.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">2.3</span></div>
+<div style="position:absolute;left:160.24px;top:88.65px" class="cls_003"><span class="cls_003">State diagrams</span></div>
+<div style="position:absolute;left:512.15px;top:88.65px" class="cls_003"><span class="cls_003">17</span></div>
+<div style="position:absolute;left:129.60px;top:124.74px" class="cls_003"><span class="cls_003">This example shows three assignments, and the comments illustrate different</span></div>
+<div style="position:absolute;left:129.60px;top:139.91px" class="cls_003"><span class="cls_003">ways people sometimes talk about assignment statements.  The vocabulary</span></div>
+<div style="position:absolute;left:129.60px;top:155.08px" class="cls_003"><span class="cls_003">can be confusing here, but the idea is straightforward:</span></div>
+<div style="position:absolute;left:147.16px;top:187.77px" class="cls_008"><span class="cls_008"></span><span class="cls_003"> When you declare a variable, you create a named storage location.</span></div>
+<div style="position:absolute;left:147.16px;top:213.70px" class="cls_008"><span class="cls_008"></span><span class="cls_003"> When you make an assignment to a variable, you update its value.</span></div>
+<div style="position:absolute;left:129.60px;top:246.39px" class="cls_003"><span class="cls_003">As a general rule, a variable has to have the same type as the value you</span></div>
+<div style="position:absolute;left:129.60px;top:261.56px" class="cls_003"><span class="cls_003">assign to it.  For example, you cannot store a string in minute or an integer</span></div>
+<div style="position:absolute;left:129.60px;top:276.73px" class="cls_003"><span class="cls_003">in message. We will see some examples that seem to break this rule, but we’ll</span></div>
+<div style="position:absolute;left:129.60px;top:291.90px" class="cls_003"><span class="cls_003">get to that later.</span></div>
+<div style="position:absolute;left:129.60px;top:319.66px" class="cls_003"><span class="cls_003">A common source of confusion is that some strings look like integers, but they</span></div>
+<div style="position:absolute;left:129.60px;top:334.82px" class="cls_003"><span class="cls_003">are not. For example, message can contain the string</span><span class="cls_006"> "123"</span><span class="cls_003">, which is made</span></div>
+<div style="position:absolute;left:129.60px;top:349.99px" class="cls_003"><span class="cls_003">up of the characters</span><span class="cls_009"> '</span><span class="cls_006">1</span><span class="cls_009">'</span><span class="cls_003">,</span><span class="cls_009"> '</span><span class="cls_006">2</span><span class="cls_009">'</span><span class="cls_003">, and</span><span class="cls_009"> '</span><span class="cls_006">3</span><span class="cls_009">'</span><span class="cls_003">. But that is not the same thing as the</span></div>
+<div style="position:absolute;left:129.60px;top:365.16px" class="cls_003"><span class="cls_003">integer 123.</span></div>
+<div style="position:absolute;left:144.54px;top:391.69px" class="cls_003"><span class="cls_003">message =</span><span class="cls_006"> "123"</span><span class="cls_003">;</span></div>
+<div style="position:absolute;left:273.74px;top:391.69px" class="cls_007"><span class="cls_007">// legal</span></div>
+<div style="position:absolute;left:144.54px;top:406.86px" class="cls_003"><span class="cls_003">message = 123;</span></div>
+<div style="position:absolute;left:273.73px;top:406.86px" class="cls_007"><span class="cls_007">// not legal</span></div>
+<div style="position:absolute;left:129.60px;top:433.96px" class="cls_003"><span class="cls_003">Variables must be initialized (assigned for the first time) before they can</span></div>
+<div style="position:absolute;left:129.60px;top:449.13px" class="cls_003"><span class="cls_003">be used. You can declare a variable and then assign a value later, as in the</span></div>
+<div style="position:absolute;left:129.60px;top:464.30px" class="cls_003"><span class="cls_003">previous example. You can also declare and initialize on the same line:</span></div>
+<div style="position:absolute;left:144.54px;top:490.83px" class="cls_003"><span class="cls_003">String message =</span><span class="cls_006"> "Hello!"</span><span class="cls_003">;</span></div>
+<div style="position:absolute;left:144.54px;top:505.99px" class="cls_005"><span class="cls_005">int</span><span class="cls_003"> hour = 11;</span></div>
+<div style="position:absolute;left:144.54px;top:521.16px" class="cls_005"><span class="cls_005">int</span><span class="cls_003"> minute = 59;</span></div>
+<div style="position:absolute;left:129.60px;top:564.83px" class="cls_004"><span class="cls_004">2.3</span></div>
+<div style="position:absolute;left:173.71px;top:564.83px" class="cls_004"><span class="cls_004">State diagrams</span></div>
+<div style="position:absolute;left:129.60px;top:601.61px" class="cls_003"><span class="cls_003">Because Java uses the = symbol for assignment, it is tempting to interpret the</span></div>
+<div style="position:absolute;left:129.60px;top:616.78px" class="cls_003"><span class="cls_003">statement a = b as a statement of equality. It is not!</span></div>
+<div style="position:absolute;left:129.60px;top:644.54px" class="cls_003"><span class="cls_003">Equality is commutative, and assignment is not. For example, in mathematics</span></div>
+<div style="position:absolute;left:129.60px;top:659.71px" class="cls_003"><span class="cls_003">if a</span></div>
+<div style="position:absolute;left:152.90px;top:659.71px" class="cls_003"><span class="cls_003">= 7 then 7 = a. In Java a = 7; is a legal assignment statement, but</span></div>
+<div style="position:absolute;left:129.60px;top:674.88px" class="cls_003"><span class="cls_003">7 = a; is not. The left side of an assignment statement has to be a variable</span></div>
+<div style="position:absolute;left:129.60px;top:690.04px" class="cls_003"><span class="cls_003">name (storage location).</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:2406px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="6bb36c0e-5ad5-11e9-9d71-0cc47a792c0a_id_6bb36c0e-5ad5-11e9-9d71-0cc47a792c0a_files/background04.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">18</span></div>
+<div style="position:absolute;left:269.76px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 2</span></div>
+<div style="position:absolute;left:342.47px;top:88.65px" class="cls_003"><span class="cls_003">Variables and operators</span></div>
+<div style="position:absolute;left:86.40px;top:124.74px" class="cls_003"><span class="cls_003">Also, in mathematics, a statement of equality is true for all time.  If a = b</span></div>
+<div style="position:absolute;left:86.40px;top:139.91px" class="cls_003"><span class="cls_003">now, a is always equal to b. In Java, an assignment statement can make two</span></div>
+<div style="position:absolute;left:86.40px;top:155.08px" class="cls_003"><span class="cls_003">variables equal, but they don’t have to stay that way.</span></div>
+<div style="position:absolute;left:101.34px;top:181.30px" class="cls_005"><span class="cls_005">int</span><span class="cls_003"> a = 5;</span></div>
+<div style="position:absolute;left:101.34px;top:196.47px" class="cls_005"><span class="cls_005">int</span><span class="cls_003"> b = a;</span></div>
+<div style="position:absolute;left:193.63px;top:196.47px" class="cls_007"><span class="cls_007">// a and b are now equal</span></div>
+<div style="position:absolute;left:101.34px;top:211.63px" class="cls_003"><span class="cls_003">a = 3;</span></div>
+<div style="position:absolute;left:193.62px;top:211.63px" class="cls_007"><span class="cls_007">// a and b are no longer equal</span></div>
+<div style="position:absolute;left:86.40px;top:237.76px" class="cls_003"><span class="cls_003">The third line changes the value of a, but it does not change the value of b,</span></div>
+<div style="position:absolute;left:86.40px;top:252.93px" class="cls_003"><span class="cls_003">so they are no longer equal.</span></div>
+<div style="position:absolute;left:86.40px;top:280.38px" class="cls_003"><span class="cls_003">Taken together, the variables in a program and their current values make up</span></div>
+<div style="position:absolute;left:86.40px;top:295.54px" class="cls_003"><span class="cls_003">the program’s state.  Figure 2.1 shows the state of the program after these</span></div>
+<div style="position:absolute;left:86.40px;top:310.71px" class="cls_003"><span class="cls_003">assignment statements run.</span></div>
+<div style="position:absolute;left:265.40px;top:342.76px" class="cls_010"><span class="cls_010">a</span></div>
+<div style="position:absolute;left:287.90px;top:342.76px" class="cls_010"><span class="cls_010">3</span></div>
+<div style="position:absolute;left:265.40px;top:374.26px" class="cls_010"><span class="cls_010">b</span></div>
+<div style="position:absolute;left:287.90px;top:374.26px" class="cls_010"><span class="cls_010">5</span></div>
+<div style="position:absolute;left:154.08px;top:402.72px" class="cls_003"><span class="cls_003">Figure 2.1: State diagram of the variables a and b.</span></div>
+<div style="position:absolute;left:86.40px;top:431.16px" class="cls_003"><span class="cls_003">Diagrams like this one that show the state of the program are called state</span></div>
+<div style="position:absolute;left:86.40px;top:446.33px" class="cls_003"><span class="cls_003">diagrams. Each variable is represented with a box showing the name of the</span></div>
+<div style="position:absolute;left:86.40px;top:461.50px" class="cls_003"><span class="cls_003">variable on the outside and the value inside. As the program runs, the state</span></div>
+<div style="position:absolute;left:86.40px;top:476.67px" class="cls_003"><span class="cls_003">changes, so you should think of a state diagram as a snapshot of a particular</span></div>
+<div style="position:absolute;left:86.40px;top:491.83px" class="cls_003"><span class="cls_003">point in time.</span></div>
+<div style="position:absolute;left:86.40px;top:540.30px" class="cls_004"><span class="cls_004">2.4</span></div>
+<div style="position:absolute;left:130.51px;top:540.30px" class="cls_004"><span class="cls_004">Printing variables</span></div>
+<div style="position:absolute;left:86.40px;top:576.69px" class="cls_003"><span class="cls_003">You can display the value of a variable using print or println.  The fol-</span></div>
+<div style="position:absolute;left:86.40px;top:591.86px" class="cls_003"><span class="cls_003">lowing statements declare a variable named firstLine, assign it the value</span></div>
+<div style="position:absolute;left:86.40px;top:607.03px" class="cls_006"><span class="cls_006">"Hello, again!"</span><span class="cls_003">, and display that value.</span></div>
+<div style="position:absolute;left:101.34px;top:633.58px" class="cls_003"><span class="cls_003">String firstLine =</span><span class="cls_006"> "Hello, again!"</span><span class="cls_003">;</span></div>
+<div style="position:absolute;left:101.34px;top:648.75px" class="cls_003"><span class="cls_003">System.out.println(firstLine);</span></div>
+<div style="position:absolute;left:86.40px;top:674.88px" class="cls_003"><span class="cls_003">When we talk about displaying a variable, we generally mean the value of the</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_003"><span class="cls_003">variable. To display the name of a variable, you have to put it in quotes.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:3208px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="6bb36c0e-5ad5-11e9-9d71-0cc47a792c0a_id_6bb36c0e-5ad5-11e9-9d71-0cc47a792c0a_files/background05.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">2.5</span></div>
+<div style="position:absolute;left:160.24px;top:88.65px" class="cls_003"><span class="cls_003">Arithmetic operators</span></div>
+<div style="position:absolute;left:512.15px;top:88.65px" class="cls_003"><span class="cls_003">19</span></div>
+<div style="position:absolute;left:144.54px;top:123.41px" class="cls_003"><span class="cls_003">System.out.print(</span><span class="cls_006">"The value of firstLine is "</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:144.54px;top:138.57px" class="cls_003"><span class="cls_003">System.out.println(firstLine);</span></div>
+<div style="position:absolute;left:129.60px;top:163.27px" class="cls_003"><span class="cls_003">For this example, the output is:</span></div>
+<div style="position:absolute;left:144.54px;top:189.32px" class="cls_003"><span class="cls_003">The value of firstLine is Hello, again!</span></div>
+<div style="position:absolute;left:129.60px;top:215.29px" class="cls_003"><span class="cls_003">Conveniently, the syntax for displaying a variable is the same regardless of its</span></div>
+<div style="position:absolute;left:129.60px;top:230.46px" class="cls_003"><span class="cls_003">type. For example:</span></div>
+<div style="position:absolute;left:144.54px;top:255.24px" class="cls_005"><span class="cls_005">int</span><span class="cls_003"> hour = 11;</span></div>
+<div style="position:absolute;left:144.54px;top:270.41px" class="cls_005"><span class="cls_005">int</span><span class="cls_003"> minute = 59;</span></div>
+<div style="position:absolute;left:144.54px;top:285.58px" class="cls_003"><span class="cls_003">System.out.print(</span><span class="cls_006">"The current time is "</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:144.54px;top:300.74px" class="cls_003"><span class="cls_003">System.out.print(hour);</span></div>
+<div style="position:absolute;left:144.54px;top:315.91px" class="cls_003"><span class="cls_003">System.out.print(</span><span class="cls_006">":"</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:144.54px;top:331.08px" class="cls_003"><span class="cls_003">System.out.print(minute);</span></div>
+<div style="position:absolute;left:144.54px;top:346.25px" class="cls_003"><span class="cls_003">System.out.println(</span><span class="cls_006">"."</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:129.60px;top:370.94px" class="cls_003"><span class="cls_003">The output of this program is:</span></div>
+<div style="position:absolute;left:144.54px;top:397.00px" class="cls_003"><span class="cls_003">The current time is 11:59.</span></div>
+<div style="position:absolute;left:129.60px;top:422.96px" class="cls_003"><span class="cls_003">To output multiple values on the same line, it’s common to use several print</span></div>
+<div style="position:absolute;left:129.60px;top:438.13px" class="cls_003"><span class="cls_003">statements followed by println at the end.  But don’t forget the println!</span></div>
+<div style="position:absolute;left:129.60px;top:453.30px" class="cls_003"><span class="cls_003">On many computers, the output from print is stored without being displayed</span></div>
+<div style="position:absolute;left:129.60px;top:468.47px" class="cls_003"><span class="cls_003">until println is run; then the entire line is displayed at once. If you omit the</span></div>
+<div style="position:absolute;left:129.60px;top:483.64px" class="cls_003"><span class="cls_003">println, the program might display the stored output at unexpected times or</span></div>
+<div style="position:absolute;left:129.60px;top:498.80px" class="cls_003"><span class="cls_003">even terminate without displaying anything.</span></div>
+<div style="position:absolute;left:129.60px;top:545.13px" class="cls_004"><span class="cls_004">2.5</span></div>
+<div style="position:absolute;left:173.71px;top:545.13px" class="cls_004"><span class="cls_004">Arithmetic operators</span></div>
+<div style="position:absolute;left:129.60px;top:580.01px" class="cls_003"><span class="cls_003">Operators are symbols that represent simple computations. For example, the</span></div>
+<div style="position:absolute;left:129.60px;top:595.17px" class="cls_003"><span class="cls_003">addition operator is +, subtraction is -, multiplication is *, and division is /.</span></div>
+<div style="position:absolute;left:129.60px;top:621.19px" class="cls_003"><span class="cls_003">The following program converts a time of day to minutes:</span></div>
+<div style="position:absolute;left:144.54px;top:645.97px" class="cls_005"><span class="cls_005">int</span><span class="cls_003"> hour = 11;</span></div>
+<div style="position:absolute;left:144.54px;top:661.14px" class="cls_005"><span class="cls_005">int</span><span class="cls_003"> minute = 59;</span></div>
+<div style="position:absolute;left:144.54px;top:676.30px" class="cls_003"><span class="cls_003">System.out.print(</span><span class="cls_006">"Number of minutes since midnight: "</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:144.54px;top:691.47px" class="cls_003"><span class="cls_003">System.out.println(hour * 60 + minute);</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:4010px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="6bb36c0e-5ad5-11e9-9d71-0cc47a792c0a_id_6bb36c0e-5ad5-11e9-9d71-0cc47a792c0a_files/background06.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">20</span></div>
+<div style="position:absolute;left:269.76px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 2</span></div>
+<div style="position:absolute;left:342.47px;top:88.65px" class="cls_003"><span class="cls_003">Variables and operators</span></div>
+<div style="position:absolute;left:86.40px;top:124.74px" class="cls_003"><span class="cls_003">In this program, hour * 60 + minute is an expression, which represents a</span></div>
+<div style="position:absolute;left:86.40px;top:139.91px" class="cls_003"><span class="cls_003">single value to be computed. When the program runs, each variable is replaced</span></div>
+<div style="position:absolute;left:86.40px;top:155.08px" class="cls_003"><span class="cls_003">by its current value, and then the operators are applied. The values operators</span></div>
+<div style="position:absolute;left:86.40px;top:170.25px" class="cls_003"><span class="cls_003">work with are called operands.</span></div>
+<div style="position:absolute;left:86.40px;top:194.74px" class="cls_003"><span class="cls_003">The result of the previous example is:</span></div>
+<div style="position:absolute;left:101.34px;top:219.27px" class="cls_003"><span class="cls_003">Number of minutes since midnight: 719</span></div>
+<div style="position:absolute;left:86.40px;top:243.72px" class="cls_003"><span class="cls_003">Expressions are generally a combination of numbers, variables, and operators.</span></div>
+<div style="position:absolute;left:86.40px;top:258.89px" class="cls_003"><span class="cls_003">When complied and executed, they become a single value.</span></div>
+<div style="position:absolute;left:86.40px;top:283.38px" class="cls_003"><span class="cls_003">For example, the expression 1 + 1 has the value 2. In the expression hour - 1,</span></div>
+<div style="position:absolute;left:86.40px;top:298.55px" class="cls_003"><span class="cls_003">Java replaces the variable with its value, yielding 11 - 1, which has the value</span></div>
+<div style="position:absolute;left:86.40px;top:313.72px" class="cls_003"><span class="cls_003">10. In the expression hour * 60 + minute, both variables get replaced, yield-</span></div>
+<div style="position:absolute;left:86.40px;top:328.89px" class="cls_003"><span class="cls_003">ing 11 * 60 + 59. The multiplication happens first, yielding 660 + 59. Then</span></div>
+<div style="position:absolute;left:86.40px;top:344.05px" class="cls_003"><span class="cls_003">the addition yields 719.</span></div>
+<div style="position:absolute;left:86.40px;top:368.54px" class="cls_003"><span class="cls_003">Addition, subtraction, and multiplication all do what you expect, but you</span></div>
+<div style="position:absolute;left:86.40px;top:383.71px" class="cls_003"><span class="cls_003">might be surprised by division. For example, the following fragment tries to</span></div>
+<div style="position:absolute;left:86.40px;top:398.88px" class="cls_003"><span class="cls_003">compute the fraction of an hour that has elapsed:</span></div>
+<div style="position:absolute;left:101.34px;top:422.14px" class="cls_003"><span class="cls_003">System.out.print(</span><span class="cls_006">"Fraction of the hour that has passed: "</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:101.34px;top:437.31px" class="cls_003"><span class="cls_003">System.out.println(minute / 60);</span></div>
+<div style="position:absolute;left:86.40px;top:460.48px" class="cls_003"><span class="cls_003">The output is:</span></div>
+<div style="position:absolute;left:101.34px;top:485.02px" class="cls_003"><span class="cls_003">Fraction of the hour that has passed: 0</span></div>
+<div style="position:absolute;left:86.40px;top:509.46px" class="cls_003"><span class="cls_003">This result often confuses people. The value of minute is 59, and 59 divided</span></div>
+<div style="position:absolute;left:86.40px;top:524.63px" class="cls_003"><span class="cls_003">by 60 should be 0.98333, not 0. The problem is that Java performs “integer</span></div>
+<div style="position:absolute;left:86.40px;top:539.80px" class="cls_003"><span class="cls_003">division” when the operands are integers. By design, integer division always</span></div>
+<div style="position:absolute;left:86.40px;top:554.97px" class="cls_003"><span class="cls_003">rounds toward zero, even in cases like this one where the next integer is close.</span></div>
+<div style="position:absolute;left:86.40px;top:579.46px" class="cls_003"><span class="cls_003">As an alternative, we can calculate a percentage rather than a fraction:</span></div>
+<div style="position:absolute;left:101.34px;top:602.72px" class="cls_003"><span class="cls_003">System.out.print(</span><span class="cls_006">"Percent of the hour that has passed: "</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:101.34px;top:617.89px" class="cls_003"><span class="cls_003">System.out.println(minute * 100 / 60);</span></div>
+<div style="position:absolute;left:86.40px;top:641.06px" class="cls_003"><span class="cls_003">The new output is:</span></div>
+<div style="position:absolute;left:101.34px;top:665.60px" class="cls_003"><span class="cls_003">Percent of the hour that has passed: 98</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_003"><span class="cls_003">Again the result is rounded down, but at least now it’s approximately correct.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:4812px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="6bb36c0e-5ad5-11e9-9d71-0cc47a792c0a_id_6bb36c0e-5ad5-11e9-9d71-0cc47a792c0a_files/background07.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">2.6</span></div>
+<div style="position:absolute;left:160.24px;top:88.65px" class="cls_003"><span class="cls_003">Floating-point numbers</span></div>
+<div style="position:absolute;left:512.15px;top:88.65px" class="cls_003"><span class="cls_003">21</span></div>
+<div style="position:absolute;left:129.60px;top:119.48px" class="cls_004"><span class="cls_004">2.6</span></div>
+<div style="position:absolute;left:173.71px;top:119.48px" class="cls_004"><span class="cls_004">Floating-point numbers</span></div>
+<div style="position:absolute;left:129.60px;top:154.44px" class="cls_003"><span class="cls_003">A more general solution is to use floating-point numbers, which can represent</span></div>
+<div style="position:absolute;left:129.60px;top:169.61px" class="cls_003"><span class="cls_003">fractions as well as integers. In Java, the default floating-point type is called</span></div>
+<div style="position:absolute;left:129.60px;top:184.78px" class="cls_005"><span class="cls_005">double</span><span class="cls_003">, which is short for double-precision. You can create</span><span class="cls_005"> double</span><span class="cls_003"> variables</span></div>
+<div style="position:absolute;left:129.60px;top:199.95px" class="cls_003"><span class="cls_003">and assign values to them using the same syntax we used for the other types:</span></div>
+<div style="position:absolute;left:144.54px;top:224.82px" class="cls_005"><span class="cls_005">double</span><span class="cls_003"> pi;</span></div>
+<div style="position:absolute;left:144.54px;top:239.99px" class="cls_003"><span class="cls_003">pi = 3.14159;</span></div>
+<div style="position:absolute;left:129.60px;top:264.76px" class="cls_003"><span class="cls_003">Java performs “floating-point division” when one or more operands are</span><span class="cls_005"> double</span></div>
+<div style="position:absolute;left:129.60px;top:279.93px" class="cls_003"><span class="cls_003">values. So we can solve the problem we saw in the previous section:</span></div>
+<div style="position:absolute;left:144.54px;top:304.80px" class="cls_005"><span class="cls_005">double</span><span class="cls_003"> minute = 59.0;</span></div>
+<div style="position:absolute;left:144.54px;top:319.97px" class="cls_003"><span class="cls_003">System.out.print(</span><span class="cls_006">"Fraction of the hour that has passed: "</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:144.54px;top:335.14px" class="cls_003"><span class="cls_003">System.out.println(minute / 60.0);</span></div>
+<div style="position:absolute;left:129.60px;top:359.92px" class="cls_003"><span class="cls_003">The output is:</span></div>
+<div style="position:absolute;left:144.54px;top:386.06px" class="cls_003"><span class="cls_003">Fraction of the hour that has passed: 0.9833333333333333</span></div>
+<div style="position:absolute;left:129.60px;top:412.11px" class="cls_003"><span class="cls_003">Although floating-point numbers are useful, they can be a source of confusion.</span></div>
+<div style="position:absolute;left:129.60px;top:427.28px" class="cls_003"><span class="cls_003">For example, Java distinguishes the integer value 1 from the floating-point</span></div>
+<div style="position:absolute;left:129.60px;top:442.45px" class="cls_003"><span class="cls_003">value 1.0, even though they seem to be the same number.  They belong to</span></div>
+<div style="position:absolute;left:129.60px;top:457.62px" class="cls_003"><span class="cls_003">different data types, and strictly speaking, you are not allowed to make as-</span></div>
+<div style="position:absolute;left:129.60px;top:472.78px" class="cls_003"><span class="cls_003">signments between types.</span></div>
+<div style="position:absolute;left:129.60px;top:498.88px" class="cls_003"><span class="cls_003">The following is illegal because the variable on the left is an</span><span class="cls_005"> int</span><span class="cls_003"> and the value</span></div>
+<div style="position:absolute;left:129.60px;top:514.05px" class="cls_003"><span class="cls_003">on the right is a</span><span class="cls_005"> double</span><span class="cls_003">:</span></div>
+<div style="position:absolute;left:144.54px;top:540.19px" class="cls_005"><span class="cls_005">int</span><span class="cls_003"> x = 1.1;</span></div>
+<div style="position:absolute;left:230.67px;top:540.19px" class="cls_007"><span class="cls_007">// compiler error</span></div>
+<div style="position:absolute;left:129.60px;top:566.25px" class="cls_003"><span class="cls_003">It is easy to forget this rule because in many cases Java automatically converts</span></div>
+<div style="position:absolute;left:129.60px;top:581.41px" class="cls_003"><span class="cls_003">from one type to another:</span></div>
+<div style="position:absolute;left:144.54px;top:607.56px" class="cls_005"><span class="cls_005">double</span><span class="cls_003"> y = 1;</span></div>
+<div style="position:absolute;left:236.83px;top:607.56px" class="cls_007"><span class="cls_007">// legal, but bad style</span></div>
+<div style="position:absolute;left:129.60px;top:633.61px" class="cls_003"><span class="cls_003">The preceding example should be illegal, but Java allows it by converting the</span></div>
+<div style="position:absolute;left:129.60px;top:648.78px" class="cls_005"><span class="cls_005">int</span><span class="cls_003"> value 1 to the</span><span class="cls_005"> double</span><span class="cls_003"> value 1.0 automatically. This leniency is convenient,</span></div>
+<div style="position:absolute;left:129.60px;top:663.95px" class="cls_003"><span class="cls_003">but it often causes problems for beginners. For example:</span></div>
+<div style="position:absolute;left:144.54px;top:690.09px" class="cls_005"><span class="cls_005">double</span><span class="cls_003"> y = 1 / 3;</span></div>
+<div style="position:absolute;left:261.43px;top:690.09px" class="cls_007"><span class="cls_007">// common mistake</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:5614px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="6bb36c0e-5ad5-11e9-9d71-0cc47a792c0a_id_6bb36c0e-5ad5-11e9-9d71-0cc47a792c0a_files/background08.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">22</span></div>
+<div style="position:absolute;left:269.76px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 2</span></div>
+<div style="position:absolute;left:342.47px;top:88.65px" class="cls_003"><span class="cls_003">Variables and operators</span></div>
+<div style="position:absolute;left:86.40px;top:124.74px" class="cls_003"><span class="cls_003">You might expect the variable y to get the value 0.333333, which is a legal</span></div>
+<div style="position:absolute;left:86.40px;top:139.91px" class="cls_003"><span class="cls_003">floating-point value. But instead it gets the value 0.0. The expression on the</span></div>
+<div style="position:absolute;left:86.40px;top:155.08px" class="cls_003"><span class="cls_003">right divides two integers, so Java does integer division, which yields the</span><span class="cls_005"> int</span></div>
+<div style="position:absolute;left:86.40px;top:170.25px" class="cls_003"><span class="cls_003">value 0. Converted to</span><span class="cls_005"> double</span><span class="cls_003">, the value assigned to y is 0.0.</span></div>
+<div style="position:absolute;left:86.40px;top:198.40px" class="cls_003"><span class="cls_003">One way to solve this problem (once you figure out the bug) is to make the</span></div>
+<div style="position:absolute;left:86.40px;top:213.56px" class="cls_003"><span class="cls_003">right-hand side a floating-point expression. The following sets y to 0.333333,</span></div>
+<div style="position:absolute;left:86.40px;top:228.73px" class="cls_003"><span class="cls_003">as expected:</span></div>
+<div style="position:absolute;left:101.34px;top:256.93px" class="cls_005"><span class="cls_005">double</span><span class="cls_003"> y = 1.0 / 3.0;</span></div>
+<div style="position:absolute;left:242.84px;top:256.93px" class="cls_007"><span class="cls_007">// correct</span></div>
+<div style="position:absolute;left:86.40px;top:285.03px" class="cls_003"><span class="cls_003">As a matter of style, you should always assign floating-point values to floating-</span></div>
+<div style="position:absolute;left:86.40px;top:300.20px" class="cls_003"><span class="cls_003">point variables. The compiler won’t make you do it, but you never know when</span></div>
+<div style="position:absolute;left:86.40px;top:315.37px" class="cls_003"><span class="cls_003">a simple mistake will come back and haunt you.</span></div>
+<div style="position:absolute;left:86.40px;top:365.44px" class="cls_004"><span class="cls_004">2.7</span></div>
+<div style="position:absolute;left:130.51px;top:365.44px" class="cls_004"><span class="cls_004">Rounding errors</span></div>
+<div style="position:absolute;left:86.40px;top:402.72px" class="cls_003"><span class="cls_003">Most floating-point numbers are only approximately correct.  Some numbers,</span></div>
+<div style="position:absolute;left:86.40px;top:417.89px" class="cls_003"><span class="cls_003">like reasonably-sized integers, can be represented exactly. But repeating frac-</span></div>
+<div style="position:absolute;left:86.40px;top:433.05px" class="cls_003"><span class="cls_003">tions, like 1/3, and irrational numbers, like π, cannot.  To represent these</span></div>
+<div style="position:absolute;left:86.40px;top:448.22px" class="cls_003"><span class="cls_003">numbers, computers have to round off to the nearest floating-point number.</span></div>
+<div style="position:absolute;left:86.40px;top:476.37px" class="cls_003"><span class="cls_003">The difference between the number we want and the floating-point number</span></div>
+<div style="position:absolute;left:86.40px;top:491.54px" class="cls_003"><span class="cls_003">we get is called rounding error. For example, the following two statements</span></div>
+<div style="position:absolute;left:86.40px;top:506.71px" class="cls_003"><span class="cls_003">should be equivalent:</span></div>
+<div style="position:absolute;left:101.34px;top:533.63px" class="cls_003"><span class="cls_003">System.out.println(0.1 * 10);</span></div>
+<div style="position:absolute;left:101.34px;top:548.79px" class="cls_003"><span class="cls_003">System.out.println(0.1 + 0.1 + 0.1 + 0.1 + 0.1</span></div>
+<div style="position:absolute;left:205.93px;top:563.96px" class="cls_003"><span class="cls_003">+ 0.1 + 0.1 + 0.1 + 0.1 + 0.1);</span></div>
+<div style="position:absolute;left:86.40px;top:590.79px" class="cls_003"><span class="cls_003">But on many machines, the output is:</span></div>
+<div style="position:absolute;left:101.34px;top:617.71px" class="cls_003"><span class="cls_003">1.0</span></div>
+<div style="position:absolute;left:101.34px;top:632.88px" class="cls_003"><span class="cls_003">0.9999999999999999</span></div>
+<div style="position:absolute;left:86.40px;top:659.71px" class="cls_003"><span class="cls_003">The problem is that 0.1, which is a terminating fraction in decimal, is a repeat-</span></div>
+<div style="position:absolute;left:86.40px;top:674.88px" class="cls_003"><span class="cls_003">ing fraction in binary. So its floating-point representation is only approximate.</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_003"><span class="cls_003">When we add up the approximations, the rounding errors accumulate.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:6416px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="6bb36c0e-5ad5-11e9-9d71-0cc47a792c0a_id_6bb36c0e-5ad5-11e9-9d71-0cc47a792c0a_files/background09.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">2.8</span></div>
+<div style="position:absolute;left:160.24px;top:88.65px" class="cls_003"><span class="cls_003">Operators for strings</span></div>
+<div style="position:absolute;left:512.15px;top:88.65px" class="cls_003"><span class="cls_003">23</span></div>
+<div style="position:absolute;left:129.60px;top:124.74px" class="cls_003"><span class="cls_003">For many applications, like computer graphics, encryption, statistical analysis,</span></div>
+<div style="position:absolute;left:129.60px;top:139.91px" class="cls_003"><span class="cls_003">and multimedia rendering, floating-point arithmetic has benefits that outweigh</span></div>
+<div style="position:absolute;left:129.60px;top:155.08px" class="cls_003"><span class="cls_003">the costs. But if you need absolute precision, use integers instead. For example,</span></div>
+<div style="position:absolute;left:129.60px;top:170.25px" class="cls_003"><span class="cls_003">consider a bank account with a balance of</span><span class="cls_008"> $</span><span class="cls_003">123.45:</span></div>
+<div style="position:absolute;left:144.54px;top:195.84px" class="cls_005"><span class="cls_005">double</span><span class="cls_003"> balance = 123.45;</span></div>
+<div style="position:absolute;left:304.50px;top:195.84px" class="cls_007"><span class="cls_007">// potential rounding error</span></div>
+<div style="position:absolute;left:129.60px;top:221.35px" class="cls_003"><span class="cls_003">In this example, balances will become inaccurate over time as the variable is</span></div>
+<div style="position:absolute;left:129.60px;top:236.51px" class="cls_003"><span class="cls_003">used in arithmetic operations like deposits and withdrawals. The result would</span></div>
+<div style="position:absolute;left:129.60px;top:251.68px" class="cls_003"><span class="cls_003">be angry customers and potential lawsuits.  You can avoid the problem by</span></div>
+<div style="position:absolute;left:129.60px;top:266.85px" class="cls_003"><span class="cls_003">representing the balance as an integer:</span></div>
+<div style="position:absolute;left:144.54px;top:292.44px" class="cls_005"><span class="cls_005">int</span><span class="cls_003"> balance = 12345;</span></div>
+<div style="position:absolute;left:304.50px;top:292.44px" class="cls_007"><span class="cls_007">// total number of cents</span></div>
+<div style="position:absolute;left:129.60px;top:317.95px" class="cls_003"><span class="cls_003">This solution works as long as the number of cents doesn’t exceed the largest</span></div>
+<div style="position:absolute;left:129.60px;top:333.12px" class="cls_003"><span class="cls_003">integer, which is about 2 billion.</span></div>
+<div style="position:absolute;left:129.60px;top:378.86px" class="cls_004"><span class="cls_004">2.8</span></div>
+<div style="position:absolute;left:173.71px;top:378.86px" class="cls_004"><span class="cls_004">Operators for strings</span></div>
+<div style="position:absolute;left:129.60px;top:413.27px" class="cls_003"><span class="cls_003">In general, you cannot perform mathematical operations on strings, even if</span></div>
+<div style="position:absolute;left:129.60px;top:428.44px" class="cls_003"><span class="cls_003">the strings look like numbers. The following expressions are illegal:</span></div>
+<div style="position:absolute;left:144.54px;top:454.04px" class="cls_006"><span class="cls_006">"Hello"</span><span class="cls_003"> - 1</span></div>
+<div style="position:absolute;left:242.98px;top:454.04px" class="cls_006"><span class="cls_006">"World"</span><span class="cls_003"> / 123</span></div>
+<div style="position:absolute;left:353.71px;top:454.04px" class="cls_006"><span class="cls_006">"Hello"</span><span class="cls_003"> *</span><span class="cls_006"> "World"</span></div>
+<div style="position:absolute;left:129.60px;top:479.54px" class="cls_003"><span class="cls_003">The + operator works with strings, but it might not do what you expect. For</span></div>
+<div style="position:absolute;left:129.60px;top:494.71px" class="cls_003"><span class="cls_003">strings, the + operator performs concatenation, which means joining end-to-</span></div>
+<div style="position:absolute;left:129.60px;top:509.88px" class="cls_003"><span class="cls_003">end. So</span><span class="cls_006"> "Hello, "</span><span class="cls_003"> +</span><span class="cls_006"> "World!"</span><span class="cls_003"> yields the string</span><span class="cls_006"> "Hello, World!"</span><span class="cls_003">.</span></div>
+<div style="position:absolute;left:129.60px;top:535.43px" class="cls_003"><span class="cls_003">Or if you have a variable called name that has type String, the expression</span></div>
+<div style="position:absolute;left:129.60px;top:550.59px" class="cls_006"><span class="cls_006">"Hello, "</span><span class="cls_003"> + name appends the value of name to the hello string, which creates</span></div>
+<div style="position:absolute;left:129.60px;top:565.76px" class="cls_003"><span class="cls_003">a personalized greeting.</span></div>
+<div style="position:absolute;left:129.60px;top:591.31px" class="cls_003"><span class="cls_003">Since addition is defined for both numbers and strings, Java performs auto-</span></div>
+<div style="position:absolute;left:129.60px;top:606.48px" class="cls_003"><span class="cls_003">matic conversions you may not expect:</span></div>
+<div style="position:absolute;left:144.54px;top:630.80px" class="cls_003"><span class="cls_003">System.out.println(1 + 2 +</span><span class="cls_006"> "Hello"</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:144.54px;top:645.97px" class="cls_007"><span class="cls_007">// the output is 3Hello</span></div>
+<div style="position:absolute;left:144.54px;top:676.30px" class="cls_003"><span class="cls_003">System.out.println(</span><span class="cls_006">"Hello"</span><span class="cls_003"> + 1 + 2);</span></div>
+<div style="position:absolute;left:144.54px;top:691.47px" class="cls_007"><span class="cls_007">// the output is Hello12</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:7218px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="6bb36c0e-5ad5-11e9-9d71-0cc47a792c0a_id_6bb36c0e-5ad5-11e9-9d71-0cc47a792c0a_files/background10.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">24</span></div>
+<div style="position:absolute;left:269.76px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 2</span></div>
+<div style="position:absolute;left:342.47px;top:88.65px" class="cls_003"><span class="cls_003">Variables and operators</span></div>
+<div style="position:absolute;left:86.40px;top:124.74px" class="cls_003"><span class="cls_003">Java executes these operations from left to right.  In the first line, 1 + 2 is</span></div>
+<div style="position:absolute;left:86.40px;top:139.91px" class="cls_003"><span class="cls_003">3, and 3 +</span><span class="cls_006"> "Hello"</span><span class="cls_003"> is</span><span class="cls_006"> "3Hello"</span><span class="cls_003">.  But in the second line,</span><span class="cls_006"> "Hello"</span><span class="cls_003"> + 1 is</span></div>
+<div style="position:absolute;left:86.40px;top:155.08px" class="cls_006"><span class="cls_006">"Hello1"</span><span class="cls_003">, and</span><span class="cls_006"> "Hello1"</span><span class="cls_003"> + 2 is</span><span class="cls_006"> "Hello12"</span><span class="cls_003">.</span></div>
+<div style="position:absolute;left:86.40px;top:183.08px" class="cls_003"><span class="cls_003">When more than one operator appears in an expression, they are evaluated</span></div>
+<div style="position:absolute;left:86.40px;top:198.25px" class="cls_003"><span class="cls_003">according to order of operations. Generally speaking, Java evaluates oper-</span></div>
+<div style="position:absolute;left:86.40px;top:213.42px" class="cls_003"><span class="cls_003">ators from left to right (as we saw in the previous section). But for numeric</span></div>
+<div style="position:absolute;left:86.40px;top:228.59px" class="cls_003"><span class="cls_003">operators, Java follows mathematical conventions:</span></div>
+<div style="position:absolute;left:103.96px;top:261.90px" class="cls_008"><span class="cls_008"></span><span class="cls_003"> Multiplication and division take “precedence” over addition and subtrac-</span></div>
+<div style="position:absolute;left:115.67px;top:277.07px" class="cls_003"><span class="cls_003">tion, which means they happen first. So 1 + 2 * 3 yields 7, not 9, and</span></div>
+<div style="position:absolute;left:115.67px;top:292.24px" class="cls_003"><span class="cls_003">2 + 4 / 2 yields 4, not 3.</span></div>
+<div style="position:absolute;left:103.96px;top:318.47px" class="cls_008"><span class="cls_008"></span><span class="cls_003"> If the operators have the same precedence, they are evaluated from left</span></div>
+<div style="position:absolute;left:115.67px;top:333.64px" class="cls_003"><span class="cls_003">to right.  So in the expression minute * 100 / 60, the multiplication</span></div>
+<div style="position:absolute;left:115.67px;top:348.81px" class="cls_003"><span class="cls_003">happens first; if the value of minute is 59, we get 5900 / 60, which</span></div>
+<div style="position:absolute;left:115.67px;top:363.97px" class="cls_003"><span class="cls_003">yields 98. If these same operations had gone from right to left, the result</span></div>
+<div style="position:absolute;left:115.67px;top:379.14px" class="cls_003"><span class="cls_003">would have been 59 * 1, which is incorrect.</span></div>
+<div style="position:absolute;left:103.96px;top:405.37px" class="cls_008"><span class="cls_008"></span><span class="cls_003"> Any time you want to override the order of operations (or you are not</span></div>
+<div style="position:absolute;left:115.67px;top:420.54px" class="cls_003"><span class="cls_003">sure what it is) you can use parentheses. Expressions in parentheses are</span></div>
+<div style="position:absolute;left:115.67px;top:435.71px" class="cls_003"><span class="cls_003">evaluated first, so (1 + 2) * 3 is 9.  You can also use parentheses to</span></div>
+<div style="position:absolute;left:115.67px;top:450.88px" class="cls_003"><span class="cls_003">make an expression easier to read, as in (minute * 100) / 60, even</span></div>
+<div style="position:absolute;left:115.67px;top:466.05px" class="cls_003"><span class="cls_003">though it doesn’t change the result.</span></div>
+<div style="position:absolute;left:86.40px;top:499.36px" class="cls_003"><span class="cls_003">Don’t work too hard to remember the order of operations, especially for other</span></div>
+<div style="position:absolute;left:86.40px;top:514.53px" class="cls_003"><span class="cls_003">operators. If it’s not obvious by looking at the expression, use parentheses to</span></div>
+<div style="position:absolute;left:86.40px;top:529.70px" class="cls_003"><span class="cls_003">make it clear.</span></div>
+<div style="position:absolute;left:86.40px;top:579.44px" class="cls_004"><span class="cls_004">2.9</span></div>
+<div style="position:absolute;left:130.51px;top:579.44px" class="cls_004"><span class="cls_004">Composition</span></div>
+<div style="position:absolute;left:86.40px;top:616.54px" class="cls_003"><span class="cls_003">So far we have looked at the elements of a programming language - variables,</span></div>
+<div style="position:absolute;left:86.40px;top:631.70px" class="cls_003"><span class="cls_003">expressions, and statements - in isolation, without talking about how to put</span></div>
+<div style="position:absolute;left:86.40px;top:646.87px" class="cls_003"><span class="cls_003">them together.</span></div>
+<div style="position:absolute;left:86.40px;top:674.88px" class="cls_003"><span class="cls_003">One of the most useful features of programming languages is their ability to</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_003"><span class="cls_003">take small building blocks and compose them. For example, we know how to</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:8020px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="6bb36c0e-5ad5-11e9-9d71-0cc47a792c0a_id_6bb36c0e-5ad5-11e9-9d71-0cc47a792c0a_files/background11.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">2.10</span></div>
+<div style="position:absolute;left:166.96px;top:88.65px" class="cls_003"><span class="cls_003">Types of errors</span></div>
+<div style="position:absolute;left:512.15px;top:88.65px" class="cls_003"><span class="cls_003">25</span></div>
+<div style="position:absolute;left:129.60px;top:124.74px" class="cls_003"><span class="cls_003">multiply numbers and we know how to display values. We can combine these</span></div>
+<div style="position:absolute;left:129.60px;top:139.91px" class="cls_003"><span class="cls_003">operations into a single statement:</span></div>
+<div style="position:absolute;left:144.54px;top:164.86px" class="cls_003"><span class="cls_003">System.out.println(17 * 3);</span></div>
+<div style="position:absolute;left:129.60px;top:189.71px" class="cls_003"><span class="cls_003">Any arithmetic expression can be used inside a print statement. We’ve already</span></div>
+<div style="position:absolute;left:129.60px;top:204.88px" class="cls_003"><span class="cls_003">seen one example:</span></div>
+<div style="position:absolute;left:144.54px;top:229.83px" class="cls_003"><span class="cls_003">System.out.println(hour * 60 + minute);</span></div>
+<div style="position:absolute;left:129.60px;top:254.69px" class="cls_003"><span class="cls_003">You can also put arbitrary expressions on the right side of an assignment:</span></div>
+<div style="position:absolute;left:144.54px;top:278.36px" class="cls_005"><span class="cls_005">int</span><span class="cls_003"> percentage;</span></div>
+<div style="position:absolute;left:144.54px;top:293.53px" class="cls_003"><span class="cls_003">percentage = (minute * 100) / 60;</span></div>
+<div style="position:absolute;left:129.60px;top:317.11px" class="cls_003"><span class="cls_003">The left side of an assignment must be a variable name, not an expression.</span></div>
+<div style="position:absolute;left:129.60px;top:332.28px" class="cls_003"><span class="cls_003">That’s because the left side indicates where the result will be stored, and</span></div>
+<div style="position:absolute;left:129.60px;top:347.44px" class="cls_003"><span class="cls_003">expressions do not represent storage locations.</span></div>
+<div style="position:absolute;left:144.54px;top:371.12px" class="cls_003"><span class="cls_003">hour = minute + 1;</span></div>
+<div style="position:absolute;left:267.58px;top:371.12px" class="cls_007"><span class="cls_007">// correct</span></div>
+<div style="position:absolute;left:144.54px;top:386.28px" class="cls_003"><span class="cls_003">minute + 1 = hour;</span></div>
+<div style="position:absolute;left:267.58px;top:386.28px" class="cls_007"><span class="cls_007">// compiler error</span></div>
+<div style="position:absolute;left:129.60px;top:409.87px" class="cls_003"><span class="cls_003">The ability to compose operations may not seem impressive now, but we will</span></div>
+<div style="position:absolute;left:129.60px;top:425.03px" class="cls_003"><span class="cls_003">see examples later on that allow us to write complex computations neatly and</span></div>
+<div style="position:absolute;left:129.60px;top:440.20px" class="cls_003"><span class="cls_003">concisely. But don’t get too carried away. Large, complex expressions can be</span></div>
+<div style="position:absolute;left:129.60px;top:455.37px" class="cls_003"><span class="cls_003">hard to read and debug.</span></div>
+<div style="position:absolute;left:129.60px;top:500.30px" class="cls_004"><span class="cls_004">2.10</span></div>
+<div style="position:absolute;left:183.40px;top:500.30px" class="cls_004"><span class="cls_004">Types of errors</span></div>
+<div style="position:absolute;left:129.60px;top:534.06px" class="cls_003"><span class="cls_003">Three kinds of errors can occur in a program: compile-time errors, run-time</span></div>
+<div style="position:absolute;left:129.60px;top:549.23px" class="cls_003"><span class="cls_003">errors, and logic errors.  It is useful to distinguish among them in order to</span></div>
+<div style="position:absolute;left:129.60px;top:564.40px" class="cls_003"><span class="cls_003">track them down more quickly.</span></div>
+<div style="position:absolute;left:129.60px;top:589.30px" class="cls_003"><span class="cls_003">Compile-time errors occur when you violate the syntax rules of the Java</span></div>
+<div style="position:absolute;left:129.60px;top:604.47px" class="cls_003"><span class="cls_003">language.  For example, parentheses and braces have to come in matching</span></div>
+<div style="position:absolute;left:129.60px;top:619.64px" class="cls_003"><span class="cls_003">pairs.  So (1 + 2) is legal, but 8) is not.  In the latter case, the program</span></div>
+<div style="position:absolute;left:129.60px;top:634.81px" class="cls_003"><span class="cls_003">cannot be compiled, and the compiler displays an error.</span></div>
+<div style="position:absolute;left:129.60px;top:659.71px" class="cls_003"><span class="cls_003">Error messages from the compiler usually indicate where in the program the</span></div>
+<div style="position:absolute;left:129.60px;top:674.88px" class="cls_003"><span class="cls_003">error occurred, and sometimes they can tell you exactly what the error is. As</span></div>
+<div style="position:absolute;left:129.60px;top:690.04px" class="cls_003"><span class="cls_003">an example, let’s get back to the hello world program from Section 1.4.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:8822px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="6bb36c0e-5ad5-11e9-9d71-0cc47a792c0a_id_6bb36c0e-5ad5-11e9-9d71-0cc47a792c0a_files/background12.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">26</span></div>
+<div style="position:absolute;left:269.76px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 2</span></div>
+<div style="position:absolute;left:342.47px;top:88.65px" class="cls_003"><span class="cls_003">Variables and operators</span></div>
+<div style="position:absolute;left:101.34px;top:123.41px" class="cls_005"><span class="cls_005">public class</span><span class="cls_003"> Hello {</span></div>
+<div style="position:absolute;left:125.95px;top:153.74px" class="cls_005"><span class="cls_005">public static void</span><span class="cls_003"> main(String[] args) {</span></div>
+<div style="position:absolute;left:150.56px;top:168.91px" class="cls_007"><span class="cls_007">// generate some simple output</span></div>
+<div style="position:absolute;left:150.56px;top:184.08px" class="cls_003"><span class="cls_003">System.out.println(</span><span class="cls_006">"Hello, World!"</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:125.95px;top:199.25px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:101.34px;top:214.41px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:239.69px" class="cls_003"><span class="cls_003">If you forget the semicolon at the end of the print statement, you might get</span></div>
+<div style="position:absolute;left:86.40px;top:254.86px" class="cls_003"><span class="cls_003">an error message like this:</span></div>
+<div style="position:absolute;left:101.34px;top:280.22px" class="cls_003"><span class="cls_003">File: Hello.java</span></div>
+<div style="position:absolute;left:212.07px;top:280.22px" class="cls_003"><span class="cls_003">[line: 5]</span></div>
+<div style="position:absolute;left:101.34px;top:295.39px" class="cls_003"><span class="cls_003">Error:</span><span class="cls_008"> '</span><span class="cls_003">;</span><span class="cls_008">'</span><span class="cls_003">  expected</span></div>
+<div style="position:absolute;left:86.40px;top:320.67px" class="cls_003"><span class="cls_003">That’s pretty good: the location of the error is correct, and the error message</span></div>
+<div style="position:absolute;left:86.40px;top:335.84px" class="cls_003"><span class="cls_003">tells you what’s wrong.</span></div>
+<div style="position:absolute;left:86.40px;top:362.43px" class="cls_003"><span class="cls_003">But error messages are not always easy to understand. Sometimes the compiler</span></div>
+<div style="position:absolute;left:86.40px;top:377.60px" class="cls_003"><span class="cls_003">reports the place in the program where the error was detected, not where it</span></div>
+<div style="position:absolute;left:86.40px;top:392.77px" class="cls_003"><span class="cls_003">actually occurred.  And sometimes the description of the problem is more</span></div>
+<div style="position:absolute;left:86.40px;top:407.94px" class="cls_003"><span class="cls_003">confusing than helpful.</span></div>
+<div style="position:absolute;left:86.40px;top:434.53px" class="cls_003"><span class="cls_003">For example, if you leave out the closing brace at the end of main (line 6), you</span></div>
+<div style="position:absolute;left:86.40px;top:449.70px" class="cls_003"><span class="cls_003">might get a message like this:</span></div>
+<div style="position:absolute;left:101.34px;top:475.06px" class="cls_003"><span class="cls_003">File: Hello.java</span></div>
+<div style="position:absolute;left:212.07px;top:475.06px" class="cls_003"><span class="cls_003">[line: 7]</span></div>
+<div style="position:absolute;left:101.34px;top:490.23px" class="cls_003"><span class="cls_003">Error: reached end of file while parsing</span></div>
+<div style="position:absolute;left:86.40px;top:515.51px" class="cls_003"><span class="cls_003">There are two problems here. First, the error message is written from the com-</span></div>
+<div style="position:absolute;left:86.40px;top:530.68px" class="cls_003"><span class="cls_003">piler’s point of view, not yours. Parsing is the process of reading a program</span></div>
+<div style="position:absolute;left:86.40px;top:545.85px" class="cls_003"><span class="cls_003">before translating; if the compiler gets to the end of the file while still parsing,</span></div>
+<div style="position:absolute;left:86.40px;top:561.01px" class="cls_003"><span class="cls_003">that means something was omitted. But the compiler doesn’t know what. It</span></div>
+<div style="position:absolute;left:86.40px;top:576.18px" class="cls_003"><span class="cls_003">also doesn’t know where. The compiler discovers the error at the end of the</span></div>
+<div style="position:absolute;left:86.40px;top:591.35px" class="cls_003"><span class="cls_003">program (line 7), but the missing brace should be on the previous line.</span></div>
+<div style="position:absolute;left:86.40px;top:617.94px" class="cls_003"><span class="cls_003">Error messages contain useful information, so you should make an effort to</span></div>
+<div style="position:absolute;left:86.40px;top:633.11px" class="cls_003"><span class="cls_003">read and understand them. But don’t take them too literally.</span></div>
+<div style="position:absolute;left:86.40px;top:659.71px" class="cls_003"><span class="cls_003">During the first few weeks of your programming career, you will probably spend</span></div>
+<div style="position:absolute;left:86.40px;top:674.88px" class="cls_003"><span class="cls_003">a lot of time tracking down compile-time errors. But as you gain experience,</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_003"><span class="cls_003">you will make fewer mistakes and find them more quickly.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:9624px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="6bb36c0e-5ad5-11e9-9d71-0cc47a792c0a_id_6bb36c0e-5ad5-11e9-9d71-0cc47a792c0a_files/background13.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">2.10</span></div>
+<div style="position:absolute;left:166.96px;top:88.65px" class="cls_003"><span class="cls_003">Types of errors</span></div>
+<div style="position:absolute;left:512.15px;top:88.65px" class="cls_003"><span class="cls_003">27</span></div>
+<div style="position:absolute;left:129.60px;top:124.74px" class="cls_003"><span class="cls_003">The second type of error is a run-time error, so-called because it does not</span></div>
+<div style="position:absolute;left:129.60px;top:139.91px" class="cls_003"><span class="cls_003">appear until after the program has started running.  In Java, these errors</span></div>
+<div style="position:absolute;left:129.60px;top:155.08px" class="cls_003"><span class="cls_003">occur while the interpreter is executing byte code and something goes wrong.</span></div>
+<div style="position:absolute;left:129.60px;top:170.25px" class="cls_003"><span class="cls_003">These errors are also called “exceptions” because they usually indicate that</span></div>
+<div style="position:absolute;left:129.60px;top:185.42px" class="cls_003"><span class="cls_003">something exceptional (and bad) has happened.</span></div>
+<div style="position:absolute;left:129.60px;top:210.85px" class="cls_003"><span class="cls_003">Run-time errors are rare in the simple programs you will see in the first few</span></div>
+<div style="position:absolute;left:129.60px;top:226.02px" class="cls_003"><span class="cls_003">chapters, so it might be a while before you encounter one. When a run-time</span></div>
+<div style="position:absolute;left:129.60px;top:241.18px" class="cls_003"><span class="cls_003">error occurs, the interpreter displays an error message that explains what</span></div>
+<div style="position:absolute;left:129.60px;top:256.35px" class="cls_003"><span class="cls_003">happened and where.</span></div>
+<div style="position:absolute;left:129.60px;top:281.78px" class="cls_003"><span class="cls_003">For example, if you accidentally divide by zero you will get a message like this:</span></div>
+<div style="position:absolute;left:144.54px;top:306.37px" class="cls_011"><span class="cls_011">Exception in thread "main" java.lang.ArithmeticException: / by zero</span></div>
+<div style="position:absolute;left:167.45px;top:320.60px" class="cls_011"><span class="cls_011">at Hello.main(Hello.java:5)</span></div>
+<div style="position:absolute;left:129.60px;top:343.38px" class="cls_003"><span class="cls_003">Some parts of this output are useful for debugging.  The first line includes</span></div>
+<div style="position:absolute;left:129.60px;top:358.55px" class="cls_003"><span class="cls_003">the name of the exception, java.lang.ArithmeticException, and a message</span></div>
+<div style="position:absolute;left:129.60px;top:373.72px" class="cls_003"><span class="cls_003">that indicates more specifically what happened, / by zero.  The next line</span></div>
+<div style="position:absolute;left:129.60px;top:388.89px" class="cls_003"><span class="cls_003">shows the method where the error occurred; Hello.main indicates the method</span></div>
+<div style="position:absolute;left:129.60px;top:404.05px" class="cls_003"><span class="cls_003">main in the class Hello. It also reports the file where the method is defined,</span></div>
+<div style="position:absolute;left:129.60px;top:419.22px" class="cls_003"><span class="cls_003">Hello.java, and the line number where the error occurred, 5.</span></div>
+<div style="position:absolute;left:129.60px;top:444.65px" class="cls_003"><span class="cls_003">Error messages sometimes contain additional information that won’t make</span></div>
+<div style="position:absolute;left:129.60px;top:459.82px" class="cls_003"><span class="cls_003">sense yet.  So one of the challenges is to figure out where to find the useful</span></div>
+<div style="position:absolute;left:129.60px;top:474.99px" class="cls_003"><span class="cls_003">parts without being overwhelmed by extraneous information.  Also, keep in</span></div>
+<div style="position:absolute;left:129.60px;top:490.16px" class="cls_003"><span class="cls_003">mind that the line where the program crashed may not be the line that needs</span></div>
+<div style="position:absolute;left:129.60px;top:505.33px" class="cls_003"><span class="cls_003">to be corrected.</span></div>
+<div style="position:absolute;left:129.60px;top:530.76px" class="cls_003"><span class="cls_003">The third type of error is the logic error. If your program has a logic error, it</span></div>
+<div style="position:absolute;left:129.60px;top:545.92px" class="cls_003"><span class="cls_003">will compile and run without generating error messages, but it will not do the</span></div>
+<div style="position:absolute;left:129.60px;top:561.09px" class="cls_003"><span class="cls_003">right thing. Instead, it will do exactly what you told it to do. For example,</span></div>
+<div style="position:absolute;left:129.60px;top:576.26px" class="cls_003"><span class="cls_003">here is a version of the hello world program with a logic error:</span></div>
+<div style="position:absolute;left:144.54px;top:600.46px" class="cls_005"><span class="cls_005">public class</span><span class="cls_003"> Hello {</span></div>
+<div style="position:absolute;left:169.15px;top:630.80px" class="cls_005"><span class="cls_005">public static void</span><span class="cls_003"> main(String[] args) {</span></div>
+<div style="position:absolute;left:193.76px;top:645.97px" class="cls_003"><span class="cls_003">System.out.println(</span><span class="cls_006">"Hello, "</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:193.76px;top:661.14px" class="cls_003"><span class="cls_003">System.out.println(</span><span class="cls_006">"World!"</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:169.15px;top:676.30px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:144.54px;top:691.47px" class="cls_003"><span class="cls_003">}</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:10426px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="6bb36c0e-5ad5-11e9-9d71-0cc47a792c0a_id_6bb36c0e-5ad5-11e9-9d71-0cc47a792c0a_files/background14.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">28</span></div>
+<div style="position:absolute;left:269.76px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 2</span></div>
+<div style="position:absolute;left:342.47px;top:88.65px" class="cls_003"><span class="cls_003">Variables and operators</span></div>
+<div style="position:absolute;left:86.40px;top:124.74px" class="cls_003"><span class="cls_003">This program compiles and runs just fine, but the output is:</span></div>
+<div style="position:absolute;left:101.34px;top:149.71px" class="cls_003"><span class="cls_003">Hello,</span></div>
+<div style="position:absolute;left:101.34px;top:164.88px" class="cls_003"><span class="cls_003">World!</span></div>
+<div style="position:absolute;left:86.40px;top:189.76px" class="cls_003"><span class="cls_003">Assuming that we wanted the output on one line, this is not correct.  The</span></div>
+<div style="position:absolute;left:86.40px;top:204.93px" class="cls_003"><span class="cls_003">problem is that the first line uses println, when we probably meant to use</span></div>
+<div style="position:absolute;left:86.40px;top:220.10px" class="cls_003"><span class="cls_003">print (see the “goodbye world” example of Section 1.5).</span></div>
+<div style="position:absolute;left:86.40px;top:246.30px" class="cls_003"><span class="cls_003">Identifying logic errors can be hard because you have to work backwards,</span></div>
+<div style="position:absolute;left:86.40px;top:261.46px" class="cls_003"><span class="cls_003">looking at the output of the program, trying to figure out why it is doing the</span></div>
+<div style="position:absolute;left:86.40px;top:276.63px" class="cls_003"><span class="cls_003">wrong thing, and how to make it do the right thing. Usually the compiler and</span></div>
+<div style="position:absolute;left:86.40px;top:291.80px" class="cls_003"><span class="cls_003">the interpreter can’t help you, since they don’t know what the right thing is.</span></div>
+<div style="position:absolute;left:86.40px;top:318.00px" class="cls_003"><span class="cls_003">Now that you know about the three kinds of errors, you might want to read</span></div>
+<div style="position:absolute;left:86.40px;top:333.17px" class="cls_003"><span class="cls_003">Appendix C, where we’ve collected some of our favorite debugging advice. It</span></div>
+<div style="position:absolute;left:86.40px;top:348.34px" class="cls_003"><span class="cls_003">refers to language features we haven’t talked about yet, so you might want to</span></div>
+<div style="position:absolute;left:86.40px;top:363.50px" class="cls_003"><span class="cls_003">re-read it from time to time.</span></div>
+<div style="position:absolute;left:86.40px;top:410.06px" class="cls_004"><span class="cls_004">2.11</span></div>
+<div style="position:absolute;left:140.20px;top:410.06px" class="cls_004"><span class="cls_004">Vocabulary</span></div>
+<div style="position:absolute;left:86.40px;top:441.52px" class="cls_003"><span class="cls_003">variable: A named storage location for values.  All variables have a type,</span></div>
+<div style="position:absolute;left:115.67px;top:456.69px" class="cls_003"><span class="cls_003">which is declared when the variable is created.</span></div>
+<div style="position:absolute;left:86.40px;top:481.36px" class="cls_003"><span class="cls_003">value: A number, string, or other data that can be stored in a variable. Every</span></div>
+<div style="position:absolute;left:115.67px;top:496.53px" class="cls_003"><span class="cls_003">value belongs to a type (for example,</span><span class="cls_005"> int</span><span class="cls_003"> or String).</span></div>
+<div style="position:absolute;left:86.40px;top:521.20px" class="cls_003"><span class="cls_003">declaration: A statement that creates a new variable and specifies its type.</span></div>
+<div style="position:absolute;left:86.40px;top:545.87px" class="cls_003"><span class="cls_003">type: Mathematically speaking, a set of values. The type of a variable deter-</span></div>
+<div style="position:absolute;left:115.67px;top:561.03px" class="cls_003"><span class="cls_003">mines which values it can have.</span></div>
+<div style="position:absolute;left:86.40px;top:585.70px" class="cls_003"><span class="cls_003">syntax: The structure of a program; the arrangement of the words and sym-</span></div>
+<div style="position:absolute;left:115.67px;top:600.87px" class="cls_003"><span class="cls_003">bols it contains.</span></div>
+<div style="position:absolute;left:86.40px;top:625.54px" class="cls_003"><span class="cls_003">keyword: A reserved word used by the compiler to analyze programs.  You</span></div>
+<div style="position:absolute;left:115.67px;top:640.71px" class="cls_003"><span class="cls_003">cannot use keywords (like</span><span class="cls_005"> public</span><span class="cls_003">,</span><span class="cls_005"> class</span><span class="cls_003">, and</span><span class="cls_005"> void</span><span class="cls_003">) as variable names.</span></div>
+<div style="position:absolute;left:86.40px;top:665.38px" class="cls_003"><span class="cls_003">assignment: A statement that gives a value to a variable.</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_003"><span class="cls_003">initialize: To assign a variable for the first time.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:11228px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="6bb36c0e-5ad5-11e9-9d71-0cc47a792c0a_id_6bb36c0e-5ad5-11e9-9d71-0cc47a792c0a_files/background15.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">2.11</span></div>
+<div style="position:absolute;left:166.96px;top:88.65px" class="cls_003"><span class="cls_003">Vocabulary</span></div>
+<div style="position:absolute;left:512.15px;top:88.65px" class="cls_003"><span class="cls_003">29</span></div>
+<div style="position:absolute;left:129.60px;top:124.74px" class="cls_003"><span class="cls_003">state: The variables in a program and their current values.</span></div>
+<div style="position:absolute;left:129.60px;top:154.05px" class="cls_003"><span class="cls_003">state diagram: A graphical representation of the state of a program at a</span></div>
+<div style="position:absolute;left:158.87px;top:169.22px" class="cls_003"><span class="cls_003">point in time.</span></div>
+<div style="position:absolute;left:129.60px;top:198.52px" class="cls_003"><span class="cls_003">operator: A symbol that represents a computation like addition, multiplica-</span></div>
+<div style="position:absolute;left:158.87px;top:213.69px" class="cls_003"><span class="cls_003">tion, or string concatenation.</span></div>
+<div style="position:absolute;left:129.60px;top:242.99px" class="cls_003"><span class="cls_003">operand: One of the values on which an operator operates. Most operators</span></div>
+<div style="position:absolute;left:158.87px;top:258.16px" class="cls_003"><span class="cls_003">in Java require two operands.</span></div>
+<div style="position:absolute;left:129.60px;top:287.47px" class="cls_003"><span class="cls_003">expression: A combination of variables, operators, and values that repre-</span></div>
+<div style="position:absolute;left:158.87px;top:302.63px" class="cls_003"><span class="cls_003">sents a single value. Expressions also have types, as determined by their</span></div>
+<div style="position:absolute;left:158.87px;top:317.80px" class="cls_003"><span class="cls_003">operators and operands.</span></div>
+<div style="position:absolute;left:129.60px;top:347.11px" class="cls_003"><span class="cls_003">floating-point: A data type that represents numbers with an integer part</span></div>
+<div style="position:absolute;left:158.87px;top:362.27px" class="cls_003"><span class="cls_003">and a fractional part. In Java, the default floating-point type is</span><span class="cls_005"> double</span><span class="cls_003">.</span></div>
+<div style="position:absolute;left:129.60px;top:391.58px" class="cls_003"><span class="cls_003">rounding error: The difference between the number we want to represent</span></div>
+<div style="position:absolute;left:158.87px;top:406.75px" class="cls_003"><span class="cls_003">and the nearest floating-point number.</span></div>
+<div style="position:absolute;left:129.60px;top:436.05px" class="cls_003"><span class="cls_003">concatenate: To join two values, often strings, end-to-end.</span></div>
+<div style="position:absolute;left:129.60px;top:465.36px" class="cls_003"><span class="cls_003">order of operations: The rules that determine in what order operations are</span></div>
+<div style="position:absolute;left:158.87px;top:480.52px" class="cls_003"><span class="cls_003">evaluated.</span></div>
+<div style="position:absolute;left:129.60px;top:509.83px" class="cls_003"><span class="cls_003">composition: The ability to combine simple expressions and statements into</span></div>
+<div style="position:absolute;left:158.87px;top:525.00px" class="cls_003"><span class="cls_003">compound expressions and statements.</span></div>
+<div style="position:absolute;left:129.60px;top:554.30px" class="cls_003"><span class="cls_003">compile-time error: An error in the source code that makes it impossible</span></div>
+<div style="position:absolute;left:158.87px;top:569.47px" class="cls_003"><span class="cls_003">to compile. Also called a “syntax error”.</span></div>
+<div style="position:absolute;left:129.60px;top:598.77px" class="cls_003"><span class="cls_003">parse: To analyze the structure of a program; what the compiler does first.</span></div>
+<div style="position:absolute;left:129.60px;top:628.08px" class="cls_003"><span class="cls_003">run-time error: An error in a program that makes it impossible to run to</span></div>
+<div style="position:absolute;left:158.87px;top:643.25px" class="cls_003"><span class="cls_003">completion. Also called an “exception”.</span></div>
+<div style="position:absolute;left:129.60px;top:672.55px" class="cls_003"><span class="cls_003">logic error: An error in a program that makes it do something other than</span></div>
+<div style="position:absolute;left:158.87px;top:687.72px" class="cls_003"><span class="cls_003">what the programmer intended.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:12030px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="6bb36c0e-5ad5-11e9-9d71-0cc47a792c0a_id_6bb36c0e-5ad5-11e9-9d71-0cc47a792c0a_files/background16.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">30</span></div>
+<div style="position:absolute;left:269.76px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 2</span></div>
+<div style="position:absolute;left:342.47px;top:88.65px" class="cls_003"><span class="cls_003">Variables and operators</span></div>
+<div style="position:absolute;left:86.40px;top:119.48px" class="cls_004"><span class="cls_004">2.12</span></div>
+<div style="position:absolute;left:140.20px;top:119.48px" class="cls_004"><span class="cls_004">Exercises</span></div>
+<div style="position:absolute;left:86.40px;top:154.36px" class="cls_003"><span class="cls_003">The code for this chapter is in the ch02 directory of ThinkJavaCode.  See</span></div>
+<div style="position:absolute;left:86.40px;top:169.52px" class="cls_003"><span class="cls_003">page xv for instructions on how to download the repository. Before you start</span></div>
+<div style="position:absolute;left:86.40px;top:184.69px" class="cls_003"><span class="cls_003">the exercises, we recommend that you compile and run the examples.</span></div>
+<div style="position:absolute;left:86.40px;top:210.70px" class="cls_003"><span class="cls_003">If you have not already read Appendix A.2, now might be a good time.  It</span></div>
+<div style="position:absolute;left:86.40px;top:225.87px" class="cls_003"><span class="cls_003">describes the DrJava Interactions Pane, which is a useful way to develop and</span></div>
+<div style="position:absolute;left:86.40px;top:241.04px" class="cls_003"><span class="cls_003">test short fragments of code without writing a complete class definition.</span></div>
+<div style="position:absolute;left:86.40px;top:268.16px" class="cls_003"><span class="cls_003">Exercise 2.1</span></div>
+<div style="position:absolute;left:170.32px;top:268.16px" class="cls_003"><span class="cls_003">If you are using this book in a class, you might enjoy this</span></div>
+<div style="position:absolute;left:86.40px;top:283.33px" class="cls_003"><span class="cls_003">exercise. Find a partner and play “Stump the Chump”:</span></div>
+<div style="position:absolute;left:86.40px;top:309.34px" class="cls_003"><span class="cls_003">Start with a program that compiles and runs correctly. One player looks away</span></div>
+<div style="position:absolute;left:86.40px;top:324.51px" class="cls_003"><span class="cls_003">while the other player adds an error to the program.  Then the first player</span></div>
+<div style="position:absolute;left:86.40px;top:339.67px" class="cls_003"><span class="cls_003">tries to find and fix the error. You get two points if you find the error without</span></div>
+<div style="position:absolute;left:86.40px;top:354.84px" class="cls_003"><span class="cls_003">compiling the program, one point if you find it using the compiler, and your</span></div>
+<div style="position:absolute;left:86.40px;top:370.01px" class="cls_003"><span class="cls_003">opponent gets a point if you don’t find it.</span></div>
+<div style="position:absolute;left:86.40px;top:397.13px" class="cls_003"><span class="cls_003">Exercise 2.2</span></div>
+<div style="position:absolute;left:169.80px;top:397.13px" class="cls_003"><span class="cls_003">The point of this exercise is (1) to use string concatenation</span></div>
+<div style="position:absolute;left:86.40px;top:412.30px" class="cls_003"><span class="cls_003">to display values with different types (</span><span class="cls_005">int</span><span class="cls_003"> and String), and (2) to practice</span></div>
+<div style="position:absolute;left:86.40px;top:427.47px" class="cls_003"><span class="cls_003">developing programs gradually by adding a few statements at a time.</span></div>
+<div style="position:absolute;left:100.71px;top:455.24px" class="cls_003"><span class="cls_003">1. Create a new program named Date.java.  Copy or type in something</span></div>
+<div style="position:absolute;left:115.67px;top:470.40px" class="cls_003"><span class="cls_003">like the hello world program and make sure you can compile and run it.</span></div>
+<div style="position:absolute;left:100.71px;top:494.98px" class="cls_003"><span class="cls_003">2. Following the example in Section 2.4, write a program that creates vari-</span></div>
+<div style="position:absolute;left:115.67px;top:510.15px" class="cls_003"><span class="cls_003">ables named day, date, month, and year. The variable day will contain</span></div>
+<div style="position:absolute;left:115.67px;top:525.31px" class="cls_003"><span class="cls_003">the day of the week (like Friday), and date will contain the day of the</span></div>
+<div style="position:absolute;left:115.67px;top:540.48px" class="cls_003"><span class="cls_003">month (like the 13th).  What type is each variable?  Assign values to</span></div>
+<div style="position:absolute;left:115.67px;top:555.65px" class="cls_003"><span class="cls_003">those variables that represent today’s date.</span></div>
+<div style="position:absolute;left:100.71px;top:580.22px" class="cls_003"><span class="cls_003">3. Display (print out) the value of each variable on a line by itself. This is an</span></div>
+<div style="position:absolute;left:115.67px;top:595.39px" class="cls_003"><span class="cls_003">intermediate step that is useful for checking that everything is working</span></div>
+<div style="position:absolute;left:115.67px;top:610.56px" class="cls_003"><span class="cls_003">so far. Compile and run your program before moving on.</span></div>
+<div style="position:absolute;left:100.71px;top:635.13px" class="cls_003"><span class="cls_003">4. Modify the program so that it displays the date in standard American</span></div>
+<div style="position:absolute;left:115.67px;top:650.30px" class="cls_003"><span class="cls_003">format, for example: Thursday, July 16, 2015.</span></div>
+<div style="position:absolute;left:100.71px;top:674.88px" class="cls_003"><span class="cls_003">5. Modify the program so it also displays the date in European format. The</span></div>
+<div style="position:absolute;left:115.67px;top:690.04px" class="cls_003"><span class="cls_003">final output should be:</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:12832px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="6bb36c0e-5ad5-11e9-9d71-0cc47a792c0a_id_6bb36c0e-5ad5-11e9-9d71-0cc47a792c0a_files/background17.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">2.12</span></div>
+<div style="position:absolute;left:166.96px;top:88.65px" class="cls_003"><span class="cls_003">Exercises</span></div>
+<div style="position:absolute;left:512.16px;top:88.65px" class="cls_003"><span class="cls_003">31</span></div>
+<div style="position:absolute;left:173.81px;top:123.41px" class="cls_003"><span class="cls_003">American format:</span></div>
+<div style="position:absolute;left:173.81px;top:138.57px" class="cls_003"><span class="cls_003">Thursday, July 16, 2015</span></div>
+<div style="position:absolute;left:173.81px;top:153.74px" class="cls_003"><span class="cls_003">European format:</span></div>
+<div style="position:absolute;left:173.81px;top:168.91px" class="cls_003"><span class="cls_003">Thursday 16 July 2015</span></div>
+<div style="position:absolute;left:129.60px;top:195.38px" class="cls_003"><span class="cls_003">Exercise 2.3</span></div>
+<div style="position:absolute;left:211.84px;top:195.38px" class="cls_003"><span class="cls_003">The point of this exercise is to (1) use some of the arithmetic</span></div>
+<div style="position:absolute;left:129.60px;top:210.55px" class="cls_003"><span class="cls_003">operators, and (2) start thinking about compound entities (like time of day)</span></div>
+<div style="position:absolute;left:129.60px;top:225.71px" class="cls_003"><span class="cls_003">that are represented with multiple values.</span></div>
+<div style="position:absolute;left:143.91px;top:256.82px" class="cls_003"><span class="cls_003">1. Create a new program called Time.java. From now on, we won’t remind</span></div>
+<div style="position:absolute;left:158.87px;top:271.99px" class="cls_003"><span class="cls_003">you to start with a small, working program, but you should.</span></div>
+<div style="position:absolute;left:143.91px;top:297.12px" class="cls_003"><span class="cls_003">2. Following the example program in Section 2.4, create variables named</span></div>
+<div style="position:absolute;left:158.87px;top:312.29px" class="cls_003"><span class="cls_003">hour, minute, and second. Assign values that are roughly the current</span></div>
+<div style="position:absolute;left:158.87px;top:327.46px" class="cls_003"><span class="cls_003">time. Use a 24-hour clock so that at 2pm the value of hour is 14.</span></div>
+<div style="position:absolute;left:143.91px;top:352.59px" class="cls_003"><span class="cls_003">3. Make the program calculate and display the number of seconds since</span></div>
+<div style="position:absolute;left:158.87px;top:367.76px" class="cls_003"><span class="cls_003">midnight.</span></div>
+<div style="position:absolute;left:143.91px;top:392.89px" class="cls_003"><span class="cls_003">4. Calculate and display the number of seconds remaining in the day.</span></div>
+<div style="position:absolute;left:143.91px;top:418.02px" class="cls_003"><span class="cls_003">5. Calculate and display the percentage of the day that has passed.  You</span></div>
+<div style="position:absolute;left:158.87px;top:433.19px" class="cls_003"><span class="cls_003">might run into problems when computing percentages with integers, so</span></div>
+<div style="position:absolute;left:158.87px;top:448.36px" class="cls_003"><span class="cls_003">consider using floating-point.</span></div>
+<div style="position:absolute;left:143.91px;top:473.49px" class="cls_003"><span class="cls_003">6. Change the values of hour, minute, and second to reflect the current</span></div>
+<div style="position:absolute;left:158.87px;top:488.65px" class="cls_003"><span class="cls_003">time.  Then write code to compute the elapsed time since you started</span></div>
+<div style="position:absolute;left:158.87px;top:503.82px" class="cls_003"><span class="cls_003">working on this exercise.</span></div>
+<div style="position:absolute;left:129.60px;top:534.93px" class="cls_003"><span class="cls_003">Hint:  You might want to use additional variables to hold values during the</span></div>
+<div style="position:absolute;left:129.60px;top:550.10px" class="cls_003"><span class="cls_003">computation.  Variables that are used in a computation but never displayed</span></div>
+<div style="position:absolute;left:129.60px;top:565.27px" class="cls_003"><span class="cls_003">are sometimes called “intermediate” or “temporary” variables.</span></div>
+</div>
+
+</body>
+</html>

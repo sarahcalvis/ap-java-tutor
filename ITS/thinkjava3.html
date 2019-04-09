@@ -1,0 +1,582 @@
+<html>
+<head><meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<style type="text/css">
+<!--
+span.cls_002{font-family:Arial,serif;font-size:24.8px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_002{font-family:Arial,serif;font-size:24.8px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_003{font-family:Arial,serif;font-size:12.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_003{font-family:Arial,serif;font-size:12.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_004{font-family:Arial,serif;font-size:17.3px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_004{font-family:Arial,serif;font-size:17.3px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_005{font-family:Arial,serif;font-size:12.0px;color:rgb(0,0,255);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_005{font-family:Arial,serif;font-size:12.0px;color:rgb(0,0,255);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_006{font-family:Arial,serif;font-size:12.0px;color:rgb(178,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_006{font-family:Arial,serif;font-size:12.0px;color:rgb(178,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_007{font-family:Arial,serif;font-size:12.0px;color:rgb(0,123,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_007{font-family:Arial,serif;font-size:12.0px;color:rgb(0,123,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_008{font-family:Courier New,serif;font-size:12.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_008{font-family:Courier New,serif;font-size:12.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_009{font-family:Times,serif;font-size:8.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_009{font-family:Times,serif;font-size:8.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+-->
+</style>
+<script type="text/javascript" src="a5608efa-5ad5-11e9-9d71-0cc47a792c0a_id_a5608efa-5ad5-11e9-9d71-0cc47a792c0a_files/wz_jsgraphics.js"></script>
+</head>
+<body>
+<div style="position:absolute;left:50%;margin-left:-306px;top:0px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="a5608efa-5ad5-11e9-9d71-0cc47a792c0a_id_a5608efa-5ad5-11e9-9d71-0cc47a792c0a_files/background01.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:203.70px" class="cls_002"><span class="cls_002">Chapter 3</span></div>
+<div style="position:absolute;left:129.60px;top:265.61px" class="cls_002"><span class="cls_002">Input and output</span></div>
+<div style="position:absolute;left:129.60px;top:344.06px" class="cls_003"><span class="cls_003">The programs we’ve looked at so far simply display messages, which doesn’t</span></div>
+<div style="position:absolute;left:129.60px;top:359.23px" class="cls_003"><span class="cls_003">involve a lot of real computation.  This chapter will show you how to read</span></div>
+<div style="position:absolute;left:129.60px;top:374.39px" class="cls_003"><span class="cls_003">input from the keyboard, use that input to calculate a result, and then format</span></div>
+<div style="position:absolute;left:129.60px;top:389.56px" class="cls_003"><span class="cls_003">that result for output.</span></div>
+<div style="position:absolute;left:129.60px;top:435.58px" class="cls_004"><span class="cls_004">3.1</span></div>
+<div style="position:absolute;left:173.71px;top:435.58px" class="cls_004"><span class="cls_004">The System class</span></div>
+<div style="position:absolute;left:129.60px;top:470.21px" class="cls_003"><span class="cls_003">We have been using System.out.println for a while, but you might not</span></div>
+<div style="position:absolute;left:129.60px;top:485.38px" class="cls_003"><span class="cls_003">have thought about what it means. System is a class that provides methods</span></div>
+<div style="position:absolute;left:129.60px;top:500.54px" class="cls_003"><span class="cls_003">related to the “system” or environment where programs run. It also provides</span></div>
+<div style="position:absolute;left:129.60px;top:515.71px" class="cls_003"><span class="cls_003">System.out, which is a special value that provides methods for displaying</span></div>
+<div style="position:absolute;left:129.60px;top:530.88px" class="cls_003"><span class="cls_003">output, including println.</span></div>
+<div style="position:absolute;left:129.60px;top:556.65px" class="cls_003"><span class="cls_003">In fact, we can use System.out.println to display the value of System.out:</span></div>
+<div style="position:absolute;left:144.54px;top:582.46px" class="cls_003"><span class="cls_003">System.out.println(System.out);</span></div>
+<div style="position:absolute;left:129.60px;top:608.18px" class="cls_003"><span class="cls_003">The result is:</span></div>
+<div style="position:absolute;left:144.54px;top:633.99px" class="cls_003"><span class="cls_003">java.io.PrintStream@685d72cd</span></div>
+<div style="position:absolute;left:129.60px;top:659.71px" class="cls_003"><span class="cls_003">This output indicates that System.out is a PrintStream, which is defined in a</span></div>
+<div style="position:absolute;left:129.60px;top:674.88px" class="cls_003"><span class="cls_003">package called java.io. A package is a collection of related classes; java.io</span></div>
+<div style="position:absolute;left:129.60px;top:690.04px" class="cls_003"><span class="cls_003">contains classes for “I/O” which stands for input and output.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:802px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="a5608efa-5ad5-11e9-9d71-0cc47a792c0a_id_a5608efa-5ad5-11e9-9d71-0cc47a792c0a_files/background02.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">34</span></div>
+<div style="position:absolute;left:306.99px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 3</span></div>
+<div style="position:absolute;left:379.70px;top:88.65px" class="cls_003"><span class="cls_003">Input and output</span></div>
+<div style="position:absolute;left:86.40px;top:124.74px" class="cls_003"><span class="cls_003">The numbers and letters after the @ sign are the address of System.out,</span></div>
+<div style="position:absolute;left:86.40px;top:139.91px" class="cls_003"><span class="cls_003">represented as a hexadecimal (base 16) number.  The address of a value is</span></div>
+<div style="position:absolute;left:86.40px;top:155.08px" class="cls_003"><span class="cls_003">its location in the computer’s memory, which might be different on different</span></div>
+<div style="position:absolute;left:86.40px;top:170.25px" class="cls_003"><span class="cls_003">computers. In this example the address is 685d72cd, but if you run the same</span></div>
+<div style="position:absolute;left:86.40px;top:185.42px" class="cls_003"><span class="cls_003">code you might get something different.</span></div>
+<div style="position:absolute;left:86.40px;top:214.68px" class="cls_003"><span class="cls_003">As shown in Figure 3.1, System is defined in a file called System.java, and</span></div>
+<div style="position:absolute;left:86.40px;top:229.85px" class="cls_003"><span class="cls_003">PrintStream is defined in PrintStream.java.  These files are part of the</span></div>
+<div style="position:absolute;left:86.40px;top:245.02px" class="cls_003"><span class="cls_003">Java library, which is an extensive collection of classes you can use in your</span></div>
+<div style="position:absolute;left:86.40px;top:260.19px" class="cls_003"><span class="cls_003">programs.</span></div>
+<div style="position:absolute;left:86.40px;top:493.01px" class="cls_003"><span class="cls_003">Figure 3.1:  System.out.println refers to the out variable of the System</span></div>
+<div style="position:absolute;left:86.40px;top:507.46px" class="cls_003"><span class="cls_003">class, which is a PrintStream that provides a method called println.</span></div>
+<div style="position:absolute;left:86.40px;top:561.42px" class="cls_004"><span class="cls_004">3.2</span></div>
+<div style="position:absolute;left:130.51px;top:561.42px" class="cls_004"><span class="cls_004">The Scanner class</span></div>
+<div style="position:absolute;left:86.40px;top:600.11px" class="cls_003"><span class="cls_003">The System class also provides the special value System.in, which is an</span></div>
+<div style="position:absolute;left:86.40px;top:615.27px" class="cls_003"><span class="cls_003">InputStream that provides methods for reading input from the keyboard.</span></div>
+<div style="position:absolute;left:86.40px;top:630.44px" class="cls_003"><span class="cls_003">These methods are not easy to use; fortunately, Java provides other classes</span></div>
+<div style="position:absolute;left:86.40px;top:645.61px" class="cls_003"><span class="cls_003">that make it easier to handle common input tasks.</span></div>
+<div style="position:absolute;left:86.40px;top:674.88px" class="cls_003"><span class="cls_003">For example, Scanner is a class that provides methods for inputting words,</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_003"><span class="cls_003">numbers, and other data.  Scanner is provided by java.util, which is a</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:1604px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="a5608efa-5ad5-11e9-9d71-0cc47a792c0a_id_a5608efa-5ad5-11e9-9d71-0cc47a792c0a_files/background03.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">3.2</span></div>
+<div style="position:absolute;left:160.24px;top:88.65px" class="cls_003"><span class="cls_003">The Scanner class</span></div>
+<div style="position:absolute;left:512.15px;top:88.65px" class="cls_003"><span class="cls_003">35</span></div>
+<div style="position:absolute;left:129.60px;top:124.74px" class="cls_003"><span class="cls_003">package that contains classes so useful they are called “utility classes”. Before</span></div>
+<div style="position:absolute;left:129.60px;top:139.91px" class="cls_003"><span class="cls_003">you can use Scanner, you have to import it like this:</span></div>
+<div style="position:absolute;left:144.54px;top:165.45px" class="cls_005"><span class="cls_005">import</span><span class="cls_003"> java.util.Scanner;</span></div>
+<div style="position:absolute;left:129.60px;top:190.89px" class="cls_003"><span class="cls_003">This import statement tells the compiler that when you say Scanner, you</span></div>
+<div style="position:absolute;left:129.60px;top:206.06px" class="cls_003"><span class="cls_003">mean the one defined in java.util.  It’s necessary because there might be</span></div>
+<div style="position:absolute;left:129.60px;top:221.23px" class="cls_003"><span class="cls_003">another class named Scanner in another package. Using an import statement</span></div>
+<div style="position:absolute;left:129.60px;top:236.40px" class="cls_003"><span class="cls_003">makes your code unambiguous.</span></div>
+<div style="position:absolute;left:129.60px;top:261.89px" class="cls_003"><span class="cls_003">Import statements can’t be inside a class definition. By convention, they are</span></div>
+<div style="position:absolute;left:129.60px;top:277.05px" class="cls_003"><span class="cls_003">usually at the beginning of the file.</span></div>
+<div style="position:absolute;left:129.60px;top:302.55px" class="cls_003"><span class="cls_003">Next you have to create a Scanner:</span></div>
+<div style="position:absolute;left:144.54px;top:328.08px" class="cls_003"><span class="cls_003">Scanner in =</span><span class="cls_005"> new</span><span class="cls_003"> Scanner(System.in);</span></div>
+<div style="position:absolute;left:129.60px;top:353.53px" class="cls_003"><span class="cls_003">This line declares a Scanner variable named in and creates a new Scanner</span></div>
+<div style="position:absolute;left:129.60px;top:368.69px" class="cls_003"><span class="cls_003">that takes input from System.in.</span></div>
+<div style="position:absolute;left:129.60px;top:394.18px" class="cls_003"><span class="cls_003">Scanner provides a method called nextLine that reads a line of input from</span></div>
+<div style="position:absolute;left:129.60px;top:409.35px" class="cls_003"><span class="cls_003">the keyboard and returns a String.  The following example reads two lines</span></div>
+<div style="position:absolute;left:129.60px;top:424.52px" class="cls_003"><span class="cls_003">and repeats them back to the user:</span></div>
+<div style="position:absolute;left:144.54px;top:448.78px" class="cls_005"><span class="cls_005">import</span><span class="cls_003"> java.util.Scanner;</span></div>
+<div style="position:absolute;left:144.54px;top:479.12px" class="cls_005"><span class="cls_005">public class</span><span class="cls_003"> Echo {</span></div>
+<div style="position:absolute;left:169.15px;top:509.45px" class="cls_005"><span class="cls_005">public static void</span><span class="cls_003"> main(String[] args) {</span></div>
+<div style="position:absolute;left:193.76px;top:524.62px" class="cls_003"><span class="cls_003">String line;</span></div>
+<div style="position:absolute;left:193.76px;top:539.79px" class="cls_003"><span class="cls_003">Scanner in =</span><span class="cls_005"> new</span><span class="cls_003"> Scanner(System.in);</span></div>
+<div style="position:absolute;left:193.76px;top:570.13px" class="cls_003"><span class="cls_003">System.out.print(</span><span class="cls_006">"Type something: "</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:193.76px;top:585.29px" class="cls_003"><span class="cls_003">line = in.nextLine();</span></div>
+<div style="position:absolute;left:193.76px;top:600.46px" class="cls_003"><span class="cls_003">System.out.println(</span><span class="cls_006">"You said: "</span><span class="cls_003"> + line);</span></div>
+<div style="position:absolute;left:193.76px;top:630.80px" class="cls_003"><span class="cls_003">System.out.print(</span><span class="cls_006">"Type something else: "</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:193.76px;top:645.97px" class="cls_003"><span class="cls_003">line = in.nextLine();</span></div>
+<div style="position:absolute;left:193.76px;top:661.14px" class="cls_003"><span class="cls_003">System.out.println(</span><span class="cls_006">"You also said: "</span><span class="cls_003"> + line);</span></div>
+<div style="position:absolute;left:169.15px;top:676.30px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:144.54px;top:691.47px" class="cls_003"><span class="cls_003">}</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:2406px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="a5608efa-5ad5-11e9-9d71-0cc47a792c0a_id_a5608efa-5ad5-11e9-9d71-0cc47a792c0a_files/background04.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">36</span></div>
+<div style="position:absolute;left:306.99px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 3</span></div>
+<div style="position:absolute;left:379.70px;top:88.65px" class="cls_003"><span class="cls_003">Input and output</span></div>
+<div style="position:absolute;left:86.40px;top:124.74px" class="cls_003"><span class="cls_003">If you omit the import statement and later refer to Scanner, you will get a</span></div>
+<div style="position:absolute;left:86.40px;top:139.91px" class="cls_003"><span class="cls_003">compiler error like “cannot find symbol”.  That means the compiler doesn’t</span></div>
+<div style="position:absolute;left:86.40px;top:155.08px" class="cls_003"><span class="cls_003">know what you mean by Scanner.</span></div>
+<div style="position:absolute;left:86.40px;top:184.21px" class="cls_003"><span class="cls_003">You might wonder why we can use the System class without importing it.</span></div>
+<div style="position:absolute;left:86.40px;top:199.37px" class="cls_003"><span class="cls_003">System belongs to the java.lang package, which is imported automatically.</span></div>
+<div style="position:absolute;left:86.40px;top:214.54px" class="cls_003"><span class="cls_003">According to the documentation, java.lang “provides classes that are funda-</span></div>
+<div style="position:absolute;left:86.40px;top:229.71px" class="cls_003"><span class="cls_003">mental to the design of the Java programming language.”  The String class</span></div>
+<div style="position:absolute;left:86.40px;top:244.88px" class="cls_003"><span class="cls_003">is also part of the java.lang package.</span></div>
+<div style="position:absolute;left:86.40px;top:297.20px" class="cls_004"><span class="cls_004">3.3</span></div>
+<div style="position:absolute;left:130.51px;top:297.20px" class="cls_004"><span class="cls_004">Program structure</span></div>
+<div style="position:absolute;left:86.40px;top:335.70px" class="cls_003"><span class="cls_003">At this point, we have seen all of the elements that make up Java programs.</span></div>
+<div style="position:absolute;left:86.40px;top:350.87px" class="cls_003"><span class="cls_003">Figure 3.2 shows these organizational units.</span></div>
+<div style="position:absolute;left:110.72px;top:554.95px" class="cls_003"><span class="cls_003">Figure 3.2: Elements of the Java language, from largest to smallest.</span></div>
+<div style="position:absolute;left:86.40px;top:585.08px" class="cls_003"><span class="cls_003">To review, a package is a collection of classes, which define methods. Methods</span></div>
+<div style="position:absolute;left:86.40px;top:600.24px" class="cls_003"><span class="cls_003">contain statements, some of which contain expressions. Expressions are made</span></div>
+<div style="position:absolute;left:86.40px;top:615.41px" class="cls_003"><span class="cls_003">up of tokens, which are the basic elements of a program, including numbers,</span></div>
+<div style="position:absolute;left:86.40px;top:630.58px" class="cls_003"><span class="cls_003">variable names, operators, keywords, and punctuation like parentheses, braces</span></div>
+<div style="position:absolute;left:86.40px;top:645.75px" class="cls_003"><span class="cls_003">and semicolons.</span></div>
+<div style="position:absolute;left:86.40px;top:674.88px" class="cls_003"><span class="cls_003">The standard edition of Java comes with several thousand classes you can</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_005"><span class="cls_005">import</span><span class="cls_003">, which can be both exciting and intimidating.  You can browse this</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:3208px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="a5608efa-5ad5-11e9-9d71-0cc47a792c0a_id_a5608efa-5ad5-11e9-9d71-0cc47a792c0a_files/background05.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">3.4</span></div>
+<div style="position:absolute;left:160.24px;top:88.65px" class="cls_003"><span class="cls_003">Inches to centimeters</span></div>
+<div style="position:absolute;left:512.15px;top:88.65px" class="cls_003"><span class="cls_003">37</span></div>
+<div style="position:absolute;left:129.60px;top:124.74px" class="cls_003"><span class="cls_003">library at</span><span class="cls_005"> <A HREF="http://docs.oracle.com/javase/8/docs/api/">http://docs.oracle.com/javase/8/docs/api/</A> </span><span class="cls_003">. Most of the Java</span></div>
+<div style="position:absolute;left:129.60px;top:139.91px" class="cls_003"><span class="cls_003">library itself is written in Java.</span></div>
+<div style="position:absolute;left:129.60px;top:168.32px" class="cls_003"><span class="cls_003">Note there is a major difference between the Java language, which defines the</span></div>
+<div style="position:absolute;left:129.60px;top:183.49px" class="cls_003"><span class="cls_003">syntax and meaning of the elements in Figure 3.2, and the Java library, which</span></div>
+<div style="position:absolute;left:129.60px;top:198.66px" class="cls_003"><span class="cls_003">provides the built-in classes.</span></div>
+<div style="position:absolute;left:129.60px;top:249.34px" class="cls_004"><span class="cls_004">3.4</span></div>
+<div style="position:absolute;left:173.71px;top:249.34px" class="cls_004"><span class="cls_004">Inches to centimeters</span></div>
+<div style="position:absolute;left:129.60px;top:286.95px" class="cls_003"><span class="cls_003">Now let’s see an example that’s a little more useful. Although most of the world</span></div>
+<div style="position:absolute;left:129.60px;top:302.12px" class="cls_003"><span class="cls_003">has adopted the metric system for weights and measures, some countries are</span></div>
+<div style="position:absolute;left:129.60px;top:317.29px" class="cls_003"><span class="cls_003">stuck with English units.  For example, when talking with friends in Europe</span></div>
+<div style="position:absolute;left:129.60px;top:332.46px" class="cls_003"><span class="cls_003">about the weather, people in the United States might have to convert from</span></div>
+<div style="position:absolute;left:129.60px;top:347.62px" class="cls_003"><span class="cls_003">Celsius to Fahrenheit and back.  Or they might want to convert height in</span></div>
+<div style="position:absolute;left:129.60px;top:362.79px" class="cls_003"><span class="cls_003">inches to centimeters.</span></div>
+<div style="position:absolute;left:129.60px;top:391.21px" class="cls_003"><span class="cls_003">We can write a program to help. We’ll use a Scanner to input a measurement</span></div>
+<div style="position:absolute;left:129.60px;top:406.37px" class="cls_003"><span class="cls_003">in inches, convert to centimeters, and then display the results. The following</span></div>
+<div style="position:absolute;left:129.60px;top:421.54px" class="cls_003"><span class="cls_003">lines declare the variables and create the Scanner:</span></div>
+<div style="position:absolute;left:144.54px;top:446.40px" class="cls_005"><span class="cls_005">int</span><span class="cls_003"> inch;</span></div>
+<div style="position:absolute;left:144.54px;top:461.57px" class="cls_005"><span class="cls_005">double</span><span class="cls_003"> cm;</span></div>
+<div style="position:absolute;left:144.54px;top:476.74px" class="cls_003"><span class="cls_003">Scanner in =</span><span class="cls_005"> new</span><span class="cls_003"> Scanner(System.in);</span></div>
+<div style="position:absolute;left:129.60px;top:503.83px" class="cls_003"><span class="cls_003">The next step is to prompt the user for the input.  We’ll use print instead</span></div>
+<div style="position:absolute;left:129.60px;top:519.00px" class="cls_003"><span class="cls_003">of println so they can enter the input on the same line as the prompt. And</span></div>
+<div style="position:absolute;left:129.60px;top:534.17px" class="cls_003"><span class="cls_003">we’ll use the Scanner method nextInt, which reads input from the keyboard</span></div>
+<div style="position:absolute;left:129.60px;top:549.34px" class="cls_003"><span class="cls_003">and converts it to an integer:</span></div>
+<div style="position:absolute;left:144.54px;top:576.52px" class="cls_003"><span class="cls_003">System.out.print(</span><span class="cls_006">"How many inches? "</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:144.54px;top:591.69px" class="cls_003"><span class="cls_003">inch = in.nextInt();</span></div>
+<div style="position:absolute;left:129.60px;top:618.78px" class="cls_003"><span class="cls_003">Next we multiply the number of inches by 2.54, since that’s how many cen-</span></div>
+<div style="position:absolute;left:129.60px;top:633.95px" class="cls_003"><span class="cls_003">timeters there are per inch, and display the results:</span></div>
+<div style="position:absolute;left:144.54px;top:661.14px" class="cls_003"><span class="cls_003">cm = inch * 2.54;</span></div>
+<div style="position:absolute;left:144.54px;top:676.30px" class="cls_003"><span class="cls_003">System.out.print(inch +</span><span class="cls_006"> " in = "</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:144.54px;top:691.47px" class="cls_003"><span class="cls_003">System.out.println(cm +</span><span class="cls_006"> " cm"</span><span class="cls_003">);</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:4010px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="a5608efa-5ad5-11e9-9d71-0cc47a792c0a_id_a5608efa-5ad5-11e9-9d71-0cc47a792c0a_files/background06.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">38</span></div>
+<div style="position:absolute;left:306.99px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 3</span></div>
+<div style="position:absolute;left:379.70px;top:88.65px" class="cls_003"><span class="cls_003">Input and output</span></div>
+<div style="position:absolute;left:86.40px;top:124.74px" class="cls_003"><span class="cls_003">This code works correctly, but it has a minor problem. If another programmer</span></div>
+<div style="position:absolute;left:86.40px;top:139.91px" class="cls_003"><span class="cls_003">reads this code, they might wonder where 2.54 comes from. For the benefit of</span></div>
+<div style="position:absolute;left:86.40px;top:155.08px" class="cls_003"><span class="cls_003">others (and yourself in the future), it would be better to assign this value to</span></div>
+<div style="position:absolute;left:86.40px;top:170.25px" class="cls_003"><span class="cls_003">a variable with a meaningful name. We’ll demonstrate in the next section.</span></div>
+<div style="position:absolute;left:86.40px;top:219.29px" class="cls_004"><span class="cls_004">3.5</span></div>
+<div style="position:absolute;left:130.51px;top:219.29px" class="cls_004"><span class="cls_004">Literals and constants</span></div>
+<div style="position:absolute;left:86.40px;top:256.00px" class="cls_003"><span class="cls_003">A value that appears in a program, like 2.54 (or</span><span class="cls_006"> " in ="</span><span class="cls_003">), is called a literal.</span></div>
+<div style="position:absolute;left:86.40px;top:271.17px" class="cls_003"><span class="cls_003">In general, there’s nothing wrong with literals.  But when numbers like 2.54</span></div>
+<div style="position:absolute;left:86.40px;top:286.33px" class="cls_003"><span class="cls_003">appear in an expression with no explanation, they make code hard to read.</span></div>
+<div style="position:absolute;left:86.40px;top:301.50px" class="cls_003"><span class="cls_003">And if the same value appears many times, and might have to change in the</span></div>
+<div style="position:absolute;left:86.40px;top:316.67px" class="cls_003"><span class="cls_003">future, it makes code hard to maintain.</span></div>
+<div style="position:absolute;left:86.40px;top:344.37px" class="cls_003"><span class="cls_003">Values like that are sometimes called magic numbers (with the implication</span></div>
+<div style="position:absolute;left:86.40px;top:359.54px" class="cls_003"><span class="cls_003">that being “magic” is not a good thing). A good practice is to assign magic</span></div>
+<div style="position:absolute;left:86.40px;top:374.71px" class="cls_003"><span class="cls_003">numbers to variables with meaningful names, like this:</span></div>
+<div style="position:absolute;left:101.34px;top:401.17px" class="cls_005"><span class="cls_005">double</span><span class="cls_003"> cmPerInch = 2.54;</span></div>
+<div style="position:absolute;left:101.34px;top:416.34px" class="cls_003"><span class="cls_003">cm = inch * cmPerInch;</span></div>
+<div style="position:absolute;left:86.40px;top:442.72px" class="cls_003"><span class="cls_003">This version is easier to read and less error-prone, but it still has a problem.</span></div>
+<div style="position:absolute;left:86.40px;top:457.89px" class="cls_003"><span class="cls_003">Variables can vary, but the number of centimeters in an inch does not. Once we</span></div>
+<div style="position:absolute;left:86.40px;top:473.06px" class="cls_003"><span class="cls_003">assign a value to cmPerInch, it should never change. Java provides a language</span></div>
+<div style="position:absolute;left:86.40px;top:488.23px" class="cls_003"><span class="cls_003">feature that enforces that rule, the keyword</span><span class="cls_005"> final</span><span class="cls_003">.</span></div>
+<div style="position:absolute;left:101.34px;top:515.97px" class="cls_005"><span class="cls_005">final double</span><span class="cls_003"> CM_PER_INCH = 2.54;</span></div>
+<div style="position:absolute;left:86.40px;top:543.62px" class="cls_003"><span class="cls_003">Declaring that a variable is</span><span class="cls_005"> final</span><span class="cls_003"> means that it cannot be reassigned once</span></div>
+<div style="position:absolute;left:86.40px;top:558.79px" class="cls_003"><span class="cls_003">it has been initialized.  If you try, the compiler reports an error.  Variables</span></div>
+<div style="position:absolute;left:86.40px;top:573.96px" class="cls_003"><span class="cls_003">declared as</span><span class="cls_005"> final</span><span class="cls_003"> are called constants. By convention, names for constants</span></div>
+<div style="position:absolute;left:86.40px;top:589.13px" class="cls_003"><span class="cls_003">are all uppercase, with the underscore character (_) between words.</span></div>
+<div style="position:absolute;left:86.40px;top:638.17px" class="cls_004"><span class="cls_004">3.6</span></div>
+<div style="position:absolute;left:130.51px;top:638.17px" class="cls_004"><span class="cls_004">Formatting output</span></div>
+<div style="position:absolute;left:86.40px;top:674.88px" class="cls_003"><span class="cls_003">When you output a</span><span class="cls_005"> double</span><span class="cls_003"> using print or println, it displays up to 16</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_003"><span class="cls_003">decimal places:</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:4812px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="a5608efa-5ad5-11e9-9d71-0cc47a792c0a_id_a5608efa-5ad5-11e9-9d71-0cc47a792c0a_files/background07.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">3.6</span></div>
+<div style="position:absolute;left:160.24px;top:88.65px" class="cls_003"><span class="cls_003">Formatting output</span></div>
+<div style="position:absolute;left:512.15px;top:88.65px" class="cls_003"><span class="cls_003">39</span></div>
+<div style="position:absolute;left:144.54px;top:124.79px" class="cls_003"><span class="cls_003">System.out.print(4.0 / 3.0);</span></div>
+<div style="position:absolute;left:129.60px;top:148.59px" class="cls_003"><span class="cls_003">The result is:</span></div>
+<div style="position:absolute;left:144.54px;top:172.48px" class="cls_003"><span class="cls_003">1.3333333333333333</span></div>
+<div style="position:absolute;left:129.60px;top:196.28px" class="cls_003"><span class="cls_003">That might be more than you want.  System.out provides another method,</span></div>
+<div style="position:absolute;left:129.60px;top:211.45px" class="cls_003"><span class="cls_003">called printf, that gives you more control of the format. The “f” in printf</span></div>
+<div style="position:absolute;left:129.60px;top:226.62px" class="cls_003"><span class="cls_003">stands for “formatted”. Here’s an example:</span></div>
+<div style="position:absolute;left:144.54px;top:250.51px" class="cls_003"><span class="cls_003">System.out.printf(</span><span class="cls_006">"Four thirds = %.3f"</span><span class="cls_003">, 4.0 / 3.0);</span></div>
+<div style="position:absolute;left:129.60px;top:274.31px" class="cls_003"><span class="cls_003">The first value in the parentheses is a format string that specifies how the</span></div>
+<div style="position:absolute;left:129.60px;top:289.48px" class="cls_003"><span class="cls_003">output should be displayed. This format string contains ordinary text followed</span></div>
+<div style="position:absolute;left:129.60px;top:304.64px" class="cls_003"><span class="cls_003">by a format specifier, which is a special sequence that starts with a percent</span></div>
+<div style="position:absolute;left:129.60px;top:319.81px" class="cls_003"><span class="cls_003">sign.  The format specifier %.3f indicates that the following value should be</span></div>
+<div style="position:absolute;left:129.60px;top:334.98px" class="cls_003"><span class="cls_003">displayed as floating-point, rounded to three decimal places. The result is:</span></div>
+<div style="position:absolute;left:144.54px;top:358.87px" class="cls_003"><span class="cls_003">Four thirds = 1.333</span></div>
+<div style="position:absolute;left:129.60px;top:382.67px" class="cls_003"><span class="cls_003">The format string can contain any number of format specifiers; here’s an ex-</span></div>
+<div style="position:absolute;left:129.60px;top:397.84px" class="cls_003"><span class="cls_003">ample with two:</span></div>
+<div style="position:absolute;left:144.54px;top:420.45px" class="cls_005"><span class="cls_005">int</span><span class="cls_003"> inch = 100;</span></div>
+<div style="position:absolute;left:144.54px;top:435.62px" class="cls_005"><span class="cls_005">double</span><span class="cls_003"> cm = inch * CM_PER_INCH;</span></div>
+<div style="position:absolute;left:144.54px;top:450.79px" class="cls_003"><span class="cls_003">System.out.printf(</span><span class="cls_006">"%d in = %f cm\n"</span><span class="cls_003">, inch, cm);</span></div>
+<div style="position:absolute;left:129.60px;top:473.32px" class="cls_003"><span class="cls_003">The result is:</span></div>
+<div style="position:absolute;left:144.54px;top:497.21px" class="cls_003"><span class="cls_003">100 in = 254.000000 cm</span></div>
+<div style="position:absolute;left:129.60px;top:521.01px" class="cls_003"><span class="cls_003">Like print, printf does not append a newline. So format strings often end</span></div>
+<div style="position:absolute;left:129.60px;top:536.18px" class="cls_003"><span class="cls_003">with a newline character.</span></div>
+<div style="position:absolute;left:129.60px;top:560.02px" class="cls_003"><span class="cls_003">The format specifier %d displays integer values (“d” stands for “decimal”). The</span></div>
+<div style="position:absolute;left:129.60px;top:575.19px" class="cls_003"><span class="cls_003">values are matched up with the format specifiers in order, so inch is displayed</span></div>
+<div style="position:absolute;left:129.60px;top:590.36px" class="cls_003"><span class="cls_003">using %d, and cm is displayed using %f.</span></div>
+<div style="position:absolute;left:129.60px;top:614.20px" class="cls_003"><span class="cls_003">Learning about format strings is like learning a sub-language within Java.</span></div>
+<div style="position:absolute;left:129.60px;top:629.37px" class="cls_003"><span class="cls_003">There are many options, and the details can be overwhelming. Table 3.1 lists</span></div>
+<div style="position:absolute;left:129.60px;top:644.54px" class="cls_003"><span class="cls_003">a few common uses, to give you an idea of how things work. For more details,</span></div>
+<div style="position:absolute;left:129.60px;top:659.71px" class="cls_003"><span class="cls_003">refer to the documentation of java.util.Formatter. The easiest way to find</span></div>
+<div style="position:absolute;left:129.60px;top:674.88px" class="cls_003"><span class="cls_003">documentation for Java classes is to do a web search for “Java” and the name</span></div>
+<div style="position:absolute;left:129.60px;top:690.04px" class="cls_003"><span class="cls_003">of the class.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:5614px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="a5608efa-5ad5-11e9-9d71-0cc47a792c0a_id_a5608efa-5ad5-11e9-9d71-0cc47a792c0a_files/background08.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">40</span></div>
+<div style="position:absolute;left:306.99px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 3</span></div>
+<div style="position:absolute;left:379.70px;top:88.65px" class="cls_003"><span class="cls_003">Input and output</span></div>
+<div style="position:absolute;left:133.23px;top:128.35px" class="cls_003"><span class="cls_003">%d</span></div>
+<div style="position:absolute;left:169.79px;top:128.35px" class="cls_003"><span class="cls_003">decimal integer</span></div>
+<div style="position:absolute;left:388.75px;top:128.35px" class="cls_003"><span class="cls_003">12345</span></div>
+<div style="position:absolute;left:133.23px;top:150.42px" class="cls_003"><span class="cls_003">%08d</span></div>
+<div style="position:absolute;left:169.79px;top:150.42px" class="cls_003"><span class="cls_003">padded with zeros, at least 8 digits wide</span></div>
+<div style="position:absolute;left:388.75px;top:150.42px" class="cls_003"><span class="cls_003">00012345</span></div>
+<div style="position:absolute;left:133.23px;top:172.49px" class="cls_003"><span class="cls_003">%f</span></div>
+<div style="position:absolute;left:169.79px;top:172.49px" class="cls_003"><span class="cls_003">floating-point</span></div>
+<div style="position:absolute;left:388.75px;top:172.49px" class="cls_003"><span class="cls_003">6.789000</span></div>
+<div style="position:absolute;left:133.23px;top:194.56px" class="cls_003"><span class="cls_003">%.2f</span></div>
+<div style="position:absolute;left:169.79px;top:194.56px" class="cls_003"><span class="cls_003">rounded to 2 decimal places</span></div>
+<div style="position:absolute;left:388.75px;top:194.56px" class="cls_003"><span class="cls_003">6.79</span></div>
+<div style="position:absolute;left:190.28px;top:220.72px" class="cls_003"><span class="cls_003">Table 3.1: Example format specifiers</span></div>
+<div style="position:absolute;left:86.40px;top:246.78px" class="cls_004"><span class="cls_004">3.7</span></div>
+<div style="position:absolute;left:130.51px;top:246.78px" class="cls_004"><span class="cls_004">Centimeters to inches</span></div>
+<div style="position:absolute;left:86.40px;top:280.88px" class="cls_003"><span class="cls_003">Now suppose we have a measurement in centimeters, and we want to round it</span></div>
+<div style="position:absolute;left:86.40px;top:296.05px" class="cls_003"><span class="cls_003">off to the nearest inch. It is tempting to write:</span></div>
+<div style="position:absolute;left:101.34px;top:321.33px" class="cls_003"><span class="cls_003">inch = cm / CM_PER_INCH;</span></div>
+<div style="position:absolute;left:261.29px;top:321.33px" class="cls_007"><span class="cls_007">// syntax error</span></div>
+<div style="position:absolute;left:86.40px;top:346.53px" class="cls_003"><span class="cls_003">But the result is an error - you get something like, “Bad types in assignment:</span></div>
+<div style="position:absolute;left:86.40px;top:361.69px" class="cls_003"><span class="cls_003">from double to int.”  The problem is that the value on the right is floating-</span></div>
+<div style="position:absolute;left:86.40px;top:376.86px" class="cls_003"><span class="cls_003">point, and the variable on the left is an integer.</span></div>
+<div style="position:absolute;left:86.40px;top:402.10px" class="cls_003"><span class="cls_003">The simplest way to convert a floating-point value to an integer is to use a type</span></div>
+<div style="position:absolute;left:86.40px;top:417.27px" class="cls_003"><span class="cls_003">cast, so called because it molds or “casts” a value from one type to another.</span></div>
+<div style="position:absolute;left:86.40px;top:432.44px" class="cls_003"><span class="cls_003">The syntax for type casting is to put the name of the type in parentheses and</span></div>
+<div style="position:absolute;left:86.40px;top:447.61px" class="cls_003"><span class="cls_003">use it as an operator.</span></div>
+<div style="position:absolute;left:101.34px;top:471.61px" class="cls_005"><span class="cls_005">double</span><span class="cls_003"> pi = 3.14159;</span></div>
+<div style="position:absolute;left:101.34px;top:486.78px" class="cls_005"><span class="cls_005">int</span><span class="cls_003"> x = (</span><span class="cls_005">int</span><span class="cls_003">) pi;</span></div>
+<div style="position:absolute;left:86.40px;top:510.70px" class="cls_003"><span class="cls_003">The (</span><span class="cls_005">int</span><span class="cls_003">) operator has the effect of converting what follows into an integer.</span></div>
+<div style="position:absolute;left:86.40px;top:525.87px" class="cls_003"><span class="cls_003">In this example, x gets the value 3.  Like integer division, converting to an</span></div>
+<div style="position:absolute;left:86.40px;top:541.04px" class="cls_003"><span class="cls_003">integer always rounds toward zero, even if the fraction part is 0.999999 (or</span></div>
+<div style="position:absolute;left:86.40px;top:556.21px" class="cls_003"><span class="cls_003">-0.999999). In other words, it simply throws away the fractional part.</span></div>
+<div style="position:absolute;left:86.40px;top:581.44px" class="cls_003"><span class="cls_003">Type casting takes precedence over arithmetic operations.  In this example,</span></div>
+<div style="position:absolute;left:86.40px;top:596.61px" class="cls_003"><span class="cls_003">the value of pi gets converted to an integer before the multiplication. So the</span></div>
+<div style="position:absolute;left:86.40px;top:611.78px" class="cls_003"><span class="cls_003">result is 60.0, not 62.0.</span></div>
+<div style="position:absolute;left:101.34px;top:635.79px" class="cls_005"><span class="cls_005">double</span><span class="cls_003"> pi = 3.14159;</span></div>
+<div style="position:absolute;left:101.34px;top:650.96px" class="cls_005"><span class="cls_005">double</span><span class="cls_003"> x = (</span><span class="cls_005">int</span><span class="cls_003">) pi * 20.0;</span></div>
+<div style="position:absolute;left:86.40px;top:674.88px" class="cls_003"><span class="cls_003">Keeping that in mind, here’s how we can convert a measurement in centimeters</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_003"><span class="cls_003">to inches:</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:6416px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="a5608efa-5ad5-11e9-9d71-0cc47a792c0a_id_a5608efa-5ad5-11e9-9d71-0cc47a792c0a_files/background09.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">3.8</span></div>
+<div style="position:absolute;left:160.24px;top:88.65px" class="cls_003"><span class="cls_003">Modulus operator</span></div>
+<div style="position:absolute;left:512.16px;top:88.65px" class="cls_003"><span class="cls_003">41</span></div>
+<div style="position:absolute;left:144.54px;top:123.41px" class="cls_003"><span class="cls_003">inch = (</span><span class="cls_005">int</span><span class="cls_003">) (cm / CM_PER_INCH);</span></div>
+<div style="position:absolute;left:144.54px;top:138.57px" class="cls_003"><span class="cls_003">System.out.printf(</span><span class="cls_006">"%f cm = %d in\n"</span><span class="cls_003">, cent, inch);</span></div>
+<div style="position:absolute;left:129.60px;top:161.82px" class="cls_003"><span class="cls_003">The parentheses after the cast operator require the division to happen before</span></div>
+<div style="position:absolute;left:129.60px;top:176.99px" class="cls_003"><span class="cls_003">the type cast. And the result is rounded toward zero; we will see in the next</span></div>
+<div style="position:absolute;left:129.60px;top:192.16px" class="cls_003"><span class="cls_003">chapter how to round floating-point numbers to the closest integer.</span></div>
+<div style="position:absolute;left:129.60px;top:236.66px" class="cls_004"><span class="cls_004">3.8</span></div>
+<div style="position:absolute;left:173.71px;top:236.66px" class="cls_004"><span class="cls_004">Modulus operator</span></div>
+<div style="position:absolute;left:129.60px;top:270.09px" class="cls_003"><span class="cls_003">Let’s take the example one step further: suppose you have a measurement in</span></div>
+<div style="position:absolute;left:129.60px;top:285.26px" class="cls_003"><span class="cls_003">inches and you want to convert to feet and inches.  The goal is divide by 12</span></div>
+<div style="position:absolute;left:129.60px;top:300.42px" class="cls_003"><span class="cls_003">(the number of inches in a foot) and keep the remainder.</span></div>
+<div style="position:absolute;left:129.60px;top:324.99px" class="cls_003"><span class="cls_003">We have already seen the division operator (/), which computes the quotient</span></div>
+<div style="position:absolute;left:129.60px;top:340.16px" class="cls_003"><span class="cls_003">of two numbers.  If the numbers are integers, it performs integer division.</span></div>
+<div style="position:absolute;left:129.60px;top:355.33px" class="cls_003"><span class="cls_003">Java also provides the modulus operator (%), which divides two numbers and</span></div>
+<div style="position:absolute;left:129.60px;top:370.49px" class="cls_003"><span class="cls_003">computes the remainder.</span></div>
+<div style="position:absolute;left:129.60px;top:395.06px" class="cls_003"><span class="cls_003">Using division and modulus, we can convert to feet and inches like this:</span></div>
+<div style="position:absolute;left:144.54px;top:418.39px" class="cls_003"><span class="cls_003">quotient = 76 / 12;</span></div>
+<div style="position:absolute;left:279.89px;top:418.39px" class="cls_007"><span class="cls_007">// division</span></div>
+<div style="position:absolute;left:144.54px;top:433.56px" class="cls_003"><span class="cls_003">remainder = 76 % 12;</span></div>
+<div style="position:absolute;left:279.88px;top:433.56px" class="cls_007"><span class="cls_007">// modulus</span></div>
+<div style="position:absolute;left:129.60px;top:456.81px" class="cls_003"><span class="cls_003">The first line yields 6.  The second line, which is pronounced “76 mod 12”,</span></div>
+<div style="position:absolute;left:129.60px;top:471.97px" class="cls_003"><span class="cls_003">yields 4. So 76 inches is 6 feet, 4 inches.</span></div>
+<div style="position:absolute;left:129.60px;top:496.54px" class="cls_003"><span class="cls_003">The modulus operator looks like a percent sign, but you might find it helpful</span></div>
+<div style="position:absolute;left:129.60px;top:511.71px" class="cls_003"><span class="cls_003">to think of it as a division sign (÷) rotated to the left.</span></div>
+<div style="position:absolute;left:129.60px;top:536.27px" class="cls_003"><span class="cls_003">The modulus operator turns out to be surprisingly useful. For example, you</span></div>
+<div style="position:absolute;left:129.60px;top:551.44px" class="cls_003"><span class="cls_003">can check whether one number is divisible by another: if x % y is zero, then</span></div>
+<div style="position:absolute;left:129.60px;top:566.61px" class="cls_003"><span class="cls_003">x is divisible by y. You can use modulus to “extract” digits from a number:</span></div>
+<div style="position:absolute;left:129.60px;top:581.78px" class="cls_003"><span class="cls_003">x % 10 yields the rightmost digit of x, and x % 100 yields the last two digits.</span></div>
+<div style="position:absolute;left:129.60px;top:596.94px" class="cls_003"><span class="cls_003">Also, many encryption algorithms use the modulus operator extensively.</span></div>
+<div style="position:absolute;left:129.60px;top:641.45px" class="cls_004"><span class="cls_004">3.9</span></div>
+<div style="position:absolute;left:173.71px;top:641.45px" class="cls_004"><span class="cls_004">Putting it all together</span></div>
+<div style="position:absolute;left:129.60px;top:674.88px" class="cls_003"><span class="cls_003">At this point, you have seen enough Java to write useful programs that solve</span></div>
+<div style="position:absolute;left:129.60px;top:690.04px" class="cls_003"><span class="cls_003">everyday problems.  You can (1) import Java library classes, (2) create a</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:7218px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="a5608efa-5ad5-11e9-9d71-0cc47a792c0a_id_a5608efa-5ad5-11e9-9d71-0cc47a792c0a_files/background10.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">42</span></div>
+<div style="position:absolute;left:306.99px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 3</span></div>
+<div style="position:absolute;left:379.70px;top:88.65px" class="cls_003"><span class="cls_003">Input and output</span></div>
+<div style="position:absolute;left:86.40px;top:124.74px" class="cls_003"><span class="cls_003">Scanner, (3) get input from the keyboard, (4) format output with printf,</span></div>
+<div style="position:absolute;left:86.40px;top:139.91px" class="cls_003"><span class="cls_003">and (5) divide and mod integers.  Now we will put everything together in a</span></div>
+<div style="position:absolute;left:86.40px;top:155.08px" class="cls_003"><span class="cls_003">complete program:</span></div>
+<div style="position:absolute;left:101.34px;top:186.40px" class="cls_005"><span class="cls_005">import</span><span class="cls_003"> java.util.Scanner;</span></div>
+<div style="position:absolute;left:101.34px;top:216.73px" class="cls_007"><span class="cls_007">/**</span></div>
+<div style="position:absolute;left:107.50px;top:231.90px" class="cls_007"><span class="cls_007">* Converts centimeters to feet and inches.</span></div>
+<div style="position:absolute;left:107.50px;top:247.07px" class="cls_007"><span class="cls_007">*/</span></div>
+<div style="position:absolute;left:101.34px;top:262.24px" class="cls_005"><span class="cls_005">public class</span><span class="cls_003"> Convert {</span></div>
+<div style="position:absolute;left:125.95px;top:292.57px" class="cls_005"><span class="cls_005">public static void</span><span class="cls_003"> main(String[] args) {</span></div>
+<div style="position:absolute;left:150.56px;top:307.74px" class="cls_005"><span class="cls_005">double</span><span class="cls_003"> cm;</span></div>
+<div style="position:absolute;left:150.56px;top:322.91px" class="cls_005"><span class="cls_005">int</span><span class="cls_003"> feet, inches, remainder;</span></div>
+<div style="position:absolute;left:150.56px;top:338.08px" class="cls_005"><span class="cls_005">final double</span><span class="cls_003"> CM_PER_INCH = 2.54;</span></div>
+<div style="position:absolute;left:150.56px;top:353.25px" class="cls_005"><span class="cls_005">final int</span><span class="cls_003"> IN_PER_FOOT = 12;</span></div>
+<div style="position:absolute;left:150.56px;top:368.41px" class="cls_003"><span class="cls_003">Scanner in =</span><span class="cls_005"> new</span><span class="cls_003"> Scanner(System.in);</span></div>
+<div style="position:absolute;left:150.56px;top:398.75px" class="cls_007"><span class="cls_007">// prompt the user and get the value</span></div>
+<div style="position:absolute;left:150.56px;top:413.92px" class="cls_003"><span class="cls_003">System.out.print(</span><span class="cls_006">"Exactly how many cm?</span></div>
+<div style="position:absolute;left:390.49px;top:413.92px" class="cls_006"><span class="cls_006">"</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:150.56px;top:429.09px" class="cls_003"><span class="cls_003">cm = in.nextDouble();</span></div>
+<div style="position:absolute;left:150.56px;top:459.42px" class="cls_007"><span class="cls_007">// convert and output the result</span></div>
+<div style="position:absolute;left:150.56px;top:474.59px" class="cls_003"><span class="cls_003">inches = (</span><span class="cls_005">int</span><span class="cls_003">) (cm / CM_PER_INCH);</span></div>
+<div style="position:absolute;left:150.56px;top:489.76px" class="cls_003"><span class="cls_003">feet = inches / IN_PER_FOOT;</span></div>
+<div style="position:absolute;left:150.56px;top:504.93px" class="cls_003"><span class="cls_003">remainder = inches % IN_PER_FOOT;</span></div>
+<div style="position:absolute;left:150.56px;top:520.10px" class="cls_003"><span class="cls_003">System.out.printf(</span><span class="cls_006">"%.2f cm = %d ft, %d</span></div>
+<div style="position:absolute;left:390.49px;top:520.10px" class="cls_006"><span class="cls_006">in\n"</span><span class="cls_003">,</span></div>
+<div style="position:absolute;left:261.29px;top:535.26px" class="cls_003"><span class="cls_003">cm, feet, remainder);</span></div>
+<div style="position:absolute;left:125.95px;top:550.43px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:101.34px;top:565.60px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:596.83px" class="cls_003"><span class="cls_003">Although not required, all variables and constants are declared at the top of</span></div>
+<div style="position:absolute;left:86.40px;top:611.99px" class="cls_003"><span class="cls_003">main.  This practice makes it easier to find their types later on, and it helps</span></div>
+<div style="position:absolute;left:86.40px;top:627.16px" class="cls_003"><span class="cls_003">the reader know what data is involved in the algorithm.</span></div>
+<div style="position:absolute;left:86.40px;top:659.71px" class="cls_003"><span class="cls_003">For readability, each major step of the algorithm is separated by a blank line</span></div>
+<div style="position:absolute;left:86.40px;top:674.88px" class="cls_003"><span class="cls_003">and begins with a comment. It also includes a documentation comment (</span><span class="cls_007">/**</span><span class="cls_003">),</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_003"><span class="cls_003">which we’ll learn more about in the next chapter.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:8020px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="a5608efa-5ad5-11e9-9d71-0cc47a792c0a_id_a5608efa-5ad5-11e9-9d71-0cc47a792c0a_files/background11.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">3.10</span></div>
+<div style="position:absolute;left:166.96px;top:88.65px" class="cls_003"><span class="cls_003">The Scanner bug</span></div>
+<div style="position:absolute;left:512.15px;top:88.65px" class="cls_003"><span class="cls_003">43</span></div>
+<div style="position:absolute;left:129.60px;top:124.74px" class="cls_003"><span class="cls_003">Many algorithms, including the Convert program, perform division and mod-</span></div>
+<div style="position:absolute;left:129.60px;top:139.91px" class="cls_003"><span class="cls_003">ulus together. In both steps, you divide by the same number (IN_PER_FOOT).</span></div>
+<div style="position:absolute;left:129.60px;top:165.65px" class="cls_003"><span class="cls_003">When statements get long (generally wider than 80 characters), a common</span></div>
+<div style="position:absolute;left:129.60px;top:180.82px" class="cls_003"><span class="cls_003">style convention is to break them across multiple lines.  The reader should</span></div>
+<div style="position:absolute;left:129.60px;top:195.98px" class="cls_003"><span class="cls_003">never have to scroll horizontally.</span></div>
+<div style="position:absolute;left:129.60px;top:241.96px" class="cls_004"><span class="cls_004">3.10</span></div>
+<div style="position:absolute;left:183.40px;top:241.96px" class="cls_004"><span class="cls_004">The Scanner bug</span></div>
+<div style="position:absolute;left:129.60px;top:276.56px" class="cls_003"><span class="cls_003">Now that you’ve had some experience with Scanner, there is an unexpected</span></div>
+<div style="position:absolute;left:129.60px;top:291.73px" class="cls_003"><span class="cls_003">behavior we want to warn you about. The following code fragment asks users</span></div>
+<div style="position:absolute;left:129.60px;top:306.90px" class="cls_003"><span class="cls_003">for their name and age:</span></div>
+<div style="position:absolute;left:144.54px;top:331.41px" class="cls_003"><span class="cls_003">System.out.print(</span><span class="cls_006">"What is your name? "</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:144.54px;top:346.57px" class="cls_003"><span class="cls_003">name = in.nextLine();</span></div>
+<div style="position:absolute;left:144.54px;top:361.74px" class="cls_003"><span class="cls_003">System.out.print(</span><span class="cls_006">"What is your age? "</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:144.54px;top:376.91px" class="cls_003"><span class="cls_003">age = in.nextInt();</span></div>
+<div style="position:absolute;left:144.54px;top:392.08px" class="cls_003"><span class="cls_003">System.out.printf(</span><span class="cls_006">"Hello %s, age %d\n"</span><span class="cls_003">, name, age);</span></div>
+<div style="position:absolute;left:129.60px;top:416.50px" class="cls_003"><span class="cls_003">The output might look something like this:</span></div>
+<div style="position:absolute;left:144.54px;top:442.28px" class="cls_003"><span class="cls_003">Hello Grace Hopper, age 45</span></div>
+<div style="position:absolute;left:129.60px;top:467.97px" class="cls_003"><span class="cls_003">When you read a String followed by an</span><span class="cls_005"> int</span><span class="cls_003">, everything works just fine. But</span></div>
+<div style="position:absolute;left:129.60px;top:483.14px" class="cls_003"><span class="cls_003">when you read an</span><span class="cls_005"> int</span><span class="cls_003"> followed by a String, something strange happens.</span></div>
+<div style="position:absolute;left:144.54px;top:507.98px" class="cls_003"><span class="cls_003">System.out.print(</span><span class="cls_006">"What is your age? "</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:144.54px;top:523.15px" class="cls_003"><span class="cls_003">age = in.nextInt();</span></div>
+<div style="position:absolute;left:144.54px;top:538.31px" class="cls_003"><span class="cls_003">System.out.print(</span><span class="cls_006">"What is your name? "</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:144.54px;top:553.48px" class="cls_003"><span class="cls_003">name = in.nextLine();</span></div>
+<div style="position:absolute;left:144.54px;top:568.65px" class="cls_003"><span class="cls_003">System.out.printf(</span><span class="cls_006">"Hello %s, age %d\n"</span><span class="cls_003">, name, age);</span></div>
+<div style="position:absolute;left:129.60px;top:593.07px" class="cls_003"><span class="cls_003">Try running this example code.  It doesn’t let you input your name, and it</span></div>
+<div style="position:absolute;left:129.60px;top:608.24px" class="cls_003"><span class="cls_003">immediately displays the output:</span></div>
+<div style="position:absolute;left:144.54px;top:634.02px" class="cls_003"><span class="cls_003">What is your name? Hello , age 45</span></div>
+<div style="position:absolute;left:129.60px;top:659.71px" class="cls_003"><span class="cls_003">To understand what is happening, you have to understand that the Scanner</span></div>
+<div style="position:absolute;left:129.60px;top:674.88px" class="cls_003"><span class="cls_003">doesn’t see input as multiple lines, like we do.  Instead, it gets a “stream of</span></div>
+<div style="position:absolute;left:129.60px;top:690.04px" class="cls_003"><span class="cls_003">characters” as shown in Figure 3.3.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:8822px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="a5608efa-5ad5-11e9-9d71-0cc47a792c0a_id_a5608efa-5ad5-11e9-9d71-0cc47a792c0a_files/background12.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">44</span></div>
+<div style="position:absolute;left:306.99px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 3</span></div>
+<div style="position:absolute;left:379.70px;top:88.65px" class="cls_003"><span class="cls_003">Input and output</span></div>
+<div style="position:absolute;left:112.80px;top:128.44px" class="cls_008"><span class="cls_008">4</span></div>
+<div style="position:absolute;left:135.30px;top:128.44px" class="cls_008"><span class="cls_008">5</span></div>
+<div style="position:absolute;left:154.70px;top:128.44px" class="cls_008"><span class="cls_008">\n</span></div>
+<div style="position:absolute;left:180.30px;top:128.44px" class="cls_008"><span class="cls_008">G</span></div>
+<div style="position:absolute;left:202.80px;top:128.44px" class="cls_008"><span class="cls_008">r</span></div>
+<div style="position:absolute;left:225.30px;top:128.44px" class="cls_008"><span class="cls_008">a</span></div>
+<div style="position:absolute;left:247.80px;top:128.44px" class="cls_008"><span class="cls_008">c</span></div>
+<div style="position:absolute;left:270.30px;top:128.44px" class="cls_008"><span class="cls_008">e</span></div>
+<div style="position:absolute;left:315.30px;top:128.44px" class="cls_008"><span class="cls_008">H</span></div>
+<div style="position:absolute;left:337.80px;top:128.44px" class="cls_008"><span class="cls_008">o</span></div>
+<div style="position:absolute;left:360.30px;top:128.44px" class="cls_008"><span class="cls_008">p</span></div>
+<div style="position:absolute;left:382.80px;top:128.44px" class="cls_008"><span class="cls_008">p</span></div>
+<div style="position:absolute;left:405.30px;top:128.44px" class="cls_008"><span class="cls_008">e</span></div>
+<div style="position:absolute;left:427.80px;top:128.44px" class="cls_008"><span class="cls_008">r</span></div>
+<div style="position:absolute;left:447.20px;top:128.44px" class="cls_008"><span class="cls_008">\n</span></div>
+<div style="position:absolute;left:112.80px;top:150.04px" class="cls_008"><span class="cls_008">↑</span></div>
+<div style="position:absolute;left:138.12px;top:175.20px" class="cls_003"><span class="cls_003">Figure 3.3: A stream of characters as seen by a Scanner.</span></div>
+<div style="position:absolute;left:86.40px;top:207.67px" class="cls_003"><span class="cls_003">The arrow indicates the next character to be read by Scanner. When you call</span></div>
+<div style="position:absolute;left:86.40px;top:222.84px" class="cls_003"><span class="cls_003">nextInt, it reads characters until it gets to a non-digit. Figure 3.4 shows the</span></div>
+<div style="position:absolute;left:86.40px;top:238.01px" class="cls_003"><span class="cls_003">state of the stream after nextInt is invoked.</span></div>
+<div style="position:absolute;left:112.80px;top:266.88px" class="cls_008"><span class="cls_008">4</span></div>
+<div style="position:absolute;left:135.30px;top:266.88px" class="cls_008"><span class="cls_008">5</span></div>
+<div style="position:absolute;left:154.70px;top:266.88px" class="cls_008"><span class="cls_008">\n</span></div>
+<div style="position:absolute;left:180.30px;top:266.88px" class="cls_008"><span class="cls_008">G</span></div>
+<div style="position:absolute;left:202.80px;top:266.88px" class="cls_008"><span class="cls_008">r</span></div>
+<div style="position:absolute;left:225.30px;top:266.88px" class="cls_008"><span class="cls_008">a</span></div>
+<div style="position:absolute;left:247.80px;top:266.88px" class="cls_008"><span class="cls_008">c</span></div>
+<div style="position:absolute;left:270.30px;top:266.88px" class="cls_008"><span class="cls_008">e</span></div>
+<div style="position:absolute;left:315.30px;top:266.88px" class="cls_008"><span class="cls_008">H</span></div>
+<div style="position:absolute;left:337.80px;top:266.88px" class="cls_008"><span class="cls_008">o</span></div>
+<div style="position:absolute;left:360.30px;top:266.88px" class="cls_008"><span class="cls_008">p</span></div>
+<div style="position:absolute;left:382.80px;top:266.88px" class="cls_008"><span class="cls_008">p</span></div>
+<div style="position:absolute;left:405.30px;top:266.88px" class="cls_008"><span class="cls_008">e</span></div>
+<div style="position:absolute;left:427.80px;top:266.88px" class="cls_008"><span class="cls_008">r</span></div>
+<div style="position:absolute;left:447.20px;top:266.88px" class="cls_008"><span class="cls_008">\n</span></div>
+<div style="position:absolute;left:157.80px;top:288.48px" class="cls_008"><span class="cls_008">↑</span></div>
+<div style="position:absolute;left:130.02px;top:313.63px" class="cls_003"><span class="cls_003">Figure 3.4: A stream of characters after nextInt is invoked.</span></div>
+<div style="position:absolute;left:86.40px;top:343.35px" class="cls_003"><span class="cls_003">At this point, nextInt returns 45.  The program then displays the prompt</span></div>
+<div style="position:absolute;left:86.40px;top:358.52px" class="cls_006"><span class="cls_006">"What is your name? "</span><span class="cls_003"> and calls nextLine, which reads characters until it</span></div>
+<div style="position:absolute;left:86.40px;top:373.68px" class="cls_003"><span class="cls_003">gets to a newline. But since the next character is already a newline, nextLine</span></div>
+<div style="position:absolute;left:86.40px;top:388.85px" class="cls_003"><span class="cls_003">returns the empty string</span><span class="cls_006"> ""</span><span class="cls_003">.</span></div>
+<div style="position:absolute;left:86.40px;top:415.24px" class="cls_003"><span class="cls_003">To solve this problem, you need an extra nextLine after nextInt.</span></div>
+<div style="position:absolute;left:101.34px;top:440.41px" class="cls_003"><span class="cls_003">System.out.print(</span><span class="cls_006">"What is your age? "</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:101.34px;top:455.57px" class="cls_003"><span class="cls_003">age = in.nextInt();</span></div>
+<div style="position:absolute;left:101.34px;top:470.74px" class="cls_003"><span class="cls_003">in.nextLine();</span></div>
+<div style="position:absolute;left:199.78px;top:470.74px" class="cls_007"><span class="cls_007">// read the newline</span></div>
+<div style="position:absolute;left:101.34px;top:485.91px" class="cls_003"><span class="cls_003">System.out.print(</span><span class="cls_006">"What is your name? "</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:101.34px;top:501.08px" class="cls_003"><span class="cls_003">name = in.nextLine();</span></div>
+<div style="position:absolute;left:101.34px;top:516.25px" class="cls_003"><span class="cls_003">System.out.printf(</span><span class="cls_006">"Hello %s, age %d\n"</span><span class="cls_003">, name, age);</span></div>
+<div style="position:absolute;left:86.40px;top:541.32px" class="cls_003"><span class="cls_003">This technique is common when reading</span><span class="cls_005"> int</span><span class="cls_003"> or</span><span class="cls_005"> double</span><span class="cls_003"> values that appear on</span></div>
+<div style="position:absolute;left:86.40px;top:556.49px" class="cls_003"><span class="cls_003">their own line. First you read the number, and then you read the rest of the</span></div>
+<div style="position:absolute;left:86.40px;top:571.66px" class="cls_003"><span class="cls_003">line, which is just a newline character.</span></div>
+<div style="position:absolute;left:86.40px;top:618.46px" class="cls_004"><span class="cls_004">3.11</span></div>
+<div style="position:absolute;left:140.20px;top:618.46px" class="cls_004"><span class="cls_004">Vocabulary</span></div>
+<div style="position:absolute;left:86.40px;top:650.11px" class="cls_003"><span class="cls_003">package: A group of classes that are related to each other.</span></div>
+<div style="position:absolute;left:86.40px;top:674.88px" class="cls_003"><span class="cls_003">address: The location of a value in computer memory, often represented as</span></div>
+<div style="position:absolute;left:115.67px;top:690.04px" class="cls_003"><span class="cls_003">a hexadecimal integer.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:9624px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="a5608efa-5ad5-11e9-9d71-0cc47a792c0a_id_a5608efa-5ad5-11e9-9d71-0cc47a792c0a_files/background13.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">3.12</span></div>
+<div style="position:absolute;left:166.96px;top:88.65px" class="cls_003"><span class="cls_003">Exercises</span></div>
+<div style="position:absolute;left:512.16px;top:88.65px" class="cls_003"><span class="cls_003">45</span></div>
+<div style="position:absolute;left:129.60px;top:124.74px" class="cls_003"><span class="cls_003">library: A collection of packages and classes that are available for use in other</span></div>
+<div style="position:absolute;left:158.87px;top:139.91px" class="cls_003"><span class="cls_003">programs.</span></div>
+<div style="position:absolute;left:129.60px;top:167.50px" class="cls_003"><span class="cls_003">import statement: A statement that allows programs to use classes defined</span></div>
+<div style="position:absolute;left:158.87px;top:182.67px" class="cls_003"><span class="cls_003">in other packages.</span></div>
+<div style="position:absolute;left:129.60px;top:210.26px" class="cls_003"><span class="cls_003">token: A basic element of a program, such as a word, space, symbol, or</span></div>
+<div style="position:absolute;left:158.87px;top:225.43px" class="cls_003"><span class="cls_003">number.</span></div>
+<div style="position:absolute;left:129.60px;top:253.02px" class="cls_003"><span class="cls_003">literal: A value that appears in source code. For example,</span><span class="cls_006"> "Hello"</span><span class="cls_003"> is a string</span></div>
+<div style="position:absolute;left:158.87px;top:268.19px" class="cls_003"><span class="cls_003">literal and 74 is an integer literal.</span></div>
+<div style="position:absolute;left:129.60px;top:295.78px" class="cls_003"><span class="cls_003">magic number: A number that appears without explanation as part of an</span></div>
+<div style="position:absolute;left:158.87px;top:310.95px" class="cls_003"><span class="cls_003">expression. It should generally be replaced with a constant.</span></div>
+<div style="position:absolute;left:129.60px;top:338.54px" class="cls_003"><span class="cls_003">constant: A variable, declared</span><span class="cls_005"> final</span><span class="cls_003">, whose value cannot be changed.</span></div>
+<div style="position:absolute;left:129.60px;top:366.13px" class="cls_003"><span class="cls_003">format string: A string passed to printf to specify the format of the output.</span></div>
+<div style="position:absolute;left:129.60px;top:393.72px" class="cls_003"><span class="cls_003">format specifier: A special code that begins with a percent sign and specifies</span></div>
+<div style="position:absolute;left:158.87px;top:408.89px" class="cls_003"><span class="cls_003">the data type and format of the corresponding value.</span></div>
+<div style="position:absolute;left:129.60px;top:436.48px" class="cls_003"><span class="cls_003">type cast: An operation that explicitly converts one data type into another.</span></div>
+<div style="position:absolute;left:158.87px;top:451.65px" class="cls_003"><span class="cls_003">In Java it appears as a type name in parentheses, like (</span><span class="cls_005">int</span><span class="cls_003">).</span></div>
+<div style="position:absolute;left:129.60px;top:479.24px" class="cls_003"><span class="cls_003">modulus: An operator that yields the remainder when one integer is divided</span></div>
+<div style="position:absolute;left:158.87px;top:494.41px" class="cls_003"><span class="cls_003">by another.  In Java, it is denoted with a percent sign; for example,</span></div>
+<div style="position:absolute;left:158.87px;top:509.58px" class="cls_003"><span class="cls_003">5 % 2 is 1.</span></div>
+<div style="position:absolute;left:129.60px;top:561.82px" class="cls_004"><span class="cls_004">3.12</span></div>
+<div style="position:absolute;left:183.40px;top:561.82px" class="cls_004"><span class="cls_004">Exercises</span></div>
+<div style="position:absolute;left:129.60px;top:600.28px" class="cls_003"><span class="cls_003">The code for this chapter is in the ch03 directory of ThinkJavaCode.  See</span></div>
+<div style="position:absolute;left:129.60px;top:615.45px" class="cls_003"><span class="cls_003">page xv for instructions on how to download the repository. Before you start</span></div>
+<div style="position:absolute;left:129.60px;top:630.62px" class="cls_003"><span class="cls_003">the exercises, we recommend that you compile and run the examples.</span></div>
+<div style="position:absolute;left:129.60px;top:659.71px" class="cls_003"><span class="cls_003">If you have not already read Appendix A.3, now might be a good time.  It</span></div>
+<div style="position:absolute;left:129.60px;top:674.88px" class="cls_003"><span class="cls_003">describes the command-line interface, which is a powerful and efficient way to</span></div>
+<div style="position:absolute;left:129.60px;top:690.04px" class="cls_003"><span class="cls_003">interact with your computer.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:10426px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="a5608efa-5ad5-11e9-9d71-0cc47a792c0a_id_a5608efa-5ad5-11e9-9d71-0cc47a792c0a_files/background14.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">46</span></div>
+<div style="position:absolute;left:306.99px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 3</span></div>
+<div style="position:absolute;left:379.70px;top:88.65px" class="cls_003"><span class="cls_003">Input and output</span></div>
+<div style="position:absolute;left:86.40px;top:124.74px" class="cls_003"><span class="cls_003">Exercise 3.1</span></div>
+<div style="position:absolute;left:168.44px;top:124.74px" class="cls_003"><span class="cls_003">When you use printf, the Java compiler does not check your</span></div>
+<div style="position:absolute;left:86.40px;top:139.91px" class="cls_003"><span class="cls_003">format string. See what happens if you try to display a value with type</span><span class="cls_005"> int</span></div>
+<div style="position:absolute;left:86.40px;top:155.08px" class="cls_003"><span class="cls_003">using %f. And what happens if you display a</span><span class="cls_005"> double</span><span class="cls_003"> using %d? What if you</span></div>
+<div style="position:absolute;left:86.40px;top:170.25px" class="cls_003"><span class="cls_003">use two format specifiers, but then only provide one value?</span></div>
+<div style="position:absolute;left:86.40px;top:197.37px" class="cls_003"><span class="cls_003">Exercise 3.2</span></div>
+<div style="position:absolute;left:168.63px;top:197.37px" class="cls_003"><span class="cls_003">Write a program that converts a temperature from Celsius to</span></div>
+<div style="position:absolute;left:86.40px;top:212.54px" class="cls_003"><span class="cls_003">Fahrenheit. It should (1) prompt the user for input, (2) read a</span><span class="cls_005"> double</span><span class="cls_003"> value</span></div>
+<div style="position:absolute;left:86.40px;top:227.71px" class="cls_003"><span class="cls_003">from the keyboard, (3) calculate the result, and (4) format the output to one</span></div>
+<div style="position:absolute;left:86.40px;top:242.88px" class="cls_003"><span class="cls_003">decimal place. For example, it should display "24.0 C = 75.2 F".</span></div>
+<div style="position:absolute;left:86.40px;top:291.38px" class="cls_003"><span class="cls_003">Here is the formula. Be careful not to use integer division!</span></div>
+<div style="position:absolute;left:292.81px;top:314.96px" class="cls_003"><span class="cls_003">9</span></div>
+<div style="position:absolute;left:242.82px;top:323.05px" class="cls_003"><span class="cls_003">F =C×</span></div>
+<div style="position:absolute;left:292.81px;top:323.05px" class="cls_003"><span class="cls_003">5+32</span></div>
+<div style="position:absolute;left:86.40px;top:353.10px" class="cls_003"><span class="cls_003">Exercise 3.3</span></div>
+<div style="position:absolute;left:169.44px;top:353.10px" class="cls_003"><span class="cls_003">Write a program that converts a total number of seconds to</span></div>
+<div style="position:absolute;left:86.40px;top:368.27px" class="cls_003"><span class="cls_003">hours, minutes, and seconds. It should (1) prompt the user for input, (2) read</span></div>
+<div style="position:absolute;left:86.40px;top:383.44px" class="cls_003"><span class="cls_003">an integer from the keyboard, (3) calculate the result, and (4) use printf to</span></div>
+<div style="position:absolute;left:86.40px;top:398.60px" class="cls_003"><span class="cls_003">display the output. For example, "5000 seconds = 1 hours, 23 minutes,</span></div>
+<div style="position:absolute;left:86.40px;top:413.77px" class="cls_003"><span class="cls_003">and 20 seconds".</span></div>
+<div style="position:absolute;left:86.40px;top:462.28px" class="cls_003"><span class="cls_003">Hint: Use the modulus operator.</span></div>
+<div style="position:absolute;left:86.40px;top:489.40px" class="cls_003"><span class="cls_003">Exercise 3.4</span></div>
+<div style="position:absolute;left:168.26px;top:489.40px" class="cls_003"><span class="cls_003">The goal of this exercise is to program a “Guess My Number”</span></div>
+<div style="position:absolute;left:86.40px;top:504.57px" class="cls_003"><span class="cls_003">game. When it’s finished, it will work like this:</span></div>
+<div style="position:absolute;left:101.34px;top:551.85px" class="cls_003"><span class="cls_003">I</span><span class="cls_009">'</span><span class="cls_003">m thinking of a number between 1 and 100</span></div>
+<div style="position:absolute;left:101.34px;top:567.02px" class="cls_003"><span class="cls_003">(including both). Can you guess what it is?</span></div>
+<div style="position:absolute;left:101.34px;top:582.18px" class="cls_003"><span class="cls_003">Type a number: 45</span></div>
+<div style="position:absolute;left:101.34px;top:597.35px" class="cls_003"><span class="cls_003">Your guess is: 45</span></div>
+<div style="position:absolute;left:101.34px;top:612.52px" class="cls_003"><span class="cls_003">The number I was thinking of is: 14</span></div>
+<div style="position:absolute;left:101.34px;top:627.69px" class="cls_003"><span class="cls_003">You were off by: 31</span></div>
+<div style="position:absolute;left:86.40px;top:674.88px" class="cls_003"><span class="cls_003">To choose a random number, you can use the Random class in java.util.</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_003"><span class="cls_003">Here’s how it works:</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:11228px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="a5608efa-5ad5-11e9-9d71-0cc47a792c0a_id_a5608efa-5ad5-11e9-9d71-0cc47a792c0a_files/background15.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">3.12</span></div>
+<div style="position:absolute;left:166.96px;top:88.65px" class="cls_003"><span class="cls_003">Exercises</span></div>
+<div style="position:absolute;left:512.16px;top:88.65px" class="cls_003"><span class="cls_003">47</span></div>
+<div style="position:absolute;left:144.54px;top:123.41px" class="cls_005"><span class="cls_005">import</span><span class="cls_003"> java.util.Random;</span></div>
+<div style="position:absolute;left:144.54px;top:153.74px" class="cls_005"><span class="cls_005">public class</span><span class="cls_003"> GuessStarter {</span></div>
+<div style="position:absolute;left:169.15px;top:184.08px" class="cls_005"><span class="cls_005">public static void</span><span class="cls_003"> main(String[] args) {</span></div>
+<div style="position:absolute;left:193.76px;top:199.25px" class="cls_007"><span class="cls_007">// pick a random number</span></div>
+<div style="position:absolute;left:193.76px;top:214.41px" class="cls_003"><span class="cls_003">Random random =</span><span class="cls_005"> new</span><span class="cls_003"> Random();</span></div>
+<div style="position:absolute;left:193.76px;top:229.58px" class="cls_005"><span class="cls_005">int</span><span class="cls_003"> number = random.nextInt(100) + 1;</span></div>
+<div style="position:absolute;left:193.76px;top:244.75px" class="cls_003"><span class="cls_003">System.out.println(number);</span></div>
+<div style="position:absolute;left:169.15px;top:259.92px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:144.54px;top:275.09px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:300.89px" class="cls_003"><span class="cls_003">Like the Scanner class we saw in this chapter, Random has to be imported</span></div>
+<div style="position:absolute;left:129.60px;top:316.06px" class="cls_003"><span class="cls_003">before we can use it.  And as we saw with Scanner, we have to use the</span><span class="cls_005"> new</span></div>
+<div style="position:absolute;left:129.60px;top:331.23px" class="cls_003"><span class="cls_003">operator to create a Random (number generator).</span></div>
+<div style="position:absolute;left:129.60px;top:358.35px" class="cls_003"><span class="cls_003">Then we can use the method nextInt to generate a random number. In this</span></div>
+<div style="position:absolute;left:129.60px;top:373.52px" class="cls_003"><span class="cls_003">example, the result of nextInt(100) will be between 0 and 99, including both.</span></div>
+<div style="position:absolute;left:129.60px;top:388.69px" class="cls_003"><span class="cls_003">Adding 1 yields a number between 1 and 100, including both.</span></div>
+<div style="position:absolute;left:143.91px;top:419.80px" class="cls_003"><span class="cls_003">1. The definition of GuessStarter is in a file called GuessStarter.java,</span></div>
+<div style="position:absolute;left:158.87px;top:434.96px" class="cls_003"><span class="cls_003">in the directory called ch03, in the repository for this book.</span></div>
+<div style="position:absolute;left:143.91px;top:460.09px" class="cls_003"><span class="cls_003">2. Compile and run this program.</span></div>
+<div style="position:absolute;left:143.91px;top:485.23px" class="cls_003"><span class="cls_003">3. Modify the program to prompt the user, then use a Scanner to read a</span></div>
+<div style="position:absolute;left:158.87px;top:500.39px" class="cls_003"><span class="cls_003">line of user input. Compile and test the program.</span></div>
+<div style="position:absolute;left:143.91px;top:525.52px" class="cls_003"><span class="cls_003">4. Read the user input as an integer and display the result. Again, compile</span></div>
+<div style="position:absolute;left:158.87px;top:540.69px" class="cls_003"><span class="cls_003">and test.</span></div>
+<div style="position:absolute;left:143.91px;top:565.82px" class="cls_003"><span class="cls_003">5. Compute and display the difference between the user’s guess and the</span></div>
+<div style="position:absolute;left:158.87px;top:580.99px" class="cls_003"><span class="cls_003">number that was generated.</span></div>
+</div>
+
+</body>
+</html>

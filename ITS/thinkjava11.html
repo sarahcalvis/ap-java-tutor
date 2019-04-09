@@ -1,0 +1,692 @@
+<html>
+<head><meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<style type="text/css">
+<!--
+span.cls_002{font-family:Arial,serif;font-size:24.8px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_002{font-family:Arial,serif;font-size:24.8px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_003{font-family:Arial,serif;font-size:12.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_003{font-family:Arial,serif;font-size:12.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_004{font-family:Arial,serif;font-size:12.0px;color:rgb(0,0,255);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_004{font-family:Arial,serif;font-size:12.0px;color:rgb(0,0,255);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_005{font-family:Times,serif;font-size:8.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_005{font-family:Times,serif;font-size:8.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_006{font-family:Arial,serif;font-size:17.3px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_006{font-family:Arial,serif;font-size:17.3px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_007{font-family:Arial,serif;font-size:10.9px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_007{font-family:Arial,serif;font-size:10.9px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_008{font-family:Arial,serif;font-size:12.0px;color:rgb(0,123,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_008{font-family:Arial,serif;font-size:12.0px;color:rgb(0,123,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_009{font-family:Arial,serif;font-size:12.0px;color:rgb(178,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_009{font-family:Arial,serif;font-size:12.0px;color:rgb(178,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+-->
+</style>
+<script type="text/javascript" src="7e18c13c-5ada-11e9-9d71-0cc47a792c0a_id_7e18c13c-5ada-11e9-9d71-0cc47a792c0a_files/wz_jsgraphics.js"></script>
+</head>
+<body>
+<div style="position:absolute;left:50%;margin-left:-306px;top:0px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="7e18c13c-5ada-11e9-9d71-0cc47a792c0a_id_7e18c13c-5ada-11e9-9d71-0cc47a792c0a_files/background01.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:203.89px" class="cls_002"><span class="cls_002">Chapter 11</span></div>
+<div style="position:absolute;left:129.60px;top:265.98px" class="cls_002"><span class="cls_002">Classes</span></div>
+<div style="position:absolute;left:129.60px;top:344.61px" class="cls_003"><span class="cls_003">Whenever you define a new class, you also create a new type with the same</span></div>
+<div style="position:absolute;left:129.60px;top:359.78px" class="cls_003"><span class="cls_003">name. So way back in Section 1.4, when we defined the class Hello, we created</span></div>
+<div style="position:absolute;left:129.60px;top:374.95px" class="cls_003"><span class="cls_003">a type named Hello.  We didn’t declare any variables with type Hello, and</span></div>
+<div style="position:absolute;left:129.60px;top:390.12px" class="cls_003"><span class="cls_003">we didn’t use</span><span class="cls_004"> new</span><span class="cls_003"> to create a Hello object. It wouldn’t have done much if we</span></div>
+<div style="position:absolute;left:129.60px;top:405.28px" class="cls_003"><span class="cls_003">had - but we could have!</span></div>
+<div style="position:absolute;left:129.60px;top:431.23px" class="cls_003"><span class="cls_003">In this chapter, we will define classes that represent useful object types. We</span></div>
+<div style="position:absolute;left:129.60px;top:446.40px" class="cls_003"><span class="cls_003">will also clarify the difference between classes and objects. Here are the most</span></div>
+<div style="position:absolute;left:129.60px;top:461.57px" class="cls_003"><span class="cls_003">important ideas:</span></div>
+<div style="position:absolute;left:147.16px;top:489.16px" class="cls_005"><span class="cls_005"></span><span class="cls_003"> Defining a class creates a new object type with the same name.</span></div>
+<div style="position:absolute;left:147.16px;top:513.70px" class="cls_005"><span class="cls_005"></span><span class="cls_003"> Every object belongs to some object type; that is, it is an instance of</span></div>
+<div style="position:absolute;left:158.87px;top:528.87px" class="cls_003"><span class="cls_003">some class.</span></div>
+<div style="position:absolute;left:147.16px;top:553.41px" class="cls_005"><span class="cls_005"></span><span class="cls_003"> A class definition is like a template for objects: it specifies what at-</span></div>
+<div style="position:absolute;left:158.87px;top:568.58px" class="cls_003"><span class="cls_003">tributes the objects have and what methods can operate on them.</span></div>
+<div style="position:absolute;left:147.16px;top:593.13px" class="cls_005"><span class="cls_005"></span><span class="cls_003"> The</span><span class="cls_004"> new</span><span class="cls_003"> operator instantiates objects, that is, it creates new instances</span></div>
+<div style="position:absolute;left:158.87px;top:608.30px" class="cls_003"><span class="cls_003">of a class.</span></div>
+<div style="position:absolute;left:147.16px;top:632.84px" class="cls_005"><span class="cls_005"></span><span class="cls_003"> Think of a class like a blueprint for a house:  you can use the same</span></div>
+<div style="position:absolute;left:158.87px;top:648.01px" class="cls_003"><span class="cls_003">blueprint to build any number of houses.</span></div>
+<div style="position:absolute;left:147.16px;top:672.55px" class="cls_005"><span class="cls_005"></span><span class="cls_003"> The methods that operate on an object type are defined in the class for</span></div>
+<div style="position:absolute;left:158.87px;top:687.72px" class="cls_003"><span class="cls_003">that object.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:802px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="7e18c13c-5ada-11e9-9d71-0cc47a792c0a_id_7e18c13c-5ada-11e9-9d71-0cc47a792c0a_files/background02.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">172</span></div>
+<div style="position:absolute;left:360.92px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 11</span></div>
+<div style="position:absolute;left:440.36px;top:88.65px" class="cls_003"><span class="cls_003">Classes</span></div>
+<div style="position:absolute;left:86.40px;top:119.48px" class="cls_006"><span class="cls_006">11.1</span></div>
+<div style="position:absolute;left:140.20px;top:119.48px" class="cls_006"><span class="cls_006">The Time class</span></div>
+<div style="position:absolute;left:86.40px;top:159.85px" class="cls_003"><span class="cls_003">One common reason to define a new class is to encapsulate related data in</span></div>
+<div style="position:absolute;left:86.40px;top:175.02px" class="cls_003"><span class="cls_003">an object that can be treated as a single unit. That way, we can use objects</span></div>
+<div style="position:absolute;left:86.40px;top:190.18px" class="cls_003"><span class="cls_003">as parameters and return values, rather than passing and returning multiple</span></div>
+<div style="position:absolute;left:86.40px;top:205.35px" class="cls_003"><span class="cls_003">values. This design principle is called data encapsulation.</span></div>
+<div style="position:absolute;left:86.40px;top:235.95px" class="cls_003"><span class="cls_003">We have already seen two types that encapsulate data in this way: Point and</span></div>
+<div style="position:absolute;left:86.40px;top:251.12px" class="cls_003"><span class="cls_003">Rectangle.  Another example, which we will implement ourselves, is Time,</span></div>
+<div style="position:absolute;left:86.40px;top:266.29px" class="cls_003"><span class="cls_003">which represents a time of day. The data encapsulated in a Time object are an</span></div>
+<div style="position:absolute;left:86.40px;top:281.46px" class="cls_003"><span class="cls_003">hour, a minute, and a number of seconds. Because every Time object contains</span></div>
+<div style="position:absolute;left:86.40px;top:296.63px" class="cls_003"><span class="cls_003">these data, we define attributes to hold them.</span></div>
+<div style="position:absolute;left:86.40px;top:327.23px" class="cls_003"><span class="cls_003">Attributes are also called instance variables, because each instance has its</span></div>
+<div style="position:absolute;left:86.40px;top:342.40px" class="cls_003"><span class="cls_003">own variables (as opposed to class variables, coming up in Section 12.3).</span></div>
+<div style="position:absolute;left:86.40px;top:373.00px" class="cls_003"><span class="cls_003">The first step is to decide what type each variable should be. It seems clear</span></div>
+<div style="position:absolute;left:86.40px;top:388.17px" class="cls_003"><span class="cls_003">that hour and minute should be integers. Just to keep things interesting, let’s</span></div>
+<div style="position:absolute;left:86.40px;top:403.34px" class="cls_003"><span class="cls_003">make second a double.</span></div>
+<div style="position:absolute;left:86.40px;top:433.94px" class="cls_003"><span class="cls_003">Instance variables are declared at the beginning of the class definition, outside</span></div>
+<div style="position:absolute;left:86.40px;top:449.11px" class="cls_003"><span class="cls_003">of any method. By itself, this code fragment is a legal class definition:</span></div>
+<div style="position:absolute;left:101.34px;top:478.48px" class="cls_004"><span class="cls_004">public class</span><span class="cls_003"> Time {</span></div>
+<div style="position:absolute;left:125.95px;top:493.65px" class="cls_004"><span class="cls_004">private int</span><span class="cls_003"> hour;</span></div>
+<div style="position:absolute;left:125.95px;top:508.81px" class="cls_004"><span class="cls_004">private int</span><span class="cls_003"> minute;</span></div>
+<div style="position:absolute;left:125.95px;top:523.98px" class="cls_004"><span class="cls_004">private double</span><span class="cls_003"> second;</span></div>
+<div style="position:absolute;left:101.34px;top:539.15px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:568.43px" class="cls_003"><span class="cls_003">The Time class is</span><span class="cls_004"> public</span><span class="cls_003">, which means that it can be used in other classes.</span></div>
+<div style="position:absolute;left:86.40px;top:583.60px" class="cls_003"><span class="cls_003">But the instance variables are</span><span class="cls_004"> private</span><span class="cls_003">, which means they can only be accessed</span></div>
+<div style="position:absolute;left:86.40px;top:598.77px" class="cls_003"><span class="cls_003">from inside the Time class. If you try to read or write them from another class,</span></div>
+<div style="position:absolute;left:86.40px;top:613.94px" class="cls_003"><span class="cls_003">you will get a compiler error.</span></div>
+<div style="position:absolute;left:86.40px;top:644.54px" class="cls_003"><span class="cls_003">Private instance variables help keep classes isolated from each other so that</span></div>
+<div style="position:absolute;left:86.40px;top:659.71px" class="cls_003"><span class="cls_003">changes in one class won’t require changes in other classes. It also simplifies</span></div>
+<div style="position:absolute;left:86.40px;top:674.88px" class="cls_003"><span class="cls_003">what other programmers need to understand in order to use your classes. This</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_003"><span class="cls_003">kind of isolation is called information hiding.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:1604px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="7e18c13c-5ada-11e9-9d71-0cc47a792c0a_id_7e18c13c-5ada-11e9-9d71-0cc47a792c0a_files/background03.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">11.2</span></div>
+<div style="position:absolute;left:166.96px;top:88.65px" class="cls_003"><span class="cls_003">Constructors</span></div>
+<div style="position:absolute;left:505.42px;top:88.65px" class="cls_003"><span class="cls_003">173</span></div>
+<div style="position:absolute;left:129.60px;top:119.48px" class="cls_006"><span class="cls_006">11.2</span></div>
+<div style="position:absolute;left:183.40px;top:119.48px" class="cls_006"><span class="cls_006">Constructors</span></div>
+<div style="position:absolute;left:129.60px;top:156.05px" class="cls_003"><span class="cls_003">After declaring the instance variables, the next step is to define a constructor,</span></div>
+<div style="position:absolute;left:129.60px;top:171.22px" class="cls_003"><span class="cls_003">which is a special method that initializes the instance variables. The syntax</span></div>
+<div style="position:absolute;left:129.60px;top:186.39px" class="cls_003"><span class="cls_003">for constructors is similar to that of other methods, except:</span></div>
+<div style="position:absolute;left:147.16px;top:218.65px" class="cls_005"><span class="cls_005"></span><span class="cls_003"> The name of the constructor is the same as the name of the class.</span></div>
+<div style="position:absolute;left:147.16px;top:244.35px" class="cls_005"><span class="cls_005"></span><span class="cls_003"> Constructors have no return type (and no return value).</span></div>
+<div style="position:absolute;left:147.16px;top:270.06px" class="cls_005"><span class="cls_005"></span><span class="cls_003"> The keyword</span><span class="cls_004"> static</span><span class="cls_003"> is omitted.</span></div>
+<div style="position:absolute;left:129.60px;top:302.32px" class="cls_003"><span class="cls_003">Here is an example constructor for the Time class:</span></div>
+<div style="position:absolute;left:144.54px;top:328.67px" class="cls_004"><span class="cls_004">public</span><span class="cls_003"> Time() {</span></div>
+<div style="position:absolute;left:169.15px;top:343.84px" class="cls_004"><span class="cls_004">this</span><span class="cls_003">.hour = 0;</span></div>
+<div style="position:absolute;left:169.15px;top:359.01px" class="cls_004"><span class="cls_004">this</span><span class="cls_003">.minute = 0;</span></div>
+<div style="position:absolute;left:169.15px;top:374.18px" class="cls_004"><span class="cls_004">this</span><span class="cls_003">.second = 0.0;</span></div>
+<div style="position:absolute;left:144.54px;top:389.35px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:415.61px" class="cls_003"><span class="cls_003">This constructor does not take any arguments. Each line initializes an instance</span></div>
+<div style="position:absolute;left:129.60px;top:430.78px" class="cls_003"><span class="cls_003">variable to zero (which in this example means midnight).</span></div>
+<div style="position:absolute;left:129.60px;top:458.36px" class="cls_003"><span class="cls_003">The name</span><span class="cls_004"> this</span><span class="cls_003"> is a keyword that refers to the object we are creating. You can</span></div>
+<div style="position:absolute;left:129.60px;top:473.53px" class="cls_003"><span class="cls_003">use</span><span class="cls_004"> this</span><span class="cls_003"> the same way you use the name of any other object. For example,</span></div>
+<div style="position:absolute;left:129.60px;top:488.70px" class="cls_003"><span class="cls_003">you can read and write the instance variables of</span><span class="cls_004"> this</span><span class="cls_003">, and you can pass</span><span class="cls_004"> this</span></div>
+<div style="position:absolute;left:129.60px;top:503.87px" class="cls_003"><span class="cls_003">as an argument to other methods. But you do not declare</span><span class="cls_004"> this</span><span class="cls_003">, and you can’t</span></div>
+<div style="position:absolute;left:129.60px;top:519.04px" class="cls_003"><span class="cls_003">make an assignment to it.</span></div>
+<div style="position:absolute;left:129.60px;top:546.62px" class="cls_003"><span class="cls_003">A common error when writing constructors is to put a</span><span class="cls_004"> return</span><span class="cls_003"> statement at</span></div>
+<div style="position:absolute;left:129.60px;top:561.79px" class="cls_003"><span class="cls_003">the end. Like void methods, constructors do not return values.</span></div>
+<div style="position:absolute;left:129.60px;top:589.37px" class="cls_003"><span class="cls_003">To create a Time object, you must use the</span><span class="cls_004"> new</span><span class="cls_003"> operator:</span></div>
+<div style="position:absolute;left:144.54px;top:617.00px" class="cls_003"><span class="cls_003">Time time =</span><span class="cls_004"> new</span><span class="cls_003"> Time();</span></div>
+<div style="position:absolute;left:129.60px;top:644.54px" class="cls_003"><span class="cls_003">When you invoke</span><span class="cls_004"> new</span><span class="cls_003">, Java creates the object and calls your constructor to</span></div>
+<div style="position:absolute;left:129.60px;top:659.71px" class="cls_003"><span class="cls_003">initialize the instance variables. When the constructor is done,</span><span class="cls_004"> new</span><span class="cls_003"> returns a</span></div>
+<div style="position:absolute;left:129.60px;top:674.88px" class="cls_003"><span class="cls_003">reference to the new object.  In this example, the reference gets assigned to</span></div>
+<div style="position:absolute;left:129.60px;top:690.04px" class="cls_003"><span class="cls_003">the variable time, which has type Time. Figure 11.1 shows the result.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:2406px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="7e18c13c-5ada-11e9-9d71-0cc47a792c0a_id_7e18c13c-5ada-11e9-9d71-0cc47a792c0a_files/background04.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">174</span></div>
+<div style="position:absolute;left:360.92px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 11</span></div>
+<div style="position:absolute;left:440.36px;top:88.65px" class="cls_003"><span class="cls_003">Classes</span></div>
+<div style="position:absolute;left:282.40px;top:123.74px" class="cls_007"><span class="cls_007">Time</span></div>
+<div style="position:absolute;left:301.29px;top:150.74px" class="cls_007"><span class="cls_007">hour</span></div>
+<div style="position:absolute;left:339.40px;top:150.74px" class="cls_007"><span class="cls_007">0</span></div>
+<div style="position:absolute;left:207.10px;top:162.44px" class="cls_007"><span class="cls_007">time</span></div>
+<div style="position:absolute;left:290.49px;top:182.24px" class="cls_007"><span class="cls_007">minute</span></div>
+<div style="position:absolute;left:339.40px;top:182.24px" class="cls_007"><span class="cls_007">0</span></div>
+<div style="position:absolute;left:288.08px;top:213.74px" class="cls_007"><span class="cls_007">second</span></div>
+<div style="position:absolute;left:330.39px;top:213.74px" class="cls_007"><span class="cls_007">0.0</span></div>
+<div style="position:absolute;left:170.08px;top:251.20px" class="cls_003"><span class="cls_003">Figure 11.1: State diagram of a Time object.</span></div>
+<div style="position:absolute;left:86.40px;top:281.99px" class="cls_003"><span class="cls_003">Beginners sometimes make the mistake of invoking</span><span class="cls_004"> new</span><span class="cls_003"> inside the constructor.</span></div>
+<div style="position:absolute;left:86.40px;top:297.16px" class="cls_003"><span class="cls_003">You don’t have to, and you shouldn’t. In this example, invoking</span><span class="cls_004"> new</span><span class="cls_003"> Time()</span></div>
+<div style="position:absolute;left:86.40px;top:312.33px" class="cls_003"><span class="cls_003">in the constructor causes an infinite recursion:</span></div>
+<div style="position:absolute;left:101.34px;top:333.49px" class="cls_004"><span class="cls_004">public</span><span class="cls_003"> Time() {</span></div>
+<div style="position:absolute;left:125.95px;top:348.66px" class="cls_004"><span class="cls_004">new</span><span class="cls_003"> Time();</span></div>
+<div style="position:absolute;left:242.84px;top:348.66px" class="cls_008"><span class="cls_008">// wrong!</span></div>
+<div style="position:absolute;left:125.95px;top:363.83px" class="cls_004"><span class="cls_004">this</span><span class="cls_003">.hour = 0;</span></div>
+<div style="position:absolute;left:125.95px;top:378.99px" class="cls_004"><span class="cls_004">this</span><span class="cls_003">.minute = 0;</span></div>
+<div style="position:absolute;left:125.95px;top:394.16px" class="cls_004"><span class="cls_004">this</span><span class="cls_003">.second = 0.0;</span></div>
+<div style="position:absolute;left:101.34px;top:409.33px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:448.37px" class="cls_006"><span class="cls_006">11.3</span></div>
+<div style="position:absolute;left:140.20px;top:448.37px" class="cls_006"><span class="cls_006">More constructors</span></div>
+<div style="position:absolute;left:86.40px;top:481.94px" class="cls_003"><span class="cls_003">Like other methods, constructors can be overloaded, which means you can</span></div>
+<div style="position:absolute;left:86.40px;top:497.11px" class="cls_003"><span class="cls_003">provide multiple constructors with different parameters.  Java knows which</span></div>
+<div style="position:absolute;left:86.40px;top:512.28px" class="cls_003"><span class="cls_003">constructor to invoke by matching the arguments you provide with the pa-</span></div>
+<div style="position:absolute;left:86.40px;top:527.45px" class="cls_003"><span class="cls_003">rameters of the constructors.</span></div>
+<div style="position:absolute;left:86.40px;top:552.16px" class="cls_003"><span class="cls_003">It is common to provide a constructor that takes no arguments, like the pre-</span></div>
+<div style="position:absolute;left:86.40px;top:567.33px" class="cls_003"><span class="cls_003">vious one, and a “value constructor”, like this one:</span></div>
+<div style="position:absolute;left:101.34px;top:590.81px" class="cls_004"><span class="cls_004">public</span><span class="cls_003"> Time(</span><span class="cls_004">int</span><span class="cls_003"> hour,</span><span class="cls_004"> int</span><span class="cls_003"> minute,</span><span class="cls_004"> double</span><span class="cls_003"> second) {</span></div>
+<div style="position:absolute;left:125.95px;top:605.98px" class="cls_004"><span class="cls_004">this</span><span class="cls_003">.hour = hour;</span></div>
+<div style="position:absolute;left:125.95px;top:621.15px" class="cls_004"><span class="cls_004">this</span><span class="cls_003">.minute = minute;</span></div>
+<div style="position:absolute;left:125.95px;top:636.31px" class="cls_004"><span class="cls_004">this</span><span class="cls_003">.second = second;</span></div>
+<div style="position:absolute;left:101.34px;top:651.48px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:674.88px" class="cls_003"><span class="cls_003">All this constructor does is copy values from the parameters to the instance</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_003"><span class="cls_003">variables.  In this example, the names and types of the parameters are the</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:3208px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="7e18c13c-5ada-11e9-9d71-0cc47a792c0a_id_7e18c13c-5ada-11e9-9d71-0cc47a792c0a_files/background05.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">11.3</span></div>
+<div style="position:absolute;left:166.96px;top:88.65px" class="cls_003"><span class="cls_003">More constructors</span></div>
+<div style="position:absolute;left:505.42px;top:88.65px" class="cls_003"><span class="cls_003">175</span></div>
+<div style="position:absolute;left:129.60px;top:124.74px" class="cls_003"><span class="cls_003">same as the instance variables. As a result, the parameters shadow (or hide)</span></div>
+<div style="position:absolute;left:129.60px;top:139.91px" class="cls_003"><span class="cls_003">the instance variables, so the keyword</span><span class="cls_004"> this</span><span class="cls_003"> is necessary to tell them apart.</span></div>
+<div style="position:absolute;left:129.60px;top:155.08px" class="cls_003"><span class="cls_003">Parameters don’t have to use the same names, but that’s a common style.</span></div>
+<div style="position:absolute;left:129.60px;top:189.07px" class="cls_003"><span class="cls_003">To invoke this second constructor, you have to provide arguments after the</span></div>
+<div style="position:absolute;left:129.60px;top:204.23px" class="cls_004"><span class="cls_004">new</span><span class="cls_003"> operator.  This example creates a Time object that represents a fraction</span></div>
+<div style="position:absolute;left:129.60px;top:219.40px" class="cls_003"><span class="cls_003">of a second before noon:</span></div>
+<div style="position:absolute;left:144.54px;top:253.43px" class="cls_003"><span class="cls_003">Time time =</span><span class="cls_004"> new</span><span class="cls_003"> Time(11, 59, 59.9);</span></div>
+<div style="position:absolute;left:129.60px;top:287.38px" class="cls_003"><span class="cls_003">Overloading constructors provides the flexibility to create an object first and</span></div>
+<div style="position:absolute;left:129.60px;top:302.55px" class="cls_003"><span class="cls_003">then fill in the attributes, or collect all the information before creating the</span></div>
+<div style="position:absolute;left:129.60px;top:317.71px" class="cls_003"><span class="cls_003">object itself.</span></div>
+<div style="position:absolute;left:129.60px;top:351.70px" class="cls_003"><span class="cls_003">Once you get the hang of it, writing constructors gets boring. You can write</span></div>
+<div style="position:absolute;left:129.60px;top:366.87px" class="cls_003"><span class="cls_003">them quickly just by looking at the list of instance variables.  In fact, some</span></div>
+<div style="position:absolute;left:129.60px;top:382.04px" class="cls_003"><span class="cls_003">IDEs can generate them for you.</span></div>
+<div style="position:absolute;left:129.60px;top:416.02px" class="cls_003"><span class="cls_003">Pulling it all together, here is the complete class definition so far:</span></div>
+<div style="position:absolute;left:144.54px;top:448.78px" class="cls_004"><span class="cls_004">public class</span><span class="cls_003"> Time {</span></div>
+<div style="position:absolute;left:169.15px;top:463.95px" class="cls_004"><span class="cls_004">private int</span><span class="cls_003"> hour;</span></div>
+<div style="position:absolute;left:169.15px;top:479.12px" class="cls_004"><span class="cls_004">private int</span><span class="cls_003"> minute;</span></div>
+<div style="position:absolute;left:169.15px;top:494.29px" class="cls_004"><span class="cls_004">private double</span><span class="cls_003"> second;</span></div>
+<div style="position:absolute;left:169.15px;top:524.62px" class="cls_004"><span class="cls_004">public</span><span class="cls_003"> Time() {</span></div>
+<div style="position:absolute;left:193.76px;top:539.79px" class="cls_004"><span class="cls_004">this</span><span class="cls_003">.hour = 0;</span></div>
+<div style="position:absolute;left:193.76px;top:554.96px" class="cls_004"><span class="cls_004">this</span><span class="cls_003">.minute = 0;</span></div>
+<div style="position:absolute;left:193.76px;top:570.13px" class="cls_004"><span class="cls_004">this</span><span class="cls_003">.second = 0.0;</span></div>
+<div style="position:absolute;left:169.15px;top:585.29px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:169.15px;top:615.63px" class="cls_004"><span class="cls_004">public</span><span class="cls_003"> Time(</span><span class="cls_004">int</span><span class="cls_003"> hour,</span><span class="cls_004"> int</span><span class="cls_003"> minute,</span><span class="cls_004"> double</span><span class="cls_003"> second) {</span></div>
+<div style="position:absolute;left:193.76px;top:630.80px" class="cls_004"><span class="cls_004">this</span><span class="cls_003">.hour = hour;</span></div>
+<div style="position:absolute;left:193.76px;top:645.97px" class="cls_004"><span class="cls_004">this</span><span class="cls_003">.minute = minute;</span></div>
+<div style="position:absolute;left:193.76px;top:661.14px" class="cls_004"><span class="cls_004">this</span><span class="cls_003">.second = second;</span></div>
+<div style="position:absolute;left:169.15px;top:676.30px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:144.54px;top:691.47px" class="cls_003"><span class="cls_003">}</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:4010px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="7e18c13c-5ada-11e9-9d71-0cc47a792c0a_id_7e18c13c-5ada-11e9-9d71-0cc47a792c0a_files/background06.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">176</span></div>
+<div style="position:absolute;left:360.92px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 11</span></div>
+<div style="position:absolute;left:440.36px;top:88.65px" class="cls_003"><span class="cls_003">Classes</span></div>
+<div style="position:absolute;left:86.40px;top:119.48px" class="cls_006"><span class="cls_006">11.4</span></div>
+<div style="position:absolute;left:140.20px;top:119.48px" class="cls_006"><span class="cls_006">Getters and setters</span></div>
+<div style="position:absolute;left:86.40px;top:158.32px" class="cls_003"><span class="cls_003">Recall that the instance variables of Time are</span><span class="cls_004"> private</span><span class="cls_003">. We can access them</span></div>
+<div style="position:absolute;left:86.40px;top:173.49px" class="cls_003"><span class="cls_003">from within the Time class, but if we try to access them from another class,</span></div>
+<div style="position:absolute;left:86.40px;top:188.66px" class="cls_003"><span class="cls_003">the compiler generates an error.</span></div>
+<div style="position:absolute;left:86.40px;top:218.05px" class="cls_003"><span class="cls_003">For example, here’s a new class called TimeClient, because a class that uses</span></div>
+<div style="position:absolute;left:86.40px;top:233.21px" class="cls_003"><span class="cls_003">objects defined in another class is called a client:</span></div>
+<div style="position:absolute;left:101.34px;top:261.37px" class="cls_004"><span class="cls_004">public class</span><span class="cls_003"> TimeClient {</span></div>
+<div style="position:absolute;left:125.95px;top:291.71px" class="cls_004"><span class="cls_004">public static void</span><span class="cls_003"> main(String[] args) {</span></div>
+<div style="position:absolute;left:150.56px;top:306.88px" class="cls_003"><span class="cls_003">Time time =</span><span class="cls_004"> new</span><span class="cls_003"> Time(11, 59, 59.9);</span></div>
+<div style="position:absolute;left:150.56px;top:322.05px" class="cls_003"><span class="cls_003">System.out.println(time.hour);</span></div>
+<div style="position:absolute;left:372.03px;top:322.05px" class="cls_008"><span class="cls_008">// compiler error</span></div>
+<div style="position:absolute;left:125.95px;top:337.21px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:101.34px;top:352.38px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:380.45px" class="cls_003"><span class="cls_003">If you try to compile this code, you will get a message like hour has private</span></div>
+<div style="position:absolute;left:86.40px;top:395.62px" class="cls_003"><span class="cls_003">access in Time. There are three ways to solve this problem:</span></div>
+<div style="position:absolute;left:103.96px;top:432.39px" class="cls_005"><span class="cls_005"></span><span class="cls_003"> We could make the instance variables</span><span class="cls_004"> public</span><span class="cls_003">.</span></div>
+<div style="position:absolute;left:103.96px;top:460.35px" class="cls_005"><span class="cls_005"></span><span class="cls_003"> We could provide methods to access the instance variables.</span></div>
+<div style="position:absolute;left:103.96px;top:488.32px" class="cls_005"><span class="cls_005"></span><span class="cls_003"> We could decide that it’s not a problem, and refuse to let other classes</span></div>
+<div style="position:absolute;left:115.67px;top:503.49px" class="cls_003"><span class="cls_003">access the instance variables.</span></div>
+<div style="position:absolute;left:86.40px;top:540.26px" class="cls_003"><span class="cls_003">The first choice is appealing because it’s simple.  But the problem is that</span></div>
+<div style="position:absolute;left:86.40px;top:555.43px" class="cls_003"><span class="cls_003">when Class A accesses the instance variables of Class B directly, A becomes</span></div>
+<div style="position:absolute;left:86.40px;top:570.59px" class="cls_003"><span class="cls_003">“dependent” on B. If anything in B changes later, it is likely that A will have</span></div>
+<div style="position:absolute;left:86.40px;top:585.76px" class="cls_003"><span class="cls_003">to change, too.</span></div>
+<div style="position:absolute;left:86.40px;top:615.15px" class="cls_003"><span class="cls_003">But if A only uses methods to interact with B, A and B are “independent”,</span></div>
+<div style="position:absolute;left:86.40px;top:630.32px" class="cls_003"><span class="cls_003">which means that we can make changes in B without affecting A (as long as</span></div>
+<div style="position:absolute;left:86.40px;top:645.49px" class="cls_003"><span class="cls_003">we don’t change the method signatures).</span></div>
+<div style="position:absolute;left:86.40px;top:674.88px" class="cls_003"><span class="cls_003">So if we decide that TimeClient should be able to read the instance variables</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_003"><span class="cls_003">of Time, we can provide methods to do it:</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:4812px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="7e18c13c-5ada-11e9-9d71-0cc47a792c0a_id_7e18c13c-5ada-11e9-9d71-0cc47a792c0a_files/background07.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">11.4</span></div>
+<div style="position:absolute;left:166.96px;top:88.65px" class="cls_003"><span class="cls_003">Getters and setters</span></div>
+<div style="position:absolute;left:505.43px;top:88.65px" class="cls_003"><span class="cls_003">177</span></div>
+<div style="position:absolute;left:144.54px;top:123.41px" class="cls_004"><span class="cls_004">public int</span><span class="cls_003"> getHour() {</span></div>
+<div style="position:absolute;left:169.15px;top:138.57px" class="cls_004"><span class="cls_004">return this</span><span class="cls_003">.hour;</span></div>
+<div style="position:absolute;left:144.54px;top:153.74px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:144.54px;top:184.08px" class="cls_004"><span class="cls_004">public int</span><span class="cls_003"> getMinute() {</span></div>
+<div style="position:absolute;left:169.15px;top:199.25px" class="cls_004"><span class="cls_004">return this</span><span class="cls_003">.minute;</span></div>
+<div style="position:absolute;left:144.54px;top:214.41px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:144.54px;top:244.75px" class="cls_004"><span class="cls_004">public int</span><span class="cls_003"> getSecond() {</span></div>
+<div style="position:absolute;left:169.15px;top:259.92px" class="cls_004"><span class="cls_004">return this</span><span class="cls_003">.second;</span></div>
+<div style="position:absolute;left:144.54px;top:275.09px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:308.99px" class="cls_003"><span class="cls_003">Methods like these are formally called “accessors”, but more commonly re-</span></div>
+<div style="position:absolute;left:129.60px;top:324.16px" class="cls_003"><span class="cls_003">ferred to as getters. By convention, the method that gets a variable named</span></div>
+<div style="position:absolute;left:129.60px;top:339.33px" class="cls_003"><span class="cls_003">something is called getSomething.</span></div>
+<div style="position:absolute;left:129.60px;top:374.56px" class="cls_003"><span class="cls_003">If we decide that TimeClient should also be able to modify the instance vari-</span></div>
+<div style="position:absolute;left:129.60px;top:389.73px" class="cls_003"><span class="cls_003">ables of Time, we can provide methods to do that, too:</span></div>
+<div style="position:absolute;left:144.54px;top:423.72px" class="cls_004"><span class="cls_004">public void</span><span class="cls_003"> setHour(</span><span class="cls_004">int</span><span class="cls_003"> hour) {</span></div>
+<div style="position:absolute;left:169.15px;top:438.89px" class="cls_004"><span class="cls_004">this</span><span class="cls_003">.hour = hour;</span></div>
+<div style="position:absolute;left:144.54px;top:454.06px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:144.54px;top:484.40px" class="cls_004"><span class="cls_004">public void</span><span class="cls_003"> setMinute(</span><span class="cls_004">int</span><span class="cls_003"> minute) {</span></div>
+<div style="position:absolute;left:169.15px;top:499.56px" class="cls_004"><span class="cls_004">this</span><span class="cls_003">.minute = minute;</span></div>
+<div style="position:absolute;left:144.54px;top:514.73px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:144.54px;top:545.07px" class="cls_004"><span class="cls_004">public void</span><span class="cls_003"> setSecond(</span><span class="cls_004">int</span><span class="cls_003"> second) {</span></div>
+<div style="position:absolute;left:169.15px;top:560.24px" class="cls_004"><span class="cls_004">this</span><span class="cls_003">.second = second;</span></div>
+<div style="position:absolute;left:144.54px;top:575.41px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:609.31px" class="cls_003"><span class="cls_003">These methods are formally called “mutators”, but more commonly known as</span></div>
+<div style="position:absolute;left:129.60px;top:624.48px" class="cls_003"><span class="cls_003">setters. The naming convention is similar; the method that sets something</span></div>
+<div style="position:absolute;left:129.60px;top:639.65px" class="cls_003"><span class="cls_003">is usually called setSomething.</span></div>
+<div style="position:absolute;left:129.60px;top:674.88px" class="cls_003"><span class="cls_003">Writing getters and setters can get boring, but many IDEs can generate them</span></div>
+<div style="position:absolute;left:129.60px;top:690.04px" class="cls_003"><span class="cls_003">for you based on the instance variables.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:5614px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="7e18c13c-5ada-11e9-9d71-0cc47a792c0a_id_7e18c13c-5ada-11e9-9d71-0cc47a792c0a_files/background08.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">178</span></div>
+<div style="position:absolute;left:360.92px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 11</span></div>
+<div style="position:absolute;left:440.36px;top:88.65px" class="cls_003"><span class="cls_003">Classes</span></div>
+<div style="position:absolute;left:86.40px;top:119.48px" class="cls_006"><span class="cls_006">11.5</span></div>
+<div style="position:absolute;left:140.20px;top:119.48px" class="cls_006"><span class="cls_006">Displaying objects</span></div>
+<div style="position:absolute;left:86.40px;top:154.88px" class="cls_003"><span class="cls_003">If you create a Time object and display it with println:</span></div>
+<div style="position:absolute;left:101.34px;top:180.51px" class="cls_004"><span class="cls_004">public static void</span><span class="cls_003"> main(String[] args) {</span></div>
+<div style="position:absolute;left:125.95px;top:195.68px" class="cls_003"><span class="cls_003">Time time =</span><span class="cls_004"> new</span><span class="cls_003"> Time(11, 59, 59.9);</span></div>
+<div style="position:absolute;left:125.95px;top:210.85px" class="cls_003"><span class="cls_003">System.out.println(time);</span></div>
+<div style="position:absolute;left:101.34px;top:226.02px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:251.23px" class="cls_003"><span class="cls_003">The output will look something like:</span></div>
+<div style="position:absolute;left:101.34px;top:277.81px" class="cls_003"><span class="cls_003">Time@80cc7c0</span></div>
+<div style="position:absolute;left:86.40px;top:304.29px" class="cls_003"><span class="cls_003">When Java displays the value of an object type, it displays the name of the</span></div>
+<div style="position:absolute;left:86.40px;top:319.46px" class="cls_003"><span class="cls_003">type and the address of the object (in hexadecimal).  This address can be</span></div>
+<div style="position:absolute;left:86.40px;top:334.63px" class="cls_003"><span class="cls_003">useful for debugging, if you want to keep track of individual objects.</span></div>
+<div style="position:absolute;left:86.40px;top:361.16px" class="cls_003"><span class="cls_003">To display Time objects in a way that is more meaningful to users, you could</span></div>
+<div style="position:absolute;left:86.40px;top:376.33px" class="cls_003"><span class="cls_003">write a method to display the hour, minute, and second. Using printTime in</span></div>
+<div style="position:absolute;left:86.40px;top:391.50px" class="cls_003"><span class="cls_003">Section 4.6 as a starting point, we could write:</span></div>
+<div style="position:absolute;left:101.34px;top:416.80px" class="cls_004"><span class="cls_004">public static void</span><span class="cls_003"> printTime(Time t) {</span></div>
+<div style="position:absolute;left:125.95px;top:431.97px" class="cls_003"><span class="cls_003">System.out.print(t.hour);</span></div>
+<div style="position:absolute;left:125.95px;top:447.14px" class="cls_003"><span class="cls_003">System.out.print(</span><span class="cls_009">":"</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:125.95px;top:462.30px" class="cls_003"><span class="cls_003">System.out.println(t.minute);</span></div>
+<div style="position:absolute;left:125.95px;top:477.47px" class="cls_003"><span class="cls_003">System.out.print(</span><span class="cls_009">":"</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:125.95px;top:492.64px" class="cls_003"><span class="cls_003">System.out.println(t.second);</span></div>
+<div style="position:absolute;left:101.34px;top:507.81px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:533.02px" class="cls_003"><span class="cls_003">The output of this method, given the time object from the previous section,</span></div>
+<div style="position:absolute;left:86.40px;top:548.19px" class="cls_003"><span class="cls_003">would be 11:59:59.9. We can use printf to write it more concisely:</span></div>
+<div style="position:absolute;left:101.34px;top:573.82px" class="cls_004"><span class="cls_004">public static void</span><span class="cls_003"> printTime(Time t) {</span></div>
+<div style="position:absolute;left:125.95px;top:588.99px" class="cls_003"><span class="cls_003">System.out.printf(</span><span class="cls_009">"%02d:%02d:%04.1f\n"</span><span class="cls_003">,</span></div>
+<div style="position:absolute;left:150.56px;top:604.16px" class="cls_003"><span class="cls_003">t.hour, t.minute, t.second);</span></div>
+<div style="position:absolute;left:101.34px;top:619.33px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:644.54px" class="cls_003"><span class="cls_003">As a reminder, you need to use %d with integers and %f with floating-point</span></div>
+<div style="position:absolute;left:86.40px;top:659.71px" class="cls_003"><span class="cls_003">numbers. The 02 option means “total width 2, with leading zeros if necessary”,</span></div>
+<div style="position:absolute;left:86.40px;top:674.88px" class="cls_003"><span class="cls_003">and the 04.1 option means “total width 4, one digit after the decimal point,</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_003"><span class="cls_003">leading zeros if necessary”.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:6416px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="7e18c13c-5ada-11e9-9d71-0cc47a792c0a_id_7e18c13c-5ada-11e9-9d71-0cc47a792c0a_files/background09.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">11.6</span></div>
+<div style="position:absolute;left:166.96px;top:88.65px" class="cls_003"><span class="cls_003">The toString method</span></div>
+<div style="position:absolute;left:505.43px;top:88.65px" class="cls_003"><span class="cls_003">179</span></div>
+<div style="position:absolute;left:129.60px;top:119.48px" class="cls_006"><span class="cls_006">11.6</span></div>
+<div style="position:absolute;left:183.40px;top:119.48px" class="cls_006"><span class="cls_006">The toString method</span></div>
+<div style="position:absolute;left:129.60px;top:156.05px" class="cls_003"><span class="cls_003">Every object type has a method called toString that returns a string repre-</span></div>
+<div style="position:absolute;left:129.60px;top:171.22px" class="cls_003"><span class="cls_003">sentation of the object. When you display an object using print or println,</span></div>
+<div style="position:absolute;left:129.60px;top:186.39px" class="cls_003"><span class="cls_003">Java invokes the object’s toString method.</span></div>
+<div style="position:absolute;left:129.60px;top:213.97px" class="cls_003"><span class="cls_003">By default it simply displays the type of the object and its address, but you</span></div>
+<div style="position:absolute;left:129.60px;top:229.14px" class="cls_003"><span class="cls_003">can override this behavior by providing your own toString method.  For</span></div>
+<div style="position:absolute;left:129.60px;top:244.31px" class="cls_003"><span class="cls_003">example, here is a toString method for Time:</span></div>
+<div style="position:absolute;left:144.54px;top:270.99px" class="cls_004"><span class="cls_004">public</span><span class="cls_003"> String toString() {</span></div>
+<div style="position:absolute;left:169.15px;top:286.16px" class="cls_004"><span class="cls_004">return</span><span class="cls_003"> String.format(</span><span class="cls_009">"%02d:%02d:%04.1f\n"</span><span class="cls_003">,</span></div>
+<div style="position:absolute;left:193.76px;top:301.33px" class="cls_004"><span class="cls_004">this</span><span class="cls_003">.hour,</span><span class="cls_004"> this</span><span class="cls_003">.minute,</span><span class="cls_004"> this</span><span class="cls_003">.second);</span></div>
+<div style="position:absolute;left:144.54px;top:316.50px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:342.76px" class="cls_003"><span class="cls_003">The definition does not have the keyword</span><span class="cls_004"> static</span><span class="cls_003">, because it is not a static</span></div>
+<div style="position:absolute;left:129.60px;top:357.93px" class="cls_003"><span class="cls_003">method. It is an instance method, so called because when you invoke it, you</span></div>
+<div style="position:absolute;left:129.60px;top:373.10px" class="cls_003"><span class="cls_003">invoke it on an instance of the class (Time in this case). Instance methods are</span></div>
+<div style="position:absolute;left:129.60px;top:388.27px" class="cls_003"><span class="cls_003">sometimes called “non-static”; you might see this term in an error message.</span></div>
+<div style="position:absolute;left:129.60px;top:415.85px" class="cls_003"><span class="cls_003">The body of the method is similar to printTime in the previous section, with</span></div>
+<div style="position:absolute;left:129.60px;top:431.02px" class="cls_003"><span class="cls_003">two changes:</span></div>
+<div style="position:absolute;left:147.16px;top:463.28px" class="cls_005"><span class="cls_005"></span><span class="cls_003"> Inside the method, we use</span><span class="cls_004"> this</span><span class="cls_003"> to refer to the current instance; that is,</span></div>
+<div style="position:absolute;left:158.87px;top:478.45px" class="cls_003"><span class="cls_003">the object the method is invoked on.</span></div>
+<div style="position:absolute;left:147.16px;top:504.16px" class="cls_005"><span class="cls_005"></span><span class="cls_003"> Instead of printf, it uses String.format, which returns a formatted</span></div>
+<div style="position:absolute;left:158.87px;top:519.33px" class="cls_003"><span class="cls_003">String rather than displaying it.</span></div>
+<div style="position:absolute;left:129.60px;top:551.59px" class="cls_003"><span class="cls_003">Now you can call toString directly:</span></div>
+<div style="position:absolute;left:144.54px;top:578.27px" class="cls_003"><span class="cls_003">Time time =</span><span class="cls_004"> new</span><span class="cls_003"> Time(11, 59, 59.9);</span></div>
+<div style="position:absolute;left:144.54px;top:593.44px" class="cls_003"><span class="cls_003">String s = time.toString();</span></div>
+<div style="position:absolute;left:129.60px;top:619.71px" class="cls_003"><span class="cls_003">Or you can invoke it indirectly through println:</span></div>
+<div style="position:absolute;left:144.54px;top:647.34px" class="cls_003"><span class="cls_003">System.out.println(time);</span></div>
+<div style="position:absolute;left:129.60px;top:674.88px" class="cls_003"><span class="cls_003">In this example,</span><span class="cls_004"> this</span><span class="cls_003"> in toString refers to the same object as time.  The</span></div>
+<div style="position:absolute;left:129.60px;top:690.04px" class="cls_003"><span class="cls_003">output is 11:59:59.9.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:7218px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="7e18c13c-5ada-11e9-9d71-0cc47a792c0a_id_7e18c13c-5ada-11e9-9d71-0cc47a792c0a_files/background10.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">180</span></div>
+<div style="position:absolute;left:360.92px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 11</span></div>
+<div style="position:absolute;left:440.36px;top:88.65px" class="cls_003"><span class="cls_003">Classes</span></div>
+<div style="position:absolute;left:86.40px;top:119.48px" class="cls_006"><span class="cls_006">11.7</span></div>
+<div style="position:absolute;left:140.20px;top:119.48px" class="cls_006"><span class="cls_006">The equals method</span></div>
+<div style="position:absolute;left:86.40px;top:156.10px" class="cls_003"><span class="cls_003">We have seen two ways to check whether values are equal:  the == operator</span></div>
+<div style="position:absolute;left:86.40px;top:171.27px" class="cls_003"><span class="cls_003">and the equals method.  With objects you can use either one, but they are</span></div>
+<div style="position:absolute;left:86.40px;top:186.44px" class="cls_003"><span class="cls_003">not the same.</span></div>
+<div style="position:absolute;left:103.96px;top:218.81px" class="cls_005"><span class="cls_005"></span><span class="cls_003"> The == operator checks whether objects are identical; that is, whether</span></div>
+<div style="position:absolute;left:115.67px;top:233.97px" class="cls_003"><span class="cls_003">they are the same object.</span></div>
+<div style="position:absolute;left:103.96px;top:259.73px" class="cls_005"><span class="cls_005"></span><span class="cls_003"> The equals method checks whether they are equivalent; that is, whether</span></div>
+<div style="position:absolute;left:115.67px;top:274.90px" class="cls_003"><span class="cls_003">they have the same value.</span></div>
+<div style="position:absolute;left:86.40px;top:307.27px" class="cls_003"><span class="cls_003">The definition of identity is always the same, so the == operator always does</span></div>
+<div style="position:absolute;left:86.40px;top:322.44px" class="cls_003"><span class="cls_003">the same thing.  But the definition of equivalence is different for different</span></div>
+<div style="position:absolute;left:86.40px;top:337.61px" class="cls_003"><span class="cls_003">objects, so objects can define their own equals methods.</span></div>
+<div style="position:absolute;left:86.40px;top:365.23px" class="cls_003"><span class="cls_003">Consider the following variables:</span></div>
+<div style="position:absolute;left:101.34px;top:391.63px" class="cls_003"><span class="cls_003">Time time1 =</span><span class="cls_004"> new</span><span class="cls_003"> Time(9, 30, 0.0);</span></div>
+<div style="position:absolute;left:101.34px;top:406.80px" class="cls_003"><span class="cls_003">Time time2 = time1;</span></div>
+<div style="position:absolute;left:101.34px;top:421.97px" class="cls_003"><span class="cls_003">Time time3 =</span><span class="cls_004"> new</span><span class="cls_003"> Time(9, 30, 0.0);</span></div>
+<div style="position:absolute;left:86.40px;top:448.27px" class="cls_003"><span class="cls_003">Figure 11.2 is a state diagram that shows these variables and their values.</span></div>
+<div style="position:absolute;left:185.90px;top:476.01px" class="cls_007"><span class="cls_007">Time</span></div>
+<div style="position:absolute;left:383.90px;top:476.01px" class="cls_007"><span class="cls_007">Time</span></div>
+<div style="position:absolute;left:204.79px;top:503.01px" class="cls_007"><span class="cls_007">hour</span></div>
+<div style="position:absolute;left:242.90px;top:503.01px" class="cls_007"><span class="cls_007">9</span></div>
+<div style="position:absolute;left:402.79px;top:503.01px" class="cls_007"><span class="cls_007">hour</span></div>
+<div style="position:absolute;left:440.90px;top:503.01px" class="cls_007"><span class="cls_007">9</span></div>
+<div style="position:absolute;left:104.60px;top:514.71px" class="cls_007"><span class="cls_007">time1</span></div>
+<div style="position:absolute;left:302.60px;top:514.71px" class="cls_007"><span class="cls_007">time3</span></div>
+<div style="position:absolute;left:193.99px;top:534.51px" class="cls_007"><span class="cls_007">minute</span></div>
+<div style="position:absolute;left:236.89px;top:534.51px" class="cls_007"><span class="cls_007">30</span></div>
+<div style="position:absolute;left:391.99px;top:534.51px" class="cls_007"><span class="cls_007">minute</span></div>
+<div style="position:absolute;left:434.89px;top:534.51px" class="cls_007"><span class="cls_007">30</span></div>
+<div style="position:absolute;left:104.60px;top:546.21px" class="cls_007"><span class="cls_007">time2</span></div>
+<div style="position:absolute;left:191.58px;top:566.01px" class="cls_007"><span class="cls_007">second</span></div>
+<div style="position:absolute;left:233.89px;top:566.01px" class="cls_007"><span class="cls_007">0.0</span></div>
+<div style="position:absolute;left:389.58px;top:566.01px" class="cls_007"><span class="cls_007">second</span></div>
+<div style="position:absolute;left:431.89px;top:566.01px" class="cls_007"><span class="cls_007">0.0</span></div>
+<div style="position:absolute;left:153.46px;top:603.46px" class="cls_003"><span class="cls_003">Figure 11.2: State diagram of three Time variables.</span></div>
+<div style="position:absolute;left:86.40px;top:632.08px" class="cls_003"><span class="cls_003">The assignment operator copies references, so time1 and time2 refer to the</span></div>
+<div style="position:absolute;left:86.40px;top:647.25px" class="cls_003"><span class="cls_003">same object. Because they are identical, time1 == time2 is</span><span class="cls_004"> true</span><span class="cls_003">.</span></div>
+<div style="position:absolute;left:86.40px;top:674.88px" class="cls_003"><span class="cls_003">But time1 and time3 refer to different objects. Because they are not identical,</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_003"><span class="cls_003">time1 == time3 is</span><span class="cls_004"> false</span><span class="cls_003">.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:8020px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="7e18c13c-5ada-11e9-9d71-0cc47a792c0a_id_7e18c13c-5ada-11e9-9d71-0cc47a792c0a_files/background11.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">11.8</span></div>
+<div style="position:absolute;left:166.96px;top:88.65px" class="cls_003"><span class="cls_003">Adding times</span></div>
+<div style="position:absolute;left:505.42px;top:88.65px" class="cls_003"><span class="cls_003">181</span></div>
+<div style="position:absolute;left:129.60px;top:124.74px" class="cls_003"><span class="cls_003">By default, the equals method does the same thing as ==. For Time objects,</span></div>
+<div style="position:absolute;left:129.60px;top:139.91px" class="cls_003"><span class="cls_003">that’s probably not what we want. For example, time1 and time3 represent</span></div>
+<div style="position:absolute;left:129.60px;top:155.08px" class="cls_003"><span class="cls_003">the same time of day, so we should consider them equivalent.</span></div>
+<div style="position:absolute;left:129.60px;top:183.98px" class="cls_003"><span class="cls_003">We can provide an equals method that implements this notion of equivalence:</span></div>
+<div style="position:absolute;left:144.54px;top:211.97px" class="cls_004"><span class="cls_004">public boolean</span><span class="cls_003"> equals(Time that) {</span></div>
+<div style="position:absolute;left:169.15px;top:227.14px" class="cls_004"><span class="cls_004">return this</span><span class="cls_003">.hour == that.hour</span></div>
+<div style="position:absolute;left:193.76px;top:242.31px" class="cls_003"><span class="cls_003">&&</span><span class="cls_004"> this</span><span class="cls_003">.minute == that.minute</span></div>
+<div style="position:absolute;left:193.76px;top:257.48px" class="cls_003"><span class="cls_003">&&</span><span class="cls_004"> this</span><span class="cls_003">.second == that.second;</span></div>
+<div style="position:absolute;left:144.54px;top:272.65px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:300.22px" class="cls_003"><span class="cls_003">equals is an instance method, so it uses</span><span class="cls_004"> this</span><span class="cls_003"> to refer to the current object</span></div>
+<div style="position:absolute;left:129.60px;top:315.39px" class="cls_003"><span class="cls_003">and it doesn’t have the keyword</span><span class="cls_004"> static</span><span class="cls_003">. We can invoke equals as follows:</span></div>
+<div style="position:absolute;left:144.54px;top:344.33px" class="cls_003"><span class="cls_003">time1.equals(time3);</span></div>
+<div style="position:absolute;left:129.60px;top:373.18px" class="cls_003"><span class="cls_003">Inside the equals method,</span><span class="cls_004"> this</span><span class="cls_003"> refers to the same object as time1, and that</span></div>
+<div style="position:absolute;left:129.60px;top:388.35px" class="cls_003"><span class="cls_003">refers to the same object as time3.  Since their instance variables are equal,</span></div>
+<div style="position:absolute;left:129.60px;top:403.52px" class="cls_003"><span class="cls_003">the result is</span><span class="cls_004"> true</span><span class="cls_003">.</span></div>
+<div style="position:absolute;left:129.60px;top:432.42px" class="cls_003"><span class="cls_003">Many objects use a similar notion of equivalence; that is, two objects are equiv-</span></div>
+<div style="position:absolute;left:129.60px;top:447.58px" class="cls_003"><span class="cls_003">alent if their instance variables are equal. But other definitions are possible.</span></div>
+<div style="position:absolute;left:129.60px;top:499.37px" class="cls_006"><span class="cls_006">11.8</span></div>
+<div style="position:absolute;left:183.40px;top:499.37px" class="cls_006"><span class="cls_006">Adding times</span></div>
+<div style="position:absolute;left:129.60px;top:537.59px" class="cls_003"><span class="cls_003">Suppose you are going to a movie that starts at 18:50 (or 6:50 PM), and the</span></div>
+<div style="position:absolute;left:129.60px;top:552.76px" class="cls_003"><span class="cls_003">running time is 2 hours 16 minutes. What time does the movie end?</span></div>
+<div style="position:absolute;left:129.60px;top:581.65px" class="cls_003"><span class="cls_003">We’ll use Time objects to figure it out.  Here are two ways we could “add”</span></div>
+<div style="position:absolute;left:129.60px;top:596.82px" class="cls_003"><span class="cls_003">Time objects:</span></div>
+<div style="position:absolute;left:147.16px;top:632.36px" class="cls_005"><span class="cls_005"></span><span class="cls_003"> We could write a static method that takes the two Time objects as pa-</span></div>
+<div style="position:absolute;left:158.87px;top:647.53px" class="cls_003"><span class="cls_003">rameters.</span></div>
+<div style="position:absolute;left:147.16px;top:674.88px" class="cls_005"><span class="cls_005"></span><span class="cls_003"> We could write an instance method that gets invoked on one object and</span></div>
+<div style="position:absolute;left:158.87px;top:690.04px" class="cls_003"><span class="cls_003">takes the other as a parameter.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:8822px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="7e18c13c-5ada-11e9-9d71-0cc47a792c0a_id_7e18c13c-5ada-11e9-9d71-0cc47a792c0a_files/background12.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">182</span></div>
+<div style="position:absolute;left:360.92px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 11</span></div>
+<div style="position:absolute;left:440.36px;top:88.65px" class="cls_003"><span class="cls_003">Classes</span></div>
+<div style="position:absolute;left:86.40px;top:124.74px" class="cls_003"><span class="cls_003">To demonstrate the difference, we’ll do both. Here is a rough draft that uses</span></div>
+<div style="position:absolute;left:86.40px;top:139.91px" class="cls_003"><span class="cls_003">the static approach:</span></div>
+<div style="position:absolute;left:101.34px;top:166.01px" class="cls_004"><span class="cls_004">public static</span><span class="cls_003"> Time add(Time t1, Time t2) {</span></div>
+<div style="position:absolute;left:125.95px;top:181.17px" class="cls_003"><span class="cls_003">Time sum =</span><span class="cls_004"> new</span><span class="cls_003"> Time();</span></div>
+<div style="position:absolute;left:125.95px;top:196.34px" class="cls_003"><span class="cls_003">sum.hour = t1.hour + t2.hour;</span></div>
+<div style="position:absolute;left:125.95px;top:211.51px" class="cls_003"><span class="cls_003">sum.minute = t1.minute + t2.minute;</span></div>
+<div style="position:absolute;left:125.95px;top:226.68px" class="cls_003"><span class="cls_003">sum.second = t1.second + t2.second;</span></div>
+<div style="position:absolute;left:125.95px;top:241.85px" class="cls_004"><span class="cls_004">return</span><span class="cls_003"> sum;</span></div>
+<div style="position:absolute;left:101.34px;top:257.02px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:283.02px" class="cls_003"><span class="cls_003">And here’s how we would invoke the static method:</span></div>
+<div style="position:absolute;left:101.34px;top:306.79px" class="cls_003"><span class="cls_003">Time startTime =</span><span class="cls_004"> new</span><span class="cls_003"> Time(18, 50, 0.0);</span></div>
+<div style="position:absolute;left:101.34px;top:321.96px" class="cls_003"><span class="cls_003">Time runningTime =</span><span class="cls_004"> new</span><span class="cls_003"> Time(2, 16, 0.0);</span></div>
+<div style="position:absolute;left:101.34px;top:337.13px" class="cls_003"><span class="cls_003">Time endTime = Time.add(startTime, runningTime);</span></div>
+<div style="position:absolute;left:86.40px;top:363.13px" class="cls_003"><span class="cls_003">On the other hand, here’s what it looks like as an instance method:</span></div>
+<div style="position:absolute;left:101.34px;top:389.23px" class="cls_004"><span class="cls_004">public</span><span class="cls_003"> Time add(Time t2) {</span></div>
+<div style="position:absolute;left:125.95px;top:404.39px" class="cls_003"><span class="cls_003">Time sum =</span><span class="cls_004"> new</span><span class="cls_003"> Time();</span></div>
+<div style="position:absolute;left:125.95px;top:419.56px" class="cls_003"><span class="cls_003">sum.hour =</span><span class="cls_004"> this</span><span class="cls_003">.hour + t2.hour;</span></div>
+<div style="position:absolute;left:125.95px;top:434.73px" class="cls_003"><span class="cls_003">sum.minute =</span><span class="cls_004"> this</span><span class="cls_003">.minute + t2.minute;</span></div>
+<div style="position:absolute;left:125.95px;top:449.90px" class="cls_003"><span class="cls_003">sum.second =</span><span class="cls_004"> this</span><span class="cls_003">.second + t2.second;</span></div>
+<div style="position:absolute;left:125.95px;top:465.07px" class="cls_004"><span class="cls_004">return</span><span class="cls_003"> sum;</span></div>
+<div style="position:absolute;left:101.34px;top:480.24px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:506.24px" class="cls_003"><span class="cls_003">The changes are:</span></div>
+<div style="position:absolute;left:103.96px;top:537.85px" class="cls_005"><span class="cls_005"></span><span class="cls_003"> We removed the keyword</span><span class="cls_004"> static</span><span class="cls_003">.</span></div>
+<div style="position:absolute;left:103.96px;top:563.23px" class="cls_005"><span class="cls_005"></span><span class="cls_003"> We removed the first parameter.</span></div>
+<div style="position:absolute;left:103.96px;top:588.62px" class="cls_005"><span class="cls_005"></span><span class="cls_003"> We replaced t1 with</span><span class="cls_004"> this</span><span class="cls_003">.</span></div>
+<div style="position:absolute;left:86.40px;top:620.23px" class="cls_003"><span class="cls_003">Optionally, you could replace t2 with that. Unlike</span><span class="cls_004"> this</span><span class="cls_003">, that is not a key-</span></div>
+<div style="position:absolute;left:86.40px;top:635.40px" class="cls_003"><span class="cls_003">word; it’s just a slightly clever variable name.</span></div>
+<div style="position:absolute;left:86.40px;top:662.72px" class="cls_003"><span class="cls_003">And here’s how we would invoke the instance method:</span></div>
+<div style="position:absolute;left:101.34px;top:690.09px" class="cls_003"><span class="cls_003">Time endTime = startTime.add(runningTime);</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:9624px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="7e18c13c-5ada-11e9-9d71-0cc47a792c0a_id_7e18c13c-5ada-11e9-9d71-0cc47a792c0a_files/background13.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">11.9</span></div>
+<div style="position:absolute;left:166.96px;top:88.65px" class="cls_003"><span class="cls_003">Pure methods and modifiers</span></div>
+<div style="position:absolute;left:505.42px;top:88.65px" class="cls_003"><span class="cls_003">183</span></div>
+<div style="position:absolute;left:129.60px;top:124.74px" class="cls_003"><span class="cls_003">That’s all there is to it.  Static methods and instance methods do the same</span></div>
+<div style="position:absolute;left:129.60px;top:139.91px" class="cls_003"><span class="cls_003">thing, and you can convert from one to the other with just a few changes.</span></div>
+<div style="position:absolute;left:129.60px;top:172.90px" class="cls_003"><span class="cls_003">There’s only one problem:  the addition code itself is not correct.  For this</span></div>
+<div style="position:absolute;left:129.60px;top:188.07px" class="cls_003"><span class="cls_003">example, it returns 20:66, which is not a valid time. If second exceeds 59, we</span></div>
+<div style="position:absolute;left:129.60px;top:203.23px" class="cls_003"><span class="cls_003">have to “carry” into the minutes column, and if minute exceeds</span></div>
+<div style="position:absolute;left:465.55px;top:203.23px" class="cls_003"><span class="cls_003">59, we have</span></div>
+<div style="position:absolute;left:129.60px;top:218.40px" class="cls_003"><span class="cls_003">to carry into hour.</span></div>
+<div style="position:absolute;left:129.60px;top:251.39px" class="cls_003"><span class="cls_003">Here is a better version of add:</span></div>
+<div style="position:absolute;left:144.54px;top:280.82px" class="cls_004"><span class="cls_004">public</span><span class="cls_003"> Time add(Time t2) {</span></div>
+<div style="position:absolute;left:169.15px;top:295.99px" class="cls_003"><span class="cls_003">Time sum =</span><span class="cls_004"> new</span><span class="cls_003"> Time();</span></div>
+<div style="position:absolute;left:169.15px;top:311.16px" class="cls_003"><span class="cls_003">sum.hour =</span><span class="cls_004"> this</span><span class="cls_003">.hour + t2.hour;</span></div>
+<div style="position:absolute;left:169.15px;top:326.33px" class="cls_003"><span class="cls_003">sum.minute =</span><span class="cls_004"> this</span><span class="cls_003">.minute + t2.minute;</span></div>
+<div style="position:absolute;left:169.15px;top:341.50px" class="cls_003"><span class="cls_003">sum.second =</span><span class="cls_004"> this</span><span class="cls_003">.second + t2.second;</span></div>
+<div style="position:absolute;left:169.15px;top:371.83px" class="cls_004"><span class="cls_004">if</span><span class="cls_003"> (sum.second >= 60.0) {</span></div>
+<div style="position:absolute;left:193.76px;top:387.00px" class="cls_003"><span class="cls_003">sum.second -= 60.0;</span></div>
+<div style="position:absolute;left:193.76px;top:402.17px" class="cls_003"><span class="cls_003">sum.minute += 1;</span></div>
+<div style="position:absolute;left:169.15px;top:417.34px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:169.15px;top:432.50px" class="cls_004"><span class="cls_004">if</span><span class="cls_003"> (sum.minute >= 60) {</span></div>
+<div style="position:absolute;left:193.76px;top:447.67px" class="cls_003"><span class="cls_003">sum.minute -= 60;</span></div>
+<div style="position:absolute;left:193.76px;top:462.84px" class="cls_003"><span class="cls_003">sum.hour += 1;</span></div>
+<div style="position:absolute;left:169.15px;top:478.01px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:169.15px;top:493.18px" class="cls_004"><span class="cls_004">return</span><span class="cls_003"> sum;</span></div>
+<div style="position:absolute;left:144.54px;top:508.34px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:540.01px" class="cls_003"><span class="cls_003">It’s still possible that hour may exceed 23, but there’s no days attribute to</span></div>
+<div style="position:absolute;left:129.60px;top:555.18px" class="cls_003"><span class="cls_003">carry into. In that case, sum.hour -= 24 would yield the correct result.</span></div>
+<div style="position:absolute;left:129.60px;top:616.34px" class="cls_006"><span class="cls_006">11.9</span></div>
+<div style="position:absolute;left:183.40px;top:616.34px" class="cls_006"><span class="cls_006">Pure methods and modifiers</span></div>
+<div style="position:absolute;left:129.60px;top:659.71px" class="cls_003"><span class="cls_003">This implementation of add does not modify either of the parameters. Instead,</span></div>
+<div style="position:absolute;left:129.60px;top:674.88px" class="cls_003"><span class="cls_003">it creates and returns a new Time object.  As an alternative, we could have</span></div>
+<div style="position:absolute;left:129.60px;top:690.04px" class="cls_003"><span class="cls_003">written a method like this:</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:10426px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="7e18c13c-5ada-11e9-9d71-0cc47a792c0a_id_7e18c13c-5ada-11e9-9d71-0cc47a792c0a_files/background14.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">184</span></div>
+<div style="position:absolute;left:360.92px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 11</span></div>
+<div style="position:absolute;left:440.36px;top:88.65px" class="cls_003"><span class="cls_003">Classes</span></div>
+<div style="position:absolute;left:101.34px;top:123.41px" class="cls_004"><span class="cls_004">public void</span><span class="cls_003"> increment(</span><span class="cls_004">double</span><span class="cls_003"> seconds) {</span></div>
+<div style="position:absolute;left:125.95px;top:138.57px" class="cls_004"><span class="cls_004">this</span><span class="cls_003">.second += seconds;</span></div>
+<div style="position:absolute;left:125.95px;top:153.74px" class="cls_004"><span class="cls_004">while</span><span class="cls_003"> (</span><span class="cls_004">this</span><span class="cls_003">.second >= 60.0) {</span></div>
+<div style="position:absolute;left:150.56px;top:168.91px" class="cls_004"><span class="cls_004">this</span><span class="cls_003">.second -= 60.0;</span></div>
+<div style="position:absolute;left:150.56px;top:184.08px" class="cls_004"><span class="cls_004">this</span><span class="cls_003">.minute += 1;</span></div>
+<div style="position:absolute;left:125.95px;top:199.25px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:125.95px;top:214.41px" class="cls_004"><span class="cls_004">while</span><span class="cls_003"> (</span><span class="cls_004">this</span><span class="cls_003">.minute >= 60) {</span></div>
+<div style="position:absolute;left:150.56px;top:229.58px" class="cls_004"><span class="cls_004">this</span><span class="cls_003">.minute -= 60;</span></div>
+<div style="position:absolute;left:150.56px;top:244.75px" class="cls_004"><span class="cls_004">this</span><span class="cls_003">.hour += 1;</span></div>
+<div style="position:absolute;left:125.95px;top:259.92px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:101.34px;top:275.09px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:300.43px" class="cls_003"><span class="cls_003">The increment method modifies an existing Time object. It doesn’t create a</span></div>
+<div style="position:absolute;left:86.40px;top:315.60px" class="cls_003"><span class="cls_003">new one, and it doesn’t return anything.</span></div>
+<div style="position:absolute;left:86.40px;top:342.26px" class="cls_003"><span class="cls_003">In contrast, methods like add are called pure because:</span></div>
+<div style="position:absolute;left:103.96px;top:371.97px" class="cls_005"><span class="cls_005"></span><span class="cls_003"> They don’t modify the parameters.</span></div>
+<div style="position:absolute;left:103.96px;top:396.87px" class="cls_005"><span class="cls_005"></span><span class="cls_003"> They don’t have any other “side effects”, like printing.</span></div>
+<div style="position:absolute;left:103.96px;top:421.77px" class="cls_005"><span class="cls_005"></span><span class="cls_003"> The return value only depends on the parameters, not on any other state.</span></div>
+<div style="position:absolute;left:86.40px;top:451.49px" class="cls_003"><span class="cls_003">Methods like increment, which breaks the first rule, are sometimes called</span></div>
+<div style="position:absolute;left:86.40px;top:466.66px" class="cls_003"><span class="cls_003">modifiers.  They are usually void methods, but sometimes they return a</span></div>
+<div style="position:absolute;left:86.40px;top:481.82px" class="cls_003"><span class="cls_003">reference to the object they modify.</span></div>
+<div style="position:absolute;left:86.40px;top:508.48px" class="cls_003"><span class="cls_003">Modifiers can be more efficient because they don’t create new objects.  But</span></div>
+<div style="position:absolute;left:86.40px;top:523.65px" class="cls_003"><span class="cls_003">they can also be error-prone. When objects are aliased, the effects of modifiers</span></div>
+<div style="position:absolute;left:86.40px;top:538.82px" class="cls_003"><span class="cls_003">can be confusing.</span></div>
+<div style="position:absolute;left:86.40px;top:565.48px" class="cls_003"><span class="cls_003">To make a class immutable, like String, you can provide getters but no setters</span></div>
+<div style="position:absolute;left:86.40px;top:580.65px" class="cls_003"><span class="cls_003">and pure methods but no modifiers. Immutable objects can be more difficult</span></div>
+<div style="position:absolute;left:86.40px;top:595.82px" class="cls_003"><span class="cls_003">to work with, at first, but they can save you from long hours of debugging.</span></div>
+<div style="position:absolute;left:86.40px;top:642.96px" class="cls_006"><span class="cls_006">11.10</span></div>
+<div style="position:absolute;left:149.88px;top:642.96px" class="cls_006"><span class="cls_006">Vocabulary</span></div>
+<div style="position:absolute;left:86.40px;top:674.88px" class="cls_003"><span class="cls_003">class: Previously, we defined a class as a collection of related methods. Now</span></div>
+<div style="position:absolute;left:115.67px;top:690.04px" class="cls_003"><span class="cls_003">you know that a class is also a template for a new type of object.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:11228px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="7e18c13c-5ada-11e9-9d71-0cc47a792c0a_id_7e18c13c-5ada-11e9-9d71-0cc47a792c0a_files/background15.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">11.10</span></div>
+<div style="position:absolute;left:173.68px;top:88.65px" class="cls_003"><span class="cls_003">Vocabulary</span></div>
+<div style="position:absolute;left:505.42px;top:88.65px" class="cls_003"><span class="cls_003">185</span></div>
+<div style="position:absolute;left:129.60px;top:124.74px" class="cls_003"><span class="cls_003">instance: A member of a class. Every object is an instance of some class.</span></div>
+<div style="position:absolute;left:129.60px;top:152.16px" class="cls_003"><span class="cls_003">instantiate: Create a new instance of a class in the computer’s memory.</span></div>
+<div style="position:absolute;left:129.60px;top:179.58px" class="cls_003"><span class="cls_003">data encapsulation: A technique for bundling multiple named variables into</span></div>
+<div style="position:absolute;left:158.87px;top:194.75px" class="cls_003"><span class="cls_003">a single object.</span></div>
+<div style="position:absolute;left:129.60px;top:222.17px" class="cls_003"><span class="cls_003">instance variable: An attribute of an object; a non-static variable defined</span></div>
+<div style="position:absolute;left:158.87px;top:237.34px" class="cls_003"><span class="cls_003">at the class level.</span></div>
+<div style="position:absolute;left:129.60px;top:264.76px" class="cls_003"><span class="cls_003">information hiding: The practice of making instance variables</span><span class="cls_004"> private</span><span class="cls_003"> to</span></div>
+<div style="position:absolute;left:158.87px;top:279.93px" class="cls_003"><span class="cls_003">limit dependencies between classes.</span></div>
+<div style="position:absolute;left:129.60px;top:307.35px" class="cls_003"><span class="cls_003">constructor: A special method that initializes the instance variables of a</span></div>
+<div style="position:absolute;left:158.87px;top:322.51px" class="cls_003"><span class="cls_003">newly-constructed object.</span></div>
+<div style="position:absolute;left:129.60px;top:349.93px" class="cls_003"><span class="cls_003">shadowing: Defining a local variable or parameter with the same name and</span></div>
+<div style="position:absolute;left:158.87px;top:365.10px" class="cls_003"><span class="cls_003">type as an instance variable.</span></div>
+<div style="position:absolute;left:129.60px;top:392.52px" class="cls_003"><span class="cls_003">client: A class that uses objects defined in another class.</span></div>
+<div style="position:absolute;left:129.60px;top:419.94px" class="cls_003"><span class="cls_003">getter: A method that returns the value of an instance variable.</span></div>
+<div style="position:absolute;left:129.60px;top:447.36px" class="cls_003"><span class="cls_003">setter: A method that assigns a value to an instance variable.</span></div>
+<div style="position:absolute;left:129.60px;top:474.78px" class="cls_003"><span class="cls_003">override: Replacing a default implementation of a method, such as toString.</span></div>
+<div style="position:absolute;left:129.60px;top:502.20px" class="cls_003"><span class="cls_003">instance method: A non-static method that has access to</span><span class="cls_004"> this</span><span class="cls_003"> and the</span></div>
+<div style="position:absolute;left:158.87px;top:517.37px" class="cls_003"><span class="cls_003">instance variables.</span></div>
+<div style="position:absolute;left:129.60px;top:544.79px" class="cls_003"><span class="cls_003">identical: Two values that are the same; in the case of objects, two variables</span></div>
+<div style="position:absolute;left:158.87px;top:559.96px" class="cls_003"><span class="cls_003">that refer to the same object.</span></div>
+<div style="position:absolute;left:129.60px;top:587.38px" class="cls_003"><span class="cls_003">equivalent: Two objects that are “equal” but not necessarily identical, as</span></div>
+<div style="position:absolute;left:158.87px;top:602.54px" class="cls_003"><span class="cls_003">defined by the equals method.</span></div>
+<div style="position:absolute;left:129.60px;top:629.96px" class="cls_003"><span class="cls_003">pure method: A static method that depends only on its parameters and no</span></div>
+<div style="position:absolute;left:158.87px;top:645.13px" class="cls_003"><span class="cls_003">other data.</span></div>
+<div style="position:absolute;left:129.60px;top:672.55px" class="cls_003"><span class="cls_003">modifier method: A method that changes the state (instance variables) of</span></div>
+<div style="position:absolute;left:158.87px;top:687.72px" class="cls_003"><span class="cls_003">an object.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:12030px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="7e18c13c-5ada-11e9-9d71-0cc47a792c0a_id_7e18c13c-5ada-11e9-9d71-0cc47a792c0a_files/background16.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">186</span></div>
+<div style="position:absolute;left:360.92px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 11</span></div>
+<div style="position:absolute;left:440.36px;top:88.65px" class="cls_003"><span class="cls_003">Classes</span></div>
+<div style="position:absolute;left:86.40px;top:119.48px" class="cls_006"><span class="cls_006">11.11</span></div>
+<div style="position:absolute;left:149.88px;top:119.48px" class="cls_006"><span class="cls_006">Exercises</span></div>
+<div style="position:absolute;left:86.40px;top:155.41px" class="cls_003"><span class="cls_003">The code for this chapter is in the ch11 directory of ThinkJavaCode.  See</span></div>
+<div style="position:absolute;left:86.40px;top:170.58px" class="cls_003"><span class="cls_003">page xv for instructions on how to download the repository. Before you start</span></div>
+<div style="position:absolute;left:86.40px;top:185.75px" class="cls_003"><span class="cls_003">the exercises, we recommend that you compile and run the examples.</span></div>
+<div style="position:absolute;left:86.40px;top:212.81px" class="cls_003"><span class="cls_003">At this point you know enough to read Appendix B, which is about simple</span></div>
+<div style="position:absolute;left:86.40px;top:227.98px" class="cls_003"><span class="cls_003">2D graphics and animations. During the next few chapters, you should take a</span></div>
+<div style="position:absolute;left:86.40px;top:243.15px" class="cls_003"><span class="cls_003">detour to read this appendix and work through the exercises.</span></div>
+<div style="position:absolute;left:86.40px;top:270.27px" class="cls_003"><span class="cls_003">Exercise 11.1</span></div>
+<div style="position:absolute;left:175.50px;top:270.27px" class="cls_003"><span class="cls_003">Review the documentation of java.awt.Rectangle. Which</span></div>
+<div style="position:absolute;left:86.40px;top:285.44px" class="cls_003"><span class="cls_003">methods are pure? Which are modifiers?</span></div>
+<div style="position:absolute;left:86.40px;top:312.51px" class="cls_003"><span class="cls_003">If you review the documentation of java.lang.String, you should see that</span></div>
+<div style="position:absolute;left:86.40px;top:327.67px" class="cls_003"><span class="cls_003">there are no modifiers, because strings are immutable.</span></div>
+<div style="position:absolute;left:86.40px;top:354.80px" class="cls_003"><span class="cls_003">Exercise 11.2</span></div>
+<div style="position:absolute;left:174.77px;top:354.80px" class="cls_003"><span class="cls_003">The implementation of increment in this chapter is not very</span></div>
+<div style="position:absolute;left:86.40px;top:369.97px" class="cls_003"><span class="cls_003">efficient. Can you rewrite it so it doesn’t use any loops? Hint: Remember the</span></div>
+<div style="position:absolute;left:86.40px;top:385.13px" class="cls_003"><span class="cls_003">modulus operator.</span></div>
+<div style="position:absolute;left:86.40px;top:412.26px" class="cls_003"><span class="cls_003">Exercise 11.3</span></div>
+<div style="position:absolute;left:174.51px;top:412.26px" class="cls_003"><span class="cls_003">In the board game Scrabble, each tile contains a letter, which</span></div>
+<div style="position:absolute;left:86.40px;top:427.43px" class="cls_003"><span class="cls_003">is used to spell words in rows and columns, and a score, which is used to</span></div>
+<div style="position:absolute;left:86.40px;top:442.59px" class="cls_003"><span class="cls_003">determine the value of words.</span></div>
+<div style="position:absolute;left:100.71px;top:473.53px" class="cls_003"><span class="cls_003">1. Write a definition for a class named Tile that represents Scrabble tiles.</span></div>
+<div style="position:absolute;left:115.67px;top:488.70px" class="cls_003"><span class="cls_003">The instance variables should include a character named letter and an</span></div>
+<div style="position:absolute;left:115.67px;top:503.86px" class="cls_003"><span class="cls_003">integer named value.</span></div>
+<div style="position:absolute;left:100.71px;top:528.97px" class="cls_003"><span class="cls_003">2. Write a constructor that takes parameters named letter and value and</span></div>
+<div style="position:absolute;left:115.67px;top:544.13px" class="cls_003"><span class="cls_003">initializes the instance variables.</span></div>
+<div style="position:absolute;left:100.71px;top:569.24px" class="cls_003"><span class="cls_003">3. Write a method named printTile that takes a Tile object as a param-</span></div>
+<div style="position:absolute;left:115.67px;top:584.40px" class="cls_003"><span class="cls_003">eter and displays the instance variables in a reader-friendly format.</span></div>
+<div style="position:absolute;left:100.71px;top:609.50px" class="cls_003"><span class="cls_003">4. Write a method named testTile that creates a Tile object with the</span></div>
+<div style="position:absolute;left:115.67px;top:624.67px" class="cls_003"><span class="cls_003">letter Z and the value 10, and then uses printTile to display the state</span></div>
+<div style="position:absolute;left:115.67px;top:639.84px" class="cls_003"><span class="cls_003">of the object.</span></div>
+<div style="position:absolute;left:100.71px;top:664.94px" class="cls_003"><span class="cls_003">5. Implement the toString and equals methods for a Tile.</span></div>
+<div style="position:absolute;left:100.71px;top:690.04px" class="cls_003"><span class="cls_003">6. Create getters and setters for each of the attributes.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:12832px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="7e18c13c-5ada-11e9-9d71-0cc47a792c0a_id_7e18c13c-5ada-11e9-9d71-0cc47a792c0a_files/background17.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">11.11</span></div>
+<div style="position:absolute;left:173.68px;top:88.65px" class="cls_003"><span class="cls_003">Exercises</span></div>
+<div style="position:absolute;left:505.43px;top:88.65px" class="cls_003"><span class="cls_003">187</span></div>
+<div style="position:absolute;left:129.60px;top:124.74px" class="cls_003"><span class="cls_003">The point of this exercise is to practice the mechanical part of creating a new</span></div>
+<div style="position:absolute;left:129.60px;top:139.91px" class="cls_003"><span class="cls_003">class definition and code that tests it.</span></div>
+<div style="position:absolute;left:129.60px;top:167.03px" class="cls_003"><span class="cls_003">Exercise 11.4</span></div>
+<div style="position:absolute;left:217.63px;top:167.03px" class="cls_003"><span class="cls_003">Write a class definition for Date, an object type that contains</span></div>
+<div style="position:absolute;left:129.60px;top:182.20px" class="cls_003"><span class="cls_003">three integers: year, month, and day. This class should provide two construc-</span></div>
+<div style="position:absolute;left:129.60px;top:197.37px" class="cls_003"><span class="cls_003">tors.  The first should take no parameters and initialize a default date.  The</span></div>
+<div style="position:absolute;left:129.60px;top:212.54px" class="cls_003"><span class="cls_003">second should take parameters named year, month and day, and use them to</span></div>
+<div style="position:absolute;left:129.60px;top:227.71px" class="cls_003"><span class="cls_003">initialize the instance variables.</span></div>
+<div style="position:absolute;left:129.60px;top:252.17px" class="cls_003"><span class="cls_003">Write a main method that creates a new Date object named birthday. The</span></div>
+<div style="position:absolute;left:129.60px;top:267.34px" class="cls_003"><span class="cls_003">new object should contain your birth date. You can use either constructor.</span></div>
+<div style="position:absolute;left:129.60px;top:294.47px" class="cls_003"><span class="cls_003">Exercise 11.5</span></div>
+<div style="position:absolute;left:219.54px;top:294.47px" class="cls_003"><span class="cls_003">A rational number is a number that can be represented as</span></div>
+<div style="position:absolute;left:129.60px;top:309.63px" class="cls_003"><span class="cls_003">the ratio of two integers. For example, 2/3 is a rational number, and you can</span></div>
+<div style="position:absolute;left:129.60px;top:324.80px" class="cls_003"><span class="cls_003">think of 7 as a rational number with an implicit 1 in the denominator.</span></div>
+<div style="position:absolute;left:143.91px;top:347.94px" class="cls_003"><span class="cls_003">1.</span></div>
+<div style="position:absolute;left:158.87px;top:347.94px" class="cls_003"><span class="cls_003">Define a class called Rational.  A Rational object should have two</span></div>
+<div style="position:absolute;left:158.87px;top:363.11px" class="cls_003"><span class="cls_003">integer instance variables that store the numerator and denominator.</span></div>
+<div style="position:absolute;left:143.91px;top:386.91px" class="cls_003"><span class="cls_003">2.</span></div>
+<div style="position:absolute;left:158.87px;top:386.91px" class="cls_003"><span class="cls_003">Write a constructor that takes no arguments and that sets the numerator</span></div>
+<div style="position:absolute;left:158.87px;top:402.08px" class="cls_003"><span class="cls_003">to 0 and denominator to 1.</span></div>
+<div style="position:absolute;left:143.91px;top:425.88px" class="cls_003"><span class="cls_003">3.</span></div>
+<div style="position:absolute;left:158.87px;top:425.88px" class="cls_003"><span class="cls_003">Write an instance method called printRational that displays a Rational</span></div>
+<div style="position:absolute;left:158.87px;top:441.05px" class="cls_003"><span class="cls_003">in some reasonable format.</span></div>
+<div style="position:absolute;left:143.91px;top:464.85px" class="cls_003"><span class="cls_003">4.</span></div>
+<div style="position:absolute;left:158.87px;top:464.85px" class="cls_003"><span class="cls_003">Write a main method that creates a new object with type Rational, sets</span></div>
+<div style="position:absolute;left:158.87px;top:480.02px" class="cls_003"><span class="cls_003">its instance variables to some values, and displays the object.</span></div>
+<div style="position:absolute;left:143.91px;top:503.82px" class="cls_003"><span class="cls_003">5.</span></div>
+<div style="position:absolute;left:158.87px;top:503.82px" class="cls_003"><span class="cls_003">At this stage, you have a minimal testable program.  Test it and, if</span></div>
+<div style="position:absolute;left:158.87px;top:518.99px" class="cls_003"><span class="cls_003">necessary, debug it.</span></div>
+<div style="position:absolute;left:143.91px;top:542.80px" class="cls_003"><span class="cls_003">6.</span></div>
+<div style="position:absolute;left:158.87px;top:542.80px" class="cls_003"><span class="cls_003">Write a toString method for Rational and test it using println.</span></div>
+<div style="position:absolute;left:143.91px;top:566.60px" class="cls_003"><span class="cls_003">7.</span></div>
+<div style="position:absolute;left:158.87px;top:566.60px" class="cls_003"><span class="cls_003">Write a second constructor that takes two arguments and uses them to</span></div>
+<div style="position:absolute;left:158.87px;top:581.77px" class="cls_003"><span class="cls_003">initialize the instance variables.</span></div>
+<div style="position:absolute;left:143.91px;top:605.57px" class="cls_003"><span class="cls_003">8.</span></div>
+<div style="position:absolute;left:158.87px;top:605.57px" class="cls_003"><span class="cls_003">Write an instance method called negate that reverses the sign of a ra-</span></div>
+<div style="position:absolute;left:158.87px;top:620.74px" class="cls_003"><span class="cls_003">tional number. This method should be a modifier, so it should be void.</span></div>
+<div style="position:absolute;left:158.87px;top:635.91px" class="cls_003"><span class="cls_003">Add lines to main to test the new method.</span></div>
+<div style="position:absolute;left:143.91px;top:659.71px" class="cls_003"><span class="cls_003">9.</span></div>
+<div style="position:absolute;left:158.87px;top:659.71px" class="cls_003"><span class="cls_003">Write an instance method called invert that inverts the number by</span></div>
+<div style="position:absolute;left:158.87px;top:674.88px" class="cls_003"><span class="cls_003">swapping the numerator and denominator. It should be a modifier. Add</span></div>
+<div style="position:absolute;left:158.87px;top:690.04px" class="cls_003"><span class="cls_003">lines to main to test the new method.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:13634px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="7e18c13c-5ada-11e9-9d71-0cc47a792c0a_id_7e18c13c-5ada-11e9-9d71-0cc47a792c0a_files/background18.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">188</span></div>
+<div style="position:absolute;left:360.92px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 11</span></div>
+<div style="position:absolute;left:440.36px;top:88.65px" class="cls_003"><span class="cls_003">Classes</span></div>
+<div style="position:absolute;left:94.85px;top:124.74px" class="cls_003"><span class="cls_003">10.</span></div>
+<div style="position:absolute;left:115.67px;top:124.74px" class="cls_003"><span class="cls_003">Write an instance method called toDouble that converts the rational</span></div>
+<div style="position:absolute;left:115.67px;top:139.91px" class="cls_003"><span class="cls_003">number to a</span><span class="cls_004"> double</span><span class="cls_003"> (floating-point number) and returns the result. This</span></div>
+<div style="position:absolute;left:115.67px;top:155.08px" class="cls_003"><span class="cls_003">method is a pure method; it does not modify the object. As always, test</span></div>
+<div style="position:absolute;left:115.67px;top:170.25px" class="cls_003"><span class="cls_003">the new method.</span></div>
+<div style="position:absolute;left:94.85px;top:195.38px" class="cls_003"><span class="cls_003">11.</span></div>
+<div style="position:absolute;left:115.67px;top:195.38px" class="cls_003"><span class="cls_003">Write an instance method named reduce that reduces a rational number</span></div>
+<div style="position:absolute;left:115.67px;top:210.55px" class="cls_003"><span class="cls_003">to its lowest terms by finding the greatest common divisor (GCD) of the</span></div>
+<div style="position:absolute;left:115.67px;top:225.71px" class="cls_003"><span class="cls_003">numerator and denominator and dividing through. This method should</span></div>
+<div style="position:absolute;left:115.67px;top:240.88px" class="cls_003"><span class="cls_003">be a pure method; it should not modify the instance variables of the</span></div>
+<div style="position:absolute;left:115.67px;top:256.05px" class="cls_003"><span class="cls_003">object on which it is invoked.</span></div>
+<div style="position:absolute;left:115.67px;top:276.20px" class="cls_003"><span class="cls_003">Hint: Finding the GCD only takes a few lines of code. Search the web</span></div>
+<div style="position:absolute;left:115.67px;top:291.37px" class="cls_003"><span class="cls_003">for “Euclidean algorithm”.</span></div>
+<div style="position:absolute;left:94.85px;top:316.50px" class="cls_003"><span class="cls_003">12.</span></div>
+<div style="position:absolute;left:115.67px;top:316.50px" class="cls_003"><span class="cls_003">Write an instance method called add that takes a Rational number as</span></div>
+<div style="position:absolute;left:115.67px;top:331.67px" class="cls_003"><span class="cls_003">an argument, adds it to</span><span class="cls_004"> this</span><span class="cls_003">, and returns a new Rational object.</span></div>
+<div style="position:absolute;left:115.67px;top:351.82px" class="cls_003"><span class="cls_003">There are several ways to add fractions. You can use any one you want,</span></div>
+<div style="position:absolute;left:115.67px;top:366.99px" class="cls_003"><span class="cls_003">but you should make sure that the result of the operation is reduced</span></div>
+<div style="position:absolute;left:115.67px;top:382.15px" class="cls_003"><span class="cls_003">so that the numerator and denominator have no common divisor (other</span></div>
+<div style="position:absolute;left:115.67px;top:397.32px" class="cls_003"><span class="cls_003">than 1).</span></div>
+<div style="position:absolute;left:86.40px;top:428.43px" class="cls_003"><span class="cls_003">The purpose of this exercise is to write a class definition that includes a va-</span></div>
+<div style="position:absolute;left:86.40px;top:443.60px" class="cls_003"><span class="cls_003">riety of methods, including constructors, static methods, instance methods,</span></div>
+<div style="position:absolute;left:86.40px;top:458.77px" class="cls_003"><span class="cls_003">modifiers, and pure methods.</span></div>
+</div>
+
+</body>
+</html>

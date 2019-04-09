@@ -1,0 +1,793 @@
+<html>
+<head><meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<style type="text/css">
+<!--
+span.cls_002{font-family:Arial,serif;font-size:24.8px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_002{font-family:Arial,serif;font-size:24.8px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_003{font-family:Arial,serif;font-size:12.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_003{font-family:Arial,serif;font-size:12.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_004{font-family:Arial,serif;font-size:12.0px;color:rgb(0,0,255);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_004{font-family:Arial,serif;font-size:12.0px;color:rgb(0,0,255);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_005{font-family:Arial,serif;font-size:17.3px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_005{font-family:Arial,serif;font-size:17.3px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_006{font-family:Arial,serif;font-size:12.0px;color:rgb(178,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_006{font-family:Arial,serif;font-size:12.0px;color:rgb(178,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_007{font-family:Times,serif;font-size:8.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_007{font-family:Times,serif;font-size:8.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_008{font-family:Arial,serif;font-size:12.0px;color:rgb(0,123,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_008{font-family:Arial,serif;font-size:12.0px;color:rgb(0,123,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_009{font-family:Arial,serif;font-size:8.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_009{font-family:Arial,serif;font-size:8.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_010{font-family:Arial,serif;font-size:13.5px;color:rgb(53,56,51);font-weight:bold;font-style:normal;text-decoration: none}
+div.cls_010{font-family:Arial,serif;font-size:13.5px;color:rgb(53,56,51);font-weight:bold;font-style:normal;text-decoration: none}
+span.cls_011{font-family:"DejaVu Sans Mono Bold Oblique",serif;font-size:11.0px;color:rgb(53,56,51);font-weight:bold;font-style:oblique;text-decoration: none}
+div.cls_011{font-family:"DejaVu Sans Mono Bold Oblique",serif;font-size:11.0px;color:rgb(53,56,51);font-weight:bold;font-style:oblique;text-decoration: none}
+span.cls_012{font-family:Arial,serif;font-size:10.4px;color:rgb(53,56,51);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_012{font-family:Arial,serif;font-size:10.4px;color:rgb(53,56,51);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_013{font-family:Arial,serif;font-size:11.5px;color:rgb(78,78,78);font-weight:bold;font-style:normal;text-decoration: none}
+div.cls_013{font-family:Arial,serif;font-size:11.5px;color:rgb(78,78,78);font-weight:bold;font-style:normal;text-decoration: none}
+span.cls_014{font-family:"DejaVu Sans Mono Bold Oblique",serif;font-size:10.2px;color:rgb(53,56,51);font-weight:bold;font-style:oblique;text-decoration: none}
+div.cls_014{font-family:"DejaVu Sans Mono Bold Oblique",serif;font-size:10.2px;color:rgb(53,56,51);font-weight:bold;font-style:oblique;text-decoration: none}
+span.cls_015{font-family:Arial,serif;font-size:10.9px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_015{font-family:Arial,serif;font-size:10.9px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_016{font-family:Arial,serif;font-size:6.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_016{font-family:Arial,serif;font-size:6.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_017{font-family:Arial,serif;font-size:8.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: line-through}
+div.cls_017{font-family:Arial,serif;font-size:8.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_018{font-family:Arial,serif;font-size:6.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: line-through}
+div.cls_018{font-family:Arial,serif;font-size:6.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+-->
+</style>
+<script type="text/javascript" src="34dd2842-5ad9-11e9-9d71-0cc47a792c0a_id_34dd2842-5ad9-11e9-9d71-0cc47a792c0a_files/wz_jsgraphics.js"></script>
+</head>
+<body>
+<div style="position:absolute;left:50%;margin-left:-306px;top:0px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="34dd2842-5ad9-11e9-9d71-0cc47a792c0a_id_34dd2842-5ad9-11e9-9d71-0cc47a792c0a_files/background01.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:205.27px" class="cls_002"><span class="cls_002">Chapter 6</span></div>
+<div style="position:absolute;left:129.60px;top:268.75px" class="cls_002"><span class="cls_002">Value methods</span></div>
+<div style="position:absolute;left:129.60px;top:348.76px" class="cls_003"><span class="cls_003">Some of the methods we have used, like the Math methods, return values. But</span></div>
+<div style="position:absolute;left:129.60px;top:363.93px" class="cls_003"><span class="cls_003">all the methods we have written so far have been</span><span class="cls_004"> void</span><span class="cls_003">; that is, they don’t</span></div>
+<div style="position:absolute;left:129.60px;top:379.10px" class="cls_003"><span class="cls_003">return values. In this chapter, we’ll write methods that return values, which</span></div>
+<div style="position:absolute;left:129.60px;top:394.27px" class="cls_003"><span class="cls_003">we call value methods.</span></div>
+<div style="position:absolute;left:129.60px;top:442.48px" class="cls_005"><span class="cls_005">6.1</span></div>
+<div style="position:absolute;left:173.71px;top:442.48px" class="cls_005"><span class="cls_005">Return values</span></div>
+<div style="position:absolute;left:129.60px;top:478.73px" class="cls_003"><span class="cls_003">When you invoke a void method, the invocation is usually on a line all by</span></div>
+<div style="position:absolute;left:129.60px;top:493.90px" class="cls_003"><span class="cls_003">itself. For example, here is the countup method from Section 5.8:</span></div>
+<div style="position:absolute;left:144.54px;top:520.33px" class="cls_004"><span class="cls_004">public static void</span><span class="cls_003"> countup(</span><span class="cls_004">int</span><span class="cls_003"> n) {</span></div>
+<div style="position:absolute;left:169.15px;top:535.50px" class="cls_004"><span class="cls_004">if</span><span class="cls_003"> (n == 0) {</span></div>
+<div style="position:absolute;left:193.76px;top:550.67px" class="cls_003"><span class="cls_003">System.out.println(</span><span class="cls_006">"Blastoff!"</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:169.15px;top:565.84px" class="cls_003"><span class="cls_003">}</span><span class="cls_004"> else</span><span class="cls_003"> {</span></div>
+<div style="position:absolute;left:193.76px;top:581.00px" class="cls_003"><span class="cls_003">countup(n - 1);</span></div>
+<div style="position:absolute;left:193.76px;top:596.17px" class="cls_003"><span class="cls_003">System.out.println(n);</span></div>
+<div style="position:absolute;left:169.15px;top:611.34px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:144.54px;top:626.51px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:652.52px" class="cls_003"><span class="cls_003">And here is how it is invoked:</span></div>
+<div style="position:absolute;left:144.54px;top:676.30px" class="cls_003"><span class="cls_003">countup(3);</span></div>
+<div style="position:absolute;left:144.54px;top:691.47px" class="cls_003"><span class="cls_003">System.out.println(</span><span class="cls_006">"Have a nice day."</span><span class="cls_003">);</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:802px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="34dd2842-5ad9-11e9-9d71-0cc47a792c0a_id_34dd2842-5ad9-11e9-9d71-0cc47a792c0a_files/background02.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">86</span></div>
+<div style="position:absolute;left:322.36px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 6</span></div>
+<div style="position:absolute;left:395.07px;top:88.65px" class="cls_003"><span class="cls_003">Value methods</span></div>
+<div style="position:absolute;left:86.40px;top:124.74px" class="cls_003"><span class="cls_003">On the other hand, when you invoke a value method, you have to do something</span></div>
+<div style="position:absolute;left:86.40px;top:139.91px" class="cls_003"><span class="cls_003">with the return value. We usually assign it to a variable or use it as part of</span></div>
+<div style="position:absolute;left:86.40px;top:155.08px" class="cls_003"><span class="cls_003">an expression, like this:</span></div>
+<div style="position:absolute;left:101.34px;top:180.83px" class="cls_004"><span class="cls_004">double</span><span class="cls_003"> error = Math.abs(expected - actual);</span></div>
+<div style="position:absolute;left:101.34px;top:196.00px" class="cls_004"><span class="cls_004">double</span><span class="cls_003"> height = radius * Math.sin(angle);</span></div>
+<div style="position:absolute;left:86.40px;top:221.66px" class="cls_003"><span class="cls_003">Compared to void methods, value methods differ in two ways:</span></div>
+<div style="position:absolute;left:103.96px;top:252.33px" class="cls_007"><span class="cls_007"></span><span class="cls_003"> They declare the type of the return value (the return type);</span></div>
+<div style="position:absolute;left:103.96px;top:277.39px" class="cls_007"><span class="cls_007"></span><span class="cls_003"> They use at least one</span><span class="cls_004"> return</span><span class="cls_003"> statement to provide a return value.</span></div>
+<div style="position:absolute;left:86.40px;top:308.07px" class="cls_003"><span class="cls_003">Here’s an example: calculateArea takes a</span><span class="cls_004"> double</span><span class="cls_003"> as a parameter and returns</span></div>
+<div style="position:absolute;left:86.40px;top:323.24px" class="cls_003"><span class="cls_003">the area of a circle with that radius:</span></div>
+<div style="position:absolute;left:101.34px;top:346.66px" class="cls_004"><span class="cls_004">public static double</span><span class="cls_003"> calculateArea(</span><span class="cls_004">double</span><span class="cls_003"> radius) {</span></div>
+<div style="position:absolute;left:125.95px;top:361.83px" class="cls_004"><span class="cls_004">double</span><span class="cls_003"> result = Math.PI * radius * radius;</span></div>
+<div style="position:absolute;left:125.95px;top:377.00px" class="cls_004"><span class="cls_004">return</span><span class="cls_003"> result;</span></div>
+<div style="position:absolute;left:101.34px;top:392.17px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:417.83px" class="cls_003"><span class="cls_003">As usual, this method is</span><span class="cls_004"> public</span><span class="cls_003"> and</span><span class="cls_004"> static</span><span class="cls_003">. But in the place where we are</span></div>
+<div style="position:absolute;left:86.40px;top:432.99px" class="cls_003"><span class="cls_003">used to seeing</span><span class="cls_004"> void</span><span class="cls_003">, we see</span><span class="cls_004"> double</span><span class="cls_003">, which means that the return value from</span></div>
+<div style="position:absolute;left:86.40px;top:448.16px" class="cls_003"><span class="cls_003">this method is a</span><span class="cls_004"> double</span><span class="cls_003">.</span></div>
+<div style="position:absolute;left:86.40px;top:475.14px" class="cls_003"><span class="cls_003">The last line is a new form of the</span><span class="cls_004"> return</span><span class="cls_003"> statement that includes a return</span></div>
+<div style="position:absolute;left:86.40px;top:490.31px" class="cls_003"><span class="cls_003">value. This statement means, “return immediately from this method and use</span></div>
+<div style="position:absolute;left:86.40px;top:505.48px" class="cls_003"><span class="cls_003">the following expression as the return value.” The expression you provide can</span></div>
+<div style="position:absolute;left:86.40px;top:520.65px" class="cls_003"><span class="cls_003">be arbitrarily complex, so we could have written this method more concisely:</span></div>
+<div style="position:absolute;left:101.34px;top:546.40px" class="cls_004"><span class="cls_004">public static double</span><span class="cls_003"> calculateArea(</span><span class="cls_004">double</span><span class="cls_003"> radius) {</span></div>
+<div style="position:absolute;left:125.95px;top:561.56px" class="cls_004"><span class="cls_004">return</span><span class="cls_003"> Math.PI * radius * radius;</span></div>
+<div style="position:absolute;left:101.34px;top:576.73px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:602.39px" class="cls_003"><span class="cls_003">On the other hand, temporary variables like result often make debugging</span></div>
+<div style="position:absolute;left:86.40px;top:617.56px" class="cls_003"><span class="cls_003">easier, especially when you are stepping through code using an interactive</span></div>
+<div style="position:absolute;left:86.40px;top:632.73px" class="cls_003"><span class="cls_003">debugger (see Appendix A.6).</span></div>
+<div style="position:absolute;left:86.40px;top:659.71px" class="cls_003"><span class="cls_003">The type of the expression in the</span><span class="cls_004"> return</span><span class="cls_003"> statement must match the return</span></div>
+<div style="position:absolute;left:86.40px;top:674.88px" class="cls_003"><span class="cls_003">type of the method. When you declare that the return type is</span><span class="cls_004"> double</span><span class="cls_003">, you are</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_003"><span class="cls_003">making a promise that this method will eventually produce a</span><span class="cls_004"> double</span><span class="cls_003"> value. If</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:1604px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="34dd2842-5ad9-11e9-9d71-0cc47a792c0a_id_34dd2842-5ad9-11e9-9d71-0cc47a792c0a_files/background03.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">6.1</span></div>
+<div style="position:absolute;left:160.24px;top:88.65px" class="cls_003"><span class="cls_003">Return values</span></div>
+<div style="position:absolute;left:512.16px;top:88.65px" class="cls_003"><span class="cls_003">87</span></div>
+<div style="position:absolute;left:129.60px;top:124.74px" class="cls_003"><span class="cls_003">you try to</span><span class="cls_004"> return</span><span class="cls_003"> with no expression, or an expression with the wrong type,</span></div>
+<div style="position:absolute;left:129.60px;top:139.91px" class="cls_003"><span class="cls_003">the compiler will generate an error.</span></div>
+<div style="position:absolute;left:129.60px;top:177.22px" class="cls_003"><span class="cls_003">Sometimes it is useful to have multiple return statements, for example, one in</span></div>
+<div style="position:absolute;left:129.60px;top:192.39px" class="cls_003"><span class="cls_003">each branch of a conditional:</span></div>
+<div style="position:absolute;left:144.54px;top:226.14px" class="cls_004"><span class="cls_004">public static double</span><span class="cls_003"> absoluteValue(</span><span class="cls_004">double</span><span class="cls_003"> x) {</span></div>
+<div style="position:absolute;left:169.15px;top:241.31px" class="cls_004"><span class="cls_004">if</span><span class="cls_003"> (x &lt; 0) {</span></div>
+<div style="position:absolute;left:193.76px;top:256.48px" class="cls_004"><span class="cls_004">return</span><span class="cls_003"> -x;</span></div>
+<div style="position:absolute;left:169.15px;top:271.65px" class="cls_003"><span class="cls_003">}</span><span class="cls_004"> else</span><span class="cls_003"> {</span></div>
+<div style="position:absolute;left:193.76px;top:286.82px" class="cls_004"><span class="cls_004">return</span><span class="cls_003"> x;</span></div>
+<div style="position:absolute;left:169.15px;top:301.98px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:144.54px;top:317.15px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:353.14px" class="cls_003"><span class="cls_003">Since these</span><span class="cls_004"> return</span><span class="cls_003"> statements are in a conditional statement, only one will be</span></div>
+<div style="position:absolute;left:129.60px;top:368.31px" class="cls_003"><span class="cls_003">executed. As soon as either of them executes, the method terminates without</span></div>
+<div style="position:absolute;left:129.60px;top:383.48px" class="cls_003"><span class="cls_003">executing any more statements.</span></div>
+<div style="position:absolute;left:129.60px;top:420.79px" class="cls_003"><span class="cls_003">Code that appears after a</span><span class="cls_004"> return</span><span class="cls_003"> statement (in the same block), or any place</span></div>
+<div style="position:absolute;left:129.60px;top:435.96px" class="cls_003"><span class="cls_003">else where it can never be executed, is called dead code. The compiler will</span></div>
+<div style="position:absolute;left:129.60px;top:451.12px" class="cls_003"><span class="cls_003">give you an “unreachable statement” error if part of your code is dead.  For</span></div>
+<div style="position:absolute;left:129.60px;top:466.29px" class="cls_003"><span class="cls_003">example, this method contains dead code:</span></div>
+<div style="position:absolute;left:144.54px;top:502.37px" class="cls_004"><span class="cls_004">public static double</span><span class="cls_003"> absoluteValue(</span><span class="cls_004">double</span><span class="cls_003"> x) {</span></div>
+<div style="position:absolute;left:169.15px;top:517.54px" class="cls_004"><span class="cls_004">if</span><span class="cls_003"> (x &lt; 0) {</span></div>
+<div style="position:absolute;left:193.76px;top:532.71px" class="cls_004"><span class="cls_004">return</span><span class="cls_003"> -x;</span></div>
+<div style="position:absolute;left:169.15px;top:547.88px" class="cls_003"><span class="cls_003">}</span><span class="cls_004"> else</span><span class="cls_003"> {</span></div>
+<div style="position:absolute;left:193.76px;top:563.05px" class="cls_004"><span class="cls_004">return</span><span class="cls_003"> x;</span></div>
+<div style="position:absolute;left:169.15px;top:578.21px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:169.15px;top:593.38px" class="cls_003"><span class="cls_003">System.out.println(</span><span class="cls_006">"This line is dead."</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:144.54px;top:608.55px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:644.54px" class="cls_003"><span class="cls_003">If you put</span><span class="cls_004"> return</span><span class="cls_003"> statements inside a conditional statement, you have to</span></div>
+<div style="position:absolute;left:129.60px;top:659.71px" class="cls_003"><span class="cls_003">make sure that every possible path through the program reaches a</span><span class="cls_004"> return</span></div>
+<div style="position:absolute;left:129.60px;top:674.88px" class="cls_003"><span class="cls_003">statement. The compiler will let you know if that’s not the case. For example,</span></div>
+<div style="position:absolute;left:129.60px;top:690.04px" class="cls_003"><span class="cls_003">the following method is incomplete:</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:2406px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="34dd2842-5ad9-11e9-9d71-0cc47a792c0a_id_34dd2842-5ad9-11e9-9d71-0cc47a792c0a_files/background04.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">88</span></div>
+<div style="position:absolute;left:322.36px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 6</span></div>
+<div style="position:absolute;left:395.07px;top:88.65px" class="cls_003"><span class="cls_003">Value methods</span></div>
+<div style="position:absolute;left:101.34px;top:123.41px" class="cls_004"><span class="cls_004">public static double</span><span class="cls_003"> absoluteValue(</span><span class="cls_004">double</span><span class="cls_003"> x) {</span></div>
+<div style="position:absolute;left:125.95px;top:138.57px" class="cls_004"><span class="cls_004">if</span><span class="cls_003"> (x &lt; 0) {</span></div>
+<div style="position:absolute;left:150.56px;top:153.74px" class="cls_004"><span class="cls_004">return</span><span class="cls_003"> -x;</span></div>
+<div style="position:absolute;left:125.95px;top:168.91px" class="cls_003"><span class="cls_003">}</span><span class="cls_004"> else if</span><span class="cls_003"> (x > 0) {</span></div>
+<div style="position:absolute;left:150.56px;top:184.08px" class="cls_004"><span class="cls_004">return</span><span class="cls_003"> x;</span></div>
+<div style="position:absolute;left:125.95px;top:199.25px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:125.95px;top:214.41px" class="cls_008"><span class="cls_008">// syntax error</span></div>
+<div style="position:absolute;left:101.34px;top:229.58px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:253.77px" class="cls_003"><span class="cls_003">When x is 0, neither condition is true, so the method ends without hitting</span></div>
+<div style="position:absolute;left:86.40px;top:268.94px" class="cls_003"><span class="cls_003">a return statement.  The error message in this case might be something like</span></div>
+<div style="position:absolute;left:86.40px;top:284.11px" class="cls_003"><span class="cls_003">“missing return statement”, which is confusing since there are already two of</span></div>
+<div style="position:absolute;left:86.40px;top:299.28px" class="cls_003"><span class="cls_003">them. But hopefully you will know what it means.</span></div>
+<div style="position:absolute;left:86.40px;top:344.97px" class="cls_005"><span class="cls_005">6.2</span></div>
+<div style="position:absolute;left:130.51px;top:344.97px" class="cls_005"><span class="cls_005">Writing methods</span></div>
+<div style="position:absolute;left:86.40px;top:379.35px" class="cls_003"><span class="cls_003">Beginners often make the mistake of writing a lot of code before they try to</span></div>
+<div style="position:absolute;left:86.40px;top:394.52px" class="cls_003"><span class="cls_003">compile and run it. Then they spend way too much time debugging. A better</span></div>
+<div style="position:absolute;left:86.40px;top:409.69px" class="cls_003"><span class="cls_003">approach is what we call incremental development.  The key aspects of</span></div>
+<div style="position:absolute;left:86.40px;top:424.85px" class="cls_003"><span class="cls_003">incremental development are:</span></div>
+<div style="position:absolute;left:103.96px;top:451.13px" class="cls_007"><span class="cls_007"></span><span class="cls_003"> Start with a working program and make small, incremental changes. At</span></div>
+<div style="position:absolute;left:115.67px;top:466.29px" class="cls_003"><span class="cls_003">any point, if there is an error, you will know where to look.</span></div>
+<div style="position:absolute;left:103.96px;top:490.62px" class="cls_007"><span class="cls_007"></span><span class="cls_003"> Use variables to hold intermediate values so you can check them, either</span></div>
+<div style="position:absolute;left:115.67px;top:505.79px" class="cls_003"><span class="cls_003">with print statements or by using a debugger.</span></div>
+<div style="position:absolute;left:103.96px;top:530.11px" class="cls_007"><span class="cls_007"></span><span class="cls_003"> Once the program is working, you can consolidate multiple statements</span></div>
+<div style="position:absolute;left:115.67px;top:545.28px" class="cls_003"><span class="cls_003">into compound expressions (but only if it does not make the program</span></div>
+<div style="position:absolute;left:115.67px;top:560.45px" class="cls_003"><span class="cls_003">more difficult to read).</span></div>
+<div style="position:absolute;left:86.40px;top:586.72px" class="cls_003"><span class="cls_003">As an example, suppose you want to find the distance between two points,</span></div>
+<div style="position:absolute;left:86.40px;top:601.89px" class="cls_003"><span class="cls_003">given by the coordinates (x</span><span class="cls_009"><sub>1</sub></span><span class="cls_003">, y</span><span class="cls_009"><sub>1</sub></span><span class="cls_003">) and (x</span><span class="cls_009"><sub>2</sub></span><span class="cls_003">, y</span><span class="cls_009"><sub>2</sub></span><span class="cls_003">). By the usual definition:</span></div>
+<div style="position:absolute;left:250.52px;top:631.76px" class="cls_003"><span class="cls_003">√</span></div>
+<div style="position:absolute;left:191.36px;top:642.57px" class="cls_003"><span class="cls_003">distance =</span></div>
+<div style="position:absolute;left:262.48px;top:642.57px" class="cls_003"><span class="cls_003">(x</span><span class="cls_009"><sub>2</sub></span><span class="cls_003"> − x</span><span class="cls_009"><sub>1</sub></span><span class="cls_003">)</span><span class="cls_009"><sup>2</sup></span><span class="cls_003"> + (y</span><span class="cls_009"><sub>2</sub></span><span class="cls_003"> − y</span><span class="cls_009"><sub>1</sub></span><span class="cls_003">)</span><span class="cls_009"><sup>2</sup></span></div>
+<div style="position:absolute;left:86.40px;top:674.88px" class="cls_003"><span class="cls_003">The first step is to consider what a distance method should look like in Java.</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_003"><span class="cls_003">In other words, what are the inputs (parameters) and what is the output</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:3208px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="34dd2842-5ad9-11e9-9d71-0cc47a792c0a_id_34dd2842-5ad9-11e9-9d71-0cc47a792c0a_files/background05.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">6.2</span></div>
+<div style="position:absolute;left:160.24px;top:88.65px" class="cls_003"><span class="cls_003">Writing methods</span></div>
+<div style="position:absolute;left:512.15px;top:88.65px" class="cls_003"><span class="cls_003">89</span></div>
+<div style="position:absolute;left:129.60px;top:124.74px" class="cls_003"><span class="cls_003">(return value)?  In this case, the two points are the parameters, and it is</span></div>
+<div style="position:absolute;left:129.60px;top:139.91px" class="cls_003"><span class="cls_003">natural to represent them using four</span><span class="cls_004"> double</span><span class="cls_003"> values. The return value is the</span></div>
+<div style="position:absolute;left:129.60px;top:155.08px" class="cls_003"><span class="cls_003">distance, which should also have type</span><span class="cls_004"> double</span><span class="cls_003">.</span></div>
+<div style="position:absolute;left:129.60px;top:179.67px" class="cls_003"><span class="cls_003">Already we can write an outline for the method, which is sometimes called a</span></div>
+<div style="position:absolute;left:129.60px;top:194.84px" class="cls_003"><span class="cls_003">stub. The stub includes the method signature and a</span><span class="cls_004"> return</span><span class="cls_003"> statement:</span></div>
+<div style="position:absolute;left:144.54px;top:218.20px" class="cls_004"><span class="cls_004">public static double</span><span class="cls_003"> distance</span></div>
+<div style="position:absolute;left:193.76px;top:233.37px" class="cls_003"><span class="cls_003">(</span><span class="cls_004">double</span><span class="cls_003"> x1,</span><span class="cls_004"> double</span><span class="cls_003"> y1,</span><span class="cls_004"> double</span><span class="cls_003"> x2,</span><span class="cls_004"> double</span><span class="cls_003"> y2) {</span></div>
+<div style="position:absolute;left:169.15px;top:248.53px" class="cls_004"><span class="cls_004">return</span><span class="cls_003"> 0.0;</span></div>
+<div style="position:absolute;left:144.54px;top:263.70px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:286.97px" class="cls_003"><span class="cls_003">The return statement is a placeholder that is necessary for the program to</span></div>
+<div style="position:absolute;left:129.60px;top:302.14px" class="cls_003"><span class="cls_003">compile. At this stage the program doesn’t do anything useful, but it is good</span></div>
+<div style="position:absolute;left:129.60px;top:317.31px" class="cls_003"><span class="cls_003">to compile it so we can find any syntax errors before we add more code.</span></div>
+<div style="position:absolute;left:129.60px;top:341.90px" class="cls_003"><span class="cls_003">It’s usually a good idea to think about testing before you develop new methods;</span></div>
+<div style="position:absolute;left:129.60px;top:357.07px" class="cls_003"><span class="cls_003">doing so can help you figure out how to implement them. To test the method,</span></div>
+<div style="position:absolute;left:129.60px;top:372.23px" class="cls_003"><span class="cls_003">we can invoke it from main using sample values:</span></div>
+<div style="position:absolute;left:144.54px;top:396.87px" class="cls_004"><span class="cls_004">double</span><span class="cls_003"> dist = distance(1.0, 2.0, 4.0, 6.0);</span></div>
+<div style="position:absolute;left:129.60px;top:421.41px" class="cls_003"><span class="cls_003">With these values, the horizontal distance is 3.0 and the vertical distance is</span></div>
+<div style="position:absolute;left:129.60px;top:436.58px" class="cls_003"><span class="cls_003">4.0. So the result should be 5.0, the hypotenuse of a 3-4-5 triangle. When you</span></div>
+<div style="position:absolute;left:129.60px;top:451.75px" class="cls_003"><span class="cls_003">are testing a method, it is helpful to know the right answer.</span></div>
+<div style="position:absolute;left:129.60px;top:476.34px" class="cls_003"><span class="cls_003">Once we have compiled the stub, we can start adding lines of code one at a</span></div>
+<div style="position:absolute;left:129.60px;top:491.51px" class="cls_003"><span class="cls_003">time.  After each incremental change, we recompile and run the program.  If</span></div>
+<div style="position:absolute;left:129.60px;top:506.68px" class="cls_003"><span class="cls_003">there is an error at any point, we have a good idea where to look: the last line</span></div>
+<div style="position:absolute;left:129.60px;top:521.84px" class="cls_003"><span class="cls_003">we added.</span></div>
+<div style="position:absolute;left:129.60px;top:546.43px" class="cls_003"><span class="cls_003">The next step is to find the differences x</span><span class="cls_009"><sub>2</sub></span><span class="cls_003"> − x</span><span class="cls_009"><sub>1</sub></span><span class="cls_003">  and y</span><span class="cls_009"><sub>2</sub></span><span class="cls_003"> − y</span><span class="cls_009"><sub>1</sub></span><span class="cls_003">.  We store those</span></div>
+<div style="position:absolute;left:129.60px;top:561.60px" class="cls_003"><span class="cls_003">values in temporary variables named dx and dy.</span></div>
+<div style="position:absolute;left:144.54px;top:585.29px" class="cls_004"><span class="cls_004">public static double</span><span class="cls_003"> distance</span></div>
+<div style="position:absolute;left:193.76px;top:600.46px" class="cls_003"><span class="cls_003">(</span><span class="cls_004">double</span><span class="cls_003"> x1,</span><span class="cls_004"> double</span><span class="cls_003"> y1,</span><span class="cls_004"> double</span><span class="cls_003"> x2,</span><span class="cls_004"> double</span><span class="cls_003"> y2) {</span></div>
+<div style="position:absolute;left:169.15px;top:615.63px" class="cls_004"><span class="cls_004">double</span><span class="cls_003"> dx = x2 - x1;</span></div>
+<div style="position:absolute;left:169.15px;top:630.80px" class="cls_004"><span class="cls_004">double</span><span class="cls_003"> dy = y2 - y1;</span></div>
+<div style="position:absolute;left:169.15px;top:645.97px" class="cls_003"><span class="cls_003">System.out.println(</span><span class="cls_006">"dx is "</span><span class="cls_003"> + dx);</span></div>
+<div style="position:absolute;left:169.15px;top:661.14px" class="cls_003"><span class="cls_003">System.out.println(</span><span class="cls_006">"dy is "</span><span class="cls_003"> + dy);</span></div>
+<div style="position:absolute;left:169.15px;top:676.30px" class="cls_004"><span class="cls_004">return</span><span class="cls_003"> 0.0;</span></div>
+<div style="position:absolute;left:144.54px;top:691.47px" class="cls_003"><span class="cls_003">}</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:4010px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="34dd2842-5ad9-11e9-9d71-0cc47a792c0a_id_34dd2842-5ad9-11e9-9d71-0cc47a792c0a_files/background06.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">90</span></div>
+<div style="position:absolute;left:322.36px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 6</span></div>
+<div style="position:absolute;left:395.07px;top:88.65px" class="cls_003"><span class="cls_003">Value methods</span></div>
+<div style="position:absolute;left:86.40px;top:124.74px" class="cls_003"><span class="cls_003">The print statements allows us to check the intermediate values before pro-</span></div>
+<div style="position:absolute;left:86.40px;top:139.91px" class="cls_003"><span class="cls_003">ceeding.  They should be 3.0 and 4.0.  We will remove the print statements</span></div>
+<div style="position:absolute;left:86.40px;top:155.08px" class="cls_003"><span class="cls_003">when the method is finished. Code like that is called scaffolding, because it</span></div>
+<div style="position:absolute;left:86.40px;top:170.25px" class="cls_003"><span class="cls_003">is helpful for building the program, but it is not part of the final product.</span></div>
+<div style="position:absolute;left:86.40px;top:197.63px" class="cls_003"><span class="cls_003">The next step is to square dx and dy.  We could use the Math.pow method,</span></div>
+<div style="position:absolute;left:86.40px;top:212.80px" class="cls_003"><span class="cls_003">but it is simpler to multiply each term by itself.</span></div>
+<div style="position:absolute;left:101.34px;top:238.95px" class="cls_004"><span class="cls_004">public static double</span><span class="cls_003"> distance</span></div>
+<div style="position:absolute;left:150.56px;top:254.12px" class="cls_003"><span class="cls_003">(</span><span class="cls_004">double</span><span class="cls_003"> x1,</span><span class="cls_004"> double</span><span class="cls_003"> y1,</span><span class="cls_004"> double</span><span class="cls_003"> x2,</span><span class="cls_004"> double</span><span class="cls_003"> y2) {</span></div>
+<div style="position:absolute;left:125.95px;top:269.28px" class="cls_004"><span class="cls_004">double</span><span class="cls_003"> dx = x2 - x1;</span></div>
+<div style="position:absolute;left:125.95px;top:284.45px" class="cls_004"><span class="cls_004">double</span><span class="cls_003"> dy = y2 - y1;</span></div>
+<div style="position:absolute;left:125.95px;top:299.62px" class="cls_004"><span class="cls_004">double</span><span class="cls_003"> dsquared = dx * dx + dy * dy;</span></div>
+<div style="position:absolute;left:125.95px;top:314.79px" class="cls_003"><span class="cls_003">System.out.println(</span><span class="cls_006">"dsquared is "</span><span class="cls_003"> + dsquared);</span></div>
+<div style="position:absolute;left:125.95px;top:329.96px" class="cls_004"><span class="cls_004">return</span><span class="cls_003"> 0.0;</span></div>
+<div style="position:absolute;left:101.34px;top:345.13px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:371.19px" class="cls_003"><span class="cls_003">Again, you should compile and run the program at this stage and check the</span></div>
+<div style="position:absolute;left:86.40px;top:386.36px" class="cls_003"><span class="cls_003">intermediate value, which should be 25.0.  Finally, we can use Math.sqrt to</span></div>
+<div style="position:absolute;left:86.40px;top:401.52px" class="cls_003"><span class="cls_003">compute and return the result.</span></div>
+<div style="position:absolute;left:101.34px;top:427.67px" class="cls_004"><span class="cls_004">public static double</span><span class="cls_003"> distance</span></div>
+<div style="position:absolute;left:150.56px;top:442.84px" class="cls_003"><span class="cls_003">(</span><span class="cls_004">double</span><span class="cls_003"> x1,</span><span class="cls_004"> double</span><span class="cls_003"> y1,</span><span class="cls_004"> double</span><span class="cls_003"> x2,</span><span class="cls_004"> double</span><span class="cls_003"> y2) {</span></div>
+<div style="position:absolute;left:125.95px;top:458.01px" class="cls_004"><span class="cls_004">double</span><span class="cls_003"> dx = x2 - x1;</span></div>
+<div style="position:absolute;left:125.95px;top:473.18px" class="cls_004"><span class="cls_004">double</span><span class="cls_003"> dy = y2 - y1;</span></div>
+<div style="position:absolute;left:125.95px;top:488.35px" class="cls_004"><span class="cls_004">double</span><span class="cls_003"> dsquared = dx * dx + dy * dy;</span></div>
+<div style="position:absolute;left:125.95px;top:503.52px" class="cls_004"><span class="cls_004">double</span><span class="cls_003"> result = Math.sqrt(dsquared);</span></div>
+<div style="position:absolute;left:125.95px;top:518.68px" class="cls_004"><span class="cls_004">return</span><span class="cls_003"> result;</span></div>
+<div style="position:absolute;left:101.34px;top:533.85px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:559.91px" class="cls_003"><span class="cls_003">As you gain more experience programming, you might write and debug more</span></div>
+<div style="position:absolute;left:86.40px;top:575.08px" class="cls_003"><span class="cls_003">than one line at a time. Nevertheless, incremental development can save you</span></div>
+<div style="position:absolute;left:86.40px;top:590.25px" class="cls_003"><span class="cls_003">a lot of time.</span></div>
+<div style="position:absolute;left:86.40px;top:638.57px" class="cls_005"><span class="cls_005">6.3</span></div>
+<div style="position:absolute;left:130.51px;top:638.57px" class="cls_005"><span class="cls_005">Method composition</span></div>
+<div style="position:absolute;left:86.40px;top:674.88px" class="cls_003"><span class="cls_003">Once you define a new method, you can use it as part of an expression, or</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_003"><span class="cls_003">build new methods using existing methods.  For example, suppose someone</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:4812px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="34dd2842-5ad9-11e9-9d71-0cc47a792c0a_id_34dd2842-5ad9-11e9-9d71-0cc47a792c0a_files/background07.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">6.3</span></div>
+<div style="position:absolute;left:160.24px;top:88.65px" class="cls_003"><span class="cls_003">Method composition</span></div>
+<div style="position:absolute;left:512.16px;top:88.65px" class="cls_003"><span class="cls_003">91</span></div>
+<div style="position:absolute;left:129.60px;top:124.74px" class="cls_003"><span class="cls_003">gave you two points, the center of the circle and a point on the perimeter,</span></div>
+<div style="position:absolute;left:129.60px;top:139.91px" class="cls_003"><span class="cls_003">and asked for the area of the circle. Let’s say the center point is stored in the</span></div>
+<div style="position:absolute;left:129.60px;top:155.08px" class="cls_003"><span class="cls_003">variables xc and yc, and the perimeter point is in xp and yp.</span></div>
+<div style="position:absolute;left:129.60px;top:186.64px" class="cls_003"><span class="cls_003">The first step is to find the radius of the circle, which is the distance between</span></div>
+<div style="position:absolute;left:129.60px;top:201.81px" class="cls_003"><span class="cls_003">the two points. Fortunately, we have a method that does just that (distance).</span></div>
+<div style="position:absolute;left:144.54px;top:233.42px" class="cls_004"><span class="cls_004">double</span><span class="cls_003"> radius = distance(xc, yc, xp, yp);</span></div>
+<div style="position:absolute;left:129.60px;top:264.94px" class="cls_003"><span class="cls_003">The second step is to find the area of a circle with that radius.  We have a</span></div>
+<div style="position:absolute;left:129.60px;top:280.11px" class="cls_003"><span class="cls_003">method for that computation too (calculateArea).</span></div>
+<div style="position:absolute;left:144.54px;top:311.11px" class="cls_004"><span class="cls_004">double</span><span class="cls_003"> area = calculateArea(radius);</span></div>
+<div style="position:absolute;left:144.54px;top:326.28px" class="cls_004"><span class="cls_004">return</span><span class="cls_003"> area;</span></div>
+<div style="position:absolute;left:129.60px;top:356.53px" class="cls_003"><span class="cls_003">Putting everything together in a new method, we get:</span></div>
+<div style="position:absolute;left:144.54px;top:386.86px" class="cls_004"><span class="cls_004">public static double</span><span class="cls_003"> circleArea</span></div>
+<div style="position:absolute;left:193.76px;top:402.03px" class="cls_003"><span class="cls_003">(</span><span class="cls_004">double</span><span class="cls_003"> xc,</span><span class="cls_004"> double</span><span class="cls_003"> yc,</span><span class="cls_004"> double</span><span class="cls_003"> xp,</span><span class="cls_004"> double</span><span class="cls_003"> yp) {</span></div>
+<div style="position:absolute;left:169.15px;top:417.20px" class="cls_004"><span class="cls_004">double</span><span class="cls_003"> radius = distance(xc, yc, xp, yp);</span></div>
+<div style="position:absolute;left:169.15px;top:432.37px" class="cls_004"><span class="cls_004">double</span><span class="cls_003"> area = calculateArea(radius);</span></div>
+<div style="position:absolute;left:169.15px;top:447.53px" class="cls_004"><span class="cls_004">return</span><span class="cls_003"> area;</span></div>
+<div style="position:absolute;left:144.54px;top:462.70px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:492.95px" class="cls_003"><span class="cls_003">The temporary variables radius and area are useful for development and</span></div>
+<div style="position:absolute;left:129.60px;top:508.12px" class="cls_003"><span class="cls_003">debugging, but once the program is working we can make it more concise by</span></div>
+<div style="position:absolute;left:129.60px;top:523.29px" class="cls_003"><span class="cls_003">composing the method calls:</span></div>
+<div style="position:absolute;left:144.54px;top:553.62px" class="cls_004"><span class="cls_004">public static double</span><span class="cls_003"> circleArea</span></div>
+<div style="position:absolute;left:193.76px;top:568.79px" class="cls_003"><span class="cls_003">(</span><span class="cls_004">double</span><span class="cls_003"> xc,</span><span class="cls_004"> double</span><span class="cls_003"> yc,</span><span class="cls_004"> double</span><span class="cls_003"> xp,</span><span class="cls_004"> double</span><span class="cls_003"> yp) {</span></div>
+<div style="position:absolute;left:169.15px;top:583.96px" class="cls_004"><span class="cls_004">return</span><span class="cls_003"> calculateArea(distance(xc, yc, xp, yp));</span></div>
+<div style="position:absolute;left:144.54px;top:599.13px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:629.37px" class="cls_003"><span class="cls_003">This example demonstrates a process called functional decomposition; that</span></div>
+<div style="position:absolute;left:129.60px;top:644.54px" class="cls_003"><span class="cls_003">is, breaking a complex computation into simple methods, testing the methods</span></div>
+<div style="position:absolute;left:129.60px;top:659.71px" class="cls_003"><span class="cls_003">in isolation, and then composing the methods to perform the computation.</span></div>
+<div style="position:absolute;left:129.60px;top:674.88px" class="cls_003"><span class="cls_003">This process reduces debugging time and yields code that is more likely to be</span></div>
+<div style="position:absolute;left:129.60px;top:690.04px" class="cls_003"><span class="cls_003">correct and easier to maintain.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:5614px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="34dd2842-5ad9-11e9-9d71-0cc47a792c0a_id_34dd2842-5ad9-11e9-9d71-0cc47a792c0a_files/background08.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">92</span></div>
+<div style="position:absolute;left:322.36px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 6</span></div>
+<div style="position:absolute;left:395.07px;top:88.65px" class="cls_003"><span class="cls_003">Value methods</span></div>
+<div style="position:absolute;left:86.40px;top:119.48px" class="cls_005"><span class="cls_005">6.4</span></div>
+<div style="position:absolute;left:130.51px;top:119.48px" class="cls_005"><span class="cls_005">Overloading</span></div>
+<div style="position:absolute;left:86.40px;top:153.15px" class="cls_003"><span class="cls_003">You might have noticed that circleArea and calculateArea perform similar</span></div>
+<div style="position:absolute;left:86.40px;top:168.32px" class="cls_003"><span class="cls_003">functions. They both find the area of a circle, but they take different param-</span></div>
+<div style="position:absolute;left:86.40px;top:183.49px" class="cls_003"><span class="cls_003">eters. For calculateArea, we have to provide the radius; for circleArea we</span></div>
+<div style="position:absolute;left:86.40px;top:198.65px" class="cls_003"><span class="cls_003">provide two points.</span></div>
+<div style="position:absolute;left:86.40px;top:223.46px" class="cls_003"><span class="cls_003">If two methods do the same thing, it is natural to give them the same name.</span></div>
+<div style="position:absolute;left:86.40px;top:238.63px" class="cls_003"><span class="cls_003">Having more than one method with the same name is called overloading,</span></div>
+<div style="position:absolute;left:86.40px;top:253.80px" class="cls_003"><span class="cls_003">and it is legal in Java as long as each version takes different parameters.  So</span></div>
+<div style="position:absolute;left:86.40px;top:268.96px" class="cls_003"><span class="cls_003">we could rename circleArea to calculateArea:</span></div>
+<div style="position:absolute;left:101.34px;top:290.21px" class="cls_004"><span class="cls_004">public static double</span><span class="cls_003"> calculateArea</span></div>
+<div style="position:absolute;left:150.56px;top:305.38px" class="cls_003"><span class="cls_003">(</span><span class="cls_004">double</span><span class="cls_003"> xc,</span><span class="cls_004"> double</span><span class="cls_003"> yc,</span><span class="cls_004"> double</span><span class="cls_003"> xp,</span><span class="cls_004"> double</span><span class="cls_003"> yp) {</span></div>
+<div style="position:absolute;left:125.95px;top:320.55px" class="cls_004"><span class="cls_004">return</span><span class="cls_003"> calculateArea(distance(xc, yc, xp, yp));</span></div>
+<div style="position:absolute;left:101.34px;top:335.72px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:359.20px" class="cls_003"><span class="cls_003">Note that this new calculateArea method is not recursive. When you invoke</span></div>
+<div style="position:absolute;left:86.40px;top:374.37px" class="cls_003"><span class="cls_003">an overloaded method, Java knows which version you want by looking at the</span></div>
+<div style="position:absolute;left:86.40px;top:389.54px" class="cls_003"><span class="cls_003">arguments that you provide. If you write:</span></div>
+<div style="position:absolute;left:101.34px;top:414.39px" class="cls_004"><span class="cls_004">double</span><span class="cls_003"> x = calculateArea(3.0);</span></div>
+<div style="position:absolute;left:86.40px;top:439.15px" class="cls_003"><span class="cls_003">Java looks for a method named calculateArea that takes one</span><span class="cls_004"> double</span><span class="cls_003"> as an</span></div>
+<div style="position:absolute;left:86.40px;top:454.31px" class="cls_003"><span class="cls_003">argument, and so it uses the first version, which interprets the argument as a</span></div>
+<div style="position:absolute;left:86.40px;top:469.48px" class="cls_003"><span class="cls_003">radius. If you write:</span></div>
+<div style="position:absolute;left:101.34px;top:494.33px" class="cls_004"><span class="cls_004">double</span><span class="cls_003"> y = calculateArea(1.0, 2.0, 4.0, 6.0);</span></div>
+<div style="position:absolute;left:86.40px;top:519.09px" class="cls_003"><span class="cls_003">Java uses the second version of calculateArea, which interprets the argu-</span></div>
+<div style="position:absolute;left:86.40px;top:534.26px" class="cls_003"><span class="cls_003">ments as two points. In this example, the second version actually invokes the</span></div>
+<div style="position:absolute;left:86.40px;top:549.43px" class="cls_003"><span class="cls_003">first version.</span></div>
+<div style="position:absolute;left:86.40px;top:574.23px" class="cls_003"><span class="cls_003">Many Java methods are overloaded, meaning that there are different versions</span></div>
+<div style="position:absolute;left:86.40px;top:589.40px" class="cls_003"><span class="cls_003">that accept different numbers or types of parameters. For example, there are</span></div>
+<div style="position:absolute;left:86.40px;top:604.57px" class="cls_003"><span class="cls_003">versions of print and println that accept a single parameter of any data</span></div>
+<div style="position:absolute;left:86.40px;top:619.74px" class="cls_003"><span class="cls_003">type. In the Math class, there is a version of abs that works on</span><span class="cls_004"> double</span><span class="cls_003">s, and</span></div>
+<div style="position:absolute;left:86.40px;top:634.90px" class="cls_003"><span class="cls_003">there is also a version for</span><span class="cls_004"> int</span><span class="cls_003">s.</span></div>
+<div style="position:absolute;left:86.40px;top:659.71px" class="cls_003"><span class="cls_003">Although overloading is a useful feature, it should be used with caution. You</span></div>
+<div style="position:absolute;left:86.40px;top:674.88px" class="cls_003"><span class="cls_003">might get yourself nicely confused if you are trying to debug one version of a</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_003"><span class="cls_003">method while accidentally invoking a different one.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:6416px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="34dd2842-5ad9-11e9-9d71-0cc47a792c0a_id_34dd2842-5ad9-11e9-9d71-0cc47a792c0a_files/background09.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">6.5</span></div>
+<div style="position:absolute;left:160.24px;top:88.65px" class="cls_003"><span class="cls_003">Boolean methods</span></div>
+<div style="position:absolute;left:512.15px;top:88.65px" class="cls_003"><span class="cls_003">93</span></div>
+<div style="position:absolute;left:129.60px;top:119.48px" class="cls_005"><span class="cls_005">6.5</span></div>
+<div style="position:absolute;left:173.71px;top:119.48px" class="cls_005"><span class="cls_005">Boolean methods</span></div>
+<div style="position:absolute;left:129.60px;top:151.53px" class="cls_003"><span class="cls_003">Methods can return</span><span class="cls_004"> boolean</span><span class="cls_003"> values, just like any other type, which is often</span></div>
+<div style="position:absolute;left:129.60px;top:166.70px" class="cls_003"><span class="cls_003">convenient for hiding tests inside methods. For example:</span></div>
+<div style="position:absolute;left:144.54px;top:188.65px" class="cls_004"><span class="cls_004">public static boolean</span><span class="cls_003"> isSingleDigit(</span><span class="cls_004">int</span><span class="cls_003"> x) {</span></div>
+<div style="position:absolute;left:169.15px;top:203.82px" class="cls_004"><span class="cls_004">if</span><span class="cls_003"> (x > -10 && x &lt; 10) {</span></div>
+<div style="position:absolute;left:193.76px;top:218.99px" class="cls_004"><span class="cls_004">return true</span><span class="cls_003">;</span></div>
+<div style="position:absolute;left:169.15px;top:234.16px" class="cls_003"><span class="cls_003">}</span><span class="cls_004"> else</span><span class="cls_003"> {</span></div>
+<div style="position:absolute;left:193.76px;top:249.33px" class="cls_004"><span class="cls_004">return false</span><span class="cls_003">;</span></div>
+<div style="position:absolute;left:169.15px;top:264.49px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:144.54px;top:279.66px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:301.53px" class="cls_003"><span class="cls_003">The name of this method is isSingleDigit.  It is common to give</span><span class="cls_004"> boolean</span></div>
+<div style="position:absolute;left:129.60px;top:316.69px" class="cls_003"><span class="cls_003">methods names that sound like yes/no questions.  Since the return type is</span></div>
+<div style="position:absolute;left:129.60px;top:331.86px" class="cls_004"><span class="cls_004">boolean</span><span class="cls_003">, the return statement has to provide a boolean expression.</span></div>
+<div style="position:absolute;left:129.60px;top:355.05px" class="cls_003"><span class="cls_003">The code itself is straightforward, although it is longer than it needs to be.</span></div>
+<div style="position:absolute;left:129.60px;top:370.21px" class="cls_003"><span class="cls_003">Remember that the expression x > -10 && x &lt; 10 has type</span><span class="cls_004"> boolean</span><span class="cls_003">, so there</span></div>
+<div style="position:absolute;left:129.60px;top:385.38px" class="cls_003"><span class="cls_003">is nothing wrong with returning it directly (without the</span><span class="cls_004"> if</span><span class="cls_003"> statement):</span></div>
+<div style="position:absolute;left:144.54px;top:408.00px" class="cls_004"><span class="cls_004">public static boolean</span><span class="cls_003"> isSingleDigit(</span><span class="cls_004">int</span><span class="cls_003"> x) {</span></div>
+<div style="position:absolute;left:169.15px;top:423.17px" class="cls_004"><span class="cls_004">return</span><span class="cls_003"> x > -10 && x &lt; 10;</span></div>
+<div style="position:absolute;left:144.54px;top:438.34px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:460.20px" class="cls_003"><span class="cls_003">In main, you can invoke the method in the usual ways:</span></div>
+<div style="position:absolute;left:144.54px;top:482.16px" class="cls_003"><span class="cls_003">System.out.println(isSingleDigit(2));</span></div>
+<div style="position:absolute;left:144.54px;top:497.32px" class="cls_004"><span class="cls_004">boolean</span><span class="cls_003"> bigFlag = !isSingleDigit(17);</span></div>
+<div style="position:absolute;left:129.60px;top:519.19px" class="cls_003"><span class="cls_003">The first line displays</span><span class="cls_004"> true</span><span class="cls_003"> because 2 is a single-digit number.  The second</span></div>
+<div style="position:absolute;left:129.60px;top:534.36px" class="cls_003"><span class="cls_003">line sets bigFlag to</span><span class="cls_004"> true</span><span class="cls_003">, because 17 is not a single-digit number.</span></div>
+<div style="position:absolute;left:129.60px;top:557.54px" class="cls_003"><span class="cls_003">Conditional statements often invoke</span><span class="cls_004"> boolean</span><span class="cls_003"> methods and use the result as</span></div>
+<div style="position:absolute;left:129.60px;top:572.71px" class="cls_003"><span class="cls_003">the condition:</span></div>
+<div style="position:absolute;left:144.54px;top:592.34px" class="cls_004"><span class="cls_004">if</span><span class="cls_003"> (isSingleDigit(z)) {</span></div>
+<div style="position:absolute;left:169.15px;top:607.51px" class="cls_003"><span class="cls_003">System.out.println(</span><span class="cls_006">"z is small"</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:144.54px;top:622.68px" class="cls_003"><span class="cls_003">}</span><span class="cls_004"> else</span><span class="cls_003"> {</span></div>
+<div style="position:absolute;left:169.15px;top:637.84px" class="cls_003"><span class="cls_003">System.out.println(</span><span class="cls_006">"z is big"</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:144.54px;top:653.01px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:674.88px" class="cls_003"><span class="cls_003">Examples like this one almost read like English: “If is single digit z, print ...</span></div>
+<div style="position:absolute;left:129.60px;top:690.04px" class="cls_003"><span class="cls_003">else print ...”.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:7218px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="34dd2842-5ad9-11e9-9d71-0cc47a792c0a_id_34dd2842-5ad9-11e9-9d71-0cc47a792c0a_files/background10.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">94</span></div>
+<div style="position:absolute;left:322.36px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 6</span></div>
+<div style="position:absolute;left:395.07px;top:88.65px" class="cls_003"><span class="cls_003">Value methods</span></div>
+<div style="position:absolute;left:86.40px;top:119.48px" class="cls_005"><span class="cls_005">6.6</span></div>
+<div style="position:absolute;left:130.51px;top:119.48px" class="cls_005"><span class="cls_005">Javadoc tags</span></div>
+<div style="position:absolute;left:86.40px;top:159.10px" class="cls_003"><span class="cls_003">In Section 4.9, we discussed how to write documentation comments using</span><span class="cls_008"> /**</span><span class="cls_003">.</span></div>
+<div style="position:absolute;left:86.40px;top:174.27px" class="cls_003"><span class="cls_003">It’s generally a good idea to document each class and method, so that other</span></div>
+<div style="position:absolute;left:86.40px;top:189.44px" class="cls_003"><span class="cls_003">programmers can understand what they do without having to read the code.</span></div>
+<div style="position:absolute;left:86.40px;top:219.45px" class="cls_003"><span class="cls_003">To organize the documentation into sections, Javadoc supports optional tags</span></div>
+<div style="position:absolute;left:86.40px;top:234.62px" class="cls_003"><span class="cls_003">that begin with the at sign (@). For example, we can use @param and @return</span></div>
+<div style="position:absolute;left:86.40px;top:249.79px" class="cls_003"><span class="cls_003">to provide additional information about parameters and return values.</span></div>
+<div style="position:absolute;left:101.34px;top:278.57px" class="cls_008"><span class="cls_008">/**</span></div>
+<div style="position:absolute;left:107.50px;top:293.74px" class="cls_008"><span class="cls_008">* Tests whether x is a single digit integer.</span></div>
+<div style="position:absolute;left:107.50px;top:308.91px" class="cls_008"><span class="cls_008">*</span></div>
+<div style="position:absolute;left:107.50px;top:324.08px" class="cls_008"><span class="cls_008">* @param x the integer to test</span></div>
+<div style="position:absolute;left:107.50px;top:339.24px" class="cls_008"><span class="cls_008">* @return true if x has one digit, false otherwise</span></div>
+<div style="position:absolute;left:107.50px;top:354.41px" class="cls_008"><span class="cls_008">*/</span></div>
+<div style="position:absolute;left:101.34px;top:369.58px" class="cls_004"><span class="cls_004">public static boolean</span><span class="cls_003"> isSingleDigit(</span><span class="cls_004">int</span><span class="cls_003"> x) {</span></div>
+<div style="position:absolute;left:86.40px;top:398.27px" class="cls_003"><span class="cls_003">Figure 6.1 shows part of the resulting HTML page generated by Javadoc.</span></div>
+<div style="position:absolute;left:86.40px;top:413.44px" class="cls_003"><span class="cls_003">Noti e the</span></div>
+<div style="position:absolute;left:441.93px;top:413.44px" class="cls_003"><span class="cls_003">on.</span></div>
+<div style="position:absolute;left:142.63px;top:447.32px" class="cls_010"><span class="cls_010">isSingleDigit</span></div>
+<div style="position:absolute;left:145.19px;top:477.15px" class="cls_011"><span class="cls_011">public static boolean isSingleDigit(int x)</span></div>
+<div style="position:absolute;left:145.19px;top:500.77px" class="cls_012"><span class="cls_012">Tests whether x is a single digit integer.</span></div>
+<div style="position:absolute;left:145.19px;top:522.77px" class="cls_013"><span class="cls_013">Parameters:</span></div>
+<div style="position:absolute;left:162.25px;top:544.28px" class="cls_014"><span class="cls_014">x</span><span class="cls_012"> ­ the integer to test</span></div>
+<div style="position:absolute;left:145.19px;top:564.58px" class="cls_013"><span class="cls_013">Returns:</span></div>
+<div style="position:absolute;left:162.25px;top:586.09px" class="cls_012"><span class="cls_012">true if x has one digit, false otherwise</span></div>
+<div style="position:absolute;left:144.10px;top:628.37px" class="cls_003"><span class="cls_003">Figure 6.1: HTML documentation for isSingleDigit.</span></div>
+<div style="position:absolute;left:86.40px;top:659.71px" class="cls_003"><span class="cls_003">Methods with multiple parameters should have separate @param tags that</span></div>
+<div style="position:absolute;left:86.40px;top:674.88px" class="cls_003"><span class="cls_003">describe each one. Void methods should have no @return tag, since they do</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_003"><span class="cls_003">not return a value.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:8020px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="34dd2842-5ad9-11e9-9d71-0cc47a792c0a_id_34dd2842-5ad9-11e9-9d71-0cc47a792c0a_files/background11.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">6.7</span></div>
+<div style="position:absolute;left:160.24px;top:88.65px" class="cls_003"><span class="cls_003">More recursion</span></div>
+<div style="position:absolute;left:512.15px;top:88.65px" class="cls_003"><span class="cls_003">95</span></div>
+<div style="position:absolute;left:129.60px;top:119.48px" class="cls_005"><span class="cls_005">6.7</span></div>
+<div style="position:absolute;left:173.71px;top:119.48px" class="cls_005"><span class="cls_005">More recursion</span></div>
+<div style="position:absolute;left:129.60px;top:154.96px" class="cls_003"><span class="cls_003">Now that we have methods that return values, we have a Turing complete</span></div>
+<div style="position:absolute;left:129.60px;top:170.12px" class="cls_003"><span class="cls_003">programming language. That means Java can compute anything computable,</span></div>
+<div style="position:absolute;left:129.60px;top:185.29px" class="cls_003"><span class="cls_003">for any reasonable definition of “computable”.  This idea was developed by</span></div>
+<div style="position:absolute;left:129.60px;top:200.46px" class="cls_003"><span class="cls_003">Alonzo Church and Alan Turing, so it is known as the Church-Turing thesis.</span></div>
+<div style="position:absolute;left:129.60px;top:227.07px" class="cls_003"><span class="cls_003">To give you an idea of what you can do with the tools we have learned, let’s look</span></div>
+<div style="position:absolute;left:129.60px;top:242.24px" class="cls_003"><span class="cls_003">at some methods for evaluating recursively-defined mathematical functions.</span></div>
+<div style="position:absolute;left:129.60px;top:257.41px" class="cls_003"><span class="cls_003">A recursive definition is similar to a circular definition, in the sense that the</span></div>
+<div style="position:absolute;left:129.60px;top:272.58px" class="cls_003"><span class="cls_003">definition refers to the thing being defined.</span></div>
+<div style="position:absolute;left:129.60px;top:299.19px" class="cls_003"><span class="cls_003">Of course, a truly circular definition is not very useful:</span></div>
+<div style="position:absolute;left:129.60px;top:328.75px" class="cls_003"><span class="cls_003">recursive: An adjective used to describe a method that is recursive.</span></div>
+<div style="position:absolute;left:129.60px;top:358.32px" class="cls_003"><span class="cls_003">If you saw that definition in the dictionary, you might be annoyed. But if you</span></div>
+<div style="position:absolute;left:129.60px;top:373.49px" class="cls_003"><span class="cls_003">search for recursion on Google, it displays “Did you mean: recursion” as an</span></div>
+<div style="position:absolute;left:129.60px;top:388.66px" class="cls_003"><span class="cls_003">inside joke.</span></div>
+<div style="position:absolute;left:129.60px;top:415.27px" class="cls_003"><span class="cls_003">Many mathematical functions are defined recursively, because that is often the</span></div>
+<div style="position:absolute;left:129.60px;top:430.44px" class="cls_003"><span class="cls_003">simplest way. For example, the factorial of an integer n, which is written n!,</span></div>
+<div style="position:absolute;left:129.60px;top:445.61px" class="cls_003"><span class="cls_003">is defined like this:</span></div>
+<div style="position:absolute;left:296.86px;top:473.33px" class="cls_003"><span class="cls_003">0! = 1</span></div>
+<div style="position:absolute;left:296.86px;top:491.48px" class="cls_003"><span class="cls_003">n! = n · (n − 1)!</span></div>
+<div style="position:absolute;left:129.60px;top:530.65px" class="cls_003"><span class="cls_003">Don’t confuse the mathematical symbol !, which means factorial, with the</span></div>
+<div style="position:absolute;left:129.60px;top:545.82px" class="cls_003"><span class="cls_003">Java operator !, which means not. This definition says that factorial(0) is</span></div>
+<div style="position:absolute;left:129.60px;top:560.98px" class="cls_003"><span class="cls_003">1, and that factorial(n) is n * factorial(n - 1).</span></div>
+<div style="position:absolute;left:129.60px;top:587.59px" class="cls_003"><span class="cls_003">So factorial(3) is 3 * factorial(2); factorial(2) is 2 * factorial(1);</span></div>
+<div style="position:absolute;left:129.60px;top:602.76px" class="cls_003"><span class="cls_003">factorial(1) is 1 * factorial(0); and factorial(0) is 1.  Putting it all</span></div>
+<div style="position:absolute;left:129.60px;top:617.93px" class="cls_003"><span class="cls_003">together, we get 3 * 2 * 1 * 1, which is 6.</span></div>
+<div style="position:absolute;left:129.60px;top:644.54px" class="cls_003"><span class="cls_003">If you can formulate a recursive definition of something, you can easily write</span></div>
+<div style="position:absolute;left:129.60px;top:659.71px" class="cls_003"><span class="cls_003">a Java method to evaluate it. The first step is to decide what the parameters</span></div>
+<div style="position:absolute;left:129.60px;top:674.88px" class="cls_003"><span class="cls_003">and return type are. Since factorial is defined for integers, the method takes</span></div>
+<div style="position:absolute;left:129.60px;top:690.04px" class="cls_003"><span class="cls_003">an</span><span class="cls_004"> int</span><span class="cls_003"> as a parameter and returns an</span><span class="cls_004"> int</span><span class="cls_003">. So here’s a good starting place:</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:8822px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="34dd2842-5ad9-11e9-9d71-0cc47a792c0a_id_34dd2842-5ad9-11e9-9d71-0cc47a792c0a_files/background12.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">96</span></div>
+<div style="position:absolute;left:322.36px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 6</span></div>
+<div style="position:absolute;left:395.07px;top:88.65px" class="cls_003"><span class="cls_003">Value methods</span></div>
+<div style="position:absolute;left:101.34px;top:123.41px" class="cls_004"><span class="cls_004">public static int</span><span class="cls_003"> factorial(</span><span class="cls_004">int</span><span class="cls_003"> n) {</span></div>
+<div style="position:absolute;left:125.95px;top:138.57px" class="cls_004"><span class="cls_004">return</span><span class="cls_003"> 0;</span></div>
+<div style="position:absolute;left:101.34px;top:153.74px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:179.49px" class="cls_003"><span class="cls_003">Next, we think about the base case. If the argument happens to be zero, we</span></div>
+<div style="position:absolute;left:86.40px;top:194.66px" class="cls_003"><span class="cls_003">return 1.</span></div>
+<div style="position:absolute;left:101.34px;top:218.18px" class="cls_004"><span class="cls_004">public static int</span><span class="cls_003"> factorial(</span><span class="cls_004">int</span><span class="cls_003"> n) {</span></div>
+<div style="position:absolute;left:125.95px;top:233.35px" class="cls_004"><span class="cls_004">if</span><span class="cls_003"> (n == 0) {</span></div>
+<div style="position:absolute;left:150.56px;top:248.52px" class="cls_004"><span class="cls_004">return</span><span class="cls_003"> 1;</span></div>
+<div style="position:absolute;left:125.95px;top:263.68px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:125.95px;top:278.85px" class="cls_004"><span class="cls_004">return</span><span class="cls_003"> 0;</span></div>
+<div style="position:absolute;left:101.34px;top:294.02px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:319.77px" class="cls_003"><span class="cls_003">Otherwise, and this is the interesting part, we have to make a recursive call</span></div>
+<div style="position:absolute;left:86.40px;top:334.94px" class="cls_003"><span class="cls_003">to find the factorial of n − 1, and then multiply it by n.</span></div>
+<div style="position:absolute;left:101.34px;top:360.78px" class="cls_004"><span class="cls_004">public static int</span><span class="cls_003"> factorial(</span><span class="cls_004">int</span><span class="cls_003"> n) {</span></div>
+<div style="position:absolute;left:125.95px;top:375.95px" class="cls_004"><span class="cls_004">if</span><span class="cls_003"> (n == 0) {</span></div>
+<div style="position:absolute;left:150.56px;top:391.12px" class="cls_004"><span class="cls_004">return</span><span class="cls_003"> 1;</span></div>
+<div style="position:absolute;left:125.95px;top:406.29px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:125.95px;top:421.45px" class="cls_004"><span class="cls_004">int</span><span class="cls_003"> recurse = factorial(n - 1);</span></div>
+<div style="position:absolute;left:125.95px;top:436.62px" class="cls_004"><span class="cls_004">int</span><span class="cls_003"> result = n * recurse;</span></div>
+<div style="position:absolute;left:125.95px;top:451.79px" class="cls_004"><span class="cls_004">return</span><span class="cls_003"> result;</span></div>
+<div style="position:absolute;left:101.34px;top:466.96px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:492.71px" class="cls_003"><span class="cls_003">The flow of execution for this program is similar to countdown from Section 5.8.</span></div>
+<div style="position:absolute;left:86.40px;top:507.88px" class="cls_003"><span class="cls_003">If we invoke factorial with the value 3:</span></div>
+<div style="position:absolute;left:115.67px;top:533.68px" class="cls_003"><span class="cls_003">Since 3 is not zero, we take the second branch and calculate the</span></div>
+<div style="position:absolute;left:115.67px;top:548.85px" class="cls_003"><span class="cls_003">factorial of n − 1...</span></div>
+<div style="position:absolute;left:141.42px;top:573.96px" class="cls_003"><span class="cls_003">Since 2 is not zero, we take the second branch and cal-</span></div>
+<div style="position:absolute;left:141.42px;top:589.12px" class="cls_003"><span class="cls_003">culate the factorial of n − 1...</span></div>
+<div style="position:absolute;left:163.31px;top:609.25px" class="cls_003"><span class="cls_003">Since 1 is not zero, we take the second branch</span></div>
+<div style="position:absolute;left:163.31px;top:624.42px" class="cls_003"><span class="cls_003">and calculate the factorial of n − 1...</span></div>
+<div style="position:absolute;left:183.21px;top:642.06px" class="cls_003"><span class="cls_003">Since 0 is zero, we take the first branch</span></div>
+<div style="position:absolute;left:183.21px;top:657.23px" class="cls_003"><span class="cls_003">and return the value 1 immediately.</span></div>
+<div style="position:absolute;left:163.31px;top:674.88px" class="cls_003"><span class="cls_003">The return value (1) gets multiplied by n, which</span></div>
+<div style="position:absolute;left:163.31px;top:690.04px" class="cls_003"><span class="cls_003">is 1, and the result is returned.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:9624px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="34dd2842-5ad9-11e9-9d71-0cc47a792c0a_id_34dd2842-5ad9-11e9-9d71-0cc47a792c0a_files/background13.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">6.8</span></div>
+<div style="position:absolute;left:160.24px;top:88.65px" class="cls_003"><span class="cls_003">Leap of faith</span></div>
+<div style="position:absolute;left:512.15px;top:88.65px" class="cls_003"><span class="cls_003">97</span></div>
+<div style="position:absolute;left:184.62px;top:124.74px" class="cls_003"><span class="cls_003">The return value (1) gets multiplied by n, which is 2,</span></div>
+<div style="position:absolute;left:184.62px;top:139.91px" class="cls_003"><span class="cls_003">and the result is returned.</span></div>
+<div style="position:absolute;left:158.87px;top:164.90px" class="cls_003"><span class="cls_003">The return value (2) gets multiplied by n, which is 3, and the result,</span></div>
+<div style="position:absolute;left:158.87px;top:180.07px" class="cls_003"><span class="cls_003">6, is returned to whatever invoked factorial(3).</span></div>
+<div style="position:absolute;left:129.60px;top:205.20px" class="cls_003"><span class="cls_003">Figure 6.2 shows what the stack diagram looks like for this sequence of method</span></div>
+<div style="position:absolute;left:129.60px;top:220.36px" class="cls_003"><span class="cls_003">invocations.  The return values are shown being passed back up the stack.</span></div>
+<div style="position:absolute;left:129.60px;top:235.53px" class="cls_003"><span class="cls_003">Notice that recurse and result do not exist in the last frame, because when</span></div>
+<div style="position:absolute;left:129.60px;top:250.70px" class="cls_003"><span class="cls_003">n == 0 the code that declares them does not execute.</span></div>
+<div style="position:absolute;left:212.00px;top:284.82px" class="cls_015"><span class="cls_015">main</span></div>
+<div style="position:absolute;left:463.39px;top:298.32px" class="cls_015"><span class="cls_015">6</span></div>
+<div style="position:absolute;left:197.59px;top:316.32px" class="cls_015"><span class="cls_015">factorial</span></div>
+<div style="position:absolute;left:251.90px;top:316.32px" class="cls_015"><span class="cls_015">n</span></div>
+<div style="position:absolute;left:266.90px;top:316.32px" class="cls_015"><span class="cls_015">3</span></div>
+<div style="position:absolute;left:302.89px;top:316.32px" class="cls_015"><span class="cls_015">recurse</span></div>
+<div style="position:absolute;left:347.90px;top:316.32px" class="cls_015"><span class="cls_015">2</span></div>
+<div style="position:absolute;left:384.49px;top:316.32px" class="cls_015"><span class="cls_015">result</span></div>
+<div style="position:absolute;left:419.90px;top:316.32px" class="cls_015"><span class="cls_015">6</span></div>
+<div style="position:absolute;left:463.39px;top:329.82px" class="cls_015"><span class="cls_015">2</span></div>
+<div style="position:absolute;left:197.59px;top:347.82px" class="cls_015"><span class="cls_015">factorial</span></div>
+<div style="position:absolute;left:251.90px;top:347.82px" class="cls_015"><span class="cls_015">n</span></div>
+<div style="position:absolute;left:266.90px;top:347.82px" class="cls_015"><span class="cls_015">2</span></div>
+<div style="position:absolute;left:302.89px;top:347.82px" class="cls_015"><span class="cls_015">recurse</span></div>
+<div style="position:absolute;left:347.90px;top:347.82px" class="cls_015"><span class="cls_015">1</span></div>
+<div style="position:absolute;left:384.49px;top:347.82px" class="cls_015"><span class="cls_015">result</span></div>
+<div style="position:absolute;left:419.90px;top:347.82px" class="cls_015"><span class="cls_015">2</span></div>
+<div style="position:absolute;left:463.39px;top:361.32px" class="cls_015"><span class="cls_015">1</span></div>
+<div style="position:absolute;left:197.59px;top:379.32px" class="cls_015"><span class="cls_015">factorial</span></div>
+<div style="position:absolute;left:251.90px;top:379.32px" class="cls_015"><span class="cls_015">n</span></div>
+<div style="position:absolute;left:266.90px;top:379.32px" class="cls_015"><span class="cls_015">1</span></div>
+<div style="position:absolute;left:302.89px;top:379.32px" class="cls_015"><span class="cls_015">recurse</span></div>
+<div style="position:absolute;left:347.90px;top:379.32px" class="cls_015"><span class="cls_015">1</span></div>
+<div style="position:absolute;left:384.49px;top:379.32px" class="cls_015"><span class="cls_015">result</span></div>
+<div style="position:absolute;left:419.90px;top:379.32px" class="cls_015"><span class="cls_015">1</span></div>
+<div style="position:absolute;left:463.39px;top:392.82px" class="cls_015"><span class="cls_015">1</span></div>
+<div style="position:absolute;left:197.59px;top:410.82px" class="cls_015"><span class="cls_015">factorial</span></div>
+<div style="position:absolute;left:251.90px;top:410.82px" class="cls_015"><span class="cls_015">n</span></div>
+<div style="position:absolute;left:266.90px;top:410.82px" class="cls_015"><span class="cls_015">0</span></div>
+<div style="position:absolute;left:189.12px;top:443.78px" class="cls_003"><span class="cls_003">Figure 6.2: Stack diagram for the factorial method.</span></div>
+<div style="position:absolute;left:129.60px;top:494.47px" class="cls_005"><span class="cls_005">6.8</span></div>
+<div style="position:absolute;left:173.71px;top:494.47px" class="cls_005"><span class="cls_005">Leap of faith</span></div>
+<div style="position:absolute;left:129.60px;top:530.18px" class="cls_003"><span class="cls_003">Following the flow of execution is one way to read programs, but it can quickly</span></div>
+<div style="position:absolute;left:129.60px;top:545.35px" class="cls_003"><span class="cls_003">become overwhelming.  An alternative is the leap of faith: when you come</span></div>
+<div style="position:absolute;left:129.60px;top:560.51px" class="cls_003"><span class="cls_003">to a method invocation, instead of following the flow of execution, you assume</span></div>
+<div style="position:absolute;left:129.60px;top:575.68px" class="cls_003"><span class="cls_003">that the method works correctly and returns the appropriate value.</span></div>
+<div style="position:absolute;left:129.60px;top:602.53px" class="cls_003"><span class="cls_003">In fact, you are already practicing a leap of faith when you use methods in the</span></div>
+<div style="position:absolute;left:129.60px;top:617.70px" class="cls_003"><span class="cls_003">Java library. When you invoke Math.cos or System.out.println, you don’t</span></div>
+<div style="position:absolute;left:129.60px;top:632.86px" class="cls_003"><span class="cls_003">examine the implementations of those methods.  You just assume that they</span></div>
+<div style="position:absolute;left:129.60px;top:648.03px" class="cls_003"><span class="cls_003">work properly.</span></div>
+<div style="position:absolute;left:129.60px;top:674.88px" class="cls_003"><span class="cls_003">You should apply the same reasoning to your own methods. For example, in</span></div>
+<div style="position:absolute;left:129.60px;top:690.04px" class="cls_003"><span class="cls_003">Section 6.5 we wrote a method called isSingleDigit that determines whether</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:10426px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="34dd2842-5ad9-11e9-9d71-0cc47a792c0a_id_34dd2842-5ad9-11e9-9d71-0cc47a792c0a_files/background14.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">98</span></div>
+<div style="position:absolute;left:322.36px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 6</span></div>
+<div style="position:absolute;left:395.07px;top:88.65px" class="cls_003"><span class="cls_003">Value methods</span></div>
+<div style="position:absolute;left:86.40px;top:124.74px" class="cls_003"><span class="cls_003">a number is between 0 and 9.  Once we convince ourselves that this method</span></div>
+<div style="position:absolute;left:86.40px;top:139.91px" class="cls_003"><span class="cls_003">is correct - by testing and examination of the code - we can use the method</span></div>
+<div style="position:absolute;left:86.40px;top:155.08px" class="cls_003"><span class="cls_003">without ever looking at the implementation again.</span></div>
+<div style="position:absolute;left:86.40px;top:180.05px" class="cls_003"><span class="cls_003">The same is true of recursive methods.  When you get to the recursive call,</span></div>
+<div style="position:absolute;left:86.40px;top:195.21px" class="cls_003"><span class="cls_003">instead of following the flow of execution you should assume that the recursive</span></div>
+<div style="position:absolute;left:86.40px;top:210.38px" class="cls_003"><span class="cls_003">invocation works.  For example, “Assuming that I can find the factorial of</span></div>
+<div style="position:absolute;left:86.40px;top:225.55px" class="cls_003"><span class="cls_003">n − 1, can I compute the factorial of n?” Yes you can, by multiplying by n.</span></div>
+<div style="position:absolute;left:86.40px;top:250.52px" class="cls_003"><span class="cls_003">Of course, it is strange to assume that the method works correctly when you</span></div>
+<div style="position:absolute;left:86.40px;top:265.68px" class="cls_003"><span class="cls_003">have not finished writing it, but that’s why it’s called a leap of faith!</span></div>
+<div style="position:absolute;left:86.40px;top:310.70px" class="cls_005"><span class="cls_005">6.9</span></div>
+<div style="position:absolute;left:130.51px;top:310.70px" class="cls_005"><span class="cls_005">One more example</span></div>
+<div style="position:absolute;left:86.40px;top:344.52px" class="cls_003"><span class="cls_003">Another common recursively-defined mathematical function is the Fibonacci</span></div>
+<div style="position:absolute;left:86.40px;top:359.69px" class="cls_003"><span class="cls_003">sequence, which has the following definition:</span></div>
+<div style="position:absolute;left:161.41px;top:387.41px" class="cls_003"><span class="cls_003">f ibonacci(1) = 1</span></div>
+<div style="position:absolute;left:161.41px;top:405.57px" class="cls_003"><span class="cls_003">f ibonacci(2) = 1</span></div>
+<div style="position:absolute;left:161.41px;top:423.73px" class="cls_003"><span class="cls_003">f ibonacci(n) = f ibonacci(n − 1) + f ibonacci(n − 2)</span></div>
+<div style="position:absolute;left:86.40px;top:461.25px" class="cls_003"><span class="cls_003">Translated into Java, this function is:</span></div>
+<div style="position:absolute;left:101.34px;top:484.98px" class="cls_004"><span class="cls_004">public static int</span><span class="cls_003"> fibonacci(</span><span class="cls_004">int</span><span class="cls_003"> n) {</span></div>
+<div style="position:absolute;left:125.95px;top:500.15px" class="cls_004"><span class="cls_004">if</span><span class="cls_003"> (n == 1 || n == 2) {</span></div>
+<div style="position:absolute;left:150.56px;top:515.32px" class="cls_004"><span class="cls_004">return</span><span class="cls_003"> 1;</span></div>
+<div style="position:absolute;left:125.95px;top:530.49px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:125.95px;top:545.66px" class="cls_004"><span class="cls_004">return</span><span class="cls_003"> fibonacci(n - 1) + fibonacci(n - 2);</span></div>
+<div style="position:absolute;left:101.34px;top:560.82px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:584.47px" class="cls_003"><span class="cls_003">If you try to follow the flow of execution here, even for small values of n, your</span></div>
+<div style="position:absolute;left:86.40px;top:599.64px" class="cls_003"><span class="cls_003">head will explode.  But if we take a leap of faith and assume that the two</span></div>
+<div style="position:absolute;left:86.40px;top:614.81px" class="cls_003"><span class="cls_003">recursive invocations work correctly, it is clear that their sum is the result.</span></div>
+<div style="position:absolute;left:86.40px;top:659.82px" class="cls_005"><span class="cls_005">6.10</span></div>
+<div style="position:absolute;left:140.20px;top:659.82px" class="cls_005"><span class="cls_005">Vocabulary</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_003"><span class="cls_003">void method: A method that does not return a value.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:11228px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="34dd2842-5ad9-11e9-9d71-0cc47a792c0a_id_34dd2842-5ad9-11e9-9d71-0cc47a792c0a_files/background15.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">6.11</span></div>
+<div style="position:absolute;left:166.96px;top:88.65px" class="cls_003"><span class="cls_003">Exercises</span></div>
+<div style="position:absolute;left:512.16px;top:88.65px" class="cls_003"><span class="cls_003">99</span></div>
+<div style="position:absolute;left:129.60px;top:124.74px" class="cls_003"><span class="cls_003">value method: A method that returns a value.</span></div>
+<div style="position:absolute;left:129.60px;top:149.19px" class="cls_003"><span class="cls_003">return type: The type of value a method returns.</span></div>
+<div style="position:absolute;left:129.60px;top:173.64px" class="cls_003"><span class="cls_003">return value: The value provided as the result of a method invocation.</span></div>
+<div style="position:absolute;left:129.60px;top:198.09px" class="cls_003"><span class="cls_003">temporary variable: A short-lived variable, often used for debugging.</span></div>
+<div style="position:absolute;left:129.60px;top:222.54px" class="cls_003"><span class="cls_003">dead code: Part of a program that can never be executed, often because it</span></div>
+<div style="position:absolute;left:158.87px;top:237.70px" class="cls_003"><span class="cls_003">appears after a</span><span class="cls_004"> return</span><span class="cls_003"> statement.</span></div>
+<div style="position:absolute;left:129.60px;top:262.15px" class="cls_003"><span class="cls_003">incremental development: A process for creating programs by writing a</span></div>
+<div style="position:absolute;left:158.87px;top:277.32px" class="cls_003"><span class="cls_003">few lines at a time, compiling, and testing.</span></div>
+<div style="position:absolute;left:129.60px;top:301.77px" class="cls_003"><span class="cls_003">stub: A placeholder for an incomplete method so that the class will compile.</span></div>
+<div style="position:absolute;left:129.60px;top:326.22px" class="cls_003"><span class="cls_003">scaffolding: Code that is used during program development but is not part</span></div>
+<div style="position:absolute;left:158.87px;top:341.38px" class="cls_003"><span class="cls_003">of the final version.</span></div>
+<div style="position:absolute;left:129.60px;top:365.83px" class="cls_003"><span class="cls_003">functional decomposition: A process for breaking down a complex compu-</span></div>
+<div style="position:absolute;left:158.87px;top:381.00px" class="cls_003"><span class="cls_003">tation into simple methods, then composing the methods to perform the</span></div>
+<div style="position:absolute;left:158.87px;top:396.17px" class="cls_003"><span class="cls_003">computation.</span></div>
+<div style="position:absolute;left:129.60px;top:420.62px" class="cls_003"><span class="cls_003">overload: To define more than one method with the same name but different</span></div>
+<div style="position:absolute;left:158.87px;top:435.78px" class="cls_003"><span class="cls_003">parameters.</span></div>
+<div style="position:absolute;left:129.60px;top:460.23px" class="cls_003"><span class="cls_003">tag: A label that begins with an at sign (@) and is used by Javadoc to organize</span></div>
+<div style="position:absolute;left:158.87px;top:475.40px" class="cls_003"><span class="cls_003">documentation into sections.</span></div>
+<div style="position:absolute;left:129.60px;top:499.85px" class="cls_003"><span class="cls_003">Turing complete: A programming language that can implement any theo-</span></div>
+<div style="position:absolute;left:158.87px;top:515.02px" class="cls_003"><span class="cls_003">retically possible algorithm.</span></div>
+<div style="position:absolute;left:129.60px;top:539.46px" class="cls_003"><span class="cls_003">factorial: The product of all the integers up to and including a given integer.</span></div>
+<div style="position:absolute;left:129.60px;top:563.91px" class="cls_003"><span class="cls_003">leap of faith: A way to read recursive programs by assuming that the recur-</span></div>
+<div style="position:absolute;left:158.87px;top:579.08px" class="cls_003"><span class="cls_003">sive call works, rather than following the flow of execution.</span></div>
+<div style="position:absolute;left:129.60px;top:625.09px" class="cls_005"><span class="cls_005">6.11</span></div>
+<div style="position:absolute;left:183.40px;top:625.09px" class="cls_005"><span class="cls_005">Exercises</span></div>
+<div style="position:absolute;left:129.60px;top:659.71px" class="cls_003"><span class="cls_003">The code for this chapter is in the ch06 directory of ThinkJavaCode.  See</span></div>
+<div style="position:absolute;left:129.60px;top:674.88px" class="cls_003"><span class="cls_003">page xv for instructions on how to download the repository. Before you start</span></div>
+<div style="position:absolute;left:129.60px;top:690.04px" class="cls_003"><span class="cls_003">the exercises, we recommend that you compile and run the examples.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:12030px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="34dd2842-5ad9-11e9-9d71-0cc47a792c0a_id_34dd2842-5ad9-11e9-9d71-0cc47a792c0a_files/background16.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">100</span></div>
+<div style="position:absolute;left:322.37px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 6</span></div>
+<div style="position:absolute;left:395.08px;top:88.65px" class="cls_003"><span class="cls_003">Value methods</span></div>
+<div style="position:absolute;left:86.40px;top:124.74px" class="cls_003"><span class="cls_003">If you have not already read Appendix A.7, now might be a good time.  It</span></div>
+<div style="position:absolute;left:86.40px;top:139.91px" class="cls_003"><span class="cls_003">describes JUnit, a tool for efficiently testing value methods.</span></div>
+<div style="position:absolute;left:86.40px;top:167.03px" class="cls_003"><span class="cls_003">Exercise 6.1</span></div>
+<div style="position:absolute;left:168.84px;top:167.03px" class="cls_003"><span class="cls_003">If you have a question about whether something is legal, and</span></div>
+<div style="position:absolute;left:86.40px;top:182.20px" class="cls_003"><span class="cls_003">what happens if it is not, a good way to find out is to ask the compiler. Answer</span></div>
+<div style="position:absolute;left:86.40px;top:197.37px" class="cls_003"><span class="cls_003">the following questions by trying them out.</span></div>
+<div style="position:absolute;left:100.71px;top:227.08px" class="cls_003"><span class="cls_003">1. What happens if you invoke a value method and don’t do anything with</span></div>
+<div style="position:absolute;left:115.67px;top:242.24px" class="cls_003"><span class="cls_003">the result; that is, if you don’t assign it to a variable or use it as part of</span></div>
+<div style="position:absolute;left:115.67px;top:257.41px" class="cls_003"><span class="cls_003">a larger expression?</span></div>
+<div style="position:absolute;left:100.71px;top:282.31px" class="cls_003"><span class="cls_003">2. What happens if you use a void method as part of an expression? For</span></div>
+<div style="position:absolute;left:115.67px;top:297.48px" class="cls_003"><span class="cls_003">example, try System.out.println(</span><span class="cls_006">"boo!"</span><span class="cls_003">) + 7;</span></div>
+<div style="position:absolute;left:86.40px;top:324.60px" class="cls_003"><span class="cls_003">Exercise 6.2</span></div>
+<div style="position:absolute;left:168.66px;top:324.60px" class="cls_003"><span class="cls_003">Write a method named isDivisible that takes two integers,</span></div>
+<div style="position:absolute;left:86.40px;top:339.77px" class="cls_003"><span class="cls_003">n and m, and that returns</span><span class="cls_004"> true</span><span class="cls_003"> if n is divisible by m, and</span><span class="cls_004"> false</span><span class="cls_003"> otherwise.</span></div>
+<div style="position:absolute;left:86.40px;top:366.89px" class="cls_003"><span class="cls_003">Exercise 6.3</span></div>
+<div style="position:absolute;left:169.18px;top:366.89px" class="cls_003"><span class="cls_003">If you are given three sticks, you may or may not be able to</span></div>
+<div style="position:absolute;left:86.40px;top:382.06px" class="cls_003"><span class="cls_003">arrange them in a triangle. For example, if one of the sticks is 12 inches long</span></div>
+<div style="position:absolute;left:86.40px;top:397.23px" class="cls_003"><span class="cls_003">and the other two are one inch long, you will not be able to get the short sticks</span></div>
+<div style="position:absolute;left:86.40px;top:412.40px" class="cls_003"><span class="cls_003">to meet in the middle. For any three lengths, there is a simple test to see if it</span></div>
+<div style="position:absolute;left:86.40px;top:427.56px" class="cls_003"><span class="cls_003">is possible to form a triangle:</span></div>
+<div style="position:absolute;left:115.67px;top:457.27px" class="cls_003"><span class="cls_003">If any of the three lengths is greater than the sum of the other two,</span></div>
+<div style="position:absolute;left:115.67px;top:472.44px" class="cls_003"><span class="cls_003">you cannot form a triangle.</span></div>
+<div style="position:absolute;left:86.40px;top:502.14px" class="cls_003"><span class="cls_003">Write a method named isTriangle that takes three integers as arguments</span></div>
+<div style="position:absolute;left:86.40px;top:517.31px" class="cls_003"><span class="cls_003">and returns either</span><span class="cls_004"> true</span><span class="cls_003"> or</span><span class="cls_004"> false</span><span class="cls_003">, depending on whether you can or cannot</span></div>
+<div style="position:absolute;left:86.40px;top:532.48px" class="cls_003"><span class="cls_003">form a triangle from sticks with the given lengths. The point of this exercise</span></div>
+<div style="position:absolute;left:86.40px;top:547.65px" class="cls_003"><span class="cls_003">is to use conditional statements to write a value method.</span></div>
+<div style="position:absolute;left:86.40px;top:574.77px" class="cls_003"><span class="cls_003">Exercise 6.4</span></div>
+<div style="position:absolute;left:167.82px;top:574.77px" class="cls_003"><span class="cls_003">Many computations can be expressed more concisely using the</span></div>
+<div style="position:absolute;left:86.40px;top:589.94px" class="cls_003"><span class="cls_003">“multadd” operation, which takes three operands and computes a * b + c.</span></div>
+<div style="position:absolute;left:86.40px;top:605.11px" class="cls_003"><span class="cls_003">Some processors even provide a hardware implementation of this operation for</span></div>
+<div style="position:absolute;left:86.40px;top:620.27px" class="cls_003"><span class="cls_003">floating-point numbers.</span></div>
+<div style="position:absolute;left:100.71px;top:649.98px" class="cls_003"><span class="cls_003">1. Create a new program called Multadd.java.</span></div>
+<div style="position:absolute;left:100.71px;top:674.88px" class="cls_003"><span class="cls_003">2. Write a method called multadd that takes three doubles as parameters</span></div>
+<div style="position:absolute;left:115.67px;top:690.04px" class="cls_003"><span class="cls_003">and that returns a * b + c.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:12832px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="34dd2842-5ad9-11e9-9d71-0cc47a792c0a_id_34dd2842-5ad9-11e9-9d71-0cc47a792c0a_files/background17.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">6.11</span></div>
+<div style="position:absolute;left:166.96px;top:88.65px" class="cls_003"><span class="cls_003">Exercises</span></div>
+<div style="position:absolute;left:505.43px;top:88.65px" class="cls_003"><span class="cls_003">101</span></div>
+<div style="position:absolute;left:143.91px;top:124.74px" class="cls_003"><span class="cls_003">3. Write a main method that tests multadd by invoking it with a few simple</span></div>
+<div style="position:absolute;left:158.87px;top:139.91px" class="cls_003"><span class="cls_003">parameters, like 1.0, 2.0, 3.0.</span></div>
+<div style="position:absolute;left:143.91px;top:172.58px" class="cls_003"><span class="cls_003">4. Also in main, use multadd to compute the following values:</span></div>
+<div style="position:absolute;left:365.49px;top:196.19px" class="cls_016"><span class="cls_016">π</span></div>
+<div style="position:absolute;left:312.03px;top:199.58px" class="cls_003"><span class="cls_003">sin</span><span class="cls_017"><sup>π</sup></span></div>
+<div style="position:absolute;left:330.04px;top:197.46px" class="cls_009"><span class="cls_009">4</span><span class="cls_003"> +</span><span class="cls_017">co2</span><span class="cls_018">4</span></div>
+<div style="position:absolute;left:306.20px;top:218.46px" class="cls_003"><span class="cls_003">log 10 + log 20</span></div>
+<div style="position:absolute;left:143.91px;top:254.94px" class="cls_003"><span class="cls_003">5. Write a method called expSum that takes a double as a parameter and</span></div>
+<div style="position:absolute;left:158.87px;top:270.10px" class="cls_003"><span class="cls_003">that uses multadd to calculate:</span></div>
+<div style="position:absolute;left:327.59px;top:287.57px" class="cls_003"><span class="cls_003">√</span></div>
+<div style="position:absolute;left:289.24px;top:296.87px" class="cls_003"><span class="cls_003">xe</span><span class="cls_009"><sup>−x</sup></span><span class="cls_003"> +</span></div>
+<div style="position:absolute;left:337.55px;top:297.83px" class="cls_003"><span class="cls_003">1−e</span><span class="cls_009"><sup>−x</sup></span></div>
+<div style="position:absolute;left:158.87px;top:325.55px" class="cls_003"><span class="cls_003">Hint: The method for raising e to a power is Math.exp.</span></div>
+<div style="position:absolute;left:129.60px;top:371.74px" class="cls_003"><span class="cls_003">In the last part of this exercise, you need to write a method that invokes</span></div>
+<div style="position:absolute;left:129.60px;top:386.91px" class="cls_003"><span class="cls_003">another method you wrote.  Whenever you do that, it is a good idea to test</span></div>
+<div style="position:absolute;left:129.60px;top:402.08px" class="cls_003"><span class="cls_003">the first method carefully before working on the second. Otherwise, you might</span></div>
+<div style="position:absolute;left:129.60px;top:417.25px" class="cls_003"><span class="cls_003">find yourself debugging two methods at the same time, which can be difficult.</span></div>
+<div style="position:absolute;left:129.60px;top:450.40px" class="cls_003"><span class="cls_003">One of the purposes of this exercise is to practice pattern-matching: the ability</span></div>
+<div style="position:absolute;left:129.60px;top:465.57px" class="cls_003"><span class="cls_003">to recognize a specific problem as an instance of a general category of problems.</span></div>
+<div style="position:absolute;left:129.60px;top:492.69px" class="cls_003"><span class="cls_003">Exercise 6.5</span></div>
+<div style="position:absolute;left:211.94px;top:492.69px" class="cls_003"><span class="cls_003">What is the output of the following program?</span></div>
+<div style="position:absolute;left:144.54px;top:524.62px" class="cls_004"><span class="cls_004">public static void</span><span class="cls_003"> main(String[] args) {</span></div>
+<div style="position:absolute;left:169.15px;top:539.79px" class="cls_004"><span class="cls_004">boolean</span><span class="cls_003"> flag1 = isHoopy(202);</span></div>
+<div style="position:absolute;left:169.15px;top:554.96px" class="cls_004"><span class="cls_004">boolean</span><span class="cls_003"> flag2 = isFrabjuous(202);</span></div>
+<div style="position:absolute;left:169.15px;top:570.13px" class="cls_003"><span class="cls_003">System.out.println(flag1);</span></div>
+<div style="position:absolute;left:169.15px;top:585.29px" class="cls_003"><span class="cls_003">System.out.println(flag2);</span></div>
+<div style="position:absolute;left:169.15px;top:600.46px" class="cls_004"><span class="cls_004">if</span><span class="cls_003"> (flag1 && flag2) {</span></div>
+<div style="position:absolute;left:193.76px;top:615.63px" class="cls_003"><span class="cls_003">System.out.println(</span><span class="cls_006">"ping!"</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:169.15px;top:630.80px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:169.15px;top:645.97px" class="cls_004"><span class="cls_004">if</span><span class="cls_003"> (flag1 || flag2) {</span></div>
+<div style="position:absolute;left:193.76px;top:661.14px" class="cls_003"><span class="cls_003">System.out.println(</span><span class="cls_006">"pong!"</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:169.15px;top:676.30px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:144.54px;top:691.47px" class="cls_003"><span class="cls_003">}</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:13634px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="34dd2842-5ad9-11e9-9d71-0cc47a792c0a_id_34dd2842-5ad9-11e9-9d71-0cc47a792c0a_files/background18.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">102</span></div>
+<div style="position:absolute;left:322.37px;top:88.65px" class="cls_003"><span class="cls_003">Chapter</span></div>
+<div style="position:absolute;left:374.91px;top:88.65px" class="cls_003"><span class="cls_003">6</span></div>
+<div style="position:absolute;left:395.08px;top:88.65px" class="cls_003"><span class="cls_003">Value methods</span></div>
+<div style="position:absolute;left:101.34px;top:123.41px" class="cls_004"><span class="cls_004">public static boolean</span><span class="cls_003"> isHoopy(</span><span class="cls_004">int</span><span class="cls_003"> x) {</span></div>
+<div style="position:absolute;left:125.95px;top:138.57px" class="cls_004"><span class="cls_004">boolean</span><span class="cls_003"> hoopyFlag;</span></div>
+<div style="position:absolute;left:125.95px;top:153.74px" class="cls_004"><span class="cls_004">if</span><span class="cls_003"> (x % 2 == 0) {</span></div>
+<div style="position:absolute;left:150.56px;top:168.91px" class="cls_003"><span class="cls_003">hoopyFlag =</span><span class="cls_004"> true</span><span class="cls_003">;</span></div>
+<div style="position:absolute;left:125.95px;top:184.08px" class="cls_003"><span class="cls_003">}</span><span class="cls_004"> else</span><span class="cls_003"> {</span></div>
+<div style="position:absolute;left:150.56px;top:199.25px" class="cls_003"><span class="cls_003">hoopyFlag =</span><span class="cls_004"> false</span><span class="cls_003">;</span></div>
+<div style="position:absolute;left:125.95px;top:214.41px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:125.95px;top:229.58px" class="cls_004"><span class="cls_004">return</span><span class="cls_003"> hoopyFlag;</span></div>
+<div style="position:absolute;left:101.34px;top:244.75px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:101.34px;top:274.90px" class="cls_004"><span class="cls_004">public static boolean</span><span class="cls_003"> isFrabjuous(</span><span class="cls_004">int</span><span class="cls_003"> x) {</span></div>
+<div style="position:absolute;left:125.95px;top:290.07px" class="cls_004"><span class="cls_004">boolean</span><span class="cls_003"> frabjuousFlag;</span></div>
+<div style="position:absolute;left:125.95px;top:305.23px" class="cls_004"><span class="cls_004">if</span><span class="cls_003"> (x > 0) {</span></div>
+<div style="position:absolute;left:150.56px;top:320.40px" class="cls_003"><span class="cls_003">frabjuousFlag =</span><span class="cls_004"> true</span><span class="cls_003">;</span></div>
+<div style="position:absolute;left:125.95px;top:335.57px" class="cls_003"><span class="cls_003">}</span><span class="cls_004"> else</span><span class="cls_003"> {</span></div>
+<div style="position:absolute;left:150.56px;top:350.74px" class="cls_003"><span class="cls_003">frabjuousFlag =</span><span class="cls_004"> false</span><span class="cls_003">;</span></div>
+<div style="position:absolute;left:125.95px;top:365.91px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:125.95px;top:381.07px" class="cls_004"><span class="cls_004">return</span><span class="cls_003"> frabjuousFlag;</span></div>
+<div style="position:absolute;left:101.34px;top:396.24px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:424.07px" class="cls_003"><span class="cls_003">The purpose of this exercise is to make sure you understand logical operators</span></div>
+<div style="position:absolute;left:86.40px;top:439.24px" class="cls_003"><span class="cls_003">and the flow of execution through value methods.</span></div>
+<div style="position:absolute;left:86.40px;top:466.37px" class="cls_003"><span class="cls_003">Exercise 6.6</span></div>
+<div style="position:absolute;left:169.58px;top:466.37px" class="cls_003"><span class="cls_003">In this exercise, you will use a stack diagram to understand</span></div>
+<div style="position:absolute;left:86.40px;top:481.53px" class="cls_003"><span class="cls_003">the execution of the following recursive program.</span></div>
+<div style="position:absolute;left:101.34px;top:509.45px" class="cls_004"><span class="cls_004">public static void</span><span class="cls_003"> main(String[] args) {</span></div>
+<div style="position:absolute;left:125.95px;top:524.62px" class="cls_003"><span class="cls_003">System.out.println(prod(1, 4));</span></div>
+<div style="position:absolute;left:101.34px;top:539.79px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:101.34px;top:570.13px" class="cls_004"><span class="cls_004">public static int</span><span class="cls_003"> prod(</span><span class="cls_004">int</span><span class="cls_003"> m,</span><span class="cls_004"> int</span><span class="cls_003"> n) {</span></div>
+<div style="position:absolute;left:125.95px;top:585.29px" class="cls_004"><span class="cls_004">if</span><span class="cls_003"> (m == n) {</span></div>
+<div style="position:absolute;left:150.56px;top:600.46px" class="cls_004"><span class="cls_004">return</span><span class="cls_003"> n;</span></div>
+<div style="position:absolute;left:125.95px;top:615.63px" class="cls_003"><span class="cls_003">}</span><span class="cls_004"> else</span><span class="cls_003"> {</span></div>
+<div style="position:absolute;left:150.56px;top:630.80px" class="cls_004"><span class="cls_004">int</span><span class="cls_003"> recurse = prod(m, n - 1);</span></div>
+<div style="position:absolute;left:150.56px;top:645.97px" class="cls_004"><span class="cls_004">int</span><span class="cls_003"> result = n * recurse;</span></div>
+<div style="position:absolute;left:150.56px;top:661.14px" class="cls_004"><span class="cls_004">return</span><span class="cls_003"> result;</span></div>
+<div style="position:absolute;left:125.95px;top:676.30px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:101.34px;top:691.47px" class="cls_003"><span class="cls_003">}</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:14436px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="34dd2842-5ad9-11e9-9d71-0cc47a792c0a_id_34dd2842-5ad9-11e9-9d71-0cc47a792c0a_files/background19.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">6.11</span></div>
+<div style="position:absolute;left:166.96px;top:88.65px" class="cls_003"><span class="cls_003">Exercises</span></div>
+<div style="position:absolute;left:505.43px;top:88.65px" class="cls_003"><span class="cls_003">103</span></div>
+<div style="position:absolute;left:143.91px;top:124.74px" class="cls_003"><span class="cls_003">1. Draw a stack diagram showing the state of the program just before the</span></div>
+<div style="position:absolute;left:158.87px;top:139.91px" class="cls_003"><span class="cls_003">last invocation of prod completes.</span></div>
+<div style="position:absolute;left:143.91px;top:163.15px" class="cls_003"><span class="cls_003">2. What is the output of this program?</span></div>
+<div style="position:absolute;left:359.72px;top:163.15px" class="cls_003"><span class="cls_003">(Try to answer this question on</span></div>
+<div style="position:absolute;left:158.87px;top:178.32px" class="cls_003"><span class="cls_003">paper first, then run the code to check your answer.)</span></div>
+<div style="position:absolute;left:143.91px;top:201.56px" class="cls_003"><span class="cls_003">3. Explain in a few words what prod does (without getting into the details</span></div>
+<div style="position:absolute;left:158.87px;top:216.73px" class="cls_003"><span class="cls_003">of how it works).</span></div>
+<div style="position:absolute;left:143.91px;top:239.97px" class="cls_003"><span class="cls_003">4. Rewrite prod without the temporary variables recurse and result.</span></div>
+<div style="position:absolute;left:158.87px;top:255.14px" class="cls_003"><span class="cls_003">Hint: You only need one line for the</span><span class="cls_004"> else</span><span class="cls_003"> branch.</span></div>
+<div style="position:absolute;left:129.60px;top:282.26px" class="cls_003"><span class="cls_003">Exercise 6.7</span></div>
+<div style="position:absolute;left:211.59px;top:282.26px" class="cls_003"><span class="cls_003">Write a recursive method named oddSum that takes a positive</span></div>
+<div style="position:absolute;left:129.60px;top:297.43px" class="cls_003"><span class="cls_003">odd integer n and returns the sum of odd integers from 1 to n.  Start with</span></div>
+<div style="position:absolute;left:129.60px;top:312.60px" class="cls_003"><span class="cls_003">a base case, and use temporary variables to debug your solution. You might</span></div>
+<div style="position:absolute;left:129.60px;top:327.77px" class="cls_003"><span class="cls_003">find it helpful to print the value of n each time oddSum is invoked.</span></div>
+<div style="position:absolute;left:129.60px;top:354.89px" class="cls_003"><span class="cls_003">Exercise 6.8</span></div>
+<div style="position:absolute;left:212.32px;top:354.89px" class="cls_003"><span class="cls_003">The goal of this exercise is to translate a recursive definition</span></div>
+<div style="position:absolute;left:129.60px;top:370.06px" class="cls_003"><span class="cls_003">into a Java method.  The Ackermann function is defined for non-negative</span></div>
+<div style="position:absolute;left:129.60px;top:385.23px" class="cls_003"><span class="cls_003">integers as follows:</span></div>
+<div style="position:absolute;left:227.69px;top:403.30px" class="cls_003"><span class="cls_003"></span></div>
+<div style="position:absolute;left:227.69px;top:414.06px" class="cls_003"><span class="cls_003">n+1</span></div>
+<div style="position:absolute;left:364.67px;top:413.84px" class="cls_003"><span class="cls_003">if m = 0</span></div>
+<div style="position:absolute;left:171.59px;top:431.39px" class="cls_003"><span class="cls_003">A(m, n) =</span></div>
+<div style="position:absolute;left:238.32px;top:432.05px" class="cls_003"><span class="cls_003">A(m − 1, 1)</span></div>
+<div style="position:absolute;left:364.66px;top:432.05px" class="cls_003"><span class="cls_003">if m > 0 and n = 0</span></div>
+<div style="position:absolute;left:227.69px;top:439.17px" class="cls_003"><span class="cls_003"></span></div>
+<div style="position:absolute;left:238.32px;top:450.25px" class="cls_003"><span class="cls_003">A(m − 1, A(m, n − 1))  if m > 0 and n > 0</span></div>
+<div style="position:absolute;left:129.60px;top:485.74px" class="cls_003"><span class="cls_003">Write a method called ack that takes two</span><span class="cls_004"> int</span><span class="cls_003">s as parameters and that com-</span></div>
+<div style="position:absolute;left:129.60px;top:500.90px" class="cls_003"><span class="cls_003">putes and returns the value of the Ackermann function.</span></div>
+<div style="position:absolute;left:129.60px;top:524.25px" class="cls_003"><span class="cls_003">Test your implementation of Ackermann by invoking it from main and display-</span></div>
+<div style="position:absolute;left:129.60px;top:539.42px" class="cls_003"><span class="cls_003">ing the return value.  Note the return value gets very big very quickly.  You</span></div>
+<div style="position:absolute;left:129.60px;top:554.59px" class="cls_003"><span class="cls_003">should try it only for small values of m and n (not bigger than 3).</span></div>
+<div style="position:absolute;left:129.60px;top:581.71px" class="cls_003"><span class="cls_003">Exercise 6.9</span></div>
+<div style="position:absolute;left:212.26px;top:581.71px" class="cls_003"><span class="cls_003">Write a recursive method called power that takes a double x</span></div>
+<div style="position:absolute;left:129.60px;top:596.52px" class="cls_003"><span class="cls_003">and an integer n and returns x</span><span class="cls_009"><sup>n</sup></span><span class="cls_003">.</span></div>
+<div style="position:absolute;left:129.60px;top:619.87px" class="cls_003"><span class="cls_003">Hint: A recursive definition of this operation is x</span><span class="cls_009"><sup>n</sup></span><span class="cls_003"> = x · x</span><span class="cls_009"><sup>n−1</sup></span><span class="cls_003">. Also, remember</span></div>
+<div style="position:absolute;left:129.60px;top:635.39px" class="cls_003"><span class="cls_003">that anything raised to the zeroth power is 1.</span></div>
+<div style="position:absolute;left:129.60px;top:658.74px" class="cls_003"><span class="cls_003">Optional challenge: you can make this method more efficient, when n is even,</span></div>
+<div style="position:absolute;left:188.26px;top:664.22px" class="cls_003"><span class="cls_003">(</span></div>
+<div style="position:absolute;left:214.50px;top:664.22px" class="cls_003"><span class="cls_003">)</span><span class="cls_009"><sub>2</sub></span></div>
+<div style="position:absolute;left:129.60px;top:673.55px" class="cls_003"><span class="cls_003">using x</span><span class="cls_009"><sup>n</sup></span><span class="cls_003"> =</span></div>
+<div style="position:absolute;left:193.74px;top:673.55px" class="cls_003"><span class="cls_003">x</span><span class="cls_009"><sup>n/2</sup></span></div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,373 @@
+<html>
+<head><meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<style type="text/css">
+<!--
+span.cls_002{font-family:Arial,serif;font-size:24.8px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_002{font-family:Arial,serif;font-size:24.8px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_003{font-family:Arial,serif;font-size:12.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_003{font-family:Arial,serif;font-size:12.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_004{font-family:Arial,serif;font-size:17.3px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_004{font-family:Arial,serif;font-size:17.3px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_005{font-family:Arial,serif;font-size:12.0px;color:rgb(0,0,255);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_005{font-family:Arial,serif;font-size:12.0px;color:rgb(0,0,255);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_006{font-family:Times,serif;font-size:8.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_006{font-family:Times,serif;font-size:8.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_007{font-family:Arial,serif;font-size:12.0px;color:rgb(178,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_007{font-family:Arial,serif;font-size:12.0px;color:rgb(178,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+-->
+</style>
+<script type="text/javascript" src="b684a3e6-5adb-11e9-9d71-0cc47a792c0a_id_b684a3e6-5adb-11e9-9d71-0cc47a792c0a_files/wz_jsgraphics.js"></script>
+</head>
+<body>
+<div style="position:absolute;left:50%;margin-left:-306px;top:0px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="b684a3e6-5adb-11e9-9d71-0cc47a792c0a_id_b684a3e6-5adb-11e9-9d71-0cc47a792c0a_files/background01.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:204.17px" class="cls_002"><span class="cls_002">Appendix A</span></div>
+<div style="position:absolute;left:129.60px;top:266.54px" class="cls_002"><span class="cls_002">Development tools</span></div>
+<div style="position:absolute;left:129.60px;top:345.45px" class="cls_003"><span class="cls_003">The steps for compiling, running, and debugging Java code depend on your</span></div>
+<div style="position:absolute;left:129.60px;top:360.62px" class="cls_003"><span class="cls_003">development environment and operating system. We avoided putting these de-</span></div>
+<div style="position:absolute;left:129.60px;top:375.79px" class="cls_003"><span class="cls_003">tails in the main text, because they can be distracting. Instead, we provide this</span></div>
+<div style="position:absolute;left:129.60px;top:390.95px" class="cls_003"><span class="cls_003">appendix with a brief introduction to DrJava - an integrated development</span></div>
+<div style="position:absolute;left:129.60px;top:406.12px" class="cls_003"><span class="cls_003">environment (IDE) that is well suited for beginners - and other development</span></div>
+<div style="position:absolute;left:129.60px;top:421.29px" class="cls_003"><span class="cls_003">tools, including Checkstyle for code quality and JUnit for testing.</span></div>
+<div style="position:absolute;left:129.60px;top:467.89px" class="cls_004"><span class="cls_004">A.1</span></div>
+<div style="position:absolute;left:178.66px;top:467.89px" class="cls_004"><span class="cls_004">Installing DrJava</span></div>
+<div style="position:absolute;left:129.60px;top:502.98px" class="cls_003"><span class="cls_003">The easiest way to start programming in Java is to use a website that com-</span></div>
+<div style="position:absolute;left:129.60px;top:518.15px" class="cls_003"><span class="cls_003">piles and runs Java code in the browser.  Examples include</span><span class="cls_005"> <A HREF="https://www.jdoodle.com/">jdoodle.com</A> </span><span class="cls_003">,</span></div>
+<div style="position:absolute;left:129.60px;top:533.32px" class="cls_005"><span class="cls_005"> </span><A HREF="https://www.compilejava.net/">compilejava.net</A><span class="cls_003">,</span><span class="cls_005"> <A HREF="http://tutorialspoint.com/">tutorialspoint.com</A> </span><span class="cls_003">, and others.</span></div>
+<div style="position:absolute;left:129.60px;top:559.55px" class="cls_003"><span class="cls_003">If you are unable to install software on your computer (which is often the case</span></div>
+<div style="position:absolute;left:129.60px;top:574.72px" class="cls_003"><span class="cls_003">in public schools and Internet cafés), you can use these online development</span></div>
+<div style="position:absolute;left:129.60px;top:589.88px" class="cls_003"><span class="cls_003">environments for almost everything in this book.</span></div>
+<div style="position:absolute;left:129.60px;top:616.11px" class="cls_003"><span class="cls_003">But if you want to compile and run Java programs on your own computer, you</span></div>
+<div style="position:absolute;left:129.60px;top:631.28px" class="cls_003"><span class="cls_003">will need:</span></div>
+<div style="position:absolute;left:147.16px;top:659.71px" class="cls_006"><span class="cls_006"></span><span class="cls_003"> The Java Development Kit (JDK), which includes the compiler, the</span></div>
+<div style="position:absolute;left:158.87px;top:674.88px" class="cls_003"><span class="cls_003">Java Virtual Machine (JVM) that interprets the compiled byte code,</span></div>
+<div style="position:absolute;left:158.87px;top:690.04px" class="cls_003"><span class="cls_003">and other tools such as Javadoc.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:802px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="b684a3e6-5adb-11e9-9d71-0cc47a792c0a_id_b684a3e6-5adb-11e9-9d71-0cc47a792c0a_files/background02.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">234</span></div>
+<div style="position:absolute;left:287.43px;top:88.65px" class="cls_003"><span class="cls_003">Appendix A   Development tools</span></div>
+<div style="position:absolute;left:103.96px;top:124.74px" class="cls_006"><span class="cls_006"></span><span class="cls_003"> A simple text editor such as Notepad++ or Sublime Text, and/or an</span></div>
+<div style="position:absolute;left:115.67px;top:139.91px" class="cls_003"><span class="cls_003">IDE such as DrJava, Eclipse, jGrasp, or NetBeans.</span></div>
+<div style="position:absolute;left:86.40px;top:178.63px" class="cls_003"><span class="cls_003">The JDK we recommend is Java SE (Standard Edition), which Oracle makes</span></div>
+<div style="position:absolute;left:86.40px;top:193.80px" class="cls_003"><span class="cls_003">available for free. The IDE we recommend is DrJava, which is an open-source</span></div>
+<div style="position:absolute;left:86.40px;top:208.97px" class="cls_003"><span class="cls_003">development environment written in Java (see Figure A.1).</span></div>
+<div style="position:absolute;left:86.40px;top:239.13px" class="cls_003"><span class="cls_003">To install the JDK, search the web for “download JDK” which should take you</span></div>
+<div style="position:absolute;left:86.40px;top:254.30px" class="cls_003"><span class="cls_003">to Oracle’s website.  Scroll down to “Java Platform, Standard Edition” and</span></div>
+<div style="position:absolute;left:86.40px;top:269.47px" class="cls_003"><span class="cls_003">click the download button under JDK. Then accept the license agreement and</span></div>
+<div style="position:absolute;left:86.40px;top:284.64px" class="cls_003"><span class="cls_003">select the installer for your operating system. Don’t forget to run the installer</span></div>
+<div style="position:absolute;left:86.40px;top:299.81px" class="cls_003"><span class="cls_003">after you download it!</span></div>
+<div style="position:absolute;left:86.40px;top:329.97px" class="cls_003"><span class="cls_003">To install DrJava, visit</span><span class="cls_005"> <A HREF="http://drjava.org">http://drjava.org</A> </span><span class="cls_003"> and download the JAR file. We</span></div>
+<div style="position:absolute;left:86.40px;top:345.14px" class="cls_003"><span class="cls_003">recommend that you save it to your Desktop or another convenient location.</span></div>
+<div style="position:absolute;left:86.40px;top:360.31px" class="cls_003"><span class="cls_003">Simply double-click the JAR file to run DrJava.  Refer to the DrJava docu-</span></div>
+<div style="position:absolute;left:86.40px;top:375.48px" class="cls_003"><span class="cls_003">mentation (</span><A HREF="http://drjava.org/docs/quickstart/">http://drjava.org/docs/quickstart/</A> </span><span class="cls_003">) for more details.</span></div>
+<div style="position:absolute;left:113.90px;top:614.04px" class="cls_003"><span class="cls_003">Figure A.1: Screenshot of DrJava editing the hello world program.</span></div>
+<div style="position:absolute;left:86.40px;top:644.54px" class="cls_003"><span class="cls_003">When running DrJava for the first time, we recommend you change three</span></div>
+<div style="position:absolute;left:86.40px;top:659.71px" class="cls_003"><span class="cls_003">settings from the Edit > Preferences menu under Miscellaneous: set the Indent</span></div>
+<div style="position:absolute;left:86.40px;top:674.88px" class="cls_003"><span class="cls_003">Level to 4, check the Automatically Close Block Comments box, and uncheck</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_003"><span class="cls_003">the Keep Emacs-style Backup Files box.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:1604px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="b684a3e6-5adb-11e9-9d71-0cc47a792c0a_id_b684a3e6-5adb-11e9-9d71-0cc47a792c0a_files/background03.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">A.2</span></div>
+<div style="position:absolute;left:163.67px;top:88.65px" class="cls_003"><span class="cls_003">DrJava interactions</span></div>
+<div style="position:absolute;left:505.42px;top:88.65px" class="cls_003"><span class="cls_003">235</span></div>
+<div style="position:absolute;left:129.60px;top:119.48px" class="cls_004"><span class="cls_004">A.2</span></div>
+<div style="position:absolute;left:178.66px;top:119.48px" class="cls_004"><span class="cls_004">DrJava interactions</span></div>
+<div style="position:absolute;left:129.60px;top:162.63px" class="cls_003"><span class="cls_003">One of the most useful features of DrJava is the “Interactions Pane” at the</span></div>
+<div style="position:absolute;left:129.60px;top:177.80px" class="cls_003"><span class="cls_003">bottom of the window. It provides the ability to try out code quickly, without</span></div>
+<div style="position:absolute;left:129.60px;top:192.96px" class="cls_003"><span class="cls_003">having to write a class definition and save/compile/run the program.  Fig-</span></div>
+<div style="position:absolute;left:129.60px;top:208.13px" class="cls_003"><span class="cls_003">ure A.2 shows an example.</span></div>
+<div style="position:absolute;left:176.50px;top:502.08px" class="cls_003"><span class="cls_003">Figure A.2: Screenshot of the Interactions Pane in DrJava.</span></div>
+<div style="position:absolute;left:129.60px;top:535.89px" class="cls_003"><span class="cls_003">There is one subtle detail to note when using the Interactions feature. If you</span></div>
+<div style="position:absolute;left:129.60px;top:551.06px" class="cls_003"><span class="cls_003">don’t end an expression (or statement) with a semicolon, DrJava automatically</span></div>
+<div style="position:absolute;left:129.60px;top:566.22px" class="cls_003"><span class="cls_003">displays its value. Notice in Figure A.2 how the variable declarations end with</span></div>
+<div style="position:absolute;left:129.60px;top:581.39px" class="cls_003"><span class="cls_003">semicolons, but the logic expressions in the following lines do not. This feature</span></div>
+<div style="position:absolute;left:129.60px;top:596.56px" class="cls_003"><span class="cls_003">saves you from having to type System.out.println every time.</span></div>
+<div style="position:absolute;left:129.60px;top:629.37px" class="cls_003"><span class="cls_003">What’s nice about this feature is that you don’t have to create a new class, de-</span></div>
+<div style="position:absolute;left:129.60px;top:644.54px" class="cls_003"><span class="cls_003">clare a main method, write arbitrary expressions inside System.out.println</span></div>
+<div style="position:absolute;left:129.60px;top:659.71px" class="cls_003"><span class="cls_003">statements, save the source file, and get all of your code to compile in advance.</span></div>
+<div style="position:absolute;left:129.60px;top:674.88px" class="cls_003"><span class="cls_003">Also, you can press the up/down arrows on the keyboard to repeat previous</span></div>
+<div style="position:absolute;left:129.60px;top:690.04px" class="cls_003"><span class="cls_003">commands and experiment with incremental differences.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:2406px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="b684a3e6-5adb-11e9-9d71-0cc47a792c0a_id_b684a3e6-5adb-11e9-9d71-0cc47a792c0a_files/background04.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">236</span></div>
+<div style="position:absolute;left:287.43px;top:88.65px" class="cls_003"><span class="cls_003">Appendix A   Development tools</span></div>
+<div style="position:absolute;left:86.40px;top:119.48px" class="cls_004"><span class="cls_004">A.3</span></div>
+<div style="position:absolute;left:135.46px;top:119.48px" class="cls_004"><span class="cls_004">Command-line interface</span></div>
+<div style="position:absolute;left:86.40px;top:154.73px" class="cls_003"><span class="cls_003">One of the most powerful and useful skills you can learn is how to use the</span></div>
+<div style="position:absolute;left:86.40px;top:169.89px" class="cls_003"><span class="cls_003">command-line interface, also called the “terminal”. The command line is a</span></div>
+<div style="position:absolute;left:86.40px;top:185.06px" class="cls_003"><span class="cls_003">direct interface to the operating system. It allows you to run programs, manage</span></div>
+<div style="position:absolute;left:86.40px;top:200.23px" class="cls_003"><span class="cls_003">files and directories, and monitor system resources. Many advanced tools, both</span></div>
+<div style="position:absolute;left:86.40px;top:215.40px" class="cls_003"><span class="cls_003">for software development and general purpose computing, are available only</span></div>
+<div style="position:absolute;left:86.40px;top:230.57px" class="cls_003"><span class="cls_003">at the command line.</span></div>
+<div style="position:absolute;left:86.40px;top:256.95px" class="cls_003"><span class="cls_003">There are many good tutorials online for learning the command line for your</span></div>
+<div style="position:absolute;left:86.40px;top:272.11px" class="cls_003"><span class="cls_003">operating system; just search the web for “command line tutorial”. On Unix</span></div>
+<div style="position:absolute;left:86.40px;top:287.28px" class="cls_003"><span class="cls_003">systems like Linux and OS X, you can get started with just four commands:</span></div>
+<div style="position:absolute;left:86.40px;top:302.45px" class="cls_003"><span class="cls_003">change the working directory (cd), list directory contents (ls), compile Java</span></div>
+<div style="position:absolute;left:86.40px;top:317.62px" class="cls_003"><span class="cls_003">programs (javac), and run Java programs (java).</span></div>
+<div style="position:absolute;left:86.40px;top:344.00px" class="cls_003"><span class="cls_003">Figure A.3 shows an example where the Hello.java source file is stored in</span></div>
+<div style="position:absolute;left:86.40px;top:359.17px" class="cls_003"><span class="cls_003">the Desktop directory.  After changing to that location and listing the files,</span></div>
+<div style="position:absolute;left:86.40px;top:374.34px" class="cls_003"><span class="cls_003">we use the javac command to compile Hello.java.  Running ls again, we</span></div>
+<div style="position:absolute;left:86.40px;top:389.50px" class="cls_003"><span class="cls_003">see that the compiler generated a new file, Hello.class, which contains the</span></div>
+<div style="position:absolute;left:86.40px;top:404.67px" class="cls_003"><span class="cls_003">byte code. We run the program using the java command, which displays the</span></div>
+<div style="position:absolute;left:86.40px;top:419.84px" class="cls_003"><span class="cls_003">output on the following line.</span></div>
+<div style="position:absolute;left:97.32px;top:616.83px" class="cls_003"><span class="cls_003">Figure A.3: Compiling and running Hello.java from the command line.</span></div>
+<div style="position:absolute;left:86.40px;top:644.54px" class="cls_003"><span class="cls_003">Note that the javac command requires a filename (or multiple source files</span></div>
+<div style="position:absolute;left:86.40px;top:659.71px" class="cls_003"><span class="cls_003">separated by spaces), whereas the java command requires a single class name.</span></div>
+<div style="position:absolute;left:86.40px;top:674.88px" class="cls_003"><span class="cls_003">If you use DrJava, it runs these commands for you behind the scenes and</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_003"><span class="cls_003">displays the output in the Interactions Pane.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:3208px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="b684a3e6-5adb-11e9-9d71-0cc47a792c0a_id_b684a3e6-5adb-11e9-9d71-0cc47a792c0a_files/background05.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">A.4</span></div>
+<div style="position:absolute;left:163.67px;top:88.65px" class="cls_003"><span class="cls_003">Command-line testing</span></div>
+<div style="position:absolute;left:505.42px;top:88.65px" class="cls_003"><span class="cls_003">237</span></div>
+<div style="position:absolute;left:129.60px;top:124.74px" class="cls_003"><span class="cls_003">Taking time to learn this efficient and elegant way of interacting with your</span></div>
+<div style="position:absolute;left:129.60px;top:139.91px" class="cls_003"><span class="cls_003">operating system will make you more productive.  People who don’t use the</span></div>
+<div style="position:absolute;left:129.60px;top:155.08px" class="cls_003"><span class="cls_003">command line don’t know what they’re missing.</span></div>
+<div style="position:absolute;left:129.60px;top:205.77px" class="cls_004"><span class="cls_004">A.4</span></div>
+<div style="position:absolute;left:178.66px;top:205.77px" class="cls_004"><span class="cls_004">Command-line testing</span></div>
+<div style="position:absolute;left:129.60px;top:243.39px" class="cls_003"><span class="cls_003">As described in Section 1.8, it’s more effective to program and debug your</span></div>
+<div style="position:absolute;left:129.60px;top:258.55px" class="cls_003"><span class="cls_003">code little by little than to attempt writing everything all at once. And after</span></div>
+<div style="position:absolute;left:129.60px;top:273.72px" class="cls_003"><span class="cls_003">you’ve completed programming an algorithm, it’s important to test that it</span></div>
+<div style="position:absolute;left:129.60px;top:288.89px" class="cls_003"><span class="cls_003">works correctly on a variety of inputs.</span></div>
+<div style="position:absolute;left:129.60px;top:317.31px" class="cls_003"><span class="cls_003">Throughout the book, we illustrate techniques for testing your programs. Most</span></div>
+<div style="position:absolute;left:129.60px;top:332.48px" class="cls_003"><span class="cls_003">if not all testing is based on a simple idea: does the program do what we expect</span></div>
+<div style="position:absolute;left:129.60px;top:347.65px" class="cls_003"><span class="cls_003">it to do? For simple programs, it’s not difficult to run them several times and</span></div>
+<div style="position:absolute;left:129.60px;top:362.81px" class="cls_003"><span class="cls_003">see what happens.  But at some point, you will get tired of typing the same</span></div>
+<div style="position:absolute;left:129.60px;top:377.98px" class="cls_003"><span class="cls_003">test cases over and over.</span></div>
+<div style="position:absolute;left:129.60px;top:406.40px" class="cls_003"><span class="cls_003">We can automate the process of entering input and comparing “expected out-</span></div>
+<div style="position:absolute;left:129.60px;top:421.57px" class="cls_003"><span class="cls_003">put” with “actual output” using the command line. The basic idea is to store</span></div>
+<div style="position:absolute;left:129.60px;top:436.74px" class="cls_003"><span class="cls_003">the test cases in plain text files and trick Java into thinking they are coming</span></div>
+<div style="position:absolute;left:129.60px;top:451.90px" class="cls_003"><span class="cls_003">from the keyboard. Here are step-by-step instructions:</span></div>
+<div style="position:absolute;left:143.91px;top:486.25px" class="cls_003"><span class="cls_003">1. Make sure you can compile and run the Convert.java example in the</span></div>
+<div style="position:absolute;left:158.87px;top:501.42px" class="cls_003"><span class="cls_003">ch03 directory of ThinkJavaCode.</span></div>
+<div style="position:absolute;left:143.91px;top:528.17px" class="cls_003"><span class="cls_003">2. In the same directory as Convert.java, create a plain text file named</span></div>
+<div style="position:absolute;left:158.87px;top:543.33px" class="cls_003"><span class="cls_003">test.in (“in” is for input). Enter the following line and save the file:</span></div>
+<div style="position:absolute;left:173.81px;top:564.34px" class="cls_003"><span class="cls_003">193.04</span></div>
+<div style="position:absolute;left:143.91px;top:591.04px" class="cls_003"><span class="cls_003">3. Create a second plain text file named test.exp (“exp” is for expected).</span></div>
+<div style="position:absolute;left:158.87px;top:606.21px" class="cls_003"><span class="cls_003">Enter the following line and save the file:</span></div>
+<div style="position:absolute;left:173.81px;top:627.21px" class="cls_003"><span class="cls_003">193.04 cm = 6 ft, 4 in</span></div>
+<div style="position:absolute;left:143.91px;top:653.92px" class="cls_003"><span class="cls_003">4. Open a terminal, and change to the directory with these files. Run the</span></div>
+<div style="position:absolute;left:158.87px;top:669.09px" class="cls_003"><span class="cls_003">following command to test the program:</span></div>
+<div style="position:absolute;left:173.81px;top:690.09px" class="cls_003"><span class="cls_003">java Convert &lt; test.in > test.out</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:4010px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="b684a3e6-5adb-11e9-9d71-0cc47a792c0a_id_b684a3e6-5adb-11e9-9d71-0cc47a792c0a_files/background06.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">238</span></div>
+<div style="position:absolute;left:287.43px;top:88.65px" class="cls_003"><span class="cls_003">Appendix A   Development tools</span></div>
+<div style="position:absolute;left:86.40px;top:124.74px" class="cls_003"><span class="cls_003">On the command line, &lt; and > are redirection operators.  The first one</span></div>
+<div style="position:absolute;left:86.40px;top:139.91px" class="cls_003"><span class="cls_003">redirects the contents of test.in to System.in, as if it were entered from</span></div>
+<div style="position:absolute;left:86.40px;top:155.08px" class="cls_003"><span class="cls_003">the keyboard. The second one redirects the contents of System.out to a new</span></div>
+<div style="position:absolute;left:86.40px;top:170.25px" class="cls_003"><span class="cls_003">file test.out, much like a screen capture. In other words, the test.out file</span></div>
+<div style="position:absolute;left:86.40px;top:185.42px" class="cls_003"><span class="cls_003">contains the output of your program.</span></div>
+<div style="position:absolute;left:86.40px;top:213.64px" class="cls_003"><span class="cls_003">By the way, it’s perfectly okay to compile your programs in DrJava (or some</span></div>
+<div style="position:absolute;left:86.40px;top:228.81px" class="cls_003"><span class="cls_003">other environment) and run them from the command line.  Knowing both</span></div>
+<div style="position:absolute;left:86.40px;top:243.98px" class="cls_003"><span class="cls_003">techniques allows you to use the right tool for the job.</span></div>
+<div style="position:absolute;left:88.11px;top:498.20px" class="cls_003"><span class="cls_003">Figure A.4: Using meld to compare expected output with the actual output.</span></div>
+<div style="position:absolute;left:86.40px;top:527.42px" class="cls_003"><span class="cls_003">At this point, we just need to compare the contents test.out with test.exp.</span></div>
+<div style="position:absolute;left:86.40px;top:542.59px" class="cls_003"><span class="cls_003">If the files are the same, then the program outputted what we expected it</span></div>
+<div style="position:absolute;left:86.40px;top:557.76px" class="cls_003"><span class="cls_003">to output. If not, then we found a bug, and we can use the output to begin</span></div>
+<div style="position:absolute;left:86.40px;top:572.92px" class="cls_003"><span class="cls_003">debugging our program. Fortunately, there’s a simple way to compare files on</span></div>
+<div style="position:absolute;left:86.40px;top:588.09px" class="cls_003"><span class="cls_003">the command line:</span></div>
+<div style="position:absolute;left:101.34px;top:616.36px" class="cls_003"><span class="cls_003">diff test.exp test.out</span></div>
+<div style="position:absolute;left:86.40px;top:644.54px" class="cls_003"><span class="cls_003">The diff utility summarizes the differences between two files. If there are no</span></div>
+<div style="position:absolute;left:86.40px;top:659.71px" class="cls_003"><span class="cls_003">differences, then it displays nothing, which in our case is what we want.  If</span></div>
+<div style="position:absolute;left:86.40px;top:674.88px" class="cls_003"><span class="cls_003">the expected output differs from the actual output, then we need to continue</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_003"><span class="cls_003">debugging.  Usually the program is at fault, and diff provides some insight</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:4812px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="b684a3e6-5adb-11e9-9d71-0cc47a792c0a_id_b684a3e6-5adb-11e9-9d71-0cc47a792c0a_files/background07.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">A.5</span></div>
+<div style="position:absolute;left:163.67px;top:88.65px" class="cls_003"><span class="cls_003">Running Checkstyle</span></div>
+<div style="position:absolute;left:505.42px;top:88.65px" class="cls_003"><span class="cls_003">239</span></div>
+<div style="position:absolute;left:129.60px;top:124.74px" class="cls_003"><span class="cls_003">about what is broken. But there’s also a chance that we have a correct program</span></div>
+<div style="position:absolute;left:129.60px;top:139.91px" class="cls_003"><span class="cls_003">and the expected output is wrong.</span></div>
+<div style="position:absolute;left:129.60px;top:166.21px" class="cls_003"><span class="cls_003">Interpreting the results from diff can be confusing, but fortunately there are</span></div>
+<div style="position:absolute;left:129.60px;top:181.38px" class="cls_003"><span class="cls_003">many graphical tools that show the differences between two files. For example,</span></div>
+<div style="position:absolute;left:129.60px;top:196.55px" class="cls_003"><span class="cls_003">on Windows you can install WinMerge, on Mac you can use opendiff (which</span></div>
+<div style="position:absolute;left:129.60px;top:211.72px" class="cls_003"><span class="cls_003">comes with Xcode), and on Linux there’s meld, shown in Figure A.4.</span></div>
+<div style="position:absolute;left:129.60px;top:238.02px" class="cls_003"><span class="cls_003">Regardless of what tool you use, the goal is the same.  Debug your program</span></div>
+<div style="position:absolute;left:129.60px;top:253.19px" class="cls_003"><span class="cls_003">until the actual output is identical to the expected output.</span></div>
+<div style="position:absolute;left:129.60px;top:299.88px" class="cls_004"><span class="cls_004">A.5</span></div>
+<div style="position:absolute;left:178.66px;top:299.88px" class="cls_004"><span class="cls_004">Running Checkstyle</span></div>
+<div style="position:absolute;left:129.60px;top:335.05px" class="cls_003"><span class="cls_003">Checkstyle is a command-line tool that can be used to determine if your source</span></div>
+<div style="position:absolute;left:129.60px;top:350.21px" class="cls_003"><span class="cls_003">code follows a set of style rules.  It also checks for common programming</span></div>
+<div style="position:absolute;left:129.60px;top:365.38px" class="cls_003"><span class="cls_003">mistakes, such as class and method design problems.</span></div>
+<div style="position:absolute;left:129.60px;top:391.68px" class="cls_003"><span class="cls_003">You can download the latest version as a JAR file from</span><span class="cls_005"> <A HREF="http://checkstyle.sourceforge.net/">http://checkstyle.</A> </span></div>
+<div style="position:absolute;left:129.60px;top:406.85px" class="cls_005"><span class="cls_005"> </span><A HREF="http://checkstyle.sourceforge.net/">sourceforge.net/</A> <span class="cls_003">.  To run Checkstyle, move (or copy) the JAR file to the</span></div>
+<div style="position:absolute;left:129.60px;top:422.02px" class="cls_003"><span class="cls_003">same directory as your program.  Open a terminal in that location, and run</span></div>
+<div style="position:absolute;left:129.60px;top:437.19px" class="cls_003"><span class="cls_003">the following command:</span></div>
+<div style="position:absolute;left:144.54px;top:463.54px" class="cls_003"><span class="cls_003">java -jar checkstyle-*-all.jar -c /google_checks.xml *.java</span></div>
+<div style="position:absolute;left:129.60px;top:489.79px" class="cls_003"><span class="cls_003">The * characters are wildcards that match whatever version of Checkstyle</span></div>
+<div style="position:absolute;left:129.60px;top:504.96px" class="cls_003"><span class="cls_003">you have and whatever Java source files are present.  The output indicates</span></div>
+<div style="position:absolute;left:129.60px;top:520.13px" class="cls_003"><span class="cls_003">the file and line number of each problem.  This example refers to a method</span></div>
+<div style="position:absolute;left:129.60px;top:535.30px" class="cls_003"><span class="cls_003">beginning on line 93, column 5 of Hello.java:</span></div>
+<div style="position:absolute;left:144.54px;top:561.64px" class="cls_003"><span class="cls_003">Hello.java:93:5: Missing a Javadoc comment</span></div>
+<div style="position:absolute;left:129.60px;top:587.90px" class="cls_003"><span class="cls_003">The file /google_checks.xml is inside the JAR file and represents most of</span></div>
+<div style="position:absolute;left:129.60px;top:603.07px" class="cls_003"><span class="cls_003">Google’s style rules.  You can alternatively use /sun_checks.xml or provide</span></div>
+<div style="position:absolute;left:129.60px;top:618.24px" class="cls_003"><span class="cls_003">your own configuration file. See Checkstyle’s website for more information.</span></div>
+<div style="position:absolute;left:129.60px;top:644.54px" class="cls_003"><span class="cls_003">If you apply Checkstyle to your source code often, you will likely internalize</span></div>
+<div style="position:absolute;left:129.60px;top:659.71px" class="cls_003"><span class="cls_003">good style habits over time. But there are limits to what automatic style check-</span></div>
+<div style="position:absolute;left:129.60px;top:674.88px" class="cls_003"><span class="cls_003">ers can do.  In particular, they can’t evaluate the quality of your comments,</span></div>
+<div style="position:absolute;left:129.60px;top:690.04px" class="cls_003"><span class="cls_003">the meaning of your variable names, or the structure of your algorithms.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:5614px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="b684a3e6-5adb-11e9-9d71-0cc47a792c0a_id_b684a3e6-5adb-11e9-9d71-0cc47a792c0a_files/background08.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">240</span></div>
+<div style="position:absolute;left:287.43px;top:88.65px" class="cls_003"><span class="cls_003">Appendix A   Development tools</span></div>
+<div style="position:absolute;left:86.40px;top:124.74px" class="cls_003"><span class="cls_003">Good comments make it easier for experienced developers to identify errors in</span></div>
+<div style="position:absolute;left:86.40px;top:139.91px" class="cls_003"><span class="cls_003">your code. Good variable names communicate the intent of your program and</span></div>
+<div style="position:absolute;left:86.40px;top:155.08px" class="cls_003"><span class="cls_003">how the data is organized.  And good programs are designed to be efficient</span></div>
+<div style="position:absolute;left:86.40px;top:170.25px" class="cls_003"><span class="cls_003">and demonstrably correct.</span></div>
+<div style="position:absolute;left:86.40px;top:216.79px" class="cls_004"><span class="cls_004">A.6</span></div>
+<div style="position:absolute;left:135.46px;top:216.79px" class="cls_004"><span class="cls_004">Tracing with a debugger</span></div>
+<div style="position:absolute;left:86.40px;top:251.85px" class="cls_003"><span class="cls_003">A great way to visualize the flow of execution, including how parameters and</span></div>
+<div style="position:absolute;left:86.40px;top:267.01px" class="cls_003"><span class="cls_003">arguments work, is to use a debugger. Most debuggers make it possible to:</span></div>
+<div style="position:absolute;left:100.71px;top:295.31px" class="cls_003"><span class="cls_003">1. Set a breakpoint, a line where you want the program to pause.</span></div>
+<div style="position:absolute;left:100.71px;top:319.98px" class="cls_003"><span class="cls_003">2. Step through the code one line at a time and watch what it does.</span></div>
+<div style="position:absolute;left:100.71px;top:344.64px" class="cls_003"><span class="cls_003">3. Check the values of variables and see when and how they change.</span></div>
+<div style="position:absolute;left:86.40px;top:372.94px" class="cls_003"><span class="cls_003">For example, open any program in DrJava and move the cursor to the first</span></div>
+<div style="position:absolute;left:86.40px;top:388.11px" class="cls_003"><span class="cls_003">line of main. Press Ctrl+B to toggle a breakpoint on the current line; it should</span></div>
+<div style="position:absolute;left:86.40px;top:403.28px" class="cls_003"><span class="cls_003">now be highlighted in red. Press Ctrl+Shift+D to turn on Debug Mode; a new</span></div>
+<div style="position:absolute;left:86.40px;top:418.45px" class="cls_003"><span class="cls_003">pane should appear at the bottom of the window. These commands are also</span></div>
+<div style="position:absolute;left:86.40px;top:433.61px" class="cls_003"><span class="cls_003">available from the Debugger menu, in case you forget the shortcut keys.</span></div>
+<div style="position:absolute;left:86.40px;top:459.80px" class="cls_003"><span class="cls_003">When you run the program, execution pauses at the first breakpoint.  The</span></div>
+<div style="position:absolute;left:86.40px;top:474.97px" class="cls_003"><span class="cls_003">debug pane displays the call stack, with the current method on top of the</span></div>
+<div style="position:absolute;left:86.40px;top:490.14px" class="cls_003"><span class="cls_003">stack, as shown in Figure A.5.  You might be surprised to see how many</span></div>
+<div style="position:absolute;left:86.40px;top:505.31px" class="cls_003"><span class="cls_003">methods were called before the main method!</span></div>
+<div style="position:absolute;left:86.40px;top:531.49px" class="cls_003"><span class="cls_003">To the right are several buttons that allow you to step through the code at</span></div>
+<div style="position:absolute;left:86.40px;top:546.66px" class="cls_003"><span class="cls_003">your own pace. You can also press Automatic Trace to watch DrJava run your</span></div>
+<div style="position:absolute;left:86.40px;top:561.83px" class="cls_003"><span class="cls_003">code one line at a time.</span></div>
+<div style="position:absolute;left:86.40px;top:588.02px" class="cls_003"><span class="cls_003">Using a debugger is like having the computer proofread your code out loud.</span></div>
+<div style="position:absolute;left:86.40px;top:603.18px" class="cls_003"><span class="cls_003">When the program is paused, you can examine (or even change) the value of</span></div>
+<div style="position:absolute;left:86.40px;top:618.35px" class="cls_003"><span class="cls_003">any variable using the Interactions Pane.</span></div>
+<div style="position:absolute;left:86.40px;top:644.54px" class="cls_003"><span class="cls_003">Tracing allows you to follow the flow of execution and see how data pass from</span></div>
+<div style="position:absolute;left:86.40px;top:659.71px" class="cls_003"><span class="cls_003">one method to another.  You might expect the code do one thing, but then</span></div>
+<div style="position:absolute;left:86.40px;top:674.88px" class="cls_003"><span class="cls_003">the debugger shows it doing something else. At that moment, you gain insight</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_003"><span class="cls_003">about what may be wrong with the code.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:6416px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="b684a3e6-5adb-11e9-9d71-0cc47a792c0a_id_b684a3e6-5adb-11e9-9d71-0cc47a792c0a_files/background09.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">A.7</span></div>
+<div style="position:absolute;left:163.67px;top:88.65px" class="cls_003"><span class="cls_003">Testing with JUnit</span></div>
+<div style="position:absolute;left:505.43px;top:88.65px" class="cls_003"><span class="cls_003">241</span></div>
+<div style="position:absolute;left:129.60px;top:411.00px" class="cls_003"><span class="cls_003">Figure A.5: Screenshot of the DrJava debugger. Execution is currently paused</span></div>
+<div style="position:absolute;left:129.60px;top:425.44px" class="cls_003"><span class="cls_003">on the first line of printTwice. There is a breakpoint on the first line of main.</span></div>
+<div style="position:absolute;left:129.60px;top:459.16px" class="cls_003"><span class="cls_003">You can edit your code while debugging it, but we don’t recommend it. If you</span></div>
+<div style="position:absolute;left:129.60px;top:474.32px" class="cls_003"><span class="cls_003">add or delete multiple lines of code while the program is paused, the results</span></div>
+<div style="position:absolute;left:129.60px;top:489.49px" class="cls_003"><span class="cls_003">can be confusing.</span></div>
+<div style="position:absolute;left:129.60px;top:516.96px" class="cls_003"><span class="cls_003">See</span><span class="cls_005"> <A HREF="http://drjava.org/docs/user/ch09.html">http://drjava.org/docs/user/ch09.html</A> </span><span class="cls_003"> for more information about</span></div>
+<div style="position:absolute;left:129.60px;top:532.13px" class="cls_003"><span class="cls_003">using the debugger feature of DrJava.</span></div>
+<div style="position:absolute;left:129.60px;top:580.65px" class="cls_004"><span class="cls_004">A.7</span></div>
+<div style="position:absolute;left:178.66px;top:580.65px" class="cls_004"><span class="cls_004">Testing with JUnit</span></div>
+<div style="position:absolute;left:129.60px;top:617.07px" class="cls_003"><span class="cls_003">When beginners start writing methods, they usually test them by invoking</span></div>
+<div style="position:absolute;left:129.60px;top:632.24px" class="cls_003"><span class="cls_003">them from main and checking the results by hand. Writing code like this can</span></div>
+<div style="position:absolute;left:129.60px;top:647.41px" class="cls_003"><span class="cls_003">get repetitive, but there are tools to make it easier. For cases where we know</span></div>
+<div style="position:absolute;left:129.60px;top:662.57px" class="cls_003"><span class="cls_003">the right answer, we can do better by writing unit tests.</span></div>
+<div style="position:absolute;left:129.60px;top:690.04px" class="cls_003"><span class="cls_003">For example, to test fibonacci from Section 6.9, we could write:</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:7218px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="b684a3e6-5adb-11e9-9d71-0cc47a792c0a_id_b684a3e6-5adb-11e9-9d71-0cc47a792c0a_files/background10.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">242</span></div>
+<div style="position:absolute;left:287.43px;top:88.65px" class="cls_003"><span class="cls_003">Appendix A   Development tools</span></div>
+<div style="position:absolute;left:101.34px;top:123.41px" class="cls_005"><span class="cls_005">public static void</span><span class="cls_003"> main(String[] args) {</span></div>
+<div style="position:absolute;left:125.95px;top:138.57px" class="cls_005"><span class="cls_005">if</span><span class="cls_003"> (fibonacci(1) != 1) {</span></div>
+<div style="position:absolute;left:150.56px;top:153.74px" class="cls_003"><span class="cls_003">System.err.println(</span><span class="cls_007">"fibonacci(1) is incorrect"</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:125.95px;top:168.91px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:125.95px;top:184.08px" class="cls_005"><span class="cls_005">if</span><span class="cls_003"> (fibonacci(2) != 1) {</span></div>
+<div style="position:absolute;left:150.56px;top:199.25px" class="cls_003"><span class="cls_003">System.err.println(</span><span class="cls_007">"fibonacci(2) is incorrect"</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:125.95px;top:214.41px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:125.95px;top:229.58px" class="cls_005"><span class="cls_005">if</span><span class="cls_003"> (fibonacci(3) != 2) {</span></div>
+<div style="position:absolute;left:150.56px;top:244.75px" class="cls_003"><span class="cls_003">System.err.println(</span><span class="cls_007">"fibonacci(3) is incorrect"</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:125.95px;top:259.92px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:101.34px;top:275.09px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:302.93px" class="cls_003"><span class="cls_003">This test code is self-explanatory, but it’s longer than it needs to be and</span></div>
+<div style="position:absolute;left:86.40px;top:318.10px" class="cls_003"><span class="cls_003">it doesn’t scale very well.  In addition, the error messages provide limited</span></div>
+<div style="position:absolute;left:86.40px;top:333.26px" class="cls_003"><span class="cls_003">information. Using a unit test framework addresses these and other issues.</span></div>
+<div style="position:absolute;left:86.40px;top:362.42px" class="cls_003"><span class="cls_003">JUnit is a common testing tool for Java programs (see</span><span class="cls_005"> <A HREF="http://junit.org">http://junit.org</A> </span><span class="cls_003">).</span></div>
+<div style="position:absolute;left:86.40px;top:377.59px" class="cls_003"><span class="cls_003">To use it, you have to create a test class that contains test methods.  If the</span></div>
+<div style="position:absolute;left:86.40px;top:392.76px" class="cls_003"><span class="cls_003">name of your class is Class, the name of the test class is ClassTest.  And</span></div>
+<div style="position:absolute;left:86.40px;top:407.93px" class="cls_003"><span class="cls_003">if there is a method in Class named method, there should be a method in</span></div>
+<div style="position:absolute;left:86.40px;top:423.10px" class="cls_003"><span class="cls_003">TestClass named testMethod.</span></div>
+<div style="position:absolute;left:86.40px;top:452.26px" class="cls_003"><span class="cls_003">For example, suppose that the fibonacci method belongs to a class named</span></div>
+<div style="position:absolute;left:86.40px;top:467.42px" class="cls_003"><span class="cls_003">Series. Here is the corresponding JUnit test class and test method:</span></div>
+<div style="position:absolute;left:101.34px;top:495.35px" class="cls_005"><span class="cls_005">import</span><span class="cls_003"> junit.framework.TestCase;</span></div>
+<div style="position:absolute;left:101.34px;top:525.69px" class="cls_005"><span class="cls_005">public class</span><span class="cls_003"> SeriesTest</span><span class="cls_005"> extends</span><span class="cls_003"> TestCase {</span></div>
+<div style="position:absolute;left:125.95px;top:556.03px" class="cls_005"><span class="cls_005">public void</span><span class="cls_003"> testFibonacci() {</span></div>
+<div style="position:absolute;left:150.56px;top:571.20px" class="cls_003"><span class="cls_003">assertEquals(1, Series.fibonacci(1));</span></div>
+<div style="position:absolute;left:150.56px;top:586.36px" class="cls_003"><span class="cls_003">assertEquals(1, Series.fibonacci(2));</span></div>
+<div style="position:absolute;left:150.56px;top:601.53px" class="cls_003"><span class="cls_003">assertEquals(2, Series.fibonacci(3));</span></div>
+<div style="position:absolute;left:125.95px;top:616.70px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:101.34px;top:631.87px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:659.71px" class="cls_003"><span class="cls_003">This example uses the keyword</span><span class="cls_005"> extends</span><span class="cls_003">, which indicates that the new class,</span></div>
+<div style="position:absolute;left:86.40px;top:674.88px" class="cls_003"><span class="cls_003">SeriesTest is based on an existing class, TestCase, which is imported from</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_003"><span class="cls_003">the package junit.framework.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:8020px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="b684a3e6-5adb-11e9-9d71-0cc47a792c0a_id_b684a3e6-5adb-11e9-9d71-0cc47a792c0a_files/background11.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">A.8</span></div>
+<div style="position:absolute;left:163.67px;top:88.65px" class="cls_003"><span class="cls_003">Vocabulary</span></div>
+<div style="position:absolute;left:505.42px;top:88.65px" class="cls_003"><span class="cls_003">243</span></div>
+<div style="position:absolute;left:129.60px;top:124.74px" class="cls_003"><span class="cls_003">Many development environments can generate test classes and test methods</span></div>
+<div style="position:absolute;left:129.60px;top:139.91px" class="cls_003"><span class="cls_003">automatically.  In DrJava, you can select New JUnit Test Case from the File</span></div>
+<div style="position:absolute;left:129.60px;top:155.08px" class="cls_003"><span class="cls_003">menu to generate an empty test class.</span></div>
+<div style="position:absolute;left:129.60px;top:181.62px" class="cls_003"><span class="cls_003">assertEquals is provided by the TestCase class. It takes two arguments and</span></div>
+<div style="position:absolute;left:129.60px;top:196.79px" class="cls_003"><span class="cls_003">checks whether they are equal. If so, it does nothing; otherwise it displays a</span></div>
+<div style="position:absolute;left:129.60px;top:211.96px" class="cls_003"><span class="cls_003">detailed error message. Normally the first argument is the “expected value”,</span></div>
+<div style="position:absolute;left:129.60px;top:227.12px" class="cls_003"><span class="cls_003">which we consider correct, and the second argument is the “actual value” we</span></div>
+<div style="position:absolute;left:129.60px;top:242.29px" class="cls_003"><span class="cls_003">want to check. If they are not equal, the test fails.</span></div>
+<div style="position:absolute;left:129.60px;top:268.83px" class="cls_003"><span class="cls_003">Using assertEquals is more concise than writing your own</span><span class="cls_005"> if</span><span class="cls_003"> statements</span></div>
+<div style="position:absolute;left:129.60px;top:284.00px" class="cls_003"><span class="cls_003">and System.err messages.  JUnit provides additional assert methods, such</span></div>
+<div style="position:absolute;left:129.60px;top:299.17px" class="cls_003"><span class="cls_003">as assertNull, assertSame, and assertTrue, that can be used to design a</span></div>
+<div style="position:absolute;left:129.60px;top:314.34px" class="cls_003"><span class="cls_003">variety of tests.</span></div>
+<div style="position:absolute;left:129.60px;top:340.88px" class="cls_003"><span class="cls_003">To run JUnit directly from DrJava, click the Test button on the toolbar.  If</span></div>
+<div style="position:absolute;left:129.60px;top:356.04px" class="cls_003"><span class="cls_003">all your test methods pass, you will see a green bar in the lower-right corner.</span></div>
+<div style="position:absolute;left:129.60px;top:371.21px" class="cls_003"><span class="cls_003">Otherwise, DrJava will take you directly to the first assertion that failed.</span></div>
+<div style="position:absolute;left:129.60px;top:418.20px" class="cls_004"><span class="cls_004">A.8</span></div>
+<div style="position:absolute;left:178.66px;top:418.20px" class="cls_004"><span class="cls_004">Vocabulary</span></div>
+<div style="position:absolute;left:129.60px;top:450.00px" class="cls_003"><span class="cls_003">IDE: An “integrated development environment” that includes tools for edit-</span></div>
+<div style="position:absolute;left:158.87px;top:465.17px" class="cls_003"><span class="cls_003">ing, compiling, and debugging programs.</span></div>
+<div style="position:absolute;left:129.60px;top:490.01px" class="cls_003"><span class="cls_003">JDK: The “Java Development Kit” that contains the compiler, Javadoc, and</span></div>
+<div style="position:absolute;left:158.87px;top:505.18px" class="cls_003"><span class="cls_003">other tools.</span></div>
+<div style="position:absolute;left:129.60px;top:530.02px" class="cls_003"><span class="cls_003">JVM: The “Java Virtual Machine” that interprets the compiled byte code.</span></div>
+<div style="position:absolute;left:129.60px;top:554.86px" class="cls_003"><span class="cls_003">text editor: A program that edits plain text files, the format used by most</span></div>
+<div style="position:absolute;left:158.87px;top:570.02px" class="cls_003"><span class="cls_003">programming languages.</span></div>
+<div style="position:absolute;left:129.60px;top:594.86px" class="cls_003"><span class="cls_003">JAR: A “Java Archive”, which is essentially a ZIP file containing classes and</span></div>
+<div style="position:absolute;left:158.87px;top:610.03px" class="cls_003"><span class="cls_003">other resources.</span></div>
+<div style="position:absolute;left:129.60px;top:634.87px" class="cls_003"><span class="cls_003">command-line interface: A means of interacting with the computer by is-</span></div>
+<div style="position:absolute;left:158.87px;top:650.04px" class="cls_003"><span class="cls_003">suing commands in the form of successive lines of text.</span></div>
+<div style="position:absolute;left:129.60px;top:674.88px" class="cls_003"><span class="cls_003">redirection operator: A command-line feature that substitutes System.in</span></div>
+<div style="position:absolute;left:158.87px;top:690.04px" class="cls_003"><span class="cls_003">and/or System.out with a plain text file.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:8822px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="b684a3e6-5adb-11e9-9d71-0cc47a792c0a_id_b684a3e6-5adb-11e9-9d71-0cc47a792c0a_files/background12.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">244</span></div>
+<div style="position:absolute;left:287.43px;top:88.65px" class="cls_003"><span class="cls_003">Appendix A   Development tools</span></div>
+<div style="position:absolute;left:86.40px;top:124.74px" class="cls_003"><span class="cls_003">wildcard: A command-line feature that allows you to specify a pattern of</span></div>
+<div style="position:absolute;left:115.67px;top:139.91px" class="cls_003"><span class="cls_003">filenames using the * character.</span></div>
+<div style="position:absolute;left:86.40px;top:165.04px" class="cls_003"><span class="cls_003">debugger: A tool that allows you to run one statement at a time and see the</span></div>
+<div style="position:absolute;left:115.67px;top:180.21px" class="cls_003"><span class="cls_003">contents of variables.</span></div>
+<div style="position:absolute;left:86.40px;top:205.34px" class="cls_003"><span class="cls_003">breakpoint: A line of code where the debugger will pause a running program.</span></div>
+<div style="position:absolute;left:86.40px;top:230.47px" class="cls_003"><span class="cls_003">call stack: The history of method calls and where to resume execution after</span></div>
+<div style="position:absolute;left:115.67px;top:245.64px" class="cls_003"><span class="cls_003">each method returns.</span></div>
+<div style="position:absolute;left:86.40px;top:270.77px" class="cls_003"><span class="cls_003">unit test: Code that exercises a single method of a program, testing for cor-</span></div>
+<div style="position:absolute;left:115.67px;top:285.94px" class="cls_003"><span class="cls_003">rectness and/or efficiency.</span></div>
+</div>
+
+</body>
+</html>

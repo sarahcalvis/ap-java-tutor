@@ -1,4 +1,6 @@
 import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import java.io.FileReader;
@@ -10,6 +12,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -193,40 +196,148 @@ public class Main extends Application {
 			textbk.setTextFill(Color.BLUE);
 			textbk.setMaxWidth(Double.MAX_VALUE);
 			
+			//when the user clicks "textbook"
 			textbk.setOnAction(new EventHandler<ActionEvent>() {
 				@Override
 				public void handle(ActionEvent event) {
-					WebView browser = new WebView();
-					WebEngine webEngine = browser.getEngine();
-					File f = new File("ThinkJava.html");
-					webEngine.load(f.toURI().toString());
-					//webEngine.load("https://twitter.com/irkedindeed");
-					browser.setPrefSize(640, 850);
-					grid.add(browser, 2, 1);
-				}
-			});
-			grid.add(textbk, 4, 10);
-	
-			//lesson button
-			Button lessons = new Button();
-			lessons.setText("Lessons");
-			lessons.setTextFill(Color.BLUE);
-			lessons.setMaxWidth(Double.MAX_VALUE);
-			lessons.setOnAction(new EventHandler<ActionEvent>() {
-				@Override
-				public void handle(ActionEvent event) {
-					System.out.println("Pressed Lessons Button");
+					//clear the grid
 					grid.getChildren().clear();
-					//add lessons information here
-					Text scenetitle = new Text("Lessons");
-					scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 26));
-					grid.add(scenetitle, 2,1);
-					//add the nav bar back
+					
+					//make a browser to display the file
+					WebView browser = new WebView();
+					
+					//make a web engine to view the file
+		            WebEngine webEngine = browser.getEngine();
+		            
+		            //load the entire textbook
+					File f = new File("ThinkJava.html");
+					
+					//load the file into the web view
+					webEngine.load(f.toURI().toString());
+					
+					//resize the browser
+					browser.setPrefSize(640, 850);
+					
+					//add the browser to the grid
+					grid.add(browser, 2, 2);
+					
+					//make the drop down list
+					ObservableList<String> options = 
+						    FXCollections.observableArrayList(
+						        "Contents",
+						        "Preface",
+						        "Chapter 1",
+						        "Chapter 2",
+						        "Chapter 3",
+						        "Chapter 4",
+						        "Chapter 5",
+						        "Chapter 6",
+						        "Chapter 7",
+						        "Chapter 8",
+						        "Chapter 9",
+						        "Chapter 10",
+						        "Chapter 11",
+						        "Chapter 12",
+						        "Chapter 13",
+						        "Chapter 14",
+						        "Appendix A",
+						        "Appendix B",
+						        "Appendix C",
+						        "Index",
+						        "Full Text"
+						    );
+					
+					//add the drop down list to the combo box
+					ComboBox<String> comboBox = new ComboBox<String>(options);
+					
+					//when the user selects 
+					comboBox.setOnAction((e) -> {
+						
+						//this holds the file name
+						String fileStr = "ThinkJava.html";
+						
+						//change the file name based on what the user selected from the drop down menu
+			            if (comboBox.getSelectionModel().getSelectedItem() == "Contents") {
+			            	fileStr = "thinkjavaContents.html";
+			            }
+			            else if (comboBox.getSelectionModel().getSelectedItem() == "Preface") {
+			            	fileStr = "thinkjavaPreface.html";
+			            }
+			            else if (comboBox.getSelectionModel().getSelectedItem() == "Chapter 1") {
+			            	fileStr = "thinkjava1.html";
+			            }
+			            else if (comboBox.getSelectionModel().getSelectedItem() == "Chapter 2") {
+			            	fileStr = "thinkjava2.html";
+			            }
+			            else if (comboBox.getSelectionModel().getSelectedItem() == "Chapter 3") {
+			            	fileStr = "thinkjava3.html";
+			            }
+			            else if (comboBox.getSelectionModel().getSelectedItem() == "Chapter 4") {
+			            	fileStr = "thinkjava4.html";
+			            }
+			            else if (comboBox.getSelectionModel().getSelectedItem() == "Chapter 5") {
+			            	fileStr = "thinkjava5.html";
+			            }
+			            else if (comboBox.getSelectionModel().getSelectedItem() == "Chapter 6") {
+			            	fileStr = "thinkjava6.html";
+			            }
+			            else if (comboBox.getSelectionModel().getSelectedItem() == "Chapter 7") {
+			            	fileStr = "thinkjava7.html";
+			            }
+			            else if (comboBox.getSelectionModel().getSelectedItem() == "Chapter 8") {
+			            	fileStr = "thinkjava8.html";
+			            }
+			            else if (comboBox.getSelectionModel().getSelectedItem() == "Chapter 9") {
+			            	fileStr = "thinkjava9.html";
+			            }
+			            else if (comboBox.getSelectionModel().getSelectedItem() == "Chapter 10") {
+			            	fileStr = "thinkjava10.html";
+			            }
+			            else if (comboBox.getSelectionModel().getSelectedItem() == "Chapter 11") {
+			            	fileStr = "thinkjava11.html";
+			            }
+			            else if (comboBox.getSelectionModel().getSelectedItem() == "Chapter 12") {
+			            	fileStr = "thinkjava12.html";
+			            }
+			            else if (comboBox.getSelectionModel().getSelectedItem() == "Chapter 13") {
+			            	fileStr = "thinkjava13.html";
+			            }
+			            else if (comboBox.getSelectionModel().getSelectedItem() == "Chapter 14") {
+			            	fileStr = "thinkjava14.html";
+			            }
+			            else if (comboBox.getSelectionModel().getSelectedItem() == "Appendix A") {
+			            	fileStr = "thinkjavaA.html";
+			            }
+			            else if (comboBox.getSelectionModel().getSelectedItem() == "Appendix B") {
+			            	fileStr = "thinkjavaB.html";
+			            }
+			            else if (comboBox.getSelectionModel().getSelectedItem() == "Appendix C") {
+			            	fileStr = "thinkjavaC.html";
+			            }
+			            else if (comboBox.getSelectionModel().getSelectedItem() == "Index") {
+			            	fileStr = "thinkjavaIndex.html";
+			            }
+			            else if (comboBox.getSelectionModel().getSelectedItem() == "Full Text") {
+			            	fileStr = "ThinkJava.html";
+			            }
+			            
+			            //create a file with the new file name in it
+						File f1 = new File(fileStr);
+						
+						//load that file into the web engine
+						webEngine.load(f1.toURI().toString());
+			        });
+					
+					//add the combo box into the grid
+					grid.add(comboBox, 2, 1);
+					
+					//re-add the buttons
 					buttons(grid, primaryStage);
-					System.out.println("finished creating");
 				}
 			});
-			grid.add(lessons, 5, 18);
+			
+			//add the textbook button
+			grid.add(textbk, 4, 10);
 	
 			//Test/quizzes button
 			Button exams = new Button();
@@ -373,7 +484,7 @@ public class Main extends Application {
 			grid.add(settings, 5, 40);
 	
 			//add buttons to VB
-			vb.getChildren().addAll(home,lessons,textbk,diagnostics,exams,settings);
+			vb.getChildren().addAll(home, textbk, diagnostics, exams, settings);
 			//add VB to grid
 			grid.add(vb,0,1,1,4);
 	

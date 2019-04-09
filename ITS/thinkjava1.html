@@ -1,0 +1,502 @@
+<html>
+<head><meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<style type="text/css">
+<!--
+span.cls_002{font-family:Arial,serif;font-size:24.8px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_002{font-family:Arial,serif;font-size:24.8px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_003{font-family:Arial,serif;font-size:12.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_003{font-family:Arial,serif;font-size:12.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_004{font-family:Arial,serif;font-size:17.3px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_004{font-family:Arial,serif;font-size:17.3px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_005{font-family:Times,serif;font-size:8.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_005{font-family:Times,serif;font-size:8.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_006{font-family:Arial,serif;font-size:12.0px;color:rgb(0,0,255);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_006{font-family:Arial,serif;font-size:12.0px;color:rgb(0,0,255);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_007{font-family:Arial,serif;font-size:12.0px;color:rgb(0,123,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_007{font-family:Arial,serif;font-size:12.0px;color:rgb(0,123,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_008{font-family:Arial,serif;font-size:12.0px;color:rgb(178,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_008{font-family:Arial,serif;font-size:12.0px;color:rgb(178,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+-->
+</style>
+<script type="text/javascript" src="fe06b3d2-5ad4-11e9-9d71-0cc47a792c0a_id_fe06b3d2-5ad4-11e9-9d71-0cc47a792c0a_files/wz_jsgraphics.js"></script>
+</head>
+<body>
+<div style="position:absolute;left:50%;margin-left:-306px;top:0px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="fe06b3d2-5ad4-11e9-9d71-0cc47a792c0a_id_fe06b3d2-5ad4-11e9-9d71-0cc47a792c0a_files/background01.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:205.85px" class="cls_002"><span class="cls_002">Chapter 1</span></div>
+<div style="position:absolute;left:129.60px;top:269.91px" class="cls_002"><span class="cls_002">The way of the program</span></div>
+<div style="position:absolute;left:129.60px;top:350.51px" class="cls_003"><span class="cls_003">The goal of this book is to teach you to think like a computer scientist. This</span></div>
+<div style="position:absolute;left:129.60px;top:365.67px" class="cls_003"><span class="cls_003">way of thinking combines some of the best features of mathematics, engineer-</span></div>
+<div style="position:absolute;left:129.60px;top:380.84px" class="cls_003"><span class="cls_003">ing, and natural science. Like mathematicians, computer scientists use formal</span></div>
+<div style="position:absolute;left:129.60px;top:396.01px" class="cls_003"><span class="cls_003">languages to denote ideas, specifically computations.  Like engineers, they</span></div>
+<div style="position:absolute;left:129.60px;top:411.18px" class="cls_003"><span class="cls_003">design things, assembling components into systems and evaluating trade-offs</span></div>
+<div style="position:absolute;left:129.60px;top:426.35px" class="cls_003"><span class="cls_003">among alternatives. And like scientists, they observe the behavior of complex</span></div>
+<div style="position:absolute;left:129.60px;top:441.52px" class="cls_003"><span class="cls_003">systems, form hypotheses, and test predictions.</span></div>
+<div style="position:absolute;left:129.60px;top:469.43px" class="cls_003"><span class="cls_003">The single most important skill for a computer scientist is problem solving.</span></div>
+<div style="position:absolute;left:129.60px;top:484.60px" class="cls_003"><span class="cls_003">It involves the ability to formulate problems, think creatively about solutions,</span></div>
+<div style="position:absolute;left:129.60px;top:499.77px" class="cls_003"><span class="cls_003">and express solutions clearly and accurately.  As it turns out, the process of</span></div>
+<div style="position:absolute;left:129.60px;top:514.93px" class="cls_003"><span class="cls_003">learning to program is an excellent opportunity to develop problem solving</span></div>
+<div style="position:absolute;left:129.60px;top:530.10px" class="cls_003"><span class="cls_003">skills. That’s why this chapter is called, “The way of the program”.</span></div>
+<div style="position:absolute;left:129.60px;top:558.02px" class="cls_003"><span class="cls_003">On one level you will be learning to program, a useful skill by itself. But on</span></div>
+<div style="position:absolute;left:129.60px;top:573.19px" class="cls_003"><span class="cls_003">another level you will use programming as a means to an end. As we go along,</span></div>
+<div style="position:absolute;left:129.60px;top:588.35px" class="cls_003"><span class="cls_003">that end will become clearer.</span></div>
+<div style="position:absolute;left:129.60px;top:637.89px" class="cls_004"><span class="cls_004">1.1</span></div>
+<div style="position:absolute;left:173.71px;top:637.89px" class="cls_004"><span class="cls_004">What is programming?</span></div>
+<div style="position:absolute;left:129.60px;top:674.88px" class="cls_003"><span class="cls_003">A program is a sequence of instructions that specifies how to perform a</span></div>
+<div style="position:absolute;left:129.60px;top:690.04px" class="cls_003"><span class="cls_003">computation. The computation might be something mathematical, like solving</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:802px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="fe06b3d2-5ad4-11e9-9d71-0cc47a792c0a_id_fe06b3d2-5ad4-11e9-9d71-0cc47a792c0a_files/background02.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">2</span></div>
+<div style="position:absolute;left:266.86px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 1</span></div>
+<div style="position:absolute;left:339.57px;top:88.65px" class="cls_003"><span class="cls_003">The way of the program</span></div>
+<div style="position:absolute;left:86.40px;top:124.74px" class="cls_003"><span class="cls_003">a system of equations or finding the roots of a polynomial.  It can also be</span></div>
+<div style="position:absolute;left:86.40px;top:139.91px" class="cls_003"><span class="cls_003">a symbolic computation, like searching and replacing text in a document or</span></div>
+<div style="position:absolute;left:86.40px;top:155.08px" class="cls_003"><span class="cls_003">(strangely enough) compiling a program. The details look different in different</span></div>
+<div style="position:absolute;left:86.40px;top:170.25px" class="cls_003"><span class="cls_003">languages, but a few basic instructions appear in just about every language.</span></div>
+<div style="position:absolute;left:86.40px;top:202.44px" class="cls_003"><span class="cls_003">input: Get data from the keyboard, a file, a sensor, or some other device.</span></div>
+<div style="position:absolute;left:86.40px;top:228.11px" class="cls_003"><span class="cls_003">output: Display data on the screen, or send data to a file or other device.</span></div>
+<div style="position:absolute;left:86.40px;top:253.79px" class="cls_003"><span class="cls_003">math: Perform basic mathematical operations like addition and division.</span></div>
+<div style="position:absolute;left:86.40px;top:279.46px" class="cls_003"><span class="cls_003">decisions: Check for certain conditions and execute the appropriate code.</span></div>
+<div style="position:absolute;left:86.40px;top:305.13px" class="cls_003"><span class="cls_003">repetition: Perform some action repeatedly, usually with some variation.</span></div>
+<div style="position:absolute;left:86.40px;top:337.33px" class="cls_003"><span class="cls_003">Believe it or not, that’s pretty much all there is to it. Every program you’ve</span></div>
+<div style="position:absolute;left:86.40px;top:352.49px" class="cls_003"><span class="cls_003">ever used, no matter how complicated, is made up of small instructions that</span></div>
+<div style="position:absolute;left:86.40px;top:367.66px" class="cls_003"><span class="cls_003">look much like these.  So you can think of programming as the process of</span></div>
+<div style="position:absolute;left:86.40px;top:382.83px" class="cls_003"><span class="cls_003">breaking down a large, complex task into smaller and smaller subtasks. The</span></div>
+<div style="position:absolute;left:86.40px;top:398.00px" class="cls_003"><span class="cls_003">process continues until the subtasks are simple enough to be performed with</span></div>
+<div style="position:absolute;left:86.40px;top:413.17px" class="cls_003"><span class="cls_003">the basic instructions provided by the computer.</span></div>
+<div style="position:absolute;left:86.40px;top:461.88px" class="cls_004"><span class="cls_004">1.2</span></div>
+<div style="position:absolute;left:130.51px;top:461.88px" class="cls_004"><span class="cls_004">What is computer science?</span></div>
+<div style="position:absolute;left:86.40px;top:498.42px" class="cls_003"><span class="cls_003">One of the most interesting aspects of writing programs is deciding how to</span></div>
+<div style="position:absolute;left:86.40px;top:513.59px" class="cls_003"><span class="cls_003">solve a particular problem, especially when there are multiple solutions. For</span></div>
+<div style="position:absolute;left:86.40px;top:528.75px" class="cls_003"><span class="cls_003">example, there are numerous ways to sort a list of numbers, and each way has</span></div>
+<div style="position:absolute;left:86.40px;top:543.92px" class="cls_003"><span class="cls_003">its advantages. In order to determine which way is best for a given situation,</span></div>
+<div style="position:absolute;left:86.40px;top:559.09px" class="cls_003"><span class="cls_003">we need techniques for describing and analyzing solutions formally.</span></div>
+<div style="position:absolute;left:86.40px;top:586.65px" class="cls_003"><span class="cls_003">Computer science is the science of algorithms, including their discovery and</span></div>
+<div style="position:absolute;left:86.40px;top:601.81px" class="cls_003"><span class="cls_003">analysis.  An algorithm is a sequence of steps that specifies how to solve a</span></div>
+<div style="position:absolute;left:86.40px;top:616.98px" class="cls_003"><span class="cls_003">problem.  Some algorithms are faster than others, and some use less space</span></div>
+<div style="position:absolute;left:86.40px;top:632.15px" class="cls_003"><span class="cls_003">in computer memory.  As you learn to develop algorithms for problems you</span></div>
+<div style="position:absolute;left:86.40px;top:647.32px" class="cls_003"><span class="cls_003">haven’t solved before, you also learn to think like a computer scientist.</span></div>
+<div style="position:absolute;left:86.40px;top:674.88px" class="cls_003"><span class="cls_003">Designing algorithms and writing code is difficult and error-prone. For histor-</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_003"><span class="cls_003">ical reasons, programming errors are called bugs, and the process of tracking</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:1604px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="fe06b3d2-5ad4-11e9-9d71-0cc47a792c0a_id_fe06b3d2-5ad4-11e9-9d71-0cc47a792c0a_files/background03.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">1.3</span></div>
+<div style="position:absolute;left:160.24px;top:88.65px" class="cls_003"><span class="cls_003">Programming languages</span></div>
+<div style="position:absolute;left:518.88px;top:88.65px" class="cls_003"><span class="cls_003">3</span></div>
+<div style="position:absolute;left:129.60px;top:124.74px" class="cls_003"><span class="cls_003">them down and correcting them is called debugging. As you learn to debug</span></div>
+<div style="position:absolute;left:129.60px;top:139.91px" class="cls_003"><span class="cls_003">your programs, you will develop new problem solving skills. You will need to</span></div>
+<div style="position:absolute;left:129.60px;top:155.08px" class="cls_003"><span class="cls_003">think creatively when unexpected errors happen.</span></div>
+<div style="position:absolute;left:129.60px;top:180.43px" class="cls_003"><span class="cls_003">Although it can be frustrating, debugging is an intellectually rich, challenging,</span></div>
+<div style="position:absolute;left:129.60px;top:195.60px" class="cls_003"><span class="cls_003">and interesting part of computer programming.  In some ways, debugging is</span></div>
+<div style="position:absolute;left:129.60px;top:210.77px" class="cls_003"><span class="cls_003">like detective work. You are confronted with clues, and you have to infer the</span></div>
+<div style="position:absolute;left:129.60px;top:225.94px" class="cls_003"><span class="cls_003">processes and events that led to the results you see. Thinking about how to</span></div>
+<div style="position:absolute;left:129.60px;top:241.10px" class="cls_003"><span class="cls_003">correct programs and improve their performance sometimes even leads to the</span></div>
+<div style="position:absolute;left:129.60px;top:256.27px" class="cls_003"><span class="cls_003">discovery of new algorithms.</span></div>
+<div style="position:absolute;left:129.60px;top:301.77px" class="cls_004"><span class="cls_004">1.3</span></div>
+<div style="position:absolute;left:173.71px;top:301.77px" class="cls_004"><span class="cls_004">Programming languages</span></div>
+<div style="position:absolute;left:129.60px;top:335.98px" class="cls_003"><span class="cls_003">The programming language you will learn is Java, which is a high-level lan-</span></div>
+<div style="position:absolute;left:129.60px;top:351.15px" class="cls_003"><span class="cls_003">guage. Other high-level languages you may have heard of include Python, C</span></div>
+<div style="position:absolute;left:129.60px;top:366.32px" class="cls_003"><span class="cls_003">and C++, Ruby, and JavaScript.</span></div>
+<div style="position:absolute;left:129.60px;top:391.67px" class="cls_003"><span class="cls_003">Before they can run, programs in high-level languages have to be translated</span></div>
+<div style="position:absolute;left:129.60px;top:406.84px" class="cls_003"><span class="cls_003">into a low-level language, also called “machine language”. This translation</span></div>
+<div style="position:absolute;left:129.60px;top:422.01px" class="cls_003"><span class="cls_003">takes some time, which is a small disadvantage of high-level languages.  But</span></div>
+<div style="position:absolute;left:129.60px;top:437.18px" class="cls_003"><span class="cls_003">high-level languages have two advantages:</span></div>
+<div style="position:absolute;left:147.16px;top:462.97px" class="cls_005"><span class="cls_005"></span><span class="cls_003"> It is much easier to program in a high-level language.  Programs take</span></div>
+<div style="position:absolute;left:158.87px;top:478.14px" class="cls_003"><span class="cls_003">less time to write, they are shorter and easier to read, and they are more</span></div>
+<div style="position:absolute;left:158.87px;top:493.31px" class="cls_003"><span class="cls_003">likely to be correct.</span></div>
+<div style="position:absolute;left:147.16px;top:517.55px" class="cls_005"><span class="cls_005"></span><span class="cls_003"> High-level languages are portable, meaning they can run on different</span></div>
+<div style="position:absolute;left:158.87px;top:532.72px" class="cls_003"><span class="cls_003">kinds of computers with few or no modifications.  Low-level programs</span></div>
+<div style="position:absolute;left:158.87px;top:547.89px" class="cls_003"><span class="cls_003">can only run on one kind of computer, and have to be rewritten to run</span></div>
+<div style="position:absolute;left:158.87px;top:563.06px" class="cls_003"><span class="cls_003">on another.</span></div>
+<div style="position:absolute;left:129.60px;top:588.85px" class="cls_003"><span class="cls_003">Two kinds of programs translate high-level languages into low-level languages:</span></div>
+<div style="position:absolute;left:129.60px;top:604.02px" class="cls_003"><span class="cls_003">interpreters and compilers.  An interpreter reads a high-level program and</span></div>
+<div style="position:absolute;left:129.60px;top:619.19px" class="cls_003"><span class="cls_003">executes it, meaning that it does what the program says. It processes the pro-</span></div>
+<div style="position:absolute;left:129.60px;top:634.36px" class="cls_003"><span class="cls_003">gram a little at a time, alternately reading lines and performing computations.</span></div>
+<div style="position:absolute;left:129.60px;top:649.52px" class="cls_003"><span class="cls_003">Figure 1.1 shows the structure of an interpreter.</span></div>
+<div style="position:absolute;left:129.60px;top:674.88px" class="cls_003"><span class="cls_003">In contrast, a compiler reads the entire program and translates it completely</span></div>
+<div style="position:absolute;left:129.60px;top:690.04px" class="cls_003"><span class="cls_003">before the program starts running.  In this context, the high-level program</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:2406px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="fe06b3d2-5ad4-11e9-9d71-0cc47a792c0a_id_fe06b3d2-5ad4-11e9-9d71-0cc47a792c0a_files/background04.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">4</span></div>
+<div style="position:absolute;left:266.86px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 1</span></div>
+<div style="position:absolute;left:339.57px;top:88.65px" class="cls_003"><span class="cls_003">The way of the program</span></div>
+<div style="position:absolute;left:150.48px;top:189.20px" class="cls_003"><span class="cls_003">Figure 1.1: How interpreted languages are executed.</span></div>
+<div style="position:absolute;left:86.40px;top:222.00px" class="cls_003"><span class="cls_003">is called the source code, and the translated program is called the object</span></div>
+<div style="position:absolute;left:86.40px;top:237.17px" class="cls_003"><span class="cls_003">code or the executable.  Once a program is compiled, you can execute it</span></div>
+<div style="position:absolute;left:86.40px;top:252.34px" class="cls_003"><span class="cls_003">repeatedly without further translation. As a result, compiled programs often</span></div>
+<div style="position:absolute;left:86.40px;top:267.51px" class="cls_003"><span class="cls_003">run faster than interpreted programs.</span></div>
+<div style="position:absolute;left:86.40px;top:294.23px" class="cls_003"><span class="cls_003">Java is both compiled and interpreted. Instead of translating programs directly</span></div>
+<div style="position:absolute;left:86.40px;top:309.40px" class="cls_003"><span class="cls_003">into machine language, the Java compiler generates byte code.  Similar to</span></div>
+<div style="position:absolute;left:86.40px;top:324.56px" class="cls_003"><span class="cls_003">machine language, byte code is easy and fast to interpret.  But it is also</span></div>
+<div style="position:absolute;left:86.40px;top:339.73px" class="cls_003"><span class="cls_003">portable, so it is possible to compile a Java program on one machine, transfer</span></div>
+<div style="position:absolute;left:86.40px;top:354.90px" class="cls_003"><span class="cls_003">the byte code to another machine, and run the byte code on the other machine.</span></div>
+<div style="position:absolute;left:86.40px;top:370.07px" class="cls_003"><span class="cls_003">The interpreter that runs byte code is called a “Java Virtual Machine” (JVM).</span></div>
+<div style="position:absolute;left:113.95px;top:474.01px" class="cls_003"><span class="cls_003">Figure 1.2: The process of compiling and running a Java program.</span></div>
+<div style="position:absolute;left:86.40px;top:501.06px" class="cls_003"><span class="cls_003">Figure 1.2 shows the steps of this process. Although it might seem complicated,</span></div>
+<div style="position:absolute;left:86.40px;top:516.23px" class="cls_003"><span class="cls_003">these steps are automated for you in most program development environments.</span></div>
+<div style="position:absolute;left:86.40px;top:531.40px" class="cls_003"><span class="cls_003">Usually you only have to press a button or type a single command to compile</span></div>
+<div style="position:absolute;left:86.40px;top:546.57px" class="cls_003"><span class="cls_003">and run your program. On the other hand, it is important to know what steps</span></div>
+<div style="position:absolute;left:86.40px;top:561.74px" class="cls_003"><span class="cls_003">are happening in the background, so if something goes wrong you can figure</span></div>
+<div style="position:absolute;left:86.40px;top:576.91px" class="cls_003"><span class="cls_003">out what it is.</span></div>
+<div style="position:absolute;left:86.40px;top:624.12px" class="cls_004"><span class="cls_004">1.4</span></div>
+<div style="position:absolute;left:130.51px;top:624.12px" class="cls_004"><span class="cls_004">The hello world program</span></div>
+<div style="position:absolute;left:86.40px;top:659.71px" class="cls_003"><span class="cls_003">Traditionally, the first program you write when learning a new programming</span></div>
+<div style="position:absolute;left:86.40px;top:674.88px" class="cls_003"><span class="cls_003">language is called the hello world program.  All it does is display the words</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_003"><span class="cls_003">“Hello, World!” on the screen. In Java, it looks like this:</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:3208px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="fe06b3d2-5ad4-11e9-9d71-0cc47a792c0a_id_fe06b3d2-5ad4-11e9-9d71-0cc47a792c0a_files/background05.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">1.4</span></div>
+<div style="position:absolute;left:160.24px;top:88.65px" class="cls_003"><span class="cls_003">The hello world program</span></div>
+<div style="position:absolute;left:518.88px;top:88.65px" class="cls_003"><span class="cls_003">5</span></div>
+<div style="position:absolute;left:144.54px;top:123.41px" class="cls_006"><span class="cls_006">public class</span><span class="cls_003"> Hello {</span></div>
+<div style="position:absolute;left:169.15px;top:153.74px" class="cls_006"><span class="cls_006">public static void</span><span class="cls_003"> main(String[] args) {</span></div>
+<div style="position:absolute;left:193.76px;top:168.91px" class="cls_007"><span class="cls_007">// generate some simple output</span></div>
+<div style="position:absolute;left:193.76px;top:184.08px" class="cls_003"><span class="cls_003">System.out.println(</span><span class="cls_008">"Hello, World!"</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:169.15px;top:199.25px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:144.54px;top:214.41px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:238.53px" class="cls_003"><span class="cls_003">When this program runs it displays:</span></div>
+<div style="position:absolute;left:144.54px;top:264.01px" class="cls_003"><span class="cls_003">Hello, World!</span></div>
+<div style="position:absolute;left:129.60px;top:289.39px" class="cls_003"><span class="cls_003">Notice that the output does not include the quotation marks.</span></div>
+<div style="position:absolute;left:129.60px;top:314.83px" class="cls_003"><span class="cls_003">Java programs are made up of class and method definitions, and methods are</span></div>
+<div style="position:absolute;left:129.60px;top:330.00px" class="cls_003"><span class="cls_003">made up of statements. A statement is a line of code that performs a basic</span></div>
+<div style="position:absolute;left:129.60px;top:345.16px" class="cls_003"><span class="cls_003">operation.  In the hello world program, this line is a print statement that</span></div>
+<div style="position:absolute;left:129.60px;top:360.33px" class="cls_003"><span class="cls_003">displays a message on the screen:</span></div>
+<div style="position:absolute;left:144.54px;top:385.81px" class="cls_003"><span class="cls_003">System.out.println(</span><span class="cls_008">"Hello, World!"</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:129.60px;top:411.20px" class="cls_003"><span class="cls_003">System.out.println displays results on the screen; the name println stands</span></div>
+<div style="position:absolute;left:129.60px;top:426.37px" class="cls_003"><span class="cls_003">for “print line”. Confusingly, print can mean both “display on the screen” and</span></div>
+<div style="position:absolute;left:129.60px;top:441.53px" class="cls_003"><span class="cls_003">“send to the printer”. In this book, we’ll try to say “display” when we mean</span></div>
+<div style="position:absolute;left:129.60px;top:456.70px" class="cls_003"><span class="cls_003">output to the screen. Like most statements, the print statement ends with a</span></div>
+<div style="position:absolute;left:129.60px;top:471.87px" class="cls_003"><span class="cls_003">semicolon (;).</span></div>
+<div style="position:absolute;left:129.60px;top:497.30px" class="cls_003"><span class="cls_003">Java is “case-sensitive”, which means that uppercase and lowercase are not the</span></div>
+<div style="position:absolute;left:129.60px;top:512.47px" class="cls_003"><span class="cls_003">same. In this example, System has to begin with an uppercase letter; system</span></div>
+<div style="position:absolute;left:129.60px;top:527.64px" class="cls_003"><span class="cls_003">and SYSTEM won’t work.</span></div>
+<div style="position:absolute;left:129.60px;top:553.07px" class="cls_003"><span class="cls_003">A method is a named sequence of statements.  This program defines one</span></div>
+<div style="position:absolute;left:129.60px;top:568.24px" class="cls_003"><span class="cls_003">method named main:</span></div>
+<div style="position:absolute;left:144.54px;top:593.72px" class="cls_006"><span class="cls_006">public static void</span><span class="cls_003"> main(String[] args)</span></div>
+<div style="position:absolute;left:129.60px;top:619.11px" class="cls_003"><span class="cls_003">The name and format of main is special: when the program runs, it starts at</span></div>
+<div style="position:absolute;left:129.60px;top:634.28px" class="cls_003"><span class="cls_003">the first statement in main and ends when it finishes the last statement. Later,</span></div>
+<div style="position:absolute;left:129.60px;top:649.44px" class="cls_003"><span class="cls_003">we will see programs that define more than one method.</span></div>
+<div style="position:absolute;left:129.60px;top:674.88px" class="cls_003"><span class="cls_003">A class is a collection of methods. This program defines a class named Hello.</span></div>
+<div style="position:absolute;left:129.60px;top:690.04px" class="cls_003"><span class="cls_003">You can give a class any name you like, but it is conventional to start with a</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:4010px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="fe06b3d2-5ad4-11e9-9d71-0cc47a792c0a_id_fe06b3d2-5ad4-11e9-9d71-0cc47a792c0a_files/background06.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">6</span></div>
+<div style="position:absolute;left:266.86px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 1</span></div>
+<div style="position:absolute;left:339.57px;top:88.65px" class="cls_003"><span class="cls_003">The way of the program</span></div>
+<div style="position:absolute;left:86.40px;top:124.74px" class="cls_003"><span class="cls_003">capital letter. The name of the class has to match the name of the file it is in,</span></div>
+<div style="position:absolute;left:86.40px;top:139.91px" class="cls_003"><span class="cls_003">so this class has to be in a file named Hello.java.</span></div>
+<div style="position:absolute;left:86.40px;top:168.92px" class="cls_003"><span class="cls_003">Java uses squiggly braces ({ and }) to group things together. In Hello.java,</span></div>
+<div style="position:absolute;left:86.40px;top:184.09px" class="cls_003"><span class="cls_003">the outermost braces contain the class definition, and the inner braces contain</span></div>
+<div style="position:absolute;left:86.40px;top:199.26px" class="cls_003"><span class="cls_003">the method definition.</span></div>
+<div style="position:absolute;left:86.40px;top:228.27px" class="cls_003"><span class="cls_003">The line that begins with two slashes (</span><span class="cls_007">//</span><span class="cls_003">) is a comment, which is a bit of</span></div>
+<div style="position:absolute;left:86.40px;top:243.44px" class="cls_003"><span class="cls_003">English text that explains the code.  When the compiler sees</span><span class="cls_007"> //</span><span class="cls_003">, it ignores</span></div>
+<div style="position:absolute;left:86.40px;top:258.61px" class="cls_003"><span class="cls_003">everything from there until the end of the line. Comments have no effect on</span></div>
+<div style="position:absolute;left:86.40px;top:273.78px" class="cls_003"><span class="cls_003">the execution of the program, but they make it easier for other programmers</span></div>
+<div style="position:absolute;left:86.40px;top:288.94px" class="cls_003"><span class="cls_003">(and your future self) to understand what you meant to do.</span></div>
+<div style="position:absolute;left:86.40px;top:341.00px" class="cls_004"><span class="cls_004">1.5</span></div>
+<div style="position:absolute;left:130.51px;top:341.00px" class="cls_004"><span class="cls_004">Displaying strings</span></div>
+<div style="position:absolute;left:86.40px;top:379.36px" class="cls_003"><span class="cls_003">You can put as many statements as you like in main. For example, to display</span></div>
+<div style="position:absolute;left:86.40px;top:394.53px" class="cls_003"><span class="cls_003">more than one line of output:</span></div>
+<div style="position:absolute;left:101.34px;top:422.31px" class="cls_006"><span class="cls_006">public class</span><span class="cls_003"> Hello {</span></div>
+<div style="position:absolute;left:125.95px;top:452.65px" class="cls_006"><span class="cls_006">public static void</span><span class="cls_003"> main(String[] args) {</span></div>
+<div style="position:absolute;left:150.56px;top:467.81px" class="cls_007"><span class="cls_007">// generate some simple output</span></div>
+<div style="position:absolute;left:150.56px;top:482.98px" class="cls_003"><span class="cls_003">System.out.println(</span><span class="cls_008">"Hello, World!"</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:384.33px;top:482.98px" class="cls_007"><span class="cls_007">// first line</span></div>
+<div style="position:absolute;left:150.56px;top:498.15px" class="cls_003"><span class="cls_003">System.out.println(</span><span class="cls_008">"How are you?"</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:384.33px;top:498.15px" class="cls_007"><span class="cls_007">// another line</span></div>
+<div style="position:absolute;left:125.95px;top:513.32px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:101.34px;top:528.49px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:556.18px" class="cls_003"><span class="cls_003">As this example shows, you can put comments at the end of a line as well as</span></div>
+<div style="position:absolute;left:86.40px;top:571.35px" class="cls_003"><span class="cls_003">on lines all by themselves.</span></div>
+<div style="position:absolute;left:86.40px;top:600.36px" class="cls_003"><span class="cls_003">Phrases that appear in quotation marks are called strings, because they con-</span></div>
+<div style="position:absolute;left:86.40px;top:615.53px" class="cls_003"><span class="cls_003">tain a sequence of “characters” strung together.  Characters can be letters,</span></div>
+<div style="position:absolute;left:86.40px;top:630.70px" class="cls_003"><span class="cls_003">numbers, punctuation marks, symbols, spaces, tabs, etc.</span></div>
+<div style="position:absolute;left:86.40px;top:659.71px" class="cls_003"><span class="cls_003">System.out.println appends a special character, called a newline, that</span></div>
+<div style="position:absolute;left:86.40px;top:674.88px" class="cls_003"><span class="cls_003">moves to the beginning of the next line.  If you don’t want a newline at the</span></div>
+<div style="position:absolute;left:86.40px;top:690.04px" class="cls_003"><span class="cls_003">end, you can use print instead of println:</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:4812px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="fe06b3d2-5ad4-11e9-9d71-0cc47a792c0a_id_fe06b3d2-5ad4-11e9-9d71-0cc47a792c0a_files/background07.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">1.6</span></div>
+<div style="position:absolute;left:160.24px;top:88.65px" class="cls_003"><span class="cls_003">Escape sequences</span></div>
+<div style="position:absolute;left:518.87px;top:88.65px" class="cls_003"><span class="cls_003">7</span></div>
+<div style="position:absolute;left:144.54px;top:123.41px" class="cls_006"><span class="cls_006">public class</span><span class="cls_003"> Goodbye {</span></div>
+<div style="position:absolute;left:169.15px;top:153.74px" class="cls_006"><span class="cls_006">public static void</span><span class="cls_003"> main(String[] args) {</span></div>
+<div style="position:absolute;left:193.76px;top:168.91px" class="cls_003"><span class="cls_003">System.out.print(</span><span class="cls_008">"Goodbye, "</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:193.76px;top:184.08px" class="cls_003"><span class="cls_003">System.out.println(</span><span class="cls_008">"cruel world"</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:169.15px;top:199.25px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:144.54px;top:214.41px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:239.80px" class="cls_003"><span class="cls_003">In this example, the first statement does not add a newline, so the output</span></div>
+<div style="position:absolute;left:129.60px;top:254.97px" class="cls_003"><span class="cls_003">appears on a single line as Goodbye, cruel world.  Notice that there is a</span></div>
+<div style="position:absolute;left:129.60px;top:270.14px" class="cls_003"><span class="cls_003">space at the end of the first string, which appears in the output.</span></div>
+<div style="position:absolute;left:129.60px;top:317.33px" class="cls_004"><span class="cls_004">1.6</span></div>
+<div style="position:absolute;left:173.71px;top:317.33px" class="cls_004"><span class="cls_004">Escape sequences</span></div>
+<div style="position:absolute;left:129.60px;top:352.90px" class="cls_003"><span class="cls_003">It is possible to display multiple lines of output in just one line of code. You</span></div>
+<div style="position:absolute;left:129.60px;top:368.07px" class="cls_003"><span class="cls_003">just have to tell Java where to put the line breaks.</span></div>
+<div style="position:absolute;left:144.54px;top:393.54px" class="cls_006"><span class="cls_006">public class</span><span class="cls_003"> Hello {</span></div>
+<div style="position:absolute;left:169.15px;top:423.88px" class="cls_006"><span class="cls_006">public static void</span><span class="cls_003"> main(String[] args) {</span></div>
+<div style="position:absolute;left:193.76px;top:439.05px" class="cls_003"><span class="cls_003">System.out.print(</span><span class="cls_008">"Hello!\nHow are you doing?\n"</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:169.15px;top:454.22px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:144.54px;top:469.38px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:129.60px;top:494.77px" class="cls_003"><span class="cls_003">The output is two lines, each ending with a newline character:</span></div>
+<div style="position:absolute;left:144.54px;top:520.24px" class="cls_003"><span class="cls_003">Hello!</span></div>
+<div style="position:absolute;left:144.54px;top:535.41px" class="cls_003"><span class="cls_003">How are you doing?</span></div>
+<div style="position:absolute;left:129.60px;top:560.80px" class="cls_003"><span class="cls_003">The \n is an escape sequence, which is a sequence of characters that rep-</span></div>
+<div style="position:absolute;left:129.60px;top:575.96px" class="cls_003"><span class="cls_003">resents a special character. The backslash allows you to “escape” the string’s</span></div>
+<div style="position:absolute;left:129.60px;top:591.13px" class="cls_003"><span class="cls_003">literal interpretation. Notice there is no space between \n and How. If you add</span></div>
+<div style="position:absolute;left:129.60px;top:606.30px" class="cls_003"><span class="cls_003">a space there, there will be a space at the beginning of the second line.</span></div>
+<div style="position:absolute;left:129.60px;top:633.00px" class="cls_003"><span class="cls_003">Another common use of escape sequences is to have quotation marks inside</span></div>
+<div style="position:absolute;left:129.60px;top:648.17px" class="cls_003"><span class="cls_003">of strings. Since double quotes indicate the beginning and end of strings, you</span></div>
+<div style="position:absolute;left:129.60px;top:663.34px" class="cls_003"><span class="cls_003">need to escape them with a backslash.</span></div>
+<div style="position:absolute;left:144.54px;top:690.09px" class="cls_003"><span class="cls_003">System.out.println(</span><span class="cls_008">"She said \"Hello!\" to me."</span><span class="cls_003">);</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:5614px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="fe06b3d2-5ad4-11e9-9d71-0cc47a792c0a_id_fe06b3d2-5ad4-11e9-9d71-0cc47a792c0a_files/background08.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">8</span></div>
+<div style="position:absolute;left:266.86px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 1</span></div>
+<div style="position:absolute;left:339.57px;top:88.65px" class="cls_003"><span class="cls_003">The way of the program</span></div>
+<div style="position:absolute;left:239.27px;top:128.35px" class="cls_003"><span class="cls_003">\n</span></div>
+<div style="position:absolute;left:277.35px;top:128.35px" class="cls_003"><span class="cls_003">newline</span></div>
+<div style="position:absolute;left:239.27px;top:150.42px" class="cls_003"><span class="cls_003">\t</span></div>
+<div style="position:absolute;left:288.08px;top:150.42px" class="cls_003"><span class="cls_003">tab</span></div>
+<div style="position:absolute;left:239.27px;top:172.49px" class="cls_003"><span class="cls_003">\"</span></div>
+<div style="position:absolute;left:263.52px;top:172.49px" class="cls_003"><span class="cls_003">double quote</span></div>
+<div style="position:absolute;left:239.27px;top:194.56px" class="cls_003"><span class="cls_003">\\</span></div>
+<div style="position:absolute;left:272.40px;top:194.56px" class="cls_003"><span class="cls_003">backslash</span></div>
+<div style="position:absolute;left:188.54px;top:220.72px" class="cls_003"><span class="cls_003">Table 1.1: Common escape sequences</span></div>
+<div style="position:absolute;left:86.40px;top:252.31px" class="cls_003"><span class="cls_003">The result is:</span></div>
+<div style="position:absolute;left:101.34px;top:277.87px" class="cls_003"><span class="cls_003">She said "Hello!" to me.</span></div>
+<div style="position:absolute;left:86.40px;top:323.52px" class="cls_004"><span class="cls_004">1.7</span></div>
+<div style="position:absolute;left:130.51px;top:323.52px" class="cls_004"><span class="cls_004">Formatting code</span></div>
+<div style="position:absolute;left:86.40px;top:357.89px" class="cls_003"><span class="cls_003">In Java programs, some spaces are required.  For example, you need at least</span></div>
+<div style="position:absolute;left:86.40px;top:373.06px" class="cls_003"><span class="cls_003">one space between words, so this program is not legal:</span></div>
+<div style="position:absolute;left:101.34px;top:397.34px" class="cls_003"><span class="cls_003">publicclassGoodbye{</span></div>
+<div style="position:absolute;left:125.95px;top:427.68px" class="cls_003"><span class="cls_003">publicstaticvoidmain(String[] args) {</span></div>
+<div style="position:absolute;left:150.56px;top:442.85px" class="cls_003"><span class="cls_003">System.out.print(</span><span class="cls_008">"Goodbye, "</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:150.56px;top:458.01px" class="cls_003"><span class="cls_003">System.out.println(</span><span class="cls_008">"cruel world"</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:125.95px;top:473.18px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:101.34px;top:488.35px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:512.54px" class="cls_003"><span class="cls_003">But most other spaces are optional. For example, this program is legal:</span></div>
+<div style="position:absolute;left:101.34px;top:536.82px" class="cls_006"><span class="cls_006">public class</span><span class="cls_003"> Goodbye {</span></div>
+<div style="position:absolute;left:101.34px;top:551.99px" class="cls_006"><span class="cls_006">public static void</span><span class="cls_003"> main(String[] args) {</span></div>
+<div style="position:absolute;left:101.34px;top:567.16px" class="cls_003"><span class="cls_003">System.out.print(</span><span class="cls_008">"Goodbye, "</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:101.34px;top:582.33px" class="cls_003"><span class="cls_003">System.out.println(</span><span class="cls_008">"cruel world"</span><span class="cls_003">);</span></div>
+<div style="position:absolute;left:101.34px;top:597.49px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:101.34px;top:612.66px" class="cls_003"><span class="cls_003">}</span></div>
+<div style="position:absolute;left:86.40px;top:636.85px" class="cls_003"><span class="cls_003">The newlines are optional, too. So we could just write:</span></div>
+<div style="position:absolute;left:101.34px;top:661.14px" class="cls_006"><span class="cls_006">public class</span><span class="cls_003"> Goodbye {</span><span class="cls_006"> public static void</span><span class="cls_003"> main(String[] args)</span></div>
+<div style="position:absolute;left:101.34px;top:676.30px" class="cls_003"><span class="cls_003">{ System.out.print(</span><span class="cls_008">"Goodbye, "</span><span class="cls_003">); System.out.println</span></div>
+<div style="position:absolute;left:101.34px;top:691.47px" class="cls_003"><span class="cls_003">(</span><span class="cls_008">"cruel world"</span><span class="cls_003">);}}</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:6416px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="fe06b3d2-5ad4-11e9-9d71-0cc47a792c0a_id_fe06b3d2-5ad4-11e9-9d71-0cc47a792c0a_files/background09.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">1.8</span></div>
+<div style="position:absolute;left:160.24px;top:88.65px" class="cls_003"><span class="cls_003">Debugging code</span></div>
+<div style="position:absolute;left:518.87px;top:88.65px" class="cls_003"><span class="cls_003">9</span></div>
+<div style="position:absolute;left:129.60px;top:124.74px" class="cls_003"><span class="cls_003">It still works, but the program is getting harder and harder to read. Newlines</span></div>
+<div style="position:absolute;left:129.60px;top:139.91px" class="cls_003"><span class="cls_003">and spaces are important for organizing your program visually, making it easier</span></div>
+<div style="position:absolute;left:129.60px;top:155.08px" class="cls_003"><span class="cls_003">to understand the program and find errors when they occur.</span></div>
+<div style="position:absolute;left:129.60px;top:183.64px" class="cls_003"><span class="cls_003">Many editors will automatically format source code with consistent indenting</span></div>
+<div style="position:absolute;left:129.60px;top:198.81px" class="cls_003"><span class="cls_003">and line breaks. For example, in DrJava (see Appendix A) you can indent the</span></div>
+<div style="position:absolute;left:129.60px;top:213.97px" class="cls_003"><span class="cls_003">code by selecting all text (Ctrl+A) and pressing the Tab key.</span></div>
+<div style="position:absolute;left:129.60px;top:242.53px" class="cls_003"><span class="cls_003">Organizations that do a lot of software development usually have strict guide-</span></div>
+<div style="position:absolute;left:129.60px;top:257.70px" class="cls_003"><span class="cls_003">lines on how to format source code.  For example, Google publishes its Java</span></div>
+<div style="position:absolute;left:129.60px;top:272.87px" class="cls_003"><span class="cls_003">coding standards for use in open-source projects:</span><span class="cls_006">  <A HREF="http://google.github.io/styleguide/javaguide.html">http://google.github.</A> </span></div>
+<div style="position:absolute;left:129.60px;top:288.04px" class="cls_006"><span class="cls_006"> </span><A HREF="http://google.github.io/styleguide/javaguide.html">io/styleguide/javaguide.html</A> <span class="cls_003">.</span></div>
+<div style="position:absolute;left:129.60px;top:316.60px" class="cls_003"><span class="cls_003">You might not understand these guidelines now, because they refer to language</span></div>
+<div style="position:absolute;left:129.60px;top:331.77px" class="cls_003"><span class="cls_003">features we haven’t yet seen.  But you might want to refer back to them</span></div>
+<div style="position:absolute;left:129.60px;top:346.93px" class="cls_003"><span class="cls_003">periodically as you read this book.</span></div>
+<div style="position:absolute;left:129.60px;top:397.95px" class="cls_004"><span class="cls_004">1.8</span></div>
+<div style="position:absolute;left:173.71px;top:397.95px" class="cls_004"><span class="cls_004">Debugging code</span></div>
+<div style="position:absolute;left:129.60px;top:435.74px" class="cls_003"><span class="cls_003">It is a good idea to read this book in front of a computer so you can try out the</span></div>
+<div style="position:absolute;left:129.60px;top:450.91px" class="cls_003"><span class="cls_003">examples as you go. You can run many of the examples directly in DrJava’s</span></div>
+<div style="position:absolute;left:129.60px;top:466.08px" class="cls_003"><span class="cls_003">Interactions Pane (see Appendix A). But if you put the code in a source file,</span></div>
+<div style="position:absolute;left:129.60px;top:481.25px" class="cls_003"><span class="cls_003">it will be easier to try out variations.</span></div>
+<div style="position:absolute;left:129.60px;top:509.80px" class="cls_003"><span class="cls_003">Whenever you are experimenting with a new feature, you should also try to</span></div>
+<div style="position:absolute;left:129.60px;top:524.97px" class="cls_003"><span class="cls_003">make mistakes. For example, in the hello world program, what happens if you</span></div>
+<div style="position:absolute;left:129.60px;top:540.14px" class="cls_003"><span class="cls_003">leave out one of the quotation marks?  What if you leave out both?  What</span></div>
+<div style="position:absolute;left:129.60px;top:555.31px" class="cls_003"><span class="cls_003">if you spell println wrong? These kinds of experiments help you remember</span></div>
+<div style="position:absolute;left:129.60px;top:570.48px" class="cls_003"><span class="cls_003">what you read.  They also help with debugging, because you learn what the</span></div>
+<div style="position:absolute;left:129.60px;top:585.64px" class="cls_003"><span class="cls_003">error messages mean. It is better to make mistakes now and on purpose than</span></div>
+<div style="position:absolute;left:129.60px;top:600.81px" class="cls_003"><span class="cls_003">later on and accidentally.</span></div>
+<div style="position:absolute;left:129.60px;top:629.37px" class="cls_003"><span class="cls_003">Debugging is like an experimental science: once you have an idea about what</span></div>
+<div style="position:absolute;left:129.60px;top:644.54px" class="cls_003"><span class="cls_003">is going wrong, you modify your program and try again.  If your hypothesis</span></div>
+<div style="position:absolute;left:129.60px;top:659.71px" class="cls_003"><span class="cls_003">was correct, then you can predict the result of the modification, and you take</span></div>
+<div style="position:absolute;left:129.60px;top:674.88px" class="cls_003"><span class="cls_003">a step closer to a working program. If your hypothesis was wrong, you have</span></div>
+<div style="position:absolute;left:129.60px;top:690.04px" class="cls_003"><span class="cls_003">to come up with a new one.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:7218px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="fe06b3d2-5ad4-11e9-9d71-0cc47a792c0a_id_fe06b3d2-5ad4-11e9-9d71-0cc47a792c0a_files/background10.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">10</span></div>
+<div style="position:absolute;left:266.86px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 1</span></div>
+<div style="position:absolute;left:339.58px;top:88.65px" class="cls_003"><span class="cls_003">The way of the program</span></div>
+<div style="position:absolute;left:86.40px;top:124.74px" class="cls_003"><span class="cls_003">Programming and debugging should go hand in hand. Don’t just write a bunch</span></div>
+<div style="position:absolute;left:86.40px;top:139.91px" class="cls_003"><span class="cls_003">of code and then perform trial and error debugging until it all works. Instead,</span></div>
+<div style="position:absolute;left:86.40px;top:155.08px" class="cls_003"><span class="cls_003">start with a program that does something and make small modifications, de-</span></div>
+<div style="position:absolute;left:86.40px;top:170.25px" class="cls_003"><span class="cls_003">bugging them as you go, until the program does what you want.  That way</span></div>
+<div style="position:absolute;left:86.40px;top:185.42px" class="cls_003"><span class="cls_003">you will always have a working program, and it will be easier to isolate errors.</span></div>
+<div style="position:absolute;left:86.40px;top:213.12px" class="cls_003"><span class="cls_003">A great example of this principle is the Linux operating system, which contains</span></div>
+<div style="position:absolute;left:86.40px;top:228.28px" class="cls_003"><span class="cls_003">millions of lines of code.  It started out as a simple program Linus Torvalds</span></div>
+<div style="position:absolute;left:86.40px;top:243.45px" class="cls_003"><span class="cls_003">used to explore the Intel 80386 chip.  According to Larry Greenfield in The</span></div>
+<div style="position:absolute;left:86.40px;top:258.62px" class="cls_003"><span class="cls_003">Linux Users’ Guide, “One of Linus’s earlier projects was a program that would</span></div>
+<div style="position:absolute;left:86.40px;top:273.79px" class="cls_003"><span class="cls_003">switch between printing AAAA and BBBB. This later evolved to Linux.”</span></div>
+<div style="position:absolute;left:86.40px;top:301.49px" class="cls_003"><span class="cls_003">Finally, programming sometimes brings out strong emotions. If you are strug-</span></div>
+<div style="position:absolute;left:86.40px;top:316.66px" class="cls_003"><span class="cls_003">gling with a difficult bug, you might feel angry, despondent, or embarrassed.</span></div>
+<div style="position:absolute;left:86.40px;top:331.82px" class="cls_003"><span class="cls_003">Remember that you are not alone, and most if not all programmers have had</span></div>
+<div style="position:absolute;left:86.40px;top:346.99px" class="cls_003"><span class="cls_003">similar experiences. Don’t hesitate to reach out to a friend and ask questions!</span></div>
+<div style="position:absolute;left:86.40px;top:396.04px" class="cls_004"><span class="cls_004">1.9</span></div>
+<div style="position:absolute;left:130.51px;top:396.04px" class="cls_004"><span class="cls_004">Vocabulary</span></div>
+<div style="position:absolute;left:86.40px;top:432.75px" class="cls_003"><span class="cls_003">Throughout the book, we try to define each term the first time we use it. At</span></div>
+<div style="position:absolute;left:86.40px;top:447.92px" class="cls_003"><span class="cls_003">the end of each chapter, we include the new terms and their definitions in</span></div>
+<div style="position:absolute;left:86.40px;top:463.08px" class="cls_003"><span class="cls_003">order of appearance.  If you spend some time learning this vocabulary, you</span></div>
+<div style="position:absolute;left:86.40px;top:478.25px" class="cls_003"><span class="cls_003">will have an easier time reading the following chapters.</span></div>
+<div style="position:absolute;left:86.40px;top:510.80px" class="cls_003"><span class="cls_003">problem solving: The process of formulating a problem, finding a solution,</span></div>
+<div style="position:absolute;left:115.67px;top:525.97px" class="cls_003"><span class="cls_003">and expressing the solution.</span></div>
+<div style="position:absolute;left:86.40px;top:551.82px" class="cls_003"><span class="cls_003">program: A sequence of instructions that specifies how to perform tasks on</span></div>
+<div style="position:absolute;left:115.67px;top:566.99px" class="cls_003"><span class="cls_003">a computer.</span></div>
+<div style="position:absolute;left:86.40px;top:592.84px" class="cls_003"><span class="cls_003">programming: The application of problem solving to creating executable</span></div>
+<div style="position:absolute;left:115.67px;top:608.01px" class="cls_003"><span class="cls_003">computer programs.</span></div>
+<div style="position:absolute;left:86.40px;top:633.86px" class="cls_003"><span class="cls_003">computer science: The scientific and practical approach to computation</span></div>
+<div style="position:absolute;left:115.67px;top:649.03px" class="cls_003"><span class="cls_003">and its applications.</span></div>
+<div style="position:absolute;left:86.40px;top:674.88px" class="cls_003"><span class="cls_003">algorithm: A procedure or formula for solving a problem, with or without a</span></div>
+<div style="position:absolute;left:115.67px;top:690.04px" class="cls_003"><span class="cls_003">computer.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:8020px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="fe06b3d2-5ad4-11e9-9d71-0cc47a792c0a_id_fe06b3d2-5ad4-11e9-9d71-0cc47a792c0a_files/background11.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">1.9</span></div>
+<div style="position:absolute;left:160.24px;top:88.65px" class="cls_003"><span class="cls_003">Vocabulary</span></div>
+<div style="position:absolute;left:512.15px;top:88.65px" class="cls_003"><span class="cls_003">11</span></div>
+<div style="position:absolute;left:129.60px;top:124.74px" class="cls_003"><span class="cls_003">bug: An error in a program.</span></div>
+<div style="position:absolute;left:129.60px;top:149.65px" class="cls_003"><span class="cls_003">debugging: The process of finding and removing errors.</span></div>
+<div style="position:absolute;left:129.60px;top:174.55px" class="cls_003"><span class="cls_003">high-level language: A programming language that is designed to be easy</span></div>
+<div style="position:absolute;left:158.87px;top:189.72px" class="cls_003"><span class="cls_003">for humans to read and write.</span></div>
+<div style="position:absolute;left:129.60px;top:214.62px" class="cls_003"><span class="cls_003">low-level language: A programming language that is designed to be easy</span></div>
+<div style="position:absolute;left:158.87px;top:229.79px" class="cls_003"><span class="cls_003">for a computer to run.  Also called “machine language” or “assembly</span></div>
+<div style="position:absolute;left:158.87px;top:244.96px" class="cls_003"><span class="cls_003">language”.</span></div>
+<div style="position:absolute;left:129.60px;top:269.86px" class="cls_003"><span class="cls_003">portable: The ability of a program to run on more than one kind of computer.</span></div>
+<div style="position:absolute;left:129.60px;top:294.76px" class="cls_003"><span class="cls_003">interpret: To run a program in a high-level language by translating it one</span></div>
+<div style="position:absolute;left:158.87px;top:309.93px" class="cls_003"><span class="cls_003">line at a time and immediately executing the corresponding instructions.</span></div>
+<div style="position:absolute;left:129.60px;top:334.84px" class="cls_003"><span class="cls_003">compile: To translate a program in a high-level language into a low-level</span></div>
+<div style="position:absolute;left:158.87px;top:350.00px" class="cls_003"><span class="cls_003">language, all at once, in preparation for later execution.</span></div>
+<div style="position:absolute;left:129.60px;top:374.91px" class="cls_003"><span class="cls_003">source code: A program in a high-level language, before being compiled.</span></div>
+<div style="position:absolute;left:129.60px;top:399.81px" class="cls_003"><span class="cls_003">object code: The output of the compiler, after translating the program.</span></div>
+<div style="position:absolute;left:129.60px;top:424.71px" class="cls_003"><span class="cls_003">executable: Another name for object code that is ready to run on specific</span></div>
+<div style="position:absolute;left:158.87px;top:439.88px" class="cls_003"><span class="cls_003">hardware.</span></div>
+<div style="position:absolute;left:129.60px;top:464.78px" class="cls_003"><span class="cls_003">byte code: A special kind of object code used for Java programs. Byte code</span></div>
+<div style="position:absolute;left:158.87px;top:479.95px" class="cls_003"><span class="cls_003">is similar to a low-level language, but it is portable like a high-level</span></div>
+<div style="position:absolute;left:158.87px;top:495.12px" class="cls_003"><span class="cls_003">language.</span></div>
+<div style="position:absolute;left:129.60px;top:520.02px" class="cls_003"><span class="cls_003">statement: Part of a program that specifies one step of an algorithm.</span></div>
+<div style="position:absolute;left:129.60px;top:544.93px" class="cls_003"><span class="cls_003">print statement: A statement that causes output to be displayed on the</span></div>
+<div style="position:absolute;left:158.87px;top:560.10px" class="cls_003"><span class="cls_003">screen.</span></div>
+<div style="position:absolute;left:129.60px;top:585.00px" class="cls_003"><span class="cls_003">method: A named sequence of statements.</span></div>
+<div style="position:absolute;left:129.60px;top:609.90px" class="cls_003"><span class="cls_003">class: For now, a collection of related methods. (We will see later that there</span></div>
+<div style="position:absolute;left:158.87px;top:625.07px" class="cls_003"><span class="cls_003">is more to it.)</span></div>
+<div style="position:absolute;left:129.60px;top:649.97px" class="cls_003"><span class="cls_003">comment: A part of a program that contains information about the program</span></div>
+<div style="position:absolute;left:158.87px;top:665.14px" class="cls_003"><span class="cls_003">but has no effect when the program runs.</span></div>
+<div style="position:absolute;left:129.60px;top:690.04px" class="cls_003"><span class="cls_003">string: A sequence of characters; the primary data type for text.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:8822px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="fe06b3d2-5ad4-11e9-9d71-0cc47a792c0a_id_fe06b3d2-5ad4-11e9-9d71-0cc47a792c0a_files/background12.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">12</span></div>
+<div style="position:absolute;left:266.86px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 1</span></div>
+<div style="position:absolute;left:339.58px;top:88.65px" class="cls_003"><span class="cls_003">The way of the program</span></div>
+<div style="position:absolute;left:86.40px;top:124.74px" class="cls_003"><span class="cls_003">newline: A special character signifying the end of a line of text. Also known</span></div>
+<div style="position:absolute;left:115.67px;top:139.91px" class="cls_003"><span class="cls_003">as line ending, end of line (EOL), or line break.</span></div>
+<div style="position:absolute;left:86.40px;top:165.66px" class="cls_003"><span class="cls_003">escape sequence: A sequence of code that represents a special character</span></div>
+<div style="position:absolute;left:115.67px;top:180.82px" class="cls_003"><span class="cls_003">when used inside a string.</span></div>
+<div style="position:absolute;left:86.40px;top:229.67px" class="cls_004"><span class="cls_004">1.10</span></div>
+<div style="position:absolute;left:140.20px;top:229.67px" class="cls_004"><span class="cls_004">Exercises</span></div>
+<div style="position:absolute;left:86.40px;top:266.28px" class="cls_003"><span class="cls_003">At the end of each chapter, we include exercises you can do with the things</span></div>
+<div style="position:absolute;left:86.40px;top:281.45px" class="cls_003"><span class="cls_003">you’ve learned.  We encourage you to at least attempt every problem.  You</span></div>
+<div style="position:absolute;left:86.40px;top:296.61px" class="cls_003"><span class="cls_003">can’t learn to program only by reading about it; you have to practice.</span></div>
+<div style="position:absolute;left:86.40px;top:324.23px" class="cls_003"><span class="cls_003">Before you can compile and run Java programs, you might have to download</span></div>
+<div style="position:absolute;left:86.40px;top:339.40px" class="cls_003"><span class="cls_003">and install a few tools.  There are many good options, but we recommend</span></div>
+<div style="position:absolute;left:86.40px;top:354.56px" class="cls_003"><span class="cls_003">DrJava, which is an “integrated development environment” (IDE) well suited</span></div>
+<div style="position:absolute;left:86.40px;top:369.73px" class="cls_003"><span class="cls_003">for beginners. Instructions for getting started are in Appendix A.1.</span></div>
+<div style="position:absolute;left:86.40px;top:397.35px" class="cls_003"><span class="cls_003">The code for this chapter is in the ch01 directory of ThinkJavaCode.  See</span></div>
+<div style="position:absolute;left:86.40px;top:412.52px" class="cls_003"><span class="cls_003">page xv for instructions on how to download the repository. Before you start</span></div>
+<div style="position:absolute;left:86.40px;top:427.68px" class="cls_003"><span class="cls_003">the exercises, we recommend that you compile and run the examples.</span></div>
+<div style="position:absolute;left:86.40px;top:454.81px" class="cls_003"><span class="cls_003">Exercise 1.1</span></div>
+<div style="position:absolute;left:167.95px;top:454.81px" class="cls_003"><span class="cls_003">Computer scientists have the annoying habit of using common</span></div>
+<div style="position:absolute;left:86.40px;top:469.97px" class="cls_003"><span class="cls_003">English words to mean something other than their common English meaning.</span></div>
+<div style="position:absolute;left:86.40px;top:485.14px" class="cls_003"><span class="cls_003">For example, in English, statements and comments are the same thing, but in</span></div>
+<div style="position:absolute;left:86.40px;top:500.31px" class="cls_003"><span class="cls_003">programs they are different.</span></div>
+<div style="position:absolute;left:100.71px;top:532.65px" class="cls_003"><span class="cls_003">1. In computer jargon, what’s the difference between a statement and a</span></div>
+<div style="position:absolute;left:115.67px;top:547.81px" class="cls_003"><span class="cls_003">comment?</span></div>
+<div style="position:absolute;left:100.71px;top:573.56px" class="cls_003"><span class="cls_003">2. What does it mean to say that a program is portable?</span></div>
+<div style="position:absolute;left:100.71px;top:599.30px" class="cls_003"><span class="cls_003">3. In common English, what does the word compile mean?</span></div>
+<div style="position:absolute;left:100.71px;top:625.05px" class="cls_003"><span class="cls_003">4. What is an executable? Why is that word used as a noun?</span></div>
+<div style="position:absolute;left:86.40px;top:657.38px" class="cls_003"><span class="cls_003">The glossary at the end of each chapter is intended to highlight words and</span></div>
+<div style="position:absolute;left:86.40px;top:672.55px" class="cls_003"><span class="cls_003">phrases that have special meanings in computer science. When you see familiar</span></div>
+<div style="position:absolute;left:86.40px;top:687.72px" class="cls_003"><span class="cls_003">words, don’t assume that you know what they mean!</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:9624px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="fe06b3d2-5ad4-11e9-9d71-0cc47a792c0a_id_fe06b3d2-5ad4-11e9-9d71-0cc47a792c0a_files/background13.jpg" width=612 height=792></div>
+<div style="position:absolute;left:129.60px;top:88.65px" class="cls_003"><span class="cls_003">1.10</span></div>
+<div style="position:absolute;left:166.96px;top:88.65px" class="cls_003"><span class="cls_003">Exercises</span></div>
+<div style="position:absolute;left:512.16px;top:88.65px" class="cls_003"><span class="cls_003">13</span></div>
+<div style="position:absolute;left:129.60px;top:124.74px" class="cls_003"><span class="cls_003">Exercise 1.2</span></div>
+<div style="position:absolute;left:211.78px;top:124.74px" class="cls_003"><span class="cls_003">Before you do anything else, find out how to compile and run</span></div>
+<div style="position:absolute;left:129.60px;top:139.91px" class="cls_003"><span class="cls_003">a Java program. Some environments provide sample programs similar to the</span></div>
+<div style="position:absolute;left:129.60px;top:155.08px" class="cls_003"><span class="cls_003">example in Section 1.4.</span></div>
+<div style="position:absolute;left:143.91px;top:187.31px" class="cls_003"><span class="cls_003">1. Type in the hello world program, then compile and run it.</span></div>
+<div style="position:absolute;left:143.91px;top:213.01px" class="cls_003"><span class="cls_003">2. Add a print statement that displays a second message after the “Hello,</span></div>
+<div style="position:absolute;left:158.87px;top:228.18px" class="cls_003"><span class="cls_003">World!”.  Say something witty like, “How are you?”  Compile and run</span></div>
+<div style="position:absolute;left:158.87px;top:243.34px" class="cls_003"><span class="cls_003">the program again.</span></div>
+<div style="position:absolute;left:143.91px;top:269.04px" class="cls_003"><span class="cls_003">3. Add a comment to the program (anywhere), recompile, and run it again.</span></div>
+<div style="position:absolute;left:158.87px;top:284.21px" class="cls_003"><span class="cls_003">The new comment should not affect the result.</span></div>
+<div style="position:absolute;left:129.60px;top:316.44px" class="cls_003"><span class="cls_003">This exercise may seem trivial, but it is the starting place for many of the</span></div>
+<div style="position:absolute;left:129.60px;top:331.61px" class="cls_003"><span class="cls_003">programs we will work with. To debug with confidence, you will need to have</span></div>
+<div style="position:absolute;left:129.60px;top:346.78px" class="cls_003"><span class="cls_003">confidence in your programming environment.</span></div>
+<div style="position:absolute;left:129.60px;top:374.35px" class="cls_003"><span class="cls_003">In some environments, it is easy to lose track of which program is executing.</span></div>
+<div style="position:absolute;left:129.60px;top:389.52px" class="cls_003"><span class="cls_003">You might find yourself trying to debug one program while you are accidentally</span></div>
+<div style="position:absolute;left:129.60px;top:404.69px" class="cls_003"><span class="cls_003">running another. Adding (and changing) print statements is a simple way to</span></div>
+<div style="position:absolute;left:129.60px;top:419.85px" class="cls_003"><span class="cls_003">be sure that the program you are looking at is the program you are running.</span></div>
+<div style="position:absolute;left:129.60px;top:446.98px" class="cls_003"><span class="cls_003">Exercise 1.3</span></div>
+<div style="position:absolute;left:212.35px;top:446.98px" class="cls_003"><span class="cls_003">It is a good idea to commit as many errors as you can think</span></div>
+<div style="position:absolute;left:129.60px;top:462.15px" class="cls_003"><span class="cls_003">of, so that you see what error messages the compiler produces. Sometimes the</span></div>
+<div style="position:absolute;left:129.60px;top:477.31px" class="cls_003"><span class="cls_003">compiler tells you exactly what is wrong, and all you have to do is fix it. But</span></div>
+<div style="position:absolute;left:129.60px;top:492.48px" class="cls_003"><span class="cls_003">sometimes the error messages are misleading.  Over time you will develop a</span></div>
+<div style="position:absolute;left:129.60px;top:507.65px" class="cls_003"><span class="cls_003">sense for when you can trust the compiler and when you have to figure things</span></div>
+<div style="position:absolute;left:129.60px;top:522.82px" class="cls_003"><span class="cls_003">out yourself.</span></div>
+<div style="position:absolute;left:129.60px;top:550.39px" class="cls_003"><span class="cls_003">Starting with the hello world program, try out each of the following errors.</span></div>
+<div style="position:absolute;left:129.60px;top:565.56px" class="cls_003"><span class="cls_003">After you make each change, compile the program, read the error message (if</span></div>
+<div style="position:absolute;left:129.60px;top:580.73px" class="cls_003"><span class="cls_003">there is one), and then fix the error.</span></div>
+<div style="position:absolute;left:143.91px;top:612.96px" class="cls_003"><span class="cls_003">1. Remove one of the open squiggly braces.</span></div>
+<div style="position:absolute;left:143.91px;top:638.66px" class="cls_003"><span class="cls_003">2. Remove one of the close squiggly braces.</span></div>
+<div style="position:absolute;left:143.91px;top:664.35px" class="cls_003"><span class="cls_003">3. Instead of main, write mian.</span></div>
+<div style="position:absolute;left:143.91px;top:690.04px" class="cls_003"><span class="cls_003">4. Remove the word</span><span class="cls_006"> static</span><span class="cls_003">.</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-306px;top:10426px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="fe06b3d2-5ad4-11e9-9d71-0cc47a792c0a_id_fe06b3d2-5ad4-11e9-9d71-0cc47a792c0a_files/background14.jpg" width=612 height=792></div>
+<div style="position:absolute;left:86.40px;top:88.65px" class="cls_003"><span class="cls_003">14</span></div>
+<div style="position:absolute;left:266.86px;top:88.65px" class="cls_003"><span class="cls_003">Chapter 1</span></div>
+<div style="position:absolute;left:339.58px;top:88.65px" class="cls_003"><span class="cls_003">The way of the program</span></div>
+<div style="position:absolute;left:100.71px;top:124.74px" class="cls_003"><span class="cls_003">5. Remove the word</span><span class="cls_006"> public</span><span class="cls_003">.</span></div>
+<div style="position:absolute;left:100.71px;top:149.87px" class="cls_003"><span class="cls_003">6. Remove the word System.</span></div>
+<div style="position:absolute;left:100.71px;top:175.00px" class="cls_003"><span class="cls_003">7. Replace println with Println.</span></div>
+<div style="position:absolute;left:100.71px;top:200.14px" class="cls_003"><span class="cls_003">8. Replace println with print.</span></div>
+<div style="position:absolute;left:100.71px;top:225.27px" class="cls_003"><span class="cls_003">9. Delete one of the parentheses. Add an extra one.</span></div>
+</div>
+
+</body>
+</html>
