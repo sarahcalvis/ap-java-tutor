@@ -18,6 +18,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
@@ -546,6 +547,8 @@ public class Main extends Application {
 		}
 		// create a event handler for each checkbox
 		//it can print what has been selected
+		//ToggleGroup allows only one button to be selected at a time
+		final ToggleGroup group = new ToggleGroup();
 		EventHandler<ActionEvent> boxEvent = new EventHandler<ActionEvent>() { 
 			public void handle(ActionEvent e) 
 			{ 
@@ -566,6 +569,7 @@ public class Main extends Application {
 		for (int i = 0; i < boxes.size(); i++) {
 			RadioButton c = boxes.get(i);
 			c.setOnAction(boxEvent); 
+			c.setToggleGroup(group);
 		}   
 		//add all this to grid
 		grid.add(quest, 2, 4);
