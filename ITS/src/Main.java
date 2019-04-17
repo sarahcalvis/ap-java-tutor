@@ -45,6 +45,7 @@ import java.util.Map;
 import java.util.Scanner;
 import javafx. *;
 import org.json.*;
+import org.json.JSONException;
 
 public class Main extends Application {
 	//this one tells whether the button should show right now or not
