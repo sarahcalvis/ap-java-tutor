@@ -1,4 +1,5 @@
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -62,11 +63,12 @@ public class Student {
 		tests = new ArrayList<>();
 		
 		//TODO: file readers and writers (specifically for txt files) maybe look at streams for doing numbers?
-		File f = new File("guest.txt");
+		File f = new File("guest.bin");
 		Scanner scn = null;
 		try {
 			if(f.createNewFile()) {
-				scn = new Scanner (f);
+				FileInputStream fis = new FileInputStream(f);
+				scn = new Scanner (fis);
 				generateFile(f);
 			}
 		}
