@@ -10,6 +10,10 @@ import org.json.simple.parser.JSONParser;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.chart.BarChart;
+import javafx.scene.chart.CategoryAxis;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
@@ -119,22 +123,17 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		primaryStage.setTitle("AP Computer Science Prep");
+		
+		//move chart stuff over here
 
 		VBox vb = new VBox();
-		//vb.setSpacing(10);
-		//vb.setPadding(new Insets(10,10,10,10));
-
-		//vb.setAlignment(Pos.CENTER);
 
 		//creates a grid in the center
-		//GridPane grid = new GridPane();
 		grid.setAlignment(Pos.TOP_LEFT);
 
 		grid.setHgap(10);
 		grid.setVgap(10);
 
-		//controls padding around the edges
-		//grid.setPadding(new Insets(10,10,10,10));
 
 		//makes size of the window
 		Scene scene = new Scene(grid, 1080, 720);
@@ -433,6 +432,7 @@ public class Main extends Application {
 			diagnostics.setTextFill(Color.BLUE);
 			diagnostics.setMaxWidth(Double.MAX_VALUE);
 			diagnostics.setOnAction(new EventHandler<ActionEvent>() {
+				@SuppressWarnings("unchecked")
 				@Override
 				public void handle(ActionEvent event) {
 					System.out.println("Pressed Diagnostics Button");
@@ -445,23 +445,15 @@ public class Main extends Application {
 					buttons(grid, primaryStage);
 					System.out.println("finished creating");
 					//Map<String,Tuple> stats = studentObj.getStats();
-					String s = "";
-					for (int i = 0; i < keys.size(); i++) {
-						Double score = stats.get(keys.get(i)).getTuple();
-						String txt = "";
-						if(score<0) {
-							txt = "N/A";
-						}
-						else {
-							txt = "" + score + "%";
-						}
-						s += keys.get(i) + ": " + txt + "\n";
-					}
-					Text diagnosticInfo = new Text(s);
-					diagnosticInfo.setFont(Font.font("Tahoma", FontWeight.NORMAL, 18));
-					grid.add(diagnosticInfo, 2, 2);
+					
+					//chart goes here
+					Charts charty = new Charts();
+					VBox boxy = charty.getBox();
+					grid.add(boxy,1,1);
+					
 				}
 			});
+
 			grid.add(diagnostics, 5, 33);
 	
 			//settings button
