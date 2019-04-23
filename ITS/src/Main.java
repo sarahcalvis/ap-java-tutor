@@ -56,7 +56,7 @@ public class Main extends Application {
 	boolean buttonsExpanded = true;
 	//what page of the text book we are on
 	int whatPageWeOn = 1;
-	static TestBank banky = new TestBank();
+	static TestBank banky;
 	static ArrayList<String> topics;
 	static Student studentObj = new Student();
 	String selected = "";
@@ -101,7 +101,8 @@ public class Main extends Application {
 		keys.add("Standard Java Library");
 		
 		try {
-			fillTestBank();
+			ParseQuestions p = new ParseQuestions();
+			banky = p.fillTestBank();
 		}
 		catch (IOException e) {
 			System.out.println(e.getMessage());
@@ -560,57 +561,6 @@ public class Main extends Application {
 		};
 		if (notCompleted == true) {
 			submit.setOnAction(submitted);
-		}
-	}
-
-	/**
-	 * @throws JSONException
-	 * @throws IOException
-	 * @throws ParseException
-	 * This method opens a JSON file holding an array of all the questions
-	 * It parses the file
-	 * It creates question objects which are added to the question bank
-	 */
-	public static void fillTestBank() throws JSONException, IOException, ParseException {
-		//create the textbook variables
-		Question question;
-		String text;
-		String topic;
-		int bloom;
-		ArrayList<String> answers;
-		
-		//parse the JSON file into an array
-		JSONParser parser = new JSONParser();
-		JSONArray arr = (JSONArray) parser.parse(new FileReader("q.json"));
-		
-		//iterate through the array
-		for (Object r: arr) {
-			
-			//convert each question into a JSON object
-			JSONObject q = (JSONObject) r;
-			
-			//get the question
-			text = (String) q.get("text");
-			
-			//get the answers to the questions
-			JSONObject a = (JSONObject) q.get("answers");
-			answers = new ArrayList<String>();
-			answers.add((String)a.get("0"));
-			answers.add((String)a.get("1"));
-			answers.add((String)a.get("2"));
-			answers.add((String)a.get("3"));
-			
-			//get the topic
-			topic = (String)q.get("topic");
-			
-			//get the Bloom portion
-			bloom = Integer.parseInt((String)q.get("Bloom"));
-			
-			//create a new question
-			question = new Question(text, answers, topic, bloom);
-			
-			//add the question to the question bank
-			banky.addQuest(question);
 		}
 	}
 }
