@@ -334,9 +334,9 @@ public class Main extends Application {
 					//Map<String,Tuple> stats = studentObj.getStats();
 					
 					//chart goes here
-					Charts charty = new Charts();
-					VBox boxy = charty.getBox();
-					grid.add(boxy,1,1);
+					//Charts charty = new Charts();
+					//VBox boxy = charty.getBox();
+					//grid.add(boxy,1,1);
 					
 				}
 			});
@@ -360,6 +360,36 @@ public class Main extends Application {
 					//add the nav bar back
 					buttons(grid, primaryStage);
 					System.out.println("finished creating");
+					
+					
+					//
+					//settings go here
+					//
+					
+					//Tim Mattson
+					VBox boxxy = new VBox();
+				    ToggleGroup group = new ToggleGroup();
+				    RadioButton button1 = new RadioButton("Tim Mattson");
+				    button1.setToggleGroup(group);
+				    button1.setSelected(true);
+				    boxxy.getChildren().add(button1);	
+				    grid.add(boxxy, 2, 4);
+				    
+				    
+				    //colors
+				    VBox colorBox = new VBox();
+				    ToggleGroup groupy = new ToggleGroup();
+				    RadioButton light = new RadioButton("Light");
+				    light.setToggleGroup(groupy);
+				    light.setSelected(true);
+				    RadioButton dark = new RadioButton("Dark");
+				    dark.setToggleGroup(groupy);
+				    
+				    
+				    colorBox.getChildren().addAll(light, dark);
+				    
+				    grid.add(colorBox,2,5);
+					
 				}
 			});
 			grid.add(settings, 5, 40);
