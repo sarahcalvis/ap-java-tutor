@@ -1,6 +1,7 @@
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.nio.file.Files;
@@ -27,30 +28,8 @@ public class Student {
 	private ArrayList<Double> tests;
 	
 	//private Tuple bloom;
-	private Tuple bloom1;
-	private Tuple bloom2;
-	private Tuple bloom3;
-	private Tuple bloom4;
-	private Tuple bloom5;
-	private Tuple bloom6;
-	private Tuple comments;
-	private Tuple primTypes;
-	private Tuple operators;
-	private Tuple objComparison;
-	private Tuple escSeq;
-	private Tuple IO;
-	private Tuple exceptions;
-	private Tuple arrays;
-	private Tuple ctrlStatements;
-	private Tuple vars;
-	private Tuple methods;
-	private Tuple constructors;
-	private Tuple classes;
-	private Tuple interfaces;
-	private Tuple inheritance;
-	private Tuple packages;
-	private Tuple miscOOP;
-	private Tuple standardJavaLibrary;
+
+	
 	
 	/**
 	 * default Student Object Constructor
@@ -73,7 +52,7 @@ public class Student {
 			}
 		}
 		catch (FileNotFoundException e) {
-			scn = new Scanner("(default).txt");
+			scn = new Scanner("guest.bin");
 			//this should never trigger
 			e.printStackTrace();
 		} catch (IOException e) {
@@ -100,126 +79,79 @@ public class Student {
 					switch(i) {
 					case 1:
 						name = ("Bloom "+j);
-						switch(j) {
-						case 1:
-							bloom1 = new Tuple(x,y);
-							t = bloom1;
-							break;
-						case 2:
-							bloom2 = new Tuple(x,y);
-							t = bloom2;
-							break;
-						case 3:
-							bloom3 = new Tuple(x,y);
-							t = bloom3;
-							break;
-						case 4:
-							bloom4 = new Tuple(x,y);
-							t = bloom4;
-							break;
-						case 5:
-							bloom5 = new Tuple(x,y);
-							t = bloom5;
-							break;
-						case 6:
-							bloom6 = new Tuple(x,y);
-							t = bloom6;
-							break;
-						default:
-							name = "You Broke Everything";
-							t = new Tuple(x,y);
-						}
+						t = new Tuple(x,y);
 						break;
 					case 2:
-						name = "Comments";
-						comments = new Tuple(x,y);
-						t = comments;
+						name = ("Comments "+j);
+						t = new Tuple(x,y);
 						break;
 					case 3:
-						name = "Primitive Types";
-						primTypes = new Tuple(x,y);
-						t = primTypes;
-						
+						name = ("Primitive Types "+j);
+						t = new Tuple(x,y);
 						break;
 					case 4:
-						name = "Operators";
-						operators = new Tuple(x,y);
-						t = operators;
+						name = "Operators "+j;
+						t = new Tuple(x,y);
 						break;
 					case 5:
-						name = "Object Comparison";
-						objComparison = new Tuple(x,y);
-						t = objComparison;
+						name = "Object Comparison "+j;
+						t = new Tuple(x,y);
 						break;
 					case 6:
-						name = "Escape Sequences";
-						escSeq = new Tuple(x,y);
-						t = escSeq;
+						name = "Escape Sequences "+j;
+						t = new Tuple(x,y);
 						break;
 					case 7:
 						name = "I/O";
-						IO = new Tuple(x,y);
-						t = IO;
+						t = new Tuple(x,y);
 						break;
 					case 8:
 						name = "Exceptions";
-						exceptions = new Tuple(x,y);
-						t = exceptions;
+						t = new Tuple(x,y);
 						break;
 					case 9:
 						name = "Arrays";
-						arrays = new Tuple(x,y);
-						t = arrays;
+						t = new Tuple(x,y);
 						break;
 					case 10:
 						name = "Control Statements";
-						ctrlStatements = new Tuple(x,y);
-						t = ctrlStatements;
+						t = new Tuple(x,y);
 						break;
 					case 11:
 						name = "Variables";
-						vars = new Tuple(x,y);
-						t = vars;
+						t = new Tuple(x,y);
 						break;
 					case 12:
 						name = "Methods";
-						methods = new Tuple(x,y);
-						t = methods;
+						t = new Tuple(x,y);
 						break;
 					case 13:
 						name = "Constructors";
-						constructors = new Tuple(x,y);
-						t = constructors;
+						t = new Tuple(x,y);
 						break;
 					case 14:
 						name = "Classes";
-						classes = new Tuple(x,y);
-						t = classes;						
+						t = new Tuple(x,y);						
 						break;
 					case 15:
 						name = "Interfaces";
-						interfaces = new Tuple(x,y);
-						t = interfaces;
+						t = new Tuple(x,y);
 						break;
 					case 16:
 						name = "Inheritance";
-						inheritance = new Tuple(x,y);
-						t = inheritance;
+						t = new Tuple(x,y);
 						break;
 					case 17:
 						name = "Packages";
-						packages = new Tuple(x,y);
-						t = packages;
+						t = new Tuple(x,y);
 						break;
 					case 18:
 						name = "Miscellaneous Object Oriented Programming";
-						miscOOP = new Tuple(x,y);
-						t = miscOOP;
+						t = new Tuple(x,y);
 						break;
 					case 19:
 						name = "Standard Java Library";
-						standardJavaLibrary = new Tuple(x,y);
-						t = standardJavaLibrary;
+						t = new Tuple(x,y);
 						break;
 					default:
 						name = "You Broke Everything";
@@ -257,27 +189,29 @@ public class Student {
 	 * @param username
 	 * @param password
 	 */
-	public Student(String username, String password) {
+	public Student(String username, String password){
 		stats = new HashMap<>();
-		quizzes = new ArrayList<>();
+		quizzes =  new ArrayList<>();
 		tests = new ArrayList<>();
-		File f = new File(username + ".txt");
+		
+		//TODO: file readers and writers (specifically for txt files) maybe look at streams for doing numbers?
+		File f = new File(username+".bin");
 		Scanner scn = null;
 		try {
 			if(f.createNewFile()) {
-				scn = new Scanner (f);
+				FileInputStream fis = new FileInputStream(f);
+				scn = new Scanner (fis);
 				generateFile(f);
+				
 			}
 		}
 		catch (FileNotFoundException e) {
-			scn = new Scanner("(default).txt");
+			scn = new Scanner("guest.bin");
 			//this should never trigger
-			System.out.println("why the hecc is this triggering. you got problems in your default Student constructor");
 			e.printStackTrace();
 		} catch (IOException e) {
 			scn = new Scanner(System.in);
 			//this should never trigger
-			System.out.println("why the hecc is this triggering. you got problems in your default Student constructor");
 			e.printStackTrace();
 		}
 		try {
@@ -288,6 +222,7 @@ public class Student {
 		}
 		for(int i = 0; scn.hasNextLine(); i++) {
 			String nextLine = scn.nextLine();
+			System.out.println(nextLine);
 			Scanner scan = new Scanner(nextLine);
 			if (scan.hasNextInt()) {
 				for(int j = 1;scan.hasNextInt();j++) {
@@ -298,136 +233,90 @@ public class Student {
 					switch(i) {
 					case 1:
 						name = ("Bloom "+j);
-						switch(j) {
-						case 1:
-							bloom1 = new Tuple(x,y);
-							t = bloom1;
-							break;
-						case 2:
-							bloom2 = new Tuple(x,y);
-							t = bloom2;
-							break;
-						case 3:
-							bloom3 = new Tuple(x,y);
-							t = bloom3;
-							break;
-						case 4:
-							bloom4 = new Tuple(x,y);
-							t = bloom4;
-							break;
-						case 5:
-							bloom5 = new Tuple(x,y);
-							t = bloom5;
-							break;
-						case 6:
-							bloom6 = new Tuple(x,y);
-							t = bloom6;
-							break;
-						default:
-							name = "You Broke Everything";
-							t = new Tuple(x,y);
-						}
+						t = new Tuple(x,y);
 						break;
 					case 2:
-						name = "Comments";
-						comments = new Tuple(x,y);
-						t = comments;
+						name = ("Comments "+j);
+						t = new Tuple(x,y);
 						break;
 					case 3:
-						name = "Primitive Types";
-						primTypes = new Tuple(x,y);
-						t = primTypes;					
+						name = ("Primitive Types "+j);
+						t = new Tuple(x,y);
 						break;
 					case 4:
-						name = "Operators";
-						operators = new Tuple(x,y);
-						t = operators;
+						name = "Operators "+j;
+						t = new Tuple(x,y);
 						break;
 					case 5:
-						name = "Object Comparison";
-						objComparison = new Tuple(x,y);
-						t = objComparison;
+						name = "Object Comparison "+j;
+						t = new Tuple(x,y);
 						break;
 					case 6:
-						name = "Escape Sequences";
-						escSeq = new Tuple(x,y);
-						t = escSeq;
+						name = "Escape Sequences "+j;
+						t = new Tuple(x,y);
 						break;
 					case 7:
-						name = "I/O";
-						IO = new Tuple(x,y);
-						t = IO;
+						name = "I/O "+j;
+						t = new Tuple(x,y);
 						break;
 					case 8:
-						name = "Exceptions";
-						exceptions = new Tuple(x,y);
-						t = exceptions;
+						name = "Exceptions "+j;
+						t = new Tuple(x,y);
 						break;
 					case 9:
-						name = "Arrays";
-						arrays = new Tuple(x,y);
-						t = arrays;
+						name = "Arrays "+j;
+						t = new Tuple(x,y);
 						break;
 					case 10:
-						name = "Control Statements";
-						ctrlStatements = new Tuple(x,y);
-						t = ctrlStatements;
+						name = "Control Statements "+j;
+						t = new Tuple(x,y);
 						break;
 					case 11:
-						name = "Variables";
-						vars = new Tuple(x,y);
-						t = vars;
+						name = "Variables "+j;
+						t = new Tuple(x,y);
 						break;
 					case 12:
-						name = "Methods";
-						methods = new Tuple(x,y);
-						t = methods;
+						name = "Methods "+j;
+						t = new Tuple(x,y);
 						break;
 					case 13:
-						name = "Constructors";
-						constructors = new Tuple(x,y);
-						t = constructors;
+						name = "Constructors "+j;
+						t = new Tuple(x,y);
 						break;
 					case 14:
-						name = "Classes";
-						classes = new Tuple(x,y);
-						t = classes;						
+						name = "Classes "+j;
+						t = new Tuple(x,y);						
 						break;
 					case 15:
-						name = "Interfaces";
-						interfaces = new Tuple(x,y);
-						t = interfaces;
+						name = "Interfaces "+j;
+						t = new Tuple(x,y);
 						break;
 					case 16:
-						name = "Inheritance";
-						inheritance = new Tuple(x,y);
-						t = inheritance;
+						name = "Inheritance "+j;
+						t = new Tuple(x,y);
 						break;
 					case 17:
-						name = "Packages";
-						packages = new Tuple(x,y);
-						t = packages;
+						name = "Packages "+j;
+						t = new Tuple(x,y);
 						break;
 					case 18:
-						name = "Miscellaneous Object Oriented Programming";
-						miscOOP = new Tuple(x,y);
-						t = miscOOP;
+						name = "Miscellaneous Object Oriented Programming "+j;
+						t = new Tuple(x,y);
 						break;
 					case 19:
-						name = "Standard Java Library";
-						standardJavaLibrary = new Tuple(x,y);
-						t = standardJavaLibrary;
+						name = "Standard Java Library "+j;
+						t = new Tuple(x,y);
 						break;
 					default:
-						name = "You Broke Everything";
+						name = "You Broke Everything "+j;
 						t = new Tuple(x,y);
 					}
-					stats.put(name, t);
+					stats.put(name,t);
 				}
 			}
-			
 			else if(scan.hasNextDouble()) {
 				for (int j = 0; scan.hasNextDouble(); j++) {
+					System.out.println(j);
 					if(i==1) {
 						quizzes.add(j,scan.nextDouble());
 					}
@@ -440,12 +329,13 @@ public class Student {
 				}
 			}
 			else {
-				this.username = username;
-				this.password = password;
+				this.username = scan.next();
+				this.password = scan.next();
 			}
-		}		
-	}
-	
+		}
+		this.username = username;
+		this.password = password;
+	}	
 
 	public String getUsername() {
 		return username;
@@ -491,7 +381,8 @@ public class Student {
 
 	public void saveProgress() {
 		try {
-			PrintWriter pw = new PrintWriter(username+".txt");
+			FileOutputStream f = new FileOutputStream(username+".bin");
+			PrintWriter pw = new PrintWriter(f);
 			pw.println(username + " " + password);
 			for (int i = 0; i<quizzes.size();i++) {
 				if(!(i==quizzes.size()-1)) {
@@ -511,30 +402,81 @@ public class Student {
 					pw.println(tests.get(i));
 				}
 			}
-			pw.print(stats.get("Bloom 1").toString() + " ");
-			pw.print(stats.get("Bloom 2").toString() + " ");
-			pw.print(stats.get("Bloom 3").toString() + " ");
-			pw.print(stats.get("Bloom 4").toString() + " ");
-			pw.print(stats.get("Bloom 5").toString() + " ");
-			pw.println(stats.get("Bloom 6").toString());
-			pw.println(stats.get("Comments").toString());
-			pw.println(stats.get("Primitive Types").toString());
-			pw.println(stats.get("Operators").toString());
-			pw.println(stats.get("Object Comparison").toString());
-			pw.println(stats.get("Escape Sequences").toString());
-			pw.println(stats.get("I/O").toString());
-			pw.println(stats.get("Exceptions").toString());
-			pw.println(stats.get("Arrays").toString());
-			pw.println(stats.get("Control Statements").toString());
-			pw.println(stats.get("Variables").toString());
-			pw.println(stats.get("Methods").toString());
-			pw.println(stats.get("Constructors").toString());
-			pw.println(stats.get("Classes").toString());
-			pw.println(stats.get("Interfaces").toString());
-			pw.println(stats.get("Inheritance").toString());
-			pw.println(stats.get("Packages").toString());
-			pw.println(stats.get("Miscellaneous Object Oriented Programming").toString());
-			pw.print(stats.get("Standard Java Library").toString());
+			for(int i = 1; i<7;i++) {
+				pw.print(stats.get("Bloom "+i).toString() + " ");
+			}
+			pw.println();
+			for(int i = 1; i<7;i++) {
+				pw.print(stats.get("Comments "+i).toString() + " ");
+			}
+			pw.println();
+			for(int i = 1; i<7;i++) {
+				pw.print(stats.get("Primitive Types "+i).toString() + " ");
+			}
+			pw.println();
+			for(int i = 1; i<7;i++) {
+				pw.print(stats.get("Operators "+i).toString() + " ");
+			}
+			pw.println();
+			for(int i = 1; i<7;i++) {
+				pw.print(stats.get("Object Comparison "+i).toString() + " ");
+			}
+			pw.println();
+			for(int i = 1; i<7;i++) {
+				pw.print(stats.get("Escape Sequences "+i).toString() + " ");
+			}
+			pw.println();
+			for(int i = 1; i<7;i++) {
+				pw.print(stats.get("I/O "+i).toString() + " ");
+			}
+			pw.println();
+			for(int i = 1; i<7;i++) {
+				pw.print(stats.get("Exceptions "+i).toString() + " ");
+			}
+			pw.println();
+			for(int i = 1; i<7;i++) {
+				pw.print(stats.get("Arrays "+i).toString() + " ");
+			}
+			pw.println();
+			for(int i = 1; i<7;i++) {
+				pw.print(stats.get("Control Statements "+i).toString() + " ");
+			}
+			pw.println();
+			for(int i = 1; i<7;i++) {
+				pw.print(stats.get("Variables "+i).toString() + " ");
+			}
+			pw.println();
+			for(int i = 1; i<7;i++) {
+				pw.print(stats.get("Methods "+i).toString() + " ");
+			}
+			pw.println();
+			for(int i = 1; i<7;i++) {
+				pw.print(stats.get("Constructors "+i).toString() + " ");
+			}
+			pw.println();
+			for(int i = 1; i<7;i++) {
+				pw.print(stats.get("Classes "+i).toString() + " ");
+			}
+			pw.println();
+			for(int i = 1; i<7;i++) {
+				pw.print(stats.get("Interfaces "+i).toString() + " ");
+			}
+			pw.println();
+			for(int i = 1; i<7;i++) {
+				pw.print(stats.get("Inheritance "+i).toString() + " ");
+			}
+			pw.println();
+			for(int i = 1; i<7;i++) {
+				pw.print(stats.get("Packages "+i).toString() + " ");
+			}
+			pw.println();
+			for(int i = 1; i<7;i++) {
+				pw.print(stats.get("Miscellaneous Object Oriented Programming "+i).toString() + " ");
+			}
+			pw.println();
+			for(int i = 1; i<7;i++) {
+				pw.print(stats.get("Standard Java Library "+i).toString() + " ");
+			}
 			pw.flush();
 			pw.close();
 
@@ -548,7 +490,8 @@ public class Student {
 	}
 
 	public void generateFile(File f) throws FileNotFoundException {
-		PrintWriter pw = new PrintWriter(f);
+		FileOutputStream fos = new FileOutputStream(f);
+		PrintWriter pw = new PrintWriter(fos);
 		pw.println("guest guest");
 		pw.print("0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0");//quizzes
 		pw.print("\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0");//tests
