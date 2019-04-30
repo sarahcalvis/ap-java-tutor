@@ -1,3 +1,4 @@
+import java.io.DataInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -47,8 +48,9 @@ public class Student {
 		try {
 			if(f.createNewFile()) {
 				FileInputStream fis = new FileInputStream(f);
+				DataInputStream dis = new DataInputStream(fis);
 				scn = new Scanner (fis);
-				generateFile(f);
+				generateFile(f,"guest","guest");
 			}
 		}
 		catch (FileNotFoundException e) {
@@ -102,59 +104,59 @@ public class Student {
 						t = new Tuple(x,y);
 						break;
 					case 7:
-						name = "I/O";
+						name = "I/O "+j;
 						t = new Tuple(x,y);
 						break;
 					case 8:
-						name = "Exceptions";
+						name = "Exceptions "+j;
 						t = new Tuple(x,y);
 						break;
 					case 9:
-						name = "Arrays";
+						name = "Arrays "+j;
 						t = new Tuple(x,y);
 						break;
 					case 10:
-						name = "Control Statements";
+						name = "Control Statements "+j;
 						t = new Tuple(x,y);
 						break;
 					case 11:
-						name = "Variables";
+						name = "Variables "+j;
 						t = new Tuple(x,y);
 						break;
 					case 12:
-						name = "Methods";
+						name = "Methods "+j;
 						t = new Tuple(x,y);
 						break;
 					case 13:
-						name = "Constructors";
+						name = "Constructors "+j;
 						t = new Tuple(x,y);
 						break;
 					case 14:
-						name = "Classes";
+						name = "Classes "+j;
 						t = new Tuple(x,y);						
 						break;
 					case 15:
-						name = "Interfaces";
+						name = "Interfaces "+j;
 						t = new Tuple(x,y);
 						break;
 					case 16:
-						name = "Inheritance";
+						name = "Inheritance "+j;
 						t = new Tuple(x,y);
 						break;
 					case 17:
-						name = "Packages";
+						name = "Packages "+j;
 						t = new Tuple(x,y);
 						break;
 					case 18:
-						name = "Miscellaneous Object Oriented Programming";
+						name = "Miscellaneous Object Oriented Programming "+j;
 						t = new Tuple(x,y);
 						break;
 					case 19:
-						name = "Standard Java Library";
+						name = "Standard Java Library "+j;
 						t = new Tuple(x,y);
 						break;
 					default:
-						name = "You Broke Everything";
+						name = "You Broke Everything "+j;
 						t = new Tuple(x,y);
 					}
 					stats.put(name,t);
@@ -201,7 +203,7 @@ public class Student {
 			if(f.createNewFile()) {
 				FileInputStream fis = new FileInputStream(f);
 				scn = new Scanner (fis);
-				generateFile(f);
+				generateFile(f,username,password);
 				
 			}
 		}
@@ -222,7 +224,6 @@ public class Student {
 		}
 		for(int i = 0; scn.hasNextLine(); i++) {
 			String nextLine = scn.nextLine();
-			System.out.println(nextLine);
 			Scanner scan = new Scanner(nextLine);
 			if (scan.hasNextInt()) {
 				for(int j = 1;scan.hasNextInt();j++) {
@@ -489,15 +490,14 @@ public class Student {
 
 	}
 
-	public void generateFile(File f) throws FileNotFoundException {
+	public void generateFile(File f, String username, String password) throws FileNotFoundException {
 		FileOutputStream fos = new FileOutputStream(f);
 		PrintWriter pw = new PrintWriter(fos);
-		pw.println("guest guest");
-		pw.print("0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0");//quizzes
-		pw.print("\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0");//tests
+		pw.println(username+ " " +password);
+		pw.print("0.0 0.0 0.0 0.0");//tests
 		pw.print("\n0 0 0 0 0 0 0 0 0 0 0 0");
 		for(int i=0;i<18;i++) {
-			pw.print("\n0 0");
+			pw.print("\n0 0 0 0 0 0 0 0 0 0 0 0");
 		}
 		pw.flush();
 		pw.close();

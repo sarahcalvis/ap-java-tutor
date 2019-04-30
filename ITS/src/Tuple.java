@@ -39,8 +39,6 @@ public class Tuple{
 			return x * 100.0 / y;
 		}
 		return -1.0;
-	}
-	
-	
+	}	
 	
 }
