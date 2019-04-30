@@ -1,4 +1,5 @@
 import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -43,17 +44,15 @@ public class Student {
 		tests = new ArrayList<>();
 		
 		//TODO: file readers and writers (specifically for txt files) maybe look at streams for doing numbers?
-		File f = new File("guest.bin");
+		FileInputStream fis = null;
 		Scanner scn = null;
 		try {
-			if(f.createNewFile()) {
-				FileInputStream fis = new FileInputStream(f);
+				fis = new FileInputStream("guest.bin");
 				DataInputStream dis = new DataInputStream(fis);
-				scn = new Scanner (fis);
-				generateFile(f,"guest","guest");
-			}
+				scn = new Scanner (dis);
 		}
 		catch (FileNotFoundException e) {
+			generateFile("guest.bin","guest","guest");
 			scn = new Scanner("guest.bin");
 			//this should never trigger
 			e.printStackTrace();
@@ -490,9 +489,10 @@ public class Student {
 
 	}
 
-	public void generateFile(File f, String username, String password) throws FileNotFoundException {
-		FileOutputStream fos = new FileOutputStream(f);
-		PrintWriter pw = new PrintWriter(fos);
+	public void generateFile(String filename, String username, String password) throws FileNotFoundException {
+		FileOutputStream fos = new FileOutputStream(filename);
+		DataOutputStream dos = new DataOutputStream(fos);
+		PrintWriter pw = new PrintWriter(dos);
 		pw.println(username+ " " +password);
 		pw.print("0.0 0.0 0.0 0.0");//tests
 		pw.print("\n0 0 0 0 0 0 0 0 0 0 0 0");
