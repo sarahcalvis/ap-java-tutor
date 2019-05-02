@@ -54,19 +54,8 @@ public class Student {
 		catch (FileNotFoundException e) {
 			generateFile("guest.bin","guest","guest");
 			scn = new Scanner("guest.bin");
-			//this should never trigger
-			e.printStackTrace();
-		} catch (IOException e) {
-			scn = new Scanner(System.in);
-			//this should never trigger
-			e.printStackTrace();
-		}
-		try {
-			scn = new Scanner (f);
 		} 
-		catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
+		scn = new Scanner (fis);
 		for(int i = 0; scn.hasNextLine(); i++) {
 			String nextLine = scn.nextLine();
 			System.out.println(nextLine);
@@ -202,7 +191,7 @@ public class Student {
 			if(f.createNewFile()) {
 				FileInputStream fis = new FileInputStream(f);
 				scn = new Scanner (fis);
-				generateFile(f,username,password);
+				generateFile(username+".bin",username,password);
 				
 			}
 		}
@@ -382,104 +371,100 @@ public class Student {
 	public void saveProgress() {
 		try {
 			FileOutputStream f = new FileOutputStream(username+".bin");
-			PrintWriter pw = new PrintWriter(f);
-			pw.println(username + " " + password);
-			for (int i = 0; i<quizzes.size();i++) {
-				if(!(i==quizzes.size()-1)) {
-					pw.print(quizzes.get(i));
-					pw.print(" ");
-				}
-				else {
-					pw.println(quizzes.get(i));
-				}
-			}
+			DataOutputStream dos = new DataOutputStream(f);
+			try {
+			dos.writeBytes(username + " " + password);
+
 			for (int i = 0; i<tests.size();i++) {
 				if(!(i==tests.size()-1)) {
-					pw.print(tests.get(i));
-					pw.print(" ");
+					dos.writeDouble(tests.get(i));
 				}
 				else {
-					pw.println(tests.get(i));
+					dos.writeDouble(tests.get(i));
 				}
 			}
 			for(int i = 1; i<7;i++) {
-				pw.print(stats.get("Bloom "+i).toString() + " ");
+				dos.writeInt(stats.get("Bloom "+i).getX());
+				dos.writeInt(stats.get("Bloom "+i).getY());
 			}
-			pw.println();
 			for(int i = 1; i<7;i++) {
-				pw.print(stats.get("Comments "+i).toString() + " ");
+				dos.writeInt(stats.get("Comments "+i).getX());
+				dos.writeInt(stats.get("Comments "+i).getY());
 			}
-			pw.println();
 			for(int i = 1; i<7;i++) {
-				pw.print(stats.get("Primitive Types "+i).toString() + " ");
+				dos.writeInt(stats.get("Primitive Types "+i).getX());
+				dos.writeInt(stats.get("Primitive Types "+i).getY());
 			}
-			pw.println();
 			for(int i = 1; i<7;i++) {
-				pw.print(stats.get("Operators "+i).toString() + " ");
+				dos.writeInt(stats.get("Operators "+i).getX());
+				dos.writeInt(stats.get("Operators "+i).getY());
 			}
-			pw.println();
 			for(int i = 1; i<7;i++) {
-				pw.print(stats.get("Object Comparison "+i).toString() + " ");
+				dos.writeInt(stats.get("Object Comparison "+i).getX());
+				dos.writeInt(stats.get("Object Comparison "+i).getY());
 			}
-			pw.println();
 			for(int i = 1; i<7;i++) {
-				pw.print(stats.get("Escape Sequences "+i).toString() + " ");
+				dos.writeInt(stats.get("Escape Sequences "+i).getX());
+				dos.writeInt(stats.get("Escape Sequences "+i).getY());
 			}
-			pw.println();
 			for(int i = 1; i<7;i++) {
-				pw.print(stats.get("I/O "+i).toString() + " ");
+				dos.writeInt(stats.get("I/O "+i).getX());
+				dos.writeInt(stats.get("I/O "+i).getY());
 			}
-			pw.println();
 			for(int i = 1; i<7;i++) {
-				pw.print(stats.get("Exceptions "+i).toString() + " ");
+				dos.writeInt(stats.get("Exceptions "+i).getX());
+				dos.writeInt(stats.get("Exceptions "+i).getY());
 			}
-			pw.println();
 			for(int i = 1; i<7;i++) {
-				pw.print(stats.get("Arrays "+i).toString() + " ");
+				dos.writeInt(stats.get("Arrays "+i).getX());
+				dos.writeInt(stats.get("Arrays "+i).getY());
 			}
-			pw.println();
 			for(int i = 1; i<7;i++) {
-				pw.print(stats.get("Control Statements "+i).toString() + " ");
+				dos.writeInt(stats.get("Control Statements "+i).getX());
+				dos.writeInt(stats.get("Control Statements "+i).getY());
 			}
-			pw.println();
 			for(int i = 1; i<7;i++) {
-				pw.print(stats.get("Variables "+i).toString() + " ");
+				dos.writeInt(stats.get("Variables "+i).getX());
+				dos.writeInt(stats.get("Variables "+i).getY());
 			}
-			pw.println();
 			for(int i = 1; i<7;i++) {
-				pw.print(stats.get("Methods "+i).toString() + " ");
+				dos.writeInt(stats.get("Methods "+i).getX());
+				dos.writeInt(stats.get("Methods "+i).getY());
 			}
-			pw.println();
 			for(int i = 1; i<7;i++) {
-				pw.print(stats.get("Constructors "+i).toString() + " ");
+				dos.writeInt(stats.get("Constructors "+i).getX());
+				dos.writeInt(stats.get("Constructors "+i).getY());
 			}
-			pw.println();
 			for(int i = 1; i<7;i++) {
-				pw.print(stats.get("Classes "+i).toString() + " ");
+				dos.writeInt(stats.get("Classes "+i).getX());
+				dos.writeInt(stats.get("Classes "+i).getY());
 			}
-			pw.println();
 			for(int i = 1; i<7;i++) {
-				pw.print(stats.get("Interfaces "+i).toString() + " ");
+				dos.writeInt(stats.get("Interfaces "+i).getX());
+				dos.writeInt(stats.get("Interfaces "+i).getY());
 			}
-			pw.println();
 			for(int i = 1; i<7;i++) {
-				pw.print(stats.get("Inheritance "+i).toString() + " ");
+				dos.writeInt(stats.get("Inheritance "+i).getX());
+				dos.writeInt(stats.get("Inheritance "+i).getY());
 			}
-			pw.println();
 			for(int i = 1; i<7;i++) {
-				pw.print(stats.get("Packages "+i).toString() + " ");
+				dos.writeInt(stats.get("Packages "+i).getX());
+				dos.writeInt(stats.get("Packages "+i).getY());
 			}
-			pw.println();
 			for(int i = 1; i<7;i++) {
-				pw.print(stats.get("Miscellaneous Object Oriented Programming "+i).toString() + " ");
+				dos.writeInt(stats.get("Miscellaneous Object Oriented Programming "+i).getX());
+				dos.writeInt(stats.get("Miscellaneous Object Oriented Programming "+i).getY());
 			}
-			pw.println();
 			for(int i = 1; i<7;i++) {
-				pw.print(stats.get("Standard Java Library "+i).toString() + " ");
+				dos.writeInt(stats.get("Standard Java Library "+i).getX());
+				dos.writeInt(stats.get("Standard Java Library "+i).getY());
 			}
-			pw.flush();
-			pw.close();
-
+			dos.flush();
+			dos.close();
+			}
+			catch (IOException e) {
+				e.printStackTrace();
+			}
 
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -489,18 +474,34 @@ public class Student {
 
 	}
 
-	public void generateFile(String filename, String username, String password) throws FileNotFoundException {
-		FileOutputStream fos = new FileOutputStream(filename);
-		DataOutputStream dos = new DataOutputStream(fos);
-		PrintWriter pw = new PrintWriter(dos);
-		pw.println(username+ " " +password);
-		pw.print("0.0 0.0 0.0 0.0");//tests
-		pw.print("\n0 0 0 0 0 0 0 0 0 0 0 0");
-		for(int i=0;i<18;i++) {
-			pw.print("\n0 0 0 0 0 0 0 0 0 0 0 0");
+	public void generateFile(String filename, String username, String password){
+		FileOutputStream fos = null;
+		try {
+			fos = new FileOutputStream(filename);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		pw.flush();
-		pw.close();
+		DataOutputStream dos = new DataOutputStream(fos);
+		try {
+			dos.writeBytes(username+ " " +password);
+			for(int i = 0;i<4;i++) {
+				dos.writeDouble(0.0);
+			}
+			for(int i = 0;i<12;i++) {
+				dos.writeInt(0);
+			}
+			for(int i=0;i<18;i++) {
+				for(int j = 0;j<12;j++) {
+					dos.writeInt(0);
+				}
+			}
+			dos.flush();
+			dos.close();
+		}
+		catch (IOException ex) {
+			ex.printStackTrace();
+		}
 
 		return;
 	}

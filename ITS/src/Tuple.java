@@ -40,5 +40,10 @@ public class Tuple{
 		}
 		return -1.0;
 	}	
-	
+	public int getX() {
+		return x;
+	}
+	public int getY() {
+		return y;
+	}
 }
