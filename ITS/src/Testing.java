@@ -10,7 +10,7 @@ public class Testing {
 	//type (0=>quiz, 1=>exam), questions per topic (hardwired for now), and number of
 	//topics, depending on type
 	int type;
-	int qPerT = 3;
+	int qPerT = 4;
 	int numTopics;
 	
 	//questions and topics for the testing object
@@ -26,6 +26,7 @@ public class Testing {
 	
 	//reference to the bank this test uses (should be same as rest of program)
 	TestBank bank;
+	FactoryBank factory;
 	
 	//constructor. Determines type, topics, and populates test from those topics
 	Testing(int type, ArrayList<String> topics, TestBank bank){
@@ -47,9 +48,13 @@ public class Testing {
 	//populates test according to given topics (getQuest() returns random, unused question)
 	void Populate(ArrayList<String> topics){
 		for(String t : topics){
-			for(int i = 0; i < qPerT; i++){
+			for(int i = 0; i < qPerT - 1; i++){
 				questions.add(bank.getQuest(t));
 			}
+		}
+		
+		for(String t : topics){
+			questions.add(factory.getQuest(t, 0));
 		}
 	}
 	
