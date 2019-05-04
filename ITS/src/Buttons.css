@@ -8,6 +8,20 @@
 }
 .button:hover {
     -fx-background-color: #70aef9;
+<<<<<<< HEAD
+=======
+}
+.root {
+	-fx-background-color: #ffffff;
+}
+#heading {
+    -fx-font: 28px Tahoma;
+    -fx-text-fill: black;
+}
+#text {
+    -fx-font: 20px Tahoma;
+    -fx-text-fill: black;
+>>>>>>> parent of 1df14b0... Revert "Added some good CSS files"
 }
 .root {
 	-fx-background-color: #ffffff;
