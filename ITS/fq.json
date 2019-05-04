@@ -1,0 +1,370 @@
+ [
+	{
+		"textA": "How do you start a "
+		"textB": " comment?",
+		"textOps": {
+			"0": "Single-line",
+			"1": "Block",
+			"2": "Javadoc",
+			"3": "Block"
+		},
+		"rightAns": {
+			"0": "//",
+			"1": "/*",
+			"2": "/**",
+			"3": "/*"
+		},
+		"answers": {
+			"0": "#",
+			"1": "--",
+			"2": "(*"
+		},
+		"topic": "Comments",
+		"Bloom": "1"
+	},
+	{
+		"textA": "What primitive represents "
+		"textB": "?",
+		"textOps": {
+			"0": "an integer",
+			"1": "a single character",
+			"2": "a real number",
+			"3": "a binary condition"
+		},
+		"rightAns": {
+			"0": "int",
+			"1": "char",
+			"2": "double",
+			"3": "boolean"
+		},
+		"answers": {
+			"0": "bool",
+			"1": "short",
+			"2": "String"
+		},
+		"topic": "Primitive Types",
+		"Bloom": "1"
+	},
+	{
+		"textA": "What will the expression\n\t"
+		"textB": "\nyield?",
+		"textOps": {
+			"0": "10 % 3",
+			"1": "12 % 4",
+			"2": "16 % 3",
+			"3": "12 % 2"
+		},
+		"rightAns": {
+			"0": "1",
+			"1": "0",
+			"2": "1",
+			"3": "0"
+		},
+		"answers": {
+			"0": "3",
+			"1": "6",
+			"2": "5"
+		},
+		"topic": "Operators",
+		"Bloom": "1"
+	},
+	{
+		"textA": "What will the expression\n\t"
+		"textB": "\nyield?",
+		"textOps": {
+			"0": "10 == 3",
+			"1": "isLarge, isFull = true;\n\nisLarge == isFull",
+			"2": "4 == 4",
+			"3": "yString = \"yes\";\nnString = \"no\";\nyString.equals(nString);"
+		},
+		"rightAns": {
+			"0": "false",
+			"1": "true",
+			"2": "true",
+			"3": "false"
+		},
+		"answers": {
+			"0": "0",
+			"1": "FALSE",
+			"2": "1"
+		},
+		"topic": "Object Comparison",
+		"Bloom": "1"
+	},
+	{
+		"textA": "What is the escape sequence for a "
+		"textB": " in a string?",
+		"textOps": {
+			"0": "tab",
+			"1": "newline",
+			"2": "quotation mark",
+			"3": "single quote"
+		},
+		"rightAns": {
+			"0": "\\t",
+			"1": "\\n",
+			"2": "\\\"",
+			"3": "\\\'"
+		},
+		"answers": {
+			"0": "\\tab",
+			"1": "/n",
+			"2": "\\/"
+		},
+		"topic": "Escape Sequences",
+		"Bloom": "1"
+	},
+	{
+		"textA": "What will System.out.print(\""
+		"textB": "\"); output?",
+		"textOps": {
+			"0": "Hello world!",
+			"1": "Hello, world",
+			"2": "Hi, earth",
+			"3": "Hey world..."
+		},
+		"rightAns": {
+			"0": "Hello world!",
+			"1": "Hello, world",
+			"2": "Hi, earth",
+			"3": "Hey world..."
+		},
+		"answers": {
+			"0": "\"Hello world!\"",
+			"1": "Hi earth!",
+			"2": "Hello \nworld!"
+		},
+		"topic": "I/O",
+		"Bloom": "1"
+	},
+	{
+		"textA": "What is the meaning of the "
+		"textB": " error?",
+		"textOps": {
+			"0": "NullPointerException",
+			"1": "ArithmeticException",
+			"2": "ArrayIndexOutOfBoundsException",
+			"3": "NegativeArraySizeException"
+		},
+		"rightAns": {
+			"0": "Trying to reference a null object.",
+			"1": "Dividing by zero",
+			"2": "Trying to access outside an array's bounds",
+			"3": "Sizing an array as negative"
+		},
+		"answers": {
+			"0": "Passing an illegal argument to a method",
+			"1": "Accessing outside the process's memory space",
+			"2": "Trying to create an instance of a class that doesn't exist"
+		},
+		"topic": "Exceptions",
+		"Bloom": "1"
+	},
+	{
+		"textA": "int[] Array = new int[]{4, 13, 9, 11, 6, 5, 3, 8, 0, 10};\n\n\t"
+		"textB": "\n\nWhat is the above value?",
+		"textOps": {
+			"0": "Array[1]",
+			"1": "Array[4]",
+			"2": "Array[8]",
+			"3": "Array[6]"
+		},
+		"rightAns": {
+			"0": "13",
+			"1": "6",
+			"2": "0",
+			"3": "3"
+		},
+		"answers": {
+			"0": "4",
+			"1": "11",
+			"2": "8"
+		},
+		"topic": "Arrays",
+		"Bloom": "1"
+	},
+	{
+		"textA": "What is the value of 'a' after the following loop?\n\na=0;\nfor(int i = 1; "
+		"textB": "){\n\ta+=i;\n}",
+		"textOps": {
+			"0": "i < 10; i++",
+			"1": "i <= 8; i *= 2",
+			"2": "i > 5; i += 2",
+			"3": "i < 11; i += 2"
+		},
+		"rightAns": {
+			"0": "45",
+			"1": "15",
+			"2": "0",
+			"3": "25"
+		},
+		"answers": {
+			"0": "20",
+			"1": "4",
+			"2": "36"
+		},
+		"topic": "Control Statements",
+		"Bloom": "1"
+	},
+	{
+		"textA": "After the following code runs?\n\nint a = 2;\nint b = 5;\n"
+		"textB": "\nWhat is the value of 'a'?",
+		"textOps": {
+			"0": "a = a * b;",
+			"1": "a++;",
+			"2": "b = a * 2;",
+			"3": "a = b;"
+		},
+		"rightAns": {
+			"0": "10",
+			"1": "3",
+			"2": "2",
+			"3": "5"
+		},
+		"answers": {
+			"0": "4",
+			"1": "8",
+			"2": "12"
+		},
+		"topic": "Variables",
+		"Bloom": "1"
+	},
+	{
+		"textA": "Match the return statement with the return type:\n"
+		"textB": "\nPlease give the answer below.",
+		"textOps": {
+			"0": "void",
+			"1": "Integer",
+			"2": "double",
+			"3": "Car"
+		},
+		"rightAns": {
+			"0": "Doesn't return",
+			"1": "return 3;",
+			"2": "return 2.2;",
+			"3": "return Audi;"
+		},
+		"answers": {
+			"0": "return \"Hello\";",
+			"1": "ret 5;",
+			"2": "return null;"
+		},
+		"topic": "Methods",
+		"Bloom": "1"
+	},
+	{
+		"textA": "Given the following constructor declaration:\npublic Car(int numWheels, int miles, double value)\nAnd the following constructor call:\n\n"
+		"textB": "\nWhat is the value of c's value?",
+		"textOps": {
+			"0": "Car c = new Car(3, 5, 8.2);",
+			"1": "Car c = new Car(20, 4000, 32000.0);",
+			"2": "Car c = new Car(4, 80000, 4000.30);",
+			"3": "Car"
+		},
+		"rightAns": {
+			"0": "8.2",
+			"1": "32000.0",
+			"2": "20.0",
+			"3": "4000.30"
+		},
+		"answers": {
+			"0": "4",
+			"1": "4000",
+			"2": "5"
+		},
+		"topic": "Constructors",
+		"Bloom": "1"
+	},
+	{
+		"textA": "How do we "
+		"textB": " in a class?",
+		"textOps": {
+			"0": "return a private member's value",
+			"1": "set a private member's value",
+			"2": "test for equality between instances",
+			"3": "print out particular instance"
+		},
+		"rightAns": {
+			"0": "getters",
+			"1": "setters",
+			"2": "override equals()",
+			"3": "override toString()"
+		},
+		"answers": {
+			"0": "print() method",
+			"1": "Turing machine",
+			"2": "Pushdown automata"
+		},
+		"topic": "Classes",
+		"Bloom": "1"
+	},
+	{
+		"textA": "Name the difference between a class and an interface:\nA class "
+		"textB": " while an interface",
+		"textOps": {
+			"0": "is inherited,",
+			"1": "has implemented methods",
+			"2": "has public, private, or protected members",
+			"3": "has a constructor"
+		},
+		"rightAns": {
+			"0": "is implemented",
+			"1": "has abstract methods",
+			"2": "has public members",
+			"3": "has no constructor"
+		},
+		"answers": {
+			"0": "has inherited methods",
+			"1": "has private members",
+			"2": "has a special constructor, called a finite automata"
+		},
+		"topic": "Interfaces",
+		"Bloom": "1"
+	},
+	{
+		"textA": "How do we access the "
+		"textB": "?",
+		"textOps": {
+			"0": "package necessary to take user input",
+			"1": "entire utilities package",
+			"2": "package I made, called myPackage",
+			"3": "fundamental Java classes"
+		},
+		"rightAns": {
+			"0": "import java.util.Scanner;",
+			"1": "import java.util.*;",
+			"2": "import myPackage;",
+			"3": "import java.lang.*;"
+		},
+		"answers": {
+			"0": "#include unistd",
+			"1": "import cmath;",
+			"2": "import java.util;"
+		},
+		"topic": "Packages",
+		"Bloom": "1"
+	},
+	{
+		"textA": "How do we access the "
+		"textB": "?",
+		"textOps": {
+			"0": "package necessary to take user input",
+			"1": "entire utilities package",
+			"2": "package I made, called myPackage",
+			"3": "fundamental Java classes"
+		},
+		"rightAns": {
+			"0": "import java.util.Scanner;",
+			"1": "import java.util.*;",
+			"2": "import myPackage;",
+			"3": "import java.lang.*;"
+		},
+		"answers": {
+			"0": "#include unistd",
+			"1": "import cmath;",
+			"2": "import java.util;"
+		},
+		"topic": "Miscellaneous Object Oriented Programming",
+		"Bloom": "1"
+	}
+]

@@ -57,6 +57,7 @@ public class Main extends Application {
 	//what page of the text book we are on
 	int whatPageWeOn = 1;
 	static TestBank banky;
+	static FactoryBank factbanky;
 	static ArrayList<String> topics;
 	static Student studentObj = new Student();
 	String selected = "";
@@ -100,9 +101,12 @@ public class Main extends Application {
 		keys.add("Miscellaneous Object Oriented Programming");
 		keys.add("Standard Java Library");
 		
+		System.out.println("Factory make");
 		try {
 			ParseQuestions p = new ParseQuestions();
 			banky = p.fillTestBank();
+			factbanky = p.fillFactoryBank();
+			
 		}
 		catch (IOException e) {
 			System.out.println(e.getMessage());
@@ -299,7 +303,7 @@ public class Main extends Application {
 									topics.add("Miscellaneous Object Oriented Programming");
 								}
 								
-								quiz = new Testing(1, topics, banky);
+								quiz = new Testing(1, topics, banky, factbanky);
 								//make counter for quiz equal to qPerT
 								questCount = 11; //quiz.qPerT;
 								fillQuest();

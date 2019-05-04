@@ -29,10 +29,11 @@ public class Testing {
 	FactoryBank factory;
 	
 	//constructor. Determines type, topics, and populates test from those topics
-	Testing(int type, ArrayList<String> topics, TestBank bank){
+	Testing(int type, ArrayList<String> topics, TestBank bank, FactoryBank factory){
 		this.topics = new ArrayList<String>();
 		this.questions = new ArrayList<Question>();
 		this.bank = bank;
+		this.factory = factory;
 		if(type == 0){
 			int numTopics = 1;
 		}else{
