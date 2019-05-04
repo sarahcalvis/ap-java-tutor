@@ -8,7 +8,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Scanner;
 /**
  * Responsible for recording Student progress, and maintaining user infor between sessions
  * @author MUMAWBM1
@@ -238,13 +237,21 @@ public class Student {
 	}	
 
 	public void setUsername(String username) {
+		String fname = this.username + password.hashCode() + ".bin";
+		File f = new File(fname);
+		f.delete();
 		this.username = username;
+		saveProgress();
 		return;
 	}
 
 	public void setPassword(String password) {
-		//TODO
-		
+		String fname = this.username + password.hashCode() + ".bin";
+		File f = new File(fname);
+		f.delete();
+		this.password = password;
+		saveProgress();
+		return;
 	}
 
 	public Map<String,Tuple> getStats(){
@@ -254,18 +261,11 @@ public class Student {
 	public ArrayList<Double> getQuizzes(){
 		return quizzes;
 	}
-	
-	public void updateQuiz(Double score, int quizNumber) {
-		if (quizzes.get(quizNumber)<score) {
-			quizzes.set(quizNumber, score);
-			saveProgress();
-		}
-	}
-	
+
 	public ArrayList<Double> getTests() {
 		return tests;
 	}
-	
+
 	public void addTest(Double score, int testNumber) {
 		if(tests.get(testNumber)<score) {
 			tests.set(testNumber,score);
@@ -274,92 +274,59 @@ public class Student {
 	}
 
 	public void saveProgress() {
+		String fname = this.username + password.hashCode() + ".bin";
+		File f1 = new File(fname);
+		f1.delete();
 		try {
 			FileOutputStream f = new FileOutputStream(username+".bin");
 			DataOutputStream dos = new DataOutputStream(f);
 			try {
 
-			for (int i = 0; i<tests.size();i++) {
-				dos.writeDouble(tests.get(i));
-			}
-			for(int i = 1; i<7;i++) {
-				dos.writeInt(stats.get("Bloom "+i).getX());
-				dos.writeInt(stats.get("Bloom "+i).getY());
-			}
-			for(int i = 1; i<7;i++) {
-				dos.writeInt(stats.get("Comments "+i).getX());
-				dos.writeInt(stats.get("Comments "+i).getY());
-			}
-			for(int i = 1; i<7;i++) {
-				dos.writeInt(stats.get("Primitive Types "+i).getX());
-				dos.writeInt(stats.get("Primitive Types "+i).getY());
-			}
-			for(int i = 1; i<7;i++) {
-				dos.writeInt(stats.get("Operators "+i).getX());
-				dos.writeInt(stats.get("Operators "+i).getY());
-			}
-			for(int i = 1; i<7;i++) {
-				dos.writeInt(stats.get("Object Comparison "+i).getX());
-				dos.writeInt(stats.get("Object Comparison "+i).getY());
-			}
-			for(int i = 1; i<7;i++) {
-				dos.writeInt(stats.get("Escape Sequences "+i).getX());
-				dos.writeInt(stats.get("Escape Sequences "+i).getY());
-			}
-			for(int i = 1; i<7;i++) {
-				dos.writeInt(stats.get("I/O "+i).getX());
-				dos.writeInt(stats.get("I/O "+i).getY());
-			}
-			for(int i = 1; i<7;i++) {
-				dos.writeInt(stats.get("Exceptions "+i).getX());
-				dos.writeInt(stats.get("Exceptions "+i).getY());
-			}
-			for(int i = 1; i<7;i++) {
-				dos.writeInt(stats.get("Arrays "+i).getX());
-				dos.writeInt(stats.get("Arrays "+i).getY());
-			}
-			for(int i = 1; i<7;i++) {
-				dos.writeInt(stats.get("Control Statements "+i).getX());
-				dos.writeInt(stats.get("Control Statements "+i).getY());
-			}
-			for(int i = 1; i<7;i++) {
-				dos.writeInt(stats.get("Variables "+i).getX());
-				dos.writeInt(stats.get("Variables "+i).getY());
-			}
-			for(int i = 1; i<7;i++) {
-				dos.writeInt(stats.get("Methods "+i).getX());
-				dos.writeInt(stats.get("Methods "+i).getY());
-			}
-			for(int i = 1; i<7;i++) {
-				dos.writeInt(stats.get("Constructors "+i).getX());
-				dos.writeInt(stats.get("Constructors "+i).getY());
-			}
-			for(int i = 1; i<7;i++) {
-				dos.writeInt(stats.get("Classes "+i).getX());
-				dos.writeInt(stats.get("Classes "+i).getY());
-			}
-			for(int i = 1; i<7;i++) {
-				dos.writeInt(stats.get("Interfaces "+i).getX());
-				dos.writeInt(stats.get("Interfaces "+i).getY());
-			}
-			for(int i = 1; i<7;i++) {
-				dos.writeInt(stats.get("Inheritance "+i).getX());
-				dos.writeInt(stats.get("Inheritance "+i).getY());
-			}
-			for(int i = 1; i<7;i++) {
-				dos.writeInt(stats.get("Packages "+i).getX());
-				dos.writeInt(stats.get("Packages "+i).getY());
-			}
-			for(int i = 1; i<7;i++) {
-				dos.writeInt(stats.get("Miscellaneous Object Oriented Programming "+i).getX());
-				dos.writeInt(stats.get("Miscellaneous Object Oriented Programming "+i).getY());
-			}
-			for(int i = 1; i<7;i++) {
-				dos.writeInt(stats.get("Standard Java Library "+i).getX());
-				dos.writeInt(stats.get("Standard Java Library "+i).getY());
-			}
-			dos.flush();
-			dos.close();
+				for (int i = 0; i<tests.size();i++) {
+					dos.writeDouble(tests.get(i));
+				}
+				for(int i = 1; i<7;i++) {
+					dos.writeInt(stats.get("Bloom "+i).getX());
+					dos.writeInt(stats.get("Bloom "+i).getY());
+				}
+				dos.writeInt(stats.get("Comments").getX());
+				dos.writeInt(stats.get("Comments").getY());
+				dos.writeInt(stats.get("Primitive Types").getX());
+				dos.writeInt(stats.get("Primitive Types").getY());
+				dos.writeInt(stats.get("Operators").getX());
+				dos.writeInt(stats.get("Operators").getY());
+				dos.writeInt(stats.get("Object Comparison").getX());
+				dos.writeInt(stats.get("Object Comparison").getY());
+				dos.writeInt(stats.get("Escape Sequences").getX());
+				dos.writeInt(stats.get("Escape Sequences").getY());
+				dos.writeInt(stats.get("I/O").getX());
+				dos.writeInt(stats.get("I/O").getY());
+				dos.writeInt(stats.get("Exceptions").getX());
+				dos.writeInt(stats.get("Exceptions").getY());
+				dos.writeInt(stats.get("Arrays").getX());
+				dos.writeInt(stats.get("Arrays").getY());
+				dos.writeInt(stats.get("Control Statements").getX());
+				dos.writeInt(stats.get("Control Statements").getY());
+				dos.writeInt(stats.get("Variables").getX());
+				dos.writeInt(stats.get("Variables").getY());
+				dos.writeInt(stats.get("Methods").getX());
+				dos.writeInt(stats.get("Methods").getY());
+				dos.writeInt(stats.get("Constructors").getX());
+				dos.writeInt(stats.get("Constructors").getY());
+				dos.writeInt(stats.get("Classes").getX());
+				dos.writeInt(stats.get("Classes").getY());
+				dos.writeInt(stats.get("Interfaces").getX());
+				dos.writeInt(stats.get("Interfaces").getY());
+				dos.writeInt(stats.get("Inheritance").getX());
+				dos.writeInt(stats.get("Inheritance").getY());
+				dos.writeInt(stats.get("Packages").getX());
+				dos.writeInt(stats.get("Packages").getY());
+				dos.writeInt(stats.get("Miscellaneous Object Oriented Programming").getX());
+				dos.writeInt(stats.get("Miscellaneous Object Oriented Programming").getY());
+				dos.writeInt(stats.get("Standard Java Library").getX());
+				dos.writeInt(stats.get("Standard Java Library").getY());
+				dos.flush();
+				dos.close();
 			}
 			catch (IOException e) {
 				e.printStackTrace();
@@ -373,7 +340,7 @@ public class Student {
 
 	}
 
-	public void generateFile(String filename){
+	public void generateFile(String filename){;
 		File f = new File(filename);
 		if (f.exists()) {
 			f.delete();
@@ -394,7 +361,7 @@ public class Student {
 				dos.writeInt(0);
 			}
 			for(int i=0;i<18;i++) {
-				for(int j = 0;j<12;j++) {
+				for(int j = 0;j<2;j++) {
 					dos.writeInt(0);
 				}
 			}
