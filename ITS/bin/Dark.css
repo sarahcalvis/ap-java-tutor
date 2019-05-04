@@ -1,0 +1,23 @@
+.button {
+    -fx-background-color: 
+       #4e516d;
+    -fx-background-insets: 0,1,2,3;
+    -fx-background-radius: 3,2,2,2;
+    -fx-padding: 12 30 12 30;
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+}
+.button:hover {
+    -fx-background-color: #545772;
+}
+.root {
+	-fx-background-color: #5b5e7f;
+}
+#text {
+    -fx-font: 20px Tahoma;
+    -fx-fill: white;
+}
+#heading {
+    -fx-font: 28px Tahoma;
+    -fx-fill: white;
+}
