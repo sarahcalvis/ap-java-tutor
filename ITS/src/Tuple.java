@@ -1,3 +1,4 @@
+
 public class Tuple{
 	private int x;	//num correct
 	private int y;	//num asked
@@ -39,8 +40,12 @@ public class Tuple{
 			return x * 100.0 / y;
 		}
 		return -1.0;
+	}	
+	public int getX() {
+		return x;
 	}
-	
-	
-	
+	public int getY() {
+		return y;
+	}
 }
+
