@@ -74,9 +74,6 @@ public class Main extends Application {
 	//vars for student
 	static Map<String,Tuple> stats = studentObj.getStats();
 	static ArrayList<String> keys = new ArrayList<String>();
-	Scene scene;
-	String curText = "text";
-	String curHeading = "heading";
 
 	public static void main(String[] args) {
 		//GridPane grid = new GridPane();
@@ -140,12 +137,11 @@ public class Main extends Application {
 
 
 		//makes size of the window
-		scene = new Scene(grid, 1080, 720);
+		Scene scene = new Scene(grid, 1080, 720);
 		primaryStage.setScene(scene);
 		//adds preliminary home screen UI
 		Text scenetitle = new Text("Welcome Back!");
-		//scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 26));
-		scenetitle.setId(curHeading);
+		scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 26));
 		grid.add(scenetitle, 2,1);
 		buttons(grid, primaryStage);
 		scene.getStylesheets().add
@@ -187,8 +183,7 @@ public class Main extends Application {
 					grid.getChildren().clear(); 
 					//add home screen shenanigans
 					Text scenetitle = new Text("Welcome Back!");
-					//scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 26));
-					scenetitle.setId("lightheading");
+					scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 26));
 					grid.add(scenetitle, 2,1);
 					//calls buttons to set up the navbar again
 					buttons(grid, primaryStage);
@@ -244,8 +239,7 @@ public class Main extends Application {
 					grid.getChildren().clear();
 					//add Exams information here
 					Text scenetitle = new Text("Tests and Quizzes");
-					scenetitle.setId(curHeading);
-					//scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 26));
+					scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 26));
 					grid.add(scenetitle, 2, 1);
 					//add the nav bar back
 					buttons(grid, primaryStage);
@@ -332,8 +326,7 @@ public class Main extends Application {
 					grid.getChildren().clear();
 					//add diagnostics information here
 					Text scenetitle = new Text("Diagnostics");
-					//scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 26));
-					scenetitle.setId(curHeading);
+					scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 26));
 					grid.add(scenetitle, 2, 1);
 					//add the nav bar back
 					buttons(grid, primaryStage);
@@ -362,8 +355,7 @@ public class Main extends Application {
 					grid.getChildren().clear();
 					//add settings information here
 					Text scenetitle = new Text("Settings");
-					//scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 26));
-					scenetitle.setId(curHeading);
+					scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 26));
 					grid.add(scenetitle, 2, 1);
 					//add the nav bar back
 					buttons(grid, primaryStage);
@@ -377,13 +369,10 @@ public class Main extends Application {
 					//Tim Mattson
 					VBox boxxy = new VBox();
 				    ToggleGroup group = new ToggleGroup();
-					Text titley = new Text("Mascot");
-					//titley.setFont(Font.font("Tahoma", FontWeight.NORMAL, 18));
-					titley.setId(curText);
 				    RadioButton button1 = new RadioButton("Tim Mattson");
 				    button1.setToggleGroup(group);
 				    button1.setSelected(true);
-				    boxxy.getChildren().addAll(titley, button1);	
+				    boxxy.getChildren().add(button1);	
 				    grid.add(boxxy, 2, 4);
 				    
 				    
@@ -392,31 +381,12 @@ public class Main extends Application {
 				    ToggleGroup groupy = new ToggleGroup();
 				    RadioButton light = new RadioButton("Light");
 				    light.setToggleGroup(groupy);
-				    //light.setSelected(true);
+				    light.setSelected(true);
 				    RadioButton dark = new RadioButton("Dark");
 				    dark.setToggleGroup(groupy);
-				    //change CSS file based on which button is selected
-					EventHandler<ActionEvent> boxxyEvent = new EventHandler<ActionEvent>() { 
-						public void handle(ActionEvent e) 
-						{ 
-							if (dark.isSelected()) {
-								scene.getStylesheets().add(Main.class.getResource("Dark.css").toExternalForm());
-								System.out.println("dark mode");
-							}
-							else if (light.isSelected()) { 
-								scene.getStylesheets().add(Main.class.getResource("Buttons.css").toExternalForm());
-								System.out.println("light mode");
-							}
-						}
-					}; 
-					
-					
-					Text title = new Text("Theme");
-					//title.setFont(Font.font("Tahoma", FontWeight.NORMAL, 18));
-					title.setId(curText);
-					light.setOnAction(boxxyEvent);
-					dark.setOnAction(boxxyEvent);
-				    colorBox.getChildren().addAll(title, light, dark);
+				    
+				    
+				    colorBox.getChildren().addAll(light, dark);
 				    
 				    grid.add(colorBox,2,5);
 					

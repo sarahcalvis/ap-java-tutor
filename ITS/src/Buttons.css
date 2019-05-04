@@ -1,6 +1,6 @@
 .button {
     -fx-background-color: 
-       #4292f4;
+       #95cbf4;
     -fx-background-insets: 0,1,2,3;
     -fx-background-radius: 3,2,2,2;
     -fx-padding: 12 30 12 30;
@@ -8,16 +8,5 @@
     -fx-font-size: 20px;
 }
 .button:hover {
-    -fx-background-color: #70aef9;
-}
-.root {
-	-fx-background-color: #ffffff;
-}
-#heading {
-    -fx-font: 28px Tahoma;
-    -fx-text-fill: black;
-}
-#text {
-    -fx-font: 20px Tahoma;
-    -fx-text-fill: black;
+    -fx-background-color: #7ca8c9;
 }
