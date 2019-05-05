@@ -345,9 +345,9 @@ public class Main extends Application {
 					//Map<String,Tuple> stats = studentObj.getStats();
 					
 					//chart goes here
-					//Charts charty = new Charts();
-					//VBox boxy = charty.getBox();
-					//grid.add(boxy,1,1);
+					Charts charty = new Charts();
+					VBox boxy = charty.getBox();
+					grid.add(boxy,2,4);
 					
 				}
 			});

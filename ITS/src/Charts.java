@@ -51,6 +51,7 @@ public class Charts {
         bc.setTitle("Percent Correct by Topic");
         xAxis.setLabel("Topic");       
         yAxis.setLabel("Percent Correct");
+        bc.setLegendVisible(false);
         
         XYChart.Series series1 = new XYChart.Series();
         //series1.setName("Percent Correct");       
