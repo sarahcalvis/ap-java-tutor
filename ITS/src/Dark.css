@@ -1,0 +1,71 @@
+.button {
+    -fx-background-color: 
+       #28323f;
+    -fx-background-insets: 0,1,2,3;
+    -fx-background-radius: 3,2,2,2;
+    -fx-padding: 12 30 12 30;
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+}
+.button:hover {
+    -fx-background-color: #343f4c;
+}
+.root {
+	-fx-background-color: #38414c;
+}
+
+.radio-button {
+    -fx-text-fill: white;
+    -fx-font-size: 12;
+    -fx-font-family: Tahoma;
+} 
+.radio-button .radio {
+    -fx-border-width: 1px;
+    -fx-border-color: white;
+    -fx-background-color: white;
+    -fx-background-image: null;
+    -fx-border-radius: 15px;
+    -fx-padding: 4px;
+    -fx-font-family: Tahoma;
+    -fx-font-size: 12;
+    -fx-fill: white;
+    -fx-background-insets: 0;
+}
+.radio-button .radio:selected {
+    -fx-background-color: #28323f;
+    -fx-background-image: null;
+}
+.radio-button -radio:armed {
+    -fx-background-color: white;
+    -fx-background-image: null;
+}
+.radio-button -radio:determinate {
+    -fx-background-color: white;
+    -fx-background-image: null;
+}
+.radio-button -radio:indeterminate {
+    -fx-background-color: white;
+    -fx-background-image: null;
+}
+.radio-button .dot {
+    -fx-background-radius: 15px;
+    -fx-padding: 8px;
+}
+
+#text {
+    -fx-font: 20px Tahoma;
+    -fx-fill: white;
+    -fx-padding: 12 30 12 30;
+}
+#heading {
+    -fx-font: 28px Tahoma;
+    -fx-fill: white;
+}
+#question {
+    -fx-font: 16px Tahoma;
+    -fx-text-fill: white;
+}
+#tiny {
+    -fx-font: 10px Tahoma;
+    -fx-text-fill: white;
+}
