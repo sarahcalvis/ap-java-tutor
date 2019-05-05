@@ -341,14 +341,13 @@ public class Main extends Application {
 					grid.getChildren().clear();
 					//add diagnostics information here
 					Text scenetitle = new Text("Diagnostics");
-					//scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 26));
+
 					scenetitle.setId(curHeading);
 					grid.add(scenetitle, 2, 1);
 					//add the nav bar back
 					buttons(grid, primaryStage);
 					System.out.println("finished creating");
 					//Map<String,Tuple> stats = studentObj.getStats();
-					
 					//chart goes here
 					Charts charty = new Charts();
 					VBox boxy = charty.getBox();

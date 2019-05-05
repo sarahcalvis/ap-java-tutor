@@ -55,6 +55,17 @@
     -fx-backgroud-color: #4292f4;
 }
 
+.axis {
+    -fx-font-size: 1.4em;    
+    -fx-tick-label-fill: #4292f4;
+    -fx-font-family: Tahoma;
+    -fx-tick-length: 20;
+    -fx-minor-tick-length: 10;
+}
+.default-color0.chart-bar {
+    -fx-bar-fill: #4292f4;
+}
+
 #heading {
     -fx-font: 28px Tahoma;
     -fx-text-fill: black;
