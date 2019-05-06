@@ -374,5 +374,10 @@ public class Student {
 
 		return;
 	}
+	
+	public void resetProgress() {
+		String filename = username+password.hashCode() + ".bin";
+		generateFile(filename);
+	}
 
 }
