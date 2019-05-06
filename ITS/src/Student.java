@@ -21,8 +21,7 @@ public class Student {
 	//AP topics
 	private Map<String,Tuple> stats;
 
-	//test/quiz grades stored as %
-	private ArrayList<Double> quizzes;
+	//test grades stored as %
 	private ArrayList<Double> tests;
 
 	//private Tuple bloom;
@@ -36,7 +35,6 @@ public class Student {
 	 */
 	public Student(){
 		stats = new HashMap<>();
-		quizzes =  new ArrayList<>();
 		tests = new ArrayList<>();
 
 		//TODO: file readers and writers (specifically for txt files) maybe look at streams for doing numbers?
@@ -141,7 +139,6 @@ public class Student {
 	 */
 	public Student(String username, String password){
 		stats = new HashMap<>();
-		quizzes =  new ArrayList<>();
 		tests = new ArrayList<>();
 
 		//TODO: file readers and writers (specifically for txt files) maybe look at streams for doing numbers?
@@ -258,10 +255,6 @@ public class Student {
 		return stats;
 	}
 	
-	public ArrayList<Double> getQuizzes(){
-		return quizzes;
-	}
-
 	public ArrayList<Double> getTests() {
 		return tests;
 	}
