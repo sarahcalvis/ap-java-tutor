@@ -379,5 +379,15 @@ public class Student {
 		String filename = username+password.hashCode() + ".bin";
 		generateFile(filename);
 	}
+	
+	public Student login(String username,String password) {
+		String filename = username+password.hashCode() + ".bin";
+		try {
+			FileInputStream fis = new FileInputStream(filename);
+		} catch (FileNotFoundException e) {
+			return null;
+		}
+		return new Student(username,password);
+	}
 
 }
