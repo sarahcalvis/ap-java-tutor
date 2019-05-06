@@ -15,8 +15,8 @@ import java.util.Map;
  */
 public class Student {
 
-	public String username;
-	public String password;
+	private String username;
+	private String password;
 	
 	//AP topics
 	private Map<String,Tuple> stats;
@@ -25,8 +25,6 @@ public class Student {
 	private ArrayList<Double> tests;
 
 	//private Tuple bloom;
-
-
 
 	/**
 	 * default Student Object Constructor
@@ -241,6 +239,10 @@ public class Student {
 		saveProgress();
 		return;
 	}
+	
+	public String getUsername() {
+		return username;
+	}
 
 	public void setPassword(String password) {
 		String fname = this.username + password.hashCode() + ".bin";
@@ -249,6 +251,10 @@ public class Student {
 		this.password = password;
 		saveProgress();
 		return;
+	}
+	
+	public String getPassword() {
+		return password;
 	}
 
 	public Map<String,Tuple> getStats(){
@@ -266,6 +272,10 @@ public class Student {
 		}
 	}
 
+	/**
+	 * Deletes, then remakes file with updated info
+	 * Needed to use this work around because DataOutputStream writeInt doesn't overwrite, it appends(at least experienced this)
+	 */
 	public void saveProgress() {
 		String fname = this.username + password.hashCode() + ".bin";
 		File f1 = new File(fname);
@@ -332,7 +342,10 @@ public class Student {
 
 
 	}
-
+	/**
+	 * Generates a template file for a Student object, to be read in for first time user (has no data beyond 0's in everything)
+	 * @param filename
+	 */
 	public void generateFile(String filename){;
 		File f = new File(filename);
 		if (f.exists()) {
@@ -373,18 +386,33 @@ public class Student {
 		generateFile(filename);
 	}
 	
+	/**
+	 * logs in non-guest user into their account
+	 * @param username
+	 * @param password
+	 * @return	a reference to the Student referend to by the username and password loaded up and rarin' to go
+	 */
 	public Student login(String username,String password) {
 		String filename = username+password.hashCode() + ".bin";
 		try {
 			FileInputStream fis = new FileInputStream(filename);
+			fis.close();
 		} catch (FileNotFoundException e) {
 			return null;
+		} catch (IOException e) {
+			System.out.println("This will never print.");
+			return new Student(username,password);
 		}
 		return new Student(username,password);
 	}
 	
+	/**
+	 * Used for testing, making sure both Students are pulling from the same file
+	 * @param o	Object to compare equality
+	 * @return true or false equaltiy
+	 */
 	public boolean equals(Student o) {
-		if(o.username.equals(o.username)&& o.password.equals(this.password)) {
+		if(o.getUsername().equals(this.username) && o.getPassword().equals(this.password)) {
 			return true;
 		}
 		return false;

@@ -13,17 +13,17 @@ public class StudentTest {
 	public void testStudentDefault() {
 		Student stu = new Student();
 		stu.setUsername("haha");
-		String username = stu.username;
+		String username = stu.getUsername();
 		Assert.assertEquals("haha", username);
-		String password = stu.password;
+		String password = stu.getPassword();
 		Assert.assertEquals("guest", password);
 	}
 	
 	@Test
 	public void testStudent() {
 		Student stu = new Student("testing","hurts");
-		Assert.assertEquals("testing", stu.username);
-		Assert.assertEquals("hurts", stu.password);
+		Assert.assertEquals("testing", stu.getUsername());
+		Assert.assertEquals("hurts", stu.getPassword());
 	}
 	
 	@Test
