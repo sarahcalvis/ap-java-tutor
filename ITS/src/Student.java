@@ -389,5 +389,12 @@ public class Student {
 		}
 		return new Student(username,password);
 	}
+	
+	public boolean equals(Student o) {
+		if(o.username.equals(o.username)&& o.password.equals(this.password)) {
+			return true;
+		}
+		return false;
+	}
 
 }

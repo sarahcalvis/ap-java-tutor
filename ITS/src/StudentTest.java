@@ -15,7 +15,7 @@ public class StudentTest {
 		stu.setUsername("haha");
 		String username = stu.username;
 		Assert.assertEquals("haha", username);
-		String password = stu.username;
+		String password = stu.password;
 		Assert.assertEquals("guest", password);
 	}
 	
@@ -23,7 +23,7 @@ public class StudentTest {
 	public void testStudent() {
 		Student stu = new Student("testing","hurts");
 		Assert.assertEquals("testing", stu.username);
-		Assert.assertEquals("hurts", stu.username);
+		Assert.assertEquals("hurts", stu.password);
 	}
 	
 	@Test
@@ -44,4 +44,10 @@ public class StudentTest {
 		Testing quiz = new Testing(1, topics, banky, factbanky);
 	}
 
+	@Test
+	public void testLogin() {
+		Student s = new Student("Nope","Away");
+		Student t = s.login("Nope", "Away");
+		Assert.assertEquals(s.equals(t), true);
+	}
 }
