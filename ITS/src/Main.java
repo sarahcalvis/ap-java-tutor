@@ -75,6 +75,13 @@ public class Main extends Application {
 	//vars for student
 	static Map<String,Tuple> stats = studentObj.getStats();
 	static ArrayList<String> keys = new ArrayList<String>();
+	Scene scene;
+	//stuff for CSS files
+	String curText = "text";
+	String curHeading = "heading";
+	String curSubText = "question";
+	String curTinyText = "tiny";
+	int timesSelected = 0;
 
 	public static void main(String[] args) {
 		//GridPane grid = new GridPane();
@@ -142,11 +149,12 @@ public class Main extends Application {
 
 
 		//makes size of the window
-		Scene scene = new Scene(grid, 1080, 720);
+		scene = new Scene(grid, 1080, 720);
 		primaryStage.setScene(scene);
 		//adds preliminary home screen UI
 		Text scenetitle = new Text("Welcome Back!");
-		scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 26));
+		//scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 26));
+		scenetitle.setId(curHeading);
 		grid.add(scenetitle, 2,1);
 		buttons(grid, primaryStage);
 		scene.getStylesheets().add
@@ -188,7 +196,8 @@ public class Main extends Application {
 					grid.getChildren().clear(); 
 					//add home screen shenanigans
 					Text scenetitle = new Text("Welcome Back!");
-					scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 26));
+					//scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 26));
+					scenetitle.setId(curHeading);
 					grid.add(scenetitle, 2,1);
 					//calls buttons to set up the navbar again
 					buttons(grid, primaryStage);
@@ -244,7 +253,8 @@ public class Main extends Application {
 					grid.getChildren().clear();
 					//add Exams information here
 					Text scenetitle = new Text("Tests and Quizzes");
-					scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 26));
+					scenetitle.setId(curHeading);
+					//scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 26));
 					grid.add(scenetitle, 2, 1);
 					//add the nav bar back
 					buttons(grid, primaryStage);
@@ -331,17 +341,17 @@ public class Main extends Application {
 					grid.getChildren().clear();
 					//add diagnostics information here
 					Text scenetitle = new Text("Diagnostics");
-					scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 26));
+
+					scenetitle.setId(curHeading);
 					grid.add(scenetitle, 2, 1);
 					//add the nav bar back
 					buttons(grid, primaryStage);
 					System.out.println("finished creating");
 					//Map<String,Tuple> stats = studentObj.getStats();
-					
 					//chart goes here
 					Charts charty = new Charts();
 					VBox boxy = charty.getBox();
-					grid.add(boxy,1,1);
+					grid.add(boxy,2,4);
 					
 				}
 			});
@@ -360,23 +370,76 @@ public class Main extends Application {
 					grid.getChildren().clear();
 					//add settings information here
 					Text scenetitle = new Text("Settings");
-					scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 26));
+					//scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 26));
+					scenetitle.setId(curHeading);
 					grid.add(scenetitle, 2, 1);
 					//add the nav bar back
 					buttons(grid, primaryStage);
 					System.out.println("finished creating");
+					
+					
+					//
+					//settings go here
+					//					
+					
+					//Tim Mattson
+					VBox boxxy = new VBox();
+				    ToggleGroup group = new ToggleGroup();
+					Text titley = new Text("Mascot");
+					//titley.setFont(Font.font("Tahoma", FontWeight.NORMAL, 18));
+					titley.setId(curText);
+				    RadioButton button1 = new RadioButton("Tim Mattson");
+				    button1.setToggleGroup(group);
+				    button1.setSelected(true);
+				    boxxy.getChildren().addAll(titley, button1);	
+				    //grid.add(boxxy, 2, 4);
+				    
+				    
+				    //colors
+				    VBox colorBox = new VBox();
+				    ToggleGroup groupy = new ToggleGroup();
+				    RadioButton light = new RadioButton("Light");
+				    light.setToggleGroup(groupy);
+				    light.setSelected(true);
+				    RadioButton dark = new RadioButton("Dark");
+				    dark.setToggleGroup(groupy);
+				    //change CSS file based on which button is selected
+					EventHandler<ActionEvent> boxxyEvent = new EventHandler<ActionEvent>() { 
+						public void handle(ActionEvent e) 
+						{ 
+							//if (timesSelected < 1) {
+								if (dark.isSelected()) {
+									scene.getStylesheets().add(Main.class.getResource("Dark.css").toExternalForm());
+									System.out.println("dark mode");
+									timesSelected++;
+								}
+								if (light.isSelected()) { 
+									scene.getStylesheets().add(Main.class.getResource("Buttons.css").toExternalForm());
+									System.out.println("light mode");
+									timesSelected ++;
+								}
+							//}
+						}
+					};
+					
+					Text title = new Text("Theme");
+					title.setId(curText);
+					light.setOnAction(boxxyEvent);
+					dark.setOnAction(boxxyEvent);
+					Text placeholder = new Text(" \n");
+					
+				    boxxy.getChildren().addAll(placeholder, title, light, dark);
+				    grid.add(boxxy, 2, 4);
+					
 				}
 			});
 			grid.add(settings, 5, 40);
-	
+
 			//add buttons to VB
 			vb.getChildren().addAll(home, textbk, diagnostics, exams, settings);
 			//add VB to grid
 			grid.add(vb,0,1,1,4);
-	
-			//add style sheet
-			//scene.getStylesheets().add
-			//(Main.class.getResource("Buttons.css").toExternalForm());
+			
 			primaryStage.show();
 		}
 		
@@ -408,8 +471,10 @@ public class Main extends Application {
 
 	public void fillQuest() {
 		//get question text
-		Label l = new Label(quiz.getQ(questCount).getText());
-		quest.getChildren().add(l);  
+		Text l = new Text(quiz.getQ(questCount).getText());
+		l.setId(curSubText);
+		Text space = new Text(" ");
+		quest.getChildren().addAll(l,space);  
 		//fill questions with the question's possible responses
 		ArrayList<String> answ = new ArrayList<String>();
 		for (int i = 0; i < 4; i++) {
@@ -457,7 +522,7 @@ public class Main extends Application {
 		}   
 		//add all this to grid
 		grid.add(quest, 2, 4);
-
+		
 		//add submit button
 		Button submit = new Button();
 		submit.setText("Submit Question");
@@ -476,8 +541,7 @@ public class Main extends Application {
 					grid.getChildren().remove(quest);
 					//subtract from questCount to go to next question
 					questCount --;
-					//check if the submitted question is correct
-					
+					//check if the submitted question is correct					
 					//Update Student code by dealing with the tuples
 					String qTopic = quiz.getQ(questCount+1).getTopic();
 					System.out.println("qTopic is " + qTopic);
@@ -554,9 +618,11 @@ public class Main extends Application {
 					System.out.println("Completed Exam");
 					//calc grade
 					double grade = quiz.calcGrade();
-					Text gradeL = new Text("Your grade on this assignment is "+grade+"%");
-					gradeL.setFont(Font.font("Tahoma", FontWeight.NORMAL, 26));
-					grid.add(gradeL,3,4); 
+					Text gradeL = new Text("Your grade on this assignment is "+Math.floor(grade*100)/100+"%");
+					//gradeL.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
+					gradeL.setId(curText);
+					
+					grid.add(gradeL,2,4); 
 					notCompleted = false;
 					grid.getChildren().remove(submit);
 
