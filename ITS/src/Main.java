@@ -82,6 +82,7 @@ public class Main extends Application {
 	String curSubText = "question";
 	String curTinyText = "tiny";
 	int timesSelected = 0;
+	int theme = 0;
 
 	public static void main(String[] args) {
 		//GridPane grid = new GridPane();
@@ -400,8 +401,13 @@ public class Main extends Application {
 				    ToggleGroup groupy = new ToggleGroup();
 				    RadioButton light = new RadioButton("Light");
 				    light.setToggleGroup(groupy);
-				    light.setSelected(true);
+				    if (theme == 0) {
+				    	light.setSelected(true);
+				    }
 				    RadioButton dark = new RadioButton("Dark");
+				    if (theme == 1) {
+				    	dark.setSelected(true);
+				    }
 				    dark.setToggleGroup(groupy);
 				    //change CSS file based on which button is selected
 					EventHandler<ActionEvent> boxxyEvent = new EventHandler<ActionEvent>() { 
@@ -411,11 +417,13 @@ public class Main extends Application {
 								if (dark.isSelected()) {
 									scene.getStylesheets().add(Main.class.getResource("Dark.css").toExternalForm());
 									System.out.println("dark mode");
+									theme = 1;
 									timesSelected++;
 								}
 								if (light.isSelected()) { 
 									scene.getStylesheets().add(Main.class.getResource("Buttons.css").toExternalForm());
 									System.out.println("light mode");
+									theme = 0;
 									timesSelected ++;
 								}
 							//}
