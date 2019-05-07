@@ -349,7 +349,7 @@ public class Main extends Application {
 					System.out.println("finished creating");
 					//Map<String,Tuple> stats = studentObj.getStats();
 					//chart goes here
-					Charts charty = new Charts();
+					Charts charty = new Charts(studentObj);
 					VBox boxy = charty.getBox();
 					grid.add(boxy,2,4);
 					

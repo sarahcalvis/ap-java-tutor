@@ -38,11 +38,11 @@ public class Charts {
     final String standardJavaLibrary = "Standard Java Library";
     
 
-    Map<String,Tuple> stats = studentObj.getStats();
+    //Map<String,Tuple> stats = studentObj.getStats();
 	
-	Charts() {
+	Charts(Student obj) {
 		vby = new VBox(); 
-		
+		Map<String,Tuple> stats = obj.getStats();
 		 //scene.setTitle("Bar Chart Sample");
         final CategoryAxis xAxis = new CategoryAxis();
         final NumberAxis yAxis = new NumberAxis();
