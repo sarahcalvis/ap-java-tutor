@@ -195,6 +195,7 @@ public class Main extends Application {
 					System.out.println("Pressed Home Button");
 					// clear current screen
 					grid.getChildren().clear(); 
+					quest.getChildren().clear();
 					//add home screen shenanigans
 					Text scenetitle = new Text("Welcome Back!");
 					//scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 26));
@@ -224,6 +225,7 @@ public class Main extends Application {
 				public void handle(ActionEvent event) {
 					//clear the grid
 					grid.getChildren().clear();
+					quest.getChildren().clear();
 					
 					//make a textbook object
 					Textbook t = new Textbook();
@@ -251,6 +253,7 @@ public class Main extends Application {
 				@Override
 				public void handle(ActionEvent event) {
 					System.out.println("Pressed Exams Button");
+					quest.getChildren().clear();
 					grid.getChildren().clear();
 					//add Exams information here
 					Text scenetitle = new Text("Tests and Quizzes");
@@ -339,6 +342,7 @@ public class Main extends Application {
 				@Override
 				public void handle(ActionEvent event) {
 					System.out.println("Pressed Diagnostics Button");
+					quest.getChildren().clear();
 					grid.getChildren().clear();
 					//add diagnostics information here
 					Text scenetitle = new Text("Diagnostics");
@@ -368,6 +372,7 @@ public class Main extends Application {
 				@Override
 				public void handle(ActionEvent event) {
 					System.out.println("Pressed Settings Button");
+					quest.getChildren().clear();
 					grid.getChildren().clear();
 					//add settings information here
 					Text scenetitle = new Text("Settings");
@@ -508,10 +513,6 @@ public class Main extends Application {
 		}
 		String correctA = answ.get(0);
 		Collections.shuffle(answ);
-		/*
-		 * for (int i = 0; i < 4; i++) { questions.add(quiz.getQ(0).getAnswer(i));
-		 * System.out.println(quiz.getQ(0).getAnswer(i)); }
-		 */
 
 		for (int i = 0; i < 4; i++) { 
 			// create a checkbox 
@@ -520,8 +521,6 @@ public class Main extends Application {
 			boxes.add(c);
 		}
 		// create a event handler for each checkbox
-		//it can print what has been selected
-		//ToggleGroup allows only one button to be selected at a time
 		final ToggleGroup group = new ToggleGroup();
 		EventHandler<ActionEvent> boxEvent = new EventHandler<ActionEvent>() { 
 			public void handle(ActionEvent e) 
@@ -532,8 +531,6 @@ public class Main extends Application {
 						System.out.println(c.getText() + " selected");
 						selected = c.getText();
 					}
-					//else
-					//System.out.println("not selected");
 				} 
 			}
 		}; 
@@ -644,6 +641,7 @@ public class Main extends Application {
 					//calc grade
 					double grade = quiz.calcGrade();
 					Text gradeL = new Text("Your grade on this assignment is "+Math.floor(grade*100)/100+"%");
+					quest.getChildren().clear();
 					//gradeL.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
 					gradeL.setId(curText);
 					
