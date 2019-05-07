@@ -15,9 +15,10 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
  
 public class Charts {
+	//vbox to send to main
 	public VBox vby; 
-	static Student studentObj = new Student();
 	
+	//topics
     final String comments = "Comments";
     final String primTypes = "Primitive Types";
     final String operators = "Operators";
@@ -36,25 +37,32 @@ public class Charts {
     final String packages = "Packages";
     final String miscOOP = "Miscellaneous Object Oriented Programming";
     final String standardJavaLibrary = "Standard Java Library";
+    //bloom
+    final String bloom1 = "Bloom 1";
+    final String bloom2 = "Bloom 2";
+    final String bloom3 = "Bloom 3";
+    final String bloom4 = "Bloom 4";
+    final String bloom5 = "Bloom 5";
+    final String bloom6 = "Bloom 6";
     
-
-    //Map<String,Tuple> stats = studentObj.getStats();
 	
 	Charts(Student obj) {
+		
 		vby = new VBox(); 
 		Map<String,Tuple> stats = obj.getStats();
-		 //scene.setTitle("Bar Chart Sample");
+		 
+		//topics chart
         final CategoryAxis xAxis = new CategoryAxis();
         final NumberAxis yAxis = new NumberAxis();
         final BarChart<String,Number> bc = 
             new BarChart<String,Number>(xAxis,yAxis);
         bc.setTitle("Percent Correct by Topic");
-        xAxis.setLabel("Topic");       
+        //xAxis.setLabel("Topic");       
         yAxis.setLabel("Percent Correct");
         bc.setLegendVisible(false);
         
         XYChart.Series series1 = new XYChart.Series();
-        //series1.setName("Percent Correct");       
+            
         series1.getData().add(new XYChart.Data(comments, stats.get(comments).getTuple()));
         series1.getData().add(new XYChart.Data(primTypes, stats.get(primTypes).getTuple()));
         series1.getData().add(new XYChart.Data(operators, stats.get(operators).getTuple()));
@@ -73,12 +81,31 @@ public class Charts {
         series1.getData().add(new XYChart.Data("OOP", stats.get(miscOOP).getTuple()));
         series1.getData().add(new XYChart.Data(standardJavaLibrary, stats.get(standardJavaLibrary).getTuple()));    
         
-        
-        //Scene scene  = new Scene(bc,1000,600);
         bc.getData().addAll(series1);
-        //stage.setScene(scene);
-        vby.getChildren().add(bc);
-        //stage.show();
+        
+        //bloom chart
+        final CategoryAxis xAxis2 = new CategoryAxis();
+        final NumberAxis yAxis2 = new NumberAxis();
+        final BarChart<String,Number> bloomC = 
+            new BarChart<String,Number>(xAxis2,yAxis2);
+        bloomC.setTitle("Percent Correct by Bloom Level");
+        //xAxis2.setLabel("Bloom Level");       
+        yAxis2.setLabel("Percent Correct");
+        bloomC.setLegendVisible(false);
+        
+        XYChart.Series series2 = new XYChart.Series();
+        
+        series2.getData().add(new XYChart.Data(bloom1, stats.get(bloom1).getTuple()));
+        series2.getData().add(new XYChart.Data(bloom2, stats.get(bloom2).getTuple()));
+        series2.getData().add(new XYChart.Data(bloom3, stats.get(bloom3).getTuple()));
+        series2.getData().add(new XYChart.Data(bloom4, stats.get(bloom4).getTuple()));
+        series2.getData().add(new XYChart.Data(bloom5, stats.get(bloom5).getTuple()));
+        series2.getData().add(new XYChart.Data(bloom6, stats.get(bloom6).getTuple()));
+        
+        bloomC.getData().addAll(series2);
+        
+        vby.getChildren().addAll(bc, bloomC);
+
 	}
 
     
