@@ -415,12 +415,14 @@ public class Main extends Application {
 						{ 
 							//if (timesSelected < 1) {
 								if (dark.isSelected()) {
+									scene.getStylesheets().clear();
 									scene.getStylesheets().add(Main.class.getResource("Dark.css").toExternalForm());
 									System.out.println("dark mode");
 									theme = 1;
 									timesSelected++;
 								}
 								if (light.isSelected()) { 
+									scene.getStylesheets().clear();
 									scene.getStylesheets().add(Main.class.getResource("Buttons.css").toExternalForm());
 									System.out.println("light mode");
 									theme = 0;
