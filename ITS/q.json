@@ -225,7 +225,7 @@
 			"0": "System.in",
 			"1": "Input.sys",
 			"2": "iostream",
-			"3": "Terrence"
+			"3": "file.io"
 		},
 		"topic": "I/O",
 		"Bloom": "1"
@@ -302,7 +302,7 @@
 			 "0": "'this.' needs to be inserted before the left hand variables in the constructor",
 			 "1": "'this.' needs to be inserted before the right hand variables in the constructor",
 			 "2": "The code will work as is",
-			 "3": "Terrence"
+			 "3": "The code must be completely refactored"
 		},
 		"topic": "Constructors",
 		"Bloom": "5"
@@ -324,7 +324,7 @@
 			"0": "null",
 			"1": "0",
 			"2": "int",
-			"3": "Terrence"
+			"3": "5"
 		},
 		"topic": "Variables",
 		"Bloom": "2"
@@ -533,7 +533,7 @@
 			"0": "Whitespace",
 			"1": "//",
 			"2": "Only /n",
-			"3": "Terrence"
+			"3": "tabs"
 		},
 		"topic": "I/O",
 		"Bloom": "4"
