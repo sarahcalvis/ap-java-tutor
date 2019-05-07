@@ -428,7 +428,22 @@ public class Main extends Application {
 					dark.setOnAction(boxxyEvent);
 					Text placeholder = new Text(" \n");
 					
-				    boxxy.getChildren().addAll(placeholder, title, light, dark);
+					//add reset button
+					Button reset = new Button();
+					reset.setText("Reset Progress");
+					//action for reset button
+					reset.setOnAction(new EventHandler<ActionEvent>() {
+						@Override
+						public void handle(ActionEvent event) {
+							studentObj.resetProgress();
+							System.out.println("progress reset");
+						}
+					});
+					//space for spacing reasons
+					Text place = new Text(" ");
+					place.setId(curHeading);
+					
+				    boxxy.getChildren().addAll(placeholder, title, light, dark, place,reset);	    
 				    grid.add(boxxy, 2, 4);
 					
 				}
