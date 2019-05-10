@@ -38,6 +38,17 @@ public class PredictiveDiagnostics {
 	//to hold these^
 	ArrayList<String> strs = new ArrayList<String>();
 
+	//bloom
+	final String bloom1 = "Bloom 1";
+	final String bloom2 = "Bloom 2";
+	final String bloom3 = "Bloom 3";
+	final String bloom4 = "Bloom 4";
+	final String bloom5 = "Bloom 5";
+	final String bloom6 = "Bloom 6";
+
+	//to hold these^
+	ArrayList<String> bStrs = new ArrayList<String>();
+
 
 	/**
 	 * @param obj takes a student object
@@ -64,6 +75,14 @@ public class PredictiveDiagnostics {
 		strs.add(miscOOP);
 		strs.add(standardJavaLibrary);
 
+		//add bloom strigns to bloom arraylist
+		bStrs.add(bloom1);
+		bStrs.add(bloom2);
+		bStrs.add(bloom3);
+		bStrs.add(bloom4);
+		bStrs.add(bloom5);
+		bStrs.add(bloom6);		
+
 		//this is how we get the stats based on strs^
 		Map<String,Tuple> stats = obj.getStats();
 
@@ -77,8 +96,11 @@ public class PredictiveDiagnostics {
 		ArrayList<String> headings = new ArrayList<String>();
 
 		//put the headings in the arraylist
-		headings.add("Brush Back Up");
-		headings.add("To Do");
+		headings.add("Let's Revisit This: Topics where your grade is less than 70%");
+		headings.add("To Do: Topics you haven't attempted");
+		headings.add("Your areas of strength in Bloom's Taxonomy");
+		headings.add("Your areas for improvement in Bloom's Taxonomy");
+		headings.add("Bloomn't: Areas of Bloom you have not yet worked on");
 
 		//also add those headings to the hashmap
 		for (String h: headings) {
@@ -88,33 +110,63 @@ public class PredictiveDiagnostics {
 		//iterate through the topics, adding them to our predictive diagnostics as needed
 		for (String s: strs) {
 			try {
-				
+
 				//if the topic is untouched
 				if (stats.get(s).getTuple() < 0) {
 					String st = writeme.get(headings.get(1));
 					st += s + "\n";
 					writeme.put(headings.get(1), st);
 				}
-				
+
 				//else if the student has taken the quiz but they did not score well
 				else if (stats.get(s).getTuple() < 70) {
 					String st = writeme.get(headings.get(0));
 					st += s + " " + stats.get(s).getTuple() + "\n";
 					writeme.put(headings.get(0), st);
 				}
-				
+
 			} catch(NullPointerException e) {
 				System.out.println(s);
 			}
 		}
-		
+
+		//iterate through the levels of Bloom, adding them to our predictive diagnostics as needed
+		for (String b: bStrs) {
+			try {
+
+				//if the topic is untouched
+				if (stats.get(b).getTuple() < 0) {
+					String st = writeme.get(headings.get(4));
+					st += b + "\n";
+					writeme.put(headings.get(4), st);
+				}
+
+				//else if the student has taken the quiz but they did not score well
+				else if (stats.get(b).getTuple() < 70) {
+					String st = writeme.get(headings.get(3));
+					st += b + " " + stats.get(b).getTuple() + "\n";
+					writeme.put(headings.get(3), st);
+				}
+
+				//else if the student has taken the quiz but they did not score well
+				else if (stats.get(b).getTuple() > 70) {
+					String st = writeme.get(headings.get(2));
+					st += b + " " + stats.get(b).getTuple() + "\n";
+					writeme.put(headings.get(2), st);
+				}
+
+			} catch(NullPointerException e) {
+				System.out.println(b);
+			}
+		}
+
 		//actually add the strings to our viewbox
 		for (String h: headings) {
 			//heading
 			Text t = new Text(h);
 			t.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
 			vby.getChildren().add(t);
-			
+
 			//body
 			Text tb = new Text(writeme.get(h));
 			tb.setFont(Font.font("Tahoma", FontWeight.NORMAL, 14));
@@ -122,7 +174,9 @@ public class PredictiveDiagnostics {
 		}
 	}
 
-	//getter that returns the viewbox
+	/**
+	 * @return the viewbox
+	 */
 	public VBox getBox(){
 		return vby;
 	}
