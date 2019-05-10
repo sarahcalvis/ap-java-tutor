@@ -155,6 +155,9 @@ public class Main extends Application {
 		//adds preliminary home screen UI
 		Text scenetitle = new Text("Welcome Back!");
 		//scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 26));
+		PredictiveDiagnostics diagy = new PredictiveDiagnostics(studentObj);
+		VBox box = diagy.getBox();
+		grid.add(box,2,2);
 		scenetitle.setId(curHeading);
 		grid.add(scenetitle, 2,1);
 		buttons(grid, primaryStage);
@@ -206,7 +209,7 @@ public class Main extends Application {
 					System.out.println("finished creating");
 					
 					//chart goes here
-					PredictiveDiagnostics diagy = new PredictiveDiagnostics();
+					PredictiveDiagnostics diagy = new PredictiveDiagnostics(studentObj);
 					VBox box = diagy.getBox();
 					grid.add(box,2,2);
 				}

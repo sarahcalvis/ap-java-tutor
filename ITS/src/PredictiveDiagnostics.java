@@ -1,11 +1,11 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
 public class PredictiveDiagnostics {
 	public VBox vby; 
-	static Student studentObj = new Student();
 	
     final String comments = "Comments";
     final String primTypes = "Primitive Types";
@@ -27,9 +27,10 @@ public class PredictiveDiagnostics {
     final String standardJavaLibrary = "Standard Java Library";
     ArrayList<String> strs = new ArrayList<String>();
     
-    Map<String,Tuple> stats = studentObj.getStats();
 	
-	PredictiveDiagnostics() {
+	PredictiveDiagnostics(Student obj) {
+		HashMap<String, String> writeme = new HashMap<String, String>();
+	    Map<String,Tuple> stats = obj.getStats();
 		strs.add(comments);
 	    strs.add(primTypes);
 	    strs.add(operators);
@@ -51,20 +52,31 @@ public class PredictiveDiagnostics {
 	    
 	    String d = "";
 		vby = new VBox(); 
-		String st = "Brush Back Up\n";
+		String s1 = "Brush Back Up\n";
+		String s2 = "\nTo Do\n";
+		writeme.put(s1, "");
+		writeme.put(s2, "");
 		for (String s: strs) {
 			try {
-				if(stats.get(s).getTuple() < .7) {
+				if (stats.get(s).getTuple() < 0) {
+					String st = writeme.get(s2);
 					st += s + "\n";
+					writeme.put(s2, st);
+				}
+				else if (stats.get(s).getTuple() < 70) {
+					String st = writeme.get(s1);
+					st += s + " " + stats.get(s).getTuple() + "\n";
+					writeme.put(s1, st);
 				}
 			}
 			catch (NullPointerException e) {
-				System.out.println(st);
 				d += s;
 			}
 		}
-		st+= "\nTo Do\n" + d;
-		vby.getChildren().add(new Text(st));
+		vby.getChildren().add(new Text(s1));
+		vby.getChildren().add(new Text(writeme.get(s1)));
+		vby.getChildren().add(new Text(s2));
+		vby.getChildren().add(new Text(writeme.get(s2)));
 
 	}
 
@@ -72,5 +84,4 @@ public class PredictiveDiagnostics {
     public VBox getBox(){
 		return vby;
     }
-
 }
