@@ -1,7 +1,10 @@
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 
 public class PredictiveDiagnostics {
@@ -52,8 +55,8 @@ public class PredictiveDiagnostics {
 	    
 	    String d = "";
 		vby = new VBox(); 
-		String s1 = "Brush Back Up\n";
-		String s2 = "\nTo Do\n";
+		String s1 = "Brush Back Up";
+		String s2 = "To Do";
 		writeme.put(s1, "");
 		writeme.put(s2, "");
 		for (String s: strs) {
@@ -73,10 +76,18 @@ public class PredictiveDiagnostics {
 				d += s;
 			}
 		}
-		vby.getChildren().add(new Text(s1));
-		vby.getChildren().add(new Text(writeme.get(s1)));
-		vby.getChildren().add(new Text(s2));
-		vby.getChildren().add(new Text(writeme.get(s2)));
+		Text t1 = new Text(s1);
+		t1.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
+		Text t1b = new Text(writeme.get(s1));
+		t1b.setFont(Font.font("Tahoma", FontWeight.NORMAL, 14));
+		Text t2 = new Text(s2);
+		t2.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
+		Text t2b = new Text(writeme.get(s2));
+		t2b.setFont(Font.font("Tahoma", FontWeight.NORMAL, 14));
+		vby.getChildren().add(t1);
+		vby.getChildren().add(t1b);
+		vby.getChildren().add(t2);
+		vby.getChildren().add(t2b);
 
 	}
 
