@@ -277,11 +277,11 @@ public class Student {
 	 * Needed to use this work around because DataOutputStream writeInt doesn't overwrite, it appends(at least experienced this)
 	 */
 	public void saveProgress() {
-		String fname = this.username + password.hashCode() + ".bin";
+		String fname = username + password.hashCode() + ".bin";
 		File f1 = new File(fname);
 		f1.delete();
 		try {
-			FileOutputStream f = new FileOutputStream(username+".bin");
+			FileOutputStream f = new FileOutputStream(fname);
 			DataOutputStream dos = new DataOutputStream(f);
 			try {
 
