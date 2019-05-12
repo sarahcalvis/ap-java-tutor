@@ -446,6 +446,36 @@ public class Main extends Application {
 					dark.setOnAction(boxxyEvent);
 					Text placeholder = new Text(" \n");
 					
+					//Login
+					Text lgn = new Text("Login");
+					lgn.setId(curHeading);
+					TextField username = new TextField();
+					TextField password = new TextField();
+					Button login = new Button();
+					Text loginSuccess = new Text(" ");
+					loginSuccess.setId(curHeading);
+					username.setText("username");
+					password.setText("password");
+					login.setText("Login");
+					login.setOnAction(new EventHandler<ActionEvent>() {
+						@Override
+						public void handle(ActionEvent event) {
+							String u=username.getText();
+							String p = password.getText();
+							Student stu = studentObj.login(u, p);
+							if(stu != null) {
+								studentObj = stu;
+								loginSuccess.setText("Logged in to "+u+".\n ");
+							}
+							else {
+								stu = new Student(u,p);
+								loginSuccess.setText("Account not found. New account \""+u+"\" created.\n ");
+							}
+							username.setText("username");
+							password.setText("password");
+						}
+					});
+					
 					//add reset button
 					Button reset = new Button();
 					reset.setText("Reset Progress");
@@ -461,7 +491,7 @@ public class Main extends Application {
 					Text place = new Text(" ");
 					place.setId(curHeading);
 					
-				    boxxy.getChildren().addAll(placeholder, title, light, dark, place, reset);	    
+				    boxxy.getChildren().addAll(placeholder, title, light, dark, place,lgn,username,password,login,loginSuccess, reset);	    
 				    grid.add(boxxy, 2, 4);
 					
 				}
