@@ -189,7 +189,7 @@
 	{
 		"text": "What is the escape sequence that denotes a newline?",
 		"answers": {
-			"0": "\n",
+			"0": "\\n",
 			"1": "|n",
 			"2": "/n",
 			"3": "|n|"
@@ -198,7 +198,7 @@
 		"Bloom": "1"
 	},
 	{
-		"text": "What does '\t' denote?",
+		"text": "What does '\\t' denote?",
 		"answers": {
 			"0": "tab",
 			"1": "space",
@@ -352,13 +352,13 @@
 		"Bloom": "3"
 	},
 	{
-		"text": "What will this print?\n\tSystem.out.print(\"\tJava is hot.\");",
-		"answers": {
-			"0": "\tJava is hot.",
-			"1": "\tJava is \\n hot.",
-			"2": "\tJava is hot.",
-			"3": "\t\"Java is hot.\\"
-		},
+		"text": "What will this print?\n\tSystem.out.print(\"\\tJava is hot.\");",
+        "answers": {
+            "0": "\tJava is hot.",
+            "1": "Java is \n hot.",
+            "2": "Java is hot.",
+            "3": "\\tJava is hot."
+        },
 		"topic": "Escape Sequences",
 		"Bloom": "2"
 	},
