@@ -50,4 +50,12 @@ public class StudentTest {
 		Student t = s.login("Nope", "Away");
 		Assert.assertEquals(s.equals(t), true);
 	}
+	
+	@Test
+	public void testReset() {
+		Student s = new Student();
+		s.getStats().get("I/O").updateTuple(1, 2, s);
+		s = s.resetProgress();
+		Assert.assertEquals(-1.0, s.getStats().get("I/O").getTuple(),.0001);
+	}
 }
