@@ -121,7 +121,7 @@ public class PredictiveDiagnostics {
 				//else if the student has taken the quiz but they did not score well
 				else if (stats.get(s).getTuple() < 70) {
 					String st = writeme.get(headings.get(0));
-					st += s + " " + stats.get(s).getTuple() + "\n";
+					st += s + " " + Math.floor(stats.get(s).getTuple()*100)/100 + "\n";
 					writeme.put(headings.get(0), st);
 				}
 
@@ -144,14 +144,14 @@ public class PredictiveDiagnostics {
 				//else if the student has taken the quiz but they did not score well
 				else if (stats.get(b).getTuple() < 70) {
 					String st = writeme.get(headings.get(3));
-					st += b + " " + stats.get(b).getTuple() + "\n";
+					st += b + " " + Math.floor(stats.get(b).getTuple()*100)/100 + "\n";
 					writeme.put(headings.get(3), st);
 				}
 
 				//else if the student has taken the quiz but they did not score well
 				else if (stats.get(b).getTuple() > 70) {
 					String st = writeme.get(headings.get(2));
-					st += b + " " + stats.get(b).getTuple() + "\n";
+					st += b + " " + Math.floor(stats.get(b).getTuple()*100)/100 + "\n";
 					writeme.put(headings.get(2), st);
 				}
 

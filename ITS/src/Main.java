@@ -461,7 +461,7 @@ public class Main extends Application {
 					Text place = new Text(" ");
 					place.setId(curHeading);
 					
-				    boxxy.getChildren().addAll(placeholder, title, light, dark, place,reset);	    
+				    boxxy.getChildren().addAll(placeholder, title, light, dark, place, reset);	    
 				    grid.add(boxxy, 2, 4);
 					
 				}
