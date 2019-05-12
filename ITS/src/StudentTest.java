@@ -22,7 +22,6 @@ public class StudentTest {
 	@Test
 	public void testStudent() {
 		Student stu = new Student("testing","hurts");
-		stu.getStats().get("I/O").updateTuple(1, 3, stu);
 		Assert.assertEquals("testing", stu.getUsername());
 		Assert.assertEquals("hurts", stu.getPassword());
 	}
