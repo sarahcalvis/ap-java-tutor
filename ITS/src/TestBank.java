@@ -40,7 +40,7 @@ public class TestBank {
 		while(!hasQ){
 			randNo = rand.nextInt(bank.get(topic).size());
 			if(!bank.get(topic).get(randNo).getAsked()){
-				bank.get(topic).get(randNo).setAsked(true);
+				//bank.get(topic).get(randNo).setAsked(true);
 				return bank.get(topic).get(randNo);
 			}
 		}
