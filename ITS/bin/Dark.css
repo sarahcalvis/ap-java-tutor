@@ -96,3 +96,7 @@
     -fx-font: 10px Tahoma;
     -fx-text-fill: white;
 }
+#diagnostics {
+    -fx-font: 10px Tahoma;
+    -fx-text-fill: white;
+}

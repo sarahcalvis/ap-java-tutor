@@ -157,6 +157,7 @@ public class Main extends Application {
 		//scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 26));
 		PredictiveDiagnostics diagy = new PredictiveDiagnostics(studentObj);
 		VBox box = diagy.getBox();
+
 		grid.add(box,2,2);
 		scenetitle.setId(curHeading);
 		grid.add(scenetitle, 2,1);
@@ -490,9 +491,10 @@ public class Main extends Application {
 					//space for spacing reasons
 					Text place = new Text(" ");
 					Text placey = new Text(" ");
+					Text placeTheSequel = new Text(" ");
 					place.setId(curText);
 					
-				    boxxy.getChildren().addAll(placeholder, title, light, dark, place,lgn,username,password,placey,login,loginSuccess, reset);	    
+				    boxxy.getChildren().addAll(placeholder, title, light, dark, place,lgn,username,password,placey,login,loginSuccess,placeTheSequel,reset);	    
 				    grid.add(boxxy, 2, 4);
 					
 				}
