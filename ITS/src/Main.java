@@ -448,12 +448,12 @@ public class Main extends Application {
 					
 					//Login
 					Text lgn = new Text("Login");
-					lgn.setId(curHeading);
+					lgn.setId(curText);
 					TextField username = new TextField();
 					TextField password = new TextField();
 					Button login = new Button();
 					Text loginSuccess = new Text(" ");
-					loginSuccess.setId(curHeading);
+					loginSuccess.setId(curText);
 					username.setText("username");
 					password.setText("password");
 					login.setText("Login");
@@ -483,15 +483,16 @@ public class Main extends Application {
 					reset.setOnAction(new EventHandler<ActionEvent>() {
 						@Override
 						public void handle(ActionEvent event) {
-							studentObj.resetProgress();
+							studentObj = studentObj.resetProgress();
 							System.out.println("progress reset");
 						}
 					});
 					//space for spacing reasons
 					Text place = new Text(" ");
-					place.setId(curHeading);
+					Text placey = new Text(" ");
+					place.setId(curText);
 					
-				    boxxy.getChildren().addAll(placeholder, title, light, dark, place,lgn,username,password,login,loginSuccess, reset);	    
+				    boxxy.getChildren().addAll(placeholder, title, light, dark, place,lgn,username,password,placey,login,loginSuccess, reset);	    
 				    grid.add(boxxy, 2, 4);
 					
 				}
