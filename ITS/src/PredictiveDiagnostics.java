@@ -91,6 +91,10 @@ public class PredictiveDiagnostics {
 
 		//initialize the viewbox
 		vby = new VBox(); 
+		
+		//mini vboxes inside the one that's returned 
+		VBox vb1 = new VBox();
+		VBox vb2 = new VBox();
 
 		//holds all the headings for the predictive diagnostics
 		ArrayList<String> headings = new ArrayList<String>();
@@ -162,15 +166,25 @@ public class PredictiveDiagnostics {
 
 		//actually add the strings to our viewbox
 		for (String h: headings) {
+			//spaces for formatting
+			Text spacey = new Text(" ");
+			Text spacey2 = new Text(" ");
+			Text spacey3 = new Text(" ");
+			
 			//heading
 			Text t = new Text(h);
-			t.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
+			//t.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
+			t.setId("text");
 			vby.getChildren().add(t);
+			//vby.getChildren().add(spacey);
 
 			//body
 			Text tb = new Text(writeme.get(h));
-			tb.setFont(Font.font("Tahoma", FontWeight.NORMAL, 14));
+			//tb.setFont(Font.font("Tahoma", FontWeight.NORMAL, 14));
+			tb.setId("diagnostics");
 			vby.getChildren().add(tb);
+			vby.getChildren().add(spacey2);
+			//vby.getChildren().add(spacey3);
 		}
 	}
 
