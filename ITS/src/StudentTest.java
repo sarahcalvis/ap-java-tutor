@@ -1,5 +1,8 @@
 import org.junit.Test;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -12,18 +15,20 @@ public class StudentTest {
 	@Test
 	public void testStudentDefault() {
 		Student stu = new Student();
-		stu.setUsername("haha");
 		String username = stu.getUsername();
-		Assert.assertEquals("haha", username);
+		Assert.assertEquals("guest", username);
 		String password = stu.getPassword();
 		Assert.assertEquals("guest", password);
 	}
 	
 	@Test
 	public void testStudent() {
-		Student stu = new Student("testing","hurts");
-		Assert.assertEquals("testing", stu.getUsername());
+		Student stu = new Student("Acct","hurts");
+		Assert.assertEquals("Acct", stu.getUsername());
 		Assert.assertEquals("hurts", stu.getPassword());
+		String s = "hurts";
+		File f = new File("Acct"+s.hashCode()+".bin");
+		f.delete();
 	}
 	
 	@Test
@@ -46,16 +51,37 @@ public class StudentTest {
 
 	@Test
 	public void testLogin() {
-		Student s = new Student("Nope","Away");
-		Student t = s.login("Nope", "Away");
+		String u = "Login";
+		String r = "test";
+		Student s = new Student(u,r);
+		Student t = s.login(u, r);
+		File f = new File(u+r.hashCode()+".bin");
+		f.delete();
 		Assert.assertEquals(s.equals(t), true);
 	}
 	
 	@Test
 	public void testReset() {
-		Student s = new Student();
+		String u = "Reset";
+		String p = "test";
+		Student s = new Student(u,p);
 		s.getStats().get("I/O").updateTuple(1, 2, s);
 		s = s.resetProgress();
 		Assert.assertEquals(-1.0, s.getStats().get("I/O").getTuple(),.0001);
+		File f = new File(u+p.hashCode()+".bin");
+		f.delete();
 	}
+	
+	@Test
+	public void testSetUsername() {
+		String u = "setUsername";
+		String p = "test";
+		Student s = new Student(u,p);
+		s.getStats().get("I/O").updateTuple(1, 2, s);
+		u = "SetUsername";
+		s.setUsername(u);
+		Assert.assertEquals(u, s.getUsername());
+		new File(u+p.hashCode()+".bin").delete();
+	}
+	
 }
