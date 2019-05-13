@@ -71,17 +71,4 @@ public class StudentTest {
 		File f = new File(u+p.hashCode()+".bin");
 		f.delete();
 	}
-	
-	@Test
-	public void testSetUsername() {
-		String u = "setUsername";
-		String p = "test";
-		Student s = new Student(u,p);
-		s.getStats().get("I/O").updateTuple(1, 2, s);
-		u = "SetUsername";
-		s.setUsername(u);
-		Assert.assertEquals(u, s.getUsername());
-		new File(u+p.hashCode()+".bin").delete();
-	}
-	
 }

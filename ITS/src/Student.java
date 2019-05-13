@@ -229,28 +229,10 @@ public class Student {
 		catch(IOException e) {
 			e.printStackTrace();
 		}
-	}	
-
-	public void setUsername(String username) {
-		String fname = this.username + password.hashCode() + ".bin";
-		File f = new File(fname);
-		f.delete();
-		this.username = username;
-		saveProgress();
-		return;
 	}
 	
 	public String getUsername() {
 		return username;
-	}
-
-	public void setPassword(String password) {
-		String fname = this.username + password.hashCode() + ".bin";
-		File f = new File(fname);
-		f.delete();
-		this.password = password;
-		saveProgress();
-		return;
 	}
 	
 	public String getPassword() {
