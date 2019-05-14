@@ -82,11 +82,13 @@ public class Main extends Application {
 	String curHeading = "heading";
 	String curSubText = "question";
 	String curTinyText = "tiny";
+	String diagText = "diagnostics";
 	int timesSelected = 0;
 	int theme = 0;
 	//for quizzes
 	int place;
 	int[] haveAsked = new int[]{0,0,0,0}; 
+
 
 	public static void main(String[] args) {
 		//GridPane grid = new GridPane();
@@ -214,8 +216,10 @@ public class Main extends Application {
 					System.out.println("finished creating");
 					
 					//chart goes here
+					Text spacer = new Text(" ");
 					PredictiveDiagnostics diagy = new PredictiveDiagnostics(studentObj);
 					VBox box = diagy.getBox();
+					grid.add(spacer,2,2);
 					grid.add(box,2,2);
 				}
 			});
@@ -339,7 +343,7 @@ public class Main extends Application {
 							quizV.getChildren().add(takeQuizButt);
 						//}
 						//else {
-							System.out.println("grey button");
+							//System.out.println("grey button");
 						//}
 					}
 				}
@@ -551,7 +555,7 @@ public class Main extends Application {
 	public void fillQuest() {
 		//get question text
 		Text l = new Text(quiz.getQ(questCount).getText());
-		l.setId(curSubText);
+		l.setId(curText);
 		Text space = new Text(" ");
 		quest.getChildren().addAll(l,space);  
 		//fill questions with the question's possible responses

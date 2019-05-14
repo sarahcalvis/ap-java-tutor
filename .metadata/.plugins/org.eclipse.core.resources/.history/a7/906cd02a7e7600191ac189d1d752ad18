@@ -3,13 +3,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
-/**
- * Factory question bank, almost identical to the TestBank class, except that it's
- * getQuest() function returns a question out of a FactoryQuestion for a given
- * topic
- * @author SPRECHERND1
- *
- */
+
 public class FactoryBank {
 	Map<String, ArrayList<FactoryQuestion>> bank;
 	Random rand;
