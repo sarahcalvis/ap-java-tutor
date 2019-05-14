@@ -88,8 +88,7 @@ public class Main extends Application {
 	//for quizzes
 	int place;
 	int[] haveAsked = new int[]{0,0,0,0}; 
-	//for predictive diagnostics
-	PredictiveDiagnostics diagy;
+
 
 	public static void main(String[] args) {
 		//GridPane grid = new GridPane();
@@ -162,7 +161,7 @@ public class Main extends Application {
 		//adds preliminary home screen UI
 		Text scenetitle = new Text("Welcome Back!");
 		//scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 26));
-		diagy = new PredictiveDiagnostics(studentObj);
+		PredictiveDiagnostics diagy = new PredictiveDiagnostics(studentObj);
 		VBox box = diagy.getBox();
 
 		grid.add(box,2,2);
@@ -217,8 +216,10 @@ public class Main extends Application {
 					System.out.println("finished creating");
 					
 					//chart goes here
+					Text spacer = new Text(" ");
 					PredictiveDiagnostics diagy = new PredictiveDiagnostics(studentObj);
 					VBox box = diagy.getBox();
+					grid.add(spacer,2,2);
 					grid.add(box,2,2);
 				}
 			});
@@ -554,7 +555,7 @@ public class Main extends Application {
 	public void fillQuest() {
 		//get question text
 		Text l = new Text(quiz.getQ(questCount).getText());
-		l.setId(curSubText);
+		l.setId(curText);
 		Text space = new Text(" ");
 		quest.getChildren().addAll(l,space);  
 		//fill questions with the question's possible responses

@@ -84,6 +84,11 @@
     -fx-fill: white;
     -fx-padding: 12 30 12 30;
 }
+#texty {
+    -fx-font: 12px Tahoma;
+    -fx-fill: white;
+    -fx-padding: 12 30 12 30;
+}
 #heading {
     -fx-font: 28px Tahoma;
     -fx-fill: white;
@@ -97,6 +102,6 @@
     -fx-text-fill: white;
 }
 #diagnostics {
-    -fx-font: 10px Tahoma;
+    -fx-font: 12px Tahoma;
     -fx-text-fill: white;
 }
