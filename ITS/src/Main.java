@@ -52,10 +52,6 @@ import javafx. *;
 import org.json.*;
 import org.json.JSONException;
 
-/**
- * @author Smeltzer and Calvis
- * The entire ui
- */
 public class Main extends Application {
 	//this one tells whether the button should show right now or not
 	boolean buttonsExpanded = true;
@@ -175,11 +171,6 @@ public class Main extends Application {
 	}
 
 
-	/**
-	 * @param grid
-	 * @param primaryStage
-	 * places buttons on the screen
-	 */
 	public void buttons(GridPane grid, Stage primaryStage){
 		if (buttonsExpanded) {
 			//
@@ -557,9 +548,6 @@ public class Main extends Application {
 
 
 
-	/**
-	 * Fills a test with questions
-	 */
 	public void fillQuest() {
 		//get question text
 		Text l = new Text(quiz.getQ(questCount).getText());
