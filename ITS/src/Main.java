@@ -52,6 +52,10 @@ import javafx. *;
 import org.json.*;
 import org.json.JSONException;
 
+/**
+ * @author SMELTZERDE1
+ *
+ */
 public class Main extends Application {
 	//this one tells whether the button should show right now or not
 	boolean buttonsExpanded = true;
@@ -140,6 +144,11 @@ public class Main extends Application {
 
 	}
 
+	/* (non-Javadoc)
+	 * @see javafx.application.Application#start(javafx.stage.Stage)
+	 * starts the program using javafx
+	 * @author SMELTZERDE1
+	 */
 	@Override
 	public void start(Stage primaryStage) {
 		primaryStage.setTitle("AP Computer Science Prep");
@@ -173,6 +182,12 @@ public class Main extends Application {
 	}
 
 
+	/**
+	 * @param grid - the grid for the scene
+	 * @param primaryStage - the stage the grid is placed on
+	 * @author SMELTZERDE1 and CALVISSE1
+	 * creates the nav bar on the side of the screen, creating the framework for the rest of the program
+	 */
 	public void buttons(GridPane grid, Stage primaryStage){
 		if (buttonsExpanded) {
 			//
@@ -552,10 +567,15 @@ public class Main extends Application {
 
 
 
+	/**
+	 * @author SMELTZERDE1
+	 * This makes the quizzes and tests in the UI using the Testing/TestBank classes.
+	 * It also grades them and sends the results to Student.
+	 */
 	public void fillQuest() {
 		//get question text
 		Text l = new Text(quiz.getQ(questCount).getText());
-		l.setId(curText);
+		l.setId("text");
 		Text space = new Text(" ");
 		quest.getChildren().addAll(l,space);  
 		//fill questions with the question's possible responses
