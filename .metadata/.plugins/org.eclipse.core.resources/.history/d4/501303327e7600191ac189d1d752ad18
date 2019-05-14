@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 /**
  * A special factory question, has two parts to the text, options for the
- * specific question, options for the right answer, and wrong answers
+ * specific question, options for the right answer, etc
  * @author SPRECHERND1
  *
  */
