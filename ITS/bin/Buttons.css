@@ -82,3 +82,7 @@
     -fx-font: 10px Tahoma;
     -fx-text-fill: black;
 }
+#diagnostics {
+    -fx-font: 10px Tahoma;
+    -fx-text-fill: black;
+}

@@ -3,6 +3,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
@@ -14,6 +15,8 @@ import javafx.scene.text.Text;
 public class PredictiveDiagnostics {
 	//the viewbox to hold all of our predictive diagnostics
 	public VBox vby; 
+	//variables to hold the font choices
+	
 
 	//all of the topics we are assessing
 	final String comments = "Comments";

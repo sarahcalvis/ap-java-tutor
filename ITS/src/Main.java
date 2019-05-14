@@ -82,11 +82,14 @@ public class Main extends Application {
 	String curHeading = "heading";
 	String curSubText = "question";
 	String curTinyText = "tiny";
+	String diagText = "diagnostics";
 	int timesSelected = 0;
 	int theme = 0;
 	//for quizzes
 	int place;
 	int[] haveAsked = new int[]{0,0,0,0}; 
+	//for predictive diagnostics
+	PredictiveDiagnostics diagy;
 
 	public static void main(String[] args) {
 		//GridPane grid = new GridPane();
@@ -159,7 +162,7 @@ public class Main extends Application {
 		//adds preliminary home screen UI
 		Text scenetitle = new Text("Welcome Back!");
 		//scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 26));
-		PredictiveDiagnostics diagy = new PredictiveDiagnostics(studentObj);
+		diagy = new PredictiveDiagnostics(studentObj);
 		VBox box = diagy.getBox();
 
 		grid.add(box,2,2);
@@ -339,7 +342,7 @@ public class Main extends Application {
 							quizV.getChildren().add(takeQuizButt);
 						//}
 						//else {
-							System.out.println("grey button");
+							//System.out.println("grey button");
 						//}
 					}
 				}
