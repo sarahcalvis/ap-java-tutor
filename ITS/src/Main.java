@@ -43,6 +43,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -83,6 +84,9 @@ public class Main extends Application {
 	String curTinyText = "tiny";
 	int timesSelected = 0;
 	int theme = 0;
+	//for quizzes
+	int place;
+	int[] haveAsked = new int[]{0,0,0,0}; 
 
 	public static void main(String[] args) {
 		//GridPane grid = new GridPane();
@@ -272,15 +276,17 @@ public class Main extends Application {
 					for (int i = 0; i < 4; i++) {
 						//add take quiz button here 
 						Button takeQuizButt = new Button();
+						if (haveAsked[i] == 0) {
 						takeQuizButt.setText("Take Test " + (i+1));
 						takeQuizButt.setTextFill(Color.BLUE);
 						takeQuizButt.setMaxWidth(Double.MAX_VALUE);
 						final int k = i;
+						place = i;
 						takeQuizButt.setOnAction(new EventHandler<ActionEvent>() {
 							@Override
 							public void handle(ActionEvent event) {
 								notCompleted = true;
-		
+								haveAsked[k] = 1;
 								grid.getChildren().remove(quizV);
 								//add questions
 		
@@ -328,8 +334,15 @@ public class Main extends Application {
 		
 							}
 						});
-						quizV.getChildren().add(takeQuizButt);
+						//if (haveAsked[i] == 0) {
+							System.out.println(haveAsked[i] + "was added");
+							quizV.getChildren().add(takeQuizButt);
+						//}
+						//else {
+							System.out.println("grey button");
+						//}
 					}
+				}
 					grid.add(quizV, 2, 2);
 				}
 			});
